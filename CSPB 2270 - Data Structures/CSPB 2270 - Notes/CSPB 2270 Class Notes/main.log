@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.3.21)  2 JUN 2023 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.3.21)  3 JUN 2023 00:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/taylor/Downloads/CSPB 2270 - Computer Science 2_ Data Structures/main.tex"
-(/Users/taylor/Downloads/CSPB 2270 - Computer Science 2_ Data Structures/main.tex
+**"/Users/taylor/Downloads/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes/main.tex"
+(/Users/taylor/Downloads/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes/main.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (./solutionclass.cls
 Document Class: solutionclass 
@@ -1016,183 +1016,71 @@ File: pppdftex.def 2022/12/19 v0.5x Pdfpages driver for pdfTeX (AM)
 \AM@lof@heading=\toks66
 \c@AM@survey=\count395
 \AM@templatesizebox=\box134
-) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/minted/minted.sty
-Package: minted 2022/12/12 v2.7 Yet another Pygments shim for LaTeX
- (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/fvextra/fvextra.sty
-Package: fvextra 2022/11/30 v1.5 fvextra - extensions and patches for fancyvrb
- (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2023/01/19 4.5a verbatim text (tvz,hv)
-\FV@CodeLineNo=\count396
-\FV@InFile=\read5
-\FV@TabBox=\box135
-\c@FancyVerbLine=\count397
-\FV@StepNumber=\count398
-\FV@OutFile=\write4
-) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
- (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2023/01/19 line numbers on paragraphs v5.1
-\linenopenalty=\count399
-\output=\toks67
-\linenoprevgraf=\count400
-\linenumbersep=\dimen333
-\linenumberwidth=\dimen334
-\c@linenumber=\count401
-\c@pagewiselinenumber=\count402
-\c@LN@truepage=\count403
-\c@internallinenumber=\count404
-\c@internallinenumbers=\count405
-\quotelinenumbersep=\dimen335
-\bframerule=\dimen336
-\bframesep=\dimen337
-\bframebox=\box136
-\linenoamsmath@ams@eqpen=\count406
-
-
-LaTeX Warning: Command \@parboxrestore  has changed.
-               Check if current package is valid.
-
-LaTeX Info: Redefining \\ on input line 3131.
-)
-
-Package fvextra Warning: csquotes should be loaded after fvextra, to avoid a warning from the lineno package on input line 36.
-
-\c@FV@TrueTabGroupLevel=\count407
-\c@FV@TrueTabCounter=\count408
-\FV@TabBox@Group=\box137
-\FV@TmpLength=\skip73
-\c@FV@HighlightLinesStart=\count409
-\c@FV@HighlightLinesStop=\count410
-\FV@LoopCount=\count411
-\FV@NCharsBox=\box138
-\FV@BreakIndent=\dimen338
-\FV@BreakIndentNChars=\count412
-\FV@BreakSymbolSepLeft=\dimen339
-\FV@BreakSymbolSepLeftNChars=\count413
-\FV@BreakSymbolSepRight=\dimen340
-\FV@BreakSymbolSepRightNChars=\count414
-\FV@BreakSymbolIndentLeft=\dimen341
-\FV@BreakSymbolIndentLeftNChars=\count415
-\FV@BreakSymbolIndentRight=\dimen342
-\FV@BreakSymbolIndentRightNChars=\count416
-\c@FancyVerbLineBreakLast=\count417
-\FV@LineBox=\box139
-\FV@LineIndentBox=\box140
-\c@FV@BreakBufferDepth=\count418
-\FV@LineWidth=\dimen343
-) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
-Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
- (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/catchfile/catchfile.sty
-Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
-) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-
-Package ifplatform Warning: 
-    shell escape is disabled, so I can only detect \ifwindows.
-
-) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/xstring/xstring.sty (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count419
-\decimalpart=\count420
-)
-Package: xstring 2023/01/14 v1.85 String manipulations (CT)
-) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip74
-\fb@frw=\dimen344
-\fb@frh=\dimen345
-\FrameRule=\dimen346
-\FrameSep=\dimen347
-)
-\minted@appexistsfile=\read6
-\minted@bgbox=\box141
-\minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count421
-\c@minted@pygmentizecounter=\count422
-\@float@every@listing=\toks68
-\c@listing=\count423
-)
-runsystem(mkdir -p _minted-main)...disabled (restricted).
-
-
-
-./solutionclass.cls:87: Package minted Error: You must invoke LaTeX with the -shell-escape flag.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.87 \usepackage
-                [backend    = biber,
-Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for more information.
-
-(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/biblatex/biblatex.sty
+) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count424
+\lrq@indent=\count396
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count425
-\c@listtotal=\count426
-\c@listcount=\count427
-\c@liststart=\count428
-\c@liststop=\count429
-\c@citecount=\count430
-\c@citetotal=\count431
-\c@multicitecount=\count432
-\c@multicitetotal=\count433
-\c@instcount=\count434
-\c@maxnames=\count435
-\c@minnames=\count436
-\c@maxitems=\count437
-\c@minitems=\count438
-\c@citecounter=\count439
-\c@maxcitecounter=\count440
-\c@savedcitecounter=\count441
-\c@uniquelist=\count442
-\c@uniquename=\count443
-\c@refsection=\count444
-\c@refsegment=\count445
-\c@maxextratitle=\count446
-\c@maxextratitleyear=\count447
-\c@maxextraname=\count448
-\c@maxextradate=\count449
-\c@maxextraalpha=\count450
-\c@abbrvpenalty=\count451
-\c@highnamepenalty=\count452
-\c@lownamepenalty=\count453
-\c@maxparens=\count454
-\c@parenlevel=\count455
-\blx@tempcnta=\count456
-\blx@tempcntb=\count457
-\blx@tempcntc=\count458
-\c@blx@maxsection=\count459
-\blx@maxsegment@0=\count460
-\blx@notetype=\count461
-\blx@parenlevel@text=\count462
-\blx@parenlevel@foot=\count463
-\blx@sectionciteorder@0=\count464
-\blx@sectionciteorderinternal@0=\count465
-\blx@entrysetcounter=\count466
-\blx@biblioinstance=\count467
-\labelnumberwidth=\skip75
-\labelalphawidth=\skip76
-\biblabelsep=\skip77
-\bibitemsep=\skip78
-\bibnamesep=\skip79
-\bibinitsep=\skip80
-\bibparsep=\skip81
-\bibhang=\skip82
-\blx@bcfin=\read7
-\blx@bcfout=\write6
+\c@tabx@nest=\count397
+\c@listtotal=\count398
+\c@listcount=\count399
+\c@liststart=\count400
+\c@liststop=\count401
+\c@citecount=\count402
+\c@citetotal=\count403
+\c@multicitecount=\count404
+\c@multicitetotal=\count405
+\c@instcount=\count406
+\c@maxnames=\count407
+\c@minnames=\count408
+\c@maxitems=\count409
+\c@minitems=\count410
+\c@citecounter=\count411
+\c@maxcitecounter=\count412
+\c@savedcitecounter=\count413
+\c@uniquelist=\count414
+\c@uniquename=\count415
+\c@refsection=\count416
+\c@refsegment=\count417
+\c@maxextratitle=\count418
+\c@maxextratitleyear=\count419
+\c@maxextraname=\count420
+\c@maxextradate=\count421
+\c@maxextraalpha=\count422
+\c@abbrvpenalty=\count423
+\c@highnamepenalty=\count424
+\c@lownamepenalty=\count425
+\c@maxparens=\count426
+\c@parenlevel=\count427
+\blx@tempcnta=\count428
+\blx@tempcntb=\count429
+\blx@tempcntc=\count430
+\c@blx@maxsection=\count431
+\blx@maxsegment@0=\count432
+\blx@notetype=\count433
+\blx@parenlevel@text=\count434
+\blx@parenlevel@foot=\count435
+\blx@sectionciteorder@0=\count436
+\blx@sectionciteorderinternal@0=\count437
+\blx@entrysetcounter=\count438
+\blx@biblioinstance=\count439
+\labelnumberwidth=\skip73
+\labelalphawidth=\skip74
+\biblabelsep=\skip75
+\bibitemsep=\skip76
+\bibnamesep=\skip77
+\bibinitsep=\skip78
+\bibparsep=\skip79
+\bibhang=\skip80
+\blx@bcfin=\read5
+\blx@bcfout=\write4
 \blx@langwohyphens=\language88
-\c@mincomprange=\count468
-\c@maxcomprange=\count469
-\c@mincompwidth=\count470
+\c@mincomprange=\count440
+\c@maxcomprange=\count441
+\c@mincompwidth=\count442
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -1202,88 +1090,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'ext-authoryear-comp.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count471
-\c@savedafterword=\count472
-\c@annotator=\count473
-\c@savedannotator=\count474
-\c@author=\count475
-\c@savedauthor=\count476
-\c@bookauthor=\count477
-\c@savedbookauthor=\count478
-\c@commentator=\count479
-\c@savedcommentator=\count480
-\c@editor=\count481
-\c@savededitor=\count482
-\c@editora=\count483
-\c@savededitora=\count484
-\c@editorb=\count485
-\c@savededitorb=\count486
-\c@editorc=\count487
-\c@savededitorc=\count488
-\c@foreword=\count489
-\c@savedforeword=\count490
-\c@holder=\count491
-\c@savedholder=\count492
-\c@introduction=\count493
-\c@savedintroduction=\count494
-\c@namea=\count495
-\c@savednamea=\count496
-\c@nameb=\count497
-\c@savednameb=\count498
-\c@namec=\count499
-\c@savednamec=\count500
-\c@translator=\count501
-\c@savedtranslator=\count502
-\c@shortauthor=\count503
-\c@savedshortauthor=\count504
-\c@shorteditor=\count505
-\c@savedshorteditor=\count506
-\c@labelname=\count507
-\c@savedlabelname=\count508
-\c@institution=\count509
-\c@savedinstitution=\count510
-\c@lista=\count511
-\c@savedlista=\count512
-\c@listb=\count513
-\c@savedlistb=\count514
-\c@listc=\count515
-\c@savedlistc=\count516
-\c@listd=\count517
-\c@savedlistd=\count518
-\c@liste=\count519
-\c@savedliste=\count520
-\c@listf=\count521
-\c@savedlistf=\count522
-\c@location=\count523
-\c@savedlocation=\count524
-\c@organization=\count525
-\c@savedorganization=\count526
-\c@origlocation=\count527
-\c@savedoriglocation=\count528
-\c@origpublisher=\count529
-\c@savedorigpublisher=\count530
-\c@publisher=\count531
-\c@savedpublisher=\count532
-\c@language=\count533
-\c@savedlanguage=\count534
-\c@origlanguage=\count535
-\c@savedoriglanguage=\count536
-\c@pageref=\count537
-\c@savedpageref=\count538
-\shorthandwidth=\skip83
-\shortjournalwidth=\skip84
-\shortserieswidth=\skip85
-\shorttitlewidth=\skip86
-\shortauthorwidth=\skip87
-\shorteditorwidth=\skip88
-\locallabelnumberwidth=\skip89
-\locallabelalphawidth=\skip90
-\localshorthandwidth=\skip91
-\localshortjournalwidth=\skip92
-\localshortserieswidth=\skip93
-\localshorttitlewidth=\skip94
-\localshortauthorwidth=\skip95
-\localshorteditorwidth=\skip96
+\c@afterword=\count443
+\c@savedafterword=\count444
+\c@annotator=\count445
+\c@savedannotator=\count446
+\c@author=\count447
+\c@savedauthor=\count448
+\c@bookauthor=\count449
+\c@savedbookauthor=\count450
+\c@commentator=\count451
+\c@savedcommentator=\count452
+\c@editor=\count453
+\c@savededitor=\count454
+\c@editora=\count455
+\c@savededitora=\count456
+\c@editorb=\count457
+\c@savededitorb=\count458
+\c@editorc=\count459
+\c@savededitorc=\count460
+\c@foreword=\count461
+\c@savedforeword=\count462
+\c@holder=\count463
+\c@savedholder=\count464
+\c@introduction=\count465
+\c@savedintroduction=\count466
+\c@namea=\count467
+\c@savednamea=\count468
+\c@nameb=\count469
+\c@savednameb=\count470
+\c@namec=\count471
+\c@savednamec=\count472
+\c@translator=\count473
+\c@savedtranslator=\count474
+\c@shortauthor=\count475
+\c@savedshortauthor=\count476
+\c@shorteditor=\count477
+\c@savedshorteditor=\count478
+\c@labelname=\count479
+\c@savedlabelname=\count480
+\c@institution=\count481
+\c@savedinstitution=\count482
+\c@lista=\count483
+\c@savedlista=\count484
+\c@listb=\count485
+\c@savedlistb=\count486
+\c@listc=\count487
+\c@savedlistc=\count488
+\c@listd=\count489
+\c@savedlistd=\count490
+\c@liste=\count491
+\c@savedliste=\count492
+\c@listf=\count493
+\c@savedlistf=\count494
+\c@location=\count495
+\c@savedlocation=\count496
+\c@organization=\count497
+\c@savedorganization=\count498
+\c@origlocation=\count499
+\c@savedoriglocation=\count500
+\c@origpublisher=\count501
+\c@savedorigpublisher=\count502
+\c@publisher=\count503
+\c@savedpublisher=\count504
+\c@language=\count505
+\c@savedlanguage=\count506
+\c@origlanguage=\count507
+\c@savedoriglanguage=\count508
+\c@pageref=\count509
+\c@savedpageref=\count510
+\shorthandwidth=\skip81
+\shortjournalwidth=\skip82
+\shortserieswidth=\skip83
+\shorttitlewidth=\skip84
+\shortauthorwidth=\skip85
+\shorteditorwidth=\skip86
+\locallabelnumberwidth=\skip87
+\locallabelalphawidth=\skip88
+\localshorthandwidth=\skip89
+\localshortjournalwidth=\skip90
+\localshortserieswidth=\skip91
+\localshorttitlewidth=\skip92
+\localshortauthorwidth=\skip93
+\localshorteditorwidth=\skip94
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/biblatex/blx-compat.def
@@ -1293,19 +1181,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count539
-\c@textcitetotal=\count540
-\c@textcitemaxnames=\count541
-\c@biburlbigbreakpenalty=\count542
-\c@biburlbreakpenalty=\count543
-\c@biburlnumpenalty=\count544
-\c@biburlucpenalty=\count545
-\c@biburllcpenalty=\count546
+\c@textcitecount=\count511
+\c@textcitetotal=\count512
+\c@textcitemaxnames=\count513
+\c@biburlbigbreakpenalty=\count514
+\c@biburlbreakpenalty=\count515
+\c@biburlnumpenalty=\count516
+\c@biburlucpenalty=\count517
+\c@biburllcpenalty=\count518
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count547
+\c@smartand=\count519
 )
 Package biblatex Info: Trying to load bibliography style 'ext-authoryear-comp'...
 Package biblatex Info: ... file 'ext-authoryear-comp.bbx' found.
@@ -1324,12 +1212,12 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count548
-\c@bbx:relatedtotal=\count549
+\c@bbx:relatedcount=\count520
+\c@bbx:relatedtotal=\count521
 )
-\extbl@this@introcitewidth=\skip97
-\introcitewidth=\skip98
-\introcitesep=\skip99
+\extbl@this@introcitewidth=\skip95
+\introcitewidth=\skip96
+\introcitesep=\skip97
 Package biblatex Info: Delimiter 'innametitledelim' in context 'bib' already defined, overwriting.
 Package biblatex Info: Delimiter 'innametitledelim' in context 'biblist' already defined, overwriting.
 )
@@ -1402,69 +1290,55 @@ Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box142
-\pgfnodeparttwobox=\box143
-\pgfnodepartthreebox=\box144
-\pgfnodepartfourbox=\box145
-\pgfnodeparttwentybox=\box146
-\pgfnodepartnineteenbox=\box147
-\pgfnodeparteighteenbox=\box148
-\pgfnodepartseventeenbox=\box149
-\pgfnodepartsixteenbox=\box150
-\pgfnodepartfifteenbox=\box151
-\pgfnodepartfourteenbox=\box152
-\pgfnodepartthirteenbox=\box153
-\pgfnodeparttwelvebox=\box154
-\pgfnodepartelevenbox=\box155
-\pgfnodeparttenbox=\box156
-\pgfnodepartninebox=\box157
-\pgfnodeparteightbox=\box158
-\pgfnodepartsevenbox=\box159
-\pgfnodepartsixbox=\box160
-\pgfnodepartfivebox=\box161
+\pgfnodepartlowerbox=\box135
+\pgfnodeparttwobox=\box136
+\pgfnodepartthreebox=\box137
+\pgfnodepartfourbox=\box138
+\pgfnodeparttwentybox=\box139
+\pgfnodepartnineteenbox=\box140
+\pgfnodeparteighteenbox=\box141
+\pgfnodepartseventeenbox=\box142
+\pgfnodepartsixteenbox=\box143
+\pgfnodepartfifteenbox=\box144
+\pgfnodepartfourteenbox=\box145
+\pgfnodepartthirteenbox=\box146
+\pgfnodeparttwelvebox=\box147
+\pgfnodepartelevenbox=\box148
+\pgfnodeparttenbox=\box149
+\pgfnodepartninebox=\box150
+\pgfnodeparteightbox=\box151
+\pgfnodepartsevenbox=\box152
+\pgfnodepartsixbox=\box153
+\pgfnodepartfivebox=\box154
 )) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen348
-\pgfarrowlength=\dimen349
-\pgfarrowwidth=\dimen350
-\pgfarrowlinewidth=\dimen351
+\pgfarrowinset=\dimen333
+\pgfarrowlength=\dimen334
+\pgfarrowwidth=\dimen335
+\pgfarrowlinewidth=\dimen336
 ) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/tikzmark/tikzlibrarytikzmark.code.tex
 File: tikzlibrarytikzmark.code.tex 2022/08/24 v1.15 TikZ library for marking positions in a document
-\l__sn_x_dim=\dimen352
-\l__sn_y_dim=\dimen353
-\l__sn_xa_dim=\dimen354
-\l__sn_ya_dim=\dimen355
+\l__sn_x_dim=\dimen337
+\l__sn_y_dim=\dimen338
+\l__sn_xa_dim=\dimen339
+\l__sn_ya_dim=\dimen340
 ) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryangles.code.tex
 File: tikzlibraryangles.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-\c@tikzmarkalign=\count550
+\c@tikzmarkalign=\count522
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-runsystem(which pygmentize && touch main.aex)...disabled (restricted).
-
-
-
-/Users/taylor/Downloads/CSPB 2270 - Computer Science 2_ Data Structures/main.tex:25: Package minted Error: You must have `pygmentize' installed to use this package.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 \begin{document}
-                     
-Refer to the installation instructions in the minted documentation for more information.
-
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 25.
-(/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/lm/t1lmr.fd
+ (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./main.aux)
 \openout1 = `main.aux'.
@@ -1489,17 +1363,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count551
-\scratchdimen=\dimen356
-\scratchbox=\box162
-\nofMPsegments=\count552
-\nofMParguments=\count553
-\everyMPshowfont=\toks69
-\MPscratchCnt=\count554
-\MPscratchDim=\dimen357
-\MPnumerator=\count555
-\makeMPintoPDFobject=\count556
-\everyMPtoPDFconversion=\toks70
+\scratchcounter=\count523
+\scratchdimen=\dimen341
+\scratchbox=\box155
+\nofMPsegments=\count524
+\nofMParguments=\count525
+\everyMPshowfont=\toks67
+\MPscratchCnt=\count526
+\MPscratchDim=\dimen342
+\MPnumerator=\count527
+\makeMPintoPDFobject=\count528
+\everyMPtoPDFconversion=\toks68
 ) (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1508,10 +1382,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-\c@lstlisting=\count557
+\c@lstlisting=\count529
 Package hyperref Info: Link coloring ON on input line 25.
-\@outlinefile=\write7
-\openout7 = `main.out'.
+(./main.out) (./main.out)
+\@outlinefile=\write5
+\openout5 = `main.out'.
+
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1568,8 +1444,8 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen358
-\caption@adjustwidth@linewidth=\dimen359
+\caption@adjustwidth@hsize=\dimen343
+\caption@adjustwidth@linewidth=\dimen344
 Package caption Info: End \AtBeginDocument code.
  (/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
@@ -1588,7 +1464,7 @@ File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout6 = `main.bcf'.
+\openout4 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
@@ -1598,12 +1474,12 @@ Package biblatex Info: Reference segment=0 on input line 25.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
-<Figures/CU Wordmark.png, id=43, 1066.98625pt x 1027.84pt>
+<Figures/CU Wordmark.png, id=99, 1066.98625pt x 1027.84pt>
 File: Figures/CU Wordmark.png Graphic file (type png)
 <use Figures/CU Wordmark.png>
 Package pdftex.def Info: Figures/CU Wordmark.png  used on input line 30.
 (pdftex.def)             Requested size: 71.13188pt x 68.52145pt.
-<Figures/CU Seal.png, id=45, 803.0pt x 803.0pt>
+<Figures/CU Seal.png, id=101, 803.0pt x 803.0pt>
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 30.
@@ -1612,7 +1488,7 @@ Package pdftex.def Info: Figures/CU Seal.png  used on input line 30.
 
 
 {/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./Figures/CU Seal.png> <./Figures/CU Wordmark.png>] (./Tex Files/Introduction.tex
-\c@ttl@toc@sections=\count558
+\c@ttl@toc@sections=\count530
 
 Chapter 1.
 (./main.ptc
@@ -1727,15 +1603,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 110.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
+
+ []
+
 )
-\tf@ptc=\write8
-\openout8 = `main.ptc'.
+Underfull \hbox (badness 10000) in paragraph at lines 127--40
+
+ []
+
+\tf@ptc=\write6
+\openout6 = `main.ptc'.
 
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 41.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [7]
+[8]
 
 LaTeX Warning: Empty bibliography on input line 41.
 
@@ -1745,47 +1669,25 @@ enddocument/afterlastpage: lastpage setting LastPage.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  66DB7E95182952A21334A0F82E69BAFD;2021.
-
-Package lastpage Warning: Rerun to get the references right on input line 41.
-
-runsystem(rm main.pyg)...disabled (restricted).
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 66DB7E95182952A21334A0F82E69BAFD;2021.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60598 strings out of 476025
- 1379768 string characters out of 5780034
- 2500490 words of memory out of 5000000
- 79875 multiletter control sequences out of 15000+600000
- 592214 words of font info for 152 fonts, out of 8000000 for 9000
+ 57879 strings out of 476025
+ 1317250 string characters out of 5780034
+ 2396088 words of memory out of 5000000
+ 77181 multiletter control sequences out of 15000+600000
+ 592828 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,13n,131p,1140b,2825s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,13n,131p,1163b,2825s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on main.pdf (7 pages, 406979 bytes).
+Output written on main.pdf (8 pages, 414575 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 45223 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 45335 words of extra memory for PDF output out of 51595 (max. 10000000)
 
