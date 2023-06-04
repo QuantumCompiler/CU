@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1685851728 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1685852101 -1
   "./bib.bib" 1685833931 630 cd36c0fd067ca8f5b5f67415192ee737 ""
-  "main.bcf" 1685851728 109251 c09beb39328eaef2015c675a5706bcfe "pdflatex"
+  "main.bcf" 1685852100 109251 c09beb39328eaef2015c675a5706bcfe "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1685851723 "/Users/taylor/Downloads/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes/main.tex" "main.pdf" "main" 1685851728 0
-  "/Users/taylor/Downloads/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes/main.tex" 1685848063 1741 979882a391d62871a37fc350add62441 ""
+["pdflatex"] 1685852097 "/Users/taylor/Downloads/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes/main.tex" "main.pdf" "main" 1685852101 0
+  "/Users/taylor/Downloads/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes/main.tex" 1685851822 1741 979882a391d62871a37fc350add62441 ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1678549815 2375 baa924870cfb487815765f9094cf3728 ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1678549815 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/map/fontname/texfonts.map" 1678549815 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -375,16 +375,16 @@
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1678549815 7884046 7da7ec43723541b1080dc65bd2841593 ""
   "Figures/CU Seal.png" 1685833931 267477 f4a732d12999f3da423910b765dbfd44 ""
   "Figures/CU Wordmark.png" 1685833931 21134 022015e41c793d2456afd64725729fe9 ""
-  "Tex Files/C++ Review - Debugging - Unit Testing.tex" 1685848030 19808 636c582ad0815e6bb59b59b4e6d1522c ""
+  "Tex Files/C++ Review - Debugging - Unit Testing.tex" 1685852044 19811 9b2c64441e9edf4859781890a05a3493 ""
   "Tex Files/Introduction.tex" 1685833931 7536 139723c6cf52325c7997702bfa03fa89 ""
-  "Tex Files/Object Orientation in C++ & ADT.tex" 1685851723 37502 07a5e3a462406d1526ad6a0fd8ce2fb6 ""
-  "main.aux" 1685851728 7880 47187c167e18a8e1b0e6e8020b3afdc1 "pdflatex"
+  "Tex Files/Object Orientation in C++ & ADT.tex" 1685852089 37513 f37fad9694653c93c5a6431d187121e0 ""
+  "main.aux" 1685852100 5973 509706933fb4fe2af32e1817b60a6f79 "pdflatex"
   "main.bbl" 1685833931 466 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.out" 1685851728 6019 59d08428523ff087def99ab562117166 "pdflatex"
-  "main.ptc" 1685851728 3045 c86359322ce02c070f697680aedc125e "pdflatex"
-  "main.run.xml" 1685851728 2596 0ba9485f68ce91728f3982c0a0838737 "pdflatex"
-  "main.tex" 1685848063 1741 979882a391d62871a37fc350add62441 ""
-  "solutionclass.cls" 1685843878 20429 aa43a2af2dd5226b4b211052ebf34cdd ""
+  "main.out" 1685852100 2797 7dd8de4fa36e3a5e962cff76cf708776 "pdflatex"
+  "main.ptc" 1685852100 1671 8fc3291966ce713571bd4e887597bf9f "pdflatex"
+  "main.run.xml" 1685852100 2596 0ba9485f68ce91728f3982c0a0838737 "pdflatex"
+  "main.tex" 1685851822 1741 979882a391d62871a37fc350add62441 ""
+  "solutionclass.cls" 1685851822 20429 aa43a2af2dd5226b4b211052ebf34cdd ""
   (generated)
   "main.aux"
   "main.bcf"
