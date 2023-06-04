@@ -79,6 +79,7 @@
 \usepackage{background} % Background image
 \usepackage{hyperref} % Hyperref package
 \usepackage{pdfpages} % Embed a pdf page
+\usepackage{listings}
 %---------------------------------------------------------------------------
 %	
 %---------------------------------------------------------------------------

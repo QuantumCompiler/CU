@@ -1,4 +1,7 @@
-\section{Week 2: Object Orientation in C++ \& ADT}
+\clearpage
+\chapter{Week 2}
+
+\section{Object Orientation in C++ \& ADT}
 \horizontalline
 
 \subsection{Activities}
@@ -28,3 +31,647 @@ Here are the lectures that can be found for this week:
 
 \subsection{Programming Assignment}
 The programming assignment for Week 2 - \href{https://github.com/cu-cspb-2270-Summer-2023/pa1-RelativiBit}{Vector10}
+
+\subsection{Notes}
+The chapters of this week is Chapter 2 - Objects and Classes and Chapter 3 - Introduction to Algorithms. \\
+
+\subsection{Sec. 2.1 - Objects: Introduction}
+\noindent \textbf{Objects} \\
+
+Objects are fundamental concepts in object-oriented programming (OOP) that represent real-world entities or abstract concepts. They encapsulate both data (attributes) and behavior (methods), allowing for modular and reusable
+code, enhanced code oganization, and modeling of complex systems. Objects promote the principles of encapsulation, inheritence, and polymorphism, facilitating efficient and modular software development.
+
+\begin{solution}[Objects Example]
+    Here is a simple example of objects in C++: \\
+    \horizontalline
+    \begin{verbatim}
+    class Person {
+    private:
+        std::string name;
+        int age;
+    
+    public:
+        Person(const std::string& name, int age) : name(name), age(age) {}
+
+        void displayInfo() {
+            std::cout << "Name: " << name << ", Age: " << age << std::endl;
+        }
+    };
+
+    int main() {
+        Person person("John", 25);
+        person.displayInfo();
+        return 0;
+    }
+    \end{verbatim} \\
+    \horizontalline
+    In this example, the Car class represents a car with a make, model, and year. An object of type Car named car is created in the main function, and its displayInfo method is called to print the car's make, model, and year.
+\end{solution}
+
+\noindent \textbf{Abstraction} \\
+
+Abstraction is a core concept in computer programming, helping to simplify complex systems by focusing on important aspects and hiding unnecessary details. It involves representing real-world objects or systems in a generalized 
+way using classes and objects. Through abstraction, we create abstract classes that define a common interface and behavior for related objects while hiding implementation specifics. This allows us to manage system complexity, 
+improve code organization, and promote reusability. Abstraction is crucial for creating modular, scalable, and maintainable software systems, allowing us to work at higher levels of abstraction without getting caught up in implementation intricacies.
+
+\begin{solution}[Abstraction Example]
+    An example of abstraction can be seen below: \\
+    \horizontalline
+    \begin{verbatim}
+    #include <iostream>
+
+    // Abstract class
+    class Shape {
+    public:
+        virtual void draw() = 0;  // Pure virtual function
+        
+        void printName() {
+            std::cout << "Shape" << std::endl;
+        }
+    };
+
+    // Concrete class
+    class Circle : public Shape {
+    public:
+        void draw() override {
+            std::cout << "Drawing a circle." << std::endl;
+        }
+    };
+
+    // Concrete class
+    class Rectangle : public Shape {
+    public:
+        void draw() override {
+            std::cout << "Drawing a rectangle." << std::endl;
+        }
+    };
+
+    int main() {
+        // Creating objects of concrete classes
+        Circle circle;
+        Rectangle rectangle;
+        
+        // Using the abstract class pointer to achieve abstraction
+        Shape* shapePtr = nullptr;
+        
+        // Polymorphic behavior
+        shapePtr = &circle;
+        shapePtr->draw();  // Calls draw() of Circle class
+        
+        shapePtr = &rectangle;
+        shapePtr->draw();  // Calls draw() of Rectangle class
+        
+        shapePtr->printName();  // Calls printName() of Shape class
+        
+        return 0;
+    }
+    \end{verbatim} \\
+    \horizontalline
+
+    This code demonstrates the concept of abstraction and polymorphism using an example of shapes. It defines an abstract class called "Shape" with a pure virtual function "draw()" and a non-virtual function "printName()". Two concrete classes, 
+    "Circle" and "Rectangle", inherit from the abstract class and provide their own implementations of the "draw()" function. \\
+
+    \noindent In the main function, objects of the concrete classes are created. An abstract class pointer, "shapePtr", is used to achieve abstraction. The pointer is assigned the address of the "Circle" object, and the "draw()" function is called, resulting
+    in the message "Drawing a circle." Similarly, the pointer is assigned the address of the "Rectangle" object, and the "draw()" function is called, resulting in the message "Drawing a rectangle." This demonstrates polymorphic behavior, where the
+    appropriate "draw()" function is called based on the object type. \\
+
+    \noindent Additionally, the "printName()" function of the abstract class is called using the abstract class pointer. This function is not overridden in the concrete classes, so the implementation in the abstract class is invoked, printing the message 
+    "Shape". \\
+
+    \noindent Overall, this code illustrates the use of abstract classes, pure virtual functions, inheritance, and polymorphism to achieve abstraction and enable the flexible handling of different objects through a common interface. It showcases the power 
+    of using abstract classes and polymorphism to create modular and extensible code for working with related objects in a data structures context. \\
+\end{solution}
+
+\subsection{Sec. 2.2 - Using a Class}
+\noindent \textbf{Public Member Functions} \\
+
+Public member functions in object-oriented programming allow objects to interact with each other and provide functionality to the outside world. They define the behavior and operations that objects of a class can perform, encapsulating the logic and operations
+related to the class. Public member functions serve as an interface through which users can interact with objects, accessing and utilizing the functionality provided without exposing the internal implementation details. They promote code reusability, encapsulation, 
+and maintainability, ensuring controlled access to object behavior and enabling modular design in object-oriented programming. \\
+
+\begin{solution}[Public Member Functions Example]
+    Below is an example of Public Member Functions in C++: \\
+    \horizontalline
+    \begin{verbatim}
+    #include <iostream>
+
+    class Rectangle {
+    private:
+        int width;
+        int height;
+        
+    public:
+        void setDimensions(int w, int h) {
+            width = w;
+            height = h;
+        }
+        
+        int calculateArea() {
+            return width * height;
+        }
+        
+        void printInfo() {
+            std::cout << "Width: " << width << ", Height: " << height << std::endl;
+        }
+    };
+    
+    int main() {
+        Rectangle rect;
+        
+        rect.setDimensions(5, 3);
+        int area = rect.calculateArea();
+        std::cout << "Area: " << area << std::endl;
+        
+        rect.printInfo();
+        
+        return 0;
+    }
+    \end{verbatim} \\
+    \horizontalline
+
+    This code example demonstrates the concept of public member functions in C++. It defines a Rectangle class with private member variables for width and height. The class provides three public member functions: setDimensions(), calculateArea(), and printInfo(). \\
+
+    \noindent The setDimensions() function allows users to set the width and height of the rectangle by passing the values as parameters. The calculateArea() function performs the calculation of the rectangle's area by multiplying the width and height and returns the 
+    result. Finally, the printInfo() function prints the width and height of the rectangle to the console. \\
+
+    \noindent In the main() function, an object of the Rectangle class is created, and the public member functions are utilized to set the dimensions of the rectangle, calculate its area, and print the information. This example showcases how public member functions 
+    provide an interface for interacting with objects, allowing users to manipulate data, perform computations, and retrieve information in a controlled manner, promoting encapsulation and modular design in C++ programming. \\
+\end{solution}
+
+\subsection{Sec. 2.3 - Defining a Class}
+\noindent \textbf{Private Data Members} \\
+
+In object-oriented programming (OOP), private data members are a fundamental concept that allows for encapsulation and data hiding. Private data members are variables declared within a class that can only be accessed or modified by member functions within the same class. 
+By designating data members as private, they are shielded from direct access by code outside the class, ensuring that the internal state and implementation details of an object are protected. This encapsulation promotes data integrity, enhances code maintainability, and 
+prevents external code from inadvertently modifying or corrupting the object's data. Private data members facilitate information hiding and abstraction, allowing objects to maintain their integrity while providing controlled access to their functionality through public 
+member functions. \\
+
+\begin{solution}[Private Data Members Example]
+    Here is an example of private data members in C++: \\
+    \horizontalline
+    \begin{verbatim}
+    #include <iostream>
+
+    class BankAccount {
+    private:
+        std::string accountNumber;
+        double balance;
+        
+    public:
+        void deposit(double amount) {
+            balance += amount;
+        }
+        
+        void withdraw(double amount) {
+            if (amount <= balance) {
+                balance -= amount;
+            } else {
+                std::cout << "Insufficient balance." << std::endl;
+            }
+        }
+        
+        void displayBalance() {
+            std::cout << "Account balance: " << balance << std::endl;
+        }
+    };
+    
+    int main() {
+        BankAccount myAccount;
+        
+        myAccount.deposit(1000.0);
+        myAccount.displayBalance();
+        
+        myAccount.withdraw(500.0);
+        myAccount.displayBalance();
+        
+        myAccount.withdraw(800.0);
+        myAccount.displayBalance();
+        
+        return 0;
+    }
+    \end{verbatim} \\
+    \horizontalline
+
+    In the main() function, an object of the BankAccount class is created. Public member functions are used to deposit an amount, display the balance, withdraw amounts, and display the updated balance. \\
+
+    \noindent By making the accountNumber and balance private, they cannot be directly accessed or modified from outside the class. This ensures the encapsulation and data hiding of sensitive information. 
+    Users can interact with the bank account object through the public member functions, maintaining data integrity and preventing unauthorized access to or modification of the private data members. \\
+
+    \noindent This example illustrates how private data members in C++ provide encapsulation and data hiding. By hiding the internal implementation details, the class enforces controlled access to the data 
+    and protects it from unauthorized manipulation. Private data members facilitate proper data management and security within an object, ensuring that only the intended interface, defined by public member 
+    functions, is used to interact with and modify the object's state. \\
+\end{solution}
+
+\subsection{Sec. 2.4 - Inline Member Functions}
+\noindent \textbf{Inline Member Functions} \\
+
+An inline member function in C++ is a function that is defined within a class declaration and is marked with the inline keyword. When a member function is declared as inline, it suggests to the compiler that 
+the function should be expanded at the point of its call instead of being invoked through a function call. This expansion replaces the function call with the actual code of the function, eliminating the overhead 
+of the function call itself. Inline member functions are typically used for small and frequently used functions to improve performance by reducing the function call overhead. They provide a mechanism for code 
+optimization and are especially useful when the function body is simple, making it more efficient to replace the function call with the actual code. \\
+
+\begin{solution}[Inline Member Function Example]
+    Below is an example of inline member functions: \\
+    \horizontalline
+    \begin{verbatim}
+    #include <iostream>
+
+    class Rectangle {
+    private:
+        int width;
+        int height;
+        
+    public:
+        void setDimensions(int w, int h) {
+            width = w;
+            height = h;
+        }
+        
+        // Inline member function
+        inline int calculateArea() {
+            return width * height;
+        }
+    };
+    
+    int main() {
+        Rectangle rect;
+        
+        rect.setDimensions(5, 3);
+        int area = rect.calculateArea();
+        
+        std::cout << "Area: " << area << std::endl;
+        
+        return 0;
+    }        
+    \end{verbatim} \\
+    \horizontalline
+
+    In this example, we have a Rectangle class with private data members width and height. The class provides two member functions: setDimensions() and calculateArea(). The setDimensions() function sets the width 
+    and height of the rectangle, while the calculateArea() function calculates the area of the rectangle by multiplying its width and height. \\
+
+    \noindent The calculateArea() function is declared as an inline member function by using the inline keyword before the function declaration. This suggests to the compiler that the function should be expanded 
+    at the point of its call. In this case, when calculateArea() is called, the compiler replaces the function call with the actual code of the function, eliminating the overhead of the function call. \\
+
+    \noindent In the main() function, an object of the Rectangle class is created. The setDimensions() function is called to set the width and height of the rectangle. Then, the calculateArea() function is invoked 
+    to calculate the area of the rectangle, and the result is printed to the console. \\
+
+    \noindent This example demonstrates how inline member functions can be used to optimize code performance by reducing the overhead of function calls. By marking the calculateArea() function as inline, the compiler 
+    expands the function call at the point of invocation, avoiding the function call overhead and providing direct access to the function's code. Inline member functions are particularly useful for small and frequently 
+    used functions, where the expansion at the call site can lead to performance improvements. \\
+\end{solution}
+
+\subsection{Sec. 2.5 - Mutators, Accessors, \& Private Helpers}
+\noindent \textbf{Mutators \& Accessors}
+
+Mutators and accessors are two types of member functions commonly used in object-oriented programming to manipulate and retrieve the values of private data members of a class. Mutators, also known as setter functions or 
+modifiers, are used to modify the values of private data members by accepting parameters and updating the internal state of the object. They provide a controlled way to change the values of the object's attributes while 
+enforcing any necessary validation or business rules. Accessors, also known as getter functions or inspectors, are used to retrieve the values of private data members without allowing direct access to them. They return 
+the values of private data members, allowing users to access the object's attributes in a read-only manner. Mutators and accessors play a crucial role in encapsulation, providing an interface to manipulate and retrieve 
+the object's state while maintaining data integrity, encapsulation, and abstraction. They allow for controlled interaction with the object's data and facilitate modular design and code maintainability by separating the 
+implementation details from the external interface of the class. \\
+
+\begin{solution}[Mutators \& Accessors Example]
+    Below is an example of mutators \& accessors in C++: \\
+    \horizontalline
+    \begin{verbatim}
+    #include <iostream>
+
+    class Circle {
+    private:
+        double radius;
+        
+    public:
+        // Mutator
+        void setRadius(double r) {
+            if (r >= 0) {
+                radius = r;
+            }
+        }
+        
+        // Accessor
+        double getRadius() const {
+            return radius;
+        }
+        
+        double calculateArea() const {
+            return 3.14 * radius * radius;
+        }
+    };
+    
+    int main() {
+        Circle myCircle;
+        
+        myCircle.setRadius(5.0);
+        double radius = myCircle.getRadius();
+        double area = myCircle.calculateArea();
+        
+        std::cout << "Radius: " << radius << std::endl;
+        std::cout << "Area: " << area << std::endl;
+        
+        return 0;
+    }        
+    \end{verbatim} \\
+    \horizontalline
+
+    In this example, we have a Circle class with a private data member radius. The class provides two member functions: setRadius() and getRadius(). \\
+
+    \noindent The setRadius() function is a mutator that allows users to set the value of the radius data member. It accepts a parameter r and updates the radius only if the value is non-negative. \\
+
+    \noindent The getRadius() function is an accessor that returns the value of the radius data member. It allows users to retrieve the value of radius without directly accessing the private data member. \\
+
+    \noindent In the main() function, an object of the Circle class is created. The setRadius() mutator is called to set the radius of the circle to 5.0. The getRadius() accessor is then used to retrieve the value of the 
+    radius, and the calculateArea() function is invoked to calculate the area of the circle. Finally, the radius and area are printed to the console. \\
+
+    \noindent This example demonstrates how mutators and accessors provide a controlled interface for manipulating and retrieving the values of private data members. The mutator setRadius() allows users to set the radius 
+    of the circle, while the accessor getRadius() allows them to retrieve the radius. By encapsulating the private data member and providing these member functions, the class ensures data integrity and abstraction. Users 
+    can interact with the object through the mutators and accessors without direct access to the private data member, promoting encapsulation and modular design in C++ programming. \\
+\end{solution}
+
+\subsection{Sec. 2.6 - Initialization \& Constructors}
+\noindent \textbf{Data Member Initialization} \\
+
+Data member initialization in C++ allows you to assign initial values to the data members of a class when objects are created. It provides a convenient way to ensure that data members have valid initial values and avoids 
+the need for separate initialization steps. Data member initialization can be done using two approaches: member initialization list and default member initializer. Member initialization list initializes data members directly 
+in the constructor's initialization list, while default member initializer assigns values to data members directly in the class declaration. By initializing data members during object creation, you can ensure that the object 
+starts in a consistent state and avoid potential bugs or undefined behavior caused by uninitialized data. Data member initialization enhances code readability, simplifies object construction, and promotes good programming 
+practices in C++. \\
+
+\begin{solution}[Data Member Initialization Example]
+    Here is an example of data member initialization in C++. \\
+    \horizontalline
+    \begin{verbatim}
+    #include <iostream>
+
+    class Rectangle {
+    private:
+        int width;
+        int height;
+    
+    public:
+        // Constructor with member initialization list
+        Rectangle(int w, int h) : width(w), height(h) {
+            // Additional constructor code, if needed
+        }
+    
+        // Default member initializer
+        int area = width * height;
+    
+        void printArea() {
+            std::cout << "Area: " << area << std::endl;
+        }
+    };
+    
+    int main() {
+        Rectangle rect(5, 3);
+        rect.printArea();
+    
+        return 0;
+    }        
+    \end{verbatim} \\
+    \horizontalline
+
+    In this example, we have a Rectangle class with private data members width and height. There are two ways to initialize these data members. \\
+
+    \noindent Firstly, in the constructor declaration, we use a member initialization list to initialize the width and height data members directly. The constructor takes two parameters w and h, and the member initialization 
+    list assigns these values to the corresponding data members. \\
+
+    \noindent Secondly, we can use default member initializer directly in the class declaration. In this case, we initialize the area data member using a default member initializer, which calculates the area as the product 
+    of width and height. \\
+
+    \noindent In the main() function, we create an object of the Rectangle class named rect with width 5 and height 3. The constructor initializes the width and height data members using the member initialization list. The 
+    printArea() function is called, which displays the calculated area of the rectangle. \\
+
+    \noindent This example demonstrates how data member initialization can be done using member initialization list in the constructor or default member initializer in the class declaration. It ensures that the data members 
+    have valid initial values when objects are created, simplifies object construction, and promotes code readability. Data member initialization is a useful feature in C++ that helps ensure the consistency and integrity of 
+    objects' initial states. \\
+\end{solution}
+
+\noindent \textbf{Constructors} \\
+
+Constructors in object-oriented programming (OOP) are special member functions that are responsible for initializing objects of a class. They are called automatically when an object is created and allow you to set the initial 
+state of the object. Constructors have the same name as the class and can have parameters to receive values required for initialization. They can perform various tasks, such as allocating memory, initializing data members, 
+setting default values, and executing other necessary initialization logic. Constructors play a crucial role in object creation and ensure that objects start in a valid and consistent state. They promote encapsulation, as 
+they provide a controlled way to initialize objects and enforce any necessary validation or business rules during the creation process. Constructors contribute to code readability, reusability, and maintainability by encapsulating 
+the object initialization logic within the class itself. \\
+
+\begin{solution}[Constructors Example]
+    Here is an example of constructors in C++: \\
+    \horizontalline
+    \begin{verbatim}
+    #include <iostream>
+
+    class Rectangle {
+    private:
+        int width;
+        int height;
+    
+    public:
+        // Default constructor
+        Rectangle() {
+            width = 0;
+            height = 0;
+        }
+    
+        // Parameterized constructor
+        Rectangle(int w, int h) {
+            width = w;
+            height = h;
+        }
+    
+        void printDimensions() {
+            std::cout << "Width: " << width << ", Height: " << height << std::endl;
+        }
+    };
+    
+    int main() {
+        // Creating objects using constructors
+        Rectangle rect1; // Default constructor called
+        Rectangle rect2(5, 3); // Parameterized constructor called
+    
+        // Printing dimensions
+        rect1.printDimensions(); // Output: Width: 0, Height: 0
+        rect2.printDimensions(); // Output: Width: 5, Height: 3
+    
+        return 0;
+    }        
+    \end{verbatim} \\
+    \horizontalline
+
+    In this example, we have a Rectangle class with private data members width and height. The class provides two constructors: a default constructor and a parameterized constructor. \\
+
+    \noindent The default constructor initializes the width and height to 0. It is called automatically when an object is created without any arguments, as in the case of rect1. \\
+
+    \noindent The parameterized constructor takes two arguments w and h and initializes the width and height using the provided values. It is called when an object is created with specific values, 
+    as in the case of rect2. \\
+
+    \noindent In the main() function, we create two objects of the Rectangle class, rect1 and rect2, using the constructors. We then call the printDimensions() function to display the dimensions 
+    of the rectangles. \\
+
+    \noindent This example demonstrates how constructors are used to initialize objects of a class. The default constructor allows objects to be created with default values, while the parameterized constructor 
+    allows objects to be created with custom values. Constructors enable proper initialization of objects, ensuring they start in a valid state. They provide flexibility and encapsulation in object 
+    creation, enhancing code readability and maintainability. \\
+\end{solution}
+
+\subsection{Sec. 2.7 - Classes and Vectors / Classes}
+\noindent \textbf{Vectors} \\
+
+The `std::vector' class in C++ is a dynamic array container that provides a flexible and convenient way to store and manipulate a sequence of elements. It allows for dynamic resizing, efficient element access, insertion, and deletion 
+at both ends, and provides various member functions to perform common operations on the elements. Vectors are templated, which means they can store elements of any type, providing great flexibility. They offer automatic memory management, 
+handling memory allocation and deallocation internally. Vectors are widely used in C++ programming due to their versatility, efficiency, and ease of use, making them a fundamental data structure for managing collections of elements. \\
+
+\begin{solution}[Vectors Example]
+    Here is an example of the `vectors' class in C++: \\
+    \horizontalline
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    int main() {
+        // Create a vector of integers
+        std::vector<int> numbers;
+    
+        // Add elements to the vector
+        numbers.push_back(10);
+        numbers.push_back(20);
+        numbers.push_back(30);
+    
+        // Access elements using indexing
+        std::cout << "First element: " << numbers[0] << std::endl;
+        std::cout << "Second element: " << numbers[1] << std::endl;
+        std::cout << "Third element: " << numbers[2] << std::endl;
+    
+        // Iterate over the vector using a loop
+        std::cout << "All elements: ";
+        for (int i = 0; i < numbers.size(); i++) {
+            std::cout << numbers[i] << " ";
+        }
+        std::cout << std::endl;
+    
+        // Remove the last element
+        numbers.pop_back();
+    
+        // Check the size of the vector
+        std::cout << "Size of vector: " << numbers.size() << std::endl;
+    
+        return 0;
+    }        
+    \end{verbatim} \\
+    \horizontalline
+
+    In this example, we include the necessary header files for using std::vector. We create a vector named numbers that stores integers. \\
+
+    \noindent We use the push\_back() function to add elements to the vector. In this case, we add the integers 10, 20, and 30 to the vector. We access elements of the vector using indexing, such as numbers[0] to access the first element. We iterate 
+    over the vector using a loop and print all the elements. We use the pop\_back() function to remove the last element from the vector. Finally, we check the size of the vector using the size() function. \\
+
+    \noindent This example demonstrates the basic usage of std::vector in C++. It shows how to create a vector, add elements, access elements using indexing, iterate over the vector, remove elements, and check the size. The std::vector class 
+    provides a convenient and flexible way to work with dynamic arrays, making it a powerful data structure in C++ for managing collections of elements. \\
+\end{solution}
+
+\subsection{Sec. 2.8 - Separate Files for Classes}
+\noindent \textbf{Two Files Per Class} \\
+
+Separate files for classes in C++ programs provide a modular approach to organizing code. Each class is defined in its own header file, containing the class declaration, and the member function implementations are placed in a corresponding source 
+file. This practice enhances code organization, readability, and reusability. It simplifies navigation, allowing developers to quickly locate and modify code related to specific classes. Separating classes into individual files also promotes code 
+reuse by facilitating their inclusion in other projects. Additionally, it aids in managing dependencies, prevents name conflicts, and simplifies maintenance and debugging. Overall, utilizing separate files for classes in C++ programs improves code 
+structure and facilitates the development and management of complex projects. \\
+
+\subsection{Sec. 2.9 - Choosing Classes to Create}
+\noindent \textbf{Decomposing Into Classes} \\
+
+When creating classes in Object-Oriented Programming (OOP), it is important to follow certain guidelines to ensure a well-designed and effective class structure. Start by identifying the attributes and behaviors that define the class's purpose and 
+responsibilities. Encapsulate the data by declaring private data members and provide public access through member functions. Design intuitive and descriptive names for the class and its members. Establish clear and meaningful relationships between 
+classes, using inheritance and composition when appropriate. Implement appropriate constructors, destructors, and assignment operators to manage the lifecycle of objects. Strive for cohesive and focused classes with single responsibilities. Apply 
+principles like encapsulation, abstraction, inheritance, and polymorphism to achieve modularity, code reusability, and maintainability. Document the class with clear comments and adhere to coding style conventions for consistency. Regularly review 
+and refine the class design as needed to ensure a well-structured and efficient implementation. \\
+
+\subsection{Sec. 2.10 - Unit Testing (Classes)}
+\noindent \textbf{Testbenches} \\
+
+In Object-Oriented Programming (OOP), a test bench refers to a dedicated component or code module designed to test and validate the functionality of other classes or modules in a system. It serves as an environment for conducting systematic and comprehensive 
+testing of software components. A test bench provides a controlled setting to simulate different scenarios and input conditions, allowing developers to verify the correctness and robustness of their code. It typically includes test cases, input data, and expected 
+output values, along with mechanisms to execute the tests and compare the actual results against the expected ones. By using test benches, developers can identify and rectify issues early in the development process, ensuring the quality and reliability of the 
+software. Test benches play a crucial role in achieving effective testing and debugging practices, enabling thorough assessment and validation of object-oriented systems. \\
+
+\noindent \textbf{Regression Testing} \\
+
+In Object-Oriented Programming (OOP), regression testing refers to the process of retesting previously tested code to ensure that any modifications or enhancements to the system do not introduce new defects or regressions. It involves rerunning existing test cases 
+on the modified code to verify that the changes made to the system have not adversely affected its existing functionality. Regression testing is crucial for maintaining the stability and reliability of software systems, especially in complex object-oriented projects 
+where changes in one module can have unintended consequences on other interconnected modules. By performing regression testing, developers can identify and fix any regressions or unintended side effects caused by code modifications, ensuring that the system continues 
+to function as expected and previous functionalities are not compromised. Regression testing is an integral part of the software development lifecycle, providing confidence in the system's integrity and minimizing the risk of introducing new defects during the development 
+and maintenance phases. \\
+
+\noindent \textbf{Erroneous Unit Tests} \\
+
+Erroneous unit tests refer to test cases or test code that are flawed or incorrect, resulting in inaccurate or misleading test results. These tests may have various issues, such as incorrect assumptions, flawed logic, inadequate coverage, or improper assertions. Erroneous 
+unit tests can lead to false positives or false negatives, where passing tests falsely indicate correct functionality or failing tests erroneously indicate defects. Such tests can be problematic as they can give a false sense of security or create confusion during the development 
+process. It is important to identify and rectify erroneous unit tests promptly to ensure the reliability and effectiveness of the testing process. Conducting regular code reviews, employing static analysis tools, and encouraging collaboration and knowledge sharing within the 
+development team can help in identifying and addressing erroneous unit tests, resulting in more accurate and reliable testing outcomes. \\
+
+\begin{solution}[Unit Test Example]
+    Here is an example of unit testing classes in C++: \\
+    \horizontalline
+    \begin{verbatim}
+    // File: MyClass.h
+    #ifndef MYCLASS_H
+    #define MYCLASS_H
+    
+    class MyClass {
+    private:
+        int value;
+    
+    public:
+        MyClass(int val);
+    
+        int getValue() const;
+        void setValue(int val);
+    };
+    
+    #endif
+    
+    // File: MyClass.cpp
+    #include "MyClass.h"
+    
+    MyClass::MyClass(int val) : value(val) {}
+    
+    int MyClass::getValue() const {
+        return value;
+    }
+    
+    void MyClass::setValue(int val) {
+        value = val;
+    }
+    
+    // File: MyClassTest.cpp
+    #include <gtest/gtest.h>
+    #include "MyClass.h"
+    
+    TEST(MyClassTest, ConstructorSetsInitialValue) {
+        MyClass obj(42);
+        EXPECT_EQ(obj.getValue(), 42);
+    }
+    
+    TEST(MyClassTest, SettingNewValueUpdatesValue) {
+        MyClass obj(0);
+        obj.setValue(100);
+        EXPECT_EQ(obj.getValue(), 100);
+    }
+    
+    int main(int argc, char** argv) {
+        testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+    }        
+    \end{verbatim} \\
+    \horizontalline
+
+    In this example, we have a class called MyClass with a private member variable value and public member functions getValue() and setValue(). We write unit tests for this class using the Google Test framework. \\
+
+    \noindent In the MyClassTest.cpp file, we define two test cases using the TEST macro provided by Google Test. Each test case focuses on testing a specific aspect of the MyClass class. For example, one test case checks if the constructor sets the initial value correctly, and another 
+    test case verifies that setting a new value updates the value correctly. \\
+
+    \noindent The main function initializes the Google Test framework using testing::InitGoogleTest and runs all the defined tests using RUN\_ALL\_TESTS(). To compile and run the tests, you would need to include the Google Test framework and compile the test files along with it. \\
+
+    \noindent This example demonstrates how you can use unit testing to verify the behavior and correctness of your class implementation. Each test case focuses on a specific aspect of the class, ensuring that it behaves as expected in different scenarios. By running these tests, you can 
+    identify and address any issues or regressions in your class implementation, leading to more reliable and robust code. \\
+\end{solution}
+
+% Resume Section 2.11

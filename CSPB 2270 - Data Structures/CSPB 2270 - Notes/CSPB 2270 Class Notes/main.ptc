@@ -3,15 +3,34 @@
 \contentsline {chapter}{\numberline {1}CSPB 2270 Details}{2}{chapter.1}%
 \contentsline {section}{Class Description}{2}{section*.1}%
 \contentsline {subsection}{\numberline {1.0.1}Brief Description of Course Content}{2}{subsection.1.0.1}%
-\contentsline {subsection}{\numberline {1.0.2}Specific Goals}{2}{subsection.1.0.2}%
+\contentsline {subsection}{\numberline {1.0.2}Specific Goals}{3}{subsection.1.0.2}%
 \contentsline {subsection}{\numberline {1.0.3}Instructor Information}{4}{subsection.1.0.3}%
 \contentsline {subsection}{\numberline {1.0.4}Important Dates}{4}{subsection.1.0.4}%
-\contentsline {subsection}{\numberline {1.0.5}Grade Breakdown}{4}{subsection.1.0.5}%
+\contentsline {subsection}{\numberline {1.0.5}Grade Breakdown}{5}{subsection.1.0.5}%
 \contentsline {subsection}{\numberline {1.0.6}Grading Scale}{5}{subsection.1.0.6}%
 \contentsline {chapter}{\numberline {2}Week 1}{6}{chapter.2}%
 \contentsline {section}{C++ Review, Debugging, Unit Testing}{6}{section*.5}%
 \contentsline {subsection}{\numberline {2.0.1}Activities}{6}{subsection.2.0.1}%
-\contentsline {subsection}{\numberline {2.0.2}Lectures}{6}{subsection.2.0.2}%
+\contentsline {subsection}{\numberline {2.0.2}Lectures}{7}{subsection.2.0.2}%
 \contentsline {subsection}{\numberline {2.0.3}Programming Assignment}{7}{subsection.2.0.3}%
 \contentsline {subsection}{\numberline {2.0.4}Notes}{7}{subsection.2.0.4}%
+\contentsline {subsection}{\numberline {2.0.5}Sec. 1.1 - Data Structures}{7}{subsection.2.0.5}%
+\contentsline {subsection}{\numberline {2.0.6}Sec. 1.2 - Abstract Data Types}{9}{subsection.2.0.6}%
+\contentsline {subsection}{\numberline {2.0.7}Sec. 1.3 - Applications of ADTs}{12}{subsection.2.0.7}%
+\contentsline {chapter}{\numberline {3}Week 2}{13}{chapter.3}%
+\contentsline {section}{Object Orientation in C++ \& ADT}{13}{section*.6}%
+\contentsline {subsection}{\numberline {3.0.1}Activities}{13}{subsection.3.0.1}%
+\contentsline {subsection}{\numberline {3.0.2}Lectures}{14}{subsection.3.0.2}%
+\contentsline {subsection}{\numberline {3.0.3}Programming Assignment}{14}{subsection.3.0.3}%
+\contentsline {subsection}{\numberline {3.0.4}Notes}{14}{subsection.3.0.4}%
+\contentsline {subsection}{\numberline {3.0.5}Sec. 2.1 - Objects: Introduction}{14}{subsection.3.0.5}%
+\contentsline {subsection}{\numberline {3.0.6}Sec. 2.2 - Using a Class}{16}{subsection.3.0.6}%
+\contentsline {subsection}{\numberline {3.0.7}Sec. 2.3 - Defining a Class}{18}{subsection.3.0.7}%
+\contentsline {subsection}{\numberline {3.0.8}Sec. 2.4 - Inline Member Functions}{19}{subsection.3.0.8}%
+\contentsline {subsection}{\numberline {3.0.9}Sec. 2.5 - Mutators, Accessors, \& Private Helpers}{21}{subsection.3.0.9}%
+\contentsline {subsection}{\numberline {3.0.10}Sec. 2.6 - Initialization \& Constructors}{22}{subsection.3.0.10}%
+\contentsline {subsection}{\numberline {3.0.11}Sec. 2.7 - Classes and Vectors / Classes}{25}{subsection.3.0.11}%
+\contentsline {subsection}{\numberline {3.0.12}Sec. 2.8 - Separate Files for Classes}{26}{subsection.3.0.12}%
+\contentsline {subsection}{\numberline {3.0.13}Sec. 2.9 - Choosing Classes to Create}{27}{subsection.3.0.13}%
+\contentsline {subsection}{\numberline {3.0.14}Sec. 2.10 - Unit Testing (Classes)}{27}{subsection.3.0.14}%
 \contentsfinish 
