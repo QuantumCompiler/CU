@@ -1,7 +1,7 @@
-PWD /Users/taylor/Downloads/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes
+PWD /Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/web2c/texmf.cnf
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/taylor/Downloads/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes/main.tex
+INPUT /Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 Class Notes/main.tex
 OUTPUT main.log
 INPUT ./solutionclass.cls
 INPUT ./solutionclass.cls
@@ -2027,6 +2027,85 @@ INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/amsfonts/euler/eurm10.tfm
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
 OUTPUT main.ptc
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
@@ -2041,7 +2120,11 @@ INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmbx9.pfb
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
