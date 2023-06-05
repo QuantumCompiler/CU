@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1685939215 "main.bcf" "main.bbl" "main" 1685939226 0
-  "./bib.bib" 1685963890 630 cd36c0fd067ca8f5b5f67415192ee737 ""
-  "main.bcf" 1685939225 109251 c09beb39328eaef2015c675a5706bcfe "pdflatex"
+["biber main"] 1685939215 "main.bcf" "main.bbl" "main" 1685940391 0
+  "./bib.bib" 1685939306 630 cd36c0fd067ca8f5b5f67415192ee737 ""
+  "main.bcf" 1685940391 109251 c09beb39328eaef2015c675a5706bcfe "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1685939221 "/Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 - Chapter Notes/main.tex" "main.pdf" "main" 1685939226 0
-  "/Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 - Chapter Notes/main.tex" 1685939215 2045 b9ed5a54d37683e330a5564eed8fc477 ""
+["pdflatex"] 1685940386 "/Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 - Chapter Notes/main.tex" "main.pdf" "main" 1685940391 0
+  "/Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 - Chapter Notes/main.tex" 1685939723 2120 f38a10bedd4d3d3fe8ad722a9df4b0f0 ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1678549815 2375 baa924870cfb487815765f9094cf3728 ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1678549815 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1678549815 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -387,18 +387,19 @@
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1678549815 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/web2c/texmf.cnf" 1678549815 40748 4081c8bc921e56c865f975bd762e388c ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1678549815 7884046 7da7ec43723541b1080dc65bd2841593 ""
-  "Figures/CU Seal.png" 1685963890 267477 f4a732d12999f3da423910b765dbfd44 ""
-  "Figures/CU Wordmark.png" 1685963890 21134 022015e41c793d2456afd64725729fe9 ""
-  "Tex Files/C++ Review - Debugging - Unit Testing.tex" 1685963890 19810 3c43443067ae50a8ec04d9175ca8b600 ""
-  "Tex Files/Introduction.tex" 1685963890 7481 e76c663c0d5ab333c0f24125d5e0832a ""
-  "Tex Files/Object Orientation in C++ & ADT.tex" 1685963890 80127 f5c8c4f32132987403c230be7165066b ""
-  "main.aux" 1685939225 7275 1a1718e405246d4f73158664f604ff98 "pdflatex"
-  "main.bbl" 1685939216 466 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.out" 1685939225 2797 7dd8de4fa36e3a5e962cff76cf708776 "pdflatex"
-  "main.ptc" 1685939225 1671 8fc3291966ce713571bd4e887597bf9f "pdflatex"
-  "main.run.xml" 1685939225 2630 50c273569da99a7b41dee12a3fd40c33 "pdflatex"
-  "main.tex" 1685939215 2045 b9ed5a54d37683e330a5564eed8fc477 ""
-  "solutionclass.cls" 1685939212 20606 be7bd7d4487a4b09ffa95a764df3e762 ""
+  "Figures/CU Seal.png" 1685939306 267477 f4a732d12999f3da423910b765dbfd44 ""
+  "Figures/CU Wordmark.png" 1685939306 21134 022015e41c793d2456afd64725729fe9 ""
+  "Tex Files/C++ Review - Debugging - Unit Testing.tex" 1685939306 19810 3c43443067ae50a8ec04d9175ca8b600 ""
+  "Tex Files/Introduction.tex" 1685939306 7481 e76c663c0d5ab333c0f24125d5e0832a ""
+  "Tex Files/Object Orientation in C++ & ADT.tex" 1685939959 80127 f5c8c4f32132987403c230be7165066b ""
+  "Tex Files/Pointers And Lists.tex" 1685940385 1732 3dc369400d518e72d7e16604167b9af4 ""
+  "main.aux" 1685940391 8276 98ae13e322404bb03be21d3fceefe33a "pdflatex"
+  "main.bbl" 1685939306 466 ee04f40f768daeed26442158e95aba61 "biber main"
+  "main.out" 1685940391 3484 01145c216aed85a36115c2ff4766d5de "pdflatex"
+  "main.ptc" 1685940391 2122 015a5b03d3619c9e3130c778e8e75509 "pdflatex"
+  "main.run.xml" 1685940391 2630 50c273569da99a7b41dee12a3fd40c33 "pdflatex"
+  "main.tex" 1685939723 2120 f38a10bedd4d3d3fe8ad722a9df4b0f0 ""
+  "solutionclass.cls" 1685939306 20606 be7bd7d4487a4b09ffa95a764df3e762 ""
   (generated)
   "main.aux"
   "main.bcf"

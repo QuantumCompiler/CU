@@ -1895,11 +1895,11 @@ INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
-INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
+INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
@@ -1916,17 +1916,17 @@ INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/am
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT Tex Files/C++ Review - Debugging - Unit Testing.tex
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT Tex Files/C++ Review - Debugging - Unit Testing.tex
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
@@ -2117,6 +2117,21 @@ INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Tex Files/Pointers And Lists.tex
+INPUT Tex Files/Pointers And Lists.tex
+INPUT ./Tex Files/Pointers And Lists.tex
+INPUT Tex Files/Pointers And Lists.tex
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./main.ptc
+INPUT main.ptc
+INPUT main.ptc
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
