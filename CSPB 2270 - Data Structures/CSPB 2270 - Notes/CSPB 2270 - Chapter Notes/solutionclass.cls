@@ -159,7 +159,7 @@
 \newcommand{\chapterNumberAndMinitoc}{%
 \begin{tikzpicture}
     \node[
-        minimum height = 3cm,
+        minimum height = 1cm,
         inner sep = 2.5mm,
         text width = 0.97*\textwidth,
         align = left,
@@ -183,7 +183,7 @@
 {\normalfont\bfseries\color{myDColor}}
 {\filleft% 
 \chapterNumberAndMinitoc}{0.5em}
-{\titlerule[2.5pt]\vspace{3pt}\titlerule\vspace{4pt}\LARGE\textsc}
+{\titlerule[2.5pt]\titlerule\vspace{4pt}\LARGE\textsc}
 
 %---------------------------------------------------------------------------
 %	
@@ -511,4 +511,4 @@
 \DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 \newcommand*{\boldone}{\mathbbold{1}}
 % DEFINE YOUR NEW COMMANDS FROM HERE:
-\newcommand{\horizontalline}{\noindent \rule{\textwidth}{0.5pt} \\}
+\newcommand{\horizontalline}{\noindent \rule{\textwidth}{0.5pt}\par}

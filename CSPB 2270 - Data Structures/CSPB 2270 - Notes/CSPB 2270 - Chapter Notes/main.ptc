@@ -7,23 +7,38 @@
 \contentsline {subsection}{\numberline {1.0.3}Instructor Information}{4}{subsection.1.0.3}%
 \contentsline {subsection}{\numberline {1.0.4}Important Dates}{4}{subsection.1.0.4}%
 \contentsline {subsection}{\numberline {1.0.5}Grade Breakdown}{4}{subsection.1.0.5}%
-\contentsline {subsection}{\numberline {1.0.6}Grading Scale}{5}{subsection.1.0.6}%
+\contentsline {subsection}{\numberline {1.0.6}Grading Scale}{4}{subsection.1.0.6}%
 \contentsline {chapter}{\numberline {2}Week 1}{6}{chapter.2}%
 \contentsline {section}{C++ Review, Debugging, Unit Testing}{6}{section*.5}%
 \contentsline {subsection}{\numberline {2.0.1}Activities}{6}{subsection.2.0.1}%
 \contentsline {subsection}{\numberline {2.0.2}Lectures}{6}{subsection.2.0.2}%
 \contentsline {subsection}{\numberline {2.0.3}Programming Assignment}{7}{subsection.2.0.3}%
-\contentsline {subsection}{\numberline {2.0.4}Notes}{7}{subsection.2.0.4}%
+\contentsline {subsection}{\numberline {2.0.4}Chapter 1 - Introduction to Data Structures}{7}{subsection.2.0.4}%
 \contentsline {chapter}{\numberline {3}Week 2}{13}{chapter.3}%
 \contentsline {section}{Object Orientation in C++ \& ADT}{13}{section*.6}%
 \contentsline {subsection}{\numberline {3.0.1}Activities}{13}{subsection.3.0.1}%
 \contentsline {subsection}{\numberline {3.0.2}Lectures}{13}{subsection.3.0.2}%
 \contentsline {subsection}{\numberline {3.0.3}Programming Assignment}{14}{subsection.3.0.3}%
-\contentsline {subsection}{\numberline {3.0.4}Notes}{14}{subsection.3.0.4}%
-\contentsline {chapter}{\numberline {4}Week 3}{47}{chapter.4}%
-\contentsline {section}{Pointers \& Lists}{47}{section*.7}%
-\contentsline {subsection}{\numberline {4.0.1}Activites}{47}{subsection.4.0.1}%
-\contentsline {subsection}{\numberline {4.0.2}Lectures}{47}{subsection.4.0.2}%
-\contentsline {subsection}{\numberline {4.0.3}Programming Assignment}{48}{subsection.4.0.3}%
-\contentsline {subsection}{\numberline {4.0.4}Notes}{48}{subsection.4.0.4}%
+\contentsline {subsection}{\numberline {3.0.4}Chapter 2 - Objects and Classess}{14}{subsection.3.0.4}%
+\contentsline {subsection}{\numberline {3.0.5}Chapter 3 - Introduction to Algorithms}{38}{subsection.3.0.5}%
+\contentsline {chapter}{\numberline {4}Week 3}{45}{chapter.4}%
+\contentsline {section}{Pointers \& Lists}{45}{section*.7}%
+\contentsline {subsection}{\numberline {4.0.1}Activites}{45}{subsection.4.0.1}%
+\contentsline {subsection}{\numberline {4.0.2}Lectures}{45}{subsection.4.0.2}%
+\contentsline {subsection}{\numberline {4.0.3}Programming Assignment}{46}{subsection.4.0.3}%
+\contentsline {subsection}{\numberline {4.0.4}Chapter 4 - Pointers}{46}{subsection.4.0.4}%
+\contentsline {subsubsection}{Pointer Variables}{47}{subsubsection*.8}%
+\contentsline {subsubsection}{Dereferencing a Pointer}{47}{subsubsection*.9}%
+\contentsline {subsubsection}{Null Pointers}{47}{subsubsection*.10}%
+\contentsline {subsubsection}{The `new' Operator}{48}{subsubsection*.11}%
+\contentsline {subsubsection}{Member Access Operator}{48}{subsubsection*.12}%
+\contentsline {subsubsection}{The `delete' Operator}{48}{subsubsection*.13}%
+\contentsline {subsubsection}{C String Library Functions}{49}{subsubsection*.14}%
+\contentsline {subsubsection}{C String Search Functions}{50}{subsubsection*.15}%
+\contentsline {subsubsection}{Default Assignment Operator Behavior}{57}{subsubsection*.16}%
+\contentsline {subsubsection}{Overloading the Assignment Operator}{57}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {4.0.5}Chapter 5 - Lists}{60}{subsection.4.0.5}%
+\contentsline {subsubsection}{Singly-Linked List Data Structure}{62}{subsubsection*.18}%
+\contentsline {subsubsection}{Appending to Singly Linked List}{62}{subsubsection*.19}%
+\contentsline {subsubsection}{Prepending to Singly Linked List}{62}{subsubsection*.20}%
 \contentsfinish 
