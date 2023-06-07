@@ -1916,17 +1916,17 @@ INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/am
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
+INPUT Tex Files/C++ Review - Debugging - Unit Testing.tex
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT ./Tex Files/C++ Review - Debugging - Unit Testing.tex
-INPUT Tex Files/C++ Review - Debugging - Unit Testing.tex
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
@@ -1955,17 +1955,17 @@ INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
+INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
+INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
+INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
+INPUT Tex Files/Object Orientation in C++ & ADT.tex
+INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
+INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
+INPUT Tex Files/Object Orientation in C++ & ADT.tex
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
-INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
-INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
-INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
-INPUT Tex Files/Object Orientation in C++ & ADT.tex
-INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
-INPUT ./Tex Files/Object Orientation in C++ & ADT.tex
-INPUT Tex Files/Object Orientation in C++ & ADT.tex
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
@@ -1982,14 +1982,6 @@ INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/lm/t1lmtt
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
-INPUT ./Figures/CU Seal.png
-INPUT ./Figures/CU Seal.png
-INPUT Figures/CU Seal.png
-INPUT ./Figures/CU Seal.png
-INPUT ./Figures/CU Seal.png
-INPUT ./Figures/CU Seal.png
-INPUT Figures/CU Seal.png
-INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
@@ -2132,6 +2124,98 @@ INPUT ./Figures/CU Seal.png
 INPUT ./main.ptc
 INPUT main.ptc
 INPUT main.ptc
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
+INPUT Figures/CU Seal.png
+INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT ./Figures/CU Seal.png
 INPUT Figures/CU Seal.png
