@@ -1097,3 +1097,1099 @@ elements. This flexibility in removing nodes allows for dynamic modification of 
     effectively bypassed and removed from the list while preserving the order of the remaining elements. Removing nodes from a singly-linked list is an efficient operation, as it involves updating a few pointers rather than shifting elements. This flexibility in removing nodes 
     provides practicality and versatility in managing collections of data with varying needs.
 \end{solution}
+
+\subsection*{Sec. 5.6 - Linked List Search}
+
+Linked list search involves finding a specific value or element within a linked list data structure. The search operation requires traversing through the list, examining each node's data until the desired value is found or the end of the list is reached. During the traversal, 
+the data in each node is compared with the target value, and if a match is found, the search operation can be considered successful. Linked list search is a linear search process that has a time complexity of $\mathcal{O}(n)$ in the worst case, where $n$ is the number of elements in the list. 
+The efficiency of the search operation can be improved by using techniques such as maintaining a sorted linked list or utilizing additional data structures like hash tables or binary search trees.
+
+\begin{solution}[Linked List Search Example]
+    Below is an example of a linked list search in C++:
+    
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    class Node {
+    public:
+        int data;
+        Node* next;
+    
+        Node(int value) : data(value), next(nullptr) {}
+    };
+    
+    class SinglyLinkedList {
+    private:
+        Node* head;
+    
+    public:
+        SinglyLinkedList() : head(nullptr) {}
+    
+        bool search(int value) {
+            Node* current = head;
+    
+            while (current != nullptr) {
+                if (current->data == value) {
+                    return true;  // Value found
+                }
+                current = current->next;
+            }
+    
+            return false;  // Value not found
+        }
+    
+        void insert(int value) {
+            Node* newNode = new Node(value);
+    
+            if (head == nullptr) {
+                head = newNode;
+            } else {
+                Node* current = head;
+                while (current->next != nullptr) {
+                    current = current->next;
+                }
+                current->next = newNode;
+            }
+        }
+    };
+    
+    int main() {
+        SinglyLinkedList myList;
+    
+        myList.insert(5);
+        myList.insert(10);
+        myList.insert(7);
+    
+        int searchValue = 10;
+        if (myList.search(searchValue)) {
+            std::cout << "Value " << searchValue << " found in the linked list." 
+            << std::endl;
+        } else {
+            std::cout << "Value " << searchValue << " not found in the linked list." 
+            << std::endl;
+        }
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The `SinglyLinkedList' class represents the singly-linked list data structure. It consists of a head pointer (`head'). The `search' function performs a search operation to find a specific value within the list. It starts from the head and traverses the list by comparing the value in each 
+    node with the target value. If a match is found, the function returns `true', indicating that the value exists in the list. If the end of the list is reached without finding a match, the function returns `false', indicating that the value does not exist in the list. The `insert' function 
+    adds new nodes to the end of the list.
+
+    In the `main()' function, we create an instance of `SinglyLinkedList' named `myList'. We insert three elements with values 5, 10, and 7, respectively. We then perform a search for the value 10 using the `search' function. Since 10 is present in the list, the program outputs "Value 10 found 
+    in the linked list." The example demonstrates how to search for a specific value within a linked list using a linear search approach. By traversing the list and comparing each element, the search operation efficiently determines the presence or absence of a target value in the linked list.
+\end{solution}
+
+\subsection*{Sec. 5.7 - Doubly-Linked Lists}
+
+\subsubsection{Overview}
+
+A doubly linked list is a type of linked list where each node contains two pointers: one pointing to the previous node and another pointing to the next node. This bidirectional linkage allows traversal in both directions, enabling efficient insertion, deletion, and searching operations. Each node 
+in a doubly linked list stores data and maintains references to the previous and next nodes, except for the first node (head) that only has a next pointer, and the last node (tail) that only has a previous pointer. The ability to traverse in both directions makes doubly linked lists useful for 
+scenarios that require backward traversal or frequent insertions and deletions at both ends of the list. However, the presence of additional pointers increases the memory overhead compared to singly linked lists.
+
+\subsubsection{Appending to a Doubly-Linked List}
+
+Appending to a doubly linked list involves adding a new node at the end of the list. To append a node, a new node is created with the desired data, and the necessary pointers are adjusted to establish the appropriate connections. If the list is empty, the new node becomes both the head and the tail 
+of the list. Otherwise, the new node's previous pointer is set to the current tail, and the current tail's next pointer is updated to point to the new node. Finally, the tail pointer is updated to point to the newly appended node. By properly updating the pointers, the new node is seamlessly integrated 
+into the existing doubly linked list structure, preserving the order of elements and enabling efficient access to both the head and tail of the list.
+
+\subsubsection{Prepending to a Doubly-Linked List}
+
+Prepending to a doubly linked list involves adding a new node at the beginning of the list. To prepend a node, a new node is created with the desired data, and the necessary pointers are adjusted to establish the appropriate connections. If the list is empty, the new node becomes both the head and the 
+tail of the list. Otherwise, the new node's next pointer is set to the current head, and the current head's previous pointer is updated to point to the new node. Finally, the head pointer is updated to point to the newly prepended node. By properly updating the pointers, the new node is seamlessly integrated 
+into the existing doubly linked list structure, maintaining the order of elements and allowing efficient access to both the head and tail of the list. Prepending to a doubly linked list is an efficient operation, as it involves adjusting a few pointers without the need to traverse the entire list.
+
+\begin{solution}[Doubly-Linked List Example]
+    Below is an example of doubly-linked lists in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    class Node {
+    public:
+        int data;
+        Node* prev;
+        Node* next;
+
+        Node(int value) : data(value), prev(nullptr), next(nullptr) {}
+    };
+
+    class DoublyLinkedList {
+    private:
+        Node* head;
+        Node* tail;
+
+    public:
+        DoublyLinkedList() : head(nullptr), tail(nullptr) {}
+
+        void append(int value) {
+            Node* newNode = new Node(value);
+
+            if (head == nullptr) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                tail->next = newNode;
+                newNode->prev = tail;
+                tail = newNode;
+            }
+        }
+
+        void prepend(int value) {
+            Node* newNode = new Node(value);
+
+            if (head == nullptr) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                newNode->next = head;
+                head->prev = newNode;
+                head = newNode;
+            }
+        }
+
+        void display() {
+            Node* current = head;
+            while (current != nullptr) {
+                std::cout << current->data << " ";
+                current = current->next;
+            }
+            std::cout << std::endl;
+        }
+    };
+
+    int main() {
+        DoublyLinkedList myList;
+
+        myList.append(5);
+        myList.append(10);
+        myList.append(7);
+
+        myList.display();  // Output: 5 10 7
+
+        myList.prepend(3);
+        myList.prepend(1);
+
+        myList.display();  // Output: 1 3 5 10 7
+
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The `DoublyLinkedList' class represents the doubly linked list data structure. It consists of a head pointer (`head') and a tail pointer (`tail'). The `append' function appends a new node with the specified value at the end of the list. It creates a new node, adjusts the pointers of the current tail node and 
+    the new node, and updates the tail pointer accordingly. The `prepend' function prepends a new node with the specified value at the beginning of the list. It creates a new node, adjusts the pointers of the current head node and the new node, and updates the head pointer accordingly. The `display' function traverses 
+    the list and prints the data of each node.
+
+    In the `main()' function, we create an instance of `DoublyLinkedList' named `myList'. We append three elements with values 5, 10, and 7, respectively, and display the contents of the list. The output is "5 10 7". Next, we prepend two elements with values 3 and 1, respectively, and display the updated contents of 
+    the list. The output is "1 3 5 10 7", showing that the new nodes are correctly appended and prepended to the doubly linked list.
+
+    The example demonstrates how to append and prepend nodes to a doubly linked list. By properly adjusting the pointers of the nodes and updating the head and tail pointers, the new nodes are seamlessly integrated into the existing list structure. Doubly linked lists provide efficient operations for adding elements at 
+    both ends, allowing for flexibility in managing and manipulating the list's contents.
+\end{solution}
+
+\subsection*{Sec. 5.8 - Doubly-Linked Litsts: Insert}
+
+Inserting in a doubly linked list involves adding a new node at a specific position within the list. The insertion operation requires adjusting the pointers of the neighboring nodes to maintain the correct order. The process begins by creating a new node with the desired data. Then, the next and previous pointers of the 
+new node are modified to establish the connections with the neighboring nodes. By updating the pointers of the preceding and succeeding nodes accordingly, the new node is seamlessly integrated into the list structure. Inserting in a doubly linked list provides flexibility in modifying the list by allowing the addition of 
+elements at arbitrary positions, making it suitable for scenarios that require dynamic data manipulation and efficient data insertion.
+
+\begin{solution}[Doubly-Linked List Insert Example]
+    Below is an example of inserting into doubly-linked lists in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    class Node {
+    public:
+        int data;
+        Node* prev;
+        Node* next;
+    
+        Node(int value) : data(value), prev(nullptr), next(nullptr) {}
+    };
+    
+    class DoublyLinkedList {
+    private:
+        Node* head;
+        Node* tail;
+    
+    public:
+        DoublyLinkedList() : head(nullptr), tail(nullptr) {}
+    
+        void insert(int value, int position) {
+            Node* newNode = new Node(value);
+    
+            if (head == nullptr) {
+                head = newNode;
+                tail = newNode;
+            } else if (position == 0) {
+                newNode->next = head;
+                head->prev = newNode;
+                head = newNode;
+            } else {
+                Node* current = head;
+                int count = 0;
+    
+                while (current != nullptr && count < position) {
+                    current = current->next;
+                    count++;
+                }
+    
+                if (current == nullptr) {
+                    tail->next = newNode;
+                    newNode->prev = tail;
+                    tail = newNode;
+                } else {
+                    newNode->prev = current->prev;
+                    newNode->next = current;
+                    current->prev->next = newNode;
+                    current->prev = newNode;
+                }
+            }
+        }
+    
+        void display() {
+            Node* current = head;
+            while (current != nullptr) {
+                std::cout << current->data << " ";
+                current = current->next;
+            }
+            std::cout << std::endl;
+        }
+    };
+    
+    int main() {
+        DoublyLinkedList myList;
+    
+        myList.insert(5, 0);   // Inserting at position 0
+        myList.insert(10, 1);  // Inserting at position 1
+        myList.insert(7, 1);   // Inserting at position 1
+    
+        myList.display();  // Output: 5 7 10
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The `DoublyLinkedList' class represents the doubly linked list data structure. It consists of a head pointer (`head') and a tail pointer (`tail'). The `insert' function inserts a new node with the specified value at the given position within the list. It handles different cases: if the list is empty, the new node 
+    becomes both the head and the tail; if the position is 0, the new node is prepended to the list; otherwise, the function traverses the list to find the desired position. If the position exceeds the length of the list, the new node is appended to the end. Otherwise, the new node is inserted at the specified position 
+    by updating the pointers of the neighboring nodes accordingly. The `display' function is used to traverse the list and print its contents.
+
+    In the `main()' function, we create an instance of `DoublyLinkedList' named `myList'. We insert three elements with values 5, 10, and 7, respectively, at different positions within the list. After inserting the nodes, we display the contents of the list, which outputs "5 7 10". The example demonstrates how to insert 
+    a node at a specific position in a doubly linked list. By appropriately adjusting the pointers of the neighboring nodes, the new node is seamlessly integrated into the list structure while preserving the order of the elements. Inserting in a doubly linked list provides flexibility in managing the list's contents.
+\end{solution}
+
+\subsection*{Sec. 5.9 - Doubly-Linked Lists: Remove}
+
+Removing nodes from a doubly linked list involves unlinking a node from the list while maintaining the integrity of the remaining nodes. The removal process requires updating the pointers of the neighboring nodes to bypass the node being removed. To remove a node, the previous node's next pointer is connected to the next node, 
+and the next node's previous pointer is connected to the previous node. Additionally, if the node being removed is the head or tail of the list, the head or tail pointers are updated accordingly. By properly adjusting the pointers and deallocating the memory occupied by the removed node, the doubly linked list structure is 
+maintained, and the list's integrity is preserved. Removing nodes from a doubly linked list allows for efficient deletion of elements at arbitrary positions, enabling dynamic data manipulation and effective memory management.
+
+\begin{solution}[Doubly-Linked List Remove Example]
+    Below is an example of removing in doubly-linked lists in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    class Node {
+    public:
+        int data;
+        Node* prev;
+        Node* next;
+    
+        Node(int value) : data(value), prev(nullptr), next(nullptr) {}
+    };
+    
+    class DoublyLinkedList {
+    private:
+        Node* head;
+        Node* tail;
+    
+    public:
+        DoublyLinkedList() : head(nullptr), tail(nullptr) {}
+    
+        void append(int value) {
+            Node* newNode = new Node(value);
+    
+            if (head == nullptr) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                tail->next = newNode;
+                newNode->prev = tail;
+                tail = newNode;
+            }
+        }
+    
+        void remove(int value) {
+            Node* current = head;
+    
+            while (current != nullptr) {
+                if (current->data == value) {
+                    if (current == head) {
+                        head = current->next;
+                        if (head != nullptr) {
+                            head->prev = nullptr;
+                        }
+                    } else if (current == tail) {
+                        tail = current->prev;
+                        if (tail != nullptr) {
+                            tail->next = nullptr;
+                        }
+                    } else {
+                        current->prev->next = current->next;
+                        current->next->prev = current->prev;
+                    }
+    
+                    delete current;
+                    return;
+                }
+    
+                current = current->next;
+            }
+        }
+    
+        void display() {
+            Node* current = head;
+            while (current != nullptr) {
+                std::cout << current->data << " ";
+                current = current->next;
+            }
+            std::cout << std::endl;
+        }
+    };
+    
+    int main() {
+        DoublyLinkedList myList;
+    
+        myList.append(5);
+        myList.append(10);
+        myList.append(7);
+    
+        myList.display();  // Output: 5 10 7
+    
+        myList.remove(10);
+    
+        myList.display();  // Output: 5 7
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The `DoublyLinkedList' class represents the doubly linked list data structure. It consists of a head pointer (`head') and a tail pointer (`tail'). The `append' function is used to append a new node with the specified value at the end of the list. It handles the case where the list is empty and adjusts the pointers accordingly. 
+    The `remove' function removes a node with the specified value from the list. It traverses the list and checks if the current node matches the target value. If a match is found, the appropriate pointers are adjusted to bypass the node being removed. If the node being removed is the head or tail, the head or tail pointers are 
+    updated accordingly. Finally, the memory occupied by the removed node is deallocated. The `display' function is used to traverse the list and print its contents.
+
+    In the `main()' function, we create an instance of `DoublyLinkedList' named `myList' and append three elements with values 5, 10, and 7, respectively. After appending the nodes, we display the contents of the list, which outputs "5 10 7". We then call the `remove' function to remove the node with value 10 from the list. After 
+    the removal, we display the updated contents of the list, which outputs "5 7". The example demonstrates how to remove a node from a doubly linked list
+\end{solution}
+
+\subsection*{Sec. 5.10 - Linked List Traversal}
+
+\subsubsection{Overview}
+
+Linked list traversal refers to the process of visiting each node in a linked list in order to perform some operation or access the data stored in the nodes. The traversal typically starts from the head of the list and iterates through the nodes until the end of the list is reached. During traversal, the data in each node can be 
+processed, displayed, or used for some computation. By following the next pointers of the nodes, the traversal can effectively access all the elements in the linked list. Linked list traversal is an essential operation for analyzing, modifying, or displaying the contents of a linked list, and it allows for efficient and sequential 
+access to the elements stored in the list.
+
+\subsubsection{Doubly-Linked List Traversal}
+
+Linked list traversal in a doubly linked list is similar to traversal in a singly linked list but with the added capability of traversing in both forward and backward directions. Starting from the head or tail of the list, the traversal can move through the list by following either the next or prev pointers of each node. This bidirectional 
+traversal allows for flexibility in accessing and processing the data in each node. The traversal can be performed to display the elements, perform computations, search for specific values, or modify the data within the nodes. By leveraging the prev and next pointers, linked list traversal in a doubly linked list enables efficient and convenient 
+navigation through the list in both directions, making it a versatile tool for various operations on the list's elements.
+
+\begin{solution}[Linked List Traversal Example]
+    Below is an example of traversing in a linked list in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    class Node {
+    public:
+        int data;
+        Node* prev;
+        Node* next;
+    
+        Node(int value) : data(value), prev(nullptr), next(nullptr) {}
+    };
+    
+    class DoublyLinkedList {
+    private:
+        Node* head;
+        Node* tail;
+    
+    public:
+        DoublyLinkedList() : head(nullptr), tail(nullptr) {}
+    
+        void append(int value) {
+            Node* newNode = new Node(value);
+    
+            if (head == nullptr) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                tail->next = newNode;
+                newNode->prev = tail;
+                tail = newNode;
+            }
+        }
+    
+        void displayForward() {
+            Node* current = head;
+            while (current != nullptr) {
+                std::cout << current->data << " ";
+                current = current->next;
+            }
+            std::cout << std::endl;
+        }
+    
+        void displayBackward() {
+            Node* current = tail;
+            while (current != nullptr) {
+                std::cout << current->data << " ";
+                current = current->prev;
+            }
+            std::cout << std::endl;
+        }
+    };
+    
+    int main() {
+        DoublyLinkedList myList;
+    
+        myList.append(5);
+        myList.append(10);
+        myList.append(7);
+    
+        std::cout << "Forward traversal: ";
+        myList.displayForward();  // Output: 5 10 7
+    
+        std::cout << "Backward traversal: ";
+        myList.displayBackward();  // Output: 7 10 5
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The `DoublyLinkedList' class represents the doubly linked list data structure. It consists of a head pointer (`head') and a tail pointer (`tail'). The `append' function is used to append a new node with the specified value at the end of the list, adjusting the pointers accordingly.
+
+    The `displayForward' function is responsible for traversing the list in the forward direction, starting from the head. It iterates through the list by following the next pointers of each node and prints the data stored in each node.
+
+    The `displayBackward' function performs the traversal in the backward direction, starting from the tail. It iterates through the list by following the prev pointers of each node and prints the data stored in each node.
+
+    In the `main()' function, we create an instance of `DoublyLinkedList' named `myList' and append three elements with values 5, 10, and 7, respectively. We then call the `displayForward' and `displayBackward' functions to traverse and print the contents of the list in both forward and backward directions. The output demonstrates 
+    the successful traversal of the doubly linked list in both directions, displaying "5 10 7" and "7 10 5" respectively. This example highlights how the prev and next pointers in a doubly linked list facilitate bidirectional traversal, allowing for convenient access and processing of the elements stored in the list.
+\end{solution}
+
+\subsection*{Sec. 5.11 - Sorting Linked Lists}
+
+\subsubsection{Sorting for Singly-Linked Lists}
+
+Sorting a singly linked list involves rearranging its nodes in a specific order based on the values they hold. Sorting algorithms like merge sort, insertion sort, or bubble sort can be applied to achieve this task. Since a singly linked list only allows traversal in the forward direction, sorting the list can be slightly more challenging 
+compared to a doubly linked list. The process typically involves rearranging the next pointers of the nodes while keeping track of the previous nodes and updating the head pointer as necessary. Sorting a singly linked list improves its organization and allows for more efficient searching and accessing of elements. It is an important operation 
+to enhance the functionality and performance of a singly linked list data structure.
+
+\subsubsection{Sorting for Doubly-Linked Lists}
+
+Sorting a doubly linked list involves rearranging its nodes in a specific order based on the values they hold. There are various sorting algorithms that can be applied to accomplish this task, such as bubble sort, insertion sort, selection sort, merge sort, or quicksort. The sorting process typically involves comparing adjacent nodes 
+and swapping their positions until the entire list is sorted. The bidirectional nature of the doubly linked list allows for efficient swapping of nodes by adjusting the prev and next pointers. Sorting a doubly linked list provides an organized arrangement of its elements, making it easier to search, access, or perform operations on 
+the list in a structured manner. It is a fundamental operation that contributes to improving the efficiency and usability of the doubly linked list data structure.
+
+\begin{solution}[Sorting a Linked List Example]
+    Below is an example of sorting a linked list in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    class Node {
+    public:
+        int data;
+        Node* next;
+    
+        Node(int value) : data(value), next(nullptr) {}
+    };
+    
+    class SinglyLinkedList {
+    private:
+        Node* head;
+    
+    public:
+        SinglyLinkedList() : head(nullptr) {}
+    
+        void insert(int value) {
+            Node* newNode = new Node(value);
+    
+            if (head == nullptr) {
+                head = newNode;
+            } else {
+                Node* current = head;
+                while (current->next != nullptr) {
+                    current = current->next;
+                }
+                current->next = newNode;
+            }
+        }
+    
+        void display() {
+            Node* current = head;
+            while (current != nullptr) {
+                std::cout << current->data << " ";
+                current = current->next;
+            }
+            std::cout << std::endl;
+        }
+    
+        Node* merge(Node* first, Node* second) {
+            if (first == nullptr)
+                return second;
+            if (second == nullptr)
+                return first;
+    
+            Node* result;
+            if (first->data <= second->data) {
+                result = first;
+                result->next = merge(first->next, second);
+            } else {
+                result = second;
+                result->next = merge(first, second->next);
+            }
+            return result;
+        }
+    
+        void split(Node* source, Node** frontRef, Node** backRef) {
+            if (source == nullptr || source->next == nullptr) {
+                *frontRef = source;
+                *backRef = nullptr;
+                return;
+            }
+    
+            Node* slow = source;
+            Node* fast = source->next;
+    
+            while (fast != nullptr) {
+                fast = fast->next;
+                if (fast != nullptr) {
+                    slow = slow->next;
+                    fast = fast->next;
+                }
+            }
+    
+            *frontRef = source;
+            *backRef = slow->next;
+            slow->next = nullptr;
+        }
+    
+        void mergeSort(Node** headRef) {
+            Node* head = *headRef;
+            Node* a;
+            Node* b;
+    
+            if (head == nullptr || head->next == nullptr)
+                return;
+    
+            split(head, &a, &b);
+    
+            mergeSort(&a);
+            mergeSort(&b);
+    
+            *headRef = merge(a, b);
+        }
+    
+        void sort() {
+            mergeSort(&head);
+        }
+    };
+    
+    int main() {
+        SinglyLinkedList myList;
+    
+        myList.insert(5);
+        myList.insert(10);
+        myList.insert(2);
+        myList.insert(8);
+        myList.insert(3);
+    
+        std::cout << "Before sorting: ";
+        myList.display();  // Output: 5 10 2 8 3
+    
+        myList.sort();
+    
+        std::cout << "After sorting: ";
+        myList.display();  // Output: 2 3 5 8 10
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The `SinglyLinkedList' class represents the singly linked list data structure. It consists of a head pointer (`head') that points to the first node in the list. The `insert' function is used to insert a new node with the specified value at the end of the list.
+
+    The `display' function traverses the list from the head node to the last node and prints the data stored in each node. The `merge' function is a helper function that merges two sorted linked lists into a single sorted list. The `split' function divides the list into two halves, using the slow and fast pointer approach. The `mergeSort' 
+    function recursively splits the list into smaller sublists, sorts them using merge sort, and then merges them back together. The `sort' function serves as an entry point for sorting the linked list. It calls the `mergeSort' function to perform the sorting operation.
+
+    In the `main()' function, we create an instance of `SinglyLinkedList' named `myList' and insert five elements with values 5, 10, 2, 8, and 3, respectively. We then call the `display' function to print the contents of the list before sorting. Next, we call the `sort' function to sort the list using merge sort. Finally, we call the `display' 
+    function again to print the sorted list. The output demonstrates the successful sorting of the singly linked list, displaying "2 3 5 8 10". This example showcases the implementation of the merge sort algorithm on a singly linked list, effectively arranging the elements in ascending order.
+\end{solution}
+
+\subsection*{Sec. 5.12 - Linked List Dummy Nodes}
+
+\subsubsection{Overview}
+
+Dummy nodes, also known as sentinel nodes, are special nodes added to the beginning or end of a linked list. These nodes do not hold any meaningful data but serve as placeholders or markers to simplify the operations performed on the list. Dummy nodes can be used to eliminate special cases and edge conditions when inserting or removing elements, 
+especially at the beginning or end of the list. They provide a consistent structure for traversal and manipulation, ensuring that the list's head and tail pointers always point to valid nodes. By using dummy nodes, code complexity can be reduced, and operations on linked lists can be streamlined, making the implementation more efficient and easier 
+to manage.
+
+\subsubsection{Singly-Linked List Implemention}
+
+In the context of singly linked lists, dummy nodes are often used to simplify certain operations, especially at the beginning or end of the list. A common approach is to add a dummy node at the beginning of the list, referred to as the "dummy head." This dummy node acts as a placeholder and allows consistent handling of the list's head pointer, even 
+when inserting or removing elements. With a dummy head, the head pointer always points to a valid node, eliminating the need for special cases when manipulating the first element. Dummy nodes in singly linked lists enhance code readability and maintain consistency in operations, making it easier to handle edge cases and simplifying the implementation 
+of algorithms and data structures that rely on singly linked lists.
+
+\subsubsection{Doubly-Linked List Implementation}
+
+In the context of doubly linked lists, dummy nodes are commonly used to simplify operations at both the beginning and end of the list. Similar to singly linked lists, a dummy node can be added at the beginning of the list, called the "dummy head," and another dummy node at the end, known as the "dummy tail." These dummy nodes serve as placeholders and 
+allow for consistent handling of both the head and tail pointers, ensuring that they always point to valid nodes. By using dummy nodes, the implementation of operations such as inserting or removing elements at the beginning or end becomes more streamlined, as special cases and edge conditions are eliminated. Dummy nodes in doubly linked lists provide 
+a standardized structure for traversal and manipulation, enhancing code clarity and reducing complexity. They make it easier to handle boundary cases and simplify the implementation of algorithms and data structures that rely on doubly linked lists.
+
+\begin{solution}[Dummy Nodes Example]
+    Below is an example of dummy nodes in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    class Node {
+    public:
+        int data;
+        Node* prev;
+        Node* next;
+    
+        Node(int value) : data(value), prev(nullptr), next(nullptr) {}
+    };
+    
+    class DoublyLinkedList {
+    private:
+        Node* dummyHead;
+        Node* dummyTail;
+    
+    public:
+        DoublyLinkedList() {
+            dummyHead = new Node(-1);  // Dummy head with data -1
+            dummyTail = new Node(-1);  // Dummy tail with data -1
+    
+            dummyHead->next = dummyTail;
+            dummyTail->prev = dummyHead;
+        }
+    
+        void insert(int value) {
+            Node* newNode = new Node(value);
+    
+            newNode->next = dummyTail;
+            newNode->prev = dummyTail->prev;
+            dummyTail->prev->next = newNode;
+            dummyTail->prev = newNode;
+        }
+    
+        void display() {
+            Node* current = dummyHead->next;
+            while (current != dummyTail) {
+                std::cout << current->data << " ";
+                current = current->next;
+            }
+            std::cout << std::endl;
+        }
+    };
+    
+    int main() {
+        DoublyLinkedList myList;
+    
+        myList.insert(5);
+        myList.insert(10);
+        myList.insert(2);
+        myList.insert(8);
+        myList.insert(3);
+    
+        std::cout << "Doubly linked list: ";
+        myList.display();  // Output: 5 10 2 8 3
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The `DoublyLinkedList' class represents the doubly linked list data structure. It has two dummy nodes: `dummyHead' and `dummyTail'. These dummy nodes act as placeholders and ensure that the head and tail pointers always point to valid nodes. The `dummyHead' is initially connected to the `dummyTail' to indicate an empty list.
+
+    The `insert' function inserts a new node with the specified value at the end of the list. It creates a new node, adjusts the pointers of the previous and next nodes accordingly, and connects the new node in between. The `display' function traverses the list starting from the dummy head and prints the data stored in each node until it reaches the dummy 
+    tail, excluding the dummy nodes.
+
+    In the `main()' function, we create an instance of `DoublyLinkedList' named `myList' and insert five elements with values 5, 10, 2, 8, and 3, respectively. We then call the `display' function to print the contents of the doubly linked list. The output demonstrates the successful insertion and display of the elements, showcasing the use of dummy nodes 
+    in a doubly linked list.
+\end{solution}
+
+\subsection*{Sec. 5.13 - Linked Lists: Recursion}
+
+\subsubsection{Forward Traversal}
+
+Forward traversal in recursion of linked lists refers to the process of traversing a linked list recursively in the forward direction, starting from the head node and visiting each node until reaching the end of the list. In this approach, a recursive function is called on each node, which performs some operation or accesses the data of the current node before 
+recursively calling itself on the next node. This continues until the end of the list is reached, typically indicated by a base case that terminates the recursion. Forward traversal in recursion provides a concise and elegant way to iterate over linked lists, simplifying the code and reducing the need for explicit loop structures. It allows for efficient processing 
+of each node in a linked list and enables various operations, such as printing, searching, or modifying the list, to be implemented recursively.
+
+\subsubsection{Reverse Traversal}
+
+Reverse traversal in recursion of linked lists involves traversing a linked list in the reverse direction using a recursive approach. Instead of starting from the head node and moving towards the tail, as in forward traversal, reverse traversal begins from the tail node and moves towards the head. This is achieved by recursively calling the reverse traversal function 
+on the next node before performing any operation or accessing the data of the current node. The recursion continues until the head node is reached, which acts as the base case to terminate the traversal. Reverse traversal in recursion allows for efficient processing of nodes in reverse order, enabling operations such as printing in reverse, reversing the list itself, 
+or performing any other operations that require accessing nodes in the opposite direction. It offers a concise and elegant solution to handle reverse traversal scenarios, leveraging the power of recursion in linked list manipulation.
+
+\subsubsection{Searching}
+
+Searching in linked lists using recursion involves recursively traversing the list to find a specific element or perform a search operation. The recursive search function is typically called on each node, comparing the node's data with the target element. If a match is found, the search terminates, and the appropriate result or node reference is returned. If the current 
+node does not match the target element, the recursion continues by calling the search function on the next node until either a match is found or the end of the list is reached, typically indicated by a base case. Recursive searching in linked lists provides a concise and elegant solution, leveraging the power of recursion to handle search operations efficiently. It allows 
+for flexibility in implementing different search criteria and can be easily extended to handle various search algorithms, such as linear search or binary search in sorted lists, by appropriately adjusting the recursion logic and base case conditions.
+
+\begin{solution}[Linked List Recursion Example]
+    Below is an example of recursion in linked lists in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    class Node {
+    public:
+        int data;
+        Node* next;
+    
+        Node(int value) : data(value), next(nullptr) {}
+    };
+    
+    class LinkedList {
+    private:
+        Node* head;
+    
+    public:
+        LinkedList() : head(nullptr) {}
+    
+        void insert(int value) {
+            Node* newNode = new Node(value);
+    
+            if (head == nullptr) {
+                head = newNode;
+            } else {
+                Node* current = head;
+                while (current->next != nullptr) {
+                    current = current->next;
+                }
+                current->next = newNode;
+            }
+        }
+    
+        bool searchRecursive(Node* node, int target) {
+            if (node == nullptr) {
+                return false;  // Base case: end of list reached, element not found
+            }
+    
+            if (node->data == target) {
+                return true;  // Base case: element found
+            }
+    
+            return searchRecursive(node->next, target);  // Recursive call on next
+        }
+    
+        bool search(int target) {
+            return searchRecursive(head, target);
+        }
+    };
+    
+    int main() {
+        LinkedList myList;
+        myList.insert(5);
+        myList.insert(10);
+        myList.insert(2);
+        myList.insert(8);
+        myList.insert(3);
+    
+        int target = 10;
+        bool found = myList.search(target);
+        if (found) {
+            std::cout << "Element " << target << " found in the linked list." << std::endl;
+        } else {
+            std::cout << "Element " << target << " not found in the linked list." << std::endl;
+        }
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The `searchRecursive' function takes two parameters: the current node and the target element to search for. It follows a recursive approach to traverse the list and compare the data of each node with the target. If the target is found, it returns `true', and if the end of the list is reached without finding the target, it returns `false'.
+
+    The `search' function acts as a wrapper that initiates the search operation by calling `searchRecursive' on the `head' node. In the `main()' function, we create an instance of `LinkedList' named `myList' and insert several elements. We then perform a search for the target element, which is set to 10 in this example. The result is printed based on whether the 
+    element is found or not.
+
+    The example demonstrates how recursion can be used to search for an element in a linked list efficiently. It allows for a concise and elegant solution, leveraging the recursive nature of the problem and simplifying the search operation.
+\end{solution}
+
+\subsection*{Sec. 5.14 - Circular Lists}
+
+A circular linked list is a type of linked list where the last node of the list points back to the first node, forming a circular structure. Unlike a traditional linked list where the last node points to null, a circular linked list provides a seamless loop through its nodes. This allows for continuous traversal of the list starting from any node, 
+as each node has a reference to the next node, and the last node points back to the first node. Circular linked lists can be useful in scenarios where cyclic behavior or circular access is required, such as round-robin scheduling algorithms or implementing circular buffers. They offer efficient operations for insertion and deletion at the beginning 
+or end of the list and enable convenient looping or rotation through the list elements.
+
+\subsection*{Sec. 5.15 - Array-Based Lists}
+
+An array-based list, also known as a dynamic array or resizable array, is a data structure that stores elements in a contiguous block of memory. It simulates the behavior of a list or array by dynamically allocating memory and resizing as needed. The elements are stored in a fixed-size array, and when the capacity of the array is reached, a new larger 
+array is created and the elements are copied to the new array. This allows for efficient random access to elements and provides constant-time complexity for accessing elements by index. Array-based lists offer flexibility in adding and removing elements at the end of the list, and they provide a more memory-efficient alternative to linked lists in many 
+scenarios. However, they may require occasional resizing operations, which can be costly in terms of time and memory.
+
+\subsection*{Sec. 5.16 - Stack Abstract Data Type (ADT)}
+
+The stack abstract data type (ADT) is a collection of elements that follows the Last-In-First-Out (LIFO) principle. It models a real-life stack, where elements are added and removed from the top of the stack. The key operations of a stack include push (adding an element to the top of the stack) and pop (removing the top element from the stack). Additionally, 
+a stack typically provides a peek operation to access the top element without removing it and a isEmpty operation to check if the stack is empty. Stacks are widely used in various applications, such as function call stacks, expression evaluation, and backtracking algorithms. They provide efficient access to the most recently added elements and support a compact 
+and intuitive way to manage data in a last-in-first-out fashion.
+
+\subsection*{Sec. 5.17 - Stacks Using Linked Lists}
+
+Stacks implemented using linked lists are a common way to represent the stack abstract data type (ADT). In this implementation, a linked list is used to store the elements of the stack, with each node representing an element. The top of the stack is represented by the head node of the linked list. When an element is pushed onto the stack, a new node is created 
+and inserted at the beginning of the linked list, becoming the new head node. Similarly, when an element is popped from the stack, the head node is removed, and the next node becomes the new head node. This implementation allows for dynamic memory allocation and efficient push and pop operations, as they can be performed in constant time. Linked list-based stacks 
+provide flexibility in terms of the size of the stack and can handle a variable number of elements. They are particularly useful in scenarios where the stack size is unpredictable or may change dynamically during runtime.
+
+\subsection*{Sec. 5.18 - Array-Based Stacks}
+
+Array-based stacks are a common implementation of the stack abstract data type (ADT) using arrays. In this implementation, an array is used to store the elements of the stack, with a variable indicating the top index of the stack. Elements are pushed onto the stack by incrementing the top index and inserting the element at that position in the array. Similarly, 
+elements are popped from the stack by accessing the element at the top index and decrementing the top index. Array-based stacks provide efficient constant-time complexity for push and pop operations, as accessing elements by index in an array is a constant-time operation. However, they have a fixed capacity determined by the size of the underlying array, and resizing 
+the array can be costly. Array-based stacks are well-suited for scenarios where the maximum number of elements in the stack is known or can be easily determined in advance, providing a more memory-efficient option compared to linked list-based implementations.
+
+\begin{solution}[Array-Based Stack Example]
+    Below is an example of an array-based stack in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    const int MAX_SIZE = 5;
+    
+    class Stack {
+    private:
+        int top;
+        int arr[MAX_SIZE];
+    
+    public:
+        Stack() : top(-1) {}
+    
+        bool isEmpty() {
+            return (top == -1);
+        }
+    
+        bool isFull() {
+            return (top == MAX_SIZE - 1);
+        }
+    
+        void push(int value) {
+            if (isFull()) {
+                std::cout << "Stack is full. Cannot push element." << std::endl;
+                return;
+            }
+            top++;
+            arr[top] = value;
+        }
+    
+        int pop() {
+            if (isEmpty()) {
+                std::cout << "Stack is empty. Cannot pop element." << std::endl;
+                return -1;
+            }
+            int popped = arr[top];
+            top--;
+            return popped;
+        }
+    
+        int peek() {
+            if (isEmpty()) {
+                std::cout << "Stack is empty. Cannot peek element." << std::endl;
+                return -1;
+            }
+            return arr[top];
+        }
+    };
+    
+    int main() {
+        Stack myStack;
+        myStack.push(5);
+        myStack.push(10);
+        myStack.push(7);
+    
+        std::cout << "Peek: " << myStack.peek() << std::endl;  // Outputs: 7
+    
+        int popped = myStack.pop();
+        std::cout << "Popped: " << popped << std::endl;  // Outputs: 7
+    
+        myStack.push(3);
+    
+        std::cout << "Peek: " << myStack.peek() << std::endl;  // Outputs: 3
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In the `push' function, a value is added to the stack by incrementing `top' and assigning the value to the corresponding index in the array. The `pop' function removes the top element by returning its value and decrementing `top'. The `peek' function returns the value of the top element without removing it.
+
+    In the `main' function, we create an instance of the `Stack' class named `myStack' and perform stack operations. We push three elements onto the stack, then use the `peek' function to retrieve the top element (7) without removing it. We then pop an element from the stack (7), and push another element (3). Finally, we use `peek' again to retrieve the new top element (3).
+
+    The example demonstrates how an array-based stack can be implemented in C++. The array acts as a container to store the elements of the stack, and the top index keeps track of the current position of the stack. Array-based stacks provide a simple and efficient way to manage elements using arrays, with constant-time complexity for push, pop, and peek operations.
+\end{solution}
+
+\subsection*{Sec. 5.19 - Queue Abstract Data Type (ADT)}
+
+The queue abstract data type (ADT) represents a collection of elements that follows the First-In-First-Out (FIFO) principle. It models a real-life queue, where elements are inserted at the back and removed from the front. The main operations of a queue include enqueue (adding an element to the back of the queue) and dequeue (removing the front element from the queue). Additionally, 
+a queue typically provides a peek operation to access the front element without removing it and an isEmpty operation to check if the queue is empty. Queues are commonly used in scenarios where the order of elements matters, such as task scheduling, event handling, and breadth-first search algorithms. They offer efficient insertion and removal of elements at the ends and provide a 
+natural way to manage data in a first-in-first-out fashion.
+
+\subsection*{Sec. 5.20 - Queues Using Linked Lists}
+
+Queues implemented using linked lists are a common way to represent the queue abstract data type (ADT). In this implementation, a linked list is used to store the elements of the queue, with each node representing an element. The front of the queue is represented by the head node of the linked list, and the back of the queue is represented by the tail node. When an element is enqueued, 
+a new node is created and inserted at the end of the linked list, becoming the new tail node. Similarly, when an element is dequeued, the head node is removed, and the next node becomes the new head node. This implementation allows for efficient insertion and removal of elements at both ends of the queue, as well as constant-time complexity for enqueue and dequeue operations. Linked list-based 
+queues provide flexibility in terms of the size of the queue and can handle a variable number of elements. They are particularly useful in scenarios where the size of the queue may change dynamically and where efficient insertion and removal of elements are required.
+
+\subsection*{Sec. 5.21 - Array-Based Queues}
+
+\subsubsection{Overview}
+
+Array-based queues are a common implementation of the queue abstract data type (ADT) using arrays. In this implementation, an array is used to store the elements of the queue, with two indices representing the front and back of the queue. Elements are enqueued at the back of the queue by incrementing the back index and inserting the element at that position in the array. Similarly, elements are 
+dequeued from the front of the queue by accessing the element at the front index and incrementing the front index. Array-based queues provide efficient constant-time complexity for enqueue and dequeue operations, as accessing elements by index in an array is a constant-time operation. However, they have a fixed capacity determined by the size of the underlying array, and resizing the array can 
+be costly. Array-based queues are well-suited for scenarios where the maximum number of elements in the queue is known or can be easily determined in advance, providing a more memory-efficient option compared to linked list-based implementations. They are commonly used in applications that require a simple and efficient queue structure with a fixed capacity.
+
+\subsubsection{Bounded vs. Unbounded Queue}
+
+Bounded and unbounded queues refer to two different types of queues based on their capacity and behavior. A bounded queue has a fixed capacity, meaning it can only hold a limited number of elements. Once the queue is full, any attempt to enqueue additional elements will result in an overflow condition. On the other hand, an unbounded queue has no fixed capacity and can dynamically grow to accommodate 
+any number of elements. Enqueuing elements to an unbounded queue is always possible, as it can allocate additional memory to store new elements. However, this dynamic resizing can be resource-intensive and may result in memory allocation failures in extreme cases. The choice between bounded and unbounded queues depends on the specific requirements of an application. Bounded queues are suitable when 
+the maximum number of elements is known and memory usage needs to be controlled. Unbounded queues, on the other hand, are preferable when the number of elements can vary greatly or when memory constraints are not a concern.
+
+\subsubsection{Enqueue and Dequeue Operations}
+
+The enqueue and dequeue operations are fundamental operations in a queue data structure. Enqueue refers to the process of adding an element to the back (or rear) of the queue, while dequeue refers to removing an element from the front (or head) of the queue. When enqueueing, the new element is inserted after the last element of the queue, and the rear pointer is updated accordingly. Dequeueing involves 
+removing the element at the front of the queue and updating the front pointer to point to the next element. These operations follow the First-In-First-Out (FIFO) principle, ensuring that the element added first will be the first one to be removed. Enqueue and dequeue operations are typically performed in constant time complexity, making queues an efficient choice for managing elements in a FIFO manner.
+
+\begin{solution}[Array-Based Queue Example]
+    Below is an example of an array-based queue example in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #define MAX_SIZE 5
+    
+    class ArrayQueue {
+    private:
+        int front, rear;
+        int queue[MAX_SIZE];
+    
+    public:
+        ArrayQueue() {
+            front = -1;
+            rear = -1;
+        }
+    
+        bool isEmpty() {
+            return (front == -1 && rear == -1);
+        }
+    
+        bool isFull() {
+            return (rear == MAX_SIZE - 1);
+        }
+    
+        void enqueue(int item) {
+            if (isFull()) {
+                std::cout << "Queue is full. Cannot enqueue element." << std::endl;
+                return;
+            }
+            if (isEmpty()) {
+                front = 0;
+            }
+            rear++;
+            queue[rear] = item;
+            std::cout << item << " enqueued successfully." << std::endl;
+        }
+    
+        void dequeue() {
+            if (isEmpty()) {
+                std::cout << "Queue is empty. Cannot dequeue element." << std::endl;
+                return;
+            }
+            std::cout << queue[front] << " dequeued successfully." << std::endl;
+            if (front == rear) {
+                front = -1;
+                rear = -1;
+            } else {
+                front++;
+            }
+        }
+    
+        void display() {
+            if (isEmpty()) {
+                std::cout << "Queue is empty." << std::endl;
+                return;
+            }
+            std::cout << "Queue elements: ";
+            for (int i = front; i <= rear; i++) {
+                std::cout << queue[i] << " ";
+            }
+            std::cout << std::endl;
+        }
+    };
+    
+    int main() {
+        ArrayQueue queue;
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.display();  // Output: Queue elements: 10 20 30
+        queue.dequeue();
+        queue.display();  // Output: Queue elements: 20 30
+        queue.enqueue(40);
+        queue.enqueue(50);
+        queue.enqueue(60);  // Output: Queue is full. Cannot enqueue element.
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates an array-based queue implementation in C++. The `ArrayQueue' class maintains a fixed-size array to store the elements of the queue. It provides methods to check if the queue is empty or full, enqueue an element at the rear, dequeue an element from the front, and display the queue elements. The operations are performed in constant time complexity, ensuring efficient handling 
+    of elements based on the FIFO principle. The example demonstrates enqueueing and dequeueing elements, as well as handling cases when the queue is full or empty.
+\end{solution}
+
+\subsection*{Sec. 5.22 - Deque Abstract Data Type (ADT)}
+
+The deque (double-ended queue) abstract data type (ADT) is a versatile data structure that allows insertion and deletion of elements at both ends. It combines the functionalities of stacks and queues, offering efficient insertion and removal operations at the front and back of the deque. Elements can be added or removed from either end, enabling flexibility in various applications. The deque ADT provides 
+methods such as `push\_front()', `push\_back()', `pop\_front()', `pop\_back()', and `size()', among others, to manipulate and retrieve elements. Deques can be implemented using arrays or linked lists, with array-based implementations providing constant-time complexity for most operations and linked list implementations providing flexibility in terms of dynamic resizing. The deque ADT is widely used when elements 
+need to be efficiently added or removed from either end, offering a powerful and adaptable data structure for various programming scenarios.
