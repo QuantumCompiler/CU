@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {1.0.3}Instructor Information}{4}{subsection.1.0.3}%
 \contentsline {subsection}{\numberline {1.0.4}Important Dates}{4}{subsection.1.0.4}%
 \contentsline {subsection}{\numberline {1.0.5}Grade Breakdown}{4}{subsection.1.0.5}%
-\contentsline {subsection}{\numberline {1.0.6}Grading Scale}{4}{subsection.1.0.6}%
+\contentsline {subsection}{\numberline {1.0.6}Grading Scale}{5}{subsection.1.0.6}%
 \contentsline {chapter}{\numberline {2}Week 1}{6}{chapter.2}%
 \contentsline {section}{C++ Review, Debugging, Unit Testing}{6}{section*.5}%
 \contentsline {subsection}{\numberline {2.0.1}Activities}{6}{subsection.2.0.1}%
@@ -32,7 +32,7 @@
 \contentsline {subsubsection}{Null Pointers}{47}{subsubsection*.10}%
 \contentsline {subsubsection}{The `new' Operator}{48}{subsubsection*.11}%
 \contentsline {subsubsection}{Member Access Operator}{48}{subsubsection*.12}%
-\contentsline {subsubsection}{The `delete' Operator}{48}{subsubsection*.13}%
+\contentsline {subsubsection}{The `delete' Operator}{49}{subsubsection*.13}%
 \contentsline {subsubsection}{C String Library Functions}{49}{subsubsection*.14}%
 \contentsline {subsubsection}{C String Search Functions}{50}{subsubsection*.15}%
 \contentsline {subsubsection}{Default Assignment Operator Behavior}{57}{subsubsection*.16}%
@@ -57,4 +57,15 @@
 \contentsline {subsubsection}{Overview}{91}{subsubsection*.34}%
 \contentsline {subsubsection}{Bounded vs. Unbounded Queue}{91}{subsubsection*.35}%
 \contentsline {subsubsection}{Enqueue and Dequeue Operations}{91}{subsubsection*.36}%
+\contentsline {chapter}{\numberline {5}Week 4}{94}{chapter.5}%
+\contentsline {section}{Recursion \& Trees}{94}{section*.37}%
+\contentsline {subsection}{\numberline {5.0.1}Activiites}{94}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Lectures}{94}{subsection.5.0.2}%
+\contentsline {subsection}{\numberline {5.0.3}Programming Assignment}{95}{subsection.5.0.3}%
+\contentsline {subsection}{\numberline {5.0.4}Chapter 6 - Recursion}{95}{subsection.5.0.4}%
+\contentsline {subsubsection}{Recursive Search}{97}{subsubsection*.38}%
+\contentsline {subsubsection}{Recursive Search Function}{97}{subsubsection*.39}%
+\contentsline {subsubsection}{Recursively Searching a Sorted List}{97}{subsubsection*.40}%
+\contentsline {subsubsection}{Recursive Algorithms}{104}{subsubsection*.41}%
+\contentsline {subsubsection}{Recursive Functions}{105}{subsubsection*.42}%
 \contentsfinish 

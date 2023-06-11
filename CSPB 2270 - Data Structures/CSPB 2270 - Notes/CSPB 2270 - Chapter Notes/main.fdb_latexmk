@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1686203821 -1
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1686457299 -1
   "./bib.bib" 1685939306 630 cd36c0fd067ca8f5b5f67415192ee737 ""
-  "main.bcf" 1686203820 109251 c09beb39328eaef2015c675a5706bcfe "pdflatex"
+  "main.bcf" 1686457299 109251 c09beb39328eaef2015c675a5706bcfe "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1686203814 "/Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 - Chapter Notes/main.tex" "main.pdf" "main" 1686203821 0
-  "/Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 - Chapter Notes/main.tex" 1686120413 2120 f38a10bedd4d3d3fe8ad722a9df4b0f0 ""
+["pdflatex"] 1686457292 "/Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 - Chapter Notes/main.tex" "main.pdf" "main" 1686457299 0
+  "/Users/taylor/Documents/Flurdbop/CU/CSPB 2270 - Data Structures/CSPB 2270 - Notes/CSPB 2270 - Chapter Notes/main.tex" 1686452072 2195 7559b64fca69ad80f3a39ea9435e24f0 ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1678549815 2375 baa924870cfb487815765f9094cf3728 ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1678549815 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1678549815 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -391,14 +391,15 @@
   "Figures/CU Wordmark.png" 1685939306 21134 022015e41c793d2456afd64725729fe9 ""
   "Tex Files/C++ Review - Debugging - Unit Testing.tex" 1686120516 19484 cb793b160a36f7783852380e7398f59d ""
   "Tex Files/Introduction.tex" 1686120516 7474 739864559f6c5de678bc47aa9d8e08ba ""
-  "Tex Files/Object Orientation in C++ & ADT.tex" 1686120516 80107 cf29f2e3e501a5ea82b58ba5e44a3f23 ""
-  "Tex Files/Pointers And Lists.tex" 1686203808 121672 bc7148cc17f41e0d3624bc7bde283cde ""
-  "main.aux" 1686203820 15551 70449374f8915b86feff7a502b73bae8 "pdflatex"
+  "Tex Files/Object Orientation in C++ & ADT.tex" 1686451676 80108 038ca7be0dc04f8d8283fa9de30a0021 ""
+  "Tex Files/Pointers And Lists.tex" 1686203910 121672 bc7148cc17f41e0d3624bc7bde283cde ""
+  "Tex Files/Recursion & Trees.tex" 1686457292 30799 6d4253b2b2ea249a2b238b104e860c9a ""
+  "main.aux" 1686457299 17944 d4eb98bf870c411b0b65a154824a547d "pdflatex"
   "main.bbl" 1685939306 466 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.out" 1686203820 4347 e51a7f5ed2bf3c333a5360d26e276e39 "pdflatex"
-  "main.ptc" 1686203820 4706 34d0e9d6f235526257d4b4b876fdbb43 "pdflatex"
-  "main.run.xml" 1686203820 2630 50c273569da99a7b41dee12a3fd40c33 "pdflatex"
-  "main.tex" 1686120413 2120 f38a10bedd4d3d3fe8ad722a9df4b0f0 ""
+  "main.out" 1686457299 5138 b02e34df7d568eae184c7ae65cefa351 "pdflatex"
+  "main.ptc" 1686457299 5573 acc916adb691a32f3bb45dbc59106c90 "pdflatex"
+  "main.run.xml" 1686457299 2630 50c273569da99a7b41dee12a3fd40c33 "pdflatex"
+  "main.tex" 1686452072 2195 7559b64fca69ad80f3a39ea9435e24f0 ""
   "solutionclass.cls" 1686120516 20595 0c1e3ce41f5dea743ab1177c2cc3d70d ""
   (generated)
   "main.aux"
