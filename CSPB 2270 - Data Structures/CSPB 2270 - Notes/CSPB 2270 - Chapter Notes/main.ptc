@@ -68,4 +68,27 @@
 \contentsline {subsubsection}{Recursively Searching a Sorted List}{97}{subsubsection*.40}%
 \contentsline {subsubsection}{Recursive Algorithms}{104}{subsubsection*.41}%
 \contentsline {subsubsection}{Recursive Functions}{105}{subsubsection*.42}%
+\contentsline {subsection}{\numberline {5.0.5}Chapter 7 - Trees}{105}{subsection.5.0.5}%
+\contentsline {subsubsection}{Binary Tree Basics}{105}{subsubsection*.43}%
+\contentsline {subsubsection}{Depth, Level, \& Height}{105}{subsubsection*.44}%
+\contentsline {subsubsection}{Special Types of Binary Trees}{106}{subsubsection*.45}%
+\contentsline {subsubsection}{File Systems}{107}{subsubsection*.46}%
+\contentsline {subsubsection}{Binary Space Partitioning}{108}{subsubsection*.47}%
+\contentsline {subsubsection}{Linear Search vs. Binary Search}{109}{subsubsection*.48}%
+\contentsline {subsubsection}{Binary Search Algorithm}{109}{subsubsection*.49}%
+\contentsline {subsubsection}{Binary Search Efficiency}{110}{subsubsection*.50}%
+\contentsline {subsubsection}{Binary Search Trees}{111}{subsubsection*.51}%
+\contentsline {subsubsection}{Searching}{111}{subsubsection*.52}%
+\contentsline {subsubsection}{BST Search Runtime}{111}{subsubsection*.53}%
+\contentsline {subsubsection}{Successors \& Predecessors}{111}{subsubsection*.54}%
+\contentsline {subsubsection}{Overview}{115}{subsubsection*.55}%
+\contentsline {subsubsection}{BST Insert Algorithm Complexity}{115}{subsubsection*.56}%
+\contentsline {subsubsection}{Overview}{116}{subsubsection*.57}%
+\contentsline {subsubsection}{BST Remove Algorithm Complexity}{117}{subsubsection*.58}%
+\contentsline {subsubsection}{BST Recursive Search Algorithm}{123}{subsubsection*.59}%
+\contentsline {subsubsection}{BST Get Parent Algorithm}{124}{subsubsection*.60}%
+\contentsline {subsubsection}{Recursive BST Insertion and Removal}{124}{subsubsection*.61}%
+\contentsline {subsubsection}{Overview}{126}{subsubsection*.62}%
+\contentsline {subsubsection}{Trie Insert Algorithm}{126}{subsubsection*.63}%
+\contentsline {subsubsection}{Trie Remove Algorithm}{126}{subsubsection*.64}%
 \contentsfinish 
