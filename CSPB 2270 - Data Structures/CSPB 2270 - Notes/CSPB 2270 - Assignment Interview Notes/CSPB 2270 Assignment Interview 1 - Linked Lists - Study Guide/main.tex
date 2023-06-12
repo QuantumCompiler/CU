@@ -1,5 +1,6 @@
-% Template created by Karol Kozioł (www.karol-koziol.net) for ShareLaTeX
-
+% ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- 
+% Preamble
+% ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- 
 \documentclass[a4paper,9pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -14,61 +15,63 @@
 \usepackage{indentfirst}
 \usepackage{multicol}
 \usepackage{tabularx}
+\usepackage[most]{tcolorbox}
 \usepackage{tgheros}
 \usepackage[explicit]{titlesec}
 \usepackage{xcolor}
-
+% ----- ----- ----- ----- ----- 
+% Column Spacing
+% ----- ----- ----- ----- ----- 
 \setlength{\columnseprule}{0pt}
-\setlength{\columnsep}{20.0pt}
-\everymath{\displaystyle}
-
+\setlength{\columnsep}{10.0pt}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\geometry{a4paper,left=5mm,right=5mm,top=15mm,bottom=15mm}
-\linespread{1.3}
-
+% ----- ----- ----- ----- ----- 
+% Custom Colors
+% ----- ----- ----- ----- ----- 
 \definecolor{myDColor}{HTML}{000000} % Darker Color
 \definecolor{myLColor}{HTML}{CFB87C} % Lighter Color
 \definecolor{LinkColor}{HTML}{CFB87C} % Link Color
-
-% custom title
+% ----- ----- ----- ----- ----- 
+% Custom Title
+% ----- ----- ----- ----- ----- 
 \makeatletter
 \renewcommand*{\maketitle}{%
 \noindent
 \begin{minipage}{\textwidth}
 \begin{tikzpicture}
-\node[rectangle,rounded corners=6pt,inner sep=10pt,fill=myDColor,text width= 0.95\textwidth] {\color{white}\Huge \@title};
+\node[rectangle,rounded corners=10pt,inner sep=7.5pt,fill=myDColor,text width= 0.975\textwidth, align=center] {\color{white}\Huge \@title};
 \end{tikzpicture}
 \end{minipage}
 \hfill
 \bigskip\bigskip
 }%
 \makeatother
-
-% custom section
+% ----- ----- ----- ----- ----- 
+% Custom Section
+% ----- ----- ----- ----- ----- 
 \newcommand*\sectionlabel{}
 \titleformat{\section}
-  {\gdef\sectionlabel{}
-   \normalfont\sffamily\Large\bfseries\scshape}
-  {\gdef\sectionlabel{\thesection\ }}{0pt}
-  {
+{\gdef\sectionlabel{}
+\normalfont\sffamily\Large\bfseries\scshape}
+{\gdef\sectionlabel{\thesection\ }}{0pt}{
 \noindent
 \begin{tikzpicture}
-\node[rectangle,rounded corners=3pt,inner sep=4pt,fill=myLColor,text width= 0.95\columnwidth] {\color{white}\sectionlabel#1};
-\end{tikzpicture}
-  }
-\titlespacing*{\section}{0pt}{15pt}{10pt}
-
-\title{CSPB 2270 Assignment Interview 1 - Linked List - Study Guide}
-
-% custom footer
+\node[rectangle,rounded corners=6pt,inner sep=4pt,fill=myLColor,text width= 0.975\columnwidth, align=center] {\color{white}\sectionlabel#1};
+\end{tikzpicture}}
+\titlespacing*{\section}{0pt}{5pt}{5pt}
+% ----- ----- ----- ----- ----- 
+% Custom Header & Footer / Geometry
+% ----- ----- ----- ----- ----- 
+\geometry{a4paper,left=10mm,right=10mm,top=15mm,bottom=15mm}
+\linespread{1} % Distance between lines
 \pagestyle{fancy}
 \fancyhead[L]{Taylor Larrechea}
 \fancyhead[C]{Linked List Assignment Interview}
 \fancyhead[R]{University of Colorado}
-\fancyfoot[L]{CSPB 2270}
-\fancyfoot[R]{Assignment Interview 1 Study Guide}
+\fancyfoot[L]{CSPB 2270 Data Structures}
+\fancyfoot[R]{Linked List AI}
 \backgroundsetup{
     scale = 1,
     angle = 0,
@@ -77,18 +80,161 @@
     \includegraphics[scale = 0.25, keepaspectratio]{Figures/CU Seal.png}
     }
 }
-
+\newtcolorbox{highlight}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    before upper={\parindent15pt},
+    breakable,
+    boxrule = 0pt,
+    frame hidden,
+    borderline west = {4pt}{0pt}{myDColor},
+    colback = myLColor!10,
+    coltitle = myLColor!5,
+    sharp corners,
+    rounded corners = southeast,
+    arc is angular,
+    arc = 3mm,
+    attach boxed title to top left,
+    boxed title style = {%
+        enhanced,
+        colback = myDColor,
+        colframe = myDColor,
+        top = 0pt,
+        bottom = 0pt,
+        sharp corners,
+        rounded corners = northeast,
+        arc is angular,
+        arc = 2mm,
+        rightrule = 0pt,
+        bottomrule = 0pt,
+        toprule = 0pt,
+    },
+    title = {\bfseries\large #1}, 
+    overlay unbroken={%
+        \path[fill = tcbcolback!80!black] 
+            ([yshift = 3mm]interior.south east) -- ++(-0.4,-0.1) -- ++(0.1,-0.2);
+    },
+    overlay first = {%
+        \path[fill = tcbcolback!80!black] 
+            ([yshift = 3mm]interior.south east) -- ++(-0.4,-0.1) -- ++(0.1,-0.2);
+    },
+    overlay middle={%
+        \path[fill = tcbcolback!80!black] 
+            ([yshift = -3mm]interior.north east) -- ++(-0.4,0.1) -- ++(0.1,0.2);
+        \path[fill = tcbcolback!80!black] 
+            ([yshift = 3mm]interior.south east) -- ++(-0.4,-0.1) -- ++(0.1,-0.2);
+    },
+    overlay last={%
+        \path[fill = tcbcolback!80!black] 
+            ([yshift = -3mm]interior.north east) -- ++(-0.4,0.1) -- ++(0.1,0.2);
+        \path[fill = tcbcolback!80!black] 
+            ([yshift = 3mm]interior.south east) -- ++(-0.4,-0.1) -- ++(0.1,-0.2);
+    },
+    extras middle and last = { rounded corners = northeast }
+}
+% ----- ----- ----- ----- ----- Title
+\title{Linked List Assignment Interview Notes}
+% ----- ----- ----- ----- ----- Begin Document
 \begin{document}
 
 \maketitle
 
-\section*{Flurdbop}
+\section*{Vector Overview}
 
-\begin{multicols}{2}
-    \section*{Bertgop}
-    \section*{Gerfnop}
-\end{multicols}
+\subsection*{Generic Overview}
 
-\section*{Sneegldop}
+A vector is a dynamic array that allows storing and accessing elements of the same data type. It is a container class
+provided by the Standard Template Library (STL) in C++. Vectors provide several advantages over traditional arrays, such
+as automatic memory management, resizable capacity, and built-in functions for efficient manipulation.
+
+Internally, a vector is implemented as a contiguous block of memory that stores the elements. It dynamically manages its
+size, expanding or shrinking as needed. Elements are accessed using zero-based indexing, similar to arrays. The vector
+class provides various member functions and operators for performing common operations like adding elements at the end,
+inserting elements at specific positions, removing elements, and accessing elements by index. Vectors offer efficient
+random access, constant time complexity for accessing elements, and amortized constant time complexity for adding or 
+removing elements at the end.
+
+\subsection*{How Are Vectors Different From Arrays?}
+
+\noindent Vectors and arrays are both used to store collections of elements in C++, but vary in some areas:
+
+\begin{itemize}
+  \item Arrays are fixed-size collections with a static size determined at compile-time, while vectors are dynamic arrays
+  with a flexible and resizable size.
+  \item Arrays require manual memory management and cannot be easily resized, whereas vectors handle memory allocation and
+  deallocation automatically, allowing for dynamic resizing.
+  \item Arrays provide direct and efficient access to elements using zero-based indexing, while vectors offer convenient
+  member functions like `push\_back()' and `pop\_back()' for adding and removing elements.
+  \item Arrays have a fixed memory layout, resulting in slightly faster element access, while vectors provide more convenience
+  and flexibility.
+  \item Arrays cannot be easily copied or assigned to another array, while vectors can be easily copied of assigned to other
+  vectors.
+\end{itemize}
+
+\noindent In summary, arrays are suitable when the size is known and fixed, and direct memory control is needed. Vectors, on the other hand,
+are preferred when the size needs to be dynamic, convenient operations are required, and automatic memory management is desired.
+
+\subsection*{What Is The Algorithm For Adding And Removing Elements From A Vector?}
+
+\noindent To add elements to a vector in C++, we use:
+
+\begin{itemize}
+  \item To add an element at the end of the vector, we use the `push\_back()' function, which appends the element to the end of
+  the vector.
+  \item To insert an element at a specific position within the vector, we use `insert()' function. This function takes an iterator
+  pointing to the position and the element to be inserted.
+\end{itemize}
+
+\noindent To remove elements from a vector in C++, we use:
+
+\begin{itemize}
+  \item To remove the last element of the vector, we use the `pop\_back()' function, which removes the element from the end of the vector.
+  \item If you want to remove an element from a specific position within the vector, we use the `erase()' function. It takes an iterator
+  pointing to the position and removes the element at that position.
+\end{itemize}
+
+\noindent These operations provide a convenient and efficient way to add and remove elements from a vector, maintaining the integrity and
+resizing the vector dynamically as needed.
+
+\subsection*{What Are The Benefits Of Using A Vector Over An Array?}
+
+\noindent The benefits of using a vector over an array are:
+
+\begin{itemize}
+  \item Dynamic Size: Vectors provide dynamic resizing, allowing you to add or remove elements at runtime. Unlike arrays, which have a fixed
+  size, vectors automatically handle memory allocation.
+  \item Convenience: Vectors come with built-in functions like `push\_back()', `pop\_back()', and `insert()', making it easier to add, remove,
+  or insert elements without manual management. Vectors also provide member functions like `size()' and `empty()' to retrieve information about
+  the number of elements and check if the vector is empty.
+  \item Bounds Checking: Vectors perform bounds checking on element access, ensuring that you do not go out of bounds. This helps prevent accessing
+  memory beyond the allocated size and reduces the risk of errors and crashes that can occur with arrays.
+  \item Iteration Support: Vectors can be easily iterated using range-based for loops or iterators, providing a convenient way to traverse and
+  manipulate elements.
+  \item Copying and Assignment: Vectors can be easily copied and assigned to other vectors using the copy constructor and assignment operator, allowing
+  for efficient and convenient data handling.
+\end{itemize}
+
+\noindent Overall, vectors offer the flexibility of dynamic resizing, convenient functions, bounds checking, iteration support, and ease of copying,
+making them a preferred choice over arrays in many scenarios.
+
+\subsection*{What Is The Basic Algorithm For Iterating Through A Vector?}
+
+The simple algorithm for iterating through the elements of a vector is to use a for-loop. Starting the index at 0, and going up to the size of
+the vector, we can use built in functions like `at()' to indicate which index we are wanting to examine / manipulate. Using this simple algorithm, we check
+for certain conditions within our vector, look for specific elements, and many other things as well.
+
+\section*{Linked List Overview}
+
+\subsection*{Generic Overview}
+
+A linked list is a data structure commonly used in object-oriented programming that consists of nodes connected through 
+pointers. Each node contains a value and a pointer to the next node in the list, except for the last node which points 
+to `nullptr'. The linked list does not have a specific `head' or `tail' node, but rather, the first node in the list is 
+often referred to as the `head' and the last node is commonly known as the `tail'. The nodes in between the `head' and 
+`tail' are linked in a sequential manner. The `head' node serves as the starting point for traversing the list, and each 
+node points to the next node, allowing efficient insertion and removal operations.
 
 \end{document}
+% ----- ----- ----- ----- ----- End Document
