@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.3.21)  10 JUN 2023 21:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.3.21)  11 JUN 2023 20:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1487,12 +1487,12 @@ Package biblatex Info: Reference segment=0 on input line 25.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
-<Figures/CU Wordmark.png, id=179, 1066.98625pt x 1027.84pt>
+<Figures/CU Wordmark.png, id=183, 1066.98625pt x 1027.84pt>
 File: Figures/CU Wordmark.png Graphic file (type png)
 <use Figures/CU Wordmark.png>
 Package pdftex.def Info: Figures/CU Wordmark.png  used on input line 30.
 (pdftex.def)             Requested size: 71.13188pt x 68.52145pt.
-<Figures/CU Seal.png, id=181, 803.0pt x 803.0pt>
+<Figures/CU Seal.png, id=185, 803.0pt x 803.0pt>
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 30.
@@ -2294,7 +2294,141 @@ File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 465.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [104])
+ [104]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 495.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [105]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 579.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [106]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 588.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [107]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 659.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [108]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 680.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [109]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 728.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [110]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 838.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [111]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 838.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [112]
+Overfull \hbox (70.9104pt too wide) in paragraph at lines 893--893
+[]            \T1/lmtt/m/n/10.95 std::cout << "Key " << target << " found in the binary search tree." << std::endl;[] 
+ []
+
+
+Overfull \hbox (93.90533pt too wide) in paragraph at lines 895--895
+[]            \T1/lmtt/m/n/10.95 std::cout << "Key " << target << " not found in the binary search tree." << std::endl;[] 
+ []
+
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 905.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+[113]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 914.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [114]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 984.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [115]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 998.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [116]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1091.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [117]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1097.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [118]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1147.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [119]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1224.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [120]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1328.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [121]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1328.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [122]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1343.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [123]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1455.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [124]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1455.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [125]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1475.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [126]
+Overfull \hbox (19.1718pt too wide) in paragraph at lines 1525--1525
+[]                \T1/lmtt/m/n/10.95 return node->children.empty(); // Check if node has no other children[] 
+ []
+
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1570.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+[127])
 \tf@ptc=\write6
 \openout6 = `main.ptc'.
 
@@ -2302,7 +2436,7 @@ File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 53.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [105]
+ [128]
 
 LaTeX Warning: Empty bibliography on input line 53.
 
@@ -2313,24 +2447,24 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B02E34DF7D568EAE184C7AE65CEFA351;5138.
+(rerunfilecheck)             Checksum: 25A68E0E8F4959369699021C2D93CC27;5294.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58815 strings out of 476025
- 1333938 string characters out of 5780034
- 2420645 words of memory out of 5000000
- 77871 multiletter control sequences out of 15000+600000
- 600192 words of font info for 196 fonts, out of 8000000 for 9000
+ 58988 strings out of 476025
+ 1336791 string characters out of 5780034
+ 2421841 words of memory out of 5000000
+ 77981 multiletter control sequences out of 15000+600000
+ 600773 words of font info for 203 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,14n,131p,1180b,2833s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (105 pages, 783794 bytes).
+Output written on main.pdf (128 pages, 846785 bytes).
 PDF statistics:
- 963 PDF objects out of 1000 (max. 8388607)
- 794 compressed objects within 8 object streams
- 177 named destinations out of 1000 (max. 500000)
- 48055 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1108 PDF objects out of 1200 (max. 8388607)
+ 914 compressed objects within 10 object streams
+ 226 named destinations out of 1000 (max. 500000)
+ 48063 words of extra memory for PDF output out of 51595 (max. 10000000)
 
