@@ -134,6 +134,7 @@
     },
     extras middle and last = { rounded corners = northeast }
 }
+\newcommand{\horizontalline}{\noindent \rule{\textwidth}{0.5pt}\par}
 % ----- ----- ----- ----- ----- Title
 \title{Linked List Assignment Interview Notes}
 % ----- ----- ----- ----- ----- Begin Document
@@ -227,6 +228,8 @@ for certain conditions within our vector, look for specific elements, and many o
 
 \section*{Linked List Overview}
 
+\section*{Linked List Overview}
+
 \subsection*{Generic Overview}
 
 A linked list is a data structure commonly used in object-oriented programming that consists of nodes connected through 
@@ -235,6 +238,88 @@ to `nullptr'. The linked list does not have a specific `head' or `tail' node, bu
 often referred to as the `head' and the last node is commonly known as the `tail'. The nodes in between the `head' and 
 `tail' are linked in a sequential manner. The `head' node serves as the starting point for traversing the list, and each 
 node points to the next node, allowing efficient insertion and removal operations.
+
+\subsection*{Difference Between An Array And Vector}
+
+Linked lists differ from arrays and vectors in several ways. One significant distinction is that the nodes in a linked list, 
+which correspond to elements in an array or vector, contain pointers that indicate the next node in the list. In contrast, 
+elements in arrays and vectors do not have pointers pointing to the next element. Unlike arrays and vectors, linked lists 
+cannot be accessed using an index value. However, similar to vectors, linked lists have the potential to dynamically resize 
+after compilation. It's important to note that the mechanism of size change in a linked list is different from that of vectors.
+Some other key differences between linked lists and vectors and arrays are:
+
+\begin{itemize}
+    \item Memory Allocation: Linked lists dynamically allocate memory for each node as it is needed. This allows for efficient memory
+    usage, as nodes can be allocated and deallocated independently. In contrast, arrays and vectors allocate a fixed block of memory
+    upfront, regardless of the number of elements, which can clead to potential wastage of insufficient memory.
+    \item Insertion and Deletion: Linked lists excel in insertion and deletion operations, especially in the middle of the list. Inserting
+    or removing a node in a linked list only requires updating the pointers, whereas in arrays and vectors, these operations may involve
+    shifting elements, resulting in less efficiency.
+    \item Random Access: Arrays and vectors support direct and efficient random access using index-based access. You can access any element
+    in constant time with their respective indices. Linked lists, on the other hand, do not provide direct index-based access, requiring traversal
+    from the head to the desired node, resulting in linear time complexity.
+    \item Memory Overhead: Linked lists have a higher memory overhead compared to arrays and vectors due to the additional memory required for storing
+    the pointers. Each node in a linked list needs to store a pointer to the next node, increasing the overall memory usage.
+    \item Iteration efficiency: Arrays and vectors offer efficient iteration using loops with index-based access. Since the elements are stored in
+    contiguous memory locations, sequential access is faster. Linked lists , on the other hand, require traversing each node sequentially, resulting in
+    slower iteration.
+    \item Memory Fragmention: Linked lists are less prone to memory fragmentation compared to arrays and vectors. As nodes are dynamically allocated, they
+    cam be scattered in memory, reducing the likelihood of large blocks of unallocated space.
+\end{itemize}
+
+\subsection*{How Are Linked Lists Declared?}
+
+Linked lists, are classes. So in order to declare a linked list, we have to create an object that is allocated on the stack.
+
+\begin{highlight}[Linked List Declartion]
+    Declaring a linked list in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+        #include <iostream>
+
+        \\ Class definition goes here....
+
+        int main() {
+            LinkedList testDeclaration; \\ Linked List Declaration
+        }
+    \end{verbatim}
+
+    \horizontalline
+\end{highlight}
+
+When the linked list is constructed, we initialize the data member `next' to be null. To initialize the list with values, we call
+the `InitNode' function that is defined in the CPP file from the project.
+
+\begin{highlight}[Value Initialization]
+    The function to initialize a node in the linked list with values can be seen below:
+
+    \horizontalline
+
+    \begin{verbatim}
+    /*  InitNode - This function takes in an integer data type and assigns that value to a "node" 
+    data type's "data" member
+    *   Input:
+    *     data - This is an integer data type that is later assigned to a "node" data type's "data" 
+    member
+    *   Algorithm:
+    *     shared_ptr<node> ret(new node); - This line creates a smart pointer of data type "node" 
+    named "ret"
+    *   Output:
+    *     ret - After setting "ret"'s data member to the input parameter "data"
+    *     The "next" data member of the "node" object is initially set to nullptr, indicating the 
+    absence of a next node
+    */
+    shared_ptr<node> LinkedList::InitNode(int data){
+        shared_ptr<node> ret(new node);
+        ret->data = data;
+        return ret;
+    }
+    \end{verbatim}
+
+    \horizontalline
+\end{highlight}
 
 \end{document}
 % ----- ----- ----- ----- ----- End Document
