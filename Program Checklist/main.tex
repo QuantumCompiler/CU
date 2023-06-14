@@ -62,6 +62,7 @@
 %---------------------------------------------------------------------------
 \begin{document}
 \maketitle
+\vspace{-2em}
 The following are courses that are apart of the CU Boulder Applied Computer Science program. The full curriculum can be found \href{https://www.colorado.edu/program/cspb/academics/curriculum-course-list}{\textbf{here}}. Core course codes and classes are colored with \textcolor{yellow}{\textbf{yellow}}, elective course codes and classes are colored with \textcolor{gray}{\textbf{gray}}, credit hours are colored with \textcolor{cyan}{\textbf{cyan}}, completed courses are colored with \textcolor{green}{\textbf{green}}, in progress courses are colored with \textcolor{orange}{\textbf{orange}}, and scheduled courses are colored with \textcolor{magenta}{\textbf{magenta}}.
 \begin{table}[ht]
 \centering
@@ -90,13 +91,33 @@ There are \textbf{26} credit hours of core courses and \textbf{25} credit hours 
 
 \noindent The recommended course schedule for this program is as follows. Entries include a course description and class pre-requisites.  \\
 
-\noindent The following classes are \textcolor{yellow}{\textbf{core courses}}. Some \textcolor{gray}{\textbf{elective courses}} may be taken concurrently with these courses.
+\noindent The following classes are \textcolor{yellow}{\textbf{core courses}}. Some \textcolor{gray}{\textbf{elective courses}} may be taken concurrently with these courses. \\
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|p{6cm}|c|c|c|c|}
+     \hline \header \textbf{Course} & \header \textbf{Course Code} & \header \textbf{Course Hours} & \header \textbf{Curriculum Hours} & \header \textbf{Schedule} \\ \hline
+     \coreclass \CSPBIntro & \coreclass CSPB-1300 & \credithours 4 & \credithours 4 & \completed \\ \hline
+     \coreclass \CSPBDataStruct & \coreclass CSPB-2270 & \credithours 4 & \credithours 8 & \inprogress: Sm-23 \\ \hline
+     \coreclass \CSPBDisc & \coreclass CSPB-2824 & \credithours 3 & \credithours 11 & \scheduled: F-23 \\ \hline
+     \coreclass \CSPBCompSys & \coreclass CSPB-2400 & \credithours 4 & \credithours 15 & \scheduled: F-23 \\ \hline
+     \coreclass \CSPBAlgo & \coreclass CSPB-3104 & \credithours 4 & \credithours 19 & \scheduled: Sp-24 \\ \hline
+     \coreclass \CSPBSoftDev & \coreclass CSPB-3308 & \credithours 3 & \credithours 22 & \scheduled: Sp-24 \\ \hline
+     \electiveclass \CSPBDataSci & \electiveclass CSPB-3022 & \credithours 3 & \credithours 25 & \scheduled: Sp-24 \\ \hline
+     \coreclass \CSPBPrincProg & \coreclass CSPB-3155 & \credithours 4 & \credithours 29 & \scheduled: Sm-24 \\ \hline
+     \electiveclass \CSPBCogSci & \electiveclass CSPB-3702 & \credithours 3 & \credithours 32 & \scheduled: Sm-24 \\ \hline
+     \electiveclass \CSPBDataMin & \electiveclass CSPB-4502 & \credithours 3 & \credithours 35 & \scheduled: Sm-24 \\ \hline
+     \electiveclass \CSPBArtIntell & \electiveclass CSPB-3202 & \credithours 3 & \credithours 38 & \scheduled: F-24 \\ \hline
+     \electiveclass \CSPBOpSys & \electiveclass CSPB-3753 & \credithours 4 & \credithours 42 & \scheduled: F-24 \\ \hline
+     \electiveclass \CSPBInfoVis & \electiveclass  CSPB-4122 & \credithours 3 & \credithours 45 & \scheduled: F-24 \\ \hline
+\end{tabular}
+\end{table}
 
 \horizontalline
 %---------------------------------------------------------------------------
 %	CSPB 1300: Computer Science 1: Starting Computing
 %---------------------------------------------------------------------------
-\noindent \href{https://www.colorado.edu/program/cspb/cspb-1300-computer-science-1-starting-computing}{\textbf{CSPB 1300: Computer Science 1: Starting Computing}} - Prerequisites: \textbf{N/A} Credits:: \textbf{4} \\
+\noindent \href{https://www.colorado.edu/program/cspb/cspb-1300-computer-science-1-starting-computing}{\textbf{CSPB 1300: Computer Science 1: Starting Computing}} - Prerequisites: \textbf{N/A} Credits: \textbf{4} \\
 
 \noindent \textbf{Brief Description of Course Content} - The course covers techniques for writing computer programs in high level programming languages to solve problems of interest in a range of application domains. This class is intended for students with little to no experience with programming. \\
 
@@ -188,7 +209,7 @@ We will build on the following 6 primary learning goals throughout the term:
 %---------------------------------------------------------------------------
 %	CSPB 2270: Computer Science 2: Data Structures
 %---------------------------------------------------------------------------
-\noindent \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270: Computer Science 2: Data Structures}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-1300-computer-science-1-starting-computing}{\textbf{CSPB 1300}} Credits:: \textbf{4} \\
+\noindent \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270: Computer Science 2: Data Structures}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-1300-computer-science-1-starting-computing}{\textbf{CSPB 1300}} Credits: \textbf{4} \\
 
 \noindent \textbf{Brief Description of Course Content} - Studies data abstractions (e.g., stacks, queues, lists, trees) and their representation techniques (e.g., linking, arrays). Introduces concepts used in algorithm design and analysis including criteria for selecting data structures to fit their applications. \\
 
@@ -235,7 +256,7 @@ We will build on the following 6 primary learning goals throughout the term:
 %---------------------------------------------------------------------------
 %	CSPB 3104: Algorithms
 %---------------------------------------------------------------------------
-\noindent \href{https://www.colorado.edu/program/cspb/cspb-3104-algorithms}{\textbf{CSPB 3104: Algorithms}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270}} \& \href{https://www.colorado.edu/program/cspb/cspb-2824-discrete-structures}{\textbf{CSPB 2824}} Credits:: \textbf{4} \\
+\noindent \href{https://www.colorado.edu/program/cspb/cspb-3104-algorithms}{\textbf{CSPB 3104: Algorithms}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270}} \& \href{https://www.colorado.edu/program/cspb/cspb-2824-discrete-structures}{\textbf{CSPB 2824}} Credits: \textbf{4} \\
 
 \noindent \textbf{Brief Description of Course Content} - Covers the fundamentals of algorithms and various algorithmic strategies, including time and space complexity, sorting algorithms, recurrence relations, divide and conquer algorithms, greedy algorithms, dynamic programming, linear programming, graph algorithms, problems in P and NP, and approximation algorithms. \\
 
@@ -276,7 +297,7 @@ We will build on the following 6 primary learning goals throughout the term:
 %---------------------------------------------------------------------------
 %	CSPB 2400: Computer Systems
 %---------------------------------------------------------------------------
-\noindent \href{https://www.colorado.edu/program/cspb/cspb-2400-computer-systems}{\textbf{CSPB 2400: Computer Systems}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270}} Credits:: \textbf{4} \\
+\noindent \href{https://www.colorado.edu/program/cspb/cspb-2400-computer-systems}{\textbf{CSPB 2400: Computer Systems}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270}} Credits: \textbf{4} \\
 
 \noindent \textbf{Brief Description of Course Content} - Covers how programs are represented and executed by modern computers, including low level machine representations of programs and data, an understanding of how computer components and the memory hierarchy influence performance. \\
 
@@ -325,7 +346,7 @@ We will build on the following 6 primary learning goals throughout the term:
 %---------------------------------------------------------------------------
 %	CSPB 3155: Principles of Programming Languages
 %---------------------------------------------------------------------------
-\noindent \href{https://www.colorado.edu/program/cspb/cspb-3155-principles-programming-languages}{\textbf{CSPB 3155: Principles of Programming Languages}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270}} \& \href{https://www.colorado.edu/program/cspb/cspb-2824-discrete-structures}{\textbf{CSPB 2824}} Credits:: \textbf{4} \\
+\noindent \href{https://www.colorado.edu/program/cspb/cspb-3155-principles-programming-languages}{\textbf{CSPB 3155: Principles of Programming Languages}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270}} \& \href{https://www.colorado.edu/program/cspb/cspb-2824-discrete-structures}{\textbf{CSPB 2824}} Credits: \textbf{4} \\
 
 \noindent \textbf{Brief Description of Course Content} - Study fundamental concepts on which programming of languages are based, and execution models supporting them. Topics include values, variables, bindings, type systems, control structures, exceptions, concurrency, and modularity. Learn how to select a language and to adapt to a new language. \\
 
@@ -367,7 +388,7 @@ We will build on the following 6 primary learning goals throughout the term:
 %---------------------------------------------------------------------------
 %	CSPB 3308: Software Development Methods and Tools
 %---------------------------------------------------------------------------
-\noindent \href{https://www.colorado.edu/program/cspb/cspb-3308-software-development-methods-and-tools}{\textbf{CSPB 3308 - Software Development Methods and Tools}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270}} Credits:: \textbf{3} \\
+\noindent \href{https://www.colorado.edu/program/cspb/cspb-3308-software-development-methods-and-tools}{\textbf{CSPB 3308 - Software Development Methods and Tools}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2270-computer-science-2-data-structures}{\textbf{CSPB 2270}} Credits: \textbf{3} \\
 
 \noindent \textbf{Brief Description of Course Content} - Covers tools and practices for software development with a strong focus on best practices used in industry and professional development, such as agile methodologies, pair-programming and test-driven design. Students develop web services and applications while learning these methods and tools. \\
 
@@ -405,13 +426,13 @@ We will build on the following 6 primary learning goals throughout the term:
     \item Regular Expressions
 \end{itemize}
 
-\noindent The following are \textcolor{gray}{\textbf{elective courses}}. Some of these courses require \textcolor{yellow}{\textbf{core classes}} before a student is elligble to take them.
+\noindent The following are \textcolor{gray}{\textbf{elective courses}}. Some of these courses require \textcolor{yellow}{\textbf{core classes}} before a student is eligible to take them.
 
 \horizontalline
 %---------------------------------------------------------------------------
 %	CSPB 2820: Linear Algebra with Computer Science Applications
 %---------------------------------------------------------------------------
-\noindent \href{https://www.colorado.edu/program/cspb/cspb-2820-–-linear-algebra-computer-science-applications}{\textbf{CSPB 2820: Linear Algebra with Computer Science Applications}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2824-discrete-structures}{\textbf{CSPB 2824}}Credits:: \textbf{3} \\
+\noindent \href{https://www.colorado.edu/program/cspb/cspb-2820-–-linear-algebra-computer-science-applications}{\textbf{CSPB 2820: Linear Algebra with Computer Science Applications}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-2824-discrete-structures}{\textbf{CSPB 2824}} Credits: \textbf{3} \\
 
 \noindent \textbf{Brief Description of Course Content} - Introduces the fundamentals of linear algebra in the context of computer science applications. Includes vector spaces, matrices, linear systems, and eigenvalues. Includes the basics of floating point computation and numerical linear algebra. \\
 
@@ -457,7 +478,7 @@ We will build on the following 6 primary learning goals throughout the term:
 %---------------------------------------------------------------------------
 %	CSPB 3022: Introduction to Data Science with Probability and Statistics
 %---------------------------------------------------------------------------
-\noindent \href{https://www.colorado.edu/program/cspb/cspb-3022-introduction-data-science-probability-and-statistics}{\textbf{CSPB 3022: Introduction to Data Science with Probability and Statistics}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-1300-computer-science-1-starting-computing}{\textbf{CSPB 1300}} Credits: \textbf{4} \\ 
+\noindent \href{https://www.colorado.edu/program/cspb/cspb-3022-introduction-data-science-probability-and-statistics}{\textbf{CSPB 3022: Introduction to Data Science with Probability and Statistics}} - Prerequisites: \href{https://www.colorado.edu/program/cspb/cspb-1300-computer-science-1-starting-computing}{\textbf{CSPB 1300}} Credits: \textbf{3} \\ 
 
 \noindent \textbf{Brief Description of Course Content} - Introduces students to the tools methods and theory behind extracting insights from data. Covers algorithms of cleaning and munging data, probability theory and common distributions, statistical simulation, drawing inferences from data, and basic statistical modeling. \\
 
@@ -722,4 +743,5 @@ Many of these concepts are briefly explained in the lessons as a refresher. \\
     \item Statistics
 \end{itemize}
 \horizontalline
+
 \end{document}
