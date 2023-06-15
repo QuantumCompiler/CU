@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.3.21)  13 JUN 2023 22:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.3.21)  15 JUN 2023 13:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2094,12 +2094,12 @@ Package biblatex Info: Reference segment=0 on input line 25.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
-<Figures/CU Wordmark.png, id=183, 1066.98625pt x 1027.84pt>
+<Figures/CU Wordmark.png, id=207, 1066.98625pt x 1027.84pt>
 File: Figures/CU Wordmark.png Graphic file (type png)
 <use Figures/CU Wordmark.png>
 Package pdftex.def Info: Figures/CU Wordmark.png  used on input line 30.
 (pdftex.def)             Requested size: 71.13188pt x 68.52145pt.
-<Figures/CU Seal.png, id=185, 803.0pt x 803.0pt>
+<Figures/CU Seal.png, id=209, 803.0pt x 803.0pt>
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 30.
@@ -2259,7 +2259,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 )
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
-Package pdftex.def Info: Figures/CU Seal.png  used on input line 26.
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 24.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [6
 
@@ -2269,8 +2269,6 @@ File: Figures/CU Seal.png Graphic file (type png)
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 111.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 130.
@@ -2280,8 +2278,7 @@ File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 216.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
-
-[9]
+ [9]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 216.
@@ -2291,7 +2288,8 @@ File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 1.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [11]
+
+[11]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 1.
@@ -2321,7 +2319,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 )
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
-Package pdftex.def Info: Figures/CU Seal.png  used on input line 27.
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 26.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [13
 
@@ -2564,7 +2562,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 )
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
-Package pdftex.def Info: Figures/CU Seal.png  used on input line 28.
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 26.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [45
 
@@ -2579,19 +2577,16 @@ File: Figures/CU Seal.png Graphic file (type png)
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 141.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [47]
-Underfull \vbox (badness 1867) has occurred while \output is active []
-
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
-Package pdftex.def Info: Figures/CU Seal.png  used on input line 165.
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 159.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [48]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 204.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
-
-[49]
+ [49]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 252.
@@ -2602,6 +2597,8 @@ File: Figures/CU Seal.png Graphic file (type png)
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 323.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [51]
+Underfull \vbox (badness 5726) has occurred while \output is active []
+
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 377.
@@ -2611,43 +2608,40 @@ File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 385.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [53]
+
+[53]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 428.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [54]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 474.
-(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [54]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: Figures/CU Seal.png Graphic file (type png)
-<use Figures/CU Seal.png>
-Package pdftex.def Info: Figures/CU Seal.png  used on input line 482.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [55]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 530.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
-
-[56]
+ [56]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 604.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [57]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
-Package pdftex.def Info: Figures/CU Seal.png  used on input line 611.
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 604.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [58]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 685.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [59
 
-[59]
+]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 767.
@@ -2692,7 +2686,8 @@ File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 1099.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [68]
+
+[68]
 Overfull \hbox (13.42307pt too wide) in paragraph at lines 1170--1170
 []            \T1/lmtt/m/n/10.95 std::cout << "Value " << searchValue << " not 
 found in the linked list."[] 
@@ -2888,7 +2883,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 )
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
-Package pdftex.def Info: Figures/CU Seal.png  used on input line 28.
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 26.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
  [94
 
@@ -2903,20 +2898,16 @@ Overfull \hbox (7.67433pt too wide) in paragraph at lines 97--97
 of integers from 1 to n-1[] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 125.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [96]
+[96]
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 188.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
-
-[97]
+ [97]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: Figures/CU Seal.png Graphic file (type png)
@@ -3099,17 +3090,81 @@ File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
 Package pdftex.def Info: Figures/CU Seal.png  used on input line 1570.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
-[127])
+[127]) (./Tex Files/Balanced Trees.tex
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 1.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [128]
+Chapter 6.
+(./main.ptc
+Underfull \hbox (badness 10000) in paragraph at lines 5--5
+ [][] []\T1/lmr/bx/n/9 (+20) Brief De-scrip-tion of Course 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+ [][] []\T1/lmr/bx/n/9 (+20) Chapter 1 - In-tro-duc-tion to 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+ [][] []\T1/lmr/bx/n/9 (+20) Chapter 2 - Ob-jects and 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+ [][] []\T1/lmr/bx/n/9 (+20) Chapter 3 - In-tro-duc-tion to 
+ []
+
+)
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 33.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [129
+
+]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 99.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [130]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 148.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [131]
+Overfull \hbox (1.9256pt too wide) in paragraph at lines 182--182
+[]        \T1/lmtt/m/n/10.95 // (Code for searching and finding the appropriate
+ position for insertion)[] 
+ []
+
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 199.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+[132]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 272.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [133]
+File: Figures/CU Seal.png Graphic file (type png)
+<use Figures/CU Seal.png>
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 272.
+(pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
+ [134])
 \tf@ptc=\write6
 \openout6 = `main.ptc'.
 
 File: Figures/CU Seal.png Graphic file (type png)
 <use Figures/CU Seal.png>
-Package pdftex.def Info: Figures/CU Seal.png  used on input line 53.
+Package pdftex.def Info: Figures/CU Seal.png  used on input line 55.
 (pdftex.def)             Requested size: 200.74951pt x 200.74951pt.
- [128]
+ [135]
 
-LaTeX Warning: Empty bibliography on input line 53.
+LaTeX Warning: Empty bibliography on input line 55.
 
 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -3117,18 +3172,21 @@ enddocument/afterlastpage: lastpage setting LastPage.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 25A68E0E8F4959369699021C2D93CC27;5294.
+(rerunfilecheck)             Checksum: 61918DCD1A39F1D8BA18FD72697F4056;6092.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58985 strings out of 476025
- 1336449 string characters out of 5780034
- 2421818 words of memory out of 5000000
- 77981 multiletter control sequences out of 15000+600000
- 600773 words of font info for 203 fonts, out of 8000000 for 9000
+ 59064 strings out of 476025
+ 1337852 string characters out of 5780034
+ 2422240 words of memory out of 5000000
+ 78037 multiletter control sequences out of 15000+600000
+ 600856 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,14n,131p,1070b,2833s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/public/lm
@@ -3145,10 +3203,10 @@ r9.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/type1/publ
 ic/lm/lmri12.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-dist/fonts/
 type1/public/lm/lmsy10.pfb></opt/homebrew/Cellar/texlive/20230313/share/texmf-d
 ist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (128 pages, 846785 bytes).
+Output written on main.pdf (135 pages, 868526 bytes).
 PDF statistics:
- 1108 PDF objects out of 1200 (max. 8388607)
- 914 compressed objects within 10 object streams
- 226 named destinations out of 1000 (max. 500000)
- 48063 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1231 PDF objects out of 1440 (max. 8388607)
+ 1029 compressed objects within 11 object streams
+ 242 named destinations out of 1000 (max. 500000)
+ 48111 words of extra memory for PDF output out of 51595 (max. 10000000)
 

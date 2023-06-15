@@ -24,7 +24,7 @@
 \contentsline {chapter}{\numberline {4}Week 3}{45}{chapter.4}%
 \contentsline {section}{Pointers \& Lists}{45}{section*.7}%
 \contentsline {subsection}{\numberline {4.0.1}Activites}{45}{subsection.4.0.1}%
-\contentsline {subsection}{\numberline {4.0.2}Lectures}{45}{subsection.4.0.2}%
+\contentsline {subsection}{\numberline {4.0.2}Lectures}{46}{subsection.4.0.2}%
 \contentsline {subsection}{\numberline {4.0.3}Programming Assignment}{46}{subsection.4.0.3}%
 \contentsline {subsection}{\numberline {4.0.4}Chapter 4 - Pointers}{46}{subsection.4.0.4}%
 \contentsline {subsubsection}{Pointer Variables}{47}{subsubsection*.8}%
@@ -91,4 +91,13 @@
 \contentsline {subsubsection}{Overview}{126}{subsubsection*.62}%
 \contentsline {subsubsection}{Trie Insert Algorithm}{126}{subsubsection*.63}%
 \contentsline {subsubsection}{Trie Remove Algorithm}{126}{subsubsection*.64}%
+\contentsline {chapter}{\numberline {6}Week 5}{129}{chapter.6}%
+\contentsline {section}{Balanced Trees}{129}{section*.65}%
+\contentsline {subsection}{\numberline {6.0.1}Activities}{129}{subsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.0.2}Lectures}{129}{subsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.0.3}Programming Assignment}{130}{subsection.6.0.3}%
+\contentsline {subsection}{\numberline {6.0.4}Chapter 8 - Balanced Trees}{130}{subsection.6.0.4}%
+\contentsline {subsubsection}{Overview}{130}{subsubsection*.66}%
+\contentsline {subsubsection}{Left Rotation Algorithm}{130}{subsubsection*.67}%
+\contentsline {subsubsection}{Right Rotation Algorithm}{131}{subsubsection*.68}%
 \contentsfinish 
