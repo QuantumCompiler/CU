@@ -1,0 +1,315 @@
+\clearpage
+
+\chapter{Week 6}
+
+\section{Code Complexity, Binary Search Tree, Sorting Methods}
+
+\horizontalline
+
+\subsection{Activities}
+
+The following are the activities that are planned for Week 6 of this course.
+
+\begin{itemize}
+    \item Watch week videos.
+    \item Read Ch. 9 and Ch. 10 of the Data Structures zyBook and take the in chapter quizzes (due next Monday).
+    \item BST Homework is due Tuesday.
+    \item Start on Sorting Homework (Due next Tuesday).
+    \item Make sure your Proctorio extension is installed and working. --- Take verification quiz to make sure your browser is set up and ready for the exam next week.
+\end{itemize}
+
+\subsection{Lectures}
+
+Here are the lectures that can be found for this week:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45942}{Complexity}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45943}{BST Operation Complexity}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45944}{Hard Problems}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45945}{Bubble Sort}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45946}{Merge Sort}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45947}{Item Sort}
+\end{itemize}
+
+\subsection{Programming Assignment}
+
+The programming assignment for Week 6 - 
+
+\subsection{Chapter 9 - Searching \& Algorithm Analysis}
+
+The first chapter of this week is Chapter 9 - Searching \& Algorithm Analysis.
+
+\subsection*{Sec. 9.1 - Constant Time Operations}
+
+Constant time operations in the context of object-oriented programming refer to operations that execute in a fixed and predictable amount of time, regardless of the size or complexity of the data being processed. These operations provide efficient and consistent performance, allowing developers to perform tasks with a time complexity of $\mathcal{O}(1)$. 
+By implementing constant time operations, developers can optimize their code for quick and reliable execution, resulting in improved scalability and responsiveness in their object-oriented programs.
+
+\subsection*{Sec. 9.2 - Growth of Functions \& Complexity}
+
+\subsubsection{Upper \& Lower Bounds}
+
+Upper and lower bounds play a crucial role in analyzing the growth rates and complexities of functions and algorithms. An upper bound represents the worst-case growth rate of a function, while a lower bound represents the best-case growth rate. The big $\mathcal{O}$ notation ($\mathcal{O}$ notation) is used to express upper bounds, while the big $\Omega$ notation (Omega notation) represents 
+lower bounds. By combining both upper and lower bounds, the tightest possible bound, denoted by $\Theta$ notation (Theta notation), can be determined. Analyzing these bounds enables us to understand how the performance of algorithms and functions scales with input size, aiding in algorithm selection, optimization, and predicting efficiency in different scenarios.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline Notation & General Form & Meaning \\ \hline
+        $\mathcal{O}$ & $T(N)=\mathcal{O}(f(N))$ & A positive constant $c$ exists such that, for all $N \geq 1$, $T(N) \leq c * f(N)$ \\ \hline
+        $\Omega$ & $T(N)=\Omega(f(N))$ & A positive constant $c$ exists such that, for all $N \geq 1$, $T(N) \geq c * f(N)$ \\ \hline
+        $\Theta$ & $T(N)=\Omega(f(N))$ & $T(N)=\mathcal{O}(f(N))$ and $T(N)=\Omega(f(N))$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Sec. 9.3 - $\mathcal{O}$ Notation}
+
+\subsubsection{Big $\mathcal{O}$ Notation}
+
+Big $\mathcal{O}$ notation is a fundamental concept in computer science used to analyze the efficiency and scalability of algorithms. It provides a standardized way to express the upper bound on the worst-case time complexity of an algorithm in terms of the input size. Big $\mathcal{O}$ notation represents the growth rate of an algorithm as a function of the input size, allowing comparisons between different algorithms 
+and helping in algorithm selection. It disregards constant factors and lower-order terms, focusing solely on the dominant term that determines the algorithm's scalability. Big $\mathcal{O}$ notation provides a concise and abstract representation of algorithmic complexity, enabling engineers and developers to understand and reason about the efficiency of algorithms without getting caught up in implementation details.
+
+\subsubsection{Big $\mathcal{O}$ Notation of Composite Functions}
+
+When dealing with composite functions, Big $\mathcal{O}$ notation provides a concise way to express the overall growth rate of the composed functions. The Big $\mathcal{O}$ notation of composite functions is determined by considering the dominant term in each function and evaluating how they interact with one another. If two functions $f(n)$ and $g(n)$ have respective Big $\mathcal{O}$ notations of $\mathcal{O}(f(n))$ and 
+$\mathcal{O}(g(n))$, the Big $\mathcal{O}$ notation of the composite function is determined by taking the maximum growth rate among the two. In other words, if the growth rate of $f(n)$ is faster than $g(n)$, the composite function's Big $\mathcal{O}$ notation will be $\mathcal{O}(f(n))$. This approach allows for a simplified representation of the overall complexity of a composite function and facilitates analysis of algorithmic 
+efficiency when multiple functions are involved.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline Composite Function & Big $\mathcal{O}$ Notation \\ \hline
+        $c \cdot \mathcal{O}(f(N))$ & $\mathcal{O}(f(N))$ \\ \hline
+        $c + \mathcal{O}(f(N))$ & $\mathcal{O}(f(N))$ \\ \hline
+        $g(N) \cdot \mathcal{O}(f(N))$ & $\mathcal{O}(g(N)*f(N))$ \\ \hline
+        $g(N) + \mathcal{O}(f(N))$ & $\mathcal{O}(g(N) + f(N))$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Runtime Growth Rate}
+
+Runtime growth rate refers to how the execution time of an algorithm increases as the input size grows. It is commonly measured using Big $\mathcal{O}$ notation, which expresses the worst-case upper bound on the growth rate of an algorithm. The runtime growth rate provides insights into the scalability and efficiency of an algorithm, allowing developers to understand how the algorithm performs with larger inputs. By analyzing the runtime 
+growth rate, developers can make informed decisions about algorithm selection, identify potential performance bottlenecks, and optimize their code to improve overall efficiency. Understanding the runtime growth rate is crucial for designing algorithms that can handle larger and more complex datasets effectively.
+
+\subsubsection{Common Big $\mathcal{O}$ Complexities}
+
+Common Big $\mathcal{O}$ complexities are used to describe the performance characteristics of algorithms as the input size increases. Some of the most common Big $\mathcal{O}$ complexities include $\mathcal{O}(1)$ O(1), $\mathcal{O}(\log{(n)})$ (logarithmic time), $\mathcal{O}(n)$ (linear time), $\mathcal{O}(n\log{(n)})$ (linearithmic time), $\mathcal{O}(n^2)$ (quadratic time), $\mathcal{O}(2^n)$ (exponential time), and $\mathcal{O}(n!)$
+(factorial time). These complexities represent different rates of growth and have a significant impact on the efficiency of algorithms. Algorithms with constant time complexity execute in a fixed and predictable time regardless of input size, while linear, quadratic, and exponential time complexities indicate a proportional increase in execution time with the input size. Understanding these common Big $\mathcal{O}$ complexities helps in 
+analyzing and comparing algorithms, selecting appropriate solutions for specific problem domains, and optimizing code to achieve efficient algorithmic performance.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline Notation & Name \\ \hline
+        $\mathcal{O}(1)$ & Constant \\ \hline
+        $\mathcal{O}(\log{(N)})$ & Logarithmic \\ \hline
+        $\mathcal{O}(N)$ & Linear \\ \hline
+        $\mathcal{O}(N\log{(N)})$ & Linearithmic \\ \hline
+        $\mathcal{O}(N^2)$ & Quadratic \\ \hline
+        $\mathcal{O}(c^N)$ & Exponential \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{solution}[Common Big $\mathcal{O}$ Complexity Examples]
+    Below are examples of some common Big $\mathcal{O}$ complexities in C++: 
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    #include <algorithm>
+
+    // O(1) - Constant time complexity
+    void printFirstElement(const std::vector<int>& data) {
+        if (!data.empty())
+            std::cout << "First element: " << data[0] << std::endl;
+    }
+
+    // O(log n) - Logarithmic time complexity
+    void binarySearch(const std::vector<int>& data, int target) {
+        int low = 0;
+        int high = data.size() - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (data[mid] == target) {
+                std::cout << "Found at index " << mid << std::endl;
+                return;
+            }
+            else if (data[mid] < target)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        std::cout << "Not found!" << std::endl;
+    }
+
+    // O(n) - Linear time complexity
+    void linearSearch(const std::vector<int>& data, int target) {
+        for (int i = 0; i < data.size(); i++) {
+            if (data[i] == target) {
+                std::cout << "Found at index " << i << std::endl;
+                return;
+            }
+        }
+        std::cout << "Not found!" << std::endl;
+    }
+
+    // O(n log n) - Linearithmic time complexity
+    void mergeSort(std::vector<int>& data) {
+        if (data.size() <= 1)
+            return;
+
+        std::vector<int> left(data.begin(), data.begin() + data.size() / 2);
+        std::vector<int> right(data.begin() + data.size() / 2, data.end());
+
+        mergeSort(left);
+        mergeSort(right);
+
+        std::merge(left.begin(), left.end(), right.begin(), 
+        right.end(), data.begin());
+    }
+
+    // O(n^2) - Quadratic time complexity
+    void bubbleSort(std::vector<int>& data) {
+        for (int i = 0; i < data.size() - 1; i++) {
+            for (int j = 0; j < data.size() - i - 1; j++) {
+                if (data[j] > data[j + 1])
+                    std::swap(data[j], data[j + 1]);
+            }
+        }
+    }
+
+    // O(2^n) - Exponential time complexity
+    int fibonacci(int n) {
+        if (n <= 1)
+            return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    // O(n!) - Factorial time complexity
+    int factorial(int n) {
+        if (n <= 1)
+            return 1;
+        return n * factorial(n - 1);
+    }
+
+    int main() {
+        std::vector<int> data = { 5, 3, 1, 4, 2 };
+        int target = 4;
+
+        printFirstElement(data); // O(1)
+        binarySearch(data, target); // O(log n)
+        linearSearch(data, target); // O(n)
+        mergeSort(data); // O(n log n)
+        bubbleSort(data); // O(n^2)
+        int fib = fibonacci(5); // O(2^n)
+        int fact = factorial(5); // O(n!)
+
+        std::cout << "Fibonacci: " << fib << std::endl;
+        std::cout << "Factorial: " << fact << std::endl;
+
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The examples provided showcase different common Big $\mathcal{O}$ complexities in C++. They illustrate algorithms with varying growth rates as the input size increases. The examples include constant time complexity $\mathcal{O}(1)$, logarithmic time complexity $\mathcal{O}(log{(n)})$, linear time complexity $\mathcal{O}(n)$, linearithmic time complexity $\mathcal{O}(n\log{(n)})$, quadratic time complexity $\mathcal{O}(n^2)$, 
+    exponential time complexity $\mathcal{O}(2^n)$, and factorial time complexity $\mathcal{O}(n!)$. Understanding these complexities is crucial for analyzing algorithmic efficiency, selecting appropriate solutions, and optimizing code. By considering the performance characteristics of algorithms, developers can make informed decisions to design efficient and scalable solutions.
+\end{solution}
+
+\subsection*{Sec. 9.4 - Algorithm Analysis}
+
+\subsubsection{Worst-Case Algorithm Analysis}
+
+Worst-case algorithm analysis is a method used to assess the maximum possible running time of an algorithm for a given input size. It involves identifying the input that would lead to the algorithm's worst performance and analyzing its execution time under that scenario. By focusing on the worst-case scenario, this approach provides a guarantee on the upper bound of the algorithm's running time. Worst-case analysis is widely used 
+in algorithm design and evaluation, as it allows programmers to make informed decisions about algorithm selection, optimization, and predicting the algorithm's behavior in real-world scenarios. It helps ensure that the algorithm performs efficiently and reliably even in unfavorable or challenging inputs.
+
+\subsubsection{Counting Constant Time Operations}
+
+Counting constant time operations involves determining the number of basic operations executed by an algorithm, where each operation takes a constant amount of time regardless of the input size. It entails identifying and quantifying individual operations such as arithmetic operations, assignments, comparisons, or accessing elements in an array. By counting these operations, we can evaluate the efficiency of an algorithm in terms 
+of its time complexity and analyze how it scales with different input sizes. Counting constant time operations provides a quantitative measure to compare and reason about the efficiency of algorithms, enabling developers to make informed decisions regarding algorithm selection and optimization.
+
+\subsubsection{Runtime Analysis of Nested Loops}
+
+Runtime analysis of nested loops involves analyzing the time complexity of algorithms that contain multiple nested loops. This analysis helps determine how the execution time of the algorithm grows as the input size increases. By examining the nesting structure and the number of iterations performed by each loop, we can derive the overall complexity of the nested loops. The runtime analysis considers the number of iterations and the 
+operations within each loop to estimate the overall efficiency of the algorithm. Understanding the runtime analysis of nested loops is essential for identifying potential performance bottlenecks, optimizing code, and designing efficient algorithms for handling larger input sizes.
+
+\begin{solution}[Algorithm Analysis Example]
+    Below is an example of analyzing an algorithm in C++: 
+
+    \horizontalline
+
+    \begin{verbatim}
+    bool searchValue(const std::vector<std::vector<int>>& array, int target) {
+        // Outer loop iterates through each row
+        for (const auto& row : array) {         
+            // Inner loop iterates through each element in the row
+            for (const auto& element : row) {     
+                if (element == target)
+                    return true;
+            }
+        }
+        return false;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The provided example demonstrates the concepts of worst-case algorithm analysis, counting constant time operations, and runtime analysis of nested loops. The worst-case analysis involves considering the scenario where the target element is at the last position or absent in the array, resulting in the algorithm traversing through all elements. Counting constant time operations involves recognizing that each comparison operation 
+    (`element == target') within the nested loops takes a constant amount of time. The runtime analysis of the nested loops determines that the time complexity of the algorithm is $\mathcal{O}(m*n)$, where $m$ is the number of rows and $n$ is the number of columns in the array. Understanding these concepts allows us to evaluate the algorithm's efficiency, optimize code if necessary, and predict its performance as the size of the input array changes.
+\end{solution}
+
+\subsection*{Sec. 9.5 - Searching \& Algorithms}
+
+\subsubsection{Algorithms}
+
+Algorithms are step-by-step procedures or sets of rules used to solve problems, perform computations, or achieve specific tasks. They are fundamental to computer science and play a vital role in software development. Algorithms can be designed to handle a wide range of tasks, such as sorting data, searching for elements, graph traversal, optimization, and more. The efficiency of an algorithm is evaluated through its time complexity (how long it takes to run) 
+and space complexity (how much memory it requires). Efficient algorithms are designed to minimize resource usage and deliver fast and scalable solutions. The study of algorithms involves analyzing their properties, designing new algorithms, and selecting the most appropriate algorithmic approach for a given problem. Ultimately, algorithms enable the automation and optimization of processes, providing the foundation for various computational tasks and applications.
+
+\subsubsection{Algorithm Runtime}
+
+Algorithm runtime refers to the amount of time it takes for an algorithm to execute and produce a result. It is a critical aspect of algorithm analysis, as it helps evaluate the efficiency and performance of algorithms. The runtime of an algorithm is influenced by factors such as the input size, the complexity of the operations performed, and the algorithmic design itself. Analyzing algorithm runtime involves estimating how the execution time increases as the input 
+size grows, typically using Big $\mathcal{O}$ notation. Understanding algorithm runtime allows developers to identify bottlenecks, optimize code, and make informed decisions about algorithm selection to ensure efficient and scalable solutions. By striving for optimal runtime, developers can create algorithms that deliver faster results and handle larger data sets effectively.
+
+\subsection*{Sec. 9.6 - Analyzing the Time Complexity of Recursive Algorithms}
+
+\subsubsection{Recurrence Relations}
+
+Recurrence relations are mathematical equations used to describe the time complexity of recursive algorithms. They provide a way to express the runtime of an algorithm in terms of the runtime of smaller subproblems. Recurrence relations are often used when analyzing the time complexity of divide-and-conquer algorithms, dynamic programming algorithms, or any algorithm that exhibits recursive behavior. By solving the recurrence relation, we can obtain an explicit formula 
+or a bound on the time complexity of the algorithm. Recurrence relations help in understanding how the algorithm's runtime grows with the input size and aid in comparing and evaluating different recursive algorithms. They are a powerful tool for reasoning about the time complexity of recursive algorithms and guiding algorithmic design decisions.
+
+\subsubsection{Recursion Trees}
+
+Recursion trees are graphical representations used to analyze the time complexity of recursive algorithms. They provide a visual depiction of the recursive calls and their respective sizes during the execution of the algorithm. Each node in the tree represents a recursive call, and the edges represent the recursive relationship between the calls. The tree's depth corresponds to the number of recursive calls made, and the branches represent the sizes of the subproblems at 
+each level. By examining the recursion tree, we can analyze the total number of nodes (recursive calls) and the work done at each node to determine the algorithm's time complexity. This analysis helps in understanding the growth pattern of the algorithm as the input size increases and provides insights into optimizing the algorithm or making design choices to improve its efficiency. Recursion trees provide a clear and visual representation of the recursive algorithm's 
+execution, aiding in the analysis and understanding of its time complexity.
+
+\subsection{Chapter 10 - Sorting Algorithms}
+
+The second chapter of this week is Chapter 10 - Sorting Algorithm.
+
+\subsection*{Sec. 10.1 - Sorting: Introduction}
+
+Sorting in object-oriented programming (OOP) involves organizing a collection of objects or data structures in a particular order based on specific criteria. OOP provides various techniques and algorithms to achieve efficient sorting, aiming to improve code reusability and maintainability. By encapsulating sorting functionality within classes or methods, OOP enables the creation of reusable and modular sorting components. This approach enhances code readability, simplifies 
+maintenance, and allows for easy adaptation of sorting algorithms based on changing requirements. Additionally, OOP encourages the use of interfaces and inheritance, facilitating the implementation of different sorting strategies while adhering to common contracts or base classes.
+
+\subsection*{Sec. 10.2 - Quicksort}
+
+\subsubsection{Quicksort}
+
+Quicksort is a highly efficient sorting algorithm commonly used in computer science. It follows a divide-and-conquer strategy, recursively dividing an array or list into smaller subarrays based on a pivot element, and then sorting these subarrays independently. The key idea behind Quicksort is to select a pivot element, typically the last or middle element of the array, and partition the remaining elements into two groups: those smaller than the pivot and those greater than 
+the pivot. This process is repeated recursively on the two resulting subarrays until the entire array is sorted. Quicksort's average and best-case time complexity is $\mathcal{O}(n\log{(n)})$, making it one of the fastest sorting algorithms in practice. However, in its worst-case scenario, when the pivot selection is unbalanced, the time complexity can degrade to $\mathcal{O}(n^2)$. Various optimizations, such as randomized pivot selection or using different partitioning schemes, 
+can be employed to mitigate the worst-case scenario.
+
+\subsubsection{Partitioning Algorithm}
+
+The partitioning algorithm is a crucial step in many sorting algorithms, including Quicksort. It is responsible for rearranging elements in an array or list so that all elements smaller than a chosen pivot element are placed to its left, and all elements larger than the pivot are placed to its right. The partitioning process involves maintaining two pointers, one starting from the left end and the other from the right end of the array. These pointers traverse towards each other, 
+swapping elements when necessary, until they meet. This ensures that the pivot element is in its final sorted position, with smaller elements on its left and larger elements on its right. The partitioning algorithm enables efficient sorting by dividing the problem into smaller subproblems, allowing for subsequent recursive sorting on the resulting subarrays. It is a fundamental component of many efficient sorting algorithms, contributing to their overall performance and effectiveness.
+
+\subsubsection{Recursively Sorting Partitions}
+
+Recursively sorting partitions is a common approach used in various sorting algorithms, such as Quicksort and Merge Sort. This technique involves dividing an array or list into smaller partitions or subarrays and recursively applying the sorting algorithm to each of these partitions. By recursively sorting smaller subarrays, the algorithm gradually reduces the problem size until it reaches base cases where the subarrays are either empty or contain a single element, which are inherently 
+sorted. The sorted subarrays are then merged or combined in a manner that guarantees the final sorted result. This recursive approach leverages the divide-and-conquer strategy, allowing for efficient sorting of larger datasets by breaking them down into more manageable pieces and leveraging the sorted results to obtain the overall sorted array.
+
+\subsubsection{Quicksort Runtime}
+
+The runtime of Quicksort, on average and in the best case, is considered very efficient, with a time complexity of $\mathcal{O}(n\log{(n)})$. This means that the sorting algorithm can efficiently sort a collection of $n$ elements by making approximately $\log{(n)}$ recursive partitioning steps, each of which requires linear time to perform the necessary element comparisons and swaps. However, it's important to note that Quicksort's worst-case time complexity is $\mathcal{O}(n^2)$, which 
+occurs when the chosen pivot is consistently the smallest or largest element in the array, resulting in unbalanced partitions. To mitigate this, randomized pivot selection or other techniques can be employed to ensure a more balanced partitioning, reducing the likelihood of the worst-case scenario. In practice, Quicksort is often a preferred choice due to its average-case efficiency and adaptability to various datasets.

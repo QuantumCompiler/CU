@@ -3,21 +3,21 @@
 \contentsline {chapter}{\numberline {1}CSPB 2270 Details}{2}{chapter.1}%
 \contentsline {section}{Class Description}{2}{section*.1}%
 \contentsline {subsection}{\numberline {1.0.1}Brief Description of Course Content}{2}{subsection.1.0.1}%
-\contentsline {subsection}{\numberline {1.0.2}Specific Goals}{2}{subsection.1.0.2}%
+\contentsline {subsection}{\numberline {1.0.2}Specific Goals}{3}{subsection.1.0.2}%
 \contentsline {subsection}{\numberline {1.0.3}Instructor Information}{4}{subsection.1.0.3}%
 \contentsline {subsection}{\numberline {1.0.4}Important Dates}{4}{subsection.1.0.4}%
-\contentsline {subsection}{\numberline {1.0.5}Grade Breakdown}{4}{subsection.1.0.5}%
+\contentsline {subsection}{\numberline {1.0.5}Grade Breakdown}{5}{subsection.1.0.5}%
 \contentsline {subsection}{\numberline {1.0.6}Grading Scale}{5}{subsection.1.0.6}%
 \contentsline {chapter}{\numberline {2}Week 1}{6}{chapter.2}%
 \contentsline {section}{C++ Review, Debugging, Unit Testing}{6}{section*.5}%
 \contentsline {subsection}{\numberline {2.0.1}Activities}{6}{subsection.2.0.1}%
-\contentsline {subsection}{\numberline {2.0.2}Lectures}{6}{subsection.2.0.2}%
+\contentsline {subsection}{\numberline {2.0.2}Lectures}{7}{subsection.2.0.2}%
 \contentsline {subsection}{\numberline {2.0.3}Programming Assignment}{7}{subsection.2.0.3}%
 \contentsline {subsection}{\numberline {2.0.4}Chapter 1 - Introduction to Data Structures}{7}{subsection.2.0.4}%
 \contentsline {chapter}{\numberline {3}Week 2}{13}{chapter.3}%
 \contentsline {section}{Object Orientation in C++ \& ADT}{13}{section*.6}%
 \contentsline {subsection}{\numberline {3.0.1}Activities}{13}{subsection.3.0.1}%
-\contentsline {subsection}{\numberline {3.0.2}Lectures}{13}{subsection.3.0.2}%
+\contentsline {subsection}{\numberline {3.0.2}Lectures}{14}{subsection.3.0.2}%
 \contentsline {subsection}{\numberline {3.0.3}Programming Assignment}{14}{subsection.3.0.3}%
 \contentsline {subsection}{\numberline {3.0.4}Chapter 2 - Objects and Classess}{14}{subsection.3.0.4}%
 \contentsline {subsection}{\numberline {3.0.5}Chapter 3 - Introduction to Algorithms}{38}{subsection.3.0.5}%
@@ -100,4 +100,27 @@
 \contentsline {subsubsection}{Overview}{130}{subsubsection*.66}%
 \contentsline {subsubsection}{Left Rotation Algorithm}{130}{subsubsection*.67}%
 \contentsline {subsubsection}{Right Rotation Algorithm}{131}{subsubsection*.68}%
+\contentsline {chapter}{\numberline {7}Week 6}{136}{chapter.7}%
+\contentsline {section}{Code Complexity, Binary Search Tree, Sorting Methods}{136}{section*.69}%
+\contentsline {subsection}{\numberline {7.0.1}Activities}{136}{subsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.0.2}Lectures}{137}{subsection.7.0.2}%
+\contentsline {subsection}{\numberline {7.0.3}Programming Assignment}{137}{subsection.7.0.3}%
+\contentsline {subsection}{\numberline {7.0.4}Chapter 9 - Searching \& Algorithm Analysis}{137}{subsection.7.0.4}%
+\contentsline {subsubsection}{Upper \& Lower Bounds}{137}{subsubsection*.70}%
+\contentsline {subsubsection}{Big $\mathcal {O}$ Notation}{137}{subsubsection*.71}%
+\contentsline {subsubsection}{Big $\mathcal {O}$ Notation of Composite Functions}{138}{subsubsection*.72}%
+\contentsline {subsubsection}{Runtime Growth Rate}{138}{subsubsection*.73}%
+\contentsline {subsubsection}{Common Big $\mathcal {O}$ Complexities}{138}{subsubsection*.74}%
+\contentsline {subsubsection}{Worst-Case Algorithm Analysis}{141}{subsubsection*.75}%
+\contentsline {subsubsection}{Counting Constant Time Operations}{141}{subsubsection*.76}%
+\contentsline {subsubsection}{Runtime Analysis of Nested Loops}{141}{subsubsection*.77}%
+\contentsline {subsubsection}{Algorithms}{142}{subsubsection*.78}%
+\contentsline {subsubsection}{Algorithm Runtime}{142}{subsubsection*.79}%
+\contentsline {subsubsection}{Recurrence Relations}{142}{subsubsection*.80}%
+\contentsline {subsubsection}{Recursion Trees}{142}{subsubsection*.81}%
+\contentsline {subsection}{\numberline {7.0.5}Chapter 10 - Sorting Algorithms}{143}{subsection.7.0.5}%
+\contentsline {subsubsection}{Quicksort}{143}{subsubsection*.82}%
+\contentsline {subsubsection}{Partitioning Algorithm}{143}{subsubsection*.83}%
+\contentsline {subsubsection}{Recursively Sorting Partitions}{143}{subsubsection*.84}%
+\contentsline {subsubsection}{Quicksort Runtime}{144}{subsubsection*.85}%
 \contentsfinish 
