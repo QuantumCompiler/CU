@@ -1,0 +1,925 @@
+\clearpage
+
+\chapter{Week 7}
+
+\section{B-Tree, Sets, Midterm}
+
+\horizontalline
+
+\subsection{Activities}
+
+The following are the activities that are planned for Week 7 of this course.
+
+\begin{itemize}
+    \item Sorting Programming Assignment is Due Wednesday.
+    \item Your midterm exam is open on Friday from 10am-10pm MT, make sure you take both parts of the exam (you don't have to take them back to back necessarily, both exams must be completed by 10pm MT).
+    \item Midterm Exam will cover all the material you have learned so far up to and including Chapter 10 of the book (Chapter 11 and 12 are excluded).
+    \item Read Ch. 11 and Ch. 12 of the Data Structures zyBook and take the in chapter quizzes (due next Monday).
+    \item Start on BTree Programming Assignment (due next Tuesday) - this assignment is EXTRA CREDIT.
+\end{itemize}
+
+\subsection{Lectures}
+
+Here are the lectures that can be found for this week:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45970}{Operation Times}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45971}{Indiana Jones \& The Temple Of B-Tree}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45972}{B-Tree Invariants}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45973}{B-Tree Find Operation}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45974}{B-Tree Demo}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45975}{B-Tree Insert Operation}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45976}{B-Tree Remove Operation}
+\end{itemize}
+
+\subsection{Programming Assignment}
+
+The programming assignment for Week 7 - 
+
+\subsection{Chapter 11 - B-Trees}
+
+The first chapter of this week is Chapter 11 - B-Trees.
+
+\subsection*{Sec. 11.1 - B-Trees}
+
+\subsubsection{Introduction to B-Trees}
+
+B-Trees are self-balancing search trees that provide efficient storage and retrieval of data in computer science. They are commonly used in databases and file systems due to their ability to handle large amounts of data and maintain optimal performance. B-Trees have a hierarchical structure with a variable number of child nodes per parent, 
+allowing them to maintain balance and minimize the number of disk accesses required for data retrieval and updates. Their balanced nature ensures efficient search operations, making B-Trees a fundamental data structure for organizing and managing data in various applications. B-Trees adhere to the following rules:
+
+\begin{itemize}
+    \item All keys in a B-tree must be distinct.
+    \item All leaf nodes must be at the same level.
+    \item An internal node with N keys must have N+1 children.
+    \item Keys in a node are stored in sorted order from smallest to largest.
+    \item Each key in a B-tree internal node has one left subtree and one right subtree. All left subtree keys are < that key, and all right subtree keys are > that key.
+\end{itemize}
+
+\subsubsection{Higher Order B-Trees}
+
+Higher-order B-Trees, also known as B+ Trees, are an extension of traditional B-Trees that optimize for disk access and efficient data retrieval in large-scale databases and file systems. Like B-Trees, they maintain a hierarchical structure, but they differ in the way they handle data storage. Higher-order B-Trees store data only in the leaf 
+nodes, while the internal nodes serve as index nodes, containing key-value pairs that guide the search process. This design allows for faster sequential data access and efficient range queries, as the leaf nodes are linked together in a sorted manner. The higher-order B-Tree's ability to store multiple key-value pairs in a single node, often referred 
+to as fanout, significantly reduces the number of disk accesses required for operations, improving overall performance in scenarios with large datasets.
+
+\subsubsection{2-3-4 B-Trees}
+
+2-3-4 B-Trees, also known as 2-4 B-Trees, are a balanced search tree variant that efficiently organizes and retrieves data in computer science. They are a multiway tree structure where each internal node can have either two, three, or four child nodes, hence the name. The key characteristic of 2-3-4 B-Trees is that they maintain balance by redistributing 
+keys and nodes during insertions and deletions, ensuring an evenly distributed tree structure. This balance helps optimize search operations by reducing the height of the tree and minimizing the number of disk accesses required. 2-3-4 B-Trees are commonly used in databases and file systems to provide efficient data storage and retrieval, especially 
+in scenarios with large datasets and frequent updates.
+
+\begin{solution}[B-Trees Example]
+    Below is an example of B-Trees in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    class BTreeNode {
+        std::vector<int> keys;
+        std::vector<BTreeNode*> children;
+        bool leaf;
+    
+    public:
+        BTreeNode(bool isLeaf) {
+            leaf = isLeaf;
+        }
+    
+        void insert(int key) {
+            // Insert key into the appropriate position in the keys vector
+            // and adjust the children vector if necessary.
+        }
+    
+        void traverse() {
+            // Traverse the B-Tree in order and print the keys
+        }
+    };
+    
+    class BTree {
+        BTreeNode* root;
+    
+    public:
+        BTree() {
+            root = nullptr;
+        }
+    
+        void insert(int key) {
+            if (root == nullptr) {
+                root = new BTreeNode(true);
+                root->insert(key);
+            } else {
+                // Insert key into the B-Tree by traversing the nodes
+            }
+        }
+    
+        void traverse() {
+            if (root != nullptr) {
+                root->traverse();
+            }
+        }
+    };
+    
+    int main() {
+        BTree bTree;
+        bTree.insert(10);
+        bTree.insert(20);
+        bTree.insert(5);
+        bTree.insert(15);
+    
+        bTree.traverse();
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The provided example presents a basic implementation of a B-Tree in C++, showcasing the insertion and traversal operations. B-Trees are essential data structures used in databases and file systems for efficient storage and retrieval of large datasets. The B-Tree maintains balance and optimizes disk access, making it suitable for managing 
+    and organizing data effectively. By recursively traversing nodes and sorting keys, B-Trees enable fast search operations and provide a balanced hierarchical structure for optimal performance in various applications.
+\end{solution}
+
+\subsection*{Sec. 11.2 - 2-3-4 B-Tree Search Algorithm}
+
+The 2-3-4 B-Tree search algorithm is a method for finding a specific key within a 2-3-4 B-Tree data structure. The algorithm starts at the root node and compares the target key with the keys stored in the node. If the key is found, the search is successful. If the target key is less than the smallest key in the node, the algorithm recursively 
+follows the leftmost child. If the target key is greater than the largest key in the node, the algorithm follows the rightmost child. If the target key falls between two keys in the node, the algorithm recursively follows the child corresponding to the key range in which the target key lies. The process continues until the key is found or a leaf node 
+is reached, indicating the key is not present in the B-Tree. This search algorithm ensures efficient and balanced key retrieval in a 2-3-4 B-Tree, making it suitable for large-scale data storage and retrieval scenarios.
+
+\begin{solution}[2-3-4 B-Tree Search Algorithm Example]
+    Below is an example of the 2-3-4 B-Tree search algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    class BTreeNode {
+        std::vector<int> keys;
+        std::vector<BTreeNode*> children;
+        bool leaf;
+    
+    public:
+        BTreeNode(bool isLeaf) {
+            leaf = isLeaf;
+        }
+    
+        BTreeNode* search(int key) {
+            int i = 0;
+            while (i < keys.size() && key > keys[i]) {
+                i++;
+            }
+    
+            if (keys[i] == key) {
+                return this;
+            }
+    
+            if (leaf) {
+                return nullptr;
+            }
+    
+            return children[i]->search(key);
+        }
+    };
+    
+    class BTree {
+        BTreeNode* root;
+    
+    public:
+        BTree() {
+            root = nullptr;
+        }
+    
+        BTreeNode* search(int key) {
+            if (root == nullptr) {
+                return nullptr;
+            } else {
+                return root->search(key);
+            }
+        }
+    };
+    
+    int main() {
+        BTree bTree;
+        // Populate the B-Tree with keys
+    
+        // Example keys
+        std::vector<int> keys = {10, 20, 30, 40, 50};
+        
+        // Insert keys into the B-Tree
+        for (int key : keys) {
+            bTree.insert(key);
+        }
+    
+        int targetKey = 30;
+        BTreeNode* result = bTree.search(targetKey);
+        
+        if (result != nullptr) {
+            std::cout << "Key " << targetKey 
+            << " found in the B-Tree!" << std::endl;
+        } else {
+            std::cout << "Key " << targetKey 
+            << " not found in the B-Tree." << std::endl;
+        }
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example showcases the implementation and utilization of the 2-3-4 B-Tree search algorithm in C++. By traversing the nodes and comparing keys, the algorithm enables efficient search for a specific key within the B-Tree structure. The code demonstrates the process by populating a B-Tree with keys and performing a search for a target key. 
+    This algorithm is useful for retrieving data from large datasets, making 2-3-4 B-Trees an essential data structure for efficient data organization and management in diverse applications.
+\end{solution}
+
+\subsection*{Sec. 11.3 - 2-3-4 B-Tree Insert Algorithm}
+
+\subsubsection{2-3-4 B-Tree Insertions \& Split Operations}
+
+2-3-4 B-Tree insertions and split operations play a crucial role in maintaining the balance and integrity of the B-Tree structure. When inserting a new key into a 2-3-4 B-Tree, the algorithm begins by finding the appropriate leaf node where the key should be placed. If the node has room for the new key, it is simply inserted in sorted order. 
+However, if the node is already full, a split operation is performed. During a split operation, the node is divided into two, with the middle key being promoted to the parent node. The left side contains the smaller keys, and the right side contains the larger keys. The parent node then adjusts its child pointers accordingly. If the parent node is 
+also full, the split operation cascades up the tree until a suitable node with space is found or a new root is created. These insertions and split operations maintain the balance and ensure optimal performance of the 2-3-4 B-Tree, enabling efficient storage and retrieval of data in various applications.
+
+\subsubsection{Split Operation Algorithm}
+
+The split operation algorithm in the context of 2-3-4 B-Trees is responsible for maintaining the balance and structure of the tree when a node becomes full during an insertion. The algorithm starts by identifying the middle key of the full node, which will be promoted to the parent node. Then, the node is split into two separate nodes: one containing
+the smaller keys and the other containing the larger keys. The child pointers of the original node are appropriately redistributed between the two new nodes. If the parent node is also full, the split operation cascades up the tree until a suitable node with available space is found or a new root is created. This split operation ensures 
+that the 2-3-4 B-Tree remains balanced and maintains its efficient search and retrieval capabilities when handling large amounts of data.
+
+\subsubsection{Inserting A Key Into A Leaf Node}
+
+When inserting a key into a leaf node in the context of a 2-3-4 B-Tree, the algorithm first finds the appropriate leaf node where the key should be placed. If the leaf node has space to accommodate the new key, it is simply inserted in sorted order. However, if the leaf node is already full, a split operation is triggered. During the split operation, 
+the leaf node is divided into two, with the middle key being promoted to the parent node. The new key is then inserted in the appropriate sorted position in either the left or right split node. This ensures that the leaf nodes remain balanced and maintain the sorted order of keys, preserving the efficient search and retrieval characteristics of the 
+2-3-4 B-Tree data structure.
+
+\subsubsection{B-Tree Insert With Preimptive Split}
+
+A B-Tree Insert with preemptive split is an optimization technique used during key insertion in B-Trees to proactively prevent potential future splits. In this context, when inserting a key, the algorithm first traverses the tree to find the appropriate leaf node for insertion. However, if the leaf node is full, instead of immediately splitting the node, 
+a preemptive split is performed. This involves splitting the node into two separate nodes, with the middle key being promoted to the parent node. The new key to be inserted is then compared to the promoted key. If it is smaller, it is inserted into the left split node, and if it is larger, it is inserted into the right split node. This preemptive split optimizes 
+the B-Tree's structure in advance, minimizing the need for future splits and ensuring efficient storage and retrieval operations in scenarios with frequent insertions.
+
+\begin{solution}[2-3-4 B-Tree Insert Algorithm Example]
+    Below is an example of the 2-3-4 B-Tree insert algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    class BTreeNode {
+        std::vector<int> keys;
+        std::vector<BTreeNode*> children;
+        bool leaf;
+    
+    public:
+        BTreeNode(bool isLeaf) {
+            leaf = isLeaf;
+        }
+    
+        void insertNonFull(int key) {
+            int i = keys.size() - 1;
+            if (leaf) {
+                keys.push_back(0);
+                while (i >= 0 && key < keys[i]) {
+                    keys[i + 1] = keys[i];
+                    i--;
+                }
+                keys[i + 1] = key;
+            } else {
+                while (i >= 0 && key < keys[i]) {
+                    i--;
+                }
+                if (children[i + 1]->keys.size() == 3) {
+                    splitChild(i + 1, children[i + 1]);
+                    if (key > keys[i + 1]) {
+                        i++;
+                    }
+                }
+                children[i + 1]->insertNonFull(key);
+            }
+        }
+    
+        void splitChild(int index, BTreeNode* child) {
+            BTreeNode* newNode = new BTreeNode(child->leaf);
+            keys.insert(keys.begin() + index, child->keys[1]);
+            child->keys.resize(1);
+    
+            if (!child->leaf) {
+                newNode->children.assign(child->children.begin() + 2, 
+                child->children.end());
+                child->children.resize(2);
+            }
+    
+            children.insert(children.begin() + index + 1, newNode);
+        }
+    };
+    
+    class BTree {
+        BTreeNode* root;
+    
+    public:
+        BTree() {
+            root = nullptr;
+        }
+    
+        void insert(int key) {
+            if (root == nullptr) {
+                root = new BTreeNode(true);
+                root->keys.push_back(key);
+            } else {
+                if (root->keys.size() == 3) {
+                    BTreeNode* newNode = new BTreeNode(false);
+                    newNode->children.push_back(root);
+                    root = newNode;
+                    newNode->splitChild(0, root);
+                    newNode->insertNonFull(key);
+                } else {
+                    root->insertNonFull(key);
+                }
+            }
+        }
+    };
+    
+    int main() {
+        BTree bTree;
+        // Insert keys into the B-Tree
+        bTree.insert(10);
+        bTree.insert(20);
+        bTree.insert(5);
+        bTree.insert(15);
+        
+        // Perform operations on the B-Tree
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example showcases the implementation of the 2-3-4 B-Tree Insert algorithm with preemptive split in C++. The code demonstrates how keys are inserted into the B-Tree, with preemptive splits applied to prevent future overflows. The algorithm ensures that the B-Tree remains balanced and optimized for efficient data storage 
+    and retrieval. The example provides a basic framework for creating and manipulating a 2-3-4 B-Tree, enabling the insertion of keys and potential splits as necessary. This algorithm and implementation are essential for maintaining the integrity and performance of B-Trees when handling large datasets and frequent insertions.
+\end{solution}
+
+\subsection*{Sec. 11.4 - 2-3-4 B-Tree Rotations \& Fusion}
+
+\subsubsection{Rotation Concepts}
+
+Rotation concepts in the context of 2-3-4 trees refer to the techniques used to maintain the balance and structure of the tree when inserting or deleting nodes. Rotations involve reorganizing the nodes by adjusting their positions and relationships. In the case of 2-3-4 trees, rotations include left rotations, right rotations, 
+and fusion. Left and right rotations involve rotating nodes within a single level of the tree, while fusion involves merging two nodes into a single node. These rotation operations ensure that the tree remains balanced and adheres to the rules of a 2-3-4 tree, optimizing data storage and retrieval operations by avoiding excessive 
+height and promoting efficient key distribution.
+
+\begin{solution}[2-3-4 B-Tree Rotation Example]
+    Below is an example of a 2-3-4 B-Tree rotation in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    class TreeNode {
+        std::vector<int> keys;
+        std::vector<TreeNode*> children;
+    
+    public:
+        TreeNode() {}
+    
+        bool isLeaf() {
+            return children.empty();
+        }
+    
+        void leftRotate(int index) {
+            TreeNode* child = children[index];
+            TreeNode* sibling = children[index + 1];
+    
+            // Moving keys and children
+            child->keys.push_back(keys[index]);
+            keys[index] = sibling->keys[0];
+            sibling->keys.erase(sibling->keys.begin());
+    
+            if (!child->isLeaf()) {
+                child->children.push_back(sibling->children[0]);
+                sibling->children.erase(sibling->children.begin());
+            }
+        }
+    };
+    
+    int main() {
+        TreeNode* root = new TreeNode();
+    
+        // Insert keys and children into the tree
+    
+        // Perform a left rotation
+        root->leftRotate(0);
+    
+        // Perform other operations on the tree
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The provided example illustrates the implementation of a left rotation operation in the context of a 2-3-4 tree using C++. Left rotations play a vital role in maintaining the balance and structure of the tree by redistributing keys and children between nodes. This rotation operation ensures that the tree remains balanced and 
+    adheres to the properties of a 2-3-4 tree, promoting efficient data storage and retrieval. The example provides a framework for creating and manipulating a 2-3-4 tree, showcasing the usage of left rotations and their impact on the tree's structure.
+\end{solution}
+
+\subsubsection{Fusion}
+
+Fusion, in the context of a 2-3-4 tree, refers to the operation of merging two adjacent nodes into a single node. When fusion occurs, a key from the parent node is moved down to the merged node, effectively combining the keys and children of the two nodes. This process helps maintain the balance of the tree and ensures that the 
+number of keys in each node adheres to the rules of a 2-3-4 tree. Fusion is typically performed when deleting a key from a node, and the resulting node becomes underfull. By fusing nodes, the tree avoids excessive height and optimizes its structure for efficient data storage and retrieval operations.
+
+\subsubsection{Non-Root Fusion}
+
+In the context of a 2-3-4 tree, non-root fusion refers to the fusion operation performed on a non-root node when deleting a key that causes the node to become underfull. When a key is deleted from a non-root node and the resulting node has fewer keys than the minimum required, a fusion operation is triggered. In this operation, 
+the underfull node fuses with its adjacent sibling node by transferring a key from the parent node into the merged node. The keys and children of the two nodes are combined, and the parent node is updated accordingly. Non-root fusion helps maintain the balance and structure of the tree while ensuring that the number of keys in 
+each node remains within the required range. By performing non-root fusions, the 2-3-4 tree optimizes its structure for efficient data storage and retrieval operations.
+
+\begin{solution}[2-3-4 B-Tree Fusion Example]
+    Below is an example of a 2-3-4 B-Tree fusion in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    class TreeNode {
+        std::vector<int> keys;
+        std::vector<TreeNode*> children;
+    
+    public:
+        TreeNode() {}
+    
+        bool isLeaf() {
+            return children.empty();
+        }
+    
+        void fuseNodes(int index) {
+            TreeNode* leftChild = children[index];
+            TreeNode* rightChild = children[index + 1];
+    
+            // Move key from parent to leftChild
+            leftChild->keys.push_back(keys[index]);
+    
+            // Move keys from rightChild to leftChild
+            for (const auto& key : rightChild->keys) {
+                leftChild->keys.push_back(key);
+            }
+    
+            // Move children from rightChild to leftChild
+            for (const auto& child : rightChild->children) {
+                leftChild->children.push_back(child);
+            }
+    
+            // Erase key and rightChild
+            keys.erase(keys.begin() + index);
+            children.erase(children.begin() + index + 1);
+    
+            delete rightChild;
+        }
+    };
+    
+    int main() {
+        TreeNode* root = new TreeNode();
+    
+        // Insert keys and children into the tree
+    
+        // Perform a fusion operation
+        root->fuseNodes(1);
+    
+        // Perform other operations on the tree
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The provided example demonstrates the implementation of a fusion operation in the context of a 2-3-4 tree using C++. Fusion operations are essential for maintaining the balance and structure of the tree by merging adjacent nodes into a single node. This process redistributes keys and children, ensuring that the tree remains 
+    balanced and adheres to the properties of a 2-3-4 tree. By performing fusions, the tree optimizes its structure for efficient data storage and retrieval. The example provides a framework for creating and manipulating a 2-3-4 tree, showcasing the usage of fusion operations and their impact on the tree's structure.
+\end{solution}
+
+\subsection*{Sec. 11.5 - 2-3-4 Tree Removal}
+
+\subsubsection{Merge Algorithm}
+
+The merge algorithm for a 2-3-4 B-Tree refers to the process of merging two adjacent nodes in the tree when they become underfull. When a node is underfull, meaning it has fewer keys than the minimum required, the merge algorithm is invoked. In this algorithm, the underfull node combines with its adjacent sibling node by moving a 
+key from the parent node into the merged node. The keys and children of the two nodes are merged, forming a single node with a reduced height. The parent node is then updated to remove the key and the reference to the sibling node. The merge algorithm helps maintain the balanced structure of the 2-3-4 B-Tree, optimizing its storage 
+efficiency and preserving the efficient search and retrieval properties of the data structure.
+
+\begin{solution}[2-3-4 B-Tree Merge Algorithm Example]
+    Below is an example of the 2-3-4 B-Tree merge algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    class TreeNode {
+        std::vector<int> keys;
+        std::vector<TreeNode*> children;
+    
+    public:
+        TreeNode() {}
+    
+        bool isLeaf() {
+            return children.empty();
+        }
+    
+        void mergeNodes(int index) {
+            TreeNode* leftChild = children[index];
+            TreeNode* rightChild = children[index + 1];
+    
+            // Move key from parent to leftChild
+            leftChild->keys.push_back(keys[index]);
+    
+            // Move keys from rightChild to leftChild
+            for (const auto& key : rightChild->keys) {
+                leftChild->keys.push_back(key);
+            }
+    
+            // Move children from rightChild to leftChild
+            for (const auto& child : rightChild->children) {
+                leftChild->children.push_back(child);
+            }
+    
+            // Erase key and rightChild
+            keys.erase(keys.begin() + index);
+            children.erase(children.begin() + index + 1);
+    
+            delete rightChild;
+        }
+    };
+    
+    int main() {
+        TreeNode* root = new TreeNode();
+    
+        // Insert keys and children into the tree
+    
+        // Perform a merge operation
+        root->mergeNodes(1);
+    
+        // Perform other operations on the tree
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The provided example demonstrates the implementation of the merge algorithm for a 2-3-4 B-Tree using C++. The merge algorithm is essential for maintaining the balanced structure of the tree by merging underfull nodes with their adjacent sibling nodes. By combining the keys and children of the nodes, the merge operation reduces 
+    the height of the tree and ensures that the number of keys in each node adheres to the requirements of the 2-3-4 B-Tree. This algorithm optimizes the storage efficiency and preserves the efficient search and retrieval properties of the data structure. The example provides a framework for creating and manipulating a 2-3-4 B-Tree, 
+    showcasing the usage of the merge algorithm and its impact on the tree's structure.
+\end{solution}
+
+\subsubsection{Remove Algorithm}
+
+The remove algorithm in a 2-3-4 B-Tree refers to the process of removing a key from the tree while maintaining its balanced structure. When a key is to be removed, the remove algorithm is invoked. The algorithm first finds the node containing the key and removes it. If the removed key is from an internal node, it is replaced with the 
+largest key from the left child or the smallest key from the right child, ensuring that the tree properties are preserved. If the removal causes an underfull node, fusion or redistribution operations may be performed to maintain the balance of the tree. The remove algorithm in a 2-3-4 B-Tree ensures that the tree remains balanced and 
+optimized for efficient data storage and retrieval operations even after key removal.
+
+\begin{solution}[2-3-4 Remove Algorithm Example]
+    Below is an example of the 2-3-4 B-Tree remove algorithm in C++:
+    
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    class TreeNode {
+        std::vector<int> keys;
+        std::vector<TreeNode*> children;
+    
+    public:
+        TreeNode() {}
+    
+        bool isLeaf() {
+            return children.empty();
+        }
+    
+        void removeKey(int key) {
+            int keyIndex = findKeyIndex(key);
+    
+            if (keyIndex != -1) {
+                // Key found in current node
+                if (isLeaf()) {
+                    // Remove key from leaf node
+                    keys.erase(keys.begin() + keyIndex);
+                } else {
+                    // Replace key with predecessor or successor
+                    TreeNode* predecessorChild = children[keyIndex];
+                    TreeNode* successorChild = children[keyIndex + 1];
+    
+                    if (predecessorChild->keys.size() >= 2) {
+                        int predecessorKey = removePredecessor(predecessorChild);
+                        keys[keyIndex] = predecessorKey;
+                    } else if (successorChild->keys.size() >= 2) {
+                        int successorKey = removeSuccessor(successorChild);
+                        keys[keyIndex] = successorKey;
+                    } else {
+                        // Fusion operation
+                        mergeNodes(keyIndex);
+                        children[keyIndex]->removeKey(key);
+                    }
+                }
+            } else {
+                // Key not found in current node
+                int childIndex = findChildIndex(key);
+                if (childIndex != -1) {
+                    // Recursively remove key from appropriate child node
+                    children[childIndex]->removeKey(key);
+                }
+            }
+        }
+    
+        int removePredecessor(TreeNode* node) {
+            if (node->isLeaf()) {
+                int predecessorKey = node->keys.back();
+                node->keys.pop_back();
+                return predecessorKey;
+            } else {
+                return removePredecessor(node->children.back());
+            }
+        }
+    
+        int removeSuccessor(TreeNode* node) {
+            if (node->isLeaf()) {
+                int successorKey = node->keys.front();
+                node->keys.erase(node->keys.begin());
+                return successorKey;
+            } else {
+                return removeSuccessor(node->children.front());
+            }
+        }
+    
+        void mergeNodes(int index) {
+            // Merge current node with adjacent sibling
+            // (implementation of the merge algorithm)
+        }
+    
+        int findKeyIndex(int key) {
+            // Find index of the key in the current node
+            // Return -1 if key not found
+        }
+    
+        int findChildIndex(int key) {
+            // Find index of the child node where the key might be located
+            // Return -1 if appropriate child not found
+        }
+    };
+    
+    int main() {
+        TreeNode* root = new TreeNode();
+    
+        // Insert keys and children into the tree
+    
+        // Perform a remove operation
+        root->removeKey(10);
+    
+        // Perform other operations on the tree
+    
+        return 0;
+    }        
+    \end{verbatim}
+
+    \horizontalline
+
+    The remove algorithm in a 2-3-4 B-Tree handles the deletion of keys while maintaining the tree's balance. It searches for the key in the current node and removes it from a leaf node directly or replaces it with a predecessor or successor in an internal node. If there are insufficient keys in the predecessor or successor, fusion 
+    operations are performed. If the key is not found in the current node, the algorithm recursively searches for the appropriate child node to remove the key. The remove algorithm ensures a balanced structure and optimized data storage and retrieval by maintaining the required properties of the 2-3-4 B-Tree.
+\end{solution}
+
+\subsection{Chapter 12 - Sets}
+
+The second chapter of this is Chapter 12 - Sets.
+
+\subsection*{Sec. 12.1 - Set Abstract Data Type}
+
+\subsubsection{Set Abstract Data Type}
+
+The set abstract data type represents a collection of unique elements without any particular order or associated values. It provides operations for adding elements to the set, removing elements from it, checking if an element is present, and performing common set operations such as union, intersection, and difference. The set ADT is 
+characterized by its ability to efficiently handle membership queries and perform set operations in near-constant time, making it a valuable tool in various applications involving data manipulation, mathematical modeling, and algorithm design.
+
+\subsubsection{Element Keys \& Removal}
+
+In the context of sets, element keys refer to the values that uniquely identify each element within the set. Unlike other data structures like dictionaries or maps, sets do not have associated keys or values. Instead, elements in a set are considered unique based on their inherent value or properties. When removing elements from a set, 
+the operation is typically performed based on the value of the element itself rather than a specific key. This allows for efficient removal of elements without the need for key-based lookup or retrieval. The absence of keys simplifies the implementation and operations of sets, making them a convenient choice for managing collections of 
+distinct elements.
+
+\subsubsection{Searching \& Subsets}
+
+In the context of sets, searching refers to the process of determining whether a particular element is present in the set. Set implementations typically provide efficient search operations, allowing for constant-time lookup. By utilizing appropriate data structures like hash sets or binary search trees, sets can quickly determine membership, 
+indicating whether an element exists within the set or not. On the other hand, subsets in the context of sets involve determining whether one set is entirely contained within another set. This operation checks if all elements of one set are also present in another set. Subset operations can be performed by iterating over the elements of one 
+set and checking their presence in the other set, which can be done efficiently by leveraging appropriate data structures and algorithms. The ability to search for elements and determine subsets makes sets valuable for various applications, such as data filtering, data validation, and solving combinatorial problems.
+
+\begin{solution}[Sets Example]
+    Below is an example of sets in C++:
+
+    \horizontalline
+    
+    \begin{verbatim}
+    #include <iostream>
+    #include <unordered_set>
+    
+    int main() {
+        std::unordered_set<int> set1 = {1, 2, 3, 4, 5};
+        std::unordered_set<int> set2 = {3, 4, 5};
+        std::unordered_set<int> set3 = {6, 7, 8};
+    
+        // Searching
+        int element = 3;
+        if (set1.find(element) != set1.end()) {
+            std::cout << "Element " << element << " is present in set1." 
+            << std::endl;
+        } else {
+            std::cout << "Element " << element << " is not present in set1." 
+            << std::endl;
+        }
+    
+        // Subsets
+        if (std::includes(set1.begin(), set1.end(), set2.begin(), set2.end())) {
+            std::cout << "set2 is a subset of set1." << std::endl;
+        } else {
+            std::cout << "set2 is not a subset of set1." << std::endl;
+        }
+    
+        if (std::includes(set1.begin(), set1.end(), set3.begin(), set3.end())) {
+            std::cout << "set3 is a subset of set1." << std::endl;
+        } else {
+            std::cout << "set3 is not a subset of set1." << std::endl;
+        }
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, we use the `unordered\_set' container from the C++ Standard Library to represent sets. First, we create `set1', `set2', and `set3' with different elements. We then demonstrate searching by checking if an element (`3' in this case) exists in `set1' using the `find()' function. If the element is found, we output that it 
+    is present; otherwise, we output that it is not present. Next, we showcase subsets by using the `includes()' algorithm from the Standard Library. It takes the iterators of the first and last elements of two ranges and checks if the first range (`set1') includes all elements of the second range (`set2' and `set3'). We output whether 
+    each set is a subset or not. This example demonstrates the searching capability of sets by finding specific elements and the subset functionality by checking if one set is a subset of another.
+\end{solution}
+
+\subsection*{Sec. 12.2 - Set Operations}
+
+\subsubsection{Union, Intersection, \& Difference}
+
+In the context of sets, union, intersection, and difference are fundamental operations used to manipulate and combine sets. The union of two sets results in a new set that contains all unique elements from both sets. It combines the elements of both sets without duplication. The intersection of two sets yields a new set that contains only the 
+elements that are common to both sets. It represents the overlap or shared elements between the sets. Lastly, the difference operation returns a new set that contains the elements present in one set but not in the other. It represents the elements that are unique to each set. These set operations provide powerful tools for data analysis, merging 
+datasets, filtering, and solving various mathematical and logical problems involving sets.
+
+\subsubsection{Filter \& Map}
+
+In the context of sets, filters and maps are operations used to transform and manipulate the elements within a set. The filter operation applies a condition or predicate to each element of the set and returns a new set that includes only the elements satisfying the condition. It allows for selective extraction or removal of elements based on specific 
+criteria. On the other hand, the map operation applies a transformation function to each element of the set and generates a new set containing the transformed elements. It enables the modification or conversion of each element according to a defined rule. Filters and maps provide flexible ways to extract relevant information, perform data transformations, 
+and derive new sets from existing ones, making them useful tools in data processing, data cleaning, and data analysis tasks involving sets.
+
+\begin{solution}[Set Operations Example]
+    Below is an example of set operations in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <unordered_set>
+    #include <algorithm>
+    
+    int main() {
+        std::unordered_set<int> originalSet = {1, 2, 3, 4, 5};
+    
+        // Filter: Keep only even numbers
+        std::unordered_set<int> filteredSet;
+        std::copy_if(originalSet.begin(), originalSet.end(), 
+        std::inserter(filteredSet, filteredSet.begin()), [](int num) {
+            return num % 2 == 0;
+        });
+    
+        // Map: Multiply each element by 2
+        std::unordered_set<int> mappedSet;
+        std::transform(originalSet.begin(), originalSet.end(), 
+        std::inserter(mappedSet, mappedSet.begin()), [](int num) {
+            return num * 2;
+        });
+    
+        // Output the filtered set
+        std::cout << "Filtered Set: ";
+        for (const auto& element : filteredSet) {
+            std::cout << element << " ";
+        }
+        std::cout << std::endl;
+    
+        // Output the mapped set
+        std::cout << "Mapped Set: ";
+        for (const auto& element : mappedSet) {
+            std::cout << element << " ";
+        }
+        std::cout << std::endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, we start with an original set containing integers. We demonstrate the filter operation by creating a new set called `filteredSet'. We use `copy\_if()' algorithm from the C++ Standard Library to iterate over the original set and only copy elements that satisfy a condition. In this case, we keep only even numbers in the filtered set by using a 
+    lambda function as the predicate.
+    
+    Next, we showcase the map operation by creating another set called `mappedSet'. We utilize the `transform()' algorithm to iterate over the original set and apply a transformation function to each element. The lambda function multiplies each element by 2, generating a new set with the transformed values. Finally, we output the filtered set and mapped set to verify 
+    the results. The filtered set contains only the even numbers from the original set, while the mapped set contains all elements of the original set multiplied by 2.
+    
+    This example demonstrates how filters and maps can be applied to sets to selectively extract elements based on a condition or transform the elements according to a defined rule, allowing for flexible data manipulation and processing.
+\end{solution}
+
+\subsection*{Sec. 12.3 - Static \& Dynamic Set Operations}
+
+Static and dynamic sets are two different approaches to representing sets in computer science. A static set refers to a fixed-size set where the number of elements and their values cannot change once the set is defined. It is typically implemented using arrays or fixed-size data structures. Static sets are efficient in terms of memory usage and provide fast access to 
+elements but lack flexibility in terms of dynamic operations. On the other hand, dynamic sets are resizable sets that can grow or shrink in size during program execution. They are typically implemented using linked lists, dynamic arrays, or tree structures. Dynamic sets allow for efficient insertion, deletion, and modification of elements but may require additional 
+memory overhead and have slightly slower access times compared to static sets. The choice between static and dynamic sets depends on the specific requirements of the problem and the trade-offs between memory efficiency and dynamic operations.
+
+\begin{solution}[Static \& Dynamic Set Operations Example]
+    Below is an example of static and dynamic set operations in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    // Static Set
+    const int MAX_SIZE = 5;
+    int staticSet[MAX_SIZE] = {1, 2, 3, 4, 5};
+    
+    // Dynamic Set
+    class DynamicSet {
+    private:
+        int* elements;
+        int size;
+        int capacity;
+    
+    public:
+        DynamicSet() {
+            capacity = 5;
+            size = 0;
+            elements = new int[capacity];
+        }
+    
+        void insert(int element) {
+            if (size < capacity) {
+                elements[size++] = element;
+            }
+        }
+    
+        void remove(int element) {
+            for (int i = 0; i < size; i++) {
+                if (elements[i] == element) {
+                    for (int j = i; j < size - 1; j++) {
+                        elements[j] = elements[j + 1];
+                    }
+                    size--;
+                    break;
+                }
+            }
+        }
+    
+        void printSet() {
+            for (int i = 0; i < size; i++) {
+                std::cout << elements[i] << " ";
+            }
+            std::cout << std::endl;
+        }
+    };
+    
+    int main() {
+        // Static Set
+        std::cout << "Static Set: ";
+        for (int i = 0; i < MAX_SIZE; i++) {
+            std::cout << staticSet[i] << " ";
+        }
+        std::cout << std::endl;
+    
+        // Dynamic Set
+        DynamicSet dynamicSet;
+        dynamicSet.insert(1);
+        dynamicSet.insert(2);
+        dynamicSet.insert(3);
+        dynamicSet.insert(4);
+        dynamicSet.insert(5);
+        dynamicSet.remove(3);
+        std::cout << "Dynamic Set: ";
+        dynamicSet.printSet();
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, we demonstrate static and dynamic sets. The static set is implemented using a fixed-size array, where the elements are defined at compile-time and cannot be modified. We initialize the static set with five elements (1, 2, 3, 4, 5) and simply print the elements.
+
+    On the other hand, the dynamic set is implemented using a class called `DynamicSet'. It uses a dynamic array to store the elements, allowing for resizing and modification. The class provides methods to insert and remove elements from the set, as well as print the set. In the `main()' function, we create a dynamic set, insert five elements (1, 2, 3, 4, 5), remove the 
+    element 3, and print the resulting set.
+
+    This example demonstrates the difference between static and dynamic sets. The static set has a fixed size and its elements are defined statically, while the dynamic set is resizable and allows for dynamic insertion and removal of elements.
+\end{solution}
