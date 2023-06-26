@@ -444,13 +444,12 @@ is to iterate through the vector and partition it so that elements can be sorted
             \item If this statement evaluates to true, we exit the while loop
             \item If this statement is false, we swap the values of the lower index with that of the value at the higher index, and proceed to continue partitioning the data set
         \end{itemize}
-        \item The above process will repeat until the we the previous if statement evaluates to true
-        \item `high\_idx' is in turn the pivot point indicating that the values that are to left of it are less than it and the values to right of it are greater than or equal to it
+        \item The above process will repeat until the the previous if statement evaluates to true
+        \item `high\_idx' is returned from the partition algorithm to represent the index where elements to the left of it are less than or equal to it as well as the elements to the right of it are greater than or equal to it
     \end{itemize}
 
     \noindent The above algorithm correctly places the elements that are less than that of the pivot to the left of it and the values that are greater than or equal to that of the pivot
-    to the right of it. This process repeats itself until the condition previously mentioned is achieved. Once this condition is met, then we recursively sort the elements on the left and
-    right of the pivot.
+    to the right of it. This process repeats itself until the condition previously mentioned is achieved. Once this condition is met, then we recursively sort the elements on the left and right of the pivot.
 
 \end{highlight}
 
@@ -501,17 +500,87 @@ by making recursive calls to itself while utilizing the `quicksort\_partition' a
     The general method for how this algorithm works is the following:
 
     \begin{itemize}
-        \item First check to see if the lower index is greater than or equal to that of the higher index indicating that the data set has been sorted
-        \item If the data set is not sorted, then we partition the data set such that it will have a lower half and upper half that can be sorted after
-        \item The function then proceeds to finding the partition point (The point where elements to the left of it are less than it and the elements to the right are greater than or equal to it)
-        with the `quicksort\_partition' algorithm
-        \item After the partition point has been found, the algorithm proceeds to recursively sort the left and right halves of the data set until all elements have been sorted
+        \item First check to see if their is only one element in the data set that is being sorted, otherwise continue to the next logic block
+        \item If the data set is greater in size than one element, then we partition the data set such that it will have a lower half and upper half that can be sorted after
+        \item The function then proceeds to finding the partition point (The point where elements to the left of it are less than it and the elements to the right are greater than or equal to it) with the `quicksort\_partition' algorithm
+        \item After the partition point has been found, the algorithm proceeds to recursively sort the left and right halves of the data set that are set with the help of the partition point until the partition reaches size one
     \end{itemize}
 
-    \noindent The goal of the quick sort algorithm is to partition a data set to the point such that the elements to the left of the pivot are less than or equal to the pivot and the elements to the right of 
-    the pivot point are greater than or equal to that of the pivot. Once this is achieved for a specific data point, we recurisvely sort each partition until the all the partions are of size one. when
-    this is achieved, we have effectively sorted our data set.
+    \noindent The goal of the quick sort algorithm is to partition a data set to the point such that the elements to the left of the pivot are less than or equal to the pivot and the elements to the right of the pivot point are greater than or equal to that of the pivot. This process will repeat until the data set that is being partitioned is of size one.
+    After the data set has been partitioned, it is sorted recursively with a call to `quicksort'.
+
+    The quick sort algorithm is a very efficient algorithm for data sets of all sizes. Its recursive nature allows for different sizes of data sets to be sorted efficiently in a timely matter implicating that it is a optimal choice for a sorting algorithm. The runtime complexity of the quick sort algorithm is as follows:
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline \textbf{Best Case $\Omega(n)$} & \textbf{Average Case $\Theta(n)$} & \textbf{Worst Case $\mathcal{O}(n)$} \\ \hline
+            $\Omega(n\log{(n)})$ & $\Theta(n\log{(n)})$ & $\mathcal{O}(n^2)$ \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \noindent The quick sort algorithm typically will have a runtime complexity of $\Theta(n\log{(n)})$ with the worst runtime complexity of $\mathcal{O}(n^2)$. The worst case runtime complexity occurs when the data set that is being fed into the algorithm is sorted in reverse order.
 \end{highlight}
+
+\subsection*{Optimization \& Utilization}
+
+When using a quick sort algorithm there are a myriad of choices that can affect the runtime of the algorithm. One choice that can affect the algorithm directly is how the pivot point is calculated. For instance, if we choose a pivot point such that it is always the smallest or largest element in the data set, the algorithm is only able to sort one element at a time.
+This can lead to a very poor runtime complexity and in turn it decreases the overall efficiency of the algorithm. If the pivot point is chosen carefully, it can lead to the average case runtume complexity. The careful selection of the pivot point can result in partitioning sub data sets of relatively the same size on each recursive call. The choice of the pivot point is contingent upon the data set that is being fed into the algorithm. The impact of the choice of pivot point can be seen in the following table:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline \textbf{Choice of Pivot} & \textbf{Average Case Runtime $\Theta(n)$} & \textbf{Worst Case Runtime $\mathcal{O}(n)$} \\ \hline
+        First Element & $\Theta(n\log{(n)})$ & $\mathcal{O}(n^2)$ \\ \hline
+        Median, Middle, or Last Element & $\Theta(n\log{(n)})$ & $\mathcal{O}(n\log{(n)})$ \\ \hline
+        Random Element & $\Theta(n\log{(n)})$ & $\mathcal{O}(n\log{(n)})$ \\ \hline
+        Smallest or Largest Element & $\Theta(n\log{(n)})$ & $\mathcal{O}(n^2)$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\noindent These are just some examples of choosing elements for the pivot point and how it affects the runtime of the algorithm. In general, the average runtime of the algorithm is still very efficient but there are specific selections of the pivot point where the algorithm can perform poorly.
+
+Occasionally elements in the data set will have duplicates. When this happens, the element that is a duplicate will be placed in a data set that is the same as that of the pivot. Generally duplicates do not affect the runtime efficiency too greatly, however, if the data set possesses a lot of duplicates it can lead to the worst case runtime complexity.
+
+The quick sort algorithm can be used recursively as well as iteratively. If one chooses to use the quick sort algorithm iteratively it is usually done with the use of stacks. The procedure for using the quick sort iteratively is:
+
+\begin{itemize}
+    \item Initialize the stack with the array to be sorted
+    \item While the stack is not empty:
+    \begin{itemize}
+        \item Remove the top element from the stack
+        \item Partition the data set at the pivot point
+        \item Push the left data set onto the stack
+        \item Push the right data set onto the stack
+    \end{itemize}
+\end{itemize}
+
+\noindent Once the data set is sorted, the stack will end up empty. This method of utilizing an iterative method over a recursive method can lead to some advantages and disadvantages. Here is how the iterative method is both advantageous and disadvantageous:
+
+\begin{itemize}
+    \item Advantages:
+    \begin{itemize}
+        \item The iterative method does not use recursion, which can be beneficial for some programming languages, such as Python, which have a limited stack size.
+        \item The iterative method is easier to understand and debug than the recursive method.
+    \end{itemize}
+    \item Disadvantages:
+    \begin{itemize}
+        \item The iterative method is slightly slower than the recursive method, since it has to do an extra loop to push and remove the sub data sets onto the stack.
+        \item The iterative method is not as flexible as the recursive method, since it cannot be easily used to sort a data set in place.
+    \end{itemize}
+\end{itemize}
+
+\noindent Occasionally, the input data set that is fed into the quick sort algorithm is nearly sorted or sorted. When this happens, neither the recursive or iterative method is efficient in sorting the data set. This is because of the nature of the partitioning algorithm that is present in the quick sort algorithm. A way to limit the runtime complexity
+of the quick sort algorithm with a sorted or near sorted data set is to use random sampling in the recursive call of the quick sort algorithm. Random sampling refers to randomly selecting the pivot value that is being used. When this technique is used it can limit the negative effects of dealing with a sorted or nearly sorted data set.
+
+There are several ways to make mistakes with using the quick sort algorithm. Some examples of errors in implementation of the quick sort algorithm are the following:
+
+\begin{itemize}
+    \item \textbf{Choosing The Wrong Pivot Point} - As previously mentioned, if the pivot point is not carefully chosen, the algorithm can perform poorly and lead to its worst case runtime complexity.
+    \item \textbf{Not Handling Duplicates} - If duplicates are not handled correctly in the quick sort algorithm then it can lead to inaccurate results or inefficient runtimes.
+    \item \textbf{Not Using Recursion} - When recursion is not used, this can lead to runtime complexity that is far worse. Using recursion allows memory allocation that is efficient and thus speeds up the runtime of the algorithm.
+\end{itemize}
+
+\noindent Overall, the quick sort algorithm can be optimized in a variety of ways. When dealing with different input data sets, one can optimize the algorithm with handling cases that are appropriate for specific input data sets. This changes for different inputs but the general procedure is the same; find a comparison method, pivot selection, or some other
+form of algorithmic enhancer that will accommodate for the given input that is being fed into the algorithm.
 
 \end{document}
 % ----- ----- ----- ----- ----- End Document
