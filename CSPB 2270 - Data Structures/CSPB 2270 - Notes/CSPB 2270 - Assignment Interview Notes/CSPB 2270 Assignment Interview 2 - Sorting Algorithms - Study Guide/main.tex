@@ -211,12 +211,12 @@ There are multiple different sorting algorithms that are used in this course. Fo
 In the context of this course, the sorting algorithms that are mentioned above all achieve the same outcome but they do so in a manner that are different than the others. For the sorting algorithms in this course, here is a brief summary of each algorithm and how it operates
 
 \begin{itemize}
-    \item \textbf{Bubble Sort} - Bubble sort is a simple sorting algorithm that repeatedly compares adjacent elements in an array and swaps them if they are in the wrong order.
-    \item \textbf{Insertion Sort} - Insertion sort is a simple sorting algorithm that inserts elements into a sorted subarray one at a time.
-    \item \textbf{Merge Sort} - Merge sort is a divide-and-conquer sorting algorithm that recursively divides the array into smaller subarrays and then merges the sorted subarrays back together.
-    \item \textbf{Quick Sort} - Quick sort is a divide-and-conquer sorting algorithm that recursively partitions the array and then sorts the two resulting subarrays.
+    \item \textbf{Bubble Sort} - Bubble sort is a simple sorting algorithm that repeatedly compares adjacent elements in an data set and swaps them if they are in the wrong order.
+    \item \textbf{Insertion Sort} - Insertion sort is a simple sorting algorithm that inserts elements into a sorted sub-data set one at a time.
+    \item \textbf{Merge Sort} - Merge sort is a divide-and-conquer sorting algorithm that recursively divides the data set into smaller sub-data sets and then merges the sorted sub-data sets back together.
+    \item \textbf{Quick Sort} - Quick sort is a divide-and-conquer sorting algorithm that recursively partitions the data set and then sorts the two resulting sub-data sets.
     \item \textbf{Radix Sort} - Radix sort is a non-comparitive sorting algorithm that sorts elements by processing them digit by digit.
-    \item \textbf{Selection Sort} - Selection sort is a simple sorting algorithm that repeatedly finds the smallest (or largest) element in the unsorted portion of the array and moves it to the sorted portion of the array.
+    \item \textbf{Selection Sort} - Selection sort is a simple sorting algorithm that repeatedly finds the smallest (or largest) element in the unsorted portion of the data set and moves it to the sorted portion of the data set.
     \item \textbf{Shell Sort} - Shell sort is a sorting algorithm that improves upon the performance of insertion sort by sorting elements that are far apart first, then gradually reducing the gap between elements to be compared.
 \end{itemize}
 
@@ -262,9 +262,9 @@ In the context of sorting algorithms, one may ask what is the difference between
 
 \subsection*{Overview}
 
-The bubble sort is a simple sorting algorithm that works by repeatedly comparing adjacent elements in an array and swapping them if they are in the wrong order. The algorithm starts at the beginning of the array and compares the first two elements. If the first element is greater than the second element, they are swapped. The algorithm then moves on to the next 
-two elements and repeats the process. This continues until the end of the array is reached. At this point, the largest element in the array will be in the last position. The algorithm then starts again at the beginning of the array and repeats the process. This time, the second largest element will be moved to the second-to-last position, and so on. The 
-algorithm continues until all of the elements in the array are sorted in ascending order.
+The bubble sort is a simple sorting algorithm that works by repeatedly comparing adjacent elements in an data set and swapping them if they are in the wrong order. The algorithm starts at the beginning of the data set and compares the first two elements. If the first element is greater than the second element, they are swapped. The algorithm then moves on to the next 
+two elements and repeats the process. This continues until the end of the data set is reached. At this point, the largest element in the data set will be in the last position. The algorithm then starts again at the beginning of the data set and repeats the process. This time, the second largest element will be moved to the second-to-last position, and so on. The 
+algorithm continues until all of the elements in the data set are sorted in ascending order.
 
 \begin{highlight}[Bubble Sort Algorithm]
 
@@ -346,14 +346,219 @@ The bubble sort algorithm can be used for a variety of different data structures
 
 \clearpage
 
+\section*{Merge Sort Algorithm}
+
+\subsection*{Overview}
+
+The merge sort algorithm is a divide-and-conquer algorithm for sorting a data set. This algorithm sorts a data set by recursively breaking it down into smaller and smaller sub-data set until they are sorted. Once the sub-data sets have been sorted, they are sorted back together into one final sub-data set. The merge sort algorithm utilizes
+an auxiliary data-set (A temporary data-set) to store the sorted elements of the original data set. This auxiliary data-set is then copied back to the original data set. Similar to the quick sort algorithm, the merge sort algorithm requires the use of a separate algorithm in its implementation.
+
+The algorithm that is used in the merge sort algorithm is the merge algorithm. This algorithm is responsible for taking two data sets and combing them into one data set. The merge algorithm can be seen below:
+
+\begin{highlight}[Merge Algorithm]
+    Below is an example of the merge algorithm in the context of C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    /*  merge - Merges two vectors into one final vector
+    *   Input:
+    *     left - Vector of integers that is passed by reference that is to be inserted into the 
+    *     result vector
+    *     right - Vector of integers that is passed by reference that is to be inserted into the 
+    *     result vector
+    *     result - Vector of integers that is passed by reference 
+    *   Algorithm:
+    *     * Begin by calculating the size that is needed for the merged vector
+    *     * Set the positions of each vector that is going to be traversed through
+    *     * Create a temporary vector that will hold the merged values
+    *     * Iterate through the elements in the left and right vectors, copy the values into the 
+    *       mergedNumbers vector
+    *     * Increment the merge position
+    *     * Merge the left and right vectors into the mergedNumbers vector
+    *     * Copy the elements from the mergedNumbers vector into the result vector
+    *   Output:
+    *     This function does not return a value, it merges two vectors into one, called result
+    */
+    void Sorting::merge(vector<int>& left, vector<int>& right, vector<int>& result) {
+      // Calculate the size of the needed vector for the merged vector
+      int mergedSize = left.size() + right.size();
+      // Set the positions of each vector
+      int mergePos = 0;
+      int leftPos = 0;
+      int rightPos = 0;
+      // Create a temporary vector that will hold the merged values
+      vector<int> mergedNumbers(mergedSize);
+      // Continue while loop as long as there are elements left in each vector to be merged
+      while (leftPos < left.size() && rightPos < right.size()) {
+        // Insert the element in the left vector into the merged vector if it is less than that 
+        // of the right vector
+        if (left.at(leftPos) <= right.at(rightPos)) {
+          mergedNumbers.at(mergePos) = left.at(leftPos);
+          ++leftPos;
+        }
+        // Insert the element in the right vector into the merged vector if it is greater than 
+        // that of the left vector
+        else {
+          mergedNumbers.at(mergePos) = right.at(rightPos);
+          ++rightPos;
+        }
+        // Increment the merge position
+        ++mergePos;
+      }
+      // Merge the left vector into the mergedNumbers vector
+      while (leftPos < left.size()) {
+        mergedNumbers.at(mergePos) = left.at(leftPos);
+        ++leftPos;
+        ++mergePos;
+      }
+      // Merge the right vector into the mergedNumbers vector
+      while (rightPos < right.size()) {
+        mergedNumbers.at(mergePos) = right.at(rightPos);
+        ++rightPos;
+        ++mergePos;
+      }
+      // Copy the elements from the mergedNumbers vector into the result vector
+      for (mergePos = 0; mergePos < mergedSize; ++mergePos) {
+        result.push_back(mergedNumbers.at(mergePos));
+      }
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    \noindent The main responsibility of the above algorithm is to sort the elements of the two data sets, insert them into the auxiliary data set, and then copy that auxiliary data set back to the original data set. The general procedure of this algorithm can be explained below:
+    
+    \begin{itemize}
+        \item First calculate the needed size of the auxiliary data set and initialize the indexes of the left, right, and auxiliary data set
+        \item The sub-data sets are then traversed through where the elements of the left and right sub-data sets are compared, after the comparison, the appropriate element is inserted into the auxiliary data set
+        \item The above procedure is repeated until the index of either the left or right sub-data set reaches the back of the respective data set
+        \item The remaining elements of the left and right sub-data sets are then added to auxiliary data set
+        \item The auxiliary data set is then copied back to the resultant data set
+        \item This process will repeat until the left and right sub-data sets are sorted
+    \end{itemize}
+
+    \noindent The merge algorithm is where the sorting of the merge sort algorithm occurs as well as where the merging of two sub-data sets occurs. The recursive nature of the merge algorithm will sort each halves of the original data set. 
+\end{highlight}
+
+The next algorithm is the implementation of the merge sort algorithm. The merge algorithm is responsible for creating recursive calls to the input data set so that it can be sorted in a timely manner. This algorithm can be seen below:
+
+\begin{highlight}[Merge Sort Algorithm]
+    Below is an example of the merge sort algorithm in the context of C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    /*  mergesort - Uses the merge sort algorithm to sort elements in a vector
+    *   Input:
+    *     data - Vector of integers that is passed by reference that is going to be sorted
+    *   Algorithm:
+    *     * First check to see if the vector is empty or has one element
+    *     * Proceed to calculate the mid point of the vector
+    *     * Create a vector for the left and right half
+    *     * Recursively call the mergesort method on the left and right halves of the vector
+    *     * Merge the two vectors into one by copying the results to data
+    *   Output:
+    *     This function does not return a value, it sorts elements from a vector
+    */
+    void Sorting::mergesort(vector<int>& data){
+      // The vector is empty or only has one element
+      if (data.size() <= 1) {
+        return;
+      }
+      // The vector is greater than 1
+      else {
+        // Calculate the midpoint of the vector
+        int midPoint = data.size() / 2;
+        // Create a left half of the vector
+        vector<int> leftHalf(data.begin(), data.begin() + midPoint);
+        // Create a right half of the vector
+        vector<int> rightHalf(data.begin() + midPoint, data.end());
+        // Merge the left and right half of the vector, recursively
+        mergesort(leftHalf);
+        mergesort(rightHalf);
+        // Create an empty vector
+        vector<int> result;
+        // Call the merge method and merge the two halves together
+        merge(leftHalf, rightHalf, result);
+        // Copy the results to data
+        data = result;
+      }
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    This algorithm takes an input data set and recursively splits the input data set until it reaches a size of one. Once the sub-data set reaches a size of one, it then gets passed in as an input parameter into the merge algorithm so that it can eventually be copied back to the original data set that is passed into the algorithm. The general procedure for how this data set works is the following:
+
+    \begin{itemize}
+        \item The original data set that is passed into the algorithm is first checked if the data set is of size one, if it is, then the data set is returned, otherwise it continues on to the else block statement
+        \item The midpoint of the data set is then calculated such that it can be split into two halves
+        \item A left and right data set is then created to represent each have of the split data data set
+        \item These sub-data sets are recursively fed into the function until the returned data set is of size one
+        \item Once the returned sub-data set is of size one, it is fed into the merge algorithm so that the two sub-data sets can be combined into one data set
+        \item The above process is repeated until the algorithm no longer merges two halves together, indicating that the data set has been sorted
+    \end{itemize}
+
+    \noindent This algorithm effectively splits an input data set until the returned data set is of size one. Once this happens, the merge algorithm then effectively merges two separate sub-data sets in a manner that they will be sorted. This process repeats over and over until all elements from the original data set have been sorted.
+
+    Similar to the quick sort algorithm, the merge sort algorithm is a highly efficient algorithm. Its recursive nature allows for less complex runtimes which makes it an optimal choice for sorting elements. The runtime complexities of this algorithm can be seen below:
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline \textbf{Best Case $\Omega(n)$} & \textbf{Average Case $\Theta(n)$} & \textbf{Worst Case $\mathcal{O}(n)$} \\ \hline
+            $\Omega(n\log{(n)})$ & $\Theta(n\log{(n)})$ & $\mathcal{O}(n\log{(n)})$ \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \noindent Unlike the quick sort algorithm, the best case runtime complexity for the merge sort algorithm occurs when the list is already sorted. Because of nature of the merge sort algorithm, if the list is already sorted then it typically will only have to make $n$ comparisons when sorting the list. On the contrary, the worst case time complexity
+    for the merge sort algorithm occurs when the data set is sorted in reverse order. This is due to the splitting of the data sets and the recursive nature of the algorithm. 
+    
+    On the contrary, the space complexity of the merge sort algorithm tends to be of the order $n$, $\mathcal{O}(n)$. This is because each time the recursive function is called it has to occupy memory. If the merge sort algorithm uses the `divide and conquer in place' strategy, where the sorted halves of the data set are stored in the original data set, 
+    the space complexity will decrease.
+\end{highlight}
+
+\subsection*{Optimization \& Utilization}
+
+As mentioned previously, the merge sort algorithm is a divide-and-conquer algorithm that is highly efficient in the context of runtime complexity. Because this algorithm breaks the problem of sorting into smaller and smaller parts, the spacetime complexity is linear. Due to the spacetime complexity of the merge sort algorithm, there is a situation
+where the algorithm can cause a stack overflow due to the recursive nature of the algorithm. On the contrary, small data sets can be less efficient because of the comparisons and splitting of the data set that is needed for the algorithm to operate. For small data sets this can be over kill because of the nature of how the algorithm operates.
+
+The merge sort algorithm does not rely on making comparisons like a bubble sort algorithm. Instead, it breaks the data set into smaller and smaller data sets and only makes comparisons when the sub-data sets are being merged into a final data set. The merge sort algorithm can be used with linked lists. The fact that the merge sort algorithm does not 
+have to traverse the list in order to sort it, it makes sorting it relatively easy. The main difference between sorting a linked list and sorting a data set like an array or vector is that when the individual linked lists have to be merged, the pointers of the lists have to point to the correct node in the list that is being merged. Comparing the previous 
+runtime complexities for sorting linked lists, here is how they compare to one another:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline \textbf{Algorithm} & \textbf{Worst Case Time Complexity $\mathcal{O}(n)$} & \textbf{Worst Case Space Complexity $\mathcal{O}(n)$} & \textbf{Stability} \\ \hline
+        Bubble Sort & \textbf{$\mathcal{O}(n^2)$} & \textbf{$\mathcal{O}(1)$} & Stable \\ \hline
+        Merge Sort & \textbf{$\mathcal{O}(n\log{(n)})$} & \textbf{$\mathcal{O}(n)$} & Stable \\ \hline
+        Quick Sort & \textbf{$\mathcal{O}(n^2)$} & \textbf{$\mathcal{O}(\log{n})$} & Not Stable \\ \hline
+    \end{tabular}
+\end{center}
+
+\noindent Stability in this context refers to the ability for an algorithm to preserve the relative order of equal elements in the sorted data set. This means if two elements in the data set are equal, an unstable algorithm may swap the relative order of sorted elements in the data set. If we look at these three algorithms, the overall comparison of all the data sets are:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline \footnotesize{\textbf{Algorithm}} & \footnotesize{\textbf{Best Use}} & \footnotesize{\textbf{Complexity}} & \footnotesize{\textbf{Space Complexity $\mathcal{O}(n)$}} & \footnotesize{\textbf{Stability}} & \footnotesize{\textbf{Time Complexity $\mathcal{O}(n)$}} \\ \hline
+        Bubble Sort & Small Arrays & Simple & $\mathcal{O}(1)$ & Stable & $\mathcal{O}(n^2)$ \\ \hline
+        Merge Sort & Large Arrays & Complex & $\mathcal{O}(n)$ & Stable & $\mathcal{O}(n\log{(n)})$ \\ \hline
+        Quick Sort & Medium-Sized Arrays & Simple & $\mathcal{O}(n)$ & Not Stable & $\mathcal{O}(n^2)$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\noindent Overall, the merge sort algorithm is a highly efficient algorithm. It is versatile in a number of ways and does not really have a lot of instances where it is inefficient. There are occasional situations where the algorithm may cause a stack overflow on large amounts of data but that problem can be mitigated with modifications to limit the number of times function has to make a recursive call. It works great with almost all data types and can be used with dynamic memory data structures such as linked lists. 
+
+\clearpage
+
 \section*{Quick Sort Algorithm}
 
 \subsection*{Overview}
 
-The quick sort algorithm is a divide-and-conquer algorithm for sorting a data set. This algorithm works by repeatedly partitioning the data set around a pivot element, and then recursively sorting the two sub-arrays
-created by the partition. The pivot element that is chosen for this algorithm is typically the middle element of the array, but it is not necessarily required for the algorithm to work. When the partitioning of elements
+The quick sort algorithm is a divide-and-conquer algorithm for sorting a data set. This algorithm works by repeatedly partitioning the data set around a pivot element, and then recursively sorting the two sub-data sets
+created by the partition. The pivot element that is chosen for this algorithm is typically the middle element of the data set, but it is not necessarily required for the algorithm to work. When the partitioning of elements
 occurs, elements that are smaller than the pivot are moved to the left of the pivot. On the contrary, the elements that are larger than the pivot move to the right of the pivot. Once this partition is completed, the two
-sub-arrays are recursively sorted. The quick sort algorithm is often regarded as a very efficient sorting algorithm and works well on large data sets.
+sub-data sets are recursively sorted. The quick sort algorithm is often regarded as a very efficient sorting algorithm and works well on large data sets.
 
 The quick sort algorithm requires a separate algorithm than the main algorithm for it to operate correctly. The secondary algorithm that is required is the `quicksort\_partition' algorithm. The primary role of this algorithm
 is to iterate through the vector and partition it so that elements can be sorted in a manner that is appropriate. This algorithm can be seen below.
@@ -453,8 +658,8 @@ is to iterate through the vector and partition it so that elements can be sorted
 
 \end{highlight}
 
-The next algorithm, which is the implementation of the quick sort algorithm, recursively sorts the sub arrays that are created with the partitioning algorithm. This is done
-by making recursive calls to itself while utilizing the `quicksort\_partition' algorithm to partition the left and right sub arrays of the data set. This algorithm can be seen below.
+The next algorithm, which is the implementation of the quick sort algorithm, recursively sorts the sub-data sets that are created with the partitioning algorithm. This is done
+by making recursive calls to itself while utilizing the `quicksort\_partition' algorithm to partition the left and right sub data sets of the data set. This algorithm can be seen below.
 
 \begin{highlight}[Quick Sort Algorithm]
     Below is the quick sort algorithm in the context of C++:
@@ -543,7 +748,7 @@ Occasionally elements in the data set will have duplicates. When this happens, t
 The quick sort algorithm can be used recursively as well as iteratively. If one chooses to use the quick sort algorithm iteratively it is usually done with the use of stacks. The procedure for using the quick sort iteratively is:
 
 \begin{itemize}
-    \item Initialize the stack with the array to be sorted
+    \item Initialize the stack with the data set to be sorted
     \item While the stack is not empty:
     \begin{itemize}
         \item Remove the top element from the stack
