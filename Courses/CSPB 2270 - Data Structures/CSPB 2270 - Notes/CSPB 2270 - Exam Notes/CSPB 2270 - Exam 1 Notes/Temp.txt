@@ -1,0 +1,34 @@
+Memory Allocation
+-----------------
+What is the heap in C++ and how does it differ from the stack?
+What is the stack in C++ and how does it differ from the heap?
+Which kinds of variables are placed on the stack?
+Which kinds of variables are placed in the heap?
+What is a memory leak and how can those be avoided?
+What is a shared pointer vs a regular pointer?
+How do you reference the data using an object pointer?
+What is the difference between a reference parameter and a pointer parameter?
+How do you reference the data using an object reference parameter?
+
+Sorting Algorithms
+------------------
+What are the different types of sort algorithms we covered in the course?
+What are the steps for each of the sort algorithms covered?
+What is the worst case time complexity for each of the sorting algorithms?
+What is the worst case data sequence for each of the sorting algorithms?
+
+Binary Tree
+-----------
+What is a binary tree and how does it differ from a linked list?
+Explain the concept of a binary search tree and how it is used for searching and sorting?
+What is meant by a balanced tree?
+Why is a balanced tree desirable?
+What is the time complexity of an insertion in a tree?
+What is the time complexity of a lookup in a tree?
+What are the steps required in traversing a tree?
+What is recursion?
+Why is recursion useful when dealing with trees?
+How can you calculate the size of a tree?
+How can you calculate the height of a tree?
+What is the difference between a pre-order, in-order, and post-order traversal of a binary tree?
+What is the time complexity of finding the minimum or maximum element in a binary tree?
