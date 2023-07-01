@@ -1,0 +1,1570 @@
+\clearpage
+
+\chapter{Week 4}
+
+\section{Recursion \& Trees}
+
+\horizontalline
+
+\subsection{Activiites}
+The following are the activities that are planned for Week 4 of this course.
+\begin{itemize}
+    \item Reading Quiz(s) from last week are due on Monday.
+    \item Assignment-2 (Linked List) is due Tuesday.
+    \item Read the zyBook chapter(s) assigned and complete the reading quiz(s) by next Monday.
+    \item Watch week videos Recursion and the Tree data structure.
+    \item Access the GitHub Classroom to get your Assignment-3 repository  (assignment due in two weeks).
+\end{itemize}
+
+\subsection{Lectures}
+Here are the lectures that can be found for this week:
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45909}{Recursion}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45910}{Trees}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45911}{Binary Search Trees}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45912}{Tree Traversal}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45913}{BST Operations}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=45914}{BST Remove Operation}
+\end{itemize}
+
+\subsection{Programming Assignment}
+The programming assignment for Week 4 - \href{https://github.com/cu-cspb-2270-Summer-2023/pa3-RelativiBit}{Binary Search Tree}.
+
+\subsection{Chapter 6 - Recursion}
+
+The first chapter of this week is Chapter 6 - Recursion.
+
+\subsection*{Sec. 6.1 - Recursion: Introduction}
+
+Recursion is a powerful concept in object-oriented programming (OOP) that allows a function or method to call itself during its execution. It involves breaking down a complex problem into smaller, similar subproblems and solving them iteratively 
+by invoking the same function within itself. Recursion relies on the concept of a base case, which defines the termination condition to stop the recursive calls. Each recursive call works on a smaller subset of the original problem until the base 
+case is reached, at which point the recursion "unwinds" and the results are combined to solve the original problem. Recursion is particularly useful for solving problems that exhibit a recursive structure, such as traversing hierarchical data structures, 
+generating permutations or combinations, and implementing algorithms like quicksort or binary search. It offers an elegant and concise way to solve complex problems and can often result in more readable and maintainable code when used appropriately.
+
+\begin{solution}[Recursion Example]
+    Below is an example of recursion in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    int factorial(int n) {
+    // Base case: factorial of 0 is 1
+    if (n == 0) {
+        return 1;
+    }
+    // Recursive case: calculate factorial of n by 
+    // multiplying it with factorial of n-1
+    return n * factorial(n - 1);
+    }
+
+    int main() {
+        int number = 5;
+        int result = factorial(number);
+        std::cout << "Factorial of " << number << " is: " << result << std::endl;
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates the use of recursion to calculate the factorial of a number. The `factorial' function takes an integer `n' as input and recursively calculates the factorial by multiplying `n' with the factorial of `n-1'. The base case is defined as 
+    `n == 0', where the function returns 1, indicating the factorial of 0. The recursive case performs successive multiplications until the base case is reached. In the main function, the factorial of the number 5 is calculated using the `factorial' function, and 
+    the result is printed. Recursion simplifies the factorial calculation by breaking it down into smaller subproblems until the base case is encountered, offering an elegant and concise solution.
+\end{solution}
+
+\subsection*{Sec. 6.2 - Recursive Functions}
+
+Recursive functions in C++ are functions that call themselves during their execution. They allow the solving of complex problems by breaking them down into smaller, simpler subproblems. A recursive function consists of two components: the base case, which defines the 
+termination condition to stop the recursion, and the recursive case, where the function calls itself with a modified input. Each recursive call reduces the problem size, bringing it closer to the base case. Recursive functions are particularly useful for solving problems 
+with a recursive structure, such as traversing trees or linked lists, generating permutations, or implementing sorting algorithms like merge sort. Proper design and termination conditions are crucial to ensure the recursion does not lead to infinite loops. Recursive functions 
+offer a concise and elegant way to solve complex problems by leveraging the power of self-reference and the ability to decompose problems into smaller, manageable parts.
+
+\begin{solution}[Recursive Function Example]
+    Below is an example of a recursive function in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    int recursiveSum(int n) {
+        // Base case: if n is 1, return 1
+        if (n == 1) {
+            return 1;
+        }
+        // Recursive case: calculate sum of n and the sum of integers from 1 to n-1
+        return n + recursiveSum(n - 1);
+    }
+    
+    int main() {
+        int number = 5;
+        int result = recursiveSum(number);
+        std::cout << "The sum of integers from 1 to " << number 
+        << " is: " << result << std::endl;
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates the use of recursion to calculate the sum of integers from 1 to a given number. The `recursiveSum' function takes an integer `n' as input and recursively calculates the sum by adding `n' to the sum of integers from 1 to `n-1'. The base case is defined 
+    as `n == 1', where the function returns 1. The recursive case performs successive additions until the base case is reached. In the main function, the sum of integers from 1 to the number 5 is calculated using the `recursiveSum' function, and the result is printed. Recursive functions 
+    provide a concise and elegant solution for problems that can be decomposed into smaller subproblems, allowing for a natural and intuitive implementation.
+\end{solution}
+
+\subsection*{Sec. 6.3 - Recursive Algorithm: Search}
+
+\subsubsection{Recursive Search}
+
+A recursive search algorithm is a technique that uses recursion to search for a specific element or value in a data structure. It involves breaking down the search problem into smaller subproblems and recursively searching through each subproblem until the target element is found or until 
+the search space is exhausted. The algorithm typically has a base case that defines the termination condition, where it either finds the target element or determines that it does not exist in the data structure. In the recursive case, the algorithm divides the search space into smaller parts 
+and recursively applies the search algorithm to each part. Recursive search algorithms are commonly used in tree and graph traversals, as well as in other data structures. They offer a concise and elegant approach to solving search problems by leveraging the power of recursion and decomposition 
+of the search space.
+
+\subsubsection{Recursive Search Function}
+
+A recursive search function is an algorithm that uses recursion to search for a specific element or value within a data structure. The function divides the search space into smaller subproblems and recursively applies the search function to each subproblem until the target element is found or the 
+search space is exhausted. It typically includes a base case that defines the termination condition, where the function either finds the target element or determines that it does not exist. In the recursive case, the function splits the search space into smaller parts and recursively invokes itself 
+on each part. Recursive search functions are commonly used in various scenarios, such as searching elements in trees, linked lists, or arrays. They provide an elegant and intuitive way to solve search problems by decomposing the search space and leveraging the power of recursion to explore and locate 
+the desired element efficiently.
+
+\subsubsection{Recursively Searching a Sorted List}
+
+Recursively searching a sorted list involves using a divide-and-conquer approach to find a target element efficiently. The algorithm starts by comparing the target element with the middle element of the list. If they match, the search is successful. If the target is smaller, the algorithm recursively 
+searches the left half of the list. If the target is larger, the algorithm recursively searches the right half. This process continues until the target element is found or the search space is reduced to zero. By repeatedly dividing the search space in half, the algorithm eliminates large portions of 
+the list at each step, making it highly efficient for large sorted lists. Recursive searching of sorted lists is a commonly used technique, providing a logarithmic time complexity of $\mathcal{O}\log{(n)}$ and offering an efficient way to find elements within sorted data structures.
+
+\begin{solution}[Recursive Search Algorithm Example]
+    Below is an example of using a recursive search algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    int binarySearch(const std::vector<int>& sortedList, int target, 
+                    int left, int right) {
+        if (left > right) {
+            return -1; // Target element not found
+        }
+    
+        int mid = (left + right) / 2;
+    
+        if (sortedList[mid] == target) {
+            return mid; // Target element found
+        } else if (sortedList[mid] > target) {
+            // Recursively search the left half
+            return binarySearch(sortedList, target, left, mid - 1);
+        } else {
+            // Recursively search the right half
+            return binarySearch(sortedList, target, mid + 1, right);
+        }
+    }
+    
+    int main() {
+        std::vector<int> sortedList = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int target = 7;
+        int index = binarySearch(sortedList, target, 0, sortedList.size() - 1);
+    
+        if (index != -1) {
+            std::cout << "Target element found at index: " << index << std::endl;
+        } else {
+            std::cout << "Target element not found." << std::endl;
+        }
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates recursive searching in a sorted list using the binary search algorithm. The `binarySearch' function takes a sorted list, target element, and the indices of the left and right boundaries. It recursively divides the search space in half by comparing the target element with the 
+    middle element of the current range. If the target matches the middle element, the function returns the index. Otherwise, it recursively searches the left or right half of the range based on the comparison result. The algorithm continues until the target element is found or the search space is reduced 
+    to zero. In the main function, a sorted list is defined, and the `binarySearch' function is called to search for the target element. If the target is found, the index is printed; otherwise, a message is displayed indicating that the target element is not found. Recursive searching in a sorted list using 
+    the binary search algorithm provides an efficient way to locate elements by repeatedly dividing the search space in half, resulting in a logarithmic time complexity of $\mathcal{O}\log{(n)}$ and making it suitable for large sorted lists.
+\end{solution}
+
+\subsection*{Sec. 6.4 - Adding Output Statements for Debugging}
+
+Adding output statements for debugging is a common technique used to track the execution flow and identify issues within a program. By strategically placing print statements or logging statements at key points in the code, developers can observe the values of variables, check the program's state, and trace 
+the control flow during runtime. These output statements can help diagnose problems, verify the correctness of algorithms or conditions, and provide insights into the program's behavior. Debugging output statements are especially useful when dealing with complex logic, loops, or conditionals, as they allow 
+developers to observe intermediate results and identify any unexpected or erroneous behavior. By selectively adding output statements and analyzing the output, developers can gain a better understanding of the program's execution and effectively debug issues, ultimately leading to more robust and reliable software.
+
+\begin{solution}[Output Statements Example]
+    Below is an example of adding output statements for recursion in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    int factorial(int n) {
+        std::cout << "Calculating factorial of: " << n << std::endl;
+    
+        if (n == 0) {
+            std::cout << "Base case reached: n = 0" << std::endl;
+            return 1;
+        }
+    
+        int result = n * factorial(n - 1);
+    
+        std::cout << "Factorial of " << n << " is: " << result << std::endl;
+    
+        return result;
+    }
+    
+    int main() {
+        int number = 5;
+        int result = factorial(number);
+    
+        std::cout << "Final result: " << result << std::endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates adding output statements for debugging purposes in a recursive function that calculates the factorial of a number. Within the `factorial' function, output statements are strategically placed to track the execution flow. The statements print the current value of `n' before each recursive call, 
+    indicating the progress of the calculation. When the base case is reached (i.e., `n' becomes zero), a message is printed to indicate the termination of recursion. After each recursive call, the calculated factorial value for the current `n' is displayed. In the `main' function, the `factorial' function is called with 
+    the number 5, and the final result is printed. By observing the output, developers can trace the recursive calls, check the intermediate values of `n', and verify the correctness of the factorial calculation. Adding such output statements for debugging aids in understanding the behavior of recursive functions, identifying 
+    any issues or unexpected behavior, and effectively diagnosing problems.
+\end{solution}
+
+\subsection*{Sec. 6.5 - Creating a Recursive Function}
+
+Creating a recursive function involves defining a function that calls itself within its own body. Recursive functions are useful when solving problems that can be divided into smaller subproblems of the same nature. The function typically includes a base case, which specifies when the recursion should terminate, and a recursive 
+case, which defines the recursive call(s) to solve the problem incrementally. Recursive functions allow for elegant and concise solutions to certain problems, leveraging the power of self-referential calls to break down complex tasks into simpler ones. However, it is important to ensure that recursive functions have well-defined 
+termination conditions to avoid infinite recursion and unnecessary resource consumption.
+
+\begin{solution}[Creating a Recusive Function Example]
+    Below is an example of creating a recursive function in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    int fibonacci(int n) {
+        // Base cases
+        if (n == 0)
+            return 0;
+        if (n == 1)
+            return 1;
+    
+        // Recursive case
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    
+    int main() {
+        int n = 6;
+        int result = fibonacci(n);
+        std::cout << "The " << n << "th Fibonacci number is: " 
+        << result << std::endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates the creation of a recursive function to calculate the nth Fibonacci number. The `fibonacci' function takes an integer `n' as input and uses recursive calls to compute the Fibonacci number at position `n'. The base cases are defined for `n' equal to 0 and 1, where the function returns the respective Fibonacci 
+    numbers. In the recursive case, the function calls itself with `n - 1' and `n - 2' to calculate the previous two Fibonacci numbers and adds them together to determine the current Fibonacci number. In the `main' function, the `fibonacci' function is called with `n = 6', and the result is printed. The recursive nature of the function 
+    allows for a concise implementation to calculate Fibonacci numbers, where each number is derived by summing the two previous numbers. Recursive functions are particularly useful in scenarios where a problem can be broken down into smaller instances of the same problem, leading to a more elegant and readable code solution.
+\end{solution}
+
+\subsection*{Sec. 6.6 - Recursive Math Functions}
+
+Recursive math functions are functions that utilize recursion to solve mathematical problems. These functions often involve breaking down a complex mathematical problem into smaller subproblems of the same nature, solving each subproblem recursively, and combining the results to obtain the final solution. Recursive math functions are commonly 
+used to solve problems such as computing factorials, calculating Fibonacci numbers, exponentiation, or finding combinations and permutations. By leveraging the power of recursion, these functions can provide elegant and concise solutions to mathematical problems, reducing the complexity of the code and improving readability. However, it is 
+important to define appropriate base cases and ensure that the recursive calls converge towards the base cases to prevent infinite recursion and ensure termination.
+
+\begin{solution}[Recursive Math Function Example]
+    Below is an example of recursive math functions in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    int factorial(int n) {
+        // Base case: factorial of 0 is 1
+        if (n == 0)
+            return 1;
+    
+        // Recursive case: multiply n by factorial of (n - 1)
+        return n * factorial(n - 1);
+    }
+    
+    int main() {
+        int number = 5;
+        int result = factorial(number);
+        std::cout << "The factorial of " << number << " is: " 
+        << result << std::endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates the use of a recursive math function to calculate the factorial of a given number. The `factorial' function takes an integer `n' as input and recursively multiplies `n' by the factorial of `(n - 1)' until the base case of `n' equal to 0 is reached. The base case specifies that the factorial of 0 is 1. By making recursive 
+    calls and breaking down the problem into smaller subproblems, the function calculates the factorial of the given number. In the `main' function, the `factorial' function is called with `number = 5', and the result is printed. Recursive math functions provide an elegant and concise way to solve mathematical problems by decomposing them into smaller, 
+    manageable tasks. They allow for a more intuitive representation of the problem and often result in more readable code.
+\end{solution}
+
+\subsection*{Sec. 6.7 - Recursive Exploration of all Possibilities}
+
+Exploring all possibilities using recursion involves designing a recursive function to systematically generate and explore all possible combinations, permutations, or configurations of a given problem. The recursive function typically explores different choices or options at each step and recursively explores all subsequent possibilities until a base 
+case is reached. The base case defines when the recursion should terminate, and the function returns or processes the final result. By exhaustively exploring all possibilities through recursion, we can systematically analyze and solve problems that involve generating or examining all potential outcomes. Recursive exploration of possibilities is particularly 
+useful in tasks such as generating permutations, solving combinatorial problems, backtracking, or searching through a decision tree. However, it is essential to design the recursive function with care, defining appropriate base cases and ensuring that the recursive calls converge towards the base cases to avoid infinite recursion and unnecessary computation.
+
+\begin{solution}[Recursive Exploration Example]
+    Below is an example of recursive exploration in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    void generateSubsets(const std::vector<int>& set, 
+                        std::vector<int>& currentSubset, int index) {
+        // Base case: when we reach the end of the set
+        if (index == set.size()) {
+            // Process the current subset
+            for (int num : currentSubset) {
+                std::cout << num << " ";
+            }
+            std::cout << std::endl;
+            return;
+        }
+    
+        // Recursive case: explore two possibilities 
+        // - include the current element or exclude it
+        // Include the current element
+        currentSubset.push_back(set[index]);
+        generateSubsets(set, currentSubset, index + 1);
+    
+        // Exclude the current element
+        currentSubset.pop_back();
+        generateSubsets(set, currentSubset, index + 1);
+    }
+    
+    int main() {
+        std::vector<int> set = {1, 2, 3};
+        std::vector<int> currentSubset;
+        generateSubsets(set, currentSubset, 0);
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates how to use recursion to explore all possible subsets of a given set. The `generateSubsets' function takes the set, a vector to store the current subset, and the current index as parameters. The base case is when the index reaches the end of the set, where the current subset is processed and printed. 
+    In the recursive case, the function explores two possibilities at each step: including the current element in the subset or excluding it. By making recursive calls with updated parameters, the function generates all possible subsets by systematically exploring different combinations of elements. In the `main' function, the 
+    `generateSubsets' function is called with a set of \{1, 2, 3\}, and all the possible subsets are printed. Recursive exploration of all possibilities allows us to examine and generate various configurations or combinations efficiently.
+\end{solution}
+
+\subsection*{Sec. 6.8 - Stack Overflow}
+
+Stack overflow in recursion occurs when the recursive function consumes all available space on the call stack, leading to a runtime error. This typically happens when the recursion does not reach a base case or termination condition, causing an infinite recursion loop. As each recursive function call pushes a new frame onto the 
+call stack, repeated recursive calls without proper termination can exhaust the available stack space. This results in a stack overflow error, where the program is unable to allocate more memory on the stack to accommodate additional function calls. To prevent stack overflow, it is crucial to ensure that recursive functions have 
+well-defined base cases and termination conditions that allow the recursion to stop. Additionally, tail recursion and iterative approaches can be considered to optimize recursive algorithms and avoid stack overflow issues.
+
+\begin{solution}[Stack Overflow Example]
+    Below is an example of stack overflow in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    void recursiveFunction() {
+        recursiveFunction();  // Recursive call without a base case
+    }
+    
+    int main() {
+        recursiveFunction();
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, the `recursiveFunction' is called without a base case or termination condition. As a result, the function enters into an infinite recursion loop, continuously making recursive calls without any stopping condition. Eventually, the recursive calls consume all available space on the call stack, leading to a stack 
+    overflow error. When executed, the program encounters a runtime error and terminates due to the stack overflow caused by the infinite recursion. It serves as a reminder of the importance of defining proper base cases or termination conditions in recursive functions to avoid stack overflow errors and ensure the termination of the recursion.
+\end{solution}
+
+\subsection*{Sec. 6.9 - Recursively Output Permutations}
+
+Recursively outputting permutations involves generating and printing all possible arrangements of a given set of elements using a recursive approach. The algorithm works by swapping elements in the set, fixing one element at a time, and recursively permuting the remaining elements. At each step, the algorithm explores different choices by swapping 
+elements and proceeds with recursive calls until a base case is reached. The base case occurs when only one element remains, indicating that a permutation has been formed. The algorithm then outputs the current permutation. By systematically generating permutations through recursion, all possible arrangements of the elements are explored and printed. 
+However, it is essential to handle duplicate elements and ensure proper termination of the recursion to avoid unnecessary computations and infinite recursion loops.
+
+\begin{solution}[Recursively Output Permutations Example]
+    Below is an example of recursively outputting permutations in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <vector>
+    
+    void generatePermutations(std::vector<int>& nums, int index) {
+        // Base case: when all elements have been fixed
+        if (index == nums.size() - 1) {
+            for (int num : nums) {
+                std::cout << num << " ";
+            }
+            std::cout << std::endl;
+            return;
+        }
+    
+        // Recursive case: generate permutations by fixing one element at a time
+        for (int i = index; i < nums.size(); ++i) {
+            std::swap(nums[index], nums[i]);
+            generatePermutations(nums, index + 1);
+            std::swap(nums[index], nums[i]);  // Restore the original order
+        }
+    }
+    
+    int main() {
+        std::vector<int> nums = {1, 2, 3};
+        generatePermutations(nums, 0);
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    This example demonstrates how to recursively output permutations of a given set of numbers. The `generatePermutations' function takes a vector of numbers and the current index as parameters. In the base case, when the index reaches the last element, the function outputs the current permutation. In the recursive case, the function swaps the current 
+    element with all subsequent elements, fixes it, and recursively generates permutations for the remaining elements. By systematically swapping elements and making recursive calls, the function generates all possible permutations of the given set. In the `main' function, the `generatePermutations' function is called with a set of \{1, 2, 3\}, and all 
+    the permutations are printed. The example demonstrates how recursion can be used to generate and output permutations efficiently by exploring different choices and combinations of elements.
+\end{solution}
+
+\subsection*{Sec. 6.10 - Recursive Definitions}
+
+\subsubsection{Recursive Algorithms}
+
+Recursive algorithms are algorithms that solve a problem by breaking it down into smaller, simpler instances of the same problem. They employ the concept of self-reference, where a function calls itself to solve a smaller subproblem, eventually reaching a base case that does not require further recursion. Recursive algorithms follow the divide-and-conquer 
+approach, where a larger problem is divided into smaller, more manageable subproblems, and the results are combined to obtain the final solution. These algorithms are often elegant and concise, as they leverage the power of recursion to solve complex problems by solving smaller versions of themselves. However, it is essential to ensure that recursive algorithms 
+have well-defined base cases, proper termination conditions, and avoid unnecessary recomputation to prevent infinite recursion and optimize performance.
+
+\subsubsection{Recursive Functions}
+
+Recursive functions are functions that call themselves within their own definition to solve a problem by breaking it down into smaller, simpler instances of the same problem. They allow for the repetition of a specific set of instructions until a certain condition is met, known as the base case. Recursive functions leverage the concept of self-reference to solve 
+complex problems by reducing them to simpler subproblems. Each recursive call operates on a smaller portion of the problem until reaching the base case, where the recursion stops and the results are combined to obtain the final solution. Recursive functions are widely used when dealing with problems that exhibit a recursive structure, as they provide an elegant 
+and intuitive way to tackle such problems. However, it is crucial to define proper base cases and ensure termination conditions to prevent infinite recursion and ensure the correctness and efficiency of recursive functions.
+
+\subsection*{Sec. 6.11 - Recursive Algorithms}
+
+Popular recursive algorithms include the factorial function, which calculates the product of all positive integers up to a given number by recursively multiplying the number with the factorial of its predecessor until reaching the base case of 0 or 1. The Fibonacci sequence is another well-known recursive algorithm, where each number in the sequence is the sum of 
+the two preceding numbers, with the base cases of 0 and 1. The recursive implementation of quicksort divides the input array into subarrays based on a chosen pivot, recursively sorting the subarrays until reaching subarrays of size 1 or 0. The binary search algorithm uses recursion to efficiently search for a target element in a sorted array by recursively dividing 
+the array into halves and discarding the half that does not contain the target. These are just a few examples of recursive algorithms, which demonstrate the power and versatility of recursion in solving various computational problems by breaking them down into simpler instances.
+
+\subsection{Chapter 7 - Trees}
+
+The second chapter of this week is Chapter 7 - Trees.
+
+\subsection*{Sec. 7.1 - Binary Trees}
+
+\subsubsection{Binary Tree Basics}
+
+Binary trees are hierarchical data structures consisting of nodes connected by edges. Each node in a binary tree can have at most two child nodes, referred to as the left child and the right child. The topmost node in the tree is called the root. Binary trees exhibit a recursive structure, as each node can be viewed as the root of its own subtree. 
+The left subtree of a node contains nodes with smaller values, while the right subtree contains nodes with greater values. Binary trees can be used to represent hierarchical relationships and are widely used in various applications such as searching, sorting, and data representation. Traversing a binary tree involves visiting each node in a specific order, 
+such as preorder, inorder, or postorder traversal. The structure and properties of binary trees play a fundamental role in understanding more advanced data structures and algorithms.
+
+\subsubsection{Depth, Level, \& Height}
+
+In the context of binary trees, depth refers to the distance between a node and the root, counting the number of edges in the path. The root node has a depth of 0, and the depth increases by 1 as we move towards the leaves. Level, on the other hand, refers to the depth of a node plus one. So, the level of the root node is 1, and the level 
+increases by 1 as we move down the tree. Height, also known as the depth of the tree, is the maximum depth of any node in the tree. It represents the length of the longest path from the root to a leaf node. Height is a measure of the overall size of the binary tree and provides insights into the tree's balance and performance characteristics. 
+Understanding and computing the depth, level, and height of binary trees are essential for analyzing and working with these data structures efficiently.
+
+\subsubsection{Special Types of Binary Trees}
+
+Special types of binary trees include full, complete, and perfect trees. A full binary tree is a tree in which every node has either zero or two children, meaning there are no nodes with only one child. Each level of a full binary tree is completely filled, except possibly for the last level, which is filled from left to right. 
+A complete binary tree is a binary tree in which all levels, except possibly the last one, are completely filled, and the nodes on the last level are filled from left to right. It may have nodes with only one child, but they must be towards the left side of the last level. A perfect binary tree is a binary tree in which all levels 
+are completely filled with the maximum number of nodes possible, which is $2^{h}-1$, where h is the height of the tree. In a perfect binary tree, every internal node has two children. Understanding these special types of binary trees helps in analyzing and designing efficient algorithms that exploit their structural properties.
+
+\begin{solution}[Binary Trees Example]
+    Below is an example of binary trees in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <queue>
+    using namespace std;
+    
+    // Node class for binary tree
+    class Node {
+    public:
+        int data;
+        Node* left;
+        Node* right;
+    
+        Node(int value) {
+            data = value;
+            left = nullptr;
+            right = nullptr;
+        }
+    };
+    
+    // Function to check if a binary tree is complete
+    bool isCompleteBinaryTree(Node* root) {
+        if (root == nullptr)
+            return true;
+      
+        queue<Node*> q;
+        bool flag = false;
+      
+        // Perform level order traversal
+        q.push(root);
+        while (!q.empty()) {
+            Node* curr = q.front();
+            q.pop();
+    
+            // Check if the node has any missing child
+            if (curr->left) {
+                if (flag)
+                    return false;
+                q.push(curr->left);
+            }
+            else
+                flag = true;
+      
+            if (curr->right) {
+                if (flag)
+                    return false;
+                q.push(curr->right);
+            }
+            else
+                flag = true;
+        }
+      
+        return true;
+    }
+    
+    // Main function
+    int main() {
+        Node* root = new Node(1);
+        root->left = new Node(2);
+        root->right = new Node(3);
+        root->left->left = new Node(4);
+        root->left->right = new Node(5);
+      
+        if (isCompleteBinaryTree(root))
+            cout << "The binary tree is complete.";
+        else
+            cout << "The binary tree is not complete.";
+      
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, we have implemented a complete binary tree and provided a function `isCompleteBinaryTree()' to check if the given binary tree is complete. The function uses a queue-based level order traversal approach to check for missing children in each level. If any node is encountered with a missing child before reaching the last level, 
+    the tree is deemed incomplete. The program outputs whether the binary tree is complete or not based on the result of the function.
+
+    The example demonstrates the implementation of a complete binary tree in C++ and the usage of a level order traversal-based algorithm to check its completeness. By using a queue to explore the tree level by level, we can determine if any nodes are missing children before reaching the last level. This example showcases how 
+    the complete binary tree property can be verified algorithmically, providing a practical application of the concept.
+\end{solution}
+
+\subsection*{Sec. 7.2 - Applications of Trees}
+
+\subsubsection{File Systems}
+
+Binary trees find applications in various domains, and one notable area is file systems. File systems organize and manage data stored on storage devices such as hard drives or solid-state drives. They often use a hierarchical structure to represent directories and files, which can be effectively modeled using binary trees. 
+Each node in the tree represents a directory, and its children nodes represent subdirectories or files within that directory. The tree structure allows for efficient navigation, searching, and manipulation of files and directories. Binary trees are particularly useful in file systems for tasks like directory traversal, file 
+organization, file searching, and maintaining the hierarchical relationships between directories and files. They enable efficient file system operations, contributing to the smooth functioning and management of data within a file system.
+
+\subsubsection{Binary Space Partitioning}
+
+Binary Space Partitioning (BSP) trees find applications in various areas where efficient spatial partitioning and search algorithms are required. One notable application is in computer graphics, particularly in rendering and collision detection algorithms. BSP trees are used to partition a 3D space into regions, 
+dividing it based on planes. This partitioning allows for efficient visibility determination and culling in rendering algorithms, enabling faster rendering of complex scenes. Additionally, BSP trees are used in collision detection algorithms to efficiently determine whether objects or polygons intersect or collide 
+with each other. By recursively subdividing the space using binary splits, BSP trees provide an effective data structure for spatial partitioning and enable efficient spatial queries in various applications, including computer graphics, robotics, and computational geometry.
+
+\begin{solution}[Applications of Binary Trees Example]
+    Below is an example of an application of binary trees in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <string>
+    using namespace std;
+    
+    // Binary tree node for representing directories or files
+    struct TreeNode {
+        string name;
+        bool isDirectory;
+        TreeNode* left;
+        TreeNode* right;
+    
+        TreeNode(string n, bool isDir) {
+            name = n;
+            isDirectory = isDir;
+            left = nullptr;
+            right = nullptr;
+        }
+    };
+    
+    // Function to perform a depth-first traversal of the file system tree
+    void DFS(TreeNode* node, int level) {
+        if (node == nullptr) return;
+        
+        cout << string(level * 4, ' ') << "- " << node->name << endl;
+    
+        DFS(node->left, level + 1);
+        DFS(node->right, level + 1);
+    }
+    
+    int main() {
+        TreeNode* root = new TreeNode("Root", true);
+        TreeNode* dir1 = new TreeNode("Dir1", true);
+        TreeNode* dir2 = new TreeNode("Dir2", true);
+        TreeNode* file1 = new TreeNode("File1.txt", false);
+        TreeNode* file2 = new TreeNode("File2.txt", false);
+    
+        root->left = dir1;
+        root->right = dir2;
+        dir1->left = file1;
+        dir2->right = file2;
+    
+        DFS(root, 0);
+    
+        // Clean up memory
+        delete file1;
+        delete file2;
+        delete dir1;
+        delete dir2;
+        delete root;
+    
+        return 0;
+    }  
+    \end{verbatim}
+
+    \horizontalline
+
+    This example demonstrates the representation of a file system using a binary tree. Each node in the tree represents a directory or a file, and the left and right child pointers represent subdirectories or files within a directory. The `DFS' function performs a depth-first traversal of the tree, printing the 
+    names of the directories and files with appropriate indentation to indicate their levels. The example showcases the hierarchical structure of a file system and how it can be effectively modeled and traversed using a binary tree data structure.
+\end{solution}
+
+\subsection*{Sec. 7.3 - Binary Search}
+
+\subsubsection{Linear Search vs. Binary Search}
+
+Binary search is a search algorithm that efficiently finds the position of a target value within a sorted array. It follows a divide-and-conquer approach by repeatedly dividing the search space in half, eliminating one half of the remaining elements in each iteration. In contrast, linear search sequentially checks each element 
+of the array until it either finds the target value or exhausts the entire array. While linear search has a time complexity of $\mathcal{O}(n)$, where $n$ is the number of elements in the array, binary search has a time complexity of $\mathcal{O}(\log{(n)})$. This significant difference in time complexity makes binary search much faster for large arrays, 
+as it eliminates half of the remaining elements at each step. Binary search is highly efficient for searching in sorted arrays and provides a significant improvement over linear search, especially when dealing with large datasets.
+
+\subsubsection{Binary Search Algorithm}
+
+The binary search algorithm is a search algorithm used to find the position of a target value within a sorted array. It works by repeatedly dividing the search space in half, comparing the middle element with the target value, and then narrowing down the search to the appropriate half. If the middle element is equal to the target, 
+the search is successful. If the middle element is greater than the target, the search continues in the left half of the array. If the middle element is smaller, the search continues in the right half. This process is repeated until the target value is found or the search space is reduced to zero. Binary search has a time complexity 
+of $\mathcal{O}(\log{(n)})$, making it highly efficient for searching in sorted arrays. It is a fundamental algorithm in computer science and is widely used in various applications where efficient searching is required.
+
+\subsubsection{Binary Search Efficiency}
+
+The binary search algorithm is highly efficient in searching for a target value within a sorted array. It follows a divide-and-conquer approach by continuously dividing the search space in half, which significantly reduces the number of elements to be checked in each iteration. As a result, the binary search has a time complexity 
+of $\mathcal{O}(\log{(n)})$, where $n$ is the number of elements in the array. This logarithmic time complexity means that the binary search can handle large datasets efficiently, even when the number of elements grows exponentially. Compared to linear search, which has a time complexity of $\mathcal{O}(n)$, binary search offers a significant 
+improvement in efficiency, especially for larger arrays. This makes it a preferred choice when dealing with sorted data and the need for fast search operations.
+
+\begin{solution}[Binary Search Example]
+    Below is an example of a binary search in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    using namespace std;
+    
+    int binarySearch(int arr[], int target, int low, int high) {
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            
+            if (arr[mid] == target)
+                return mid;
+            
+            if (arr[mid] < target)
+                low = mid + 1;
+            
+            else
+                high = mid - 1;
+        }
+        
+        return -1;
+    }
+    
+    int main() {
+        int arr[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
+        int target = 23;
+        int size = sizeof(arr) / sizeof(arr[0]);
+        
+        int index = binarySearch(arr, target, 0, size - 1);
+        
+        if (index != -1)
+            cout << "Element found at index " << index << endl;
+        else
+            cout << "Element not found" << endl;
+        
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, the binary search algorithm is used to search for a target element (23) within a sorted array. The `binarySearch' function implements the binary search logic by repeatedly dividing the search space and updating the low and high indices until the target element is found or the search space is exhausted. 
+    The main function initializes the array and the target element, calculates the size of the array, and calls the `binarySearch' function. If the target element is found, it prints the index; otherwise, it displays a "not found" message. This example demonstrates the efficiency of the binary search algorithm in finding 
+    a target element in a sorted array.
+\end{solution}
+
+\subsection*{Sec. 7.4 - Binary Search Tree}
+
+\subsubsection{Binary Search Trees}
+
+A binary search tree (BST) is a binary tree data structure where each node has a key/value and satisfies the following properties: the left child of a node has a key less than the node's key, and the right child has a key greater than the node's key. This ordering property allows for efficient searching, insertion, and 
+deletion operations. Binary search trees are particularly useful for organizing and searching data, as they provide a way to store elements in a sorted order, enabling fast lookup operations. The BST structure allows for efficient average and best-case performance, with a time complexity of $\mathcal{O}(\log{(n)})$ for these operations, but it 
+can degrade to $\mathcal{O}(n)$ in the worst-case scenario when the tree becomes unbalanced. Therefore, maintaining a balanced BST is essential to ensure optimal performance.
+
+\subsubsection{Searching}
+
+Searching in a binary search tree (BST) involves comparing the target value with the key of the current node and traversing left or right based on the comparison. The search starts at the root node and continues down the tree until the target value is found or a leaf node is reached. The BST's structure allows for efficient searching 
+by exploiting the ordering property, as it eliminates the need to search through irrelevant subtrees. If the target value is less than the current node's key, the search proceeds to the left subtree; if it is greater, the search proceeds to the right subtree. This recursive process continues until the target value is found or 
+the search reaches a leaf node, indicating that the value is not present in the BST. The time complexity of searching in a balanced BST is $\mathcal{O}(\log{(n)})$, making it an efficient approach for finding elements in sorted data sets.
+
+\subsubsection{BST Search Runtime}
+
+The runtime of searching in a binary search tree (BST) is determined by the height of the tree. In a balanced BST, the height is logarithmic in relation to the number of nodes, resulting in an average and best-case runtime of $\mathcal{O}(\log{(n)})$, where $n$ is the number of nodes in the tree. This logarithmic time complexity is achieved because at 
+each level of the tree, the search space is halved. However, in the worst-case scenario where the BST is highly unbalanced, such as a skewed tree, the height can be equal to the number of nodes, resulting in a linear runtime of $\mathcal{O}(n)$. Therefore, it is crucial to maintain the balance of the BST to ensure efficient searching operations.
+
+\subsubsection{Successors \& Predecessors}
+
+In the context of binary search trees (BSTs), successors and predecessors refer to the nodes that come immediately after or before a given node, respectively, in the sorted order of the tree. The successor of a node is the smallest node with a key greater than the given node's key, while the predecessor is the largest node 
+with a key smaller than the given node's key. Finding successors and predecessors can be useful in various operations, such as in-order traversal, finding the minimum and maximum elements, and performing range queries. The process of finding successors and predecessors typically involves traversing the tree based on the comparison 
+of keys, starting from the root node and moving towards the desired direction until the successor or predecessor is found.
+
+\begin{solution}[Binary Search Tree Example]
+    Below is an example of binary search trees in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    
+    struct Node {
+        int key;
+        Node* left;
+        Node* right;
+    };
+    
+    Node* createNode(int key) {
+        Node* newNode = new Node();
+        newNode->key = key;
+        newNode->left = nullptr;
+        newNode->right = nullptr;
+        return newNode;
+    }
+    
+    Node* insert(Node* root, int key) {
+        if (root == nullptr) {
+            return createNode(key);
+        }
+        if (key < root->key) {
+            root->left = insert(root->left, key);
+        } else if (key > root->key) {
+            root->right = insert(root->right, key);
+        }
+        return root;
+    }
+    
+    Node* search(Node* root, int key) {
+        if (root == nullptr || root->key == key) {
+            return root;
+        }
+        if (key < root->key) {
+            return search(root->left, key);
+        }
+        return search(root->right, key);
+    }
+    
+    void inorderTraversal(Node* root) {
+        if (root == nullptr) {
+            return;
+        }
+        inorderTraversal(root->left);
+        std::cout << root->key << " ";
+        inorderTraversal(root->right);
+    }
+    
+    int main() {
+        Node* root = nullptr;
+        root = insert(root, 50);
+        insert(root, 30);
+        insert(root, 20);
+        insert(root, 40);
+        insert(root, 70);
+        insert(root, 60);
+        insert(root, 80);
+    
+        std::cout << "Inorder traversal of the BST: ";
+        inorderTraversal(root);
+    
+        int key = 40;
+        Node* result = search(root, key);
+        if (result != nullptr) {
+            std::cout << "\nElement " << key << " found in the BST.";
+        } else {
+            std::cout << "\nElement " << key << " not found in the BST.";
+        }
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The provided example demonstrates the implementation of a binary search tree (BST) in C++. The `Node' struct represents a node in the tree, with a key value, and left and right pointers. The `createNode' function creates a new node with the given key. The `insert' function recursively inserts a new node into the BST based on 
+    the key value, maintaining the ordering property. The `search' function searches for a specific key in the BST, returning the corresponding node if found or `nullptr' if not found. The `inorderTraversal' function performs an in-order traversal of the BST and prints the keys in sorted order. The `main' function creates a BST, inserts 
+    some elements, performs an in-order traversal, and searches for a specific element.
+\end{solution}
+
+\subsection*{Sec. 7.5 - BST Search Algorithm}
+
+The binary search tree search algorithm is a method used to find a specific key within a binary search tree (BST). Starting from the root node, the algorithm compares the key with the current node's key. If the keys match, the search is successful, and the node is returned. If the key is less than the current node's key, the algorithm continues 
+the search in the left subtree. If the key is greater, the search proceeds in the right subtree. This process is repeated recursively until the key is found or until reaching a leaf node, indicating that the key does not exist in the tree. The search algorithm exploits the property of the BST, where all keys in the left subtree are smaller 
+than the current node, and all keys in the right subtree are larger, allowing for efficient search operations.
+
+\begin{solution}[BST Search Algorithm Example]
+    Below is an example of a binary search tree algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    // Binary Search Tree Node
+    struct Node {
+        int key;
+        Node* left;
+        Node* right;
+    
+        Node(int value) : key(value), left(nullptr), right(nullptr) {}
+    };
+    
+    // Binary Search Tree Search
+    Node* searchBST(Node* root, int target) {
+        // Base case: root is null or target is found
+        if (root == nullptr || root->key == target)
+            return root;
+    
+        // If target is smaller, search in the left subtree
+        if (target < root->key)
+            return searchBST(root->left, target);
+        
+        // If target is larger, search in the right subtree
+        return searchBST(root->right, target);
+    }
+    
+    int main() {
+        // Creating a binary search tree
+        Node* root = new Node(5);
+        root->left = new Node(3);
+        root->right = new Node(8);
+        root->left->left = new Node(2);
+        root->left->right = new Node(4);
+        root->right->left = new Node(7);
+        root->right->right = new Node(9);
+    
+        // Searching for a key in the binary search tree
+        int target = 4;
+        Node* result = searchBST(root, target);
+    
+        // Displaying the result
+        if (result)
+            std::cout << "Key " << target << " found in the binary search tree." << std::endl;
+        else
+            std::cout << "Key " << target << " not found in the binary search tree." << std::endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, we demonstrate the binary search tree search algorithm using a simple binary search tree. The `searchBST' function takes a root node and a target key as input and performs a recursive search in the binary search tree. Starting from the root, the function compares the target key with the current node's key and 
+    continues the search in the left or right subtree based on the key's value. The function returns the node if the key is found or `nullptr' if it is not present in the tree. Finally, we showcase the usage of the algorithm by searching for a specific key and displaying the result.
+\end{solution}
+
+\subsection*{Sec. 7.6 - BST Insert Algorithm}
+
+\subsubsection{Overview}
+
+The binary search tree insert algorithm is used to insert a new node into a binary search tree while maintaining its binary search tree property. The algorithm starts from the root of the tree and compares the key of the new node with the key of the current node. If the new node's key is less than the current node's key, the algorithm 
+moves to the left child of the current node. If the new node's key is greater, the algorithm moves to the right child. This process continues until an appropriate position for the new node is found (i.e., a null child pointer is encountered). Once the appropriate position is found, a new node is created and connected to the tree. The binary 
+search tree insert algorithm ensures that the resulting tree maintains the binary search tree property, where all nodes in the left subtree are less than the current node, and all nodes in the right subtree are greater.
+
+\subsubsection{BST Insert Algorithm Complexity}
+
+The algorithm complexity of a binary search tree insert algorithm is typically $\mathcal{O}(\log{(n)})$ in the average case and $\mathcal{O}(n)$ in the worst case, where $n$ is the number of nodes in the tree. The average case complexity arises from the balanced nature of the binary search tree, where each level approximately halves the search space. However, 
+in the worst case scenario where the tree is skewed, such as when inserting nodes in sorted order, the tree can degenerate into a linked list, resulting in a linear search time. To maintain the balanced nature of 
+the tree and ensure efficient insertions, various techniques like self-balancing binary search trees, such as AVL trees or red-black trees, can be employed. These techniques guarantee a logarithmic height of the tree and provide a more balanced tree structure, resulting in a consistent $\mathcal{O}(\log{(n)})$ complexity for insertions.
+
+\begin{solution}[BST Insert Algorithm Example]
+    Below is an example of a binary search tree insert algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    struct Node {
+        int key;
+        Node* left;
+        Node* right;
+    };
+    
+    Node* insert(Node* root, int key) {
+        if (root == nullptr) {
+            Node* newNode = new Node;
+            newNode->key = key;
+            newNode->left = nullptr;
+            newNode->right = nullptr;
+            return newNode;
+        }
+    
+        if (key < root->key) {
+            root->left = insert(root->left, key);
+        } else if (key > root->key) {
+            root->right = insert(root->right, key);
+        }
+    
+        return root;
+    }
+    
+    void inOrderTraversal(Node* root) {
+        if (root != nullptr) {
+            inOrderTraversal(root->left);
+            std::cout << root->key << " ";
+            inOrderTraversal(root->right);
+        }
+    }
+    
+    int main() {
+        Node* root = nullptr;
+    
+        root = insert(root, 50);
+        root = insert(root, 30);
+        root = insert(root, 20);
+        root = insert(root, 40);
+        root = insert(root, 70);
+        root = insert(root, 60);
+        root = insert(root, 80);
+    
+        std::cout << "In-order traversal of the binary search tree: ";
+        inOrderTraversal(root);
+        std::cout << std::endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    This example demonstrates the binary search tree insert algorithm. We define a `Node' struct representing a node in the tree, which contains a key value, as well as left and right child pointers. The `insert' function recursively inserts a new node with the given key into the appropriate position in the tree. The `inOrderTraversal' 
+    function performs an in-order traversal of the tree, printing the keys in sorted order. In the `main' function, we create a binary search tree by inserting several keys, and then perform an in-order traversal to display the keys.
+\end{solution}
+
+\subsection*{Sec. 7.7 - BST Remove Algorithm}
+
+\subsubsection{Overview}
+
+The binary search tree remove algorithm is used to delete a node from a binary search tree while maintaining its properties. The algorithm starts by searching for the node to be removed in the tree based on its key value. Once the node is found, there are three cases to consider:
+\begin{enumerate}
+    \item If the node has no children, it can be simply deleted from the tree.
+    \item If the node has only one child, the child node replaces the deleted node in the tree.
+    \item If the node has two children, the algorithm finds the node's in-order successor or predecessor (the node with the next smallest or next largest key, respectively), swaps their key values, and then recursively removes the successor/predecessor from its original position. This ensures that the binary search tree properties are maintained.
+\end{enumerate}
+Overall, the binary search tree remove algorithm is a complex process that involves carefully handling different cases to ensure the integrity of the tree. It requires finding the node to be removed, considering its children, and potentially rearranging the tree structure to maintain the binary search tree properties.
+
+\subsubsection{BST Remove Algorithm Complexity}
+
+The complexity of the binary search tree remove algorithm depends on the height of the tree, which is influenced by the tree's structure and the order of node removal. In the worst-case scenario, where the tree is skewed and has a height of $N$ (resembling a linked list), the time complexity of the remove algorithm is $\mathcal{O}(N)$. However, in 
+a balanced binary search tree, where the height is logarithmic to the number of nodes $(\log{(N)})$, the removal operation takes $\mathcal{O}(\log{(N)})$ time. This logarithmic complexity arises from the process of searching for the node to be removed and then potentially rearranging the tree structure. Overall, the complexity of the binary search tree 
+remove algorithm is efficient when the tree is balanced but can degrade to linear time when the tree is highly skewed.
+
+\begin{solution}[BST Remove Algorithm Example]
+    Below is an example of a binary search tree remove algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    struct TreeNode {
+        int val;
+        TreeNode* left;
+        TreeNode* right;
+    
+        TreeNode(int value) : val(value), left(nullptr), right(nullptr) {}
+    };
+    
+    TreeNode* findMin(TreeNode* node) {
+        while (node->left != nullptr) {
+            node = node->left;
+        }
+        return node;
+    }
+    
+    TreeNode* removeNode(TreeNode* root, int key) {
+        if (root == nullptr) {
+            return root;
+        }
+        if (key < root->val) {
+            root->left = removeNode(root->left, key);
+        } else if (key > root->val) {
+            root->right = removeNode(root->right, key);
+        } else {
+            if (root->left == nullptr) {
+                TreeNode* temp = root->right;
+                delete root;
+                return temp;
+            } else if (root->right == nullptr) {
+                TreeNode* temp = root->left;
+                delete root;
+                return temp;
+            }
+            TreeNode* temp = findMin(root->right);
+            root->val = temp->val;
+            root->right = removeNode(root->right, temp->val);
+        }
+        return root;
+    }
+    
+    void inorderTraversal(TreeNode* root) {
+        if (root == nullptr) {
+            return;
+        }
+        inorderTraversal(root->left);
+        std::cout << root->val << " ";
+        inorderTraversal(root->right);
+    }
+    
+    int main() {
+        TreeNode* root = new TreeNode(8);
+        root->left = new TreeNode(3);
+        root->right = new TreeNode(10);
+        root->left->left = new TreeNode(1);
+        root->left->right = new TreeNode(6);
+        root->right->right = new TreeNode(14);
+        root->left->right->left = new TreeNode(4);
+        root->left->right->right = new TreeNode(7);
+        root->right->right->left = new TreeNode(13);
+    
+        std::cout << "Binary Search Tree before removal: ";
+        inorderTraversal(root);
+        std::cout << std::endl;
+    
+        int key = 6;
+        root = removeNode(root, key);
+    
+        std::cout << "Binary Search Tree after removing " << key << ": ";
+        inorderTraversal(root);
+        std::cout << std::endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+    
+    In this example, we have implemented the binary search tree remove algorithm. The `removeNode' function takes the root of the tree and a key value to be removed. It recursively searches for the node with the given key and performs the necessary rearrangements to maintain the binary search tree properties. The `findMin' function 
+    helps in finding the minimum value in the right subtree when the node to be removed has both left and right children. Finally, we demonstrate the algorithm by removing a node with the key value of 6 from the binary search tree and printing the updated tree using an inorder traversal.
+\end{solution}
+
+\subsection*{Sec. 7.8 - BST Inorder Traversal}
+
+Binary search tree inorder traversal is a recursive algorithm used to visit all the nodes of a binary search tree in a specific order. In inorder traversal, we first visit the left subtree, then the root node, and finally the right subtree. This traversal ensures that the nodes are visited in ascending order when the tree represents sorted 
+data. It allows us to retrieve the elements of the binary search tree in sorted order, making it useful for tasks such as printing the elements, checking for sortedness, or creating a sorted array from the tree. The algorithm follows a left-root-right pattern and can be implemented recursively or iteratively.
+
+\begin{solution}[BST Inorder Traversal Example]
+    Below is an example of a binary search tree inorder traversal algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    // Binary Search Tree Node
+    struct Node {
+        int data;
+        Node* left;
+        Node* right;
+    
+        Node(int value) : data(value), left(nullptr), right(nullptr) {}
+    };
+    
+    // Inorder Traversal
+    void inorderTraversal(Node* root) {
+        if (root == nullptr)
+            return;
+    
+        inorderTraversal(root->left);
+        std::cout << root->data << " ";
+        inorderTraversal(root->right);
+    }
+    
+    int main() {
+        // Create a sample Binary Search Tree
+        Node* root = new Node(4);
+        root->left = new Node(2);
+        root->right = new Node(6);
+        root->left->left = new Node(1);
+        root->left->right = new Node(3);
+        root->right->left = new Node(5);
+        root->right->right = new Node(7);
+    
+        // Perform inorder traversal
+        std::cout << "Inorder Traversal: ";
+        inorderTraversal(root);
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, we create a binary search tree with integer values and perform the inorder traversal. The `inorderTraversal' function recursively visits the nodes in the left-root-right order and prints their values. The output will be the sorted sequence of elements from the binary search tree. In this case, the inorder 
+    traversal will print: 1 2 3 4 5 6 7.
+\end{solution}
+
+\subsection*{Sec. 7.9 - BST Height \& Insertion Order}
+
+The height of a binary search tree refers to the maximum number of edges from the root to any leaf node, influencing the efficiency of operations. A balanced tree with a logarithmic height allows for faster search, insert, and delete operations. However, the insertion order of nodes can impact the tree's balance, with an ordered insertion 
+leading to a skewed structure and increased height. Random or balanced insertion strategies are recommended for achieving optimal performance by maintaining a lower height and a more evenly distributed tree structure.
+
+\begin{solution}[BST Height \& Insertion Order Example]
+    Below is an example of a binary search tree involving height and insertion order in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <queue>
+    using namespace std;
+    
+    class Node {
+    public:
+        int data;
+        Node* left;
+        Node* right;
+    
+        Node(int value) {
+            data = value;
+            left = nullptr;
+            right = nullptr;
+        }
+    };
+    
+    Node* insert(Node* root, int value) {
+        if (root == nullptr) {
+            return new Node(value);
+        }
+    
+        if (value < root->data) {
+            root->left = insert(root->left, value);
+        } else {
+            root->right = insert(root->right, value);
+        }
+    
+        return root;
+    }
+    
+    void inorderTraversal(Node* root) {
+        if (root == nullptr) {
+            return;
+        }
+    
+        inorderTraversal(root->left);
+        cout << root->data << " ";
+        inorderTraversal(root->right);
+    }
+    
+    int main() {
+        Node* root = nullptr;
+    
+        // Insertion order: 5, 2, 8, 1, 3, 6, 9
+        root = insert(root, 5);
+        root = insert(root, 2);
+        root = insert(root, 8);
+        root = insert(root, 1);
+        root = insert(root, 3);
+        root = insert(root, 6);
+        root = insert(root, 9);
+    
+        cout << "Inorder Traversal: ";
+        inorderTraversal(root);
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    The example demonstrates the insertion order's impact on the binary search tree structure. In this case, the numbers 5, 2, 8, 1, 3, 6, and 9 are inserted in the given order. The resulting tree structure shows that the nodes are placed according to their values, with smaller values on the left and larger values on the right. 
+    The inorder traversal of the tree verifies that the nodes are visited in ascending order: 1, 2, 3, 5, 6, 8, 9. The example highlights how the insertion order influences the resulting binary search tree and affects the order of traversal.
+\end{solution}
+
+\subsection*{Sec. 7.10 - BST Parent Node Pointers}
+
+In a binary search tree, parent node pointers can be used to efficiently navigate and perform operations on the tree. Each node in the binary search tree contains a pointer to its parent node, allowing for easy traversal up the tree. This enables operations such as finding the parent of a given node, determining the root of the tree, 
+or moving from one node to another level higher. The parent node pointers enhance the efficiency of various tree operations and provide a convenient way to access and manipulate the tree structure.
+
+\begin{solution}[BST Parent Node Pointers]
+    Below is an example of binary search tree parent node pointers in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+
+    struct Node {
+        int data;
+        Node* left;
+        Node* right;
+        Node* parent;
+    };
+    
+    class BinarySearchTree {
+    private:
+        Node* root;
+    
+    public:
+        BinarySearchTree() : root(nullptr) {}
+    
+        void insert(int value) {
+            Node* newNode = new Node;
+            newNode->data = value;
+            newNode->left = nullptr;
+            newNode->right = nullptr;
+            newNode->parent = nullptr;
+    
+            if (root == nullptr) {
+                root = newNode;
+            } else {
+                Node* current = root;
+                while (true) {
+                    if (value < current->data) {
+                        if (current->left == nullptr) {
+                            current->left = newNode;
+                            newNode->parent = current;
+                            break;
+                        } else {
+                            current = current->left;
+                        }
+                    } else {
+                        if (current->right == nullptr) {
+                            current->right = newNode;
+                            newNode->parent = current;
+                            break;
+                        } else {
+                            current = current->right;
+                        }
+                    }
+                }
+            }
+        }
+    
+        // Other functions like search, remove, etc.
+    
+        void displayParentPointers() {
+            displayParentPointersHelper(root);
+        }
+    
+    private:
+        void displayParentPointersHelper(Node* node) {
+            if (node != nullptr) {
+                std::cout << "Node: " << node->data;
+                if (node->parent != nullptr) {
+                    std::cout << ", Parent: " << node->parent->data;
+                }
+                std::cout << std::endl;
+                displayParentPointersHelper(node->left);
+                displayParentPointersHelper(node->right);
+            }
+        }
+    };
+    
+    int main() {
+        BinarySearchTree bst;
+        bst.insert(50);
+        bst.insert(30);
+        bst.insert(70);
+        bst.insert(20);
+        bst.insert(40);
+        bst.insert(60);
+        bst.insert(80);
+    
+        bst.displayParentPointers();
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    In this example, we define a `Node' struct that contains data, left and right child pointers, and a parent pointer. The `BinarySearchTree' class uses this `Node' struct to implement a binary search tree with parent node pointers. The `insert' function is modified to assign the parent pointer while inserting nodes. The `displayParentPointers' 
+    function is added to demonstrate accessing and displaying the parent node pointers for each node in the tree. When we run the program, it will print the nodes along with their respective parent nodes.
+
+    The example demonstrates the use of parent node pointers in a binary search tree implemented in C++. It showcases the insertion of nodes while maintaining the parent pointers, and a function to display the parent pointers of each node. This allows for easy navigation and analysis of the tree's structure.
+\end{solution}
+
+\subsection*{Sec. 7.11 - BST: Recursion}
+
+\subsubsection{BST Recursive Search Algorithm}
+
+Binary search tree recursive search algorithms involve recursively traversing the tree to find a specific key or determine if it exists within the tree. The recursive approach begins at the root node and compares the key with the current node's key. If the key matches, the search is successful. If the key is less than the current node's key, 
+the algorithm continues the search in the left subtree. Conversely, if the key is greater, the algorithm proceeds to the right subtree. This process continues until the key is found or the algorithm reaches a leaf node (indicating the key does not exist in the tree). The recursive nature of these algorithms simplifies the search logic by utilizing 
+the recursive function calls to traverse the tree in an efficient manner.
+
+\subsubsection{BST Get Parent Algorithm}
+
+The binary search tree get parent algorithm is used to retrieve the parent node of a given node in a binary search tree. Starting from the root node, the algorithm compares the key of the current node with the target key. If the key matches, the parent node is found. If the key is less than the current node's key, the algorithm continues 
+the search in the left subtree, while if the key is greater, it proceeds to the right subtree. By keeping track of the parent node during the search process, the algorithm can return the parent node when the target key is found. This algorithm allows efficient retrieval of the parent node of a given node in a binary search tree, facilitating 
+various operations and modifications on the tree structure.
+
+\subsubsection{Recursive BST Insertion and Removal}
+
+The recursive binary search tree (BST) insertion algorithm is used to insert a new node into a BST while maintaining the BST properties. Starting from the root node, the algorithm compares the value of the new node with the value of the current node. If the value is less, the algorithm recursively inserts the new node in the left subtree. 
+If the value is greater, the algorithm recursively inserts the new node in the right subtree. This process continues until an appropriate position is found for the new node, at which point it is inserted. The recursive BST removal algorithm is used to remove a node from a BST while preserving the BST properties. It follows a similar approach 
+as the insertion algorithm, recursively traversing the tree to find the target node. Once the node is found, the algorithm handles three cases: if the target node has no children, it is simply removed; if the target node has one child, it is replaced by its child; if the target node has two children, it is replaced by its in-order successor 
+or predecessor, and then the successor/predecessor node is recursively removed. These recursive algorithms ensure the proper insertion and removal of nodes in a binary search tree.
+
+\begin{solution}[Recursive BST Algorithms]
+    Below is an example of a recursive binary search tree algorithm in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    
+    struct Node {
+        int data;
+        Node* left;
+        Node* right;
+    };
+    
+    Node* insert(Node* root, int value) {
+        if (root == nullptr) {
+            Node* newNode = new Node();
+            newNode->data = value;
+            newNode->left = nullptr;
+            newNode->right = nullptr;
+            return newNode;
+        }
+    
+        if (value < root->data) {
+            root->left = insert(root->left, value);
+        } else if (value > root->data) {
+            root->right = insert(root->right, value);
+        }
+    
+        return root;
+    }
+    
+    Node* findMin(Node* node) {
+        while (node->left != nullptr) {
+            node = node->left;
+        }
+        return node;
+    }
+    
+    Node* remove(Node* root, int value) {
+        if (root == nullptr) {
+            return nullptr;
+        }
+    
+        if (value < root->data) {
+            root->left = remove(root->left, value);
+        } else if (value > root->data) {
+            root->right = remove(root->right, value);
+        } else {
+            if (root->left == nullptr) {
+                Node* temp = root->right;
+                delete root;
+                return temp;
+            } else if (root->right == nullptr) {
+                Node* temp = root->left;
+                delete root;
+                return temp;
+            }
+    
+            Node* minRight = findMin(root->right);
+            root->data = minRight->data;
+            root->right = remove(root->right, minRight->data);
+        }
+    
+        return root;
+    }
+    
+    void inorderTraversal(Node* root) {
+        if (root != nullptr) {
+            inorderTraversal(root->left);
+            std::cout << root->data << " ";
+            inorderTraversal(root->right);
+        }
+    }
+    
+    int main() {
+        Node* root = nullptr;
+        root = insert(root, 5);
+        insert(root, 3);
+        insert(root, 7);
+        insert(root, 1);
+        insert(root, 4);
+        insert(root, 6);
+        insert(root, 9);
+    
+        std::cout << "Inorder traversal: ";
+        inorderTraversal(root);
+        std::cout << std::endl;
+    
+        root = remove(root, 3);
+        root = remove(root, 7);
+    
+        std::cout << "Inorder traversal after removal: ";
+        inorderTraversal(root);
+        std::cout << std::endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    This example demonstrates the recursive insertion and removal algorithms for a binary search tree (BST). The `insert' function inserts nodes into the BST based on their values, recursively traversing the tree until finding the appropriate position. The `remove' function removes nodes from the BST while maintaining the BST 
+    properties, handling cases of nodes with no children, one child, and two children. The `inorderTraversal' function is also included to print the elements of the BST in ascending order. The example creates a BST, inserts several nodes, performs removals, and then displays the resulting BST using the inorder traversal.
+\end{solution}
+
+\subsection*{Sec. 7.12 - Tries}
+
+\subsubsection{Overview}
+
+A trie, also known as a prefix tree, is a tree-based data structure used for efficient retrieval and storage of strings. It is particularly useful for solving problems related to string matching and searching. The key feature of a trie is that it represents the entire alphabet at each level of the tree, with each node storing a single character. 
+This allows for fast lookup and search operations, making it suitable for tasks such as autocomplete, spell-checking, and IP routing. Tries offer a time complexity of $\mathcal{O}(L)$ for search, insert, and delete operations, where $L$ is the length of the string being operated on, making them a powerful data structure for handling string-based data efficiently.
+
+\subsubsection{Trie Insert Algorithm}
+
+The true insert algorithm for a trie involves recursively traversing the trie based on the characters of the input string. Starting from the root node, it checks if the current character exists as a child node. If it does, the algorithm moves to the corresponding child node and continues the traversal. If the character is not found, a new node 
+is created and added as a child to the current node. This process is repeated until all characters of the input string are processed. At the end of the traversal, the last node is marked as a terminal node to indicate the completion of the inserted word. The true insert algorithm efficiently constructs a trie by utilizing the recursive nature 
+of the data structure, ensuring that all characters of the input string are appropriately represented and stored for efficient retrieval and search operations.
+
+\subsubsection{Trie Remove Algorithm}
+
+The trie remove algorithm involves recursively traversing the trie to find the node representing the target string to be removed. Starting from the root node, the algorithm follows the characters of the target string, checking if each character exists as a child node. If any character is not found, it means the target string does not exist 
+in the trie, and the algorithm terminates. If all characters are found, the algorithm marks the last node representing the target string as a non-terminal node to indicate its removal. If this node has no other children, it is removed from its parent, and the parent's children are adjusted accordingly. This process is repeated recursively, 
+moving up the trie, removing any unnecessary nodes that are no longer part of any other words. The trie remove algorithm ensures that the trie structure is maintained correctly after removing a string, optimizing the space and ensuring efficient retrieval and search operations.
+
+\begin{solution}[Trie Algorithm Example]
+    Below is an example of trie algorithms in C++:
+
+    \horizontalline
+
+    \begin{verbatim}
+    #include <iostream>
+    #include <unordered_map>
+    using namespace std;
+    
+    struct TrieNode {
+        unordered_map<char, TrieNode*> children;
+        bool isTerminal;
+    
+        TrieNode() {
+            isTerminal = false;
+        }
+    };
+    
+    class Trie {
+        TrieNode* root;
+    
+    public:
+        Trie() {
+            root = new TrieNode();
+        }
+    
+        void insert(string word) {
+            TrieNode* current = root;
+            for (char ch : word) {
+                if (current->children.find(ch) == current->children.end()) {
+                    current->children[ch] = new TrieNode();
+                }
+                current = current->children[ch];
+            }
+            current->isTerminal = true;
+        }
+    
+        bool remove(string word) {
+            return removeUtil(root, word, 0);
+        }
+    
+    private:
+        bool removeUtil(TrieNode* node, const string& word, int index) {
+            if (index == word.length()) {
+                if (!node->isTerminal) {
+                    return false; // Word doesn't exist in trie
+                }
+                node->isTerminal = false;
+                return node->children.empty(); // Check if node has no other children
+            }
+    
+            char ch = word[index];
+            if (node->children.find(ch) == node->children.end()) {
+                return false; // Word doesn't exist in trie
+            }
+    
+            TrieNode* child = node->children[ch];
+            bool shouldRemoveChild = removeUtil(child, word, index + 1);
+    
+            if (shouldRemoveChild) {
+                node->children.erase(ch);
+                delete child;
+                return node->children.empty();
+            }
+    
+            return false;
+        }
+    };
+    
+    int main() {
+        Trie trie;
+        trie.insert("apple");
+        trie.insert("banana");
+        trie.insert("orange");
+    
+        cout << "Before removal: " << endl;
+        cout << "Contains 'apple': " << trie.remove("apple") << endl;
+        cout << "Contains 'banana': " << trie.remove("banana") << endl;
+        cout << "Contains 'orange': " << trie.remove("orange") << endl;
+    
+        cout << "After removal: " << endl;
+        cout << "Contains 'apple': " << trie.remove("apple") << endl;
+        cout << "Contains 'banana': " << trie.remove("banana") << endl;
+        cout << "Contains 'orange': " << trie.remove("orange") << endl;
+    
+        return 0;
+    }
+    \end{verbatim}
+
+    \horizontalline
+
+    This example demonstrates the implementation of a trie data structure in C++, including the removal of words from the trie. The `Trie' class provides an `insert' method to add words to the trie and a `remove' method to remove words. The `remove' method uses a recursive helper function, `removeUtil', to traverse the trie and find the node 
+    representing the target word. If the word exists in the trie, it is marked as a non-terminal node and removed from the trie structure if it has no other children. The example shows the removal of words from the trie and verifies their existence before and after removal.
+\end{solution}
