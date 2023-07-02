@@ -15,9 +15,28 @@ A balanced tree is a tree data structure in which the heights of the left and ri
 Balanced trees are desirable because they provide improved performance for various operations such as searching, inserting, and deleting elements. By keeping the tree balanced, the height remains relatively 
 low, which reduces the time complexity of operations and ensures that the worst-case scenario is avoided. Common examples of balanced trees include AVL trees, red-black trees, and B-trees.
 
+BST's have some common terminology that are useful to describe certain aspects of the structure. The terminology that we use to describe a BST can be seen below:
+
+\begin{itemize}
+    \item \textbf{Children:} Children are defined as nodes that are connected to a parent node, either left or right, in the hierarchical structure of the tree
+    \item \textbf{Complete:} A BST where if all levels, except the last level, contain all possible nodes and all nodes in the last level are as far left as possible
+    \item \textbf{Depth:} Depth is defined as the number of edges on the path from the root to the node in question
+    \item \textbf{Edge:} An edge is a link from a parent node to its child node
+    \item \textbf{Full:} A BST where every node contains 0 or 2 children
+    \item \textbf{Height:} The height of a tree is the largest depth of any node in the tree
+    \item \textbf{Internal Node:} An internal node is a node with at least one child
+    \item \textbf{Leaf:} A leaf is a node with no children
+    \item \textbf{Level:} The level of a BST is defined as nodes that have the same depth
+    \item \textbf{Parent:} A parent is a node where one of more child nodes are directly connected to it
+    \item \textbf{Perfect:} A BST where if all internal nodes have 2 children and all leaf nodes are at the same level
+    \item \textbf{Root:} The root of a BST is referred to as the topmost node of the tree structure (The root node has no parent node)
+\end{itemize}
+
+\noindent The terms: \textbf{Full}, \textbf{Complete}, and \textbf{Perfect} define special types of BST's. The rest of the terms in the above list are components of the BST
+
 BST's use a technique called recursion. Recursion is a programming technique where a function calls itself to solve a smaller instance of the same problem. It is useful in dealing with trees because trees are 
 recursive data structures. Each node in a tree can be viewed as a smaller tree itself, consisting of its children and their descendants. Recursion allows us to traverse and manipulate tree structures by breaking 
-down the problem into smaller subproblems that can be solved recursively. It simplifies the code by abstracting the complex tree operations into simpler recursive calls, leading to concise and elegant solutions. 
+down the problem into smaller sub problems that can be solved recursively. It simplifies the code by abstracting the complex tree operations into simpler recursive calls, leading to concise and elegant solutions. 
 Additionally, recursion provides a natural way to handle tree-related algorithms, such as tree traversal, searching, insertion, deletion, and various other tree-based computations.
 
 \subsection*{Common BST Operations}
@@ -27,6 +46,7 @@ BST's require a number of operations for the functionality of it to be optimal. 
 \begin{itemize}
     \item \textbf{Contains:} The contains function in a Binary Search Tree (BST) is used to check if a given value is present in the tree.
     \item \textbf{Get Node:} The getnode function in a Binary Search Tree (BST) is used to search for a node with a specified value in a tree.
+    \item \textbf{Height:} The height operation in a BST recursively calculates the maximum number of edges from the root to any leaf node, providing a measure of the tree's vertical depth.
     \item \textbf{Initialize:} Initializing a node in a Binary Search Tree (BST) means creating a new node with a given value and setting its left and right child pointers to null or nullptr, indicating an empty subtree.
     \item \textbf{Insert:} The insert function in a Binary Search Tree (BST) is responsible for adding a new node to the tree while maintaining the binary search property, where values smaller than the current node are 
     placed in the left subtree, and values larger than the current node are placed in the right subtree.
@@ -159,7 +179,36 @@ is the same for searching for a value in the tree. These time complexities are c
 
 \end{highlight}
 
-The next operation in that we will look at is the Initialize operation.
+The next operation that we will look at is the Height operation.
+
+\begin{highlight}[Height In BST]
+
+\subsubsection*{Height}
+
+Below is an example of the implementation of calculating the height of a BST in the context of C++:
+
+\begin{code}
+int height(Node* root) {
+    if (root == nullptr) {
+        return 0;  // An empty tree has height 0
+    }
+    else {
+        // Recursively calculate the height of the left and right subtrees
+        int leftHeight = height(root->left);
+        int rightHeight = height(root->right);
+
+        // Return the maximum height between the left and right subtrees, plus 1 for the current node
+        return std::max(leftHeight, rightHeight) + 1;
+    }
+}    
+\end{code}
+
+\noindent The above function calculates the max number of edges to the leaf level in a BST. This function utilizes the concept of recursion to find which subtree has the most edges in it. This in turn is the
+height of the BST.
+
+\end{highlight}
+
+The next operation that we will look at is the Initialize operation.
 
 \begin{highlight}[Initializing In BST]
 
@@ -655,6 +704,9 @@ of the tree.
     
 \end{highlight}
 
-Overall, BST's are very efficient for storing data. The balancing of these trees can make searching for a value efficient.
+Binary Search Trees (BSTs) are a type of binary tree data structure in which each node has a key/value pair, and the keys in the left subtree are smaller than the key in the node, while the keys in the 
+right subtree are larger. BSTs offer efficient search, insert, and delete operations with an average time complexity of $\mathcal{O}(\log{(n)})$, making them optimal for storing and retrieving data in 
+sorted order. They provide an ordered and hierarchical structure that allows for fast searching and efficient traversal. Additionally, BSTs can be used to implement other data structures like sets, maps, 
+and priority queues.
 
 \clearpage
