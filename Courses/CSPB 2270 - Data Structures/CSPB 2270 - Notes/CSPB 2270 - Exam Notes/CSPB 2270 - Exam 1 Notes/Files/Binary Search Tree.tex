@@ -1,0 +1,712 @@
+\section*{Binary Search Trees}
+
+\subsection*{Overview}
+
+Binary Search Trees (BSTs) are a type of binary tree data structure that maintain a specific order of elements. In a BST, each node has a key or value, and the keys of nodes in the left subtree are 
+less than the key of the current node, while the keys of nodes in the right subtree are greater. This property enables efficient searching, insertion, and deletion operations. BSTs offer fast average 
+case performance for these operations, with a time complexity of $\mathcal{O}(\log{(n)})$ in balanced trees. They are commonly used in scenarios that require fast searching or ordered traversal of elements, 
+such as dictionary implementations, range queries, and efficient data organization.
+
+A Binary Search Tree (BST) and a linked list differ in their structure and organization of data. A BST is a binary tree where nodes are ordered based on their keys, allowing for efficient search, insertion, 
+and deletion operations. In contrast, a linked list is a linear structure where elements are connected via pointers, without a specific ordering. Traversing a linked list requires sequentially following the 
+next pointers, while a BST enables faster search and manipulation of elements due to its ordered nature.
+
+A balanced tree is a tree data structure in which the heights of the left and right subtrees of any node differ by at most one. It ensures that the tree is evenly balanced and maintains efficient operations. 
+Balanced trees are desirable because they provide improved performance for various operations such as searching, inserting, and deleting elements. By keeping the tree balanced, the height remains relatively 
+low, which reduces the time complexity of operations and ensures that the worst-case scenario is avoided. Common examples of balanced trees include AVL trees, red-black trees, and B-trees.
+
+BST's have some common terminology that are useful to describe certain aspects of the structure. The terminology that we use to describe a BST can be seen below:
+
+\begin{itemize}
+    \item \textbf{Children:} Children are defined as nodes that are connected to a parent node, either left or right, in the hierarchical structure of the tree
+    \item \textbf{Complete:} A BST where if all levels, except the last level, contain all possible nodes and all nodes in the last level are as far left as possible
+    \item \textbf{Depth:} Depth is defined as the number of edges on the path from the root to the node in question
+    \item \textbf{Edge:} An edge is a link from a parent node to its child node
+    \item \textbf{Full:} A BST where every node contains 0 or 2 children
+    \item \textbf{Height:} The height of a tree is the largest depth of any node in the tree
+    \item \textbf{Internal Node:} An internal node is a node with at least one child
+    \item \textbf{Leaf:} A leaf is a node with no children
+    \item \textbf{Level:} The level of a BST is defined as nodes that have the same depth
+    \item \textbf{Parent:} A parent is a node where one of more child nodes are directly connected to it
+    \item \textbf{Perfect:} A BST where if all internal nodes have 2 children and all leaf nodes are at the same level
+    \item \textbf{Root:} The root of a BST is referred to as the topmost node of the tree structure (The root node has no parent node)
+\end{itemize}
+
+\noindent The terms: \textbf{Full}, \textbf{Complete}, and \textbf{Perfect} define special types of BST's. The rest of the terms in the above list are components of the BST
+
+BST's use a technique called recursion. Recursion is a programming technique where a function calls itself to solve a smaller instance of the same problem. It is useful in dealing with trees because trees are 
+recursive data structures. Each node in a tree can be viewed as a smaller tree itself, consisting of its children and their descendants. Recursion allows us to traverse and manipulate tree structures by breaking 
+down the problem into smaller sub problems that can be solved recursively. It simplifies the code by abstracting the complex tree operations into simpler recursive calls, leading to concise and elegant solutions. 
+Additionally, recursion provides a natural way to handle tree-related algorithms, such as tree traversal, searching, insertion, deletion, and various other tree-based computations.
+
+\subsection*{Common BST Operations}
+
+BST's require a number of operations for the functionality of it to be optimal. A lot of these operations can also be seen in linked lists. The operations that are used in BST's are the following:
+
+\begin{itemize}
+    \item \textbf{Contains:} The contains function in a Binary Search Tree (BST) is used to check if a given value is present in the tree.
+    \item \textbf{Get Node:} The getnode function in a Binary Search Tree (BST) is used to search for a node with a specified value in a tree.
+    \item \textbf{Height:} The height operation in a BST recursively calculates the maximum number of edges from the root to any leaf node, providing a measure of the tree's vertical depth.
+    \item \textbf{Initialize:} Initializing a node in a Binary Search Tree (BST) means creating a new node with a given value and setting its left and right child pointers to null or nullptr, indicating an empty subtree.
+    \item \textbf{Insert:} The insert function in a Binary Search Tree (BST) is responsible for adding a new node to the tree while maintaining the binary search property, where values smaller than the current node are 
+    placed in the left subtree, and values larger than the current node are placed in the right subtree.
+    \item \textbf{In Order:} An in-order traversal function in a Binary Search Tree (BST) visits all the nodes in the tree in ascending order of their values.
+    \item \textbf{Post Order:} A post-order traversal function in a Binary Search Tree (BST) visits all the nodes in the tree in a specific order.
+    \item \textbf{Pre Order:} A pre-order traversal function in a Binary Search Tree (BST) visits all the nodes in the tree in a specific order.
+    \item \textbf{Remove:} The remove function in a Binary Search Tree (BST) is used to delete a node from the tree while preserving the binary search property. It involves finding the node to be removed, handling different 
+    cases based on the number of children the node has, and reorganizing the tree as necessary to maintain its structure and properties.
+    \item \textbf{Size:} The size function in a Binary Search Tree (BST) is used to determine the number of nodes in a tree.
+    \item \textbf{To Vector:} The tovector function in a Binary Search Tree (BST) is used to add values in a tree to a vector.
+\end{itemize}
+
+We can now look at each of these operations individually. The first operation that we will look at is the contains operation.
+
+\begin{highlight}[Contains In BST]
+
+\subsection*{Contains}
+
+Below is an example of the implementation of the contains operation in a BST in the context of C++:
+
+\begin{code}
+/*  Contains - This function checks to see if a specific value is present in our 
+*              BST
+*   Input:
+*     subt - A smart pointer pointing to a (bst_node) node in a BST
+*     data - An integer whose value is being searched for in a BST
+*   Algorithm:
+*     * We first check to see if the current node in the tree is null, if it is, we 
+*       return false
+*     * We then check if the current nodes data member "data" is equal to the input 
+*       parameter "data"
+*       * If it is equal to it, we return true, indicating this value exists in our 
+*         tree
+*     * If neither of the two previous conditions are met, then we search through 
+*       the subtrees of this BST
+*       using a recursive call to "Contains"
+*       * We then return the boolean value after searching through each subtree
+*         * If both are false, then false is returned
+*         * If atleast one of these are true, then we return true
+*   Output:
+*     We return a boolean value indicating whether or not a value is present in 
+*     a BST
+*   Reference:
+*     The skeleton of this algorithm was referenced from the zyBooks chapter 7.11
+*/
+bool BST::Contains(shared_ptr<bst_node> subt, int data){
+    if (subt == nullptr) {
+        return false;
+    }
+    else if (subt->data == data) {
+        return true;
+    }
+    else {
+        return Contains(subt->left, data) || Contains(subt->right, data);
+    }
+}
+\end{code}
+
+The above function takes in a node that is present in a BST and searches for a specific value in the list. It utilizes recursion to search both the left and right subtrees of the current node and
+returns a boolean value determining if the value is present in the tree. The time complexity of this algorithm is the following: \newline
+
+\begin{center}
+    \begin{tabular}[ht]{|c|c|}
+        \hline \textbf{Best Case Time Complexity} & \textbf{Worst Case Time Complexity} \\ \hline
+        $\mathcal{O}(\log{(n)})$ & $\mathcal{O}(n)$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\noindent The best case time complexity occurs when the tree is balanced. The worst case time complexity occurs when the node doesn't exist or if the node is at the leaf level of the tree.
+
+\end{highlight}
+
+The next operation that we will look at is the GetNode operation.
+
+\begin{highlight}[Get Node In BST]
+
+\subsubsection*{Get Node}
+
+Below is an example of the implementation of the Get Node operation in a BST in the context of C++:
+
+\begin{code}
+/*  GetNode - This function returns a pointer if a node is present in a BST
+*   Input:
+*     subt - A smart pointer pointing to a (bst_node) in a BST
+*     data - An integer whoe value is being searched for in a BST
+*   Algorithm:
+*     * We first check to see if the current node in the BST is null, if it is, 
+*       return NULL
+*     * If the current node is not null, we check to see if the current nodes 
+*       "data" member matches the input parameter "data", if it does, we return 
+*       the current pointer of the node
+*     * If neither of the two conditions are met, we make a recursive call to the 
+*       left and right subtrees of the BST
+*     * We then iterate through the previous steps of the algorithm to determine 
+*       if a data value is present in our BST
+*   Output:
+*     We return a pointer to our node depending on if prior conditions are met 
+*     when searching for a value
+*/
+shared_ptr<bst_node> BST::GetNode(shared_ptr<bst_node> subt, int data){
+    if (subt == nullptr) {
+        return shared_ptr<bst_node>(nullptr);
+    }
+    else if (subt->data == data) {
+        return subt;
+    }
+    else {
+    if (GetNode(subt->left, data)) {
+        return GetNode(subt->left, data);
+    }
+    else {
+        return GetNode(subt->right, data);
+        }
+    }
+}
+\end{code}
+
+This operation searches a BST for a specific value and returns the node if it exists. Similar to the contains operation the GetNode operation uitlizes recursion to search the left and right subtrees
+of the node that is fed into the function. The time complexity of this algorithm is the following: \newline
+
+\begin{center}
+    \begin{tabular}[ht]{|c|c|}
+        \hline \textbf{Best Case Time Complexity} & \textbf{Worst Case Time Complexity} \\ \hline
+        $\mathcal{O}(\log{(n)})$ & $\mathcal{O}(n)$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\noindent The time complexity of this operation is the same as that of the operation that just searches for a value in a BST. When searching for the maximum or minimum value in a tree, the time complexity
+is the same for searching for a value in the tree. These time complexities are contingent upon the balancing of the tree.
+
+\end{highlight}
+
+The next operation that we will look at is the Height operation.
+
+\begin{highlight}[Height In BST]
+
+\subsubsection*{Height}
+
+Below is an example of the implementation of calculating the height of a BST in the context of C++:
+
+\begin{code}
+int height(Node* root) {
+    if (root == nullptr) {
+        return 0;  // An empty tree has height 0
+    }
+    else {
+        // Recursively calculate the height of the left and right subtrees
+        int leftHeight = height(root->left);
+        int rightHeight = height(root->right);
+
+        // Return the maximum height between the left and right subtrees, plus 1 for the current node
+        return std::max(leftHeight, rightHeight) + 1;
+    }
+}    
+\end{code}
+
+\noindent The above function calculates the max number of edges to the leaf level in a BST. This function utilizes the concept of recursion to find which subtree has the most edges in it. This in turn is the
+height of the BST.
+
+\end{highlight}
+
+The next operation that we will look at is the Initialize operation.
+
+\begin{highlight}[Initializing In BST]
+
+\subsubsection*{Initializing}
+
+Below is an example of the implementation of initializing a node in a BST in the context of C++:
+
+\begin{code}
+/*  InitNode - This function creates a node of a BST
+*   Input:
+*     data - Integer value that the data member of bst_node "data" is to be set to
+*   Algorithm:
+*     * Create a new smart pointer named "ret" to represent a new BST node 
+*       (bst_node)
+*     * Assign the input parameter "data" to the data member "data" of "ret" using 
+*       the member access operator
+*     * Initialize the left and right child pointers of "ret" to a null value with 
+*       "nullptr"
+*   Output:
+*     ret - A smart pointer pointing to the newly created BST node (bst_node)
+*/
+shared_ptr<bst_node> BST::InitNode(int data){
+    shared_ptr<bst_node> ret(new bst_node());
+    ret->data = data;
+    ret->left = nullptr;
+    ret->right = nullptr;
+    return ret;
+}
+\end{code}
+
+The above function initializes a node for a BST. It sets the value of the 'data' member to the input parameter that is passed in the function. This operation has a constant time complexity of 
+$\mathcal{O}(1)$.
+
+\end{highlight}
+
+The next operation that we will look at is the insert operation.
+
+\begin{highlight}[Inserting In BST]
+
+\subsubsection*{Inserting}
+
+Below is an example of the implementation of inserting into a BST in the context of C++:
+
+\begin{code}
+/*  Insert - This function inserts a node into a BST
+*   Input:
+*     new_node - A smart pointer that represents a node in a BST
+*   Algorithm:
+*     * First, check if the root of our BST is null
+*       * If it is, then assign the smart pointer "new_node" to the root of our BST 
+*         using SetRoot()
+*       * If it is not, then proceed to the next step
+*     * We then create a dummy smart pointer "current_node" and assign it to the 
+*       root of our tree
+*     * The following while loop will run until the current node is null
+*     * We then check what the value of our input parameter "new_node" is in 
+*       comparison to our current node of the BST
+*     * If "new_node"'s value is less than that of the current node in our BST, we 
+*       do the following:
+*       * We check if the left child of the current node is null
+*         * If it is, then the left child of "current_node" is assigned to our 
+*           "new_node" that is passed as an input parameter "current_node" is then 
+*           assigned to null to exit the above while loop
+*         * If it is not, then the "current_node" is set to the left child of 
+*           "current_node"
+*     * If "new_node"'s value is greater than or equal to that of the current node 
+*       in our BST, we do the following:
+*       * We check if the right child of "current_node" is null
+*         * If it is, then the right child of "current_node" is assigned to our 
+*           "new_node" that is passed as an input parameter "current_node" is then 
+*           assigned to null to exit the above while loop
+*         * If it is not, then the "current_node" is set to the right child of 
+*           "current_node"
+*   Output:
+*     There is no output for this function
+*   Reference:
+*     The skeleton of this algorithm was referenced from the zyBooks Chapter 7.6
+*/
+void BST::Insert(shared_ptr<bst_node> new_node){
+    if (GetRoot() == nullptr) {
+        SetRoot(new_node);
+    }
+    else {
+        shared_ptr<bst_node> current_node = GetRoot();
+        while (current_node != nullptr) {
+            if (new_node->data < current_node->data) {
+                if (current_node->left == nullptr) {
+                    current_node->left = new_node;
+                    current_node = nullptr;
+                }
+                else {
+                    current_node = current_node->left;
+                }
+            }
+            else {
+                if (current_node->right == nullptr) {
+                    current_node->right = new_node;
+                    current_node = nullptr;
+                }
+                else {
+                    current_node = current_node->right;
+                }
+            }
+        }
+    }
+}
+\end{code}
+
+The insert operation inserts a node into a BST in the correct spot in the tree. This function operates by searching through a BST for where the node should be inserted. Similar to that of the search
+operation, the insert operation as the following time complexities: \newline
+
+\begin{center}
+    \begin{tabular}[ht]{|c|c|}
+        \hline \textbf{Best Case Time Complexity} & \textbf{Worst Case Time Complexity} \\ \hline
+        $\mathcal{O}(\log{(n)})$ & $\mathcal{O}(n)$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\noindent The time complexities of this operation are again contingent upon the balancing of the tree. This operation effecitvely searches through the BST to try and find the appropriate spot for where
+it should be inserted. The best case scenario for inserting into a BST occurs when it is balanced and the worst case happens when the insertion happens at the leaf level.
+
+\end{highlight}
+
+The next operation that we will look at is the in order traversal of a BST.
+
+\begin{highlight}[In Order Traversal In BST]
+
+\subsubsection*{In Order}
+
+Below is an example of the implementation of the in-order traversal of a BST in the context of C++:
+
+\begin{code}
+/*  InOrder - This function traverses a binary search tree in order
+*   Input:
+*     subt - A smart pointer pointing to a node in BST
+*   Algorithm:
+*     * We first check to see if the node that we are looking at is null, if it is, 
+*       then we return that node
+*     * If the node that we are examining is not null, then we proceed to checking 
+*       each sub tree
+*       * If the left child of "subt" is not null, then we recursively call 
+*         `InOrder`on the left child to find the leftmost node in the left subtree, 
+*         the above process will repeat until a null pointer is found, indicating 
+*         we have reached the leftmost node of this subtree
+*       * If the left child of "subt" is null, we move to the right child and 
+*         recursively call `InOrder` on the right child to find the leftmost node 
+*         in the right subtree, the above process will repeat until a null pointer 
+*         is found, indicating we have reached the leftmost node of this subtree
+*   Output:
+*     This function returns a smart pointer to the leftmost node in our BST
+*   Reference:
+*     The skeleton of this algorithm was referenced from the zyBooks chapter 7.8
+*/
+shared_ptr<bst_node> BST::InOrder(shared_ptr<bst_node> subt) {
+    if (subt == nullptr) {
+        return subt;
+    }
+    else {
+        if (InOrder(subt->left)) {
+            return InOrder(subt->left);
+        }
+        else {
+            return InOrder(subt->right);
+        }
+    }
+}
+\end{code}
+
+\noindent This function traverses a BST in order, meaning in ascending order. This function utilizes recursion to traverse the tree. It traverses in ascending order by traversing through all of the
+left subtrees and then the right subtrees. The time complexity of the in order traversal is $\mathcal{O}(n)$ regardless of the balancing of the tree.
+
+\end{highlight}
+
+The next operation that we will look at is the post order traversal of a BST.
+
+\begin{highlight}[Post Order Traversal In BST]
+
+\subsubsection*{Post Order}
+
+Below is an example of the implementation of post order traversal in a BST in the context of C++:
+
+\begin{code}
+void postOrderTraversal(shared_ptr<bst_node> root) {
+    if (root == nullptr) {
+        return;
+    }
+    
+    // Visit the left subtree
+    postOrderTraversal(root->left);
+    
+    // Visit the right subtree
+    postOrderTraversal(root->right);
+    
+    // Process the root node
+    cout << root->data << " ";
+}    
+\end{code}
+
+\noindent The above function traverses a BST in post order fashion. In post-order traversal, the nodes of the BST are visited in the following order: left subtree, right subtree, and then the root. 
+The recursive function is called first for the left subtree, then for the right subtree, and finally the root node is processed. Similar to the in order traversal, the time complexity of this operation
+is $\mathcal{O}(n)$ regardless of the balancing of the tree.
+
+\end{highlight}
+
+The next operation that we will look at is the pre order traversal of a BST.
+
+\begin{highlight}[Pre Order Traversal In BST]
+
+\subsubsection*{Pre Order}
+
+Below is an example of the implementation of pre order traversal in a BST in the context of C++:
+
+\begin{code}
+void PreOrderTraversal(std::shared_ptr<bst_node> root) {
+    if (root == nullptr)
+        return;
+
+    // Process current node (root)
+    std::cout << root->data << " ";
+
+    // Recursively traverse left subtree
+    PreOrderTraversal(root->left);
+
+    // Recursively traverse right subtree
+    PreOrderTraversal(root->right);
+}
+\end{code}
+
+\noindent The above function traverse a BST in a pre order fashion. In pre-order traversal, we visit the current node (root) first, then recursively traverse the left subtree, and finally recursively 
+traverse the right subtree. Similar to that of the past two traversals of the tree, the time complexity of this operation is $\mathcal{O}(n)$ regardless of the balancing of the tree.
+
+\end{highlight}
+
+The next operation that we will look at is the remove operation of a BST.
+
+\begin{highlight}[Remove In BST]
+
+\subsubsection*{Remove}
+
+Below is an example of the implementation of the remove operation in a BST in the context of C++:
+
+\begin{code}
+/*  Remove - This function removes a node in a BST for a given integer value "data"
+*   Input:
+*     data - Integer value that is to be searched for and removed from our BST
+*   Algorithm:
+*     * We first begin by creating three separate nodes (bst_node) and initialize 
+*       them to specific values
+*       * current_node - This node is set to the root of our BST
+*       * parent_node - This node is the parent node of our current node in our BST
+*       * successor_node - This node is the succeeding node of our current node
+*     * We then begin searching our BST by first looking at the root of our BST
+*     * The first condition that is checked for is if the current node matches the 
+*       input parameter "data"
+*       * We then have four different checks to make according to the child nodes 
+*         of the current node
+*       * Remove Leaf Node - This occurs when the children of the current node are 
+*         both null
+*         * We then have three conditions to check for inside of this current 
+*           condition
+*           * If the parent node is null, then we set the root node to be null
+*             This is the condition where the node that is being removed is the 
+*             current root of the tree
+*           * If the left child of the parent node is the current node, then we 
+*             set the left child of the parent node to be null, we are removing 
+*             "current_node" from the tree
+*           * Otherwise, if the right child of the parent node is the current node, 
+*             then we set the right child of the parent node to be null, we are 
+*             removing "current_node" from the tree
+*       * Remove Left Child - This occurs when the right child of the current node 
+*         is null
+*         * We then have three conditions to check for inside of this current 
+*           condition
+*           * If the parent node is null, then we set the root node to be the left 
+*             child of the current node In this scenario, the current node is the 
+*             root of the tree and the only remaining node is the left child of the 
+*             current node, this is why it is set to the root of the tree
+*           * If the left child of the parent node is the current node, then we set 
+*             the left child of the parent node to be the left child of the current 
+*             node, this replaces the current node with its left child after being 
+*             removed
+*           * If the right child of the parent node is the current node, then we set 
+*             the right child of the parent node to be the left child of the current 
+*             node, this replaces the current node with its left child after being 
+*             removed
+*       * Remove Right Child - This occurs when the left child of the current node 
+*         is null
+*         * We then have three conditions to check for inside of this current
+*           condition
+*           * If the parent node is null, then we set the root node to be the right 
+*             child of the current node In this scenario, the current node is the 
+*             root of the tree and the only remaining node is the right child of 
+*             the current node, this is why it is set to the root of the tree
+*           * If the left child of the parent node is the current node, then we set 
+*             the left child of the parent node to be the right child of the current 
+*             node, this replaces the current node with its right child after being 
+*             removed
+*           * If the right child of the parent node is the current node, then we 
+*             set the right child of the parent node to be the right child of the 
+*             current node, this replaces the current node with its right child 
+*             after being removed
+*       * Remove Node With Two Children - This occurs when the node to be removed 
+*         has two children attached to it
+*         * In this scenario, we set the successor node to be the right child of the 
+*           current node
+*         * We then set the successor node to be its left child until its left child 
+*           is null, effectively searching the leftmost sub tree until the 
+*           appropriate successor is found
+*         * We then create a copy of this value, and assign it to the integer value 
+*           "SuccessorData"
+*         * Then, a recursive call of "Remove" is made on the "successor_node"'s 
+*           "data" member, this is done so that we can remove the successor of the 
+*           current node and put it in the place of the current node
+*         * The current node's "data" member is then assigned to the integer value 
+*           "SuccessorData", effectively placing the successor node in the position 
+*           of the current node
+*     * If the key is not found, then we check if the current nodes data member 
+*       "data" is less than that of the input parameter "data"
+*       * If this is the case, then the parent node is set to that of the current 
+*         node and the current node is set to its right child We are effectively 
+*         searching the right sub tree of our BST
+*     * If the key is not found, then we check if the current nodes data member 
+*       "data" is greater than that of the input parameter "data"
+*       * If this is the case, then the parent node is set to that of the current 
+*         node and the current node is set to its left child We are effectively 
+*         searching the left sub tree of our BST
+*     * If neither of the above conditions are met, then that means that the value 
+*       being searched for does not exist in our BST
+*   Output:
+*     This function does not return a value
+*   Reference:
+*     The sekelton of this algorithm was referenced from the zyBooks chapter 7.7 
+*/
+void BST::Remove(int data) {
+shared_ptr<bst_node> current_node = GetRoot();
+shared_ptr<bst_node> parent_node = nullptr;
+shared_ptr<bst_node> successor_node = nullptr;
+while (current_node != nullptr) {
+    // Node found
+    if (current_node->data == data) {
+        // Remove a leaf node
+        if (current_node->left == nullptr && current_node->right == nullptr) {
+            if (parent_node == nullptr) {
+                SetRoot(nullptr);
+            }
+            else if (parent_node->left == current_node) {
+                parent_node->left = nullptr;
+            }
+            else {
+                parent_node->right = nullptr;
+            }
+        }
+        // Remove left child only
+        else if (current_node->right == nullptr) {
+            if (parent_node == nullptr) {
+                SetRoot(current_node->left);
+            }
+            else if (parent_node->left == current_node) {
+                parent_node->left = current_node->left;
+            }
+            else {
+                parent_node->right = current_node->left;
+            }
+        }
+        // Remove right child only
+        else if (current_node->left == nullptr) {
+            if (parent_node == nullptr) {
+                SetRoot(current_node->right);
+            }
+            else if (parent_node->left == current_node) {
+                parent_node->left = current_node->right;
+            }
+            else {
+                parent_node->right = current_node->right;
+            }
+        }
+        // Remove node with two children
+        else {
+            successor_node = current_node->right;
+            while (successor_node->left != nullptr) {
+                successor_node = successor_node->left;
+            }
+            int SuccessorData = successor_node->data;
+            Remove(successor_node->data);
+            current_node->data = SuccessorData;
+        }
+        break;
+    }
+        // Search to the right
+        else if (current_node->data < data) {
+            parent_node = current_node;
+            current_node = current_node->right;
+        }
+        // Search to the left
+        else {
+            parent_node = current_node;
+            current_node = current_node->left;
+        }
+    }
+}
+\end{code}
+
+The above function removes a node from a BST and reorders the tree so that it still follows the same rules of a BST. The time complexity of this operation is the following: \newline
+
+\begin{center}
+    \begin{tabular}[ht]{|c|c|}
+        \hline \textbf{Best Case Time Complexity} & \textbf{Worst Case Time Complexity} \\ \hline
+        $\mathcal{O}(\log{(n)})$ & $\mathcal{O}(n)$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\noindent Similar to other operations, the remove operation's time complexity is contingent upon the balancing of the tree.
+
+\end{highlight}
+
+The next operation that we will look at is the size operation of a BST.
+
+\begin{highlight}[Size Of BST]
+
+\subsubsection*{Size Of}
+
+Below is an example of the implementation of the size operation in a BST in the context of C++:
+
+\begin{code}
+/*  Size - This function counts the number of nodes that are present in a given BST
+*   Input:
+*     subt - A smart pointer that points to a "bst_node" object representing a BST
+*   Algorithm:
+*     * We first check if the input parameter "subt" is a null, if it is, then we 
+*       return a value of zero
+*     * If the current node, "subt", is not null, then:
+*       * We add 1 to our total, and the recursively call "Size" on the left and 
+*         right child of "subt"
+*       * This process will repeat over and over until the end of the tree is 
+*         reached for both subtrees
+*   Output:
+*     This function returns an integer value representing the number of nodes in 
+*     a BST
+*/
+int BST::Size(shared_ptr<bst_node> subt){
+    if (subt == nullptr) {
+        return 0;
+    }
+    else {
+        return 1 + Size(subt->left) + Size(subt->right);
+    }
+}
+\end{code}
+
+\noindent The above function implements recursion to count the number of nodes in a BST. The time complexity of this operation is $\mathcal{O}(n)$.
+
+\end{highlight}
+
+The last operation that we will look at is the to vector operation in a BST.
+
+\begin{highlight}[To Vector In BST]
+
+\subsubsection*{To Vector}
+
+Below is an example of the implementation of the to vector operation in a BST in the context of C++:
+
+\begin{code}
+/*  ToVector - This function appends values to a vector that are present in a BST
+*   Input:
+*     subt - A smart pointer of the node that belongs to our BST that we are appending data from
+*     vec - A vector that integer values are to be appended to from our BST
+*   Algorithm:
+*     * We first begin by setting the root of our BST to the input parameter "subt"
+*     * We then check to see if the root is null, if it is, we return from the function
+*     * If the root is not null, then we do the following:
+*       * We make a recursive call to the left subtree with "ToVector", to find the leftmost value of our BST
+*       * We then append this data to the input parameter "vec"
+*       * We then make a recursive call this time to the right subtree with "ToVector", to then find the left most
+*         value of the right subtree
+*   Output:
+*     This function does not return a value
+*/
+void BST::ToVector(shared_ptr<bst_node> subt, vector<int>& vec){
+    SetRoot(subt);
+    if (GetRoot() == nullptr) {
+        return;
+    }
+    else {
+        ToVector(subt->left, vec);
+        vec.push_back(subt->data);
+        ToVector(subt->right, vec);
+    }
+}
+\end{code}
+
+\noindent The above function appends the data member of the nodes in a BST to a vector with the use of recursion. The time complexity of this operation is $\mathcal{O}(n)$ regardless of the balancing
+of the tree.
+    
+\end{highlight}
+
+Binary Search Trees (BSTs) are a type of binary tree data structure in which each node has a key/value pair, and the keys in the left subtree are smaller than the key in the node, while the keys in the 
+right subtree are larger. BSTs offer efficient search, insert, and delete operations with an average time complexity of $\mathcal{O}(\log{(n)})$, making them optimal for storing and retrieving data in 
+sorted order. They provide an ordered and hierarchical structure that allows for fast searching and efficient traversal. Additionally, BSTs can be used to implement other data structures like sets, maps, 
+and priority queues.
+
+\clearpage
