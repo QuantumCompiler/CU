@@ -1,0 +1,18 @@
+Memory Allocation
+-----------------
+What is the heap in C++ and how does it differ from the stack?
+What is the stack in C++ and how does it differ from the heap?
+Which kinds of variables are placed on the stack?
+Which kinds of variables are placed in the heap?
+What is a memory leak and how can those be avoided?
+What is a shared pointer vs a regular pointer?
+How do you reference the data using an object pointer?
+What is the difference between a reference parameter and a pointer parameter?
+How do you reference the data using an object reference parameter?
+
+Sorting Algorithms
+------------------
+What are the different types of sort algorithms we covered in the course?
+What are the steps for each of the sort algorithms covered?
+What is the worst case time complexity for each of the sorting algorithms?
+What is the worst case data sequence for each of the sorting algorithms?
