@@ -38,23 +38,6 @@ We will now examine some of these operations in more detail. The first operation
 Below is an example of accessing and modifying elements in a linked list in the context of C++:
 
 \begin{code}
-/*  Contains - This function determines if an element is present inside a linked
-*   list
-*   Input:
-*     data - This is an integer that is being searched for in our linked list
-*   Algorithm:
-*     First, create a smart pointer called "currPtr" and initialize it to the head
-*     of our linked list
-*     Initialize the return value "ret" to false, so that if a value is not found 
-*     we do not need to change it to false
-*     Traverse through the linked list with the use of a while loop and check if 
-*     the current nodes "data" member matches
-*     the input parameter "data"
-*       If the two are a match, change the value of "ret" to true, otherwise, leave 
-*       it as false
-*   Output:
-*     ret - Boolean value indicating if a value was found in the linked list
-*/
 bool LinkedList::Contains(int data){
     shared_ptr<node> currPtr = top_ptr_;
     bool ret = false;
@@ -85,26 +68,6 @@ The next operation that we will examine is adding a node to a linked list.
 Below is an example of adding a node to the linked list in the context of C++. Particularly, this function adds an element to the end of the linked list (The tail).
 
 \begin{code}
-/*  Append - This function appends a new node to the end of a linked list
-*   Input:
-*     new_node - A smart pointer to a node object that will be appended to the list
-*   Algorithm:
-*     We first nitialize the data members of the new node object to appropriate 
-*     values
-*     Then we check if the current linked list is empty:
-*       If the linked list is empty, set the top of the linked list to the input 
-*       parameter "new_node"
-*       If the linked list is not empty:
-*       We create a new smart pointer called "currPtr" and set it equal to the top 
-*       of the linked list
-*       Then we traverse down the linked list until reaching the last node (When 
-*       the next node is nullptr):
-*       If the next node is not nullptr, move to the next node in the list
-*       Once at the end of the linked list, set the next pointer of the current 
-*       node to "new_node"
-*   Output:
-*     This function does not return a value
-*/
 void LinkedList::Append(shared_ptr<node> new_node){
     new_node->data;
     new_node->next = nullptr;
@@ -129,34 +92,6 @@ be modified to handle the case where the value that is to be appended is an inpu
 Below is an example of adding a node to the linked list at a specified index in the context of C++:
 
 \begin{code}
-/*  Insert - This function inserts a new node into a linked list at the specified 
-*            offset
-*   Input:
-*     offset - An integer that is the offset at which the new node should be 
-*              inserted
-*     new_node - A smart pointer of object node that is to be inserted into 
-*                the linked list
-*   Algorithm:
-*     First we create a new smart pointer called "currPtr" and set it equal to the 
-*     top of the linked list
-*     After that we create a vector called "ptrs" to store the smart pointers to 
-*     each node in the linked list
-*     Then we traverse the linked list and add each node's smart pointer to the 
-*     "ptrs" vector
-*     After that, we check if the offset is zero:
-*       If it is zero, set the next pointer of the "new_node" node to the current 
-*       top_ptr_
-*       Set the top_ptr_ to the "new_node" node, making it the new first node in 
-*       the linked list
-*     If the offset is not zero:
-*       Reset "currPtr" to the top_ptr_ and iterate through the "ptrs" vector
-*       When the current index matches the offset - 1, set the next pointer of 
-*       "new_node" to currPtr->next
-*       Update the next pointer of "currPtr" to "insertPtr", inserting it at the 
-*       desired offset
-*   Output:
-*     This function does not return a value
-*/
 void LinkedList::Insert(int offset, shared_ptr<node> new_node){
     shared_ptr<node> currPtr = top_ptr_;
     vector<shared_ptr<node>> ptrs;
@@ -217,18 +152,6 @@ The next operation that we will examine is checking for the size of a linked lis
 Below is an example of checking for the size of a linked list in the context of C++:
 
 \begin{code}
-/*  Size - This function counts how many nodes are present in our linked list
-*   Algorithm:
-*     We first create a smart pointer called "currPtr" and set it equal to our 
-*     "top_ptr_" in our linked list
-*     We initialize the return value "ret" to zero
-*     Then we enter a while loop that increments "ret" by one until it runs into 
-*     the tail of the list
-*     Advance the current pointer object using "currPtr = currPtr->next;"
-*   Output:
-*     ret - Integer value that represents the number of nodes that are present 
-*     in our linked list
-*/
 int LinkedList::Size(){
     shared_ptr<node> currPtr = top_ptr_;
     int ret = 0;
@@ -253,19 +176,6 @@ The next operation that we will examine is initializing a node in a linked list.
 Below is an example of initializing a node in a linked list in the context of C++:
 
 \begin{code}
-/*  InitNode - This function takes in an integer data type and assigns that value 
-*   to a "node" data type's "data" member
-*   Input:
-*     data - This is an integer data type that is later assigned to a "node" data 
-*     type's "data" member
-*   Algorithm:
-*     shared_ptr<node> ret(new node); - This line creates a smart pointer of data 
-*     type "node" named "ret"
-*   Output:
-*     ret - After setting "ret"'s data member to the input parameter "data"
-*     The "next" data member of the "node" object is initially set to nullptr, 
-*     indicating the absence of a next node
-*/
 shared_ptr<node> LinkedList::InitNode(int data){
     shared_ptr<node> ret(new node);
     ret->data = data;
@@ -287,28 +197,6 @@ The next operation that we will examine is removing a node from a linked list.
 The below function is an example of removing a node from a linked list in the context of C++:
 
 \begin{code}
-/*  Remove - This function removes a node from a linked list at the specified 
-*            offset
-*   Input:
-*     offset - An integer that is the offset of the node to be removed from our 
-*              linked list
-*   Algorithm:
-*     First we create a new smart pointer called "currPtr" and set it equal to the 
-*     top of the linked list
-*     Then we create a vector called "ptrs" to store the smart pointers to each 
-*     node in the linked list
-*     After that we iterate through the linked list and add each node's smart 
-*     pointer to the "ptrs" vector
-*     Then we heck if the offset is zero.
-*       If it is zero, set the next pointer of the top node to the node after it
-*     Otherwise, reset "currPtr" to the top node and iterate through the "ptrs" 
-*     vector
-*       When the current index matches the offset - 1, set the next pointer of 
-*       "currPtr" to the node after it
-*       Break out of the for loop to avoid segmentation faults
-*     Output:
-*       This function does not return a value.
-*/
 void LinkedList::Remove(int offset){
     shared_ptr<node> currPtr = top_ptr_;
     vector<shared_ptr<node>> ptrs;
@@ -327,7 +215,7 @@ void LinkedList::Remove(int offset){
                 break;
             }
             else {}
-                currPtr = currPtr->next;
+            currPtr = currPtr->next;
         }
     }
 }
