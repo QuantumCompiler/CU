@@ -1,0 +1,459 @@
+\clearpage
+
+\section*{Hash Tables}
+
+\subsection*{Overview}
+
+A hash table is a data structure that organizes and stores data in a way that allows for efficient retrieval and storage operations. It uses a technique called hashing to map keys to corresponding values 
+in an array. The purpose of a hash table is to provide fast access to data elements, making it particularly useful for tasks such as searching, inserting, and deleting items in constant time complexity 
+on average. By using a hash function to calculate the index where data is stored, hash tables can achieve rapid data retrieval, making them invaluable for various applications, such as database management, 
+caching, and implementing associative arrays or key-value pairs.
+
+\subsection*{Chaining}
+
+Chaining in hash tables is a collision resolution technique where multiple elements with different keys hash to the same index or bucket. Instead of overwriting the existing value, chaining allows these elements 
+to be stored together in a linked list or another data structure at the same bucket. Each bucket acts as a small container, holding multiple key-value pairs. When a collision occurs, the new element is appended 
+to the existing chain in the bucket. During retrieval or deletion, the hash table traverses the chain, locating the specific key-value pair based on the key. Chaining is a simple and effective method to handle 
+collisions, ensuring that hash tables can efficiently store and retrieve data, even when multiple keys map to the same location in the array.
+
+\subsection*{Linear Probing}
+
+Linear probing in hash tables is a collision resolution technique where elements with different keys that hash to the same index are placed in the next available (unoccupied) position in the table, effectively 
+`probing' forward until an empty slot is found. When a collision occurs, the algorithm checks the next position in the table and repeats the process until it finds an empty location. This method is also known as 
+open addressing because it involves exploring alternative slots within the array to resolve collisions. Linear probing ensures that all elements are eventually stored in the primary array, without using additional 
+data structures like linked lists. However, it may suffer from clustering, where consecutive collisions lead to more collisions, potentially degrading performance. Despite this limitation, linear probing remains 
+a widely used technique due to its simplicity and cache-friendliness, enabling hash tables to maintain $\mathcal{O}(1)$ average case complexity for basic operations when load factors are kept low.
+
+\subsection*{Quadratic Probing}
+
+Quadratic probing in hash tables is a collision resolution technique that addresses collisions by systematically probing the table using quadratic increments until an empty slot is found. When a collision occurs 
+and the initial hashed position is occupied, the algorithm checks positions at increasingly distant intervals, following a quadratic sequence (i.e., 1, 4, 9, 16, and so on), to determine the next potential position. 
+This method aims to disperse the elements more evenly across the table, reducing the clustering effect observed in linear probing. Quadratic probing avoids the primary clustering issue but may still encounter 
+secondary clustering, which can affect its performance in high-load scenarios. Nevertheless, it remains a valuable alternative to linear probing for collision resolution, as it maintains $\mathcal{O}(1)$ average 
+case complexity for basic operations when the load factor is kept relatively low, while being more cache-efficient compared to some other open addressing methods.
+
+\subsection*{Double Hashing}
+
+Double hashing is a collision resolution technique used in hash tables to address key collisions by probing alternative positions based on a secondary hash function. When a collision occurs and the primary hash 
+function places an element at an occupied index, double hashing uses a secondary hash function to calculate an increment value that determines the next probing position. The secondary hash function ensures that 
+the increment value is non-zero and relatively prime to the table size, enabling the algorithm to explore different positions and avoid clustering. Double hashing provides good distribution of elements in the table, 
+reducing the likelihood of collisions and achieving efficient data retrieval. It is a popular choice for collision resolution, as it maintains the $\mathcal{O}(1)$ average case complexity for basic operations, 
+such as insertion, deletion, and retrieval, even under high load factors, making it a robust and reliable approach for hash table implementations.
+
+\subsection*{Efficiency}
+
+The runtime complexity of a hash table is generally considered to be $\mathcal{O}(1)$ on average for basic operations such as insertion, deletion, and retrieval. This constant time complexity arises from 
+the efficient mapping of keys to their corresponding values using a hash function. In the ideal scenario, each key hashes to a unique index, ensuring direct access to the desired element. However, in certain 
+cases, hash collisions may occur when multiple keys hash to the same index, leading to a slight increase in access time. To address collisions, hash tables use techniques like chaining or open addressing, 
+which may, in rare instances, result in worst-case scenarios with a time complexity of $\mathcal{O}(n)$. Overall, though, the average case remains constant time, making hash tables an invaluable data structure 
+for a wide range of applications where rapid data retrieval and storage are crucial.
+
+\begin{center}
+    \begin{tabular}[ht]{|c|c|c|c|}
+        \hline \textbf{Operation} & \textbf{Best Case } $\Omega(n)$ & \textbf{Average Case } $\Theta(n)$ & \textbf{Worst Case } $\mathcal{O}(n)$ \\ \hline
+        \textbf{Inserting} & $\Omega(1)$ & $\Theta(1)$ & $\mathcal{O}(1)$ \\ \hline
+        \textbf{Inserting (Collisions)} & $\Omega(n)$ & $\Theta(n)$ & $\mathcal{O}(n)$ \\ \hline
+        \textbf{Removal} & $\Omega(1)$ & $\Theta(1)$ & $\mathcal{O}(1)$ \\ \hline
+        \textbf{Searching} & $\Omega(1)$ & $\Theta(1)$ & $\mathcal{O}(1)$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\noindent In general, the runtime complexity of a hash table tends to be $\mathcal{O}(1)$. This is what makes it so efficient in the operations that are used with them. In the case where a collision occurs
+(insertion where a bucket is already occupied) the runtime complexity of the algorithm then tends to become $\mathcal{O}(n)$.
+
+\subsection*{Structure}
+
+To implement a hash table, several key functions, data structures, and classes are required. The fundamental components include a hash function, an array (or a dynamic array like a list or vector) to store 
+the data, and a mechanism to handle collisions. The hash function is responsible for converting the keys into array indices, ensuring uniform distribution and efficient retrieval. The array serves as the 
+main storage container for the key-value pairs, and its size typically depends on the expected number of elements and the desired load factor. To handle collisions, a collision resolution technique is 
+necessary, such as chaining (using linked lists or other data structures to store multiple elements at the same index) or open addressing (finding alternative positions in the array for collided keys). 
+Additionally, it is beneficial to encapsulate the hash table functionalities into a class, providing a clean interface for insertion, deletion, and retrieval operations, as well as methods for resizing the 
+array when needed to maintain efficiency. By combining these components, developers can create a robust and efficient hash table implementation suitable for various real-world applications.
+
+In order for a hash table to function correctly it requires a couple of custom structures and classes. First, we examine the custom structures that are built for use in this hash table. The two custom structures
+that were created for this assignment are \textbf{Hash Node} and \textbf{Hash Table}.
+
+\begin{itemize}
+    \item \textbf{Hash Node} - This custom structure represents the contents of an individual bucket in a hash table. This structure has the following data members:
+    \begin{itemize}
+        \item \textbf{deleted} - Boolean value that represents if a node has been removed from a hash table.
+        \item \textbf{hashcode} - Unsigned integer value that represents the hash code that is computed with a hash function.
+        \item \textbf{key} - String value that represents a key associated with a value.
+        \item \textbf{value} - String value that represents the value that is associated with a key.
+    \end{itemize}
+    \item \textbf{Hash Table} - This custom structure holds the hashed data. This structure has the following data members:
+    \begin{itemize}
+        \item \textbf{bucket\_func} - A function that returns an unsigned integer value that represents where a node should be placed.
+        \item \textbf{capacity} - Unsigned integer value that represents the number of addressable buckets in a hash table.
+        \item \textbf{hash\_func} - A function that returns an unsigned integer value that represents a hash code.
+        \item \textbf{size} - Unsigned integer value that represents the number of actual entries in a hash table.
+        \item \textbf{table} - A dynamic array of of hash node pointers.
+    \end{itemize}
+\end{itemize}
+
+\noindent Along with the custom data structures that have been defined previously, there are two functions (\textbf{DJB2()} and \textbf{ModuloBucketFunc()}) and the class \textbf{Hash} that are used to implement 
+the custom structures. First, we examine the two custom functions before we examine the \textbf{Hash} class:
+
+\begin{itemize}
+    \item \textbf{DJB2()} - This function hashes a string value and assigns an unsigned integer value in the 32-bit integer value range.
+    \item \textbf{ModuloBucketFunc()} - This function puts keys into a specified bucket index.
+\end{itemize}
+
+\noindent The above functions provide a base for how we calculate hash codes and where we determine where the codes will be stored in the hash table. The \textbf{Hash} class provides an implementation of all
+these individual structures and functions to create a functioning hash table. This class' member functions are now examined:
+
+\begin{itemize}
+    \item \textbf{Contains} - Determines if a non-deleted node is present in a hash table.
+    \item \textbf{GetVal()} - Returns the value associated with a key in a hash table.
+    \item \textbf{Hash()} - A constructor.
+    \item \textbf{$\sim$Hash()} - A de-constructor.
+    \item \textbf{InitNode()} - Creates and initializes a `hash\_node' structure that will occupy a bucket in a hash table.
+    \item \textbf{InitTable()} - Creates and initializes a `hash\_table' structure and returns a pointer to it.
+    \item \textbf{Load()} - Returns a load factor that describes how `full' a hash table may be at a given time.
+    \item \textbf{PrintTable()} - Prints the contents that are present in a given hash table.
+    \item \textbf{Remove()} - Marks a node as deleted and removes a node from a hash table if the given node is present in a hash table.
+    \item \textbf{Resize()} - Resizes a hash table to have a new specified capacity.
+    \item \textbf{SetKVP()} - Creates a mapping between a given key and a value pair in a hash table. 
+\end{itemize}
+
+\noindent These member functions are responsible for encapsulating the implementation of the structures that were created previously. We now will examine each of these algorithms one by one to obtain a better 
+understanding of how these functions operate.
+
+\subsection*{DJB2}
+
+The DJB2 algorithm is a simple and widely used hash function designed to efficiently convert a given input string (key) into a corresponding unsigned integer hash value. It initializes the hash to 5381 and 
+iterates through each character of the input string. For each character, it performs bitwise left shift ($<<$) on the current hash by 5 positions, then adds the original hash value to the result, and finally 
+adds the ASCII value of the current character to the hash. This process continues for all characters in the input string, effectively combining their contributions to create the final hash value. The algorithm's 
+simplicity and effectiveness in distributing hash values make it popular for various applications where a fast and reasonably distributed hash function is required, such as in hash tables, caching, and 
+hashing-based data structures.
+
+\begin{highlight}[DJB2 Algorithm]
+
+The definition of the `DJB2' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+unsigned int DJB2(std::string key){
+    unsigned int hash = 5381;
+    for (size_t i=0; i < key.length(); i++) {
+        char c = key[i]; 
+        hash = ((hash << 5) + hash) + c;
+    }
+    return hash;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{ModuloBucketFunc}
+
+The ModuloBucketFunc algorithm is responsible for calculating the index of a bucket in a hash table. Whether this algorithm is used for inserting or searching, it determines the index of a specific hash code. 
+This bucket index is found by taking the specific hash code of a key and calculating the modulus of the hash code with the capacity of the table.
+
+\begin{highlight}[ModuloBucketFunc Algorithm]
+
+The definition of the `ModuloBucketFunc' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+unsigned int ModuloBucketFunc(unsigned int hashcode, unsigned int cap){
+    unsigned int b = hashcode % cap;
+    return b;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{Contains}
+
+The function above begins by calculating the hash code and bucket index of the given key that is being searched for in the hash table. We then create an integer value that is designated
+to keep track of the number of buckets that have been `probed'. We then begin traversing the hash table until the number of buckets that have been probed is equal to that of the tables
+size. In each iteration, we first check to see if they is present in the current bucket that we are examining, and it it is we return true. If the key is not present in the current bucket
+we Increment the bucket index and buckets probed variable and continue on to the next bucket. This process will repeat until either we find the bucket that contains the key we are searching
+for or until the number of buckets that we have probed is equal to that of the hash tables size. If the key is not found in the hash table then we return false.
+
+\begin{highlight}[Contains Algorithm]
+
+The definition of the `Contains' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+bool Hash::Contains(shared_ptr<hash_table> tbl, std::string key){
+    unsigned int hash = DJB2(key);
+    unsigned int bucket_idx = tbl->bucket_func(hash, tbl->capacity);
+    unsigned int buckets_probed = 0;
+    // Traverse the table until buckets probed reaches the size of the table
+    while (buckets_probed < tbl->size) {
+        if (tbl->table->at(bucket_idx)->key == key) {
+            return true;
+        }
+        bucket_idx = (bucket_idx + 1) % tbl->size;
+        buckets_probed++;
+    }
+    return false;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{GetVal}
+
+The GetVal algorithm functions in a similar way as the Contains algorithm. Similar to that of the Contains algorithm, we begin by calculating the hash code and bucket index of the key. We then
+create a dummy variable that will keep track of the number of buckets that we have probed while traversing the hash table. Once we begin traversing the hash table, we check if the current bucket
+that we are examining contains the key that we are searching for. If the current bucket does contain the key that we are looking for, then we return that keys value and stop traversing the hash
+table. If the current bucket does not contain the key that we are searching for, then we increment both the bucket index and the buckets probed value to move on to the next bucket. If the key is
+not found in the hash table then we return an empty string.
+
+\begin{highlight}[GetVal Algorithm]
+
+The definition of the `GetVal' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+std::string Hash::GetVal(shared_ptr<hash_table> tbl, std::string key){
+    unsigned int hash = DJB2(key);
+    unsigned int bucket_idx = tbl->bucket_func(hash, tbl->capacity);
+    unsigned int buckets_probed = 0;
+    while (buckets_probed < tbl->size) {
+        if (tbl->table->at(bucket_idx)->key == key) {
+            return tbl->table->at(bucket_idx)->value;
+        }
+        bucket_idx = (bucket_idx + 1) % tbl->size;
+        buckets_probed++;
+    }
+    return "";
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{InitNode}
+
+The InitNode algorithm is responsible for creating a hash node object that is assigned to default values. We first create a new hash node object called `ret' and then we assign the data members of
+the object to the input parameters that are fed in the algorithm. We also flag the boolean value `deleted' to be false and once these values have been assigned we return the node as the algorithms
+output.
+
+\begin{highlight}[InitNode Algorithm]
+
+The definition of the `InitNode' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+shared_ptr<hash_node> Hash::InitNode(std::string key, unsigned int hashcode, std::string val){
+    shared_ptr<hash_node> ret(new hash_node);
+    ret->deleted = false;
+    ret->key = key;
+    ret->hashcode = hashcode;
+    ret->value = val;
+    return ret;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{InitTable}
+
+The InitTable algorithm is doing the same as the InitNode algorithm but instead of working a hash node we are working with a hash table. In this algorithm, we assign the default values of a hash table to
+the input parameters that are fed to this algorithm. We also initialize the functions `hash\_func' and `bucket\_func' to that of \textbf{DJB2} and \textbf{ModuloBucketFunc} respectively. All of the pointers
+inside the `table' data member are initially set to null and the `size' and `occupied' members are initially set to zero. Once these data members have been assigned we return the table as the output of the
+algorithm.
+
+\begin{highlight}[InitTable Algorithm]
+
+The definition of the `InitTable' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+shared_ptr<hash_table> Hash::InitTable(unsigned int cap){
+    shared_ptr<hash_table> ret(new hash_table);
+    ret->capacity = cap;
+    ret->size = 0;
+    ret->occupied = 0;
+    ret->table = shared_ptr<htable>(new htable(cap));
+    for (int i = 0; i < ret->table->size(); i++) {
+        ret->table->at(i) = nullptr;
+    }
+    ret->hash_func = &DJB2;
+    ret->bucket_func = &ModuloBucketFunc;
+    return ret;
+}
+\end{verbatim}
+    
+\end{highlight}
+
+\subsection*{Load}
+
+The Load algorithm is calculating how full a hash table is. This is done by calculating the ratio of the size to the capacity of the hash table in question. In order to calculate this, we have to statically cast
+the `size' and `capacity' data members to floats so that the ratio of the two can be calculated. Once these variables have been statically casted the ratio, the algorithm returns the ratio.
+
+\begin{highlight}[Load Algorithm]
+
+The definition of the `Load' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+float Hash::Load(shared_ptr<hash_table> tbl){
+    float size = static_cast<float>(tbl->size);
+    float cap = static_cast<float>(tbl->capacity);
+    float load = size / cap;
+    return load;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{PrintTable}
+
+The PrintTable algorithm is a function designed to display the contents and statistics of a given hash table. It takes a shared pointer to the hash table as input and outputs details such as the capacity, 
+current size, number of occupied slots, and the load factor (ratio of occupied slots to capacity). The function then checks if the hash table's capacity is less than 130; if so, it proceeds to print each 
+element in the table. For each index, it displays either `$<$empty$>$' if the slot is empty, `$<$deleted$>$' if the slot was marked as deleted, or the key-value pair stored at that index. If the capacity is 
+greater than or equal to 130, the function prints a message indicating that the hash table is too big to be printed out. This algorithm is useful for developers to inspect and understand the state of the 
+hash table, aiding in debugging and performance analysis.
+
+\begin{highlight}[PrintTable Algorithm]
+
+The definition of the `PrintTable' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+void Hash::PrintTable(shared_ptr<hash_table> tbl){
+    cout << "Hashtable:" << endl;
+    cout << "  capacity: " << tbl->capacity << endl;
+    cout << "  size:     " << tbl->size << endl;
+    cout << "  occupied: " << tbl->occupied << endl;
+    cout << "  load:     " << Load(tbl) << endl;
+    if (tbl->capacity < 130) {
+        for (unsigned int i=0; i < tbl->capacity; i++) {
+            cout << "[" << i << "]    ";
+            if (!tbl->table->at(i)) {
+                cout << "<empty>" << endl;
+            } else if (tbl->table->at(i)->deleted) {
+                cout << "<deleted>" << endl;
+            } else {
+                cout << "\"" << tbl->table->at(i)->key << "\" = \"" 
+                << tbl->table->at(i)->value << "\"" << endl;
+            }
+        }
+    } else {
+        cout << "<hashtable too big to print out>" << endl;
+    }
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{Remove}
+
+The Remove algorithm is a function designed to remove a key-value pair from the given hash table. It calculates the hash code and the bucket index for the input `key' using the DJB2 hash function and 
+the provided bucket function. The function then traverses the table, probing the buckets to find the key to be removed. If the key is found in a non-null bucket, it marks the bucket as deleted and removes 
+the node from the table, decreasing the table's size by one, before returning true to indicate a successful removal. If the key is not found after probing all buckets, the function returns false to signify 
+that the key was not present in the hash table. This algorithm efficiently handles collisions and ensures the removal operation has a time complexity of $\mathcal{O}(1)$ on average, making it suitable for 
+hash table implementations requiring a delete operation.
+
+\begin{highlight}[Remove Algorithm]
+
+The definition of the `Remove' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+bool Hash::Remove(shared_ptr<hash_table> tbl, std::string key){
+    unsigned int hash = DJB2(key);
+    unsigned int bucket_idx = tbl->bucket_func(hash, tbl->capacity);
+    unsigned int buckets_probed = 0;
+    while (buckets_probed < tbl->size) {
+        if (tbl->table->at(bucket_idx) != nullptr && tbl->table->at(bucket_idx)->key == key) {
+            tbl->table->at(bucket_idx) == nullptr;
+            tbl->table->at(bucket_idx)->deleted = true;
+            tbl->size--;
+            return true;
+        }
+        bucket_idx = (bucket_idx + 1) % tbl->size;
+        buckets_probed++;
+    }
+    return false;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{Resize}
+
+The Resize algorithm is a function designed to resize the given hash table to a new specified capacity. It first creates a new hash table with the desired capacity using the "InitTable" function. The size 
+and occupied data members of the old table are then copied to the new one to maintain consistency. Next, it iterates through the nodes of the old table and rehashes them to calculate their new bucket index 
+in the resized table. The nodes are then copied to the corresponding positions in the new table. Finally, the old table is updated to point to the new table, effectively resizing and rehashing the hash table. 
+This algorithm efficiently adjusts the capacity of the hash table, enabling it to handle changes in the number of elements while maintaining an average time complexity of $\mathcal{O}(n)$ for resizing, where 
+$n$ is the number of elements in the hash table.
+
+\begin{highlight}[Resize Algorithm]
+
+The definition of the `Resize' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+void Hash::Resize(shared_ptr<hash_table>& tbl, unsigned int new_capacity){
+    shared_ptr<hash_table> new_table = InitTable(new_capacity);
+    new_table->size = tbl->size;
+    new_table->occupied = tbl->occupied;
+    for (int i = 0; i < tbl->table->size(); i++) {
+        if (tbl->table->at(i) != nullptr) {
+            unsigned int hash = DJB2(tbl->table->at(i)->key);
+            unsigned int bucket_idx = new_table->bucket_func(hash, new_table->capacity);
+            new_table->table->at(bucket_idx) = tbl->table->at(i);
+        }
+    }
+    tbl = new_table;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{SetKVP}
+
+The SetKVP algorithm is a function designed to insert or update a key-value pair (KVP) in the given hash table. It first calculates the hash code and bucket index for the input key using the DJB2 hash function 
+and the provided bucket function. Then, it creates a new hash node containing the key-value pair to be inserted or updated. The algorithm proceeds to probe the buckets in the table until all possible buckets 
+have been checked. If an empty bucket is found, the new node is inserted at that index, and the table's occupied and size data members are updated accordingly. If a non-empty bucket with a matching key is found, 
+the value is updated, and the function returns true to indicate a successful update. If all buckets are probed, and no suitable empty bucket or matching key is found, the function returns false, indicating that 
+the insertion or update operation was not successful. This algorithm ensures efficient and collision-handling insertions and updates in the hash table, with an average time complexity of $\mathcal{O}(1)$ and a 
+worst-case time complexity of $\mathcal{O}(n)$, where $n$ is the number of elements in the hash table.
+
+\begin{highlight}[SetKVP Algorithm]
+
+The definition of the `SetKVP' algorithm can be seen below:
+
+\horizontalline
+
+\begin{verbatim}
+bool Hash::SetKVP(shared_ptr<hash_table> tbl, std::string key, std::string value){
+    unsigned int hash = DJB2(key);
+    unsigned int bucket_idx = tbl->bucket_func(hash, tbl->capacity);
+    unsigned int buckets_probed = 0;
+    shared_ptr<hash_node> node = InitNode(key, hash, value);
+    while (buckets_probed < tbl->table->size()) {
+        if (tbl->table->at(bucket_idx) == nullptr) {
+            tbl->table->at(bucket_idx) = node;
+            tbl->occupied++;
+            tbl->size++;
+            return true;
+        }
+            else if (tbl->table->at(bucket_idx)->key == key) {
+            tbl->table->at(bucket_idx)->value = value;
+            return true;
+        }
+        bucket_idx = (bucket_idx + 1) % tbl->table->size();
+        buckets_probed++;
+    }
+    return false;
+}
+\end{verbatim}
+
+\end{highlight}

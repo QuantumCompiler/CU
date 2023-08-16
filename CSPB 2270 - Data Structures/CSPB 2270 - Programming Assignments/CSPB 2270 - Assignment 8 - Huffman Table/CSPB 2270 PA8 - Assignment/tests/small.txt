@@ -1,0 +1,5 @@
+this is a small
+text file
+ it has words
+    also    tabs
+no punctuation

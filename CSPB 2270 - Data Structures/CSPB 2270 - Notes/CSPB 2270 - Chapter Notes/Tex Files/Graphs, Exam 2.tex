@@ -1,0 +1,582 @@
+\clearpage
+
+\chapter{Week 11}
+
+\section{Graphs}
+
+\horizontalline
+
+\subsection{Activities}
+
+The following are the activities that are planned for Week 11 of this course.
+
+\begin{itemize}
+    \item Exam \#2 (Friday Aug 4th, 10 am - 10 pm)
+    \item Read zyBooks Chapter 16 and work on book activities
+    \item Watch lecture videos
+    \item Start on Graphs Homework
+\end{itemize}
+
+\subsection{Lectures}
+
+Here are the lectures that can be found for this week:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46043}{Intro To Graphs}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46044}{Implementing Graphs}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46045}{Graph Metadata}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46046}{Star Wars Graph}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46047}{Depth First Search}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46048}{Breadth First Search}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46049}{Directed Acyclic Graphs}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46050}{Spanning Trees \& Edge Types}
+\end{itemize}
+
+\subsection{Programming Assignment}
+
+The programming assignment for Week 11 - \href{https://github.com/cu-cspb-2270-Summer-2023/pa9-RelativiBit}{Graphs}
+
+\subsection{Chapter 16 - Graphs}
+
+The chapter of this week is Chapter 16 - Graphs.
+
+\subsection*{Sec. 16.1 - Graphs: Introduction}
+
+\subsubsection{Overview}
+
+In computer science, graphs are fundamental data structures used to model and analyze various relationships and connections between objects. A graph consists of a set of vertices (or nodes) and a 
+collection of edges that represent the connections between those vertices. Graphs are extensively employed in various domains, such as network analysis, social networks, routing algorithms, 
+optimization problems, and data visualization. They provide a powerful framework for solving complex problems, enabling efficient representation and manipulation of interconnected data, and 
+facilitating the exploration and analysis of relationships within a system or dataset. Graph algorithms and techniques, ranging from basic traversal and path finding to more advanced algorithms like 
+spanning trees and shortest paths, play a crucial role in solving a wide range of computational problems in computer science.
+
+\subsubsection{Adjacency \& Paths}
+
+In graph theory, adjacency and paths are key concepts used to analyze the relationships and connectivity within a graph. Adjacency refers to the relationship between two vertices in a graph that are 
+directly connected by an edge. It represents the presence or absence of a connection between vertices and forms the basis for many graph algorithms and operations. Paths, on the other hand, are sequences 
+of edges that connect a series of vertices in a graph. They represent routes or connections between vertices and can be used to determine the existence of a path between two vertices, find the shortest 
+path, or explore various paths within a graph. The study of adjacency and paths in graphs is crucial for understanding the connectivity and structure of data, and it enables the development of algorithms 
+that solve complex problems in fields such as network routing, social network analysis, and optimization.
+
+\subsection*{Sec. 16.2 - Applications of Graphs}
+
+Graphs find extensive applications in various fields due to their ability to model and analyze relationships and connections. In computer science, graphs are utilized for network analysis, social network 
+analysis, routing algorithms, and data visualization. They are also widely used in logistics and transportation for route planning and optimization. In biology, graphs help represent gene interactions, 
+protein networks, and evolutionary relationships. Graphs are applied in recommendation systems to analyze user preferences and make personalized suggestions. Furthermore, graphs are valuable in finance 
+for risk analysis, fraud detection, and portfolio optimization. Overall, the applications of graphs span diverse domains, providing a versatile framework for solving complex problems and gaining insights 
+from interconnected data structures.
+
+\subsection*{Sec. 16.3 - Graph Representations: Adjacency Lists}
+
+\subsubsection{Overview}
+
+Graphs can be represented in various ways, and one common representation is through adjacency lists. In this representation, each vertex in the graph is associated with a list that contains its adjacent 
+vertices. The adjacency list efficiently captures the connectivity of the graph by storing only the necessary information. It allows for quick access to a vertex's neighbors and enables efficient traversal 
+of the graph. Moreover, it requires less space compared to other representations, especially for sparse graphs. Adjacency lists are widely used in graph algorithms and applications where efficient neighbor 
+access and memory optimization are essential, making them a popular choice for representing graphs in computer science.
+
+\subsubsection{Advantages of Adjacency Lists}
+
+Adjacency lists offer several advantages as a graph representation. Firstly, they are memory-efficient, especially for sparse graphs, as they only store the necessary information about the connections between 
+vertices. This allows for significant space savings compared to other representations, such as adjacency matrices. Secondly, adjacency lists facilitate efficient neighbor access. Given a vertex, its adjacent 
+vertices can be quickly retrieved by accessing the associated list. This enables efficient graph traversal and exploration of neighboring relationships. Additionally, adjacency lists can be easily modified, 
+as adding or removing edges requires updating only the relevant lists. Overall, adjacency lists strike a balance between memory efficiency and efficient neighbor access, making them a popular choice in scenarios 
+where memory optimization and efficient graph operations are crucial.
+
+\subsection*{Sec. 16.4 - Graph Representations: Adjacency Matrices}
+
+\subsubsection{Overview}
+
+Adjacency matrices are a commonly used representation for graphs. In this approach, a matrix is utilized to indicate the connections between vertices. Each row and column of the matrix correspond to a vertex, and 
+the entry at the intersection of a row and column represents whether an edge exists between the respective vertices. Adjacency matrices provide a straightforward and intuitive representation, allowing for easy 
+identification of edge presence and absence. They also enable efficient lookup of edge information. However, they can be memory-intensive, especially for large and sparse graphs, as the matrix size is proportional 
+to the square of the number of vertices. Despite this drawback, adjacency matrices are preferred in situations where edge queries are frequent and memory constraints are not a significant concern.
+
+\subsubsection{Efficiency}
+
+Adjacency matrices offer several efficiency advantages as a graph representation. First and foremost, they provide constant-time lookup for determining edge existence between two vertices. This makes adjacency matrices 
+highly efficient for querying edge information. Additionally, adjacency matrices allow for efficient computation of various graph properties, such as the degree of a vertex, the number of edges in the graph, and checking 
+for self-loops. They also facilitate efficient matrix operations, enabling algebraic operations on graphs, such as matrix exponentiation for calculating paths and reachability. However, adjacency matrices can be 
+memory-intensive, especially for large graphs or sparse graphs, where most entries in the matrix are zero. In such cases, the memory overhead can be significant, leading to inefficiencies. Therefore, the choice of using 
+adjacency matrices depends on the specific requirements of the application, considering the trade-off between efficiency and memory usage.
+
+\subsection*{Sec. 16.5 - Graphs: Breadth-First Search}
+
+\subsubsection{Overview}
+
+Breadth-first search (BFS) is a fundamental graph traversal algorithm that systematically explores a graph by visiting all the vertices at the same level before moving on to the next level. Starting from a given source 
+vertex, BFS explores all the vertices that are reachable in one hop before moving on to the vertices reachable in two hops, and so on. It utilizes a queue data structure to keep track of the vertices to be visited, ensuring 
+that vertices closer to the source are visited before those farther away. BFS is widely used in various applications such as finding the shortest path, determining connectivity, and discovering all the vertices within a certain 
+distance from a source vertex. Its simplicity, ability to find the shortest path in unweighted graphs, and guarantee of visiting all reachable vertices make it a valuable algorithm in graph theory and computer science.
+
+\subsubsection{Breadth-First Search Algorithm}
+
+The Breadth-First Search (BFS) algorithm is a fundamental graph traversal technique used to systematically explore a graph. Starting from a given source vertex, BFS explores all the vertices at the same level before moving on to 
+the next level. It uses a queue data structure to manage the order in which vertices are visited. By maintaining a visited set, BFS ensures that each vertex is visited only once, preventing infinite loops in graphs with cycles. 
+BFS is particularly useful for finding the shortest path between two vertices in an unweighted graph and for exploring all reachable vertices from a given source. Its time complexity is linear in the number of vertices and edges 
+in the graph, making it an efficient algorithm for graph exploration and path finding.
+
+\begin{solution}[BFS Algorithm Example]
+
+Below is an example of the breadth first search algorithm in the context of C++:
+
+\horizontalline
+
+\begin{verbatim}
+// Breadth-First Search implementation
+void BFS(int startVertex) {
+    vector<bool> visited(numVertices, false); // Track visited vertices
+    queue<int> bfsQueue; // Queue for BFS traversal
+
+    visited[startVertex] = true;
+    bfsQueue.push(startVertex);
+
+    while (!bfsQueue.empty()) {
+        int currVertex = bfsQueue.front();
+        bfsQueue.pop();
+
+        cout << currVertex << " ";
+
+        for (int neighbor : adjList[currVertex]) {
+            if (!visited[neighbor]) {
+                visited[neighbor] = true;
+                bfsQueue.push(neighbor);
+            }
+        }
+    }
+}
+\end{verbatim}
+
+\horizontalline
+
+\noindent The Breadth-First Search (BFS) algorithm is implemented in the provided C++ code. It starts from a given vertex and explores its neighboring vertices at the same level before moving on to the next level. The algorithm uses 
+a queue to manage the order of vertex visits and a visited array to keep track of the visited vertices. During the BFS traversal, each visited vertex is printed, ensuring that all reachable vertices are visited exactly once. The example 
+code demonstrates the usage of the BFS algorithm on a graph with 6 vertices, showcasing the order in which the vertices are visited.
+    
+\end{solution}
+
+\subsection*{Sec. 16.6 - Graphs: Depth-First Search}
+
+\subsubsection{Overview}
+
+Depth-First Search (DFS) is a popular graph traversal algorithm that systematically explores a graph by traversing as far as possible along each branch before backtracking. Starting from a given source vertex, DFS visits an adjacent unvisited 
+vertex and continues recursively until it reaches a vertex with no unvisited neighbors. It then backtracks to the previous vertex and explores any remaining unvisited neighbors. This process continues until all vertices have been visited. 
+DFS is commonly used for applications like finding connected components, detecting cycles, and exploring paths in graphs. Its simplicity and ability to deeply explore a graph make it a valuable algorithm in graph theory and computer science.
+
+\subsubsection{Depth-First Search Algorithm}
+
+The Depth-First Search (DFS) algorithm is a fundamental graph traversal technique that systematically explores a graph by traversing as deeply as possible before backtracking. Starting from a given source vertex, DFS visits an adjacent unvisited 
+vertex and continues recursively until it reaches a vertex with no unvisited neighbors. It then backtracks to the previous vertex and explores any remaining unvisited neighbors. This process continues until all vertices have been visited. DFS is 
+widely used for applications such as finding connected components, detecting cycles, and exploring paths in graphs. Its recursive nature and ability to deeply explore a graph make it a powerful algorithm in graph theory and computer science.
+
+\begin{solution}[Depth-First Search Algorithm Example]
+
+Below is an example of the depth first search algorithm in the context of C++:
+
+\horizontalline
+
+\begin{verbatim}
+// Recursive Depth-First Search implementation
+void RecursiveDFS(int currentV, unordered_set<int>& visitedSet) {
+    if (visitedSet.find(currentV) == visitedSet.end()) {
+        visitedSet.insert(currentV);
+        cout << "Visit " << currentV << endl;
+
+        for (int adjV : adjList[currentV]) {
+            RecursiveDFS(adjV, visitedSet);
+        }
+    }
+}
+\end{verbatim}
+
+\horizontalline
+
+\noindent The provided C++ code implements the Depth-First Search (DFS) algorithm for graph traversal. The `RecursiveDFS' function recursively explores the graph starting from a given vertex. It maintains a 
+set of visited vertices to avoid revisiting already visited vertices. During the traversal, each vertex is "visited" by printing its value. The algorithm recursively explores all adjacent unvisited 
+vertices until no further unvisited neighbors are found, at which point it backtracks to the previous vertex. The code demonstrates the usage of the DFS algorithm on a graph with 6 vertices, showcasing 
+the order in which the vertices are visited.
+    
+\end{solution}
+
+\subsection*{Sec. 16.7 - Directed Graphs}
+
+\subsubsection{Overview}
+
+Directed graphs, also known as digraphs, are a type of graph in which the edges have a specific direction. In a directed graph, each edge is associated with an ordered pair of vertices, indicating a one-way 
+connection from one vertex (the source) to another vertex (the target). This directional nature of edges allows directed graphs to model various real-world scenarios such as transportation networks, social 
+media relationships, information flow, and dependencies between tasks. Directed graphs provide a powerful framework for analyzing asymmetric relationships and capturing the flow of information or influence 
+in a system. They are widely used in fields like computer science, network analysis, social network analysis, and operations research for solving problems that require modeling and analyzing directional 
+relationships and dependencies.
+
+\subsubsection{Paths \& Cycles}
+
+In directed graphs, paths and cycles play significant roles in understanding and analyzing the structure and dynamics of the graph. A path in a directed graph is a sequence of vertices connected by directed 
+edges, where each vertex is the target of the previous edge and the source of the subsequent edge. Paths can represent various relationships or sequences of actions in a directed graph. A cycle, on the other 
+hand, is a closed path that starts and ends at the same vertex, allowing for repeated visits to vertices. Cycles can signify recurring patterns or feedback loops within a directed graph. Analyzing paths and 
+cycles in directed graphs helps in understanding connectivity, reachability, and the flow of information or processes within the graph. It enables the identification of optimal routes, detection of dependencies 
+or bottlenecks, and analysis of system behavior in various domains such as network routing, task scheduling, and circuit design.
+
+\subsection*{Sec. 16.8 - Weighted Graphs}
+
+\subsubsection{Overview}
+
+Weighted graphs are a type of graph where each edge is assigned a numerical value or weight. These weights represent the cost, distance, or any other quantitative measure associated with traversing the edge. 
+Weighted graphs are used to model real-world scenarios where the relationships between vertices have different magnitudes or significance. They are commonly employed in applications such as transportation networks, 
+route planning, resource allocation, and optimization problems. Weighted graphs enable the analysis of the shortest paths between vertices based on the accumulated weights, allowing for efficient route optimization 
+and decision-making. Algorithms like Dijkstra's algorithm and the Bellman-Ford algorithm are specifically designed to handle weighted graphs and determine the optimal paths based on the assigned weights. The 
+introduction of weights in graphs adds a new dimension to their representation, enabling a more accurate and detailed modeling of various systems and phenomena.
+
+\subsubsection{Path Length}
+
+In weighted graphs, path length refers to the sum of the weights of the edges along a given path. It represents the total cost, distance, or any other quantitative measure required to traverse the path from the 
+source vertex to the destination vertex. Path length is a crucial metric in analyzing weighted graphs as it allows for evaluating the efficiency, optimality, and comparison of different paths. Determining the 
+shortest path, which has the minimum path length, is a common problem in weighted graph analysis. Various algorithms, such as Dijkstra's algorithm and the A* algorithm, are designed to calculate the shortest path 
+by considering the weights of the edges. Path length in weighted graphs is essential in applications such as route planning, network optimization, resource allocation, and scheduling, as it helps in making informed 
+decisions and finding the most efficient paths based on the assigned weights.
+
+\subsubsection{Negative Edge Weigth Cycle}
+
+Negative edge weight cycles are cycles in weighted graphs where the sum of the weights along the cycle is negative. These cycles introduce unique challenges and considerations in graph analysis. Unlike positive cycles 
+that can simply be ignored for finding shortest paths, negative cycles can lead to ambiguous or infinite path lengths. They can disrupt traditional algorithms like Dijkstra's algorithm or the Bellman-Ford algorithm, 
+which assume non-negative weights, and cause them to produce incorrect or undefined results. Negative edge weight cycles can arise in scenarios such as financial transactions with debts, time-travel scenarios, or scenarios 
+involving resource allocation. Detecting and handling negative cycles in graph analysis often involves specialized algorithms like the Bellman-Ford algorithm with cycle detection or the Floyd-Warshall algorithm. Understanding 
+and managing negative edge weight cycles is crucial for accurate analysis and decision-making in situations where negative weights are present in the graph.
+
+\subsection*{Sec. 16.9 - Algorithm: Dijkstra's Shortest Path}
+
+Dijkstra's algorithm is a popular and efficient algorithm for finding the shortest path between a source vertex and all other vertices in a weighted graph. It operates by maintaining a set of visited vertices and a set 
+of tentative distances from the source vertex to each vertex in the graph. Initially, all tentative distances are set to infinity except for the source vertex, which is set to 0. The algorithm iteratively selects the vertex 
+with the minimum tentative distance, known as the "greedy" step, and updates the distances of its neighboring vertices if a shorter path is found. By repeating this process until all vertices have been visited, Dijkstra's 
+algorithm effectively computes the shortest path from the source vertex to every other vertex. The algorithm's time complexity depends on the implementation, typically ranging from $\mathcal{O}(V^2)$ to $\mathcal{O}((V+E)\log{(V)})$, 
+where $V$ represents the number of vertices and $E$ denotes the number of edges in the graph. Dijkstra's algorithm is widely used in various applications such as route planning, network routing, and resource allocation.
+
+\begin{solution}[Dijkstra's Shortest Path Algorithm Example]
+
+Below is an example of Dijkstra's shortest path algorithm in the context of C++:
+
+\horizontalline
+
+\begin{verbatim}
+// Dijkstra's Shortest Path Algorithm
+void DijkstraShortestPath(int startV) {
+    // Create an array of vertices
+    vector<Vertex> vertices(numVertices);
+
+    // Initialize vertices
+    for (int i = 0; i < numVertices; i++) {
+        vertices[i].id = i;
+        vertices[i].distance = numeric_limits<int>::max();
+        vertices[i].predV = -1;
+    }
+
+    // Start vertex has a distance of 0 from itself
+    vertices[startV].distance = 0;
+
+    // Priority queue to store unvisited vertices
+    priority_queue<pair<int, int>, vector<pair<int, int>>, 
+        greater<pair<int, int>>> unvisitedQueue;
+
+    // Enqueue startV
+    unvisitedQueue.push(make_pair(vertices[startV].distance, startV));
+
+    while (!unvisitedQueue.empty()) {
+        // Dequeue vertex with minimum distance from startV
+        int currentV = unvisitedQueue.top().second;
+        unvisitedQueue.pop();
+
+        for (auto neighbor : adjList[currentV]) {
+            int adjV = neighbor.first;
+            int edgeWeight = neighbor.second;
+            int alternativePathDistance = vertices[currentV].distance + edgeWeight;
+
+            // If shorter path from startV to adjV is found,
+            // update adjV's distance and predecessor
+            if (alternativePathDistance < vertices[adjV].distance) {
+                vertices[adjV].distance = alternativePathDistance;
+                vertices[adjV].predV = currentV;
+
+                // Enqueue updated vertex
+                unvisitedQueue.push(make_pair(vertices[adjV].distance, adjV));
+            }
+        }
+    }
+
+    // Print shortest path distances and predecessors
+    cout << "Vertex\tDistance\tPredecessor" << endl;
+    for (const auto& vertex : vertices) {
+        cout << vertex.id << "\t" << vertex.distance << "\t\t" 
+            << vertex.predV << endl;
+    }
+}
+\end{verbatim}
+
+\horizontalline
+
+Dijkstra's Shortest Path Algorithm is implemented in the provided C++ code. It finds the shortest path between a given source vertex and all other vertices in a weighted graph. The algorithm initializes the distances of all 
+vertices to infinity except for the source vertex, which is set to 0. It uses a priority queue to greedily select the vertex with the smallest tentative distance and updates the distances and predecessors of its neighboring 
+vertices if a shorter path is found. This process continues until all vertices have been visited. Finally, the algorithm outputs the shortest path distances and predecessors for each vertex. The code demonstrates the application 
+of Dijkstra's algorithm on a graph with 6 vertices, providing the shortest path information starting from a specified source vertex.
+
+\end{solution}
+
+\subsection*{Sec. 16.10 - Algorithm: Bellman-Ford's Shortest Path}
+
+Bellman-Ford's Shortest Path Algorithm is a dynamic programming-based algorithm used to find the shortest path between a source vertex and all other vertices in a weighted graph. The algorithm works by iteratively relaxing the 
+edges of the graph, reducing the estimated distance from the source vertex to each vertex. It initializes the distance of the source vertex to 0 and sets the distance of all other vertices to infinity. By repeatedly relaxing each 
+edge in the graph, the algorithm guarantees to find the shortest paths in the presence of negative edge weights and detects negative cycles. After a maximum of V-1 iterations (V being the number of vertices), Bellman-Ford's algorithm 
+produces the shortest path distances and predecessors for each vertex. This algorithm is widely used in various applications where negative edge weights and negative cycles need to be handled, such as network routing and resource 
+allocation problems.
+
+\begin{solution}[Bellman-Ford's Shortest Path Algorithm Example]
+
+Below is an example of Bellman-Ford's shortest path algorithm in the context of C++:
+
+\horizontalline
+
+\begin{verbatim}
+// Bellman-Ford's Shortest Path Algorithm
+void BellmanFord(int startV) {
+    // Initialize vertices
+    for (int i = 0; i < numVertices; i++) {
+        vertices[i].id = i;
+        vertices[i].distance = numeric_limits<int>::max();
+        vertices[i].predV = -1;
+    }
+
+    // Start vertex has a distance of 0 from itself
+    vertices[startV].distance = 0;
+
+    // Relax edges iteratively (V - 1) times
+    for (int i = 1; i < numVertices; i++) {
+        for (const auto& edge : edges) {
+            int src = edge.src;
+            int dest = edge.dest;
+            int weight = edge.weight;
+            int altPathDistance = vertices[src].distance + weight;
+
+            // If shorter path from startV to dest is found,
+            // update dest's distance and predecessor
+            if (altPathDistance < vertices[dest].distance) {
+                vertices[dest].distance = altPathDistance;
+                vertices[dest].predV = src;
+            }
+        }
+    }
+
+    // Check for negative weight cycle
+    for (const auto& edge : edges) {
+        int src = edge.src;
+        int dest = edge.dest;
+        int weight = edge.weight;
+        int altPathDistance = vertices[src].distance + weight;
+
+        if (altPathDistance < vertices[dest].distance) {
+            cout << "Negative weight cycle detected!" << endl;
+            return;
+        }
+    }
+
+    // Print shortest path distances and predecessors
+    cout << "Vertex\tDistance\tPredecessor" << endl;
+    for (const auto& vertex : vertices) {
+        cout << vertex.id << "\t" << vertex.distance << "\t\t" << vertex.predV << endl;
+    }
+}
+\end{verbatim}
+
+\horizontalline
+
+The provided C++ code implements the Bellman-Ford's Shortest Path Algorithm. This algorithm finds the shortest path between a source vertex and all other vertices in a weighted graph. It initializes the distances of all vertices to 
+infinity except for the source vertex, which is set to 0. Then, it iteratively relaxes the edges V-1 times, updating the distances and predecessors whenever a shorter path is discovered. The algorithm also checks for the presence of 
+negative weight cycles. Finally, it outputs the shortest path distances and predecessors for each vertex. The code demonstrates the application of the Bellman-Ford algorithm on a graph with 5 vertices and 7 edges, providing the shortest 
+path information starting from a specified source vertex.
+    
+\end{solution}
+
+\subsection*{Sec. 16.11 - Topological Sort}
+
+\subsubsection{Overview}
+
+Topological sort is an algorithm used to linearly order the vertices of a directed graph such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. The topological sort is only applicable to directed 
+acyclic graphs (DAGs) since cyclic graphs do not have a valid topological ordering. The algorithm starts by selecting a vertex with no incoming edges, called a source vertex, and adds it to the result. It then removes the source vertex 
+and its outgoing edges from the graph. This process is repeated until all vertices have been processed. Topological sort is commonly used in tasks that require a specific order of operations or dependencies, such as scheduling tasks, 
+resolving dependencies, and compiling software. It provides a consistent and deterministic way to organize the vertices of a directed graph based on their dependencies.
+
+\subsubsection{Topological Sort Algorithm}
+
+The Topological Sort algorithm is used to linearly order the vertices of a directed acyclic graph (DAG) based on their dependencies. It starts by selecting a vertex with no incoming edges, known as a source vertex, and adds it to the result. 
+The algorithm then removes the source vertex and its outgoing edges from the graph. This process is repeated until all vertices have been processed. Topological sort provides a consistent and deterministic ordering of the vertices, ensuring 
+that no vertex comes before its dependencies. It is commonly used in various applications, such as task scheduling, dependency resolution, and building project plans, where a specific order of operations or dependencies needs to be established.
+
+\begin{solution}[Topological Sort Algorithm Example]
+
+Below is an example of the topological sort algorithm in the context of C++:
+
+\horizontalline
+
+\begin{verbatim}
+// Function to perform topological sort
+vector<int> topologicalSort() {
+    vector<int> resultList; // List of vertices in topological order
+    vector<int> incomingCount(numVertices, 0); // Incoming edge count for each vertex
+    list<int> noIncoming; // List of vertices with no incoming edges
+
+    // Calculate incoming edge count for each vertex
+    for (int i = 0; i < numVertices; i++) {
+        for (int j : adjList[i]) {
+            incomingCount[j]++;
+        }
+    }
+
+    // Add vertices with no incoming edges to the noIncoming list
+    for (int i = 0; i < numVertices; i++) {
+        if (incomingCount[i] == 0) {
+            noIncoming.push_back(i);
+        }
+    }
+
+    // Perform topological sort
+    while (!noIncoming.empty()) {
+        int currentV = noIncoming.front();
+        noIncoming.pop_front();
+        resultList.push_back(currentV);
+
+        for (int j : adjList[currentV]) {
+            incomingCount[j]--;
+
+            if (incomingCount[j] == 0) {
+                noIncoming.push_back(j);
+            }
+        }
+    }
+
+    return resultList;
+}
+\end{verbatim}
+
+\horizontalline
+
+The provided C++ code implements the topological sort algorithm. Topological sort is used to linearly order the vertices of a directed acyclic graph (DAG) based on their dependencies. The algorithm starts by identifying the 
+vertices with no incoming edges, adds them to the result list, and removes their outgoing edges. This process is repeated until all vertices have been processed. Topological sort provides an ordering of the vertices that satisfies 
+the dependencies within the graph. The code demonstrates the application of the topological sort algorithm on a graph, displaying the order in which the vertices should be processed to maintain the graph's dependency structure.
+    
+\end{solution}
+
+\subsection*{Sec. 16.12 - Minimum Spanning Tree}
+
+\subsubsection{Overview}
+
+A minimum spanning tree (MST) is a subset of edges in a connected, weighted graph that connects all vertices while minimizing the total weight or cost of the tree. The goal of finding an MST is to identify the set of edges that form 
+a tree with the smallest possible sum of weights. MSTs are useful in various applications such as network design, transportation planning, and communication networks. Popular algorithms for finding the MST include Prim's algorithm and 
+Kruskal's algorithm. By constructing an MST, we can ensure efficient and cost-effective connections between vertices, optimizing the use of resources and minimizing overall costs in a given graph.
+
+\subsubsection{Kruskal MST Algorithm}
+
+Kruskal's algorithm is a widely used algorithm for finding a minimum spanning tree (MST) in a connected, weighted graph. The algorithm works by initially treating each vertex as a separate component and sorting the edges of the graph 
+in non-decreasing order of their weights. It then iterates through the sorted edges, adding them to the MST if they do not create a cycle. This process continues until all vertices are connected, resulting in the construction of a minimum 
+spanning tree. Kruskal's algorithm is efficient and guarantees the creation of an MST, making it a popular choice for various applications such as network design, cable layout planning, and clustering.
+
+\begin{solution}[Kruskal MST Algorithm Example]
+
+Below is an example of Kruskal's minimum spanning tree algorithm in the context of C++:
+
+\horizontalline
+
+\begin{verbatim}
+// Kruskal's Minimum Spanning Tree Algorithm
+vector<Edge> kruskalsMinimumSpanningTree() {
+    sort(edgeList.begin(), edgeList.end(), [](const Edge& a, const Edge& b) {
+        return a.weight < b.weight;
+    });
+
+    vector<int> parent(numVertices, -1); // Array to track parent of each vertex
+    vector<Edge> resultList; // List of edges in the minimum spanning tree
+
+    for (int i = 0; i < numVertices; i++) {
+        parent[i] = i;
+    }
+
+    int edgesAdded = 0;
+    int index = 0;
+
+    while (edgesAdded < numVertices - 1 && index < edgeList.size()) {
+        Edge nextEdge = edgeList[index];
+        int set1 = findParent(parent, nextEdge.vertex1);
+        int set2 = findParent(parent, nextEdge.vertex2);
+
+        if (set1 != set2) {
+            resultList.push_back(nextEdge);
+            unionSets(parent, set1, set2);
+            edgesAdded++;
+        }
+
+        index++;
+    }
+
+    return resultList;
+}
+\end{verbatim}
+
+\horizontalline
+
+The provided C++ code implements Kruskal's algorithm for finding a minimum spanning tree (MST) in a weighted graph. The algorithm starts by sorting the edges of the graph in non-decreasing order of their weights. It then iterates 
+through the sorted edges and adds them to the MST if they do not create a cycle. This is achieved by maintaining a collection of vertex sets and checking if the vertices of the current edge belong to different sets. The algorithm 
+performs union operations on the sets and keeps track of the added edges. It terminates when either all vertices are connected or there are no more edges to consider. Finally, it returns the set of edges forming the MST. The code 
+demonstrates the application of Kruskal's algorithm on a graph, displaying the edges of the minimum spanning tree along with their weights.
+    
+\end{solution}
+
+\subsection*{Sec. 16.13 - All Pairs Shortest Path}
+
+\subsubsection{Overview}
+
+All pairs shortest path is an algorithmic problem that aims to find the shortest path between all pairs of vertices in a directed or undirected weighted graph. The problem is to determine the minimum path length between any two 
+vertices in the graph, considering all possible pairs. Various algorithms can solve the all pairs shortest path problem, such as Floyd-Warshall algorithm and Johnson's algorithm. These algorithms use dynamic programming or graph 
+traversal techniques to calculate the shortest path distances between all pairs of vertices efficiently. All pairs shortest path is applicable in diverse domains like transportation networks, routing protocols, and optimization 
+problems, enabling efficient route planning and network analysis by identifying the shortest paths between any given pair of vertices in a graph.
+
+\subsubsection{Floyd-Warshall Algorithm}
+
+The Floyd-Warshall algorithm is a dynamic programming algorithm used to find the shortest path between all pairs of vertices in a directed or undirected weighted graph. It constructs a matrix of shortest path distances by iteratively 
+considering intermediate vertices as potential waypoints in the paths. The algorithm compares the direct distance between vertices with the distances via intermediate vertices and updates the matrix accordingly. By performing a series 
+of updates for each vertex as an intermediate point, Floyd-Warshall algorithm efficiently computes the shortest path distances between all pairs of vertices. It is particularly useful for dense graphs or graphs with negative edge weights. 
+The resulting matrix provides valuable information about the shortest paths, allowing for efficient route planning, network analysis, and solving optimization problems in various domains.
+
+\begin{solution}[Floyd-Warshall Algorithm Example]
+
+Below is an example of the Floyd-Warshall algorithm in the context of C++:
+
+\horizontalline
+
+\begin{verbatim}
+// Floyd-Warshall All Pairs Shortest Path Algorithm
+vector<vector<int>> floydWarshallAllPairsShortestPath() {
+    for (int i = 0; i < numVertices; i++) {
+        distMatrix[i][i] = 0;
+    }
+
+    for (int k = 0; k < numVertices; k++) {
+        for (int toIndex = 0; toIndex < numVertices; toIndex++) {
+            for (int fromIndex = 0; fromIndex < numVertices; fromIndex++) {
+                int currentLength = distMatrix[fromIndex][toIndex];
+                int possibleLength = distMatrix[fromIndex][k] + distMatrix[k][toIndex];
+                if (possibleLength < currentLength) {
+                    distMatrix[fromIndex][toIndex] = possibleLength;
+                }
+            }
+        }
+    }
+
+    return distMatrix;
+}
+\end{verbatim}
+
+\horizontalline
+
+The provided C++ code implements the Floyd-Warshall algorithm for finding the shortest path between all pairs of vertices in a directed or undirected weighted graph. The algorithm utilizes a distance matrix to store the shortest 
+path distances between vertices. It initializes the matrix by setting all values to infinity, except for distances from each vertex to itself which are set to 0. It then iterates through intermediate vertices and updates the matrix 
+by comparing the current distance with the possible distance via the intermediate vertex. If a shorter path is found, the matrix is updated accordingly. By performing a series of updates, the algorithm efficiently computes the 
+shortest path distances between all pairs of vertices. The resulting distance matrix provides valuable information about the shortest paths, allowing for efficient route planning, network analysis, and solving optimization problems 
+in various domains.
+    
+\end{solution}

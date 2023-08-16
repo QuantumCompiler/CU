@@ -1,0 +1,186 @@
+\section*{Memory Allocation}
+
+\subsection*{Overview}
+
+Memory allocation in C++ refers to the process of assigning and managing memory for variables, objects, and data structures during program execution. C++ provides two main ways of allocating memory: 
+stack allocation and heap allocation. Stack allocation, performed automatically by the compiler, is used for local variables and function calls, and the memory is automatically reclaimed when variables 
+go out of scope. Heap allocation, on the other hand, allows dynamic memory allocation using operators like `new' and `delete', providing flexibility in managing memory for objects that have a longer 
+lifespan or unknown size at compile time. Proper memory allocation and deallocation are important for avoiding memory leaks, optimizing resource usage, and ensuring program stability and performance.
+
+\subsection*{Stack Allocation}
+
+Stack allocation pertains to the memory allocation of a C++ program at runtime. It is used for local variables, as well as function calls. When these types of variables or calls go out of scope 
+(scope refers to the region of a program where a particular variable or identifier is visible and can be accessed) then the memory is deallocated and reclaimed. The stack for a given program has
+a limited size and if one exceeds its capacity, then stack overflow can occur (stack overflow occurs when the call stack, which is a limited region of memory used for function calls and local variables, 
+exceeds its allocated size). Some common examples of stack allocation can be seen below:
+
+\begin{itemize}
+    \item \textbf{Array Variables:} When one defines an array with a fixed size, the memory for that array is allocated to the stack. This can apply to other data structures such as lists as well.
+    \item \textbf{Function Calls:} When a function is called in a program, the function parameters and local variables are allocated to the stack. When this function is finished executing, the memory that
+    was allocated is reclaimed.
+    \item \textbf{Local Variables:} When a variable is defined inside a function or a block, the memory for that variable is allocated on the stack. Similarly to these other examples, when the local variable
+    goes out of scope it is reclaimed.
+    \item \textbf{Recursive Functions:} Since recursive functions are essentially calls to functions (the same function inside a function) the memory for these calls are allocated on the stack. The same is true
+    for when the call terminates or goes out of scope in the context of deallocating the memory.s
+\end{itemize}
+
+\noindent To demonstrate this further we will look at example of this type of memory allocation.
+
+\begin{highlight}[Stack Allocation Example]
+
+Below we have a simple example of stack allocation in C++:
+
+\begin{code}
+#include <iostream>
+
+int main() {
+    int x = 5;  // Stack-allocated variable
+
+    // Print the value of x
+    std::cout << "The value of x: " << x << std::endl;
+
+    {
+        int y = 10;  // Stack-allocated variable inside a nested scope
+
+        // Print the value of y
+        std::cout << "The value of y: " << y << std::endl;
+    }
+
+    // y is out of scope here and no longer accessible
+
+    return 0;
+}    
+\end{code}
+
+The above example demonstrates defining local variables to the stack. The variable `y' in this case no longer becomes accessible when it leaves the scope of its definition. The same can be said for
+the variable `x' when the program finishes execution, it is not longer available and thus the memory that it consumed is reclaimed.
+
+\end{highlight}
+
+\subsection*{Heap Allocation}
+
+Heap allocation pertains to the allocation of memory that is `dynamic'. Dynamic in this context simply means that the memory that is consumed by the variable type or data structure is allocated at runtime
+(runtime refers to when a program is executing not when it is compiled) and must be deallocated. Heap allocation is usually defined with keywords like `new' and the deallocation is usually referred to with
+`delete'. When discussing heap allocation, one usually discusses the concept of pointers. Traditional pointers require the manual deallocation of memory when it is no longer needed. Smart pointers on the other
+hand operate similarly to that of stack allocation in that the memory that is consumed by a variable or data structure is reclaimed when that variable or data structure goes out of scope. Some examples of the
+types of heap allocation can be seen below:
+
+\begin{highlight}[Heap Allocation Example]
+
+Below is an example of heap allocation in C++:
+
+\begin{code}
+#include <iostream>
+
+int main() {
+    // Heap allocation
+    int* ptr = new int[5];  // Allocate an array of 5 integers on the heap
+
+    // Assign values to the array elements
+    for (int i = 0; i < 5; i++) {
+        ptr[i] = i + 1;
+    }
+
+    // Print the array elements
+    for (int i = 0; i < 5; i++) {
+        std::cout << ptr[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Heap reallocation
+    int* newPtr = new int[10];  // Allocate a new array of 10 integers on the heap
+
+    // Copy elements from the original array to the new array
+    for (int i = 0; i < 5; i++) {
+        newPtr[i] = ptr[i];
+    }
+
+    // Release the memory occupied by the original array
+    delete[] ptr;
+
+    // Print the elements of the new array
+    for (int i = 0; i < 10; i++) {
+        std::cout << newPtr[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Release the memory occupied by the new array
+    delete[] newPtr;
+
+    return 0;
+}    
+\end{code}
+
+The above example demonstrates the allocation and deallocation of memory with the use of heap allocation. This memory is only being allocated at runtime instead of at compile. Failure to properly 
+release memory from the stack can cause what is referred to as a memory leak. Memory leaks are when heap allocation is not properly freed and it can cause problems with the execution of program up
+to the point where a program can actually run out of memory. This can simply be avoided with the use of smart pointers.
+
+\end{highlight}
+
+Unlike stack allocation, the types of variables that can be allocated on the heap are limitless. The main issue that arises when dealing with heap allocation is when dealing with reference and pointer
+parameters. The differences between the two parameters can be seen below:
+
+\begin{itemize}
+    \item \textbf{Pointer Parameter:} A pointer parameter is declared using the `*' symbol and requires the use of pointer syntax when passing arguments.
+    \item \textbf{Reference Parameter:} A reference parameter is declared using the `\&' symbol and allows the function to directly access and modify the value of the variable passed as an argument.
+\end{itemize}
+
+\noindent This can best be understood with an example, as seen below.
+
+\begin{highlight}[Pointer \& Reference Parameter Example]
+    
+Below is an example of working with pointer and reference parameters in C++:
+
+\begin{code}
+#include <iostream>
+
+// Reference parameter example
+void modifyByReference(int& value) {
+    value += 10;
+}
+
+// Pointer parameter example
+void modifyByPointer(int* value) {
+    (*value) += 10;
+}
+
+int main() {
+    int num = 5;
+
+    // Pass num as a reference parameter
+    modifyByReference(num);
+    std::cout << "After modifyByReference: " << num << std::endl;  // Output: 15
+
+    // Pass the address of num as a pointer parameter
+    modifyByPointer(&num);
+    std::cout << "After modifyByPointer: " << num << std::endl;    // Output: 25
+
+    return 0;
+}    
+\end{code}
+
+The above example works with both pointer and reference parameters. The syntax of each is slightly different but both work on the concept of accessing the place in memory for where the variable is
+defined in memory and modifying its value without having to create a copy of the variable to do so.
+
+\end{highlight}
+
+Although the above parameters achieve the same result, they have some distinct differences. These differences can be summed up below:
+
+\begin{itemize}
+    \item \textbf{Addressing:} Pointers store the memory address of an object, allowing for operations like pointer arithmetic and direct manipulation of memory. References, on the other hand, are 
+    simply aliases for existing objects and do not have an address of their own.
+    \item \textbf{Initialization:} Pointers can be declared without initialization, allowing them to be assigned later. References must be initialized when declared and cannot be reassigned to refer 
+    to a different object.
+    \item \textbf{Nullability:} Pointers can be assigned a `nullptr' value, indicating that they don't point to any valid memory address. References, on the other hand, must always refer to a valid 
+    object and cannot be null.
+    \item \textbf{Reassignment:} Pointers can be reassigned to point to different objects, while references cannot be reseated to refer to a different object after initialization.
+    \item \textbf{Syntax:} Pointers are declared using the `*' symbol, while references are declared using the `\&' symbol. When passing a pointer parameter, you need to use pointer dereferencing (*) 
+    to access the value. With a reference parameter, you can directly use the reference as if it were the original variable.
+\end{itemize}
+
+Overall, stack and heap allocation are two different memory allocation mechanisms in computer programs. Stack allocation is used for local variables and function call frames and is managed automatically 
+by the compiler. It is fast and efficient, but limited in size and scope. Heap allocation, on the other hand, allows dynamic memory allocation at runtime, providing flexibility but also requiring manual 
+memory management. Heap allocation is suitable for objects that need to persist beyond the scope of a function or have a variable size. It requires explicit allocation and deallocation, making it more 
+prone to memory leaks and fragmentation. Choosing between stack and heap allocation depends on factors such as variable lifetime, size, and desired control over memory management.
+
+\clearpage

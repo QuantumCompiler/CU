@@ -1,0 +1,333 @@
+\clearpage
+
+\section*{Huffman Tables}
+
+\subsection*{Overview}
+
+Huffman encoding is a data compression technique that efficiently encodes data by assigning variable-length codes to characters based on their frequency of occurrence in the input. It is a form of 
+entropy encoding that uses shorter codes for more frequent characters and longer codes for less frequent characters, resulting in overall compression of the data. The process begins by constructing 
+a Huffman tree, a binary tree where each leaf node represents a character, and internal nodes are formed by combining the two least frequent characters. Traversing the tree from the root to each 
+character yields its corresponding Huffman code. Huffman encoding is widely used in file compression and data transmission applications to reduce the size of data and optimize storage and transmission 
+efficiency.
+
+\subsection*{Efficiency}
+
+The runtime complexity of Huffman encoding depends on the number of unique characters in the input data and their frequencies. Constructing the Huffman tree involves building a binary heap, where each 
+insertion and deletion has a time complexity of $\mathcal{O}(\log{(n)})$, where $n$ is the number of characters. Since there are $n-1$ internal nodes in the tree, the overall time complexity for 
+constructing the Huffman tree is $\mathcal{O}(n\log{(n)})$. After constructing the tree, generating the Huffman codes for each character requires traversing the tree, which takes $\mathcal{O}(\log{n})$ 
+time for each character, resulting in an additional $\mathcal{O}(n\log{(n)})$ complexity. Therefore, the overall runtime complexity of Huffman encoding is $\mathcal{O}(n\log{(n)})$, making it an efficient 
+data compression technique for processing large datasets with varying character frequencies. It is important to note that the actual performance of Huffman encoding can vary based on the distribution of 
+character frequencies in the input data. A summary of the runtime complexity of common operations in huffman coding can be seen below.
+
+\begin{center}
+    \begin{tabular}[ht]{|c|c|c|c|}
+        \hline \textbf{Operation} & \textbf{Best Case} $\Omega(n)$ & \textbf{Average Case} $\Theta(n)$ & \textbf{Worst Case} $\mathcal{O}(n)$ \\ \hline
+        \textbf{Code Generation} & $\Omega(n\log{(n)})$ & $\Theta(n\log{(n)})$ & $\mathcal{O}(n\log{(n)})$ \\ \hline
+        \textbf{Tree Construction} & $\Omega(n\log{(n)})$ & $\Theta(n\log{(n)})$ & $\mathcal{O}(n\log{(n)})$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Structure}
+
+The structure of Huffman encoding and decoding involves two main steps: building the Huffman tree and generating the Huffman codes. In the encoding process, a frequency table is created to count the 
+occurrences of each character in the input data. A priority queue, often implemented using a binary heap, is used to construct the Huffman tree, where each leaf node represents a character, and internal 
+nodes are formed by combining the two least frequent characters. Traversing the tree from the root to each character yields its corresponding Huffman code. The generated Huffman codes are then used to 
+encode the input data, replacing characters with their respective variable-length codes. In the decoding process, the encoded data is processed bit by bit, traversing the Huffman tree from the root 
+until a leaf node is reached, which corresponds to a decoded character. The process continues until all encoded bits are processed, reconstructing the original data. Huffman encoding and decoding form 
+a simple and efficient data compression technique, preserving data integrity while reducing its size for storage and transmission.
+
+This implementation of the huffman encoding for this assignment consists of a custom structure and a custom class. The custom structure, \textbf{freq\_info} consists of some custom data members. The declaration
+of this structure can be seen below:
+
+\begin{itemize}
+    \item \textbf{count} - This is an integer value that represents the frequency of a given character in a string.
+    \item \textbf{is\_leaf} - This is a boolean value that represents if a node is a leaf in the tree or not.
+    \item \textbf{left} - This is a smart pointer that represents the left child of a current node.
+    \item \textbf{right} - This is a smart pointer that represents the right child of a current node.
+\end{itemize}
+
+\noindent With the above structure, we have a class that implements this structure. The declaration of the \textbf{Huffman} class can be seen below:
+
+\begin{itemize}
+    \item \textbf{BuildEncodingTable} - `BuildEncodingTable' creates a lookup table for an encoding process.
+    \item \textbf{BuildTree} - `BuildTree' builds a huffman tree based off of a given priority queue.
+    \item \textbf{CombineNodes} - `CombineNodes' combines to nodes into one node in a tree.
+    \item \textbf{CreateLeaf} - `CreateLeaf' creates a node and initializes it as a leaf node in a tree.
+    \item \textbf{Decode} - `Decode' returns a decoded string for a given input.
+    \item \textbf{Encode} - `Encode' returns an encoded string with a given lookup table.
+    \item \textbf{IncrementLookup} - `IncrementLookup' increments a lookup table by one integer value.
+    \item \textbf{LoadQueue} - `LoadQueue' turns key / value pairs into a lookup table.
+    \item \textbf{TableHelper} - `TableHelper' is a custom function that helps build an encoding table.
+\end{itemize}
+
+\subsection*{BuildEncodingTable}
+
+The function `Huffman::BuildEncodingTable' is a member function of the `Huffman' class responsible for constructing an encoding table, represented by a map, that associates characters with their 
+corresponding Huffman codes. The function takes a shared pointer `root' to a `freq\_info' object, which likely represents the root of the Huffman tree. Within the function, an empty map `lookup' 
+is created to store the character-to-code mappings. The function then calls the `TableHelper' function, which recursively traverses the Huffman tree to build the encoding table by assigning 
+Huffman codes to each character. The Huffman codes are represented as strings of 0s and 1s, where left edges in the tree correspond to 0, and right edges correspond to 1. The `TableHelper' 
+function updates the `lookup' map as it traverses the tree. Finally, the function returns the completed encoding table `lookup', containing the character-to-code mappings for the Huffman encoding. 
+This table is essential for efficiently encoding the input data using Huffman coding, where frequent characters are assigned shorter codes, and infrequent characters are assigned longer codes, 
+leading to data compression. Below is the definition of this algorithm.
+
+\begin{highlight}[BuildEncodingTable Algorithm]
+
+Below is the definition of the `BuildEncodingTable' algorithm:
+
+\horizontalline
+
+\begin{verbatim}
+map<char, string> Huffman::BuildEncodingTable(shared_ptr<freq_info> root) {
+    map<char, string> lookup;
+    TableHelper(root, "", lookup);
+    return lookup;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{BuildTree}
+
+The function `Huffman::BuildTree' is a member function of the `Huffman' class responsible for constructing a Huffman tree from a given priority queue of frequency information represented by the 
+`tree\_queue' data structure. The function follows the process of building a Huffman tree, where nodes with the lowest frequency are combined to form internal nodes until a single root node is 
+created. Within the function, a `while' loop is used to iterate through the priority queue `q' until it contains only one element, which represents the root of the Huffman tree. During each 
+iteration, the function extracts the two nodes with the lowest frequencies (probabilities) from the front of the priority queue. It then creates a new internal node, `tempNode', with the sum of 
+the frequencies of the left and right nodes, assigning the left and right nodes as its children. The `tempNode' is then pushed back into the priority queue. This process continues until the 
+priority queue is reduced to a single element, representing the root of the Huffman tree. Finally, the function returns a shared pointer to the root node of the Huffman tree. The constructed 
+Huffman tree is essential for encoding and decoding data using Huffman coding, where the tree's structure determines the variable-length codes assigned to characters based on their frequencies.
+Below is the definition of this algorithm.
+
+\begin{highlight}[BuildTree Algorithm]
+    
+Below is the definition of the `BuildTree' algorithm:
+
+\horizontalline
+
+\begin{verbatim}
+shared_ptr<freq_info> Huffman::BuildTree(tree_queue& q) {
+    while(q.size() > 1) {
+        shared_ptr<freq_info> left = q.top();
+        q.pop();
+        shared_ptr<freq_info> right = q.top();
+        q.pop();
+        shared_ptr<freq_info> tempNode(new freq_info);
+        tempNode->count = left->count + right->count;
+        tempNode->left = left;
+        tempNode->right = right;
+        q.push(tempNode);
+    }
+    return q.top();
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{CombineNodes}
+
+The function `Huffman::CombineNodes' is a member function of the `Huffman' class responsible for creating a new internal node in a Huffman tree by combining two given leaf nodes. The function 
+takes two shared pointers `left' and `right', which represent the leaf nodes to be combined. Within the function, a new `freq\_info' object is created, representing the internal node that will 
+have `left' and `right' as its children. The `is\_leaf' flag is set to `false' to indicate that the node is not a leaf. The `count' data member of the new node is calculated by summing the `count' 
+values of the `left' and `right' nodes, representing the combined frequencies of the characters they represent. The `left' and `right' nodes are then assigned as children of the new node. 
+Finally, the function returns a shared pointer to the newly created internal node, which can be used to construct a Huffman tree during the process of building a Huffman encoding scheme. This 
+function is a fundamental step in constructing a Huffman tree, where the frequencies of leaf nodes are combined to form internal nodes with appropriate frequencies, allowing efficient data 
+compression and decompression using Huffman coding. Below is the definition of this algorithm.
+
+\begin{highlight}[CombineNodes Algorithm]
+
+Below is the definition of the `CombineNodes' algorithm:
+
+\horizontalline
+
+\begin{verbatim}
+shared_ptr<freq_info> Huffman::CombineNodes(shared_ptr<freq_info> left, 
+                                            shared_ptr<freq_info> right) {
+    shared_ptr<freq_info> ret(new freq_info);
+    ret->is_leaf = false;
+    ret->count = left->count + right->count;
+    ret->left = left;
+    ret->right = right;
+    return ret;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{CreateLeaf}
+
+The function `Huffman::CreateLeaf' is a member function of the `Huffman' class responsible for creating a leaf node in a Huffman tree that represents a character and its frequency of occurrence. 
+The function takes two parameters: `symbol', which represents the character to be encoded, and `count', which indicates the frequency of that character in the input data. Within the function, a 
+new `freq\_info' object is created to represent the leaf node. The character and frequency values are assigned to the `symbol' and `count' data members of the new node, respectively. The `left' 
+and `right' pointers are set to `nullptr' since leaf nodes have no children. The `is\_leaf' flag is set to `true' to indicate that the node is a leaf. Finally, the function returns a shared 
+pointer to the newly created leaf node. This function is essential in the process of constructing a Huffman tree, where characters and their frequencies are represented as leaf nodes and combined 
+to form internal nodes during the tree-building process. The resulting Huffman tree is used for efficient data compression and decompression using Huffman coding. Below is the definition of this
+algorithm.
+
+\begin{highlight}[CreateLeaf Algorithm]
+
+Below is the definition of the `CreateLeaf' algorithm:
+
+\horizontalline
+
+\begin{verbatim}
+shared_ptr<freq_info> Huffman::CreateLeaf(char symbol, int count) {
+    shared_ptr<freq_info> ret(new freq_info);
+    ret->symbol = symbol;
+    ret->count = count;
+    ret->left = nullptr;
+    ret->right = nullptr;
+    ret->is_leaf = true;
+    return ret;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{Decode}
+
+The function `Huffman::Decode' is a member function of the `Huffman' class responsible for decoding an encoded string using a given Huffman tree represented by the shared pointer `root'. The 
+function takes the `root' node of the Huffman tree and the `input' string, which represents the encoded data. Within the function, a new string `decode' is created to store the decoded result. 
+A node `cur' is also created to keep track of the current position in the Huffman tree, initially set to the `root'. The function then iterates through each character of the `input' string, 
+and based on the characters `'.'' and `'\^'' in the `input', it moves either to the left or right child of the current node, traversing the Huffman tree. When reaching a leaf node, the function 
+adds the corresponding character to the `decode' string, indicating a successful decoding of a character. The `cur' node is then reset to the `root' to continue decoding the remaining characters. 
+Finally, the function returns the `decode' string, representing the original decoded data. This function is essential for efficiently decoding Huffman-encoded data, as it navigates the Huffman 
+tree based on the encoded input to reconstruct the original information. Below is the definition of this algorithm.
+
+\begin{highlight}[Decode Algorithm]
+    
+Below is the definition of the `Decode' algorithm:
+
+\horizontalline
+
+\begin{verbatim}
+string Huffman::Decode(shared_ptr<freq_info> root, string input) {
+    string decode;
+    shared_ptr<freq_info> cur = root;
+    for (char c : input) {
+        if (c == '.') {
+            cur = cur->left;
+        }
+        else if (c == '^') {
+            cur = cur->right;
+        }
+        if (cur->is_leaf) {
+            decode += cur->symbol;
+            cur = root;
+        }
+    }
+    return decode;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{Encode}
+
+The function `Huffman::Encode' is a member function of the `Huffman' class responsible for encoding an input string using a pre-built encoding table represented by the `enc\_table' map. The function 
+takes two parameters: `enc\_table', which maps characters to their corresponding Huffman codes, and `input', which represents the original data to be encoded. Within the function, an empty string `code' 
+is created to store the encoded result. The function then iterates through each character `c' in the `input' string and appends the corresponding Huffman code retrieved from the `enc\_table' to the `code' 
+string. By continuously appending Huffman codes for each character in the input string, the function constructs the encoded representation of the original data. Finally, the function returns the `code' 
+string, which represents the Huffman-encoded version of the input data. This function is crucial for efficiently encoding data using Huffman coding, where characters are replaced with variable-length 
+codes based on their frequencies, resulting in data compression. Below is the definition of this algorithm.
+
+\begin{highlight}[Encode Algorithm]
+    
+Below is the definition of the `Encode' algorithm:
+
+\horizontalline
+
+\begin{verbatim}
+string Huffman::Encode(map<char, string> enc_table, string input) {
+    string code;
+    for (char c : input) {
+        code += enc_table[c];
+    }
+    return code;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{IncrementLookup}
+
+The function `Huffman::IncrementLookup' is a member function of the `Huffman' class responsible for updating a frequency lookup table represented by the `lookup' map. The function takes two parameters: 
+`lookup', which is a map that associates characters with their frequencies, and `symbol', which represents the character to be incremented in the lookup table. Within the function, the frequency count of 
+the given `symbol' is increased by one using the `++' operator, effectively updating its occurrence count in the lookup table. This function is typically used during the process of constructing a frequency 
+table for characters in the input data. By updating the frequency lookup table with the occurrences of each character, it enables subsequent steps of building a Huffman tree and generating Huffman codes 
+based on character frequencies, facilitating efficient data compression and decompression using Huffman coding. Below is the definition of this algorithm.
+
+\begin{highlight}[IncrementLookup Algorithm]
+    
+Below is the definition of the `IncrementLookup' algorithm:
+
+\horizontalline
+
+\begin{verbatim}
+void Huffman::IncrementLookup(map<char, int>& lookup, char symbol) {
+    lookup[symbol]++;
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{LoadQueue}
+
+The function `Huffman::LoadQueue' is a member function of the `Huffman' class responsible for constructing a priority queue (`tree\_queue') of frequency information based on a given lookup table (`lookup') 
+containing characters and their corresponding frequencies. The function takes two parameters: `lookup', which is a map that associates characters with their frequencies, and `q', which represents the priority 
+queue. Within the function, a `for' loop is used to iterate through each element in the lookup table. For each character-frequency pair in the `lookup', a new node (`shared\_ptr$<$freq\_info$>$ node') is created 
+to represent a leaf node in the Huffman tree. The character and frequency from the lookup table are assigned to the `symbol' and `count' data members of the new node, respectively, and the `is\_leaf' flag is set 
+to `true' to indicate that it is a leaf node. The new node is then pushed into the priority queue `q'. This function is a crucial step in constructing the Huffman tree, where characters and their frequencies are 
+represented as leaf nodes and combined to form internal nodes. The priority queue is essential for efficient data compression using Huffman coding, as it ensures that nodes with the lowest frequencies are combined 
+first during tree construction. Below is the definition of this algorithm.
+
+\begin{highlight}[LoadQueue Algorithm]
+
+Below is the definition of the `LoadQueue' algorithm:
+    
+\horizontalline
+    
+\begin{verbatim}
+void Huffman::LoadQueue(const map<char, int>& lookup, tree_queue& q) {
+    for (const auto& pair : lookup) {
+        shared_ptr<freq_info> node(new freq_info);
+        node->symbol = pair.first;
+        node->count = pair.second;
+        node->is_leaf = true;
+        q.push(node);
+    }
+}
+\end{verbatim}
+
+\end{highlight}
+
+\subsection*{TableHelper}
+
+The function `Huffman::TableHelper' is a member function of the `Huffman' class responsible for recursively constructing an encoding table (`lookup') used in Huffman coding. The function takes three parameters: 
+`node', which represents the current node in the Huffman tree, `code', which represents the binary code constructed during the traversal, and `lookup', which is the encoding table. Within the function, it checks 
+if the current node is a leaf node by examining the `is\_leaf' flag. If the node is a leaf, it means it represents a character in the Huffman tree, and its corresponding binary code `code' is added to the `lookup' 
+table, associating the character with its Huffman code. If the node is an internal node (not a leaf), the function continues recursively to traverse its left and right subtrees. When traversing left, it appends the 
+character `.' to the current `code', and when traversing right, it appends `\^'. This process continues until all leaf nodes are reached and their corresponding Huffman codes are added to the `lookup' table. The 
+resulting `lookup' table contains character-to-code mappings, allowing for efficient data encoding using Huffman coding. Below is the definition of this algorithm.
+
+\begin{highlight}[TableHelper Algorithm]
+    
+Below is the definition of the `TableHelper' algorithm:
+
+\horizontalline
+
+\begin{verbatim}
+void Huffman::TableHelper(shared_ptr<freq_info> node, string code, map<char, string>& lookup) {
+    if (node->is_leaf) {
+        lookup[node->symbol] = code;
+    }
+    else {
+        if (node->left) {
+            TableHelper(node->left, code + ".", lookup);
+        }
+        if (node->right) {
+            TableHelper(node->right, code + "^", lookup);
+        }
+    }
+}
+\end{verbatim}
+
+\end{highlight}
