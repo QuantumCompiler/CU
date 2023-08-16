@@ -1,0 +1,637 @@
+\section*{Linked Lists}
+
+\subsection*{Overview}
+
+In C++, a linked list is a data structure consisting of a sequence of nodes, where each node contains a value and a pointer/reference to the next node. Unlike arrays and vectors, linked lists do not 
+store elements in contiguous memory locations. Instead, each node in a linked list is dynamically allocated and connected through pointers/references. This allows for efficient insertion and removal 
+of elements at any position in the list, but it requires traversal from the beginning to access specific elements. Linked lists have a flexible size and can expand or shrink as needed by allocating 
+or deallocating nodes, unlike arrays whose size is fixed. However, accessing elements in a linked list requires iterating through the nodes, while arrays and vectors provide direct access using indices.
+
+\subsection*{Common Linked List Operations}
+
+Linked lists can be written a number of ways. In the context of this class the linked list was written as a class where the nodes of the linked list was written as a struct. Nodes in linked lists are
+analgous to elements in an array or vector, the main difference is that nodes contain data (An integer value in the context of this class) and a pointer that points to the next node in the linked list.
+In doubly linked lists the nodes will contain a pointer that points to the next and the previous nodes in the linked list. 
+
+Once a linked list has been created there are a number of operations that can be done on them. Here is a quick summary of some of the linked list operations:
+
+\begin{itemize}
+    \item \textbf{Accessing \& Modifying:} Accessing or modifying elements in a linked list involves traversing the list by following the node connections until reaching the desired position, and then 
+    performing the required operation on the accessed node, such as retrieving or updating its data value.
+    \item \textbf{Adding:} Adding an element to a linked list involves creating a new node with the desired data, adjusting the node connections to include the new node in the appropriate position, 
+    and updating the necessary pointers to maintain the integrity of the list.
+    \item \textbf{Checking For Empty:} Determining if a linked list is empty means checking whether the head node of the list is `NULL', indicating that there are no elements in the list.
+    \item \textbf{Checking Size:} Finding the size of a linked list involves traversing through the list and counting the number of nodes or elements present in the list.
+    \item \textbf{Initializing:} Initializing a linked list involves creating the first node, setting its data value, and establishing the necessary connections to indicate the beginning of the list.
+    \item \textbf{Removing:} Removing a node from a linked list involves adjusting the node connections to bypass the node to be removed, updating the necessary pointers, and deallocating the memory 
+    occupied by the removed node to maintain the integrity of the list.
+    \item \textbf{Traversing:} Traversing a linked list means sequentially visiting each node in the list, starting from the head node, and accessing or performing operations on each node until the end 
+    of the list is reached.
+\end{itemize}
+
+We will now examine some of these operations in more detail. The first operation that we will look at is accessing and modifying the data in a linked list.
+
+\begin{highlight}[Accessing \& Modifying Elements In Linked List]
+
+\subsubsection*{Accessing \& Modifying}
+
+Below is an example of accessing and modifying elements in a linked list in the context of C++:
+
+\begin{code}
+bool LinkedList::Contains(int data){
+    shared_ptr<node> currPtr = top_ptr_;
+    bool ret = false;
+    while (currPtr != nullptr) {
+        if (currPtr->data == data) {
+            ret = true;
+        }
+        else {}
+        currPtr = currPtr->next;
+    }
+    return ret;
+}
+\end{code}
+
+The above is an example of how we access elements in a linked list. In summary, we start traversing the linked list from the head of the list and check if the current node matches what we are looking
+for. If it does match, then we modify a boolean value indicating that this element exists in the list. We could simply modify the value of linked list by mutating the data of the node if it passes the
+if statement. We could return the index of this element with slight modification that keeps track of the position of the current node that we are examining. Conversly, we could find the middle element
+by counting the total size of the list, and then adding some logic that would allow us to determine what the middle index of the linked list would be.
+
+\end{highlight}
+
+The next operation that we will examine is adding a node to a linked list.
+
+\begin{highlight}[Adding Elements In A Linked List]
+
+\subsubsection*{Adding Elements}
+
+Below is an example of adding a node to the linked list in the context of C++. Particularly, this function adds an element to the end of the linked list (The tail).
+
+\begin{code}
+void LinkedList::Append(shared_ptr<node> new_node){
+    new_node->data;
+    new_node->next = nullptr;
+    if (top_ptr_ == nullptr) {
+        SetTop(new_node);
+    }
+    else {
+        shared_ptr<node> currPtr = top_ptr_;
+        while (currPtr->next != nullptr) {
+            currPtr = currPtr->next;
+        }
+        currPtr->next = new_node;
+    }
+}
+\end{code}
+
+The above function will append a node to the end of the linked list. This function operates on the assumption that the node has already been initialized (Data member has been set). This function can
+be modified to handle the case where the value that is to be appended is an input parameter of this function. On the contrary, we can add an element at a certain index in the linked list.
+
+\subsubsection*{Inserting Elements}
+
+Below is an example of adding a node to the linked list at a specified index in the context of C++:
+
+\begin{code}
+void LinkedList::Insert(int offset, shared_ptr<node> new_node){
+    shared_ptr<node> currPtr = top_ptr_;
+    vector<shared_ptr<node>> ptrs;
+    while (currPtr != nullptr) {
+        ptrs.push_back(currPtr);
+        currPtr = currPtr->next;
+    }
+    new_node->data;
+    new_node->next = nullptr;
+    if (offset == 0) {
+        new_node->next = top_ptr_;
+        SetTop(new_node);
+    }
+    else {
+    currPtr = top_ptr_;
+        for (int i = 0; i < ptrs.size(); i++) {
+            if (i == offset - 1) {
+            new_node->next = currPtr->next;
+            currPtr->next = new_node;
+            }
+            else {}
+            currPtr = currPtr->next;
+        }
+    }
+}
+\end{code}
+
+The above function is adding a node to a linked list at a specific index of the linked list. Similar to the previous function that appends a node to the linked list, we can modify this function to
+append a value at a certain index by having an input parameter that pertains to the desired value to be inserted into the linked list.
+
+\end{highlight}
+
+The next operation that we will examine is checking if a linked list is empty.
+
+\begin{highlight}[Checking Empty Linked List]
+
+\subsubsection*{Checking Empty}
+
+Below is an example of checking if the linked list is empty in the context of C++:
+
+\begin{code}
+bool LinkedList::IsEmpty() {
+    return (top_ptr_ == nullptr);
+}      
+\end{code}
+
+The above function checks to see if the linked list is empty mainly by seeing if the head of the linked list is empty or not. This check was not necessarily a tenant of the assignment and that is
+why there are no comments explaining how the function operates.
+
+\end{highlight}
+
+The next operation that we will examine is checking for the size of a linked list.
+
+\begin{highlight}[Checking Size Of Linked List]
+
+\subsubsection*{Checking Size}
+
+Below is an example of checking for the size of a linked list in the context of C++:
+
+\begin{code}
+int LinkedList::Size(){
+    shared_ptr<node> currPtr = top_ptr_;
+    int ret = 0;
+    while (currPtr != nullptr) {
+        ret++;
+        currPtr = currPtr->next;
+    }
+    return ret;
+}
+\end{code}
+
+The above function returns the size of a linked list. This function operates by traversing through the linked list and incrementing an integer value that indicates the size of the linked list.
+
+\end{highlight}
+
+The next operation that we will examine is initializing a node in a linked list.
+
+\begin{highlight}[Initializing A Node In A Linked List]
+
+\subsubsection*{Initializing}
+
+Below is an example of initializing a node in a linked list in the context of C++:
+
+\begin{code}
+shared_ptr<node> LinkedList::InitNode(int data){
+    shared_ptr<node> ret(new node);
+    ret->data = data;
+    return ret;
+}
+\end{code}
+
+The above function initializes a node in a linked list to a specific value. This function does not necessarily update the pointer to the next node in the linked list but that is done in the other
+functions that have been previously defined.
+
+\end{highlight}
+
+The next operation that we will examine is removing a node from a linked list.
+
+\begin{highlight}[Removing A Node From A Linked List]
+
+\subsubsection*{Removing}
+
+The below function is an example of removing a node from a linked list in the context of C++:
+
+\begin{code}
+void LinkedList::Remove(int offset){
+    shared_ptr<node> currPtr = top_ptr_;
+    vector<shared_ptr<node>> ptrs;
+    while (currPtr != nullptr) {
+        ptrs.push_back(currPtr);
+        currPtr = currPtr->next;
+    }
+    if (offset == 0) {
+        SetTop(top_ptr_->next);
+    }
+    else {
+        currPtr = top_ptr_;
+        for (int i = 0; i < ptrs.size(); i++) {
+            if (i == offset - 1) {
+                currPtr->next = currPtr->next->next;
+                break;
+            }
+            else {}
+            currPtr = currPtr->next;
+        }
+    }
+}
+\end{code}
+
+The above function removes a node from a linked list at a specified offset of the linked list. We can remove a specific node from a linked list by searching for if the node exists in the linked list
+and then deleting the node from the linked list. This implementation requires a separate function that will do the removing of the node from the linked list.
+
+\end{highlight}
+
+The final common operation of the linked list is traversing the linked list. This operation is required for a lot of functions that were previously defined in the linked list. This is done by using a
+while loop that runs until the current pointer in the linked list is null or some other condition that should be met. We now will look at some extra operations that can be utilized in a linked list.
+
+\subsection*{Extra Linked List Operations}
+
+There are some extra operations that can be done on a linked list. These involve operations from reversing a linked list to splitting a linked list. Here is a comprehensive list of extra operations
+in linked lists:
+
+\begin{itemize}
+    \item \textbf{Concatenating:} Concatenating a linked list involves combining two or more linked lists into a single linked list, where the last node of the first list is connected to the first node 
+    of the second list, and so on, creating a continuous sequence of nodes.
+    \item \textbf{Reversing:} Reversing a linked list involves changing the direction of the next pointers in each node, effectively flipping the order of the elements.
+    \item \textbf{Sorting:} Sorting a linked list involves rearranging the nodes in a specific order, such as ascending or descending, based on the values contained in each node.
+    \item \textbf{Splitting:} Splitting a linked list involves dividing a single linked list into two separate linked lists, typically based on a given condition or position.
+\end{itemize}
+
+We now can examine these operations in more detail. The first extra operation that we are looking at is the concatenating of a linked list.
+
+\begin{highlight}[Concatenating A Linked List]
+
+\subsubsection*{Concatenating}
+
+Below is an example of concatenating a linked list in the context of C++:
+
+\begin{code}
+std::shared_ptr<node> concatenateLists(std::shared_ptr<node> head1, 
+                                    std::shared_ptr<node> head2) {
+    if (head1 == nullptr)
+        return head2;
+    if (head2 == nullptr)
+        return head1;
+    std::shared_ptr<node> current = head1;
+    while (current->next != nullptr) {
+        current = current->next;
+    }
+    current->next = head2;
+    return head1;
+}
+\end{code}
+
+The above function takes in two heads of linked lists. It then traverses the linked list looking for the tail of the first list. It then updates the tail of the first linked list and has it point to
+the head of the second linked list. 
+
+\end{highlight}
+
+The next extra operation that we are going to look at is reversing a linked list.
+
+\begin{highlight}[Reversing A Linked List]
+
+\subsubsection*{Reversing}
+
+Below is an example of reversing a linked list in the context of C++:
+
+\begin{code}
+std::shared_ptr<node> reverseList(std::shared_ptr<node> head) {
+    std::shared_ptr<node> current = head;
+    std::shared_ptr<node> previous = nullptr;
+    std::shared_ptr<node> next = nullptr;
+    while (current != nullptr) {
+        next = current->next;
+        current->next = previous;
+        previous = current;
+        current = next;
+    }
+    return previous;
+}
+\end{code}
+
+The above function reverses the nodes in a linked list. This is done by keeping track of the current, next, and previous nodes in the linked list. This entire operation could be done a lot easier if
+the linked list in question was a doubly linked list. But this function works on a singly linked list.
+
+\end{highlight}
+
+The next extra operation that we are going to look at is sorting a linked list. There are a multitude of ways that this can be accomplished, by choosing different sorting algorithms. The easiest way
+this is done is with the use of a bubble sort.
+
+\begin{highlight}[Sorting A Linked List]
+
+\subsection*{Sorting}
+
+Below is an example of sorting a linked list with the use of a bubble sort in the context of C++:
+
+\begin{code}
+void bubbleSort(std::shared_ptr<node> head) {
+    if (head == nullptr || head->next == nullptr) {
+        return;
+    }
+    bool swapped;
+    std::shared_ptr<node> current;
+    std::shared_ptr<node> last = nullptr;
+    do {
+        swapped = false;
+        current = head;
+        while (current->next != last) {
+            if (current->data > current->next->data) {
+                // Swap the nodes
+                std::swap(current->data, current->next->data);
+                swapped = true;
+            }
+            current = current->next;
+        }
+        last = current;
+    } while (swapped);
+}
+\end{code}
+
+The above function sorts the data in a linked list with the use of a bubble sort algorithm. This algorithm does not require one to update the pointers of the nodes as it is simply mutating the data
+members of the nodes. One can sort the elements of the linked list in descending order by just changing the if statement that is present in the while loop.
+    
+\end{highlight}
+
+The last extra operation that we are going to look at is splitting a linked list at a specific position.
+
+\begin{highlight}[Splitting A Linked List]
+
+\subsubsection*{Splitting}
+
+Below is an example of splitting a linked list in the context of C++:
+
+\begin{code}
+std::pair<std::shared_ptr<node>, std::shared_ptr<node>> 
+        splitList(std::shared_ptr<node> head, int splitPosition) {
+    std::shared_ptr<node> splitPtr = nullptr;
+    std::shared_ptr<node> secondHead = nullptr;
+    std::shared_ptr<node> current = head;
+    int position = 0;
+    // Traverse until the split position
+    while (current != nullptr && position < splitPosition - 1) {
+        current = current->next;
+        position++;
+    }
+    if (current != nullptr) {
+        splitPtr = current->next;
+        current->next = nullptr;  // Terminate the first list
+        secondHead = splitPtr;
+    }
+    return {head, secondHead};
+}
+\end{code}
+
+The above function splits a linked list at a specific index of the original linked list. This is done by returning a pair of head nodes after the function is done executing. In the function we iterate
+until we reach the specified index or if the index happens to be out of bounds. We then assign the head of the second linked list by grabbing the next node after the index position.
+
+\end{highlight}
+
+\subsection*{Other Implementations Of Linked Lists}
+
+There are many other implentations for linked lists. Some implementations of linked lists are the following:
+
+\begin{itemize}
+    \item \textbf{Circular Linked List:} - Implementing a linked list as a circular linked list involves connecting the last node of the list to the first node, creating a circular structure.
+    \item \textbf{Doubly Linked List:} - Implementing a linked list as a doubly linked list involves adding an additional pointer in each node that points to the previous node.
+    \item \textbf{Stack Or Queue:} - Implementing a linked list as a stack or queue involves utilizing the respective operations of push/pop for a stack or enqueue/dequeue for a queue to 
+    insert or remove elements at one end of the linked list.
+\end{itemize}
+
+We now will look at these implementations one by one. The first implementation that we will look at is circular linked lists.
+
+\begin{highlight}[Circular Linked List]
+
+\subsubsection*{Circular Linked Lists}
+
+Below is an example of how to implement a circular linked list in the context of C++:
+
+\begin{code}
+struct Node {
+    int data;
+    std::shared_ptr<Node> next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+
+void traverseCircularLinkedList(const std::shared_ptr<Node>& head) {
+    if (head == nullptr) {
+        return;
+    }
+
+    std::shared_ptr<Node> current = head;
+
+    do {
+        std::cout << current->data << " ";
+        current = current->next;
+    } while (current != head);
+
+    std::cout << std::endl;
+}
+
+int main() {
+    // Create a circular linked list with three nodes: 1 -> 2 -> 3 -> (back to 1)
+    std::shared_ptr<Node> head = std::make_shared<Node>(1);
+    std::shared_ptr<Node> second = std::make_shared<Node>(2);
+    std::shared_ptr<Node> third = std::make_shared<Node>(3);
+
+    head->next = second;
+    second->next = third;
+    third->next = head;  // Make it circular
+
+    // Traverse the circular linked list
+    traverseCircularLinkedList(head);  // Output: 1 2 3
+
+    return 0;
+}    
+\end{code}
+
+The above is an example of how to make a linked list circular. The crux of making a linked list circular is to have the last node of the list point to the head of the list. This is done inside the
+main function above.
+
+\end{highlight}
+
+Next, we look at how to implement a doubly linked list.
+
+\begin{highlight}[Doubly Linked List]
+
+\subsubsection*{Doubly Linked Lists}
+
+Below is an example of doubly linked lists in the context of C++:
+
+\begin{code}
+#include <iostream>
+#include <memory>
+
+struct Node {
+    int data;
+    std::shared_ptr<Node> prev;
+    std::shared_ptr<Node> next;
+    Node(int val) : data(val), prev(nullptr), next(nullptr) {}
+};
+
+void traverseDoublyLinkedListForward(const std::shared_ptr<Node>& head) {
+    std::shared_ptr<Node> current = head;
+
+    while (current != nullptr) {
+        std::cout << current->data << " ";
+        current = current->next;
+    }
+
+    std::cout << std::endl;
+}
+
+void traverseDoublyLinkedListBackward(const std::shared_ptr<Node>& tail) {
+    std::shared_ptr<Node> current = tail;
+
+    while (current != nullptr) {
+        std::cout << current->data << " ";
+        current = current->prev;
+    }
+
+    std::cout << std::endl;
+}
+
+int main() {
+    // Create a doubly linked list with three nodes: 1 <-> 2 <-> 3
+    std::shared_ptr<Node> head = std::make_shared<Node>(1);
+    std::shared_ptr<Node> second = std::make_shared<Node>(2);
+    std::shared_ptr<Node> third = std::make_shared<Node>(3);
+
+    head->next = second;
+    second->prev = head;
+    second->next = third;
+    third->prev = second;
+
+    // Traverse the doubly linked list forward and backward
+    traverseDoublyLinkedListForward(head);  // Output: 1 2 3
+    traverseDoublyLinkedListBackward(third);  // Output: 3 2 1
+
+    return 0;
+}    
+\end{code}
+
+The above is an example of how to create a doubly linked list. In this example, the main difference between our linked list class that we created previously is that the node structure has a previous
+pointer as well as a next pointer. This in essence is how a doubly linked list is created.
+
+\end{highlight}
+
+Lastly, we look at how to implement a stack and queue with the use of a linked list.
+
+\begin{highlight}[Stacks \& Queues With Linked Lists]
+
+\subsubsection*{Stacks \& Queues}
+
+Below is an example of how to implement a linked list with the stack and queue data structure. This is first done by looking at the structure of the nodes in the linked list in the context of
+C++:
+
+\begin{code}
+struct Node {
+    int data;
+    std::shared_ptr<Node> next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+\end{code}
+
+We then move on to looking how we implement the stack data structure with this node structure:
+
+\begin{code}
+class Stack {
+    private:
+        std::shared_ptr<Node> top;
+    
+    public:
+        Stack() : top(nullptr) {}
+    
+        void push(int val) {
+            std::shared_ptr<Node> newNode = std::make_shared<Node>(val);
+            newNode->next = top;
+            top = newNode;
+        }
+    
+        void pop() {
+            if (top) {
+                std::shared_ptr<Node> temp = top;
+                top = top->next;
+                temp.reset();
+            }
+        }
+    
+        int peek() {
+            if (top) {
+                return top->data;
+            }
+            throw std::runtime_error("Stack is empty.");
+        }
+    
+        bool isEmpty() {
+            return top == nullptr;
+        }
+    };        
+\end{code}
+
+Next, we look at the queue data structure to see how it would be implemented: 
+
+\begin{code}
+class Queue {
+    private:
+        std::shared_ptr<Node> front;
+        std::shared_ptr<Node> rear;
+    
+    public:
+        Queue() : front(nullptr), rear(nullptr) {}
+    
+        void enqueue(int val) {
+            std::shared_ptr<Node> newNode = std::make_shared<Node>(val);
+            if (!front) {
+                front = newNode;
+                rear = newNode;
+            } else {
+                rear->next = newNode;
+                rear = newNode;
+            }
+        }
+    
+        void dequeue() {
+            if (front) {
+                std::shared_ptr<Node> temp = front;
+                front = front->next;
+                temp.reset();
+            }
+        }
+    
+        int peek() {
+            if (front) {
+                return front->data;
+            }
+            throw std::runtime_error("Queue is empty.");
+        }
+    
+        bool isEmpty() {
+            return front == nullptr;
+        }
+    };        
+\end{code}
+
+And lastly, we look at how these would be implemented:
+
+\begin{code}
+int main() {
+    Stack stack;
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+
+    while (!stack.isEmpty()) {
+        std::cout << stack.peek() << " ";
+        stack.pop();
+    }
+    // Output: 30 20 10
+
+    Queue queue;
+    queue.enqueue(5);
+    queue.enqueue(15);
+    queue.enqueue(25);
+
+    while (!queue.isEmpty()) {
+        std::cout << queue.peek() << " ";
+        queue.dequeue();
+    }
+    // Output: 5 15 25
+
+    return 0;
+}    
+\end{code}
+
+The above is only one way this can be achieved. There are numerous different ways this outcome can be produced.
+
+\end{highlight}
+
+Overall, linked lists are a very powerful data structure in object oriented programming. They allow for easy traversal, insertion, and deletion of elements. The biggest downside to linked lists is that
+someone cannot easily access elements inside the linked list without traversing the list itself. Doubly linked lists allow for easy traversal in each direction but require additional logic to update
+parameters that are found in the structure of the linked list.
+
+\clearpage
