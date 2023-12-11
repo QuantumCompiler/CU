@@ -1,0 +1,896 @@
+\clearpage
+\chapter{Mastery Workbook 7}
+
+% Chapter page
+\section{Crpytography Mastery Workbook}
+
+\horizontalline{0}{0}
+
+\begin{center}
+    \Large{\textbf{I have neither given nor received unauthorized assistance.}}
+    \horizontalline{0}{0}
+    \large{\textbf{Taylor James Larrechea}}
+    \horizontalline{0}{0}
+\end{center}
+
+% Problem 1
+\begin{problem}{Problem 1}
+    \begin{statement}{Problem Statement}
+        Finding Modular inverses.
+
+        \begin{enumerate}[label = (\alph*)]
+            \item Find 5 numbers $x$ such that: $x \cdot 3 \modulo 10 = 1$.
+        \end{enumerate}
+        Notice that just as we have inverses in multiplication, for example, $3 \cdot \frac{1}{3} = 1$, we can have inverses of $3 \modulo n$.
+
+        \begin{enumerate}[label = (\alph*), start = 2]
+            \item Are modular inverses unique the same way multiplication inverses are unique? Answer why or why not ?
+            \item What is the same about each of the x's you found in Question 1?
+        \end{enumerate}
+    \end{statement}
+
+    \begin{Highlight}[Solution - Part (a)]
+        \begin{enumerate}[label = (\alph*)]
+            \item Find 5 numbers $x$ such that: $x \cdot 3 \modulo 10 = 1$:
+            \begin{itemize}
+                \item $7 \cdot 3 \modulo 10 = 21 \modulo 10 = 1 \rightarrow x = 7$
+                \item $17 \cdot 3 \modulo 10 = 51 \modulo 10 = 1 \rightarrow x = 17$
+                \item $27 \cdot 3 \modulo 10 = 81 \modulo 10 = 1 \rightarrow x = 27$
+                \item $37 \cdot 3 \modulo 10 = 111 \modulo 10 = 1 \rightarrow x = 37$
+                \item $47 \cdot 3 \modulo 10 = 141 \modulo 10 = 1 \rightarrow x = 47$
+            \end{itemize}
+        \end{enumerate}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - Part (b)]
+        \begin{enumerate}[label = (\alph*), start = 2]
+            \item Are modular inverses unique the same way multiplication inverses are unique? Answer why or why not ?
+        \end{enumerate}
+
+        For a given integer $n$, there is only one multiplicative inverse of $n$. As for modular inverses, there can be many different modular inverses as long the numbers that are being modded
+        are relatively prime. So no, modular inverses are not unique the same way multiplication inverses are unique.
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - Part (c)]
+        \begin{enumerate}[label = (\alph*), start = 3]
+            \item What is the same about each of the x's you found in Question 1?
+        \end{enumerate}
+
+        The $x$ value that is found in part (a) when multiplied with 3, is relatively prime with 10. A pattern arrives in that each $x$ that I found in part (a) is just 10 more than the previous
+        $x$ value. So, $x$ has to generate a number that makes it relatively prime with 10.
+    \end{Highlight}
+\end{problem}
+
+% Problem 1 Summary
+\begin{summary}{Problem 1 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item For part (a), we need to find values for $x$ such that $x \cdot 3 \modulo 10 = 1$. This is done by trial and error.
+            \item Answer the prompt.
+            \item Answer the prompt.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item A modular inverse is an integer that is multiplied by another integer where the modulo of that product with another integer is 1.
+            \item Modular inverses are not unique in the way that multiplicative inverses are unique.
+            \item For this given problem, each value of $x$ is 10 greater than the previous values.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be given a different modulo inverse problem with different values.
+            \begin{itemize}
+                \item We would use the same procedure as in part (a) to find the modulo inverses.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 2
+\begin{problem}{Problem 2}
+    \begin{statement}{Problem Statement}
+        In ordinary multiplication, inverses always exist. Can you always find a modular inverse?
+
+        \begin{enumerate}[label = (\alph*)]
+            \item Try $x \cdot 5 \modulo 10 = 1$ and $x \cdot 2 \modulo 10 = 1$
+        \end{enumerate}
+        For which of the following do modular inverses exist? (Find an inverse x if you can. Use a Guess and Check method)
+
+        \begin{enumerate}[label = (\alph*), start = 2]
+            \item $x \cdot 7 \modulo 10 = 1$
+            \item $x \cdot 26 \modulo 13 = 1$
+            \item $x \cdot 7 \modulo 5 = 1$
+            \item $x \cdot 5 \modulo 21 = 1$
+            \item $x \cdot 6 \modulo 35 = 1$
+            \item $x \cdot 7 \modulo 13 = 1$
+        \end{enumerate}
+        What is the rule for when Modular inverses exist?
+    \end{statement}
+
+    \begin{Highlight}[Solution - Part (a)]
+        \begin{enumerate}[label = (\alph*)]
+            \item Try $x \cdot 5 \modulo 10 = 1$ and $x \cdot 2 \modulo 10 = 1$
+            \begin{itemize}
+                \item $x \cdot 5 \modulo 10 = 1$ \hspace*{10pt} The gcd(10,5) = 5 and therefore a modular inverse does not exist.
+                \item $x \cdot 2 \modulo 10 = 1$ \hspace*{10pt} The gcd(10,2) = 2 and therefore a modular inverse does not exist.
+            \end{itemize}
+        \end{enumerate}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - Parts (b)-(g)]
+        \begin{enumerate}[label = (\alph*), start = 2]
+            \item $x \cdot 7 \modulo 10 = 1$ \hspace*{10pt} $x = 3 \rightarrow 3 \cdot 7 \modulo 10 = 21 \modulo 10 = 1$. A modular inverse exists.
+            \item $x \cdot 26 \modulo 13 = 1$ \hspace*{10pt} The gcd(26,13) = 13 and therefore a modular inverse does not exist.
+            \item $x \cdot 7 \modulo 5 = 1$ \hspace*{10pt} $x = 3 \rightarrow 3 \cdot 7 \modulo 5 = 21 \modulo 5 = 1$. A modular inverse exists.
+            \item $x \cdot 5 \modulo 21 = 1$ \hspace*{10pt} $x = 17 \rightarrow 17 \cdot 5 \modulo 21 = 85 \modulo 21 = 1$. A modular inverse exists.
+            \item $x \cdot 6 \modulo 35 = 1$ \hspace*{10pt} $x = 6 \rightarrow 6 \cdot 6 \modulo 35 = 36 \modulo 35 = 1$. A modular inverse exists.
+            \item $x \cdot 7 \modulo 13 = 1$ \hspace*{10pt} $x = 2 \rightarrow 2 \cdot 7 \modulo 13 = 14 \modulo 13 = 1$. A modular inverse exists.
+        \end{enumerate}
+    \end{Highlight}
+
+    \begin{Highlight}[Synopsis]
+        The rule for when modular inverses exist is in the equation $x \cdot a \modulo b = 1$, gcd(b,a) must equal 1. $a$ and $b$ must be relatively prime.
+        If $a$ and $b$ are relatively prime, then their Bezout coefficients are the modular inverses of the original equation.
+    \end{Highlight}
+\end{problem}
+
+% Problem 2 Summary
+\begin{summary}{Problem 2 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item In the formula 
+            \begin{equation*}
+                x \cdot a \modulo b = 1
+            \end{equation*}
+            calculate the greatest common divisor (gcd) of gcd(b,a). If the gcd(b,a) = 1 then a modular inverse does exist.
+            \item If the gcd(b,a) = 1, then find a modular inverse with trial by error.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item In the formula
+            \begin{equation*}
+                x \cdot a \modulo b = 1
+            \end{equation*}
+            a modular inverse only exists if gcd(b,a) = 1.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be given a different expression to determine if a modular inverse exists.
+            \begin{itemize}
+                \item In this case we would calculate the gcd(b,a) to determine if a modular inverse does indeed exist.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 3
+\begin{problem}{Problem 3}
+    \begin{statement}{Problem Statement}
+        Work through \#1 - 4 page 284. Summarize important ideas here that show you have studied this topic.
+    \end{statement}
+
+    \begin{Highlight}[Solution - \# 1]
+        \begin{enumerate}
+            \item Show that 15 is an inverse of 7 modulo 26.
+            \begin{itemize}
+                \item The greatest common divisor of 26 and 7 is
+                \begin{align*}
+                    26 & = 7 \cdot 3 + 5 \\
+                    7 & = 5 \cdot 2 + 1 \\
+                    5 & = 1 \cdot 5 + 0
+                \end{align*}
+                1. Since gcd(26,7) = 1 we can show that
+                \begin{equation*}
+                    15 \cdot 7 \modulo 26 = 105 \modulo 26 = 1
+                \end{equation*}
+                15 is a modular inverse of 7 modulo 26.
+            \end{itemize}
+        \end{enumerate}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - \# 2]
+        \begin{enumerate}[start = 2]
+            \item Show that 937 is an inverse of 13 modulo 2436.
+            \begin{itemize}
+                \item The greatest common divisor of 2436 and 13 is
+                \begin{align*}
+                    2436 & = 13 \cdot 187 + 5 \\
+                    13 & = 5 \cdot 2 + 3 \\
+                    5 & = 3 \cdot 1 + 2 \\
+                    3 & = 2 \cdot 1 + 1 \\
+                    2 & = 1 \cdot 2 + 0
+                \end{align*}
+                1. Since gcd(2436,13) = 1 we can show that
+                \begin{equation*}
+                    937 \cdot 13 \modulo 2436 = 12181 \modulo 2436 = 1
+                \end{equation*}
+                937 is a modular inverse of 13 modulo 2436.
+            \end{itemize}
+        \end{enumerate}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - \# 3]
+        \begin{enumerate}[start = 3]
+            \item By inspection (as discussed prior to Example 1), find an inverse of 4 modulo 9.
+            \begin{itemize}
+                \item By inspection, we can show that 7 is a modular inverse of 4 modulo 9. Namely,
+                \begin{equation*}
+                    7 \cdot 4 \modulo 9 = 28 \modulo 9 = 1.
+                \end{equation*}
+            \end{itemize}
+        \end{enumerate}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - \#4]
+        \begin{enumerate}[start = 4]
+            \item By inspection (as discussed prior to Example 1), find an inverse of 2 modulo 17.
+            \begin{itemize}
+                \item By inspection, we can show that 43 is a modular inverse of 2 modulo 17. Namely,
+                \begin{equation*}
+                    43 \cdot 2 \modulo 17 = 86 \modulo 17 = 1.
+                \end{equation*}
+            \end{itemize}
+        \end{enumerate}
+    \end{Highlight}
+
+    \begin{Highlight}[Synopsis]
+        After working through problems 1 through 4 (I am only showing problems 1 and 3 for space simplicity) the first thing that I noticed for a modular inverse to occur is that the gcd of the two
+        numbers in the modulo must be \textbf{relatively prime}. If these two numbers are relatively prime, then a modular inverse will exist for those numbers. Then, for a number to be considered
+        relatively prime we must have the following expression be true:
+
+        \setcounter{equation}{0}
+        \begin{equation}
+            x \cdot a \modulo b = 1
+        \end{equation}
+        where $x$ is considered to be the number that we are checking to see if it is an inverse of $a \modulo b$. If equation (1) holds, then we know that $x$ is a modular inverse.
+
+        Furthermore, we can find the modular inverse by calculating the Bezout coefficients. Take number 3 for example:
+        \begin{align}
+            9 & = 4 \cdot 2 + 1 & \\
+            4 & = 1 \cdot 4 + 0 & \\
+            \text{gcd(9,4)} & = 1 & \text{(9 and 4 are relatively prime)} \\
+            1 & = 9(1) + 4(-2) & \text{(1 and -2 are the Bezout coefficients)} \\
+            -2 \cdot 4 \modulo 9 & = -8 \modulo 9 = 9 \modulo 8 = 1 & \text{(-2 is indeed a modular inverse of 4 modulo 9)}
+        \end{align}
+        The result from equation (5) shows us that the following statement is true
+
+        \begin{equation*}
+            4 \cdot (-2) \equiv 1 \modulo 9.
+        \end{equation*}
+    \end{Highlight}
+\end{problem}
+
+% Problem 3 Summary
+\begin{summary}{Problem 3 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item For problems 1 and 2, show that the gcd(b,a) = 1 to show that $a$ and $b$ are relatively prime and thus a modular inverse exists.
+            \begin{itemize}
+                \item After showing that gcd(b,a) = 1, show by the method of inspection that the proposed number is a modular inverse of $a$ and $b$.
+            \end{itemize}
+            \item For problems 3 and 4, show by inspection that the provided expression has a modulo of 1.
+            \item For the synopsis, summarize the problems and show a quick example of the Bezout coefficients.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item If the gcd(b,a) in the expression
+            \begin{equation*}
+                x \cdot a \modulo b = 1
+            \end{equation*}
+            is equal to 1, then a modular inverse does exist.
+            \item We can show by the method of `inspection' that a given number is a modular inverse.
+            \item If we can calculate the Bezout coefficients for a given set of numbers, we can show that at least one is a modular inverse.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be given a different set of expressions to determine if a modular inverse exists.
+            \begin{itemize}
+                \item We would then use the same procedure in each part to determine if a given integer is a modular inverse.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 4
+\begin{problem}{Problem 4}
+    \begin{statement}{Problem Statement}
+        You are stranded on an island. Each day 2 jugs wash up on the beach, which are marked with exact measures of a and b cups. You also have an empty (unmeasured tub), and a jug maker. Jugs last 
+        one day and then disappear. An evil Volcano Demon requires you to measure out exactly 1 cup each day or someone will be tossed into the Volcano (then, Volcano Demon can make a single cup 
+        measure, and make big cake recipes measured in cups - his dream is being on a cooking show one day).
+
+        Below are the jug measures in cups that show up each day for 9 days. For each day:
+        
+        \begin{itemize}
+            \item Using the provided cups and the jug maker, find the smallest cup measure you can create each day; use the jug making videos or Euclidean Algorithm for intuition. You may put down 
+            your answers: you do not need to show your work.
+            \item On which days will someone be tossed into a Volcano (you are unable to measure out 1 cup)?
+        \end{itemize}
+
+        \begin{enumerate}
+            \item 12,9
+            \item 27,5
+            \item 8,4
+            \item 66,11
+            \item 25,5
+            \item 12,3
+            \item 9,4
+            \item 141,19
+            \item 89,55
+        \end{enumerate}
+    \end{statement}
+
+    \begin{Highlight}[Solution]
+        \begin{enumerate}
+            \item 12,9: Euclid's algorithm will show that the gcd(12,9) = 3 and therefore the smallest cup measure is 3. \textbf{Tossed into Volcano}.
+            \item 27,5: Euclid's algorithm will show that the gcd(27,5) = 1 and therefore the smallest cup measure is 1. \textbf{Not tossed into Volcano}.
+            \item 8,4: Euclid's algorithm will show that the gcd(8,4) = 4 and therefore the smallest cup measure is 4. \textbf{Tossed into Volcano}.
+            \item 66,11: Euclid's algorithm will show that the gcd(66,11) = 11 and therefore the smallest cup measure is 11. \textbf{Tossed into Volcano}.
+            \item 25,5: Euclid's algorithm will show that the gcd(25,5) = 5 and therefore the smallest cup measure is 5. \textbf{Tossed into Volcano}.
+            \item 12,3: Euclid's algorithm will show that the gcd(12,3) = 3 and therefore the smallest cup measure is 3. \textbf{Tossed into Volcano}.
+            \item 9,4: Euclid's algorithm will show that the gcd(9,4) = 1 and therefore the smallest cup measure is 1. \textbf{Not tossed into Volcano}.
+            \item 141,19: Euclid's algorithm will show that the gcd(141,19) = 1 and therefore the smallest cup measure is 1. \textbf{Not tossed into Volcano}.
+            \item 89,55: Euclid's algorithm will show that the gcd(89,55) = 1 and therefore the smallest cup measure is 1. \textbf{Not tossed into Volcano}.
+        \end{enumerate}
+
+        From the above, we can see that the days that the person is thrown into the Volcano are on days 1,3,4,5 and 6. This is because the cup measurements that wash up on the beach have a gcd greater
+        than 1.
+    \end{Highlight}
+\end{problem}
+
+% Problem 4 Summary
+\begin{summary}{Problem 4 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item For each pair of jugs that wash up on shore, calculate the gcd of the two jugs to determine if someone is going to be tossed into the volcano.
+            \item If the gcd of the two jugs is 1 (or the quantities in the jugs are relatively prime) then the person will not be tossed into the volcano.
+            \item If the gcd of the two jugs is not 1 (or the quantities in the jugs are not relatively prime) then the person will be tossed into the volcano.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item To satisfy the Volcano Demon, the gcd of the two jugs must be 1.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be given a different set of jugs to determine if the Volcano Demon has been satisfied.
+            \begin{itemize}
+                \item We would then proceed to calculate the gcd of these new jugs to determine if the Volcano Demon has been satisfied.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 5
+\begin{problem}{Problem 5}
+    \begin{statement}{Problem Statement}
+        The Volcano God again. Same set up, HOWEVER, the jug maker is broken. This time you have the same need to make the smaller measure with jugs but you have no jug maker. Notice the Euclidean 
+        Algorithm requires that we use these new jugs (the remainders) again and again.
+
+        For day 8, a day no one was thrown into the Volcano, show the recipe for measuring out a single cup measure. Show your work. You may use either a formal or informal process to find the 
+        answers (the recipes numbers are the Bezout Coefficients). \vspace*{1em}
+
+        Remember:
+
+        \begin{itemize}
+            \item What tells me the smallest amount I can measure? (GCD)
+            \item What tells me the recipe for measuring? (Bezouts)
+        \end{itemize}
+    \end{statement}
+
+    \begin{Highlight}[Solution]
+        On day 8, jugs with measurements 141 and 19 wash up on the shore. First, we want to calculate the gcd of these jugs. Namely,
+        \setcounter{equation}{0}
+        \begin{align}
+            141 & = 19 \cdot 7 + 8 \\
+            19 & = 8 \cdot 2 + 3 \\
+            8 & = 3 \cdot 2 + 2 \\
+            3 & = 2 \cdot 1 + 1 \\
+            2 & = 1 \cdot 2 + 0.
+        \end{align}
+        From equation (4) we can see that the gcd(141,19) = 1. Now we wish to find the Bezout coefficients. Namely,
+        {\small
+            \begin{align}
+                1 & = 3 - 2(1) & \text{(Rewriting equation (4))} \\
+                2 & = 8 - 3(2) & \text{(Rewriting equation (3))} \\
+                3 & = \textcolor{blue}{19} - 8(2) & \text{(Rewriting equation (2))} \\
+                8 & = \textcolor{blue}{141} - \textcolor{blue}{19}(7) & \text{(Rewriting equation (1))} \\
+                3 & = \textcolor{blue}{19} - (\textcolor{blue}{141} - \textcolor{blue}{19}(7))(2) & \text{(Substituting (9) into (8))} \\
+                & = \textcolor{blue}{19} + \textcolor{blue}{141}(-2) + \textcolor{blue}{19}(14) & \text{(Simplifying)} \\
+                & = \textcolor{blue}{141}(-2) + \textcolor{blue}{19}(15) & \text{(Simplifying)} \\
+                2 & = \textcolor{blue}{141}(1) + \textcolor{blue}{19}(-7) - (\textcolor{blue}{141}(-2) + \textcolor{blue}{19}(15))(2) & \text{(Substituting (9) and (12) into (7))} \\
+                & = \textcolor{blue}{141}(1) + \textcolor{blue}{19}(-7) + \textcolor{blue}{141}(4) + \textcolor{blue}{19}(-30) & \text{(Simplifying)} \\
+                & = \textcolor{blue}{141}(5) + \textcolor{blue}{19}(-37) & \text{(Simplifying)} \\
+                1 & = \textcolor{blue}{141}(-2) + \textcolor{blue}{19}(15) - (\textcolor{blue}{141}(5) + \textcolor{blue}{19}(-37))(1) & \text{(Substituting (12) and (15) into (6))} \\
+                & = \textcolor{blue}{141}(-2) + \textcolor{blue}{19}(15) + \textcolor{blue}{141}(-5) + \textcolor{blue}{19}(37) & \text{(Simplifying)} \\
+                & = \textcolor{blue}{141}(-7) + \textcolor{blue}{19}(52). & \text{(Simplifying)}
+            \end{align}
+        }
+        From the result in equation (18) we can then say the Bezout coefficients are
+
+        \begin{equation}
+            s = -7 , t = 52.
+        \end{equation}
+        These values ($s$ and $t$) will allow us to make a cup measure of 1 on day 8 where the jug measurements are 141 and 9. Essentially, we take out 7 measurements of 141 and add in 52 measurements
+        of 19.
+    \end{Highlight}
+\end{problem}
+
+% Problem 5 Summary
+\begin{summary}{Problem 5 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item Begin by showing that the gcd(141,19) = 1.
+            \item Proceed to solve for the remainders that were found in the EEA of the problem.
+            \item Proceed to substitute the remainder equations from the EEA into the other remainder equations until they are simplified in terms of 141 and 19.
+            \item Repeat the above procedure until we have simplified the remainder equation for 1.
+            \item The Bezout coefficients are then the multiples that are next to 141 and 19.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item In the formula
+            \begin{equation*}
+                x \cdot a \modulo b = 1
+            \end{equation*}
+            the Bezout coefficients tell us $\alpha$ and $\beta$ in 
+            \begin{equation*}
+                a (\alpha) + b (\beta) = \text{gcd}(a,b)
+            \end{equation*}
+            are modular inverses (or at least one of them is). 
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be asked to find the Bezout coefficients of other expressions.
+            \begin{itemize}
+                \item We would then use the same procedure as in this problem to find the Bezout coefficients.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 6
+\begin{problem}{Problem 6}
+    \begin{statement}{Problem Statement}
+        Notice there are 3 fundamental situations with the pairs of jugs.
+
+        \begin{itemize}
+            \item Some pairs of jugs you can use to measure any amount asked for.
+            \item Some pairs of jugs you can only measure multiples of the given jugs.
+            \item Some pairs of jugs which can measure some additional amounts smaller than each of the given jugs, but not all possible amounts.
+        \end{itemize}
+        Explain mathematically what each case means in terms of Primes, GCD, etc.. Give an example of each.
+    \end{statement}
+
+    \begin{Highlight}[Solution]
+        \begin{itemize}
+            \item Some pairs of jugs you can use to measure any amount asked for.
+            \begin{itemize}
+                \item This is a scenario in which the gcd of the jugs is 1. Because of this, we can use the extended Euclidean algorithm and calculate the Bezout coefficients to measure any desired
+                amount. Because the gcd of the jug measurements is 1 this implies that the measurements are relatively prime. For example, this scenario occurs on day 2 when the jugs that wash up on
+                shore measure 25 and 9.
+            \end{itemize}
+            \item Some pairs of jugs you can only measure multiples of the given jugs.
+            \begin{itemize}
+                \item This is a scenario in which the gcd of the jugs is not 1. Specifically, the gcd of the jugs is the smaller measurement of the two jugs that wash up on shore. Take for example
+                day 4 when jugs with measurements 66 and 11 wash up on shore. In this scenario we can only measurement jugs that are multiples of 11. In this specific example the gcd of the two jugs
+                measurements is 11. This is why we can only measure multiples of the given jugs.
+            \end{itemize}
+            \item Some pairs of jugs which can measure some additional amounts smaller than each of the given jugs, but not all possible amounts.
+            \begin{itemize}
+                \item This is a scenario in which the gcd of the jugs is again not 1. Specifically, the gcd of the jugs is a measurement that will equally divide both jug measurements. Take for example
+                day 1 when jugs with measurements 12 and 9 wash up on shore. In this example the gcd of the two measurements is 3. So we can make measurements that are smaller than each given jug but
+                not all possible measurements.
+            \end{itemize}
+        \end{itemize}
+    \end{Highlight}
+\end{problem}
+
+% Problem 6 Summary
+\begin{summary}{Problem 6 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item Answer the prompts using mathematical principles that are found in the problem.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item If the gcd of the two jug measurements is 1, then you can make any jug measurement that is asked of you.
+            \item If the gcd of the two jug measurements is equal to the smaller of the two jugs, then you can only make measurements that are multiples of the given jugs.
+            \item If the gcd of the two jug measurements is smaller than the smaller of the two jugs but not equal to one, then you can make smaller measurements that are factors of each jug measurement.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be asked the same or similar questions for a different set of jugs.
+            \begin{itemize}
+                \item In this case we would resort to discussing what the gcd of the jug measurements is and how that corresponds to the given prompt.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 7
+\begin{problem}{Problem 7}
+    \begin{statement}{Problem Statement}
+        Now let's formalize the process for this new method without a jug maker, which is the Extended Euclidean Algorithm by working through the algorithm using the example in the video.
+
+        \begin{enumerate}
+            \item Using 77 and 14, what variables represent 77 and 14 in the algorithm? (be specific)
+            \item Which values will update through the program, $m$ and $n$, or $m_{0}$ and $n_{0}$?
+        \end{enumerate}
+        s1, t1 and s2, t2 are the initial “recipes” for m and n.
+
+        \begin{itemize}
+            \item $77 = 1 \cdot 77 + 0 \cdot 14$
+            \item $14 = 0 \cdot 77 + 1 * 14$
+        \end{itemize}
+
+        \begin{enumerate}[start = 3]
+            \item Rewrite above using s1, t1 and s2, t2 and $m$ and $n$, and $m_{0}$ and $n_{0}$
+        \end{enumerate}
+        Before the loop we have now initialized our settings.
+
+        \begin{enumerate}[start = 4]
+            \item What is the condition on the loop (what will cause it to stop?)
+            \item What are $k$ and $q$ and why are we finding them?
+            \item Which lines update $m$ and $n$? (write them here)
+        \end{enumerate}
+        The code in blue is calculating the new values (the new “recipe”) of s1, t1 and s2, t2. Notice the use of s1, t1, s2, t2
+
+        \begin{enumerate}[start = 7]
+            \item How are these DIFFERENT variables related to s1, t1 and s2, t2?
+            \item How many distinct variables are being updated in the blue code?
+            \item How many are being updated in the pink code? (look carefully)
+        \end{enumerate}
+    \end{statement}
+
+    \begin{Highlight}[Solution]
+        \begin{enumerate}
+            \item Using 77 and 14, what variables represent 77 and 14 in the algorithm? (be specific)
+            \begin{itemize}
+                \item 77 represents the initial value of $m$ and 14 represents the initial value of $n$ of which we are trying to calculate the gcd for.
+            \end{itemize}
+            \item Which values will update through the program, $m$ and $n$, or $m_{0}$ and $n_{0}$?
+            \begin{itemize}
+                \item While present in the while loop, $m$ and $n$ are being updated. $m_{0}$ and $n_{0}$ are not being changed as they are just the initial values of $m$ and $n$ that are fed to the 
+                algorithm.
+            \end{itemize}
+        \end{enumerate}
+        s1, t1 and s2, t2 are the initial “recipes” for m and n.
+
+        \begin{itemize}
+            \item $77 = 1 \cdot 77 + 0 \cdot 14$
+            \item $14 = 0 \cdot 77 + 1 * 14$
+        \end{itemize}
+
+        \begin{enumerate}[start = 3]
+            \item Rewrite above using s1, t1 and s2, t2 and $m$ and $n$, and $m_{0}$ and $n_{0}$
+    \begin{lstlisting}[style=stackoverflow, language=python]
+        m_0 = m
+        n_0 = n
+        (s_1,t_1) = (1,0)
+        (s_2,t_2) = (0,1)
+    \end{lstlisting}
+        \end{enumerate}
+        Before the loop we have now initialized our settings.
+
+        \begin{enumerate}[start = 4]
+            \item What is the condition on the loop (what will cause it to stop?)
+            \begin{itemize}
+                \item When $n$ becomes less than or equal to 0.
+            \end{itemize}
+            \item What are $k$ and $q$ and why are we finding them?
+            \begin{itemize}
+                \item $k$ is the modulo of $m$ and $n$. This is the remainder that is calculated in the extended Euclidean algorithm and we need this as it is essentially to the algorithm.
+                \item $n$ is the updated value of $k$. This is needed to determine when the loop is going to break.
+            \end{itemize}
+            \item Which lines update $m$ and $n$? (write them here)
+    \begin{lstlisting}[style=stackoverflow, language=python]
+        m = n
+        n = k
+    \end{lstlisting}
+        \end{enumerate}
+        The code in blue is calculating the new values (the new “recipe”) of s1, t1 and s2, t2. Notice the use of s1, t1, s2, t2
+
+        \begin{enumerate}[start = 7]
+            \item How are these DIFFERENT variables related to s1, t1 and s2, t2?
+            \begin{itemize}
+                \item They are essentially the next increment for the Bezout coefficients. These values rely on the next Bezout coefficients.
+            \end{itemize}
+            \item How many distinct variables are being updated in the blue code?
+            \begin{itemize}
+                \item The new values for $\hat{s}_{1},\hat{t}_{1},\hat{s}_{2},\hat{t}_{2}$ are being updated. So this means that four variables are being updated that are reliant upon previous values.
+                These variables technically didn't exist before these lines in the algorithm so one could make the argument that they aren't being updated and instead are being assigned.
+            \end{itemize}
+            \item How many are being updated in the pink code? (look carefully)
+            \begin{itemize}
+                \item $s_{1},t_{1},s_{2},t_{2}$ are being updated. So four variables are being updated in the pink code.
+            \end{itemize}
+        \end{enumerate}
+    \end{Highlight}
+\end{problem}
+
+% Problem 7 Summary
+\begin{summary}{Problem 7 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item Answer the prompts by referencing the algorithm that is found in Siriam's video.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item In the context of this algorithm, the numbers 77 and 14 represent the input parameters for the algorithm.
+            \item The values $m$ and $n$ are the values that are updated in the group of $m,n,m_{0},n_{0}$.
+            \item The while loop that is in the algorithm will run until $n$ becomes less than or equal to 0.
+            \item This algorithm is solving for the Bezout coefficients for a given set of numbers $m$ and $n$.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be asked to analyze a different algorithm and comment on specific aspects of it.
+            \begin{itemize}
+                \item We would then just use common sense and analyze the algorithm.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 8
+\begin{problem}{Problem 8}
+    \begin{statement}{Problem Statement}
+        Write the code for the Extended Euclidean Algorithm using Sriram’s algorithm. Show the code here in plain text with comments - use feedback on code style from last week. This can be a screenshot.
+    \end{statement}
+
+    \begin{Highlight}[Solution]
+        Below is my code for the extended Euclidean algorithm in Python.
+    \begin{lstlisting}[style=stackoverflow, language=python]
+    # EEA - Greatest Common Divisor or Euclidean algorithm for two numbers m and n
+    # Input:
+    #   m - Integer value that represents the larger of the two values in the EEA calculation
+    #   n - Integer value that represents the smaller of the two values in the EEA calculation
+    # Algorithm:
+    #   * Assign values to the initial of m and n with m_0 and n_0
+    #   * Assign values to the initial Bezout coefficients s_1,t_1 with 1 and 0
+    #   * Assign values to the updated Bezout coefficients s_2,t_2 with 0 and 1
+    #   * Execute the while loop until n is less than or equal to 0 (usually equal to 0)
+    #       * Calculate the modulo of m and n and assign it to k
+    #       * Calculate the integer division of m and n and assign it to q
+    #       * Update m to the current value of n and n to to the current value of k
+    #       * Calculate new values for the Bezout coefficients S_1,T_1 with s_2,t_2
+    #       * Calculate the new updated Bezout coefficients S_2,T_2 with s_1 - q * s_2, t_1 - q * t_2
+    #       * Update the Bezout coefficients (which will eventually be returned) s_1,t_1 with S_1,T_1
+    #       * Update the updated Bezout coefficients s_2,t_2 with S_2,T_2
+    #   * Return the GCD (m) and the Bezout coefficients (s_1,t_1) as an array after the loop
+    # Output:
+    #   This algorithm returns an array of values related to the Extended Euclidean Algorithm
+    #   m - This is the GCD of the two original numbers m and n
+    #   s_1 - This is the first Bezout coefficient (s) that is returned
+    #   t_1 - This is the second Bezout coefficient (t) that is returned
+    def EEA(m,n):
+        m_0,n_0 = m,n
+        s_1,t_1 = 1,0
+        s_2,t_2 = 0,1
+        while (n > 0):
+            k = m % n
+            q = m // n
+            m = n
+            n = k
+            S_1,T_1 = s_2,t_2
+            S_2,T_2 = s_1 - q * s_2, t_1 - q * t_2
+            s_1,t_1 = S_1,T_1
+            s_2,t_2 = S_2,T_2
+        return [m,s_1,t_1]
+    \end{lstlisting}
+    I used parallel assignment in Python to cut down on the syntax of the actual function itself. Comments are listed in green text that explain the input, algorithm, and output for this function.
+    This code came from Siriam's video in this weeks lectures.
+    \end{Highlight}
+\end{problem}
+
+% Problem 8 Summary
+\begin{summary}{Problem 8 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item Write code in Python that calculates the Bezout coefficients for a given set of numbers 
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item This problem showcases a way to code the Extended Euclidean Algorithm (EEA) in Python such that it will return the gcd of two numbers and the Bezout coefficients.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be asked to program a different algorithm.
+            \begin{itemize}
+                \item In this case we would then write a new algorithm that achieves what is asked of us.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 9
+\begin{problem}{Problem 9}
+    \begin{statement}{Problem Statement}
+        Test your code with \#41 - 44 page 273. Show the results as linear combinations as instructed (either by hand or you can include as code).
+    \end{statement}
+
+    \begin{Highlight}[HW Helper Function]
+        Before I go into testing my code with the problems in the book, I want share a function that I created to output cleaner results.
+
+    \begin{lstlisting}[style=stackoverflow, language=python]
+    def HWHelper(m,n):
+        m_0,n_0 = m,n
+        print(f"We seek to the Bezout coefficients of {m_0} and {n_0}, namely, express gcd({m_0},{n_0}) as a linear combination of {m_0} and {n_0}.")
+        print(f"The Extended Euclidean Algorithm by default is: gcd(m,n) = sm + tn.")
+        result = EEA(m,n)
+        print(f"The gcd(m,n) = {result[0]}, the Bezout coefficients are s = {result[1]}, t = {result[2]}.")
+        print(f"Finally, we have: {result[0]} = ({result[1]}){m_0} + ({result[2]}){n_0} expressed as a linear combination.")
+    \end{lstlisting}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - \# 41]
+    \begin{lstlisting}[style=stackoverflow]
+    HWHelper(26,91) #Output follows after this
+
+    We seek to the Bezout coefficients of 26 and 91, namely, express gcd(26,91) as a linear combination of 26 and 91.
+    The Extended Euclidean Algorithm by default is: gcd(m,n) = sm + tn.
+    The gcd(m,n) = 13, the Bezout coefficients are s = -3, t = 1.
+    Finally, we have: 13 = (-3)26 + (1)91 expressed as a linear combination.
+    \end{lstlisting}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - \# 42]
+    \begin{lstlisting}[style=stackoverflow]
+    HWHelper(252,356) #Output follows after this
+
+    We seek to the Bezout coefficients of 252 and 356, namely, express gcd(252,356) as a linear combination of 252 and 356.
+    The Extended Euclidean Algorithm by default is: gcd(m,n) = sm + tn.
+    The gcd(m,n) = 4, the Bezout coefficients are s = -24, t = 17.
+    Finally, we have: 4 = (-24)252 + (17)356 expressed as a linear combination.
+    \end{lstlisting}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - \# 43]
+    \begin{lstlisting}[style=stackoverflow]
+    HWHelper(144,89) #Output follows after this
+
+    We seek to the Bezout coefficients of 144 and 89, namely, express gcd(144,89) as a linear combination of 144 and 89.
+    The Extended Euclidean Algorithm by default is: gcd(m,n) = sm + tn.
+    The gcd(m,n) = 1, the Bezout coefficients are s = 34, t = -55.
+    Finally, we have: 1 = (34)144 + (-55)89 expressed as a linear combination.
+    \end{lstlisting}
+    \end{Highlight}
+
+    \begin{Highlight}[Solution - \# 44]
+    \begin{lstlisting}[style=stackoverflow]
+    HWHelper(1001,100001) #Output follows after this
+
+    We seek to the Bezout coefficients of 1001 and 100001, namely, express gcd(1001,100001) as a linear combination of 1001 and 100001.
+    The Extended Euclidean Algorithm by default is: gcd(m,n) = sm + tn.
+    The gcd(m,n) = 11, the Bezout coefficients are s = -999, t = 10.
+    Finally, we have: 11 = (-999)1001 + (10)100001 expressed as a linear combination.
+    \end{lstlisting}
+    \end{Highlight}
+\end{problem}
+
+% Problem 9 Summary
+\begin{summary}{Problem 9 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item Write a helper function that will print to console the problems that we are asked to solve.
+            \item Use the helper function and show the output that is produced from the algorithm and helper function.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concetps}
+        \begin{itemize}
+            \item This problem showcases the use of the Extended Euclidean Algorithm (EEA) and shows the output for a set of numbers.
+            \item The EEA returns the gcd of two numbers and the Bezout coefficients.
+            \item The Bezout coefficients (at least of them) are solutions to modular inverses.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be asked to demonstrate the use of a function with different initial values.
+            \begin{itemize}
+                \item In this case we would use the function with these new values.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
+
+% Problem 10
+\begin{problem}{Problem 10}
+    \begin{statement}{Problem Statement}
+        Finally, for a project check in, work through the example on 8 and 9 page 300 - 301 on your own. \vspace*{1em}
+
+        Create a similar SIMPLE 4 letter word as an example following this format and using the keys from the example.
+    \end{statement}
+
+    \begin{Highlight}[Solution]
+        The four letter word that I am going to use in this example is \textbf{WORK}. \vspace*{1em}
+
+        The key that is going to be used to encrypt this word is (2537,13). It follows that
+
+        \setcounter{equation}{0}
+        \begin{equation}
+            \text{gcd}(e,(p-1)(q-1)) = \text{gcd}(13,42 \cdot 58) = 1.
+        \end{equation}
+
+        To encrypt this message, we first need to represent the original letters of the word \textbf{WORK} with their numerical equivalences. For \textbf{WORK} it would be represented with
+
+        \begin{equation}
+            \text{WORK} = \text{ 22 14 17 10}.
+        \end{equation}
+        The numerical equivalences of the letters in \textbf{WORK} are represented with an integer value where we first assign A = 0, B = 1, $\dots$ Z = 25. We now need to perform a shift on the letters
+        in \textbf{WORK}. We are going to use the Caesar shift method where we shift the letters by 3 and then perform the modulo of that new value with 26. Precisely,
+
+        \begin{equation}
+            f(p) = (p + 3) \modulo 26.
+        \end{equation}
+        Performing the Caesar shift of \textbf{WORK} with that found in equation (3) we now have
+        \begin{align}
+            f(W) & = (22 + 3) \modulo 26 = (25) \modulo 26 = 25 \\
+            f(O) & = (14 + 3) \modulo 26 = (17) \modulo 26 = 17 \\
+            f(R) & = (17 + 3) \modulo 26 = (20) \modulo 26 = 20 \\
+            f(K) & = (10 + 3) \modulo 26 = (13) \modulo 26 = 13.
+        \end{align}
+        We now have the Caesar shift of \textbf{WORK} to be represented with $\text{25 17 20 13}$. In two separate blocks \textbf{WORK} would be represented as $\text{2517 2013}$. We now need to
+        encrypt the blocks with the following mapping
+
+        \begin{equation}
+            C = M^{13} \modulo 2537.
+        \end{equation}
+        Performing the mapping on the two blocks $\text{2517 2013}$ we now have
+        \begin{align}
+            C & = 2517^{13} \modulo 2537 = 1744 \\
+            C & = 2013^{13} \modulo 2537 = 1951.
+        \end{align}
+        The encrypted message is now
+
+        \begin{equation}
+            \mathbf{1744} \hspace*{5pt} \mathbf{1951}.
+        \end{equation}
+    \end{Highlight}
+\end{problem}
+
+% Problem 10 Summary
+\begin{summary}{Problem 10 Summary}
+    \begin{statement}{Procedure}
+        \begin{itemize}
+            \item Show that the gcd of the keys that are presented in the problem is equal to one.
+            \item Write out a numerical definition of the word that we are trying to encrypt.
+            \item Perform a shift on each letter of the word and calculate the modulo of that number.
+            \item Use FME to encrypt the blocks of numbers.
+            \item Show the encrypted word with the results from the FME algorithm.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Key Concepts}
+        \begin{itemize}
+            \item This problem showcases in a snapshot how a piece of data can be encrypted with modulo operations.
+            \item We use gcd to show that the keys and the Euler Totient function of our prime numbers are relatively prime.
+            \item We represent letters in a message with numerical values such that they can be encrypted later on.
+            \item Encryption takes advantage of FME and other mathematical operations to safely encrypt messages.
+            \item Encryption in the method that is provided in this example is a safe way to make sure people who intercept a message may not be able to break the encryption easily.
+        \end{itemize}
+    \end{statement}
+    \begin{statement}{Variations}
+        \begin{itemize}
+            \item We could be asked to decrypt a message with known public keys and value of $n$.
+            \begin{itemize}
+                \item We would then use FME with the private key that is given to us to unwind the message and show what it represents. Namely,
+                \begin{equation*}
+                    M = C^{d} \modulo n
+                \end{equation*}
+                where $M$ is our decrypted block of text, $C$ is the encrypted block of text, $d$ is our private key, and $n$ is the value that is found from our Euler Totient function value with our
+                prime numbers.
+            \end{itemize}
+        \end{itemize}
+    \end{statement}
+\end{summary}
