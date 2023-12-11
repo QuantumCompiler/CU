@@ -1,4 +1,12 @@
+# DS_Store Ignore
 .DS_Store
+
+# LaTeX Excess Ignore
+bib.bib
+main.atfi
 main.aux
+main.bcf
 main.log
 main.out
+main.ptc
+main.run.xml
