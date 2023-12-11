@@ -1,0 +1,296 @@
+\begin{examnotes}{Exam 1 Notes}
+    \textbf{Inner Product:} Calculates the overlap between two vectors
+    \begin{equation*}
+        a^{T}b = \|a\|\|b\|\cos{(\theta)}.
+    \end{equation*}
+    When $\theta = \pi / 2$ the vectors are perpendicular and when $\theta = 0$ the vectors are parallel.
+
+    \textbf{Taylor Series:} Approximates a differentiable function to a polynomial at a given point of the original function
+    \begin{align*}
+        \mathbb{T}(x,a) & = \sum_{n = 0}^{\infty} \frac{f^{n}(x-a)^{n}}{n!} \\
+        \hat{f}(x) & = f(x,z) + \nabla f(z)^{T}(x-z) \\
+        \nabla f(x,z) & = 
+        \begin{bmatrix}
+            \frac{\partial f}{\partial x_{1}}(z) \\
+            \vdots \\
+            \frac{\partial f}{\partial x_{n}}(z) \\
+        \end{bmatrix}.
+    \end{align*}
+
+    \textbf{Affine Function:} Inner product with an additional scalar value
+    \begin{equation*}
+        f(x) = a^{T}x + b.
+    \end{equation*}
+
+    \textbf{Linear Functions:} Linear functions are of the form
+    \begin{align*}
+        \text{Superposition:} \hspace*{2pt} & f(\alpha x + \beta y) = \alpha f(x) + \beta f(y) \\
+        \text{Homogeneity:} & \hspace*{2pt} f(\alpha x) = \alpha f(x) \\
+        \text{Additivity:} & \hspace*{2pt} f(x + y) = f(x) + f(y).
+    \end{align*}
+    Superposition is a combination of homogeneity and additivity.
+
+    \textbf{Linear Regression:} Models the relationship between a dependent variable and one or more independent variables, aiming to estimate coefficients that minimize the error between predicted
+    and observed values
+    \begin{equation*}
+        \hat{y} = x^{T}\beta + v
+    \end{equation*}
+    where $x$ are the regressors, $\hat{y}$ is the prediction, $\beta$ is an $n$-vector and $v$ is a scalar.
+
+    \textbf{Norm Of Vector:} Measurement of how large a vector or a collection or vectors are
+    \begin{align*}
+        \|x\| & = x^{T}x = \sqrt{x_{1}^{2} + \dots + x_{n}^{2}} \\
+        \|x + y\| & = \sqrt{\|x\|^{2} + 2x^{T}y + \|y\|^2} \\
+        \|(a,b,c)\| & = \sqrt{\|a\|^{2} + \|b\|^{2} + \|c\|^{2}}.
+    \end{align*}
+
+    \textbf{Triangle Inequality:} The norm of a sum of two vectors is no more than the sum of their norms
+    \begin{equation*}
+        \|x + y\| \leq \|x\| + \|y\|.
+    \end{equation*}
+
+    \textbf{Root Mean Square (RMS):} Typical value of $\|x_{i}\|$
+    \begin{equation*}
+        \mathbf{rms}(x) = \frac{\|x\|}{\sqrt{n}}.
+    \end{equation*}
+
+    \textbf{Chebyshev Inequality:} Provides an upper bound on the probability that a random variable deviates from its mean by a certain multiple of its standard deviation
+    \begin{equation*}
+        \frac{k}{n} \leq \Bigg(\frac{\mathbf{rms}(x)}{a} \Bigg)^{2}
+    \end{equation*}
+    where $k$ is the number of entries in $x$ with absolute value of at least $a$.
+
+    \textbf{Distance:} Calculates the Euclidean distance between two vectors
+    \begin{equation*}
+        \mathbf{dist}(a,b) = \|a - b\|.
+    \end{equation*}
+
+    \textbf{Average:} Calculates the average value of a vector
+    \begin{equation*}
+        \mathbf{avg}(x) = \frac{x_{1} + \dots + x_{n}}{n}.
+    \end{equation*}
+
+    \textbf{Nearest Neighbor:} The vector that is the closest vector to another given vector
+    \begin{equation*}
+        ||x - z_{j}|| \leq ||x - z_{i}||, \hspace*{5pt} i = 1,\dots,n.
+    \end{equation*}
+
+    \textbf{Standard Deviation:} A measure of the dispersion of the values within the vector
+    \begin{equation*}
+        \mathbf{std}(x) = \frac{\|x - (\mathbf{1}^{T}x/n)\|}{\sqrt{n}}.
+    \end{equation*}
+
+    \textbf{J-Clust:} $J_{C}$ is a method of quantifying how good a clustering of data points is for a given cluster
+    \begin{equation*}
+        J_{C} = \sum_{i = 1}^{N}\sum_{j = 1}^{k} \frac{1}{N} \mathbf{min}(\|x_{i} - z_{j}\|^{2})
+    \end{equation*}
+    where $z_{j}$ is calculated by 
+    \begin{equation*}
+        z_{j} = \frac{1}{|G_{j}|} \sum_{i \in G_{j}}^{n} x_{i}.
+    \end{equation*}
+
+    \textbf{K-Means Algorithm:} The $k$-means algorithm clusters data for a given data set into $k$ clusters.
+    \begin{enumerate}
+        \item \textit{Partition the vectors into k groups:} For each vector $i = 1, \dots, N,$ assign $x_{i}$ to the group associated with the nearest representative
+        \item \textit{Update representatives:} For each group $j = 1, \dots, k,$ set $z_{j}$ to be the mean of the vectors in group $j$.
+    \end{enumerate}
+
+    \textbf{Linear Independence:} Linear independence and dependence can be summarized with
+    \begin{equation*}
+        \beta_{1}a_{1} + \dots + \beta_{k}a_{k} = 0
+    \end{equation*}
+    where for a collection of vectors to be linearly independent or dependent one of the following statements must be true.
+    \begin{enumerate}
+        \item \textit{Linearly Independent:} All values of $\beta$ must be zero.
+        \item \textit{Linearly Dependent:} There exists at least one $\beta$ that is non zero.
+    \end{enumerate}
+\end{examnotes}
+
+\begin{examnotes}{Exam 2 Notes}
+    \textbf{Matrix Types:} Matrix sizes are defined in terms of their rows $(m)$ by columns $(n)$:
+    \begin{itemize}
+        \item \textbf{Square Matrix:} $m = n$.
+        \item \textbf{Tall Matrix:} $m > n$.
+        \item \textbf{Wide Matrix:} $m < n$.
+    \end{itemize}
+
+    \textbf{2D Rotation Matrix:} The 2D rotation matrix is:
+    \begin{equation*}
+        R(\theta) = 
+        \begin{bmatrix}
+            \cos{(\theta)} & -\sin{(\theta)} \\
+            \sin{(\theta)} & \cos{(\theta)} \\
+        \end{bmatrix}
+    \end{equation*}
+
+    \textbf{3D Rotation Matrices:} The 3D rotation matrices are:
+    \begin{equation*}
+        R_{x}(\theta) = 
+        \begin{bmatrix}
+            1 & 0 & 0 \\
+            0 & \cos{(\theta)} & -\sin{(\theta)} \\
+            0 & \sin{(\theta)} & \cos{(\theta)} \\
+        \end{bmatrix}
+    \end{equation*}
+    \begin{equation*}
+        R_{y}(\theta) = 
+        \begin{bmatrix}
+            \cos{(\theta)} & 0 & \sin{(\theta)} \\
+            0 & 1 & 0 \\
+            -\sin{(\theta)} & 0 & \cos{(\theta)} \\
+        \end{bmatrix}
+    \end{equation*}
+    \begin{equation*}
+        R_{z}(\theta) = 
+        \begin{bmatrix}
+            \cos{(\theta)} & -\sin{(\theta)} & 0 \\
+            \sin{(\theta)} & \cos{(\theta)} & 0 \\
+            0 & 0 & 1 \\
+        \end{bmatrix}
+    \end{equation*}
+
+    \textbf{Incidence Matrix:} An incidence matrix is of the form:
+    \begin{equation*}
+        A = 
+        \begin{bmatrix}
+            a_{11} & \dots & a_{1n} \\
+            \vdots & \ddots & \vdots \\
+            a_{m1} & \dots & a_{mn} \\
+        \end{bmatrix}
+    \end{equation*}
+    The rows and columns of an incidence matrix represent:
+    \begin{itemize}
+        \item \textit{Columns:} Represent the edges of the graph.
+        \item \textit{Rows:} Represent the vertices of the graph.
+    \end{itemize}
+    The values of the elements indicate:
+    \begin{itemize}
+        \item 1: Edge $j$ points to node $i$.
+        \item -1: Edge $j$ points from node $i$.
+        \item 0: Otherwise.
+    \end{itemize}
+
+    \textbf{Dirichlet Energy:} Measures the potential differences across edges:
+    \begin{equation*}
+        \mathcal{D}(v) = \|A^{T}\|^{2} = \sum_{(k,l) \in \text{Edges}} (v_{l} - v_{k})^{2}
+    \end{equation*}
+
+    \textbf{Matrix Multiplication:} Matrix multiplication is performed by:
+    \begin{align*}
+        AB & = 
+        \begin{bmatrix}
+            a_{11} & a_{12} \\
+            a_{21} & a_{22} \\
+        \end{bmatrix}
+        \begin{bmatrix}
+            b_{11} & b_{12} \\
+            b_{21} & b_{22} \\
+        \end{bmatrix} \\
+        & = 
+        \begin{bmatrix}
+            a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22} \\
+            a_{21}b_{11} + a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} \\
+        \end{bmatrix}
+    \end{align*}
+    The main properties of matrix multiplication are:
+    \begin{itemize}
+        \item \textit{Associativity:} $(AB)C = A(BC)$
+        \item \textit{Scalar Multiplication:} $\gamma(AB) = (\gamma A)B$
+        \item \textit{Distributivity:}
+        \begin{itemize}
+            \item $A(B + C) = AB + AC$
+            \item $(A + B)C = AC + BC$
+        \end{itemize}
+        \item \textit{Transpose Product:} $(AB)^{T} = B^{T}A^{T}$
+    \end{itemize}
+
+    \textbf{Some Matrix Representations:} Some matrix representations are:
+    \begin{itemize}
+        \item \textit{Column Interpretation:}
+        \begin{equation*}
+            AB = 
+            \begin{bmatrix}
+                Ab_{1} & Ab_{2} & \dots & Ab_{n} \\
+            \end{bmatrix}
+        \end{equation*}
+        \item \textit{Row Interpretation:}
+        \begin{equation*}
+            AB = 
+            \begin{bmatrix}
+                (B^{T}a_{1})^{T} \\
+                (B^{T}a_{2})^{T} \\
+                \vdots \\
+                (B^{T}a_{m})^{T} \\
+            \end{bmatrix}
+        \end{equation*}
+        \item \textit{Gram Matrix:}
+        \begin{equation*}
+            G = A^{T}A
+        \end{equation*}
+        \item \textit{QR Factorization:}
+        \begin{equation*}
+            A = QR
+        \end{equation*}
+    \end{itemize}
+
+    \textbf{Matrix Inverses:} The rules for if a matrix is invertible:
+    \begin{itemize}
+        \item Matrix must be square.
+        \item The columns are linearly independent.
+        \item The rows are linearly independent.
+        \item The matrix has a left inverse.
+        \item The matrix has a right inverse.
+    \end{itemize}
+    For a $2 \times 2$ matrix the inverse is:
+    \begin{equation*}
+        A^{-1} =
+        \frac{1}{|A|}
+        \begin{bmatrix}
+            d & -b \\
+            -c & a \\
+        \end{bmatrix}
+    \end{equation*}
+    For a $3 \times 3$ matrix the inverse is:
+    \begin{equation*}
+        A^{-1} = 
+        \frac{1}{|A|}
+        \begin{bmatrix}
+            \begin{Vmatrix}
+                a_{22} & a_{23} \\
+                a_{32} & a_{33} \\
+            \end{Vmatrix} &
+            \begin{Vmatrix}
+                a_{13} & a_{12} \\
+                a_{33} & a_{32} \\
+            \end{Vmatrix} &
+            \begin{Vmatrix}
+                a_{12} & a_{13} \\
+                a_{22} & a_{23} \\
+            \end{Vmatrix} \\
+            \begin{Vmatrix}
+                a_{23} & a_{21} \\
+                a_{33} & a_{31} \\
+            \end{Vmatrix} &
+            \begin{Vmatrix}
+                a_{11} & a_{13} \\
+                a_{31} & a_{33} \\
+            \end{Vmatrix} &
+            \begin{Vmatrix}
+                a_{13} & a_{11} \\
+                a_{23} & a_{21} \\
+            \end{Vmatrix} \\
+            \begin{Vmatrix}
+                a_{21} & a_{22} \\
+                a_{31} & a_{32} \\
+            \end{Vmatrix} &
+            \begin{Vmatrix}
+                a_{12} & a_{11} \\
+                a_{32} & a_{31} \\
+            \end{Vmatrix} & 
+            \begin{Vmatrix}
+                a_{11} & a_{12} \\
+                a_{21} & a_{22} \\
+            \end{Vmatrix} \\
+        \end{bmatrix}
+    \end{equation*}
+\end{examnotes}

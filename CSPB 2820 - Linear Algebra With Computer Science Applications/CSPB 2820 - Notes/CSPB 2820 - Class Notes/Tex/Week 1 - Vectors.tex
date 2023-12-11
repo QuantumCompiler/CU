@@ -1,0 +1,257 @@
+\clearpage
+\chapter{Week 1: (8/28 - 9/3)}
+
+\section{Vectors}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Chapter 1} from VMLS.
+    \item \textbf{Sections 1.1 - 1.5} from Python Companion.
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{four} Piazza posts this week. \due{(9/1/23)} \cbox{piazza-week1}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50664}{Why Linear Algebra?} $\approx$ 10 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50666}{Vectors} $\approx$ 12 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50667}{Adding \& Scaling Vectors} $\approx$ 22 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50668}{Inner Product} $\approx$ 13 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50669}{Random Exercise: Chapter 1 - 1.9} $\approx$ 6 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50670}{Implementing Vectors In Python} $\approx$ 22 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50671}{Vectors In Numpy} $\approx$ 22 min.
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/VMLS Assignment 1 - Chapter 1.pdf}{VMLS - Assignment 1: Chapter 1.} \due{(9/5/23)} \cbox{assignment-week1}
+
+\subsection{Quiz}
+
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50674}{Chapter 1.} \due{(9/5/23)} \cbox{quiz-week1}
+
+\subsection{Chapter Summary}
+
+The chapter that we will review this week is from \textbf{VMLS Chapter 1 - Vectors.} The first section that is going to be reviewed is \textbf{VMLS Section 1.1 - Vectors.}
+
+\begin{notes}{VMLS Section 1.1 - Vectors}
+    \subsubsection*{Overview}
+
+    In the realm of computer science, vectors serve as fundamental mathematical constructs that hold immense significance in representing quantities possessing both magnitude and direction. Their 
+    versatile nature finds applications in various domains including graphics, physics simulations, machine learning, and data analysis.
+
+    A vector is essentially defined by its components across distinct dimensions. For instance, in a two-dimensional space, a vector could be denoted as (x, y), where 'x' and 'y' symbolize the 
+    components along the horizontal and vertical axes respectively. This concept extends to three-dimensional space where vectors have three components (x, y, z), and further to higher dimensions 
+    as required by the problem context.
+
+    The visual representation of vectors often takes the form of arrows originating from an origin point and extending to a specific location in space. The length of the arrow characterizes the 
+    magnitude of the vector, while its direction conveys the vector's alignment within the coordinate system.
+
+    At the heart of computer science, vector operations play a pivotal role. Key concepts include:
+
+    Vector Addition and Subtraction: Addition involves summing up corresponding components of vectors, while subtraction follows a similar principle. These operations are fundamental in simulations, 
+    motion calculations, and beyond.
+
+    Scalar Multiplication: Vectors can be scaled by a scalar value, modifying their magnitude while preserving direction. This operation is pivotal for scenarios such as magnifying a vector's impact 
+    by multiplying it with a factor.
+
+    Dot Product (Scalar Product): The dot product gauges the alignment of two vectors. Computed by summing the products of their corresponding components, it finds use in angle calculations and 
+    identifying vector orthogonality.
+
+    Cross Product (Vector Product): Resulting in a new vector orthogonal to its inputs, the cross product holds significance in graphics and physics, contributing to calculations involving surface 
+    normals and angular momentum.
+
+    Vector Spaces: The grouping of vectors into vector spaces, characterized by operations maintaining specific properties, provides the mathematical groundwork for numerous computational algorithms.
+
+    Machine Learning: Vectors find substantial application in machine learning, where data points are often represented in high-dimensional spaces. This facilitates efficient processing and analysis 
+    of complex data structures.
+
+    Graphics and Computer Animation: Vectors form the cornerstone of graphical representation, enabling efficient manipulation, transformation, and rendering of objects in 2D and 3D settings.
+
+    Data Analysis: Vectors are indispensable in data analysis, used to express features of data points. Techniques such as clustering, dimensionality reduction, and similarity calculations heavily 
+    depend on vector-based representations.
+
+    In summary, vectors serve as versatile mathematical tools that occupy a central role in the field of computer science. Their ability to capture both magnitude and direction renders them invaluable 
+    for resolving an extensive array of challenges across diverse domains.
+    
+    \begin{Highlight}[Python Vectors]
+        Below is an example of we can utilize vectors in the context of Python.
+
+        \begin{verbatim}
+        import numpy as np
+
+        # Creating vectors
+        vector_a = np.array([1, 2, 3])
+        vector_b = np.array([4, 5, 6])
+
+        print("Vector A:", vector_a)
+        print("Vector B:", vector_b)
+        \end{verbatim}
+    \end{Highlight}
+\end{notes}
+
+The second section that we are going to review is \textbf{VMLS Section 1.2 - Vector Addition.}
+
+\begin{notes}{VMLS Section 1.2 - Vector Addition}
+    \subsubsection*{Addition}
+
+    Vector addition is a fundamental mathematical operation that involves combining two or more vectors to create a new vector ($\mathbf{C}$). In this process, the individual components of the vectors are 
+    added together to form the components of the resulting vector. This operation finds widespread application in various fields, including physics, computer graphics, and engineering.
+
+    When adding vectors, their geometric properties are combined. If two vectors represent displacements or forces, for example, their addition results in a vector that encapsulates the net effect of both 
+    original vectors. The addition is performed by adding corresponding components along each dimension. In a two-dimensional space, if you have vectors $\mathbf{A} = (a_1, a_2)$ and $\mathbf{B} = (b_1, b_2)$, 
+    their sum $\mathbf{C} = \mathbf{A} + \mathbf{B}$ would be $(a_1 + b_1, a_2 + b_2)$.  
+    
+    Vector addition obeys the commutative property, meaning the order in which vectors are added does not affect the result: $\mathbf{A} + \mathbf{B} = \mathbf{B} + \mathbf{A}$. It also adheres to the associative 
+    property, allowing multiple vectors to be added in any order: $(\mathbf{A} + \mathbf{B}) + \mathbf{C} = \mathbf{A} + (\mathbf{B} + \mathbf{C})$.
+    
+    In computer graphics, vector addition is used to manipulate the positions and orientations of objects. In physics, it's employed to analyze forces and velocities acting on objects. In navigation and robotics, 
+    vector addition helps calculate resultant velocities or paths. Essentially, vector addition is a fundamental tool that enables us to combine different influences or movements in a coherent and mathematically 
+    rigorous manner.
+
+    \begin{Highlight}[Python Addition]
+        Below is an example of vector addition in Python.
+
+        \begin{verbatim}
+        import numpy as np
+
+        # Creating vectors
+        vector_a = np.array([1, 2, 3])
+        vector_b = np.array([4, 5, 6])
+        
+        result_add = vector_a + vector_b
+        print("Vector A + Vector B:", result_add)
+        \end{verbatim}
+    \end{Highlight}
+
+    \subsubsection*{Subtraction}
+
+    Vector subtraction is a fundamental mathematical operation that involves finding the difference between two vectors to create a new vector ($\mathbf{D}$). In this process, the individual components of one vector 
+    are subtracted from the corresponding components of the other vector, forming the components of the resulting vector. Like vector addition, vector subtraction is widely applicable in fields such as physics, 
+    computer graphics, and engineering.
+
+    When subtracting vectors, the geometric properties of their differences are considered. For instance, if one vector represents a displacement and the other vector represents a force, their subtraction yields a 
+    vector encapsulating the net effect of these vectors. The operation is carried out by subtracting corresponding components along each dimension. In a two-dimensional space, if you have vectors $\mathbf{A} = (a_1, a_2)$ 
+    and $\mathbf{B} = (b_1, b_2)$, their difference $\mathbf{D} = \mathbf{A} - \mathbf{B}$ would be $(a_1 - b_1, a_2 - b_2)$.
+    
+    Similar to vector addition, vector subtraction follows the commutative property: $\mathbf{A} - \mathbf{B} = -(\mathbf{B} - \mathbf{A})$. This means that subtracting vector $\mathbf{B}$ from vector $\mathbf{A}$ is 
+    equivalent to adding the negation of vector $\mathbf{B}$ to vector $\mathbf{A}$.
+
+    Vector subtraction finds applications in scenarios where you need to find the difference between quantities, such as when determining the change in position or displacement between two points in space. Additionally, 
+    vector subtraction is fundamental in physics for analyzing relative velocities and net forces acting on objects.
+
+    \begin{Highlight}[Python Subtraction]
+        Below is an example of vector subtraction in Python.
+
+        \begin{verbatim}
+        import numpy as np
+
+        # Creating vectors
+        vector_a = np.array([1, 2, 3])
+        vector_b = np.array([4, 5, 6])
+        
+        result_sub = vector_a - vector_b
+        print("Vector A - Vector B:", result_sub)        
+        \end{verbatim}
+    \end{Highlight}
+
+    In summary, vector subtraction is a foundational operation in mathematics and has widespread application across various scientific and computational disciplines.
+\end{notes}
+
+The next section that we are going to review is \textbf{VMLS Section 1.3 - Scalar-Vector Multiplication.}
+
+\begin{notes}{VMLS Section 1.3 - Scalar-Vector Multiplication}
+    Scalar-vector multiplication is a fundamental mathematical operation that involves scaling a vector by a scalar, resulting in a new vector with adjusted magnitude and direction. In this operation, each component of 
+    the vector is multiplied by the scalar value. Scalar-vector multiplication is a concept widely applied in various fields including physics, engineering, computer graphics, and linear algebra.
+
+    When a scalar is multiplied by a vector, the scalar effectively controls the stretching or shrinking of the vector without changing its direction. If the scalar is positive, the vector extends in the same direction 
+    while increasing in magnitude. If the scalar is negative, the vector reverses direction while its magnitude increases. If the scalar is zero, the resulting vector is the zero vector, regardless of the original vector's 
+    direction.
+
+    \begin{Highlight}[Scalar Vector Multiplication Defintion]
+        Mathematically, if \(\mathbf{v}\) is a vector and \(k\) is a scalar, then the scalar-vector multiplication is expressed as:
+    
+        \[
+        k \cdot \mathbf{v} = \begin{bmatrix} kv_1 \\ kv_2 \\ \vdots \\ kv_n \end{bmatrix}
+        \]
+    
+        Where \(v_1, v_2, \ldots, v_n\) are the components of the vector \(\mathbf{v}\) and \(n\) is the dimension of the vector.
+    \end{Highlight}
+
+    Scalar-vector multiplication is essential in various applications. For instance, in physics, it can represent scaling physical quantities such as forces or velocities. In computer graphics, it's used to adjust the size 
+    and position of objects. In linear algebra, scalar-vector multiplication contributes to concepts like linear combinations and vector spaces.
+
+    \begin{Highlight}[Python Scalar Multiplication]
+        Below is an example of vector inner produce in Python.
+
+        \begin{verbatim}
+        import numpy as np
+
+        # Creating a vector
+        vector_a = np.array([2, 4, 6])
+        
+        # Scalar multiplication
+        scalar = 3
+        result_scalar_mul = scalar * vector_a
+        
+        print("Vector A:", vector_a)
+        print("Scalar-Vector Multiplication:", result_scalar_mul)
+        \end{verbatim}
+    \end{Highlight}
+
+    In summary, scalar-vector multiplication is a foundational operation that enables the rescaling of vectors by multiplying them with scalar values. It's a versatile concept that plays a vital role in many mathematical 
+    and practical contexts across different fields.
+\end{notes}
+
+The next section that we are going to review is \textbf{VMLS Section 1.4 - Inner Product.}
+
+\begin{notes}{VMLS Section 1.4 - Inner Product}
+    The inner product, also known as the dot product or scalar product, is a fundamental mathematical operation in vector spaces that measures the angle between two vectors and quantifies their alignment. It results in a 
+    scalar value and provides insight into how closely two vectors are oriented with respect to each other. The inner product is an essential concept in various fields, including linear algebra, physics, engineering, and 
+    computer graphics.
+
+    \begin{Highlight}[Inner Product Defintion]
+        Mathematically, the inner product of two vectors \(\mathbf{A}\) and \(\mathbf{B}\) is denoted by \(\langle \mathbf{A}, \mathbf{B} \rangle\) or \(\mathbf{A} \cdot \mathbf{B}\), and it's calculated by summing the 
+        products of their corresponding components. For vectors in \(\mathbb{R}^n\), the inner product is defined as:
+
+        \[
+        \langle \mathbf{A}, \mathbf{B} \rangle = \mathbf{A} \cdot \mathbf{B} = a_1 \cdot b_1 + a_2 \cdot b_2 + \ldots + a_n \cdot b_n
+        \]
+    
+        Here, \(a_1, a_2, \ldots, a_n\) and \(b_1, b_2, \ldots, b_n\) are the components of vectors \(\mathbf{A}\) and \(\mathbf{B}\) in \(\mathbb{R}^n\).
+    \end{Highlight}
+
+    The inner product has several important properties, including symmetry (\(\langle \mathbf{A}, \mathbf{B} \rangle = \langle \mathbf{B}, \mathbf{A} \rangle\)), linearity (\(\langle \mathbf{A} + \mathbf{B}, \mathbf{C} 
+    \rangle = \langle \mathbf{A}, \mathbf{C} \rangle + \langle \mathbf{B}, \mathbf{C} \rangle\)), and positive definiteness (\(\langle \mathbf{A}, \mathbf{A} \rangle \geq 0\), with equality only if \(\mathbf{A}\) is 
+    the zero vector).
+
+    The inner product serves as the foundation for concepts like vector length (magnitude), orthogonality, projection, and angles between vectors. It plays a central role in defining norm and distance in vector spaces, 
+    leading to the concept of a inner product space.
+
+    \begin{Highlight}[Python Inner Product]
+        Below is an example of vector inner produce in Python.
+
+        \begin{verbatim}
+        import numpy as np
+
+        # Creating vectors
+        vector_a = np.array([1, 2, 3])
+        vector_b = np.array([4, 5, 6])
+        
+        inner_product = np.dot(vector_a, vector_b)
+        print("Inner Product of Vector A and Vector B:", inner_product)            
+        \end{verbatim}
+    \end{Highlight}
+
+    In summary, the inner product is a mathematical operation that quantifies the alignment and relationship between vectors. It provides valuable geometric and algebraic insights into vector spaces and finds applications 
+    in various mathematical and practical contexts across multiple disciplines.
+\end{notes}

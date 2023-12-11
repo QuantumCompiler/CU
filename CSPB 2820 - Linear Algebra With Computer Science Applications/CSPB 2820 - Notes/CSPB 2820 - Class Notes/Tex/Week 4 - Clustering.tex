@@ -1,0 +1,174 @@
+\clearpage
+\chapter{Week 4: (9/18 - 9/24)}
+
+\section{Clustering}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Sections 4.1, 4.2, 4.3, 4.4, 4.5} from VMLS.
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{four} Piazza posts this week. \due{(9/22/23)} \cbox{piazza-week4}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://www.youtube.com/watch?v=liaZ_SCuE1w&list=PLoROMvodv4rMz-WbFQtNUsUElIh2cPmN9&index=14}{VMLS Chapter 4 - Part 1} $\approx$ 32 min.
+    \item \href{https://www.youtube.com/watch?v=a4GjONqojzM&list=PLoROMvodv4rMz-WbFQtNUsUElIh2cPmN9&index=15}{VMLS Chapter 4 - Part 2} $\approx$ 19 min.
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/VMLS Assignment 4 - Chapter 4.pdf}{VMLS - Assignment 4: Chapter 4.} \due{(9/25/23)} \cbox{assignment-week4}
+
+\subsection{Quiz}
+
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50706}{Chapter 4.} \due{(9/25/23)} \cbox{quiz-week4}
+
+\subsection{Chapter Summary}
+
+The chapter that we will review this week is \textbf{VMLS Chapter 4 - Clustering}. The first section that we will cover is \textbf{VMLS Section 4.1 - Clustering}.
+
+\begin{notes}{VMLS Section 4.1 - Clustering}
+    \subsection*{Overview}
+
+    Clustering is a foundational technique in the field of machine learning and data analysis, particularly in unsupervised learning. At its core, clustering aims to uncover latent patterns or 
+    structures within a dataset by grouping similar data points together, making it an essential tool for understanding and organizing large datasets. This process does not rely on any prior 
+    knowledge of labels or categories, making it particularly valuable when exploring unfamiliar data.
+
+    One of the primary objectives of clustering is to reveal the inherent structure of data, which can provide valuable insights and facilitate decision-making processes. For example, in customer 
+    segmentation, businesses can employ clustering techniques to identify distinct groups of customers based on their purchasing behavior or demographic information. This information can then be 
+    used to tailor marketing strategies, recommend products, or improve customer experiences.
+
+    Various clustering algorithms exist to address different types of data and objectives. K-means clustering, one of the most widely used algorithms, partitions data points into clusters based on 
+    their proximity to a centroid. Hierarchical clustering, on the other hand, organizes data into a tree-like structure, allowing for both fine-grained and high-level cluster identification. 
+    Density-based spatial clustering of applications with noise (DBSCAN) identifies clusters based on data point density and is effective in detecting outliers.
+
+    The applications of clustering are vast and diverse, spanning various domains such as biology, finance, image processing, and social network analysis. In biology, clustering can help identify 
+    patterns in gene expression data, aiding in the understanding of genetic relationships. In finance, it can assist in portfolio optimization by grouping similar financial assets. In image processing, 
+    clustering can segment images based on pixel similarity, enabling object recognition. Overall, clustering plays a pivotal role in uncovering hidden structures within data, making it an indispensable 
+    tool in modern data analysis and machine learning.
+\end{notes}
+
+The second section that we will cover is \textbf{VMLS Section 4.2 - A Clustering Objective}.
+
+\begin{notes}{VMLS Section 4.2 - A Clustering Objective}
+    \subsection*{Overview}
+
+    A clustering objective is a fundamental component in the process of clustering data points into meaningful groups or clusters. It defines the criteria or goals that a clustering algorithm aims to 
+    achieve when partitioning data. The choice of clustering objective heavily influences the outcome and quality of the clustering results.
+
+    Common clustering objectives include minimizing the intra-cluster distance and maximizing the inter-cluster distance. In other words, clustering algorithms strive to create clusters where data 
+    points within the same cluster are similar to each other while being dissimilar to data points in other clusters. The specific distance metric used to measure similarity or dissimilarity varies 
+    depending on the algorithm and the nature of the data.
+
+    The choice of clustering objective depends on the problem and the characteristics of the data. For example, K-means clustering seeks to minimize the sum of squared distances between data points and 
+    their cluster centroids, making it suitable for spherical or globular clusters. In contrast, agglomerative hierarchical clustering aims to maximize the similarity between merged clusters, making it 
+    useful for identifying hierarchical structures in data.
+
+    Ultimately, the clustering objective guides the algorithm's decision-making process, helping it discover meaningful patterns or structures within the data. The effectiveness of a clustering algorithm 
+    is often evaluated based on how well it optimizes the chosen objective function. Therefore, selecting an appropriate clustering objective is a critical step in the clustering process and can greatly 
+    impact the interpretability and usefulness of the resulting clusters in various applications.
+
+    \subsection*{Optimal And Suboptimal Clustering}
+
+    In the realm of clustering, the pursuit of optimal and suboptimal solutions plays a pivotal role. Achieving an optimal clustering solution involves finding the absolute best partitioning of data points 
+    into clusters, typically by minimizing or maximizing a specific objective function. However, in many real-world scenarios, finding the global optimal solution is computationally challenging, if not 
+    impossible. As a result, clustering algorithms often aim for suboptimal solutions that provide reasonably good clusterings while sacrificing the guarantee of global optimality. Suboptimal clustering 
+    approaches, such as K-means and hierarchical clustering, offer efficient and practical means of partitioning data, making them widely used in various applications. The choice between optimal and suboptimal 
+    clustering hinges on the trade-off between computational complexity and the need for precise clustering results, with suboptimal methods serving as valuable tools when computational resources are limited 
+    or when approximate solutions are acceptable.
+
+    \subsection*{Cluster Centroid}
+
+    In the context of clustering, a cluster centroid represents a central point within a cluster, often used as a reference or representative of that cluster. The centroid is typically computed as the mean or 
+    geometric center of all the data points within a cluster, and its coordinates serve as a summary or prototype of the cluster's characteristics. Cluster centroids play a crucial role in various clustering 
+    algorithms, such as K-means, where the goal is to iteratively adjust centroids to minimize the distance between data points and their assigned centroids, ultimately leading to well-defined clusters. Centroids 
+    serve as a useful reference for understanding the typical characteristics of each cluster and can be valuable in applications like data analysis, classification, and recommendation systems.
+
+    \begin{Highlight}[Cluster Centroid]
+        The cluster centroid is calculated with 
+
+        \begin{equation*}
+            z_{j} = \frac{1}{|G_{j}|} \sum_{i \in G_{j}} x_{i}
+        \end{equation*}
+
+        where $|G_{j}|$ is standard mathematical notation for the number of elements in the set $G_{j}$ (the size of group $j$).
+    \end{Highlight}
+\end{notes}
+
+The next section that we will cover is \textbf{VMLS Section 4.3 - The $k$-Means Algorithm}.
+
+\begin{notes}{VMLS Section 4.3 - The $k$-Means Algorithm}
+    \subsection*{Overview}
+
+    The $k$-means algorithm is a versatile and widely used clustering technique in the field of machine learning and data analysis. Its primary purpose is to group similar data points into clusters while minimizing 
+    the overall variance within each cluster. This unsupervised learning method is particularly helpful in uncovering patterns and structures within datasets without the need for labeled data.
+
+    The algorithm's operation is relatively straightforward. It begins by randomly placing k centroids in the feature space, where $k$ is a user-defined parameter representing the desired number of clusters. Each data 
+    point is then assigned to the nearest centroid based on a chosen distance metric, often the squared Euclidean distance. After the initial assignment, the algorithm calculates new centroids by computing the mean 
+    of all data points assigned to each cluster. This process iterates until convergence, either when the centroids no longer change significantly or after a predefined number of iterations.
+
+    $K$-means clustering is known for its simplicity and efficiency, making it suitable for various applications, including customer segmentation, image compression, and document organization. However, it has some 
+    limitations, such as its sensitivity to initial centroid placement, which can lead to suboptimal results. Additionally, $k$-means assumes that clusters are spherical and equally sized, making it less effective for 
+    datasets with irregularly shaped or differently sized clusters. To address these issues, variations of the algorithm, such as $K$-means++, hierarchical clustering, and DBSCAN, have been developed to provide more 
+    robust clustering solutions for complex datasets.
+
+    \subsection*{Convergence}
+    In the context of clustering, convergence refers to the point at which the clustering algorithm reaches a stable and optimal solution. The goal is to ensure that the clustering process stops when further iterations 
+    do not significantly change the cluster assignments. Convergence is crucial to identify the best grouping of data points and prevents unnecessary computational overhead. It is typically achieved when the centroids 
+    of clusters no longer shift or when a predefined criterion, such as a maximum number of iterations or a minimal change in cluster assignments, is met. Convergence ensures that the clustering algorithm provides 
+    consistent and reliable results, facilitating the interpretation and utilization of the clustered data in various applications.
+\end{notes}
+
+The next section that we will cover is \textbf{VMLS Section 4.4 - Examples}.
+
+\begin{notes}{VMLS Section 4.4 - Examples}
+    \subsection*{Examples}
+
+    Examples in clustering play a pivotal role in various domains, offering valuable insights and aiding decision-making processes. One prominent application area is customer segmentation in marketing. Companies can use 
+    clustering algorithms to group customers based on their purchase histories, demographics, or online behavior. By identifying distinct customer segments, businesses can tailor marketing strategies, personalize product 
+    recommendations, and optimize advertising campaigns, thereby enhancing customer engagement and increasing revenue.
+
+    In the realm of computer vision, image segmentation is another compelling example. Clustering algorithms help partition images into regions or objects with similar visual characteristics, facilitating object recognition, 
+    background removal, and image editing tasks. This is particularly valuable in medical imaging for identifying and analyzing specific anatomical structures or anomalies within images, aiding in disease diagnosis and 
+    treatment planning.
+    
+    In natural language processing, clustering assists with document categorization. By grouping documents with similar content or themes, it simplifies information retrieval and content organization. News articles, academic 
+    papers, or user-generated content can be efficiently categorized, making it easier for users to access relevant information. Moreover, in biology, clustering techniques are employed for species classification based on 
+    genetic data, enabling researchers to uncover evolutionary relationships and identify new species.
+    
+    These diverse examples underscore the versatility and significance of clustering across different fields. They showcase how clustering algorithms empower organizations and researchers to extract meaningful patterns from 
+    data, improve processes, and make data-driven decisions, ultimately driving innovation and progress in numerous domains.
+\end{notes}
+
+The last section that we will cover is \textbf{VMLS Section 4.5 - Applications}.
+
+\begin{notes}{VMLS Section 4.5 - Applications}
+    \subsection*{Applications}
+
+    Clustering, a fundamental technique in data analysis, finds applications in various domains, offering insights, organization, and efficiency. In marketing, customer segmentation leverages clustering to group individuals 
+    with similar purchase histories, behaviors, or demographics. This enables businesses to personalize marketing strategies, target specific customer groups, and enhance overall customer satisfaction.
+
+    In computer vision, image segmentation is a prominent application. Clustering algorithms partition images into distinct regions based on visual characteristics, aiding in object recognition, background removal, and image 
+    analysis. This is valuable in medical imaging for identifying and analyzing anatomical structures, assisting in disease diagnosis and treatment planning.
+    
+    Text data benefits from clustering in natural language processing. Document clustering categorizes texts with similar content or themes, simplifying information retrieval and content organization. It's invaluable for 
+    organizing large document collections, such as news articles, academic papers, or user-generated content.
+    
+    In biology, clustering techniques are applied to genetic data for species classification, revealing evolutionary relationships and identifying new species. This has far-reaching implications for biodiversity conservation 
+    and understanding the tree of life.
+    
+    Moreover, clustering is used in recommendation systems to group users or items with similar preferences, enhancing personalized content recommendations. Anomaly detection in cybersecurity, network analysis in social sciences, 
+    and optimization in transportation are among other applications of clustering.
+    
+    These applications underscore clustering's versatility and significance in extracting insights from data, improving decision-making processes, and advancing various fields.
+\end{notes}

@@ -1,0 +1,196 @@
+\clearpage
+\chapter{Week 11: (11/6 - 11/12)}
+
+\section{Matrix Multiplication}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Sections 10.1, 10.2, 10.3, 10.4} from VMLS.
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{four} Piazza posts this week. \due{(11/10/23)} \cbox{piazza-week11}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50788}{10.1 Matrix Multiply} $\approx$ 24 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50789}{Transpose Proof} $\approx$ 14 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50790}{10.1 Matrix Multiplication Identities} $\approx$ 19 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50791}{10.2 Linear Function Composition} $\approx$ 14 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50792}{10.3 Matrix Power} $\approx$ 12 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50793}{10.4 QR Factorization} $\approx$ 22 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50794}{Random Exercise: Chapter 10} $\approx$ 16 min.
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/VMLS Assignment 10 - Chapter 10.pdf}{VMLS Assignment 10: Chapter 10} \due{(11/13/23)} \cbox{assignment-week11}
+
+\subsection{Quiz}
+
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50797}{Chapter 10.} \due{(11/13/23)} \cbox{quiz-week11}
+
+\subsection{Chapter Summary}
+
+The chapter that we will review this week is \textbf{VMLS Chapter 10 - Matrix Multiplication}. The first section that we will cover this week is \textbf{VMLS Section 10.1 - Matrix-Matrix Multiplication}.
+
+\begin{notes}{VMLS Section 10.1 - Matrix-Matrix Multiplication}
+    \subsubsection*{Overview}
+
+    Matrix multiplication is a central operation in linear algebra that finds application in various disciplines such as computer science, physics, engineering, and economics. It involves the 
+    multiplication of two matrices to yield a third matrix, known as the product matrix. \vspace*{1em}
+
+    \subsubsection*{Concept}
+    Matrix-matrix multiplication, also referred to as the matrix product, is an operation that is distinct from element-wise multiplication. It involves a row-by-column multiplication of two 
+    matrices. \vspace*{1em}
+    
+    \subsubsection*{Conditions}
+    The number of columns in the first matrix must equal the number of rows in the second matrix for multiplication to be defined. If we have a first matrix $A$ of size $m \times n$ 
+    and a second matrix $B$ of size $n \times p$, then the resulting product matrix $C$ will have a size of $m \times p$. \vspace*{1em}
+
+    \begin{Highlight}[Mathematical Formula]
+        The element at the $i$-th row and $j$-th column of the product matrix $C$ is calculated as follows:
+        \begin{equation*}
+            c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj}
+        \end{equation*}
+        where $c_{ij}$ is computed by summing the products of the corresponding elements of the $i$-th row of matrix $A$ and the $j$-th column of matrix $B$.
+        \subsubsection*{Steps}
+        \begin{enumerate}
+            \item Select the $i$-th row from matrix $A$.
+            \item Select the $j$-th column from matrix $B$.
+            \item Multiply the corresponding elements and sum up the products.
+            \item Place the result in the $i$-th row and $j$-th column of the product matrix $C$.
+            \item Repeat the process for all rows and columns of the resulting matrix.
+        \end{enumerate}
+    \end{Highlight}
+    
+    
+    
+    \subsubsection*{Properties}
+    \begin{itemize}
+        \item Matrix multiplication is associative, i.e., $(AB)C = A(BC)$, but not commutative since $AB \neq BA$ generally.
+        \item An identity matrix $I$ serves as a multiplicative identity for matrix multiplication: $AI = IA = A$.
+        \item The distributive property is applicable: $A(B + C) = AB + AC$ and $(B + C)A = BA + CA$.
+    \end{itemize}
+    
+    \subsubsection*{Context}
+    In computer science, matrix multiplication is utilized in algorithms, graphics, optimization problems, among other areas. Proficiency in executing matrix multiplication efficiently is critical for 
+    enhancing the performance of many computational tasks.
+\end{notes}
+
+The next section that we will be covering this week is \textbf{VMLS Section 10.2 - Composition Of Linear Functions}.
+
+\begin{notes}{VMLS Section 10.2 - Composition Of Linear Functions}
+    \subsubsection*{Overview}
+
+    Matrix multiplication is intimately linked with the composition of linear functions. Each matrix represents a linear transformation, and multiplying two matrices corresponds to composing two such 
+    transformations. \vspace*{1em}
+
+    \subsubsection*{Composition of Linear Functions}
+    
+    A linear transformation can be seen as a function that maps vectors from one vector space to another while preserving vector addition and scalar multiplication. If we represent linear transformations 
+    $T: U \rightarrow V$ and $S: V \rightarrow W$ by matrices $A$ and $B$, the composition of $S$ and $T$, denoted as $S \circ T$, is the function that applies $T$ to a vector, followed by $S$. \vspace*{1em}
+
+    \begin{Highlight}[Mathematical Representation]
+        The matrix representation of the composition $S \circ T$ is obtained by the matrix product $BA$, where $A$ and $B$ represent $T$ and $S$, respectively. For a vector $\vec{x}$ in $U$, the composition 
+        is defined as:
+        \begin{equation*}
+            (S \circ T)(\vec{x}) = S(T(\vec{x})) = B(A\vec{x})
+        \end{equation*}
+    \end{Highlight}
+    
+    \subsubsection*{Context}
+    
+    The concept of composing linear functions is essential in many mathematical and computational applications. In computer graphics, transformations applied to objects are represented by matrices. The 
+    cumulative effect of multiple transformations is achieved by the product of the corresponding matrices, illustrating the practical significance of matrix multiplication in the composition of linear functions.
+\end{notes}
+
+The next section that we will be covering this week is \textbf{VMLS Section 10.3 - Matrix Power}.
+
+\begin{notes}{VMLS Section 10.3 - Matrix Power}
+    \subsubsection*{Overview}
+
+    Matrix-matrix products provide a foundation for understanding the composition of linear functions. Given matrices $A$ of size $m \times p$ and $B$ of size $p \times n$, we can associate them 
+    with linear functions $f: \mathbb{R}^p \to \mathbb{R}^m$ and $g: \mathbb{R}^n \to \mathbb{R}^p$, respectively. The composition of these functions is $h(x) = f(g(x)) = A(Bx) = (AB)x$, where 
+    $h: \mathbb{R}^n \to \mathbb{R}^m$. This composition is a linear function, which can be written as $h(x) = Cx$ where $C = AB$.
+    
+    Matrix multiplication, when viewed in this way, clarifies why $AB \neq BA$ in general, as the composition order of linear functions matters. The section uses $2 \times 2$ matrices as an example 
+    to illustrate this point. It further discusses the concept of a second difference matrix, which is a product of two consecutive difference matrices, and how it represents the second difference 
+    function in terms of linear functions.
+    
+    The composition of affine functions is also an affine function. If $f(x) = Ax + b$ and $g(x) = Cx + d$ are affine functions, then their composition $h$ is $h(x) = A(Cx + d) + b = (AC)x + (Ad + b)$.
+    
+    Moreover, the chain rule of differentiation is explored, showing that the derivative matrix of a composed function $h$ can be expressed as the product of the derivative matrices of the individual 
+    functions, which can be interpreted in terms of matrix multiplication.
+    
+    This also touches upon linear dynamical systems with state feedback, explaining that the state $x_t$ is affected by the input $u_t$, and with state feedback, the input is a linear function 
+    of the state. This relationship can be captured using a state-feedback gain matrix $K$, and the closed-loop dynamics matrix is $A + BK$.
+    
+    Matrix powers are explained with their properties, including the effect of multiplying a matrix by itself multiple times and how this relates to paths in a directed graph represented by the matrix. The 
+    section uses the adjacency matrix of a directed graph to exemplify how matrix powers can enumerate paths of a certain length within the graph.
+    
+    Lastly, the section discusses the application of matrix powers in linear dynamical systems, describing how the power of a matrix $A$ can propagate the system state forward in time. \vspace*{1em}
+    
+    \subsubsection*{Key Points}
+    \begin{itemize}
+        \item Matrix multiplication corresponds to the composition of linear functions.
+        \item The order of multiplication reflects the order in which functions are applied.
+        \item Affine functions compose to form another affine function, with the matrix of the composition being the product of the individual matrices.
+        \item The chain rule in differentiation can be expressed as a matrix-matrix product.
+        \item Matrix powers are useful in understanding the dynamics of systems and enumerating paths in graphs.
+    \end{itemize}    
+\end{notes}
+
+The last section that we will cover this week is \textbf{VMLS Section 10.4 - QR Factorization}.
+
+\begin{notes}{VMLS Section 10.4 - QR Factorization}
+    \subsubsection*{Overview}
+
+    \begin{Highlight}[System State]
+        The section discusses the concept of matrix powers in the context of time-invariant linear dynamical systems with inputs. The evolution of the system's state over time is described by the equation:
+        \begin{equation*}
+            x_{t+\tau} = A^\tau x_t + \sum_{j=0}^{\tau-1} A^j B u_{t+\tau-j-1}
+        \end{equation*}
+        where $x_t$ is the state at time $t$, $A$ is the system matrix, $B$ is the input matrix, and $u_t$ is the input at time $t$. This demonstrates how the state at a future time point is influenced 
+        by the powers of $A$ and the inputs up to that time.
+    \end{Highlight}
+
+    
+    \subsubsection*{Properties of Matrices with Orthonormal Columns}
+    \begin{itemize}
+        \item The condition for $n$-vectors $a_1, \ldots, a_k$ to be orthonormal is given by the matrix equation $A^T A = I$, where $A$ is the matrix with columns $a_1, \ldots, a_k$.
+        \item For an $m \times n$ matrix $A$ with orthonormal columns and $n$-vectors $x$ and $y$, we have the following properties:
+        \begin{itemize}
+        \item Norm preservation: $\| Ax \| = \| x \|$.
+        \item Inner product preservation: $(Ax)^T (Ay) = x^T y$.
+        \item Angle preservation: The angle between $Ax$ and $Ay$ is the same as the angle between $x$ and $y$.
+        \end{itemize}
+    \end{itemize}
+
+    \begin{Highlight}[QR Factorization]
+        QR factorization is a method to decompose a matrix $A$ into a product of two matrices $Q$ and $R$, where $Q$ has orthonormal columns and $R$ is upper triangular. If $A$ is an $n \times k$ matrix 
+        with linearly independent columns, the QR factorization is expressed as:
+        \begin{equation*}
+            A = QR
+        \end{equation*}
+        This factorization is derived from the Gram-Schmidt process, which is used to obtain the orthonormal vectors that form the columns of $Q$. The matrix $R$ is then constructed to reflect the 
+        coefficients used to express the original columns of $A$ as linear combinations of the columns of $Q$.
+    \end{Highlight}
+    
+    The section also mentions alternative algorithms for QR factorization that are more stable in the presence of round-off errors and are efficient for sparse matrices.
+    
+    \subsubsection*{Key Takeaways}
+    \begin{itemize}
+        \item The QR factorization is useful for expressing a matrix as the product of an orthogonal (or orthonormal) matrix and an upper triangular matrix.
+        \item The properties of norm, inner product, and angle preservation by orthonormal matrices have significant implications in various applications.
+        \item Understanding the QR factorization and matrix powers is essential for analyzing linear dynamical systems and their behavior over time.
+    \end{itemize}
+\end{notes}

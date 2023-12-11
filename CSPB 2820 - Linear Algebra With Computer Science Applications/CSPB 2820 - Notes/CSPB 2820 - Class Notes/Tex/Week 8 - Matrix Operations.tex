@@ -1,0 +1,372 @@
+\clearpage
+\chapter{Week 8: (10/16 - 10/22)}
+
+\section{Matrix Operations}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Sections 7.1, 7.2, 7.3, 7.4} from VMLS.
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{four} Piazza posts this week. \due{(10/20/23)} \cbox{piazza-week8}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://www.youtube.com/watch?v=jXN50fuRSqE}{VMLS Chapter 7 Part 1} $\approx$ 6 min.
+    \item \href{https://www.youtube.com/watch?v=v7CH2ry-vrQ}{VMLS Chapter 7 Part 2} $\approx$ 16 min.
+    \item \href{https://www.youtube.com/watch?v=kTg0vKppOl8}{VMLS Chapter 7 Part 3} $\approx$ 16 min.
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/VMLS Assignment 7 - Chapter 7.pdf}{VMLS - Assignment 7: Chapter 7.} \due{(10/23/23)} \cbox{assignment-week8}
+
+\subsection{Quiz}
+
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50753}{Chapter 7.} \due{(10/23/23)} \cbox{quiz-week8}
+
+\subsection{Chapter Summary}
+
+The chapter that we will review this week is \textbf{VMLS Chapter 7 - Matrix Examples}. The first section that we will cover this week is \textbf{VMLS Section 7.1 - Geometric Transformations}.
+
+\begin{notes}{VMLS Section 7.1 - Geometric Transformations}
+    \subsubsection*{Overview}
+
+    Geometric transformations refer to a fundamental concept in mathematics and computer graphics where the shape, position, or orientation of objects in a geometric space are altered. These transformations 
+    are commonly used to manipulate and manipulate shapes, figures, and images. There are several types of geometric transformations, including translation, rotation, scaling, shearing, and reflection, each 
+    serving a unique purpose in transforming objects in a 2D or 3D space.
+
+    \begin{enumerate}
+        \item \textbf{Translation:} Translation involves shifting an object's position without altering its shape or orientation. In 2D, this is done by adding or subtracting values to the x and y coordinates 
+        of each point, effectively moving the object in a specific direction.
+        
+        \item \textbf{Rotation:} Rotation transforms an object by changing its orientation around a fixed point or axis. In 2D, this can be achieved through trigonometric functions to determine new coordinates 
+        based on a specified angle of rotation.
+        
+        \item \textbf{Scaling:} Scaling changes the size of an object, making it either larger or smaller while maintaining its shape. Scaling factors are applied to the object's dimensions, modifying its 
+        proportions accordingly.
+        
+        \item \textbf{Shearing:} Shearing involves skewing or distorting an object along one axis while keeping the other axis unchanged. This transformation is often used for creating perspective effects.
+        
+        \item \textbf{Reflection:} Reflection flips an object over a line or plane, creating its mirror image. In 2D, this is achieved by reversing the sign of one coordinate while leaving the other unchanged.
+    \end{enumerate}
+
+    Geometric transformations are widely used in computer graphics, computer-aided design (CAD), image processing, and various mathematical applications. They play a crucial role in manipulating and animating 
+    objects, simulating physical phenomena, and solving geometric problems. Understanding these transformations is essential for working with graphical data and mathematical modeling in various fields.
+
+    \subsubsection*{Rotations}
+
+    Rotations are fundamental geometric transformations that involve altering the orientation of objects or vectors within a given space. In these transformations, objects are rotated about a specified point, 
+    axis, or origin by a certain angle, resulting in a new arrangement while preserving the objects' size and shape. Rotations are essential in various fields, including mathematics, physics, computer graphics, 
+    and engineering, where they are used to manipulate and analyze spatial data, model physical phenomena, and create realistic visual representations. These transformations are mathematically represented using 
+    rotation matrices, and they play a crucial role in understanding symmetry, transforming coordinate systems, and solving complex spatial problems.
+
+    \begin{Highlight}[Rotations Formula]
+        The provided equation represents a 2D rotation transformation. In this transformation, a 2D vector \(x\) is rotated by an angle \(\theta\), resulting in a new vector \(y\). The rotation is performed 
+        using a 2x2 matrix:
+
+        \begin{equation*}
+            y =
+            \begin{bmatrix}
+                \cos{(\theta)} & -\sin{(\theta)} \\
+                \sin{(\theta)} & \cos{(\theta)} \\
+            \end{bmatrix}
+            x.
+        \end{equation*}
+
+        Here's what each component of this equation means:
+
+        \begin{itemize}
+            \item \(\cos{(\theta)}\) and \(\sin{(\theta)}\) are trigonometric functions representing the cosine and sine of the rotation angle \(\theta\).
+            \item The matrix structure represents the transformation. The top row corresponds to the new x-axis, and the bottom row corresponds to the new y-axis after the rotation.
+            \item \(x\) is the input 2D vector that you want to rotate.
+            \item \(y\) is the resulting vector after applying the rotation.
+        \end{itemize}
+
+        This equation essentially describes how to perform a 2D rotation of a vector \(x\) by an angle \(\theta\) using a matrix. The matrix elements are determined by trigonometric functions of the rotation 
+        angle, ensuring that the rotated vector \(y\) retains its length and orientation in the new coordinate system. This concept is fundamental in geometry, graphics, and various engineering applications.
+    \end{Highlight}
+
+    \textbf{Principles of Rotation:}
+
+    \begin{enumerate}
+        \item \textbf{Rotation Center:} A rotation is performed around a fixed point called the "center of rotation" or "pivot point." All points in the object move in a circular path around this center.
+        
+        \item \textbf{Angle of Rotation:} The angle through which an object is rotated is a crucial parameter. It is measured in degrees or radians and determines the extent of the rotation.
+        
+        \item \textbf{Direction:} Rotations can be clockwise or counterclockwise, depending on the choice of orientation. Conventionally, counterclockwise rotations are considered positive.
+    \end{enumerate}
+
+    \textbf{Properties of Rotation:}
+
+    \begin{enumerate}
+        \item \textbf{Preservation of Length:} Rotations preserve the length of line segments. If two points are a certain distance apart before a rotation, they will remain at the same distance after 
+        the rotation.
+        
+        \item \textbf{Preservation of Angles:} Rotations also maintain the angles between lines. If two lines intersect at a specific angle before a rotation, they will intersect at the same angle after 
+        the rotation.
+        
+        \item \textbf{Center of Rotation:} The center of rotation is an invariant point. It remains fixed, and all other points move in circular paths around it.
+    \end{enumerate}
+
+    \textbf{Types of Rotations:}
+
+    \begin{enumerate}
+        \item \textbf{2D Rotations:} In a two-dimensional space (2D), rotations involve changing the angle of an object around a fixed point. These rotations are often represented using trigonometric 
+        functions like sine and cosine.
+        
+        \item \textbf{3D Rotations:} In a three-dimensional space (3D), rotations are more complex, involving changes in orientation about multiple axes. Representations like Euler angles, rotation 
+        matrices, and quaternions are used to describe 3D rotations.
+    \end{enumerate}
+
+    \textbf{Challenges in Rotations:}
+
+    \begin{enumerate}
+        \item \textbf{Angle Representation:} Choosing the right angle representation (degrees or radians) and dealing with angle wrap-around can be challenging.
+        
+        \item \textbf{Singularities:} Certain rotation representations may encounter singularities or gimbal lock, limiting their practicality.
+    \end{enumerate}
+
+    Rotation is a versatile and powerful geometric transformation with wide-ranging applications in mathematics, science, engineering, art, and technology. Understanding its principles and properties 
+    is fundamental for anyone working with spatial transformations or manipulating objects in a 2D or 3D space.
+
+    \subsubsection*{Reflection}
+
+    Reflection is a fundamental geometric transformation that involves flipping or mirroring an object or a point across a specified axis or plane. It plays a crucial role in various fields, including 
+    geometry, physics, computer graphics, and engineering. This transformation essentially changes the orientation of an object or point while preserving its size and shape. \vspace*{1em}
+
+    \begin{Highlight}[Reflections Formula]
+        The provided equation represents a 2D reflection transformation matrix. In this transformation, a 2D vector \(x\) is reflected across a line (or mirror line) at an angle \(2\theta\) with respect 
+        to the x-axis, resulting in a new vector \(y\). The reflection matrix is defined as:
+        
+        \begin{equation*}
+            y = 
+            \begin{bmatrix}
+                \cos{(2\theta)} & \sin{(2\theta)} \\
+                \sin{(2\theta)} & -\cos{(2\theta)} \\
+            \end{bmatrix}
+            x.
+        \end{equation*}
+        
+        Here's what each component of this equation means:
+
+        \begin{itemize}
+            \item \(\cos{(2\theta)}\) and \(\sin{(2\theta)}\) are trigonometric functions representing the cosine and sine of twice the reflection angle \(2\theta\).
+            \item The matrix structure represents the transformation. It describes how the vector \(x\) is reflected across the mirror line.
+            \item \(x\) is the input 2D vector that you want to reflect.
+            \item \(y\) is the resulting vector after applying the reflection.
+        \end{itemize}
+        
+        This equation essentially describes how to perform a 2D reflection of a vector \(x\) across a line at a specified angle \(2\theta\) using a matrix. The matrix elements are determined by 
+        trigonometric functions of the reflection angle, ensuring that the reflected vector \(y\) retains its orientation with respect to the mirror line. Reflection matrices are fundamental tools in 
+        geometry, graphics, and various engineering applications.
+        
+    \end{Highlight}
+    
+    \textbf{Key points about reflection:}
+    
+    \begin{enumerate}
+        \item \textbf{Reflection Across a Line:} In 2D, reflection typically occurs across a line, often referred to as the "mirror line" or "axis of reflection." Anything on one side of this line is 
+        mirrored to the other side. The line of reflection is perpendicular to the mirror plane.
+    
+        \item \textbf{Mirror Plane:} In 3D, reflection occurs across a plane called the "mirror plane." Objects or points are reflected from one side of the plane to the other. The normal vector of 
+        the mirror plane determines the direction of reflection.
+    
+        \item \textbf{Mathematical Representation:} Reflection can be represented mathematically using matrices. In 2D, a reflection matrix is defined based on the angle of reflection. In 3D, reflection 
+        matrices depend on the orientation of the mirror plane.
+    
+        \item \textbf{Preservation of Distance:} Reflection preserves the distance between points. If a point is a certain distance from the mirror line or mirror plane, its reflected counterpart will 
+        be the same distance on the other side.
+    
+        \item \textbf{Symmetry:} Reflection is a symmetry operation. Objects that possess reflective symmetry are identical on both sides of the mirror line or plane.
+    
+        \item \textbf{Multiple Reflections:} Multiple reflections can occur when an object is reflected multiple times across different mirror lines or planes. These transformations are cumulative.
+    
+        \item \textbf{Reflection in Mathematics:} In mathematics, reflection is an essential concept in linear algebra, where reflection matrices are used for various transformations. It's also crucial 
+        in geometry when studying symmetry and transformations.
+    
+    \end{enumerate}
+    
+    Reflection is a powerful tool for understanding the behavior of light, sound, and various physical phenomena. It also plays a significant role in creating realistic graphics and simulations, making 
+    it a fundamental concept in several scientific and technical disciplines.
+\end{notes}
+
+The next section that we will cover this week is \textbf{VMLS Section 7.2 - Selectors}.
+
+\begin{notes}{VMLS Section 7.2 - Selectors}
+    \subsubsection*{Overview}
+
+    \textbf{Selectors in Linear Algebra}
+
+    Selectors in the context of matrix operations in linear algebra refer to the process of choosing specific elements or subsets of a matrix to perform operations on or extract information from. These 
+    selectors play a crucial role in various matrix-related tasks, such as matrix addition, multiplication, transposition, and decomposition.
+
+    \begin{enumerate}
+        \item \textbf{Element Selection:} Selectors allow targeting individual elements within a matrix, denoted as A[i][j], where i and j represent the row and column indices.
+        
+        \item \textbf{Row and Column Selection:} Entire rows or columns of a matrix can be selected, enabling operations involving entire vectors within the matrix.
+        
+        \item \textbf{Submatrix Selection:} Selectors facilitate the extraction of submatrices from a larger matrix, useful for focusing on specific regions of interest.
+        
+        \item \textbf{Block Matrix Operations:} Targeting blocks or submatrices of a larger matrix is possible using selectors, which is valuable for tasks like matrix multiplication.
+        
+        \item \textbf{Transpose Selection:} Selectors are used in transpose operations ($A^T$), rearranging rows and columns efficiently.
+        
+        \item \textbf{Diagonal Selection:} Diagonal selectors are employed to extract or manipulate diagonal elements, essential in various linear algebra operations.
+        
+        \item \textbf{Matrix Concatenation:} Selectors enable the combination or concatenation of matrices horizontally or vertically, particularly useful in block matrix operations.
+        
+        \item \textbf{Element-wise Operations:} For element-wise operations, where corresponding elements of two matrices are combined using arithmetic operations, selectors are fundamental.
+    \end{enumerate}
+
+    Selectors in linear algebra provide a flexible and precise way to access and manipulate elements within matrices. They are fundamental for performing a wide range of matrix operations and 
+    transformations, making them a crucial concept in linear algebra and its various applications.
+
+    \subsubsection*{Down Sampling}
+
+    Down-sampling is a data reduction technique commonly used in signal processing, image processing, and data analysis. Its primary purpose is to decrease the amount of data by selecting a 
+    subset of data points while preserving essential information. In the context of digital signals or images, down-sampling involves reducing the sample rate or resolution, effectively reducing 
+    the size of the data. \vspace*{1em}
+
+    \textbf{Key points about down-sampling:}
+
+    \begin{enumerate}
+        \item \textbf{Data Reduction:} Down-sampling is employed when working with large datasets to make data more manageable and computationally efficient.
+        
+        \item \textbf{Anti-Aliasing:} In image processing, down-sampling is often accompanied by anti-aliasing filters to prevent aliasing artifacts, ensuring that the reduced data still 
+        represents the original information accurately.
+        
+        \item \textbf{Applications:} Down-sampling is used in various fields, such as audio processing, where high-frequency components are removed to reduce file size without significant 
+        loss in audio quality.
+        
+        \item \textbf{Sub-sampling:} Sub-sampling is a common down-sampling technique where every nth data point is selected, effectively reducing the data's resolution. For example, reducing 
+        the frame rate of a video.
+        
+        \item \textbf{Down-sampling Factor:} The degree of down-sampling is determined by the down-sampling factor, which indicates how many data points are retained for every set of 
+        contiguous data points.
+        
+        \item \textbf{Decimation:} Decimation is a more specific form of down-sampling where data points are removed, often used in digital signal processing.
+        
+        \item \textbf{Loss of Information:} Down-sampling typically results in a loss of fine details or high-frequency components. The choice of down-sampling method and factor depends on 
+        the specific application and the acceptable level of information loss.
+        
+        \item \textbf{Compression:} Down-sampling is a fundamental step in data compression techniques, helping reduce storage requirements while maintaining essential information.
+        
+        \item \textbf{Preprocessing:} In machine learning and data analysis, down-sampling can be used to balance imbalanced datasets by reducing the size of the majority class.
+        
+        \item \textbf{Trade-Off:} Down-sampling involves a trade-off between reducing data size and preserving critical information. The optimal down-sampling strategy depends on the specific 
+        task and data characteristics.
+    \end{enumerate}
+
+    Down-sampling is a valuable technique for managing large datasets, reducing storage requirements, and simplifying data analysis. However, it requires careful consideration to balance the 
+    reduction in data size with the retention of essential information, making it a common preprocessing step in various fields.
+\end{notes}
+
+The next section that we will cover this week is \textbf{VMLS Section 7.3 - Incidence Matrix}.
+
+\begin{notes}{VMLS Section 7.3 - Incidence Matrix}
+    \subsubsection*{Overview}
+
+    An incidence matrix is a fundamental concept in graph theory and linear algebra used to represent relationships between elements of two sets, particularly nodes (vertices) and edges in a graph. 
+    Denoted as $A$, the incidence matrix has rows corresponding to nodes and columns corresponding to edges. Entries in the matrix indicate whether a node is incident to an edge. Key points about 
+    incidence matrices include:
+
+    \begin{enumerate}
+        \item \textbf{Binary Representation:} Incidence matrices are often binary, with entries of 0 or 1. A 1 in row $i$ and column $j$ indicates node $i$ is incident to edge $j$, while 0 indicates 
+        no incidence.
+        
+        \item \textbf{Directed and Undirected Graphs:} In directed graphs, matrices may contain 1 to indicate edge direction. For undirected graphs, entries are typically 0 and 1.
+        
+        \item \textbf{Size:} The matrix size depends on the number of nodes and edges in the graph. For $n$ nodes and $m$ edges, the matrix size is $n \times m$.
+        
+        \item \textbf{Sparse Matrices:} They are often sparse, particularly in large graphs where most nodes are not directly connected to all edges.
+        
+        \item \textbf{Node Degrees:} Row sums of an incidence matrix reveal node degrees in the graph. In undirected graphs, the row sum represents the node's degree.
+        
+        \item \textbf{Graph Connectivity:} Incidence matrices aid in studying graph connectivity and determining if a graph is connected.
+        
+        \item \textbf{Linear Dependence:} In linear algebra, columns of an incidence matrix help analyze linear dependence relationships among edges.
+        
+        \item \textbf{Spanning Trees:} They are essential for finding minimum spanning trees and solving network optimization problems.
+    \end{enumerate}
+
+    Incidence matrices are a powerful tool for efficiently representing and analyzing graph structures, making them a cornerstone of graph theory and related fields.
+
+    \begin{Highlight}[Incidence Matrix Example With Graph]
+        The provided matrix and graph together represent an incidence matrix and its corresponding directed graph. In the context of graph theory, the incidence matrix illustrates the relationships 
+        between nodes and edges in a directed graph. Here's how to interpret this:
+        \begin{equation*}
+            \begin{bmatrix}
+                -1 & 1 & -1 & 0 \\
+                1 & -1 & 0 & -1 \\
+                0 & 0 & 1 & 1 \\
+            \end{bmatrix}
+        \end{equation*}
+        The matrix shown is an incidence matrix where each row represents a node (labeled 1, 2, 3, and 4), and each column represents an edge. The entries in the matrix indicate the incidence of each 
+        edge on each node. Specifically, a '-1' in the matrix at row 'i' and column 'j' signifies that node 'i' is the tail of edge 'j,' while a '1' indicates that node 'i' is the head of edge 'j.' 
+        Zeros represent no connection between the node and edge.
+        \begin{center}
+            \begin{tikzpicture}[->, >=stealth', auto, node distance=2cm, main node/.style={circle, draw}]
+                \node[main node] (1) at (0, 0) {1};
+                \node[main node] (2) at (2, 0) {2};
+                \node[main node] (3) at (0, -2) {3};
+                \node[main node] (4) at (2, -2) {4};
+            
+                \path
+                (1) edge[bend left] node {} (2)
+                (2) edge[bend left] node {} (1)
+                (1) edge[bend left] node {} (3)
+                (3) edge[bend left] node {} (1)
+                (2) edge[bend left] node {} (3)
+                (3) edge[bend left] node {} (2)
+                (3) edge[bend left] node {} (4)
+                (4) edge[bend left] node {} (3);
+                
+                \node[right=1cm of 4] (matrix) {
+                };
+            \end{tikzpicture}
+        \end{center}
+        The directed graph depicted below the matrix shows the relationships between nodes (labeled 1, 2, 3, and 4) and directed edges (indicated by arrows). Each directed edge connects a source node 
+        (tail) to a target node (head), consistent with the entries in the incidence matrix. The graph visually represents the connections and flow of information or influence within the system.
+
+        This combination of an incidence matrix and directed graph provides a concise representation of the structure and relationships within a directed graph, making it a valuable tool in various 
+        fields such as network analysis, optimization, and transportation planning.
+    \end{Highlight}
+\end{notes}
+
+The last section that we will cover this week is \textbf{VMLS Section 7.4 - Convolution}.
+
+\begin{notes}{VMLS Section 7.4 - Convolution}
+    \subsubsection*{Overview}
+
+    Convolution is a fundamental mathematical operation widely used in signal processing, image analysis, and deep learning. It involves the blending of two functions to produce a third function, 
+    which represents how one function modifies the other. In the context of discrete signals or images, convolution computes the output signal by sliding one function (often referred to as the 
+    kernel or filter) over the other while calculating the integral of their pointwise product. This operation has several key characteristics:
+
+    \begin{enumerate}
+        \item \textbf{Linearity:} Convolution is a linear operation, making it a fundamental building block in linear systems theory. This linearity property simplifies the analysis of complex 
+        systems composed of interconnected linear components.
+
+        \item \textbf{Translation-Invariance:} Convolution is translation-invariant, meaning that the same filter applied at different positions produces consistent results. This property is 
+        crucial in image processing and feature detection.
+
+        \item \textbf{Commutativity:} Convolution is commutative, meaning that the order in which two functions are convolved does not affect the result. This property is useful in various 
+        mathematical and computational contexts.
+
+        \item \textbf{Associativity:} Convolution is associative, allowing multiple convolutions to be combined into a single convolution operation. This property simplifies the implementation 
+        of deep neural networks.
+    \end{enumerate}
+
+    Convolution finds applications in diverse fields, including image and audio processing for tasks like edge detection and noise reduction, as well as in deep learning for feature extraction 
+    and convolutional neural networks (CNNs) used in image recognition and natural language processing. Understanding convolution is essential for anyone working with digital signals, images, 
+    or neural networks.
+\end{notes}
