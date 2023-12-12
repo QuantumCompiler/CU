@@ -1,0 +1,195 @@
+\clearpage
+\chapter{Week 7: (10/9 - 10/15)}
+
+\section{Number Theory And Primes}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Sections 4.1, 4.2, 4.3}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{two} Piazza posts this week. \due{(10/13/23)} \cbox{piazza-week7}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51691}{Modular Arithmetic} $\approx$ 5 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51692}{Congruences} $\approx$ 5 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51693}{Modular Operator vs Congruence} $\approx$ 4 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51694}{Arithmetic and Modular Operator} $\approx$ 10 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51695}{Congruences Vs. Equality} $\approx$ 7 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51696}{Congruences Vs. Equality (Differences)} $\approx$ 4 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51697}{Prime Number And Fundamental Theorem Of Arithmetic (Recap)} $\approx$ 13 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51698}{Facts About Primes} $\approx$ 14 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51699}{Tests For Primality} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51700}{GCDs Basic Definition} $\approx$ 8 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51701}{GCDs, LCMs and Prime Factorization} $\approx$ 14 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51702}{Euclid's Algorithm for GCD} $\approx$ 13 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51703}{Euclid's Algorithm [Continued]} $\approx$ 7 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51704}{Euclid's Algorithm With Jugs} $\approx$ 7 min.
+    \item \href{https://o365coloradoedu-my.sharepoint.com/personal/stadee_colorado_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fstadee%5Fcolorado%5Fedu%2FDocuments%2FG%2FAAAPostbac%2FDiscrete%20Structures%2Fweek6%5F7%20%2D%20number%20theory%5Fmod%2FFMEorSquareandMod%2Emp4&ga=1}{Square And Mod - A Simple Introduction To Fast ModularExponentiation} $\approx$ 10 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51706}{Fast Modular Exponentiation} $\approx$ 15 min.
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/Number Theory And Primes Mastery Workbook.pdf}{Number Theory And Primes} \due{(10/16/23)} \cbox{assignment-week7}
+
+\subsection{Quiz}
+
+The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51708}{Number Theory And Primes} \due{(10/16/23)} \cbox{quiz-week7}
+
+\subsection{Chapter Summary}
+
+The first section that we are covering this week is \textbf{Section 4.1 - Divisibility And Modular Arithmetic}. 
+
+\begin{notes}{Section 4.1 - Divisibility And Modular Arithmetic}
+    \subsection*{Overview}
+
+    Divisibility and modular arithmetic are fundamental concepts in number theory, a branch of mathematics that explores the properties and relationships of integers. These concepts lay the foundation 
+    for understanding how numbers can be divided and organized into congruence classes, with wide-ranging applications in mathematics and various other fields. Here, we delve into the core principles 
+    of divisibility and modular arithmetic and explore their significance in number theory and practical applications.
+
+    \subsection*{Key Concepts}
+
+    \begin{enumerate}
+        \item \textbf{Definition of Divisibility:} Divisibility is a fundamental concept in number theory that explores the relationships between integers concerning their ability to be divided by one 
+        another without leaving a remainder. In mathematical terms, we say that an integer $a$ is divisible by another integer $b$, denoted as $b | a$, when there exists an integer $q$ such that $a = bq$. 
+        This concept is fundamental because it lays the groundwork for understanding how integers are interconnected in terms of multiplication and division. If no such integer $q$ exists, then $b$ is 
+        not a divisor of $a$, and we denote this as $b \nmid a$.
+    
+        \item \textbf{Properties of Divisibility:} Divisibility exhibits several important properties. For instance, if an integer $a$ is divisible by both $b$ and $c$, it is also divisible by their 
+        greatest common divisor (GCD), represented as $\gcd(b, c)$. Furthermore, if $a$ is divisible by $b$ and $b$ is divisible by $c$, then $a$ is also divisible by $c$. Additionally, the concept 
+        of divisibility plays a key role in understanding the least common multiple (LCM) of integers, denoted as $\mathrm{lcm}(b, c)$.
+    
+        \item \textbf{Prime Factorization:} Every positive integer can be expressed uniquely as a product of prime numbers, known as its prime factorization. This concept is at the heart of divisibility 
+        since it allows us to determine the divisors of a number efficiently. By decomposing a number into its prime factors, we gain valuable insights into its divisibility properties, making prime 
+        factorization a crucial tool in number theory.
+    
+        \item \textbf{Modular Arithmetic:} Modular arithmetic is a specialized field of number theory that deals with the arithmetic of remainders. It introduces the concept of congruence, where two 
+        numbers share the same remainder when divided by a fixed integer $m$. Modular arithmetic, denoted as $a \equiv b \pmod{m}$, is an essential aspect of number theory and has widespread applications 
+        in various domains.
+    
+        \item \textbf{Congruence Classes:} In modular arithmetic, numbers are organized into congruence classes, often represented by $\pmod{m}$, where $m$ represents the modulus. Each congruence 
+        class contains integers that share the same remainder when divided by $m$. For example, the congruence class $\pmod{5}$ includes numbers like $0, 5, 10, -5, -10,$ and so on. These classes are 
+        fundamental in modular arithmetic and help simplify computations.
+    
+        \item \textbf{Modular Operations:} Modular arithmetic defines operations like addition, subtraction, multiplication, and exponentiation modulo $m$. These operations follow specific rules and 
+        properties, making it possible to perform calculations within congruence classes. Modular arithmetic's systematic approach to these operations is essential for various applications, especially 
+        in computer science, cryptography, and coding theory.
+    
+        \item \textbf{Applications:} Modular arithmetic finds applications in a wide range of fields, including computer science, cryptography, coding theory, and number theory. It is used in algorithms 
+        and protocols for data encryption, error detection and correction, and generating pseudorandom numbers. Its practical utility extends to computer systems, where it helps manage memory allocation 
+        and addressing.
+    
+        \item \textbf{Fermat's Little Theorem and Euler's Totient Function:} These two key results rely on modular arithmetic. Fermat's Little Theorem states that if $p$ is a prime number and $a$ is an 
+        integer not divisible by $p$, then $a^{p-1} \equiv 1 \pmod{p}$. This theorem has significant implications in cryptography and number theory. Euler's Totient function, denoted as $\phi(n)$, is 
+        employed to calculate the number of positive integers less than $n$ that are coprime to $n$. It is fundamental in solving problems related to modular arithmetic and number theory.
+    \end{enumerate}
+
+    Divisibility and modular arithmetic are foundational concepts in number theory, intertwined in their importance and application. Divisibility forms the basis for understanding the relationships 
+    between integers, while modular arithmetic offers a versatile framework for working with remainders and congruences. Together, they provide the foundation for tackling complex mathematical problems 
+    and finding solutions in various fields, from cryptography to computer science. These concepts are not only essential for theoretical mathematics but also have practical implications in real-world 
+    problem-solving.
+\end{notes}
+
+The next section that we are covering this week is \textbf{Section 4.2 - Integer Representations And Algorithms}.
+
+\begin{notes}{Section 4.2 - Integer Representations And Algorithms}
+    \subsection*{Overview}
+
+    Integer representations and algorithms are fundamental topics in computer science and mathematics, serving as the backbone for various computational tasks. Understanding how integers are represented 
+    in binary form and knowing how to perform arithmetic operations on them efficiently is crucial in computer systems, cryptography, and many other areas. This summary explores the key concepts related 
+    to integer representations and algorithms, shedding light on their significance and real-world applications.
+
+    \subsection*{Key Concepts}
+
+    \begin{enumerate}[label=\arabic*.]
+        \item \textbf{Binary Representation:} Integers are often represented in binary form, which uses only two digits: 0 and 1. In this representation, each digit's position has a weight corresponding 
+        to a power of 2, allowing for efficient conversions and bitwise operations.
+        
+        \item \textbf{Two's Complement:} Two's complement is a widely-used representation for signed integers. It allows both positive and negative numbers to be represented using a fixed number of bits. 
+        Negative numbers are obtained by taking the complement (flipping the bits) of the corresponding positive number and adding 1.
+        
+        \item \textbf{Overflow:} Integer overflow occurs when the result of an arithmetic operation exceeds the maximum representable value for a given number of bits. Handling overflow is critical to 
+        ensure accurate computations in computer programs.
+        
+        \item \textbf{Bitwise Operations:} Bitwise operations (AND, OR, XOR, NOT, shifts) provide a way to manipulate individual bits in integers. They are used in various algorithms, including those 
+        for data compression, encryption, and optimization.
+        
+        \item \textbf{Addition and Subtraction:} Algorithms for addition and subtraction involve working with binary representations, carry bits, and borrowing. Efficient methods, such as binary addition 
+        trees and two's complement subtraction, are used in hardware and software implementations.
+        
+        \item \textbf{Multiplication and Division:} Multiplication and division of integers require more complex algorithms, such as long multiplication and long division. Optimized techniques like 
+        Karatsuba multiplication and Newton-Raphson division enhance efficiency.
+        
+        \item \textbf{Modular Arithmetic:} Modular arithmetic is used to perform arithmetic operations within a specified modulus. It finds applications in cryptography (RSA encryption), hashing, and 
+        pseudorandom number generation.
+        
+        \item \textbf{Euclidean Algorithm:} The Euclidean algorithm computes the greatest common divisor (GCD) of two integers efficiently. It plays a crucial role in simplifying fractions, solving linear 
+        Diophantine equations, and ensuring data integrity.
+        
+        \item \textbf{Number Bases:} Understanding different number bases, such as hexadecimal and octal, is important for programmers and engineers. These bases are used in low-level programming, memory 
+        addressing, and data representation.
+        
+        \item \textbf{Floating-Point Representation:} Floating-point representation is used to represent real numbers with a fractional part. It involves a sign bit, exponent, and mantissa and is 
+        fundamental in scientific and engineering computing.
+        
+        \item \textbf{Applications:} Integer representations and algorithms find applications in various fields, including computer graphics, cryptography, database systems, network protocols, and 
+        scientific simulations. Efficient algorithms are essential for optimizing software and hardware performance.
+    \end{enumerate}
+
+    In conclusion, integer representations and algorithms are the building blocks of computer science and mathematics. They underlie the fundamental operations performed by computers and are essential for 
+    designing efficient algorithms and data structures. Mastery of these concepts empowers professionals in fields ranging from software engineering to cybersecurity, enabling them to solve complex problems 
+    and develop robust systems. An understanding of integer representations and algorithms is invaluable in the digital age, where computational efficiency and accuracy are paramount.
+\end{notes}
+
+The last section that we will be covering this week is \textbf{Section 4.3 - Primes and Greatest Common Divisors}.
+
+\begin{notes}{Section 4.3 - Primes and Greatest Common Divisors}
+    \subsection*{Overview}
+
+    Primes and greatest common divisors (GCD) are fundamental concepts in number theory with wide-ranging applications in various mathematical and computational domains. Prime numbers, as the building 
+    blocks of integers, play a crucial role in encryption, data compression, and random number generation. GCD, on the other hand, is a foundational tool for solving Diophantine equations, simplifying 
+    fractions, and ensuring data integrity. This summary explores the key concepts related to primes and GCD, highlighting their importance and real-world implications.
+
+    \subsection*{Key Concepts}
+
+    \begin{enumerate}[label=\arabic*.]
+        \item \textbf{Prime Numbers:} Prime numbers are natural numbers greater than 1 that have no divisors other than 1 and themselves. They play a fundamental role in number theory and cryptography.
+        
+        \item \textbf{Composite Numbers:} Composite numbers are integers greater than 1 that are not prime, meaning they have divisors other than 1 and themselves.
+        
+        \item \textbf{Prime Factorization:} Prime factorization is the process of expressing a composite number as a product of prime numbers. It is the basis for understanding the internal structure 
+        of integers.
+        
+        \item \textbf{Sieve of Eratosthenes:} The Sieve of Eratosthenes is an algorithm for efficiently finding all prime numbers up to a given limit. It eliminates multiples of each prime as it 
+        iterates through the integers.
+        
+        \item \textbf{Greatest Common Divisor (GCD):} The GCD of two integers is the largest positive integer that divides both of them without a remainder. It is denoted as $\text{GCD}(a, b)$ or 
+        $\text{gcd}(a, b)$.
+        
+        \item \textbf{Euclidean Algorithm:} The Euclidean algorithm is an efficient method for finding the GCD of two integers. It involves repeated division with remainder and is a fundamental tool 
+        in number theory and cryptography.
+        
+        \item \textbf{Diophantine Equations:} Diophantine equations are equations where solutions are sought in integers. The GCD and the Euclidean algorithm are used to solve linear Diophantine equations.
+        
+        \item \textbf{Relatively Prime Numbers:} Two integers are relatively prime if their GCD is 1. Relatively prime numbers have no common divisors other than 1.
+        
+        \item \textbf{Applications:} Prime numbers and GCD have practical applications in cryptography (RSA encryption), random number generation, error detection and correction, and hashing algorithms. 
+        They are essential tools in ensuring data security and integrity.
+    \end{enumerate}
+
+    Primes and greatest common divisors are foundational concepts in number theory with a significant impact on mathematics, computer science, and cryptography. Prime numbers are the basis for secure 
+    encryption, while the GCD is a versatile tool for solving equations and ensuring data accuracy. Understanding these concepts is essential for professionals in fields such as cybersecurity, algorithm 
+    design, and numerical analysis. The study of primes and GCD continues to be a fertile ground for mathematical research and innovation, with implications for both theoretical and practical aspects 
+    of computation and data security.
+\end{notes}

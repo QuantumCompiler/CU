@@ -1,0 +1,246 @@
+\clearpage
+\chapter{Week 10: (10/30 - 11/5)}
+
+\section{Induction And Recursion}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Sections 2.4, 5.1, 5.4}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{two} Piazza posts this week. \due{(11/3/23)} \cbox{piazza-week10}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51758}{Sequences, Induction, And Recursion} $\approx$ 20 min.
+    \item \href{https://www.youtube.com/watch?v=ktyTe2DGT2Y&t=97s}{Visually Sum 1 + 2 + 3 ... = n (n + 1) / 2} $\approx$ 3 min.
+    \item \href{https://www.youtube.com/watch?v=3FemxVSgviw}{Sum Of The Odds Makes Squares Numbers?} $\approx$ 2 min.
+    \item \href{https://www.youtube.com/watch?v=Knr5jmdb_Aw}{Grand Finale - Sum Of The Cubes} $\approx$ 5 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51762}{Sequences} $\approx$ 23 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51763}{Induction Basics} $\approx$ 25 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51765}{Recursion And Memoization} $\approx$ 41 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51769}{Binary Search: Correctness} $\approx$ 34 min.
+\end{itemize}
+
+\noindent Below is a list of lecture notes for this week:
+
+\begin{itemize}
+    \item \pdflink{./Notes/Sequences Lecture Notes.pdf}{Sequences}
+    \item \pdflink{./Notes/Induction Lecture Notes.pdf}{Induction}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/Induction Mastery Workbook.pdf}{Induction} \due{(11/6/23)} \cbox{assignment-week10}
+
+\subsection{Quiz}
+
+The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51773}{Induction} \due{(11/6/23)} \cbox{quiz-week10}
+
+\subsection{Chapter Summary}
+
+The first section that we are covering this week is \textbf{Section 2.4 - Sequences And Summations}.
+
+\begin{notes}{Section 2.4 - Sequences And Summations}
+    \subsubsection*{Overview}
+
+    Sequences and summations are fundamental concepts in mathematics, particularly in discrete mathematics and calculus. They are used to describe and analyze patterns, series, and the accumulation 
+    of values over a range of terms or elements. Here's a summary of sequences and summations:
+
+    \begin{enumerate}[label=\arabic*.]
+        \item \textbf{Sequences}:
+        \begin{itemize}
+            \item A sequence is an ordered list of numbers or elements written in a specific order.
+            \item Each element in a sequence is referred to as a term, typically denoted as $a_n$ or $x_n$, where $n$ represents the position of the term.
+            \item Sequences can be finite or infinite, depending on whether they have a finite or infinite number of terms.
+            \item Common types of sequences include arithmetic sequences, geometric sequences, and recursive sequences.
+        \end{itemize}
+        
+        \item \textbf{Arithmetic Sequences}:
+        \begin{itemize}
+            \item In an arithmetic sequence, each term is obtained by adding a constant difference, called the common difference ($d$), to the previous term.
+            \item The general form of an arithmetic sequence is $a_n = a_1 + (n - 1)d$.
+        \end{itemize}
+        
+        \item \textbf{Geometric Sequences}:
+        \begin{itemize}
+            \item In a geometric sequence, each term is obtained by multiplying the previous term by a constant ratio, called the common ratio ($r$).
+            \item The general form of a geometric sequence is $a_n = a_1 \cdot r^{(n - 1)}$.
+        \end{itemize}
+        
+        \item \textbf{Summations}:
+        \begin{itemize}
+            \item A summation represents the sum of a sequence of terms and is denoted by the Greek letter sigma ($\sum$).
+            \item The index variable, typically $i$ or $n$, specifies the position of the term being summed.
+            \item The lower and upper limits of the summation indicate the range of terms to be added.
+            \item Summations are used to find the total accumulation or sum of values in a sequence.
+        \end{itemize}
+        
+        \item \textbf{Common Summation Notations}:
+        \begin{itemize}
+            \item The most common summation notation is $\sum_{i=1}^{n} a_i$, which represents the sum of terms $a_i$ from $i = 1$ to $n$.
+            \item Summations can also involve functions, such as $\sum_{i=1}^{n} f(i)$, where $f(i)$ is a function of the index variable.
+        \end{itemize}
+        
+        \item \textbf{Properties of Summations}:
+        \begin{itemize}
+            \item Linearity: $\sum (a_i + b_i) = \sum a_i + \sum b_i$
+            \item Constant Multiple: $\sum c \cdot a_i = c \cdot \sum a_i$
+            \item Changing Limits: $\sum_{i=a}^{b} a_i = \sum_{i=1}^{b} a_i - \sum_{i=1}^{a-1} a_i$
+        \end{itemize}
+        
+        \item \textbf{Applications}:
+        \begin{itemize}
+            \item Sequences and summations are used in various fields, including physics, computer science, and finance, to model and analyze real-world phenomena.
+            \item They play a crucial role in understanding series, limits, and convergence, as well as in solving mathematical and computational problems.
+        \end{itemize}
+    \end{enumerate}
+    
+    Sequences describe ordered lists of terms, while summations represent the accumulation of those terms. Understanding these concepts is essential in mathematics and its applications, providing 
+    valuable tools for solving problems and analyzing patterns.
+\end{notes}
+
+The second section that we will be covering this week is \textbf{Section 5.1 - Mathematical Induction}.
+
+\begin{notes}{Section 5.1 - Mathematical Induction}
+    \subsubsection*{Overview}
+
+    Mathematical induction is a powerful proof technique used in mathematics to establish the truth of an infinite number of statements, typically involving natural numbers. It is based on two fundamental 
+    principles: the base case and the induction step. Here's a summary of mathematical induction:
+
+    \begin{enumerate}[label = \arabic*.]
+        \item \textbf{Base Case:}
+        \begin{itemize}
+            \item The first step in a proof by mathematical induction is to establish the truth of the statement for a specific value, often the smallest value, of the parameter under consideration. 
+            This initial condition is called the base case.
+            \item The base case serves as the starting point, demonstrating that the statement holds true for at least one value.
+        \end{itemize}
+        \item \textbf{Induction Hypothesis:}
+        \begin{itemize}
+            \item After proving the base case, the next step is to assume that the statement is true for an arbitrary but fixed value of the parameter. This assumption is known as the induction hypothesis.
+            \item The induction hypothesis provides the basis for making conclusions about other values of the parameter.
+        \end{itemize}
+        \item \textbf{Induction Step:}
+        \begin{itemize}
+            \item The core of mathematical induction is the induction step. It involves demonstrating that if the statement is true for one value (the induction hypothesis), then it must also be true 
+            for the next value of the parameter.
+            \item In other words, the induction step establishes an implication: if the statement holds for any value \(k\), it also holds for \(k + 1\).
+        \end{itemize}
+        \item \textbf{Generalization:}
+        \begin{itemize}
+            \item By repeating the induction step indefinitely, mathematical induction allows us to generalize the statement's truth to an infinite range of values of the parameter.
+            \item This powerful technique enables mathematicians to prove properties and theorems that hold true for all natural numbers, such as properties of sequences and series.
+        \end{itemize}
+        \item \textbf{Examples Of Usage:}
+        \begin{itemize}
+            \item Mathematical induction is frequently used to prove statements involving natural numbers, such as properties of sums, products, and divisibility.
+            \item It is employed in various branches of mathematics, including number theory, combinatorics, and calculus.
+            \item It is also a fundamental tool for proving the correctness of algorithms and computer programs.
+        \end{itemize}
+        \item \textbf{Strong Induction:}
+        \begin{itemize}
+            \item While standard mathematical induction assumes that the statement holds for a single value and concludes its truth for the next value, strong induction allows the assumption that the 
+            statement holds for all previous values up to the current one.
+            \item Strong induction provides an even more versatile tool for proving statements.
+        \end{itemize}
+    \end{enumerate}
+        
+    Mathematical induction is a proof technique used to establish the truth of statements for an infinite range of values, primarily in the context of natural numbers. It relies on the base case, the 
+    induction hypothesis, and the induction step to generalize the statement's validity. Mathematical induction is a fundamental and widely applied method in mathematics and computer science.
+\end{notes}
+
+The last section that we will be covering this week is \textbf{Section 5.4 - Recursive Algorithms}.
+
+\begin{notes}{Section 5.4 - Recursive Algorithms}
+    \subsubsection*{Overview}
+
+    Recursive algorithms are a fundamental concept in computer science and mathematics, enabling the solution of complex problems by breaking them down into smaller, self-similar subproblems. These 
+    algorithms are implemented using recursive functions, which call themselves, solving smaller instances of the same problem with base cases specifying when to terminate. Recursive algorithms exhibit 
+    a tree-like structure, often leading to elegant and concise solutions for problems like computing factorials or Fibonacci numbers. While recursion offers simplicity and readability, it can be 
+    memory-intensive for deep recursion. Techniques like tail recursion and dynamic programming can mitigate these issues, making recursive algorithms a versatile tool in problem-solving, especially 
+    for inherently recursive problems and data structures like trees and graphs. Understanding recursion and designing effective recursive solutions are essential skills in computer science.
+
+    \begin{enumerate}
+        \item \textbf{Introduction}:
+        \begin{itemize}
+            \item Recursive algorithms are a fundamental concept in computer science and mathematics.
+            \item They involve solving problems by breaking them down into smaller, self-similar subproblems.
+        \end{itemize}
+        
+        \item \textbf{Recursive Function}:
+        \begin{itemize}
+            \item A recursive algorithm is implemented using a recursive function, which is a function that calls itself.
+            \item In each recursive call, the function solves a smaller instance of the same problem.
+        \end{itemize}
+        
+        \item \textbf{Base Case}:
+        \begin{itemize}
+            \item Every recursive algorithm must have a base case or termination condition.
+            \item The base case specifies when the recursion should stop, preventing infinite recursion.
+        \end{itemize}
+        
+        \item \textbf{Recursive Case}:
+        \begin{itemize}
+            \item The recursive case defines how the problem is divided into smaller subproblems and solved recursively.
+            \item It typically involves calling the function with modified input, moving closer to the base case.
+        \end{itemize}
+        
+        \item \textbf{Example - Factorial}:
+        \begin{itemize}
+            \item An example of a recursive algorithm is calculating the factorial of a number.
+            \item Base Case: $n! = 1$ when $n = 0$.
+            \item Recursive Case: $n! = n \cdot (n-1)!$.
+        \end{itemize}
+        
+        \item \textbf{Tree-Like Structure}:
+        \begin{itemize}
+            \item Recursive algorithms often have a tree-like structure, where each node represents a function call.
+            \item The root node is the initial call, and child nodes represent recursive calls.
+        \end{itemize}
+        
+        \item \textbf{Recursion vs. Iteration}:
+        \begin{itemize}
+            \item Recursive and iterative solutions may exist for many problems.
+            \item Recursion provides an elegant and concise solution for certain problems but may have higher memory usage due to function call overhead.
+        \end{itemize}
+        
+        \item \textbf{Examples}:
+        \begin{itemize}
+            \item Common recursive algorithms include computing Fibonacci numbers, traversing trees and graphs, and solving divide-and-conquer problems like merge sort and quicksort.
+        \end{itemize}
+        
+        \item \textbf{Tail Recursion}:
+        \begin{itemize}
+            \item Tail recursion is a specific form of recursion where the recursive call is the last operation in the function.
+            \item Some programming languages optimize tail-recursive functions to reduce stack space usage.
+        \end{itemize}
+        
+        \item \textbf{Advantages and Disadvantages}:
+        \begin{itemize}
+            \item Advantages of recursive algorithms include simplicity, readability, and suitability for inherently recursive problems.
+            \item Disadvantages include potential performance issues with deep recursion and increased memory usage.
+        \end{itemize}
+        
+        \item \textbf{Dynamic Programming}:
+        \begin{itemize}
+            \item Dynamic programming is a technique that combines recursion with memoization (caching) to optimize recursive algorithms by avoiding redundant calculations.
+        \end{itemize}
+        
+        \item \textbf{Recursive Thinking}:
+        \begin{itemize}
+            \item Understanding recursion requires thinking in terms of dividing problems into smaller instances and understanding how they relate to each other.
+        \end{itemize}
+    \end{enumerate}
+    
+    Recursive algorithms are a powerful problem-solving technique that involves solving problems by breaking them into smaller, similar subproblems. They are widely used in computer science and mathematics 
+    and can provide elegant solutions to various problems. Understanding recursion and designing effective recursive algorithms are important skills for programmers and mathematicians.
+\end{notes}

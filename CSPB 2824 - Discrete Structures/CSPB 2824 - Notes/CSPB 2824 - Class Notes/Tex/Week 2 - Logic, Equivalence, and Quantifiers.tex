@@ -1,0 +1,702 @@
+\clearpage
+\chapter{Week 2: (9/4 - 9/10)}
+
+\section{Logic, Equivalence, And Quantifiers}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Sections 1.3, 1.4, 1.5, \& 1.6} from Rosen.
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{two} Piazza posts this week. \due{(9/9/23)} \cbox{piazza-week2}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51566}{Propositional Equivalence} $\approx$ 54 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51567}{Predicates And Quantifiers} $\approx$ 1 hour, 10 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51568}{Nested Quantifiers} $\approx$ 34 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51569}{Rules of Inference} $\approx$ 1 hour, 11 min.
+\end{itemize}
+
+\noindent Below is a list of lecture notes for this week:
+
+\begin{itemize}
+    \item \pdflink{./Notes/Propositional Equivalence Lecture Notes.pdf}{Propositional Equivalence}
+    \item \pdflink{./Notes/Predicates And Quantifiers Lecture Notes.pdf}{Predicates And Quantifiers}
+    \item \pdflink{./Notes/Nested Quantifiers Lecture Notes.pdf}{Nested Quantifiers}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/Propositional Logic Mastery Workbook.pdf}{Propositional Logic Mastery Workbook.} \due{(9/11/23)} \cbox{assignment-week2}
+
+\subsection{Quiz}
+
+The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51574}{Predicates And Quantifiers.} \due{(9/11/23)} \cbox{quiz-week2}
+
+\subsection{Chapter Summary}
+
+The first section that we are covering this week is \textbf{Section 1.3 - Propositional Equivalences}.
+
+\begin{notes}{Section 1.3 - Propositional Equivalences}
+    \subsubsection*{Overview}
+
+    Propositional equivalences, also known as logical equivalences or tautologies, are fundamental concepts in propositional logic. They express the idea that two logical statements have the same truth 
+    value under all possible truth assignments to their constituent propositions. In other words, if two propositions are logically equivalent, they are either both true or both false in every possible 
+    situation.
+
+    Propositional equivalences are crucial in logic and mathematics for simplifying expressions, proving the validity of arguments, and establishing relationships between different logical statements. 
+    These equivalences are derived from the properties of logical connectives (such as negation, conjunction, disjunction, implication, and bi-conditional) and often take the form of if-and-only-if statements.
+
+    Some common examples of propositional equivalences include:
+
+    \begin{Highlight}[Double Negation]
+        The negation of a negation is equivalent to the original proposition.
+        \begin{equation*}
+            \neg(\neg p) \equiv p
+        \end{equation*}
+    \end{Highlight}
+
+    \begin{Highlight}[De Morgan's Laws]
+        These laws describe how to negate conjunctions and disjunctions.
+        \begin{align*}
+            \neg (p \wedge q) & \equiv \neg p \vee \neg q \\
+            \neg (p \wedge q) & \equiv \neg p \wedge \neg q
+        \end{align*}
+    \end{Highlight}
+
+    \begin{Highlight}[Commutative Laws]
+        The order of propositions does not affect the outcome of conjunctions and disjunctions.
+        \begin{align*}
+            p \wedge q & \equiv q \wedge p \\
+            p \vee q & \equiv q \vee p
+        \end{align*}1
+    \end{Highlight}
+
+    \begin{Highlight}[Associative Laws]
+        The grouping of propositions within conjunctions and disjunctions does not change their truth value.
+        \begin{align*}
+            (p \wedge q) \wedge r & \equiv p \wedge (q \wedge r) \\
+            (p \vee q) \vee r & \equiv p \vee (q \vee r)
+        \end{align*}
+    \end{Highlight}
+
+    \begin{Highlight}[Distributive Laws]
+        These laws describe how conjunctions and disjunctions distribute over each other.
+        \begin{align*}
+            p \wedge (q \vee r) & \equiv (p \wedge q) \vee (p \wedge r) \\
+            p \vee (q \wedge r) & \equiv (p \vee q) \wedge (p \vee r)
+        \end{align*}
+    \end{Highlight}
+
+    Propositional equivalences provide a powerful toolkit for transforming logical expressions and simplifying complex propositions. They play a crucial role in constructing formal proofs, enhancing 
+    problem-solving abilities, and ensuring the validity of logical arguments in various disciplines, including computer science, mathematics, philosophy, and linguistics.
+
+    \subsubsection*{Logical Equivalences}
+
+    Logical equivalences, also known as propositional equivalences, are fundamental principles in propositional logic that express the idea that two logical statements have the same truth value under 
+    all possible truth assignments to their constituent propositions. These equivalences are derived from the properties of logical connectives and provide a set of rules for simplifying logical 
+    expressions, proving the validity of arguments, and establishing relationships between different logical statements.
+
+    Logical equivalences allow us to manipulate and transform logical statements while preserving their truth values. They are crucial tools for reasoning, problem-solving, and formal verification in 
+    various fields such as mathematics, computer science, philosophy, and linguistics. These equivalences enable us to navigate the intricacies of complex logical systems by breaking down propositions 
+    into simpler forms that retain their original truth values.
+
+    \begin{Highlight}[Logical Equivalences Example]
+        For example, consider the logical equivalence known as the \textbf{Double Negation Law}:
+
+        \begin{equation*}
+            \neg(\neg p) \equiv p
+        \end{equation*}
+        This equivalence states that the negation of a negation is equivalent to the original proposition. In simpler terms, if you negate a proposition and then negate it again, you end up with the same 
+        proposition. This can be demonstrated with a specific proposition:
+
+        \horizontalline{0}{0}
+        \begin{align*}
+            & \text{Let p be the proposition "It is sunny today."} \\
+            & \text{The negation of p is "It is not sunny today."} \\
+            & \text{The negation of $\neg$p is "It is sunny today," which is the same as the original proposition p.} \\
+        \end{align*}
+        \horizontalline{0}{0}
+        This logical equivalence can be useful in various contexts. For instance, it helps clarify that a proposition and its double negation express the same information. This understanding is essential 
+        for formalizing arguments, clarifying statements, and simplifying logical expressions to reveal their underlying structure.
+    \end{Highlight}
+
+    In summary, logical equivalences are foundational principles that allow us to manipulate and simplify logical statements while maintaining their truth values. They play a crucial role in various disciplines, 
+    enabling us to reason rigorously, prove the validity of arguments, and navigate the complexities of logical systems.
+
+    The presented table encapsulates essential logical equivalences that unveil the intricate relationships governing propositional logic. Each entry in the table highlights a distinct law that defines the behavior 
+    of logical operations across different propositions. From the \textbf{Identity} and \textbf{Domination} laws that explore the impact of "True" (T) and "False" (F) in conjunctions and disjunctions, to the 
+    \textbf{Commutative} and \textbf{Associative} laws unveiling the symmetry and grouping properties of logical operations, these equivalences offer fundamental insights into the logic of propositions.
+
+    Furthermore, the table introduces crucial principles such as the \textbf{Double Negation} law, illustrating the profound implications of double negations, and \textbf{De Morgan's} laws, outlining how negations interact 
+    with complex logical structures. The \textbf{Absorption} laws demonstrate how propositions can interplay within conjunctions and disjunctions, while the \textbf{Negation} laws lay bare the inherent contradictions when 
+    propositions and their negations are combined. This compilation of logical equivalences provides an indispensable toolkit for simplifying and transforming logical expressions, enabling rigorous reasoning and 
+    deductive analysis across various domains of knowledge.
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline Equivalence Name & Equivalence \\ \hline
+            $p \land T \equiv p$ & Identity laws \\
+            $p \lor F \equiv p$ & \\
+            $p \lor T \equiv T$ & Domination laws \\
+            $p \land F \equiv F$ & \\
+            $p \lor p \equiv p$ & Idempotent laws \\
+            $p \land p \equiv p$ & \\
+            $\neg (\neg p) \equiv p$ & Double negation law \\
+            $p \lor q \equiv q \lor p$ & Commutative laws \\
+            $p \land q \equiv q \land p$ & \\
+            $(p \lor q) \lor r \equiv p \lor (q \lor r)$ & Associative laws \\
+            $(p \land q) \land r \equiv p \land (q \land r)$ & \\
+            $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ & Distributive laws \\
+            $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ & \\
+            $\neg (p \land q) \equiv \neg p \lor \neg q$ & De Morgan’s laws \\
+            $\neg (p \lor q) \equiv \neg p \land \neg q$ & \\
+            $p \lor (p \land q) \equiv p$ & Absorption laws \\
+            $p \land (p \lor q) \equiv p$ & \\
+            $p \lor \neg p \equiv T$ & Negation laws \\
+            $p \land \neg p \equiv F$ & \\ \hline
+        \end{tabular}
+    \end{center}
+
+    The table presented introduces a set of vital logical equivalences centered around conditional statements, shedding light on the intricate relationships that govern propositional logic in the context of implications. 
+    Each entry in the table showcases a distinct equivalence, highlighting how conditional statements interact with other logical operations and propositions. From the fundamental equivalence of $p \rightarrow q$ being 
+    logically equivalent to $\neg p \lor q$, to the insightful contrapositive equivalence of $p \rightarrow q$ being the same as $\neg q \rightarrow \neg p$, these equivalences unveil the nuanced connections between 
+    antecedents and consequents in conditional statements.
+
+    Moreover, the table delves into more advanced equivalences, such as transposition equivalence and the negation of conditionals. These entries illustrate how conditional statements interplay with conjunctions, disjunctions, 
+    and negations to produce logical conclusions. The exportation and importation equivalences provide a deeper understanding of how conditional statements can be combined and separated within larger logical structures. By 
+    meticulously exploring these logical equivalences involving conditional statements, the table equips individuals with powerful tools to manipulate and simplify complex propositions, paving the way for sophisticated reasoning 
+    and rigorous deduction across a range of disciplines.
+    \begin{center}
+        \begin{tabular}{|l|l|}
+        \hline Equivalence & Description \\ \hline
+        $p \rightarrow q \equiv \neg p \lor q$ & Conditional Equivalence \\
+        $p \rightarrow q \equiv \neg q \rightarrow \neg p$ & Contrapositive Equivalence \\
+        $p \lor q \equiv \neg p \rightarrow q$ & Transposition Equivalence \\
+        $p \land q \equiv \neg (p \rightarrow \neg q)$ & \\
+        $\neg (p \rightarrow q) \equiv p \land \neg q$ & Negation of Conditional \\
+        $(p \rightarrow q) \land (p \rightarrow r) \equiv p \rightarrow (q \land r)$ & Exportation Equivalence \\
+        $(p \rightarrow r) \land (q \rightarrow r) \equiv (p \lor q) \rightarrow r$ & Importation Equivalence \\
+        $(p \rightarrow q) \lor (p \rightarrow r) \equiv p \rightarrow (q \lor r)$ & \\
+        $(p \rightarrow r) \lor (q \rightarrow r) \equiv (p \land q) \rightarrow r$ & \\ \hline
+        \end{tabular}
+    \end{center}
+
+    The provided table introduces a comprehensive collection of logical equivalences centered around biconditional statements, shedding light on the intricate relationships governing propositional logic in the realm of mutual 
+    implications. Each entry in the table presents a distinct equivalence that showcases the nuanced interplay between propositions in biconditional statements. From the foundational equivalence of $p \leftrightarrow q$ being 
+    equivalent to both $(p \rightarrow q) \land (q \rightarrow p)$, to the illuminating negation equivalence of $\neg p \leftrightarrow \neg q$, these equivalences highlight the symmetrical nature of biconditional statements 
+    and their connection to implications.
+
+    Furthermore, the table delves into more advanced equivalences involving exclusive disjunctions and negations. The entry illustrating how $p \leftrightarrow q$ is equivalent to $(p \land q) \lor (\neg p \land \neg q)$ offers 
+    an intriguing perspective on biconditionals, emphasizing their link to conjunctions and negations. The negation of biconditional equivalence adds depth by exploring how negations can transform biconditional statements. By 
+    unveiling these complex relationships involving biconditional statements, the table equips individuals with a powerful toolkit to manipulate and simplify propositions characterized by mutual implication. These equivalences 
+    serve as valuable assets in the realm of logical reasoning, enabling the exploration of connections between propositions and reinforcing one's ability to navigate intricate logical structures across diverse academic disciplines.
+
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline Equivalence & Description \\ \hline
+            $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$ & Biconditional Equivalence \\
+            $p \leftrightarrow q \equiv \neg p \leftrightarrow \neg q$ & Negation Equivalence \\
+            $p \leftrightarrow q \equiv (p \land q) \lor (\neg p \land \neg q)$ & Exclusive Disjunction Equivalence \\
+            $\neg (p \leftrightarrow q) \equiv p \leftrightarrow \neg q$ & Negation of Biconditional \\
+            \hline
+        \end{tabular}            
+    \end{center}
+
+    \subsubsection*{Propositional Satisfiability}
+
+    Propositional satisfiability is a fundamental concept in propositional logic that revolves around determining whether a given logical formula, also known as a propositional formula, can be made true by assigning appropriate 
+    truth values to its constituent propositions. In other words, it involves finding a combination of truth values for the variables in the formula that results in the entire formula evaluating to true. If such a combination 
+    exists, the formula is considered satisfiable; otherwise, if no such combination exists, the formula is unsatisfiable.
+
+    The study of propositional satisfiability has profound implications in various fields, especially in computer science and artificial intelligence. It is at the core of solving decision problems and optimization challenges, 
+    with applications in automated reasoning, theorem proving, circuit design, and even software verification. The process of determining the satisfiability of a formula often involves utilizing algorithms and techniques like 
+    truth tables, Boolean algebra, and sophisticated SAT solvers that efficiently explore the vast solution space. Understanding and analyzing propositional satisfiability not only provide insights into logical reasoning but 
+    also offer practical solutions to real-world problems by enabling the automation of complex decision-making processes.
+
+    \begin{Highlight}[Propositional Satisfiability Example]
+        Consider the propositional formula: \(p \land (q \lor \neg r)\) \vspace*{1em}
+
+        We want to determine whether there exists an assignment of truth values to the propositions \(p\), \(q\), and \(r\) that makes the entire formula true.
+    
+        \horizontalline{0}{0}
+
+        1. \(p = \text{True}\), \(q = \text{True}\), \(r = \text{True}\)
+        \(p \land (q \lor \neg r) = \text{True} \land (\text{True} \lor \text{False}) = \text{True} \land \text{True} = \text{True}\)
+    
+        2. \(p = \text{False}\), \(q = \text{True}\), \(r = \text{False}\)
+        \(p \land (q \lor \neg r) = \text{False} \land (\text{True} \lor \text{True}) = \text{False} \land \text{True} = \text{False}\)
+    
+        3. \(p = \text{True}\), \(q = \text{False}\), \(r = \text{True}\)
+        \(p \land (q \lor \neg r) = \text{True} \land (\text{False} \lor \text{False}) = \text{True} \land \text{False} = \text{False}\)
+
+        \horizontalline{0}{0}
+    
+        From the examples above, we can see that there are assignments of truth values that make the formula true and assignments that make it false. Since there exists at least one assignment that satisfies the formula, it is satisfiable.
+    
+        This example illustrates how the concept of propositional satisfiability involves finding truth value assignments that make a propositional formula true and how such assignments impact the overall truth value of the formula.
+    \end{Highlight}
+\end{notes}
+
+The next section that we are covering this week is \textbf{Section 1.4 - Predicates \& Quantifiers}.
+
+\begin{notes}{Section 1.4 - Predicates \& Quantifiers}
+    \subsubsection*{Overview}
+
+    Predicates and quantifiers are fundamental concepts in logic and mathematics that play a crucial role in expressing and reasoning about statements involving variables. They provide a structured framework for making statements about 
+    objects, individuals, or elements within a given domain.
+
+    \textbf{Predicates} are essentially statements with variables that can be either true or false depending on the values assigned to the variables. They are often used to describe properties, characteristics, or relationships among 
+    objects. For example, consider the predicate "P(x)" where "P" represents the property of being prime and "x" is a variable representing an integer. This predicate becomes true or false depending on the value assigned to "x."
+
+    \textbf{Quantifiers} are used to express the scope of a predicate over a certain domain. They allow us to make statements about "all" or "some" elements in a domain. There are two main types of quantifiers:
+
+    \begin{enumerate}
+        \item \textbf{Universal Quantifier ($\forall$)}: This quantifier is denoted by "$\forall$" and is used to express that a certain predicate is true for "all" elements in a given domain. For instance, the statement "$\forall x, P(x)$" 
+        asserts that the predicate "P(x)" is true for every element "x" in the domain.
+        \item \textbf{Existential Quantifier ($\exists$)}: This quantifier is denoted by "$\exists$" and is used to express that a certain predicate is true for "at least one" element in a given domain. For example, the statement "$\exists x, 
+        P(x)$" asserts that there exists an element "x" in the domain for which the predicate "P(x)" is true.
+    \end{enumerate}
+
+    Predicates and quantifiers are essential tools for expressing complex logical statements, defining sets, and describing mathematical properties in a precise and systematic manner. They serve as building blocks for formalizing mathematical 
+    proofs, specifying conditions, and making assertions about various objects and entities within a given context.
+
+    \subsubsection*{Predicates}
+
+    Predicates are foundational elements in logic and mathematics that enable us to express statements about variables and their relationships. A predicate is a statement that contains one or more variables and can be either true or false 
+    depending on the values assigned to these variables. Predicates allow us to describe properties, characteristics, or conditions that entities or elements may satisfy. In formal terms, a predicate is often denoted as $P(x)$, where $P$ 
+    represents the predicate itself, and $x$ is a variable that ranges over a specific domain.
+    
+    For example, consider the predicate $P(x)$: "$x$ is an even number." Here, $x$ is a variable that can take on different integer values, and the predicate evaluates to true when $x$ is an even number and false otherwise. Predicates can 
+    also involve multiple variables, allowing us to express more complex relationships. For instance, the predicate $Q(x, y)$: "$x$ is less than $y$" involves two variables, $x$ and $y$, and evaluates to true when $x$ is indeed less than $y$.
+    
+    Predicates play a pivotal role in constructing logical statements and formulating mathematical propositions. They provide a means to express conditions, make assertions, and define sets based on specific properties. Through quantifiers 
+    like universal ($\forall$) and existential ($\exists$), predicates allow us to quantify the scope of truth for statements involving variables, enabling us to reason about collections of elements in a precise and systematic manner.
+    
+    \begin{Highlight}[Predicate Examples]
+        Below are some examples of predicates.
+
+        \horizontalline{0}{0}
+        \begin{enumerate}
+            \item \(P(x) =\) "\(x\) is a prime number." - This predicate is true when the variable \(x\) represents a prime number, and it is false for any other integer value of \(x\).
+            \item \(Q(x, y) =\) "\(x\) is divisible by \(y\)." - This two-variable predicate is true when \(x\) is divisible by \(y\), and it is false otherwise. For example, \(Q(10, 2)\) is true because 10 is divisible by 2.
+            \item \(R(x) =\) "\(x\) is a positive real number." - This predicate is true for positive real numbers, and false for negative numbers, zero, and complex numbers.
+            \item \(S(x) =\) "\(x\) is a square." - This predicate is true when \(x\) is the area of a square, and false for any other value of \(x\).
+            \item \(T(x, y) =\) "\(x\) is taller than \(y\)." - This two-variable predicate is true when \(x\) is taller than \(y\) in a certain context, and false otherwise.
+            \item \(U(x) =\) "\(x\) is a vowel." - This predicate can be used for characters in an alphabet to determine if a character is a vowel or a consonant.
+            \item \(V(x, y) =\) "\(x\) divides \(y\) evenly." - This two-variable predicate is true when \(x\) divides \(y\) without a remainder, and false otherwise.
+            \item \(W(x) =\) "\(x\) is an even integer." - This predicate is true when \(x\) is an even integer, and false for odd integers.
+            \item \(X(x) =\) "\(x\) is a positive solution to the equation \(x^2 - 5x + 6 = 0\)." - This predicate is true for the values of \(x\) that satisfy the equation, which are 2 and 3 in this case.
+            \item \(Y(x, y) =\) "\(x\) and \(y\) are co-prime." - This two-variable predicate is true when \(x\) and \(y\) have no common factors other than 1, and false otherwise.
+        \end{enumerate}
+        \horizontalline{0}{0}
+    \end{Highlight}
+
+    \subsubsection*{Quantifiers}
+
+    Quantifiers are fundamental concepts in logic that enable us to express the scope of a predicate over a set of elements or objects. They allow us to make statements about "all" or "some" members of a domain and play a crucial role in formalizing 
+    logical propositions and mathematical statements.
+
+    \textbf{Universal Quantifier (\(\forall\))}: The universal quantifier, denoted by \(\forall\), is used to express that a certain predicate holds true for "every" element in a given domain. For example, the statement \(\forall x, P(x)\) asserts that 
+    the predicate \(P(x)\) is true for every possible value of \(x\) within the specified domain. This quantifier establishes a broad claim about the entire domain and is satisfied only when the predicate is true for every individual element.
+
+    \textbf{Existential Quantifier (\(\exists\))}: The existential quantifier, denoted by \(\exists\), is used to express that a certain predicate holds true for "at least one" element in a given domain. For instance, the statement \(\exists x, P(x)\) 
+    indicates that there exists at least one element \(x\) in the domain for which the predicate \(P(x)\) is true. This quantifier establishes the existence of elements that satisfy the predicate without making claims about all elements in the domain.
+
+    Quantifiers are essential tools for expressing and reasoning about properties, relationships, and conditions within logical and mathematical contexts. They allow us to quantify over collections of elements, formulate statements about subsets, 
+    and formalize assertions in a precise and structured manner. By combining quantifiers with predicates, we can create powerful expressions that capture the nuances of complex logical and mathematical statements, paving the way for rigorous analysis, 
+    proof, and exploration of various concepts.
+
+    \begin{Highlight}[Quantifier Examples]
+        Below are some examples of quantifiers.
+
+        \horizontalline{0}{0}
+        \textbf{Universal Quantifier (\(\forall\)):}
+        \begin{enumerate}
+            \item \(\forall x \in \mathbb{Z}, x^2 \geq 0\) - This statement asserts that for every integer \(x\), its square is greater than or equal to zero.
+            \item \(\forall n \in \mathbb{N}, 2n\) is an even number. - This statement claims that every natural number multiplied by 2 results in an even number.
+            \item \(\forall a, b \in \mathbb{R}, a + b = b + a\) - This equation expresses the commutative property of addition for all real numbers \(a\) and \(b\).
+        \end{enumerate}
+        
+        \textbf{Existential Quantifier (\(\exists\)):}
+        \begin{enumerate}
+            \item \(\exists x \in \mathbb{Z}, x^2 = 9\) - This statement asserts that there exists an integer \(x\) such that its square is equal to 9, which is true for \(x = 3\) and \(x = -3\).
+            \item \(\exists n \in \mathbb{N}, n > 10\) - This statement states that there exists a natural number greater than 10.
+            \item \(\exists x, y \in \mathbb{R}, x^2 + y^2 = 25\) - This equation expresses that there exist real numbers \(x\) and \(y\) such that their squares sum up to 25. For example, \(x = 3\) and \(y = 4\) satisfy this equation.
+        \end{enumerate}
+        \horizontalline{0}{0}
+        These examples showcase how quantifiers are used to make statements about either all elements or at least one element in a given domain. The universal quantifier \(\forall\) asserts a property for every element in a set, while the existential 
+        quantifier \(\exists\) asserts the existence of an element with a certain property in a set.
+    \end{Highlight}
+
+    Here is a table that encapsulates the truth values of quantifiers.
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline \textbf{Statement} & \textbf{When True?} & \textbf{When False?} \\ \hline
+            \(\forall x P(x)\) & \(P(x)\) is true for every \(x\). & There is an \(x\) for which \(P(x)\) is false. \\ \hline
+            \(\exists x P(x)\) & There is an \(x\) for which \(P(x)\) is true. & \(P(x)\) is false for every \(x\). \\ \hline
+        \end{tabular}
+    \end{center}
+
+    The table presents an overview of two essential quantifiers in logic: the universal quantifier (\(\forall\)) and the existential quantifier (\(\exists\)). These quantifiers are used to express statements about properties of elements within a 
+    specified domain. 
+    
+    \begin{itemize}
+        \item \textbf{\(\forall x P(x)\)}: This statement is true when the predicate \(P(x)\) holds true for every element \(x\) in the domain. It signifies a universal claim that the property described by \(P(x)\) is applicable to all elements. On the 
+        other hand, this statement is false when there exists at least one element \(x\) for which \(P(x)\) is false. In other words, if there's a single counterexample, the entire statement is false.
+        \item \textbf{\(\exists x P(x)\)}: This statement is true when there exists at least one element \(x\) for which the predicate \(P(x)\) holds true. It asserts the existence of an element that satisfies the property described by \(P(x)\). Conversely, 
+        this statement is false when \(P(x)\) is false for every element \(x\) in the domain. If no element satisfies the property, the statement becomes false.
+    \end{itemize}
+
+    These quantifiers provide a formal way to make assertions about the relationship between predicates and elements in a logical system. The universal quantifier ensures that a property applies to all elements, while the existential quantifier asserts 
+    the presence of at least one element with a specific property.
+    
+    \subsubsection*{Quantifiers with Restricted Domains}
+
+    Quantifiers in logic, namely the universal quantifier (\(\forall\)) and the existential quantifier (\(\exists\)), can be used with restricted domains to express statements about properties within specific subsets of a larger domain. This allows for more 
+    precise and targeted assertions.
+    
+    \textbf{Universal Quantifier with Restricted Domain}: The statement \(\forall x \in S, P(x)\) asserts that for every element \(x\) in the subset \(S\) of the domain, the predicate \(P(x)\) holds true. This means that the property described by \(P(x)\) 
+    applies universally within the specified subset. If there exists an element \(x\) in \(S\) for which \(P(x)\) is false, the statement is false.
+    
+    \textbf{Existential Quantifier with Restricted Domain}: The statement \(\exists x \in S, P(x)\) asserts that there exists at least one element \(x\) in the subset \(S\) for which the predicate \(P(x)\) holds true. This indicates that the property described 
+    by \(P(x)\) is satisfied by at least one element within the specified subset. If no element in \(S\) satisfies \(P(x)\), the statement is false.
+    
+    Using quantifiers with restricted domains adds precision to statements, allowing us to focus on specific subsets of interest within a larger context. These quantifiers are valuable tools in expressing targeted claims about properties within constrained 
+    scopes while maintaining the logical rigor of quantification.
+    
+    \subsubsection*{Precedence of Quantifiers}
+
+    When working with logical statements involving multiple quantifiers, it's important to understand the precedence of quantifiers to accurately interpret and evaluate these statements. The order in which quantifiers are applied can significantly impact the 
+    meaning of a proposition.
+
+    \textbf{Precedence of Universal and Existential Quantifiers}: In general, universal quantifiers (\(\forall\)) take precedence over existential quantifiers (\(\exists\)) when nested within a logical statement. This means that when quantifiers are combined, 
+    the universal quantifier is applied first, followed by the existential quantifier.
+
+    For example, consider the statement \(\forall x \exists y, P(x, y)\). This can be read as "For every \(x\), there exists a \(y\) such that \(P(x, y)\)." Here, the universal quantifier applies to \(x\) first, and then the existential quantifier applies to 
+    \(y\), allowing for different \(y\) values for each \(x\).
+
+    \textbf{Use of Parentheses}: To avoid ambiguity and clearly convey the intended meaning, it's often wise to use parentheses to explicitly indicate the grouping of quantifiers. For instance, \(\forall x (\exists y P(x, y))\) specifies that the existential 
+    quantifier is nested within the scope of the universal quantifier.
+
+    Understanding the precedence of quantifiers is crucial for correctly interpreting complex logical statements involving multiple quantifiers. Using parentheses appropriately ensures that the intended meaning is accurately conveyed and understood, 
+    facilitating effective communication of logical propositions.
+
+    \subsubsection*{Binding Variables in Quantifiers}
+
+    When working with quantifiers in logic, the concept of binding variables plays a crucial role in understanding how variables are associated with quantifiers and predicates. Binding variables define the scope and range of quantified statements and influence 
+    the meaning of logical propositions.
+    
+    \textbf{Binding Variables in Universal Quantifiers}: In a statement of the form \(\forall x P(x)\), the variable \(x\) is bound by the universal quantifier \(\forall\). This means that \(x\) is assigned as a placeholder within the scope of the quantifier, 
+    and the predicate \(P(x)\) holds true for every possible value of \(x\) in the specified domain. The variable \(x\) cannot be used outside the scope of the quantifier.
+    
+    \textbf{Binding Variables in Existential Quantifiers}: In a statement of the form \(\exists x P(x)\), the variable \(x\) is also bound, but by the existential quantifier \(\exists\). It signifies that there exists at least one value of \(x\) for which the 
+    predicate \(P(x)\) holds true. Similar to the universal quantifier, the scope of the variable \(x\) is limited to the region where the quantifier operates.
+    
+    \textbf{Avoiding Confusion with Free Variables}: It's essential to distinguish between bound variables, which are confined to the scope of quantifiers, and free variables, which are not quantified over and have independent meanings. To prevent confusion, 
+    it's common to introduce unique variables for each quantifier's scope.
+    
+    Understanding the binding of variables helps in interpreting the semantics of quantified statements and clarifying the relationships between variables and predicates within logical propositions.
+    
+    \subsubsection*{Logical Equivalences Involving Quantifiers}
+
+    Logical equivalences involving quantifiers allow us to manipulate and transform statements while preserving their truth value. These equivalences are valuable tools for simplifying complex propositions and making deductions within logical reasoning.
+    
+    \textbf{Quantifier Negation Laws}:
+    \begin{enumerate}
+        \item \(\neg \forall x P(x) \equiv \exists x \neg P(x)\) - The negation of a universal quantifier is equivalent to the existential quantifier of the negation of the predicate. It expresses that there exists at least one element for which the negation 
+        of \(P(x)\) is true.
+        \item \(\neg \exists x P(x) \equiv \forall x \neg P(x)\) - The negation of an existential quantifier is equivalent to the universal quantifier of the negation of the predicate. It asserts that for every element, the negation of \(P(x)\) holds true.
+    \end{enumerate}
+    
+    \textbf{Quantifier Distribution Laws}:
+    \begin{enumerate}
+        \item \(\forall x (P(x) \land Q(x)) \equiv \forall x P(x) \land \forall x Q(x)\) - The conjunction of predicates under a universal quantifier is equivalent to the conjunction of the universal quantifiers of each predicate.
+        \item \(\exists x (P(x) \lor Q(x)) \equiv \exists x P(x) \lor \exists x Q(x)\) - The disjunction of predicates under an existential quantifier is equivalent to the disjunction of the existential quantifiers of each predicate.
+    \end{enumerate}
+    
+    Logical equivalences involving quantifiers help in transforming statements into different forms while preserving their underlying meaning. These equivalences are instrumental in logical proofs, reasoning, and formalizing arguments across various domains.
+    
+
+    \subsubsection*{Negating Quantified Expressions}
+
+    Negating quantified expressions involves understanding how to negate statements that contain universal (\(\forall\)) and existential (\(\exists\)) quantifiers. Properly negating these statements is essential for accurately representing the opposite of 
+    the original propositions.
+    
+    \textbf{Negating Universal Quantifiers}:
+    \begin{enumerate}
+        \item \(\neg (\forall x P(x)) \equiv \exists x \neg P(x)\) - The negation of a universally quantified statement is equivalent to the statement that there exists at least one element for which the predicate is false.
+    \end{enumerate}
+    
+    \textbf{Negating Existential Quantifiers}:
+    \begin{enumerate}
+        \item \(\neg (\exists x P(x)) \equiv \forall x \neg P(x)\) - The negation of an existentially quantified statement is equivalent to the statement that the predicate is false for every possible element.
+    \end{enumerate}
+    
+    \textbf{Avoiding Ambiguity}: Negating quantified expressions requires careful handling of negations and the rearrangement of quantifiers. It's important to maintain clarity and prevent confusion by correctly negating both the quantifiers and the predicates.
+    
+    Negating quantified expressions is a crucial skill in logic and is employed when working with logical proofs, solving problems, and establishing the negation of statements involving quantifiers.    
+
+    De Morgan's Laws for quantifiers are powerful tools that aid in comprehending the negations of quantified statements. These laws offer equivalences for negating statements involving universal (\(\forall\)) and existential (\(\exists\)) quantifiers.
+    
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline \textbf{Negation} & \textbf{Equivalent Statement} & \textbf{When Is Negation True?} \\ \hline
+            \(\neg \exists x P(x)\) & \(\forall x \neg P(x)\) & For every \(x\), \(P(x)\) is false. \\ \hline
+            \(\neg \forall x P(x)\) & \(\exists x \neg P(x)\) & There is an \(x\) for which \(P(x)\) is false. \\ \hline
+        \end{tabular}
+    \end{center}
+    
+    These laws empower us to simplify and manipulate quantified statements when dealing with negations. They provide a clear comprehension of how negations impact the quantifiers and predicates within logical propositions.
+\end{notes}
+
+The next section that we are covering this week is \textbf{Section 1.5 - Nested Quantifiers}.
+
+\begin{notes}{Section 1.5 - Nested Quantifiers}
+    \subsubsection*{Overview}
+
+    Nested quantifiers are a powerful concept in mathematical logic and formal reasoning, allowing us to express intricate statements involving multiple variables and their relationships. These quantifiers occur when one quantifier is placed within the scope of 
+    another, creating a nested structure that captures complex conditions and relationships in mathematical expressions.
+
+    When working with nested quantifiers, the order in which they appear plays a significant role in determining the overall meaning of the statement. For instance, a statement with a universal quantifier (\(\forall\)) followed by an existential quantifier 
+    (\(\exists\)) signifies that for every value of the first variable, there exists a value of the second variable that satisfies the given condition. On the other hand, the reverse order, with an existential quantifier followed by a universal quantifier, 
+    implies that there exists a value of the first variable that works for all values of the second variable.
+
+    Understanding the scope and interplay of nested quantifiers is essential for precise mathematical reasoning. The correct interpretation of these nested structures ensures accurate communication of complex mathematical concepts, which is vital in various fields 
+    including mathematics, computer science, and formal logic.
+
+    \subsubsection*{The Order of Quantifiers}
+
+    The order of quantifiers is a fundamental concept in mathematical logic and predicate calculus that determines how we interpret statements involving multiple quantifiers, such as universal (\(\forall\)) and existential (\(\exists\)) quantifiers. The order in 
+    which these quantifiers appear in a statement significantly influences the meaning and implications of that statement.
+    
+    \begin{enumerate}
+        \item \textbf{Universal Quantifiers First (\(\forall x \exists y\))}: When universal quantifiers precede existential quantifiers, it means that for every value of the first variable (\(x\)), there exists at least one value of the second variable (\(y\)) 
+        that satisfies the given condition. This order expresses that the property holds uniformly across all instances of the first variable.
+        
+        \item \textbf{Existential Quantifiers First (\(\exists x \forall y\))}: When existential quantifiers appear before universal quantifiers, it signifies that there exists at least one value of the first variable (\(x\)) for which the property holds true 
+        for every value of the second variable (\(y\)). This order asserts the existence of a specific instance that satisfies the condition universally.
+    \end{enumerate}
+    
+    The order of quantifiers is crucial in precise mathematical reasoning, as it can affect the validity and interpretation of mathematical statements. It allows mathematicians, logicians, and computer scientists to convey complex relationships and conditions 
+    accurately. Understanding how the order of quantifiers influences the meaning of statements is essential when working with predicate logic and formal reasoning.
+    
+    \begin{Highlight}[Order of Quantifiers Example]
+        Consider the following example that illustrates the importance of the order of quantifiers in mathematical statements:
+    
+        \horizontalline{0}{0}
+        \begin{enumerate}
+            \item \textbf{Universal Quantifier First:} \(\forall x \exists y (x + y = 5)\)
+            \begin{itemize}
+                \item This statement asserts that for every value of \(x\), there exists at least one value of \(y\) such that the sum of \(x\) and \(y\) equals 5. In other words, for any chosen \(x\), you can always find a suitable \(y\) to satisfy the equation 
+                \(x + y = 5\).
+            \end{itemize}
+    
+            \item \textbf{Existential Quantifier First:} \(\exists x \forall y (x + y = 5)\)
+            \begin{itemize}
+                \item In contrast, this statement asserts that there exists at least one value of \(x\) such that, for all values of \(y\), the sum of \(x\) and \(y\) equals 5. It means that there is a single value of \(x\) that, when combined with any \(y\), 
+                always results in \(x + y = 5\).
+            \end{itemize}
+        \end{enumerate}
+        \horizontalline{0}{0}
+    
+        The order of quantifiers changes the interpretation of the statement. In the first case, it means that for every choice of \(x\), you can find a suitable \(y\), while in the second case, it means there exists a specific \(x\) that works for all \(y\). 
+        This example demonstrates how the order of quantifiers influences the meaning of mathematical statements and highlights the importance of correctly interpreting them in various contexts.
+    \end{Highlight}
+    
+    In mathematical logic, the use of quantifiers allows us to make statements about elements in a given domain. Quantifiers come in different forms, including universal (\(\forall\)) and existential (\(\exists\)) quantifiers. This table illustrates the various 
+    quantifications involving two variables and provides an understanding of when these statements hold true and when they are false.
+
+    \begin{center}
+        \begin{tabular}{|c|p{6cm}|p{6cm}|}
+            \hline \textbf{Statement} & \textbf{When True?} & \textbf{When False?} \\ \hline
+            \(\forall x \forall y P(x, y)\) & \(P(x, y)\) is true for every pair \(x, y\). & There is a pair \(x, y\) for which \(P(x, y)\) is false. \\ \hline
+            \(\forall y \forall x P(x, y)\) & \(P(x, y)\) is true for every pair \(x, y\). & There is a pair \(x, y\) for which \(P(x, y)\) is false. \\ \hline
+            \(\forall x \exists y P(x, y)\) & For every \(x\), there is a \(y\) for which \(P(x, y)\) is true. & There is an \(x\) such that \(P(x, y)\) is false for every \(y\). \\ \hline
+            \(\exists x \forall y P(x, y)\) & There is an \(x\) for which \(P(x, y)\) is true for every \(y\). & For every \(x\), there is a \(y\) for which \(P(x, y)\) is false. \\ \hline
+            \(\exists x \exists y P(x, y)\) & There is a pair \(x, y\) for which \(P(x, y)\) is true. & \(P(x, y)\) is false for every pair \(x, y\). \\ \hline
+            \(\exists y \exists x P(x, y)\) & There is a pair \(x, y\) for which \(P(x, y)\) is true. & \(P(x, y)\) is false for every pair \(x, y\). \\ \hline
+        \end{tabular}
+    \end{center}
+    
+    This table illustrates various quantifications of two variables and explains when they are true or false in mathematical logic. The quantifiers \(\forall\) and \(\exists\) are used to make statements about all elements or at least one element in a given domain, 
+    and the table clarifies the conditions under which these statements hold or fail to hold.
+
+    \subsubsection*{Negating Nested Quantifiers}
+
+    In mathematical logic, nested quantifiers are used to make statements about elements in a given domain, often involving both universal (\(\forall\)) and existential (\(\exists\)) quantifiers. When we negate such statements, we change the meaning of the statement 
+    while preserving the structure of nested quantifiers. The process of negating nested quantifiers involves reversing the original statement's meaning and requires applying De Morgan's Laws and carefully negating the predicates within the quantified expressions.
+    
+    Negating nested quantifiers can be challenging, as the order and arrangement of quantifiers significantly impact the resulting negated statement's meaning. A precise understanding of the logical structure of the original statement and the correct application of 
+    negation rules are essential to ensure the accuracy of the negated statement.
+    
+    Overall, negating nested quantifiers is a fundamental skill in mathematical logic and formal reasoning, enabling mathematicians and logicians to reason about complex statements involving multiple levels of quantification and draw precise conclusions about 
+    mathematical structures and systems.
+
+    \begin{Highlight}[Negation of Nested Quantifiers Example]
+        Consider the following example illustrating the negation of nested quantifiers:
+    
+        \horizontalline{0}{0}
+        \begin{enumerate}
+            \item \textbf{Original Statement:} \(\forall x \exists y (x + y = 5)\)
+            \begin{itemize}
+                \item This statement asserts that for every value of \(x\), there exists at least one value of \(y\) such that the sum of \(x\) and \(y\) equals 5. In other words, for any chosen \(x\), you can always find a suitable \(y\) to satisfy the equation \(x + y = 5\).
+            \end{itemize}
+    
+            \item \textbf{Negated Statement:} \(\exists x \forall y (x + y \neq 5)\)
+            \begin{itemize}
+                \item To negate the original statement, we first apply De Morgan's Laws to reverse the meaning of the quantifiers, leading to \(\exists x \neg(\exists y (x + y = 5))\). Then, we further negate the statement inside to obtain this negated form.
+                \item This negated statement asserts that there exists a value of \(x\) for which, for every possible value of \(y\), the sum of \(x\) and \(y\) is not equal to 5. In other words, there is at least one value of \(x\) that makes the sum \(x + y\) different from 5 
+                for all possible values of \(y\). This illustrates how the negation of nested quantifiers changes the original statement's meaning.
+            \end{itemize}
+        \end{enumerate}
+        \horizontalline{0}{0}
+    \end{Highlight}
+\end{notes}
+
+The last section that we are covering this week is \textbf{Section 1.6 - Rules of Inference}.
+
+\begin{notes}{Section 1.6 - Rules of Inference}
+    \subsubsection*{Overview}
+
+    \textbf{Rules of Inference} are fundamental principles used in deductive reasoning to draw valid conclusions from given premises or statements. These rules serve as the foundation of formal logic and are indispensable tools in various fields, including mathematics, philosophy, 
+    computer science, and more.
+    
+    Key principles and types of Rules of Inference include:
+    
+    \begin{enumerate}
+        \item \textbf{Modus Ponens}: If we have a conditional statement \(P \rightarrow Q\) and we know that \(P\) is true, we can infer that \(Q\) is true. It represents a straightforward form of reasoning where if a condition is met, the consequent must follow.
+        
+        \item \textbf{Modus Tollens}: This rule works in reverse to Modus Ponens. If we have a conditional statement \(P \rightarrow Q\) and we know that \(Q\) is false, we can conclude that \(P\) must be false as well. It's a way of reasoning by ruling out scenarios.
+        
+        \item \textbf{Hypothetical Syllogism}: If we have two conditional statements, \(P \rightarrow Q\) and \(Q \rightarrow R\), we can derive a third conditional statement, \(P \rightarrow R\). This rule allows us to chain together conditional statements to reach more complex conclusions.
+        
+        \item \textbf{Disjunctive Syllogism}: If we have a disjunction \(P \lor Q\) and we know that one of the disjuncts (either \(P\) or \(Q\)) is false, we can conclude that the other disjunct must be true. It's a way of reasoning through exclusion.
+        
+        \item \textbf{Conjunction}: If we know that both \(P\) and \(Q\) are true, we can conclude that their conjunction \(P \land Q\) is also true. This rule allows us to combine true statements into a compound statement.
+        
+        \item \textbf{Addition}: Given a statement \(P\), we can infer the disjunction \(P \lor Q\) for any statement \(Q\). This rule is a way of introducing new possibilities.
+        
+        \item \textbf{Simplification}: If we have a conjunction \(P \land Q\), we can separately infer both \(P\) and \(Q\). It's a way of breaking down complex statements into simpler components.
+        
+        \item \textbf{Resolution}: In propositional logic, this rule allows us to simplify complex disjunctive statements by resolving contradictory disjuncts. For example, from \(P \lor Q\) and \(\neg P \lor R\), we can infer \(Q \lor R\) when \(P\) and \(\neg P\) contradict each other.
+    \end{enumerate}
+    
+    These Rules of Inference provide a structured and systematic approach to logical reasoning, enabling us to make valid deductions and reach well-supported conclusions based on given information. They are essential tools for problem-solving, formal proof construction, and ensuring the soundness of arguments in various domains.
+
+    \subsubsection*{Rules of Inference for Propositional Logic}
+
+    In deductive reasoning, \textbf{Rules of Inference} are fundamental principles used to draw valid conclusions from given premises or statements. These rules are crucial tools in various fields, including mathematics, logic, computer science, and philosophy. They provide a systematic way to reason and make logical deductions.
+    
+    Here are some essential Rules of Inference:
+    
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Rule of Inference} & \textbf{Tautology} & \textbf{Name} \\
+            \hline
+            \begin{tabular}{@{}c@{}}
+                $p$ \\
+                $p \rightarrow q$ \\
+                $\therefore q$
+            \end{tabular} & $(p \wedge (p \rightarrow q)) \rightarrow q$ & Modus Ponens \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $\neg q$ \\
+                $p \rightarrow q$ \\
+                $\therefore \neg p$
+            \end{tabular} & $(\neg q \wedge (p \rightarrow q)) \rightarrow \neg p$ & Modus Tollens \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $p \rightarrow q$ \\
+                $q \rightarrow r$ \\
+                $\therefore p \rightarrow r$
+            \end{tabular} & $((p \rightarrow q) \wedge (q \rightarrow r)) \rightarrow (p \rightarrow r)$ & Hypothetical Syllogism \\ \hline            
+            \begin{tabular}{@{}c@{}}
+                $p \lor q$ \\
+                $\neg p$ \\
+                $\therefore q$
+            \end{tabular} & $((p \lor q) \wedge \neg p) \rightarrow q$ & Disjunctive Syllogism \\ \hline    
+            \begin{tabular}{@{}c@{}}
+                $p$ \\
+                $\therefore p \lor q$
+            \end{tabular} & $p \rightarrow (p \lor q)$ & Addition \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $p \land q$ \\
+                $\therefore p$
+            \end{tabular} & $(p \land q) \rightarrow p$ & Simplification \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $p$ \\
+                $q$ \\
+                $\therefore p \land q$
+            \end{tabular} & $((p) \land (q)) \rightarrow (p \land q)$ & Conjunction \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $p \lor q$ \\
+                $\neg p \lor r$ \\
+                $\therefore q \lor r$
+            \end{tabular} & $((p \lor q) \land (\neg p \lor r)) \rightarrow (q \lor r)$ & Resolution \\ \hline            
+        \end{tabular}
+    \end{center}
+
+    The table provides a comprehensive overview of fundamental rules of inference within propositional logic, each accompanied by its associated tautology and name. These rules serve as the foundational 
+    elements of deductive reasoning, facilitating the derivation of valid conclusions based on provided premises. Modus Ponens, the initial rule, stipulates that if a statement \(p\) holds true and \(p\) 
+    implies \(q\), then \(q\) is also true. In contrast, Modus Tollens focuses on negations, asserting that if the negation of a statement \(q\) is true and \(p\) implies \(q\), then the negation of \(p\) 
+    is true.
+
+    Hypothetical Syllogism enables the concatenation of implications, allowing us to infer that if \(p\) implies \(q\) and \(q\) implies \(r\), then \(p\) implies \(r\). Disjunctive Syllogism addresses 
+    disjunctions, specifying that if either \(p\) or \(q\) is true (but not both) and \(p\) is false, then \(q\) must be true. Furthermore, Addition asserts that if \(p\) holds true, then \(p\) or any 
+    other statement \(q\) is also true. Simplification confirms that the simultaneous truth of both \(p\) and \(q\) implies that \(p\) is true, while Conjunction establishes that when both \(p\) and \(q\) 
+    hold true, the statement \(p \land q\) is also true. Lastly, Resolution tackles intricate disjunctions by deducing that if \(p\) or \(q\) is true and simultaneously the negation of \(p\) or \(r\) holds, 
+    we can conclude that \(q\) or \(r\) is true. These rules are indispensable for structuring reasoning and validating arguments and mathematical proofs within propositional logic.
+
+    \subsection*{Rules of Inference for Quantified Statements}
+
+    The Rules of Inference for Quantified Statements play a crucial role in predicate logic, facilitating the derivation of valid conclusions from statements that involve universal (\(\forall\)) and 
+    existential (\(\exists\)) quantifiers. These rules offer a systematic approach to formalizing arguments and mathematical proofs. Universal Instantiation (UI) allows us to replace universally quantified 
+    variables (\(\forall x\)) with specific values, permitting conclusions based on individual instances. Conversely, Universal Generalization (UG) lets us generalize specific statements to universally 
+    quantified ones, affirming their validity across the entire domain. Existential Instantiation (EI) enables us to substitute existentially quantified variables (\(\exists x\)) with specific values, 
+    demonstrating the existence of at least one element satisfying the predicate. Existential Generalization (EG) asserts the existence of an element that satisfies a predicate, a vital step in many proofs.
+    
+    Additionally, the Modus Ponens and Modus Tollens rules, adapted for quantified statements, allow us to infer conclusions from universally quantified conditional statements and their negations, respectively. 
+    Hypothetical Syllogism for Quantifiers enables the chaining of universally quantified conditional statements, facilitating the derivation of conclusions through interconnected implications. Universal Transposition 
+    (UT) and Existential Transposition (ET) provide further flexibility by allowing the swapping of quantified variables' positions, aiding in the transformation of quantified expressions. In summary, these rules 
+    form the cornerstone of predicate logic, offering a structured framework for reasoning about quantified statements and laying the foundation for rigorous mathematical proofs.    
+
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline \textbf{Rule of Inference} & \textbf{Name} \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $\forall x P(x)$ \\
+                $\therefore P(c)$ for an arbitrary $c$
+            \end{tabular} & Universal instantiation \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $P(c)$ for an arbitrary $c$ \\
+                $\therefore \forall x P(x)$
+            \end{tabular} & Universal generalization \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $\exists x P(x)$ \\
+                $\therefore P(c)$ for some element $c$
+            \end{tabular} & Existential instantiation \\ \hline
+            \begin{tabular}{@{}c@{}}
+                $P(c)$ for some element $c$ \\
+                $\therefore \exists x P(x)$
+            \end{tabular} & Existential generalization \\ \hline
+        \end{tabular}
+    \end{center}
+
+    The table above provides a concise overview of essential rules of inference for quantified statements in first-order logic. These rules are foundational for deductive reasoning when dealing with 
+    statements that involve universal quantifiers (\(\forall\)) and existential quantifiers (\(\exists\)). 
+
+    The rules encompass Universal Instantiation, Universal Generalization, Existential Instantiation, and Existential Generalization. Universal Instantiation allows us to derive specific instances 
+    from universally quantified statements, while Universal Generalization permits the generalization of a specific statement to a universally quantified form. On the other hand, Existential Instantiation 
+    enables the introduction of specific instances for existentially quantified statements, and Existential Generalization allows the generalization of a specific statement to an existentially quantified 
+    form. These rules are fundamental tools for logical reasoning and play a crucial role in proving theorems and making inferences in various domains of mathematics and computer science.
+\end{notes}

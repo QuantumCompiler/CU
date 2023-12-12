@@ -1,0 +1,398 @@
+\clearpage
+\chapter{Week 3: (9/11 - 9/17)}
+
+\section{Proof Techniques}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Sections 1.7, 1.8} from Rosen.
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{two} Piazza posts this week. \due{(9/15/23)} \cbox{piazza-week3}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://drive.explaineverything.com/thecode/TREJHHM}{Intro To Proofs} $\approx$ 13 min.
+    \item \href{https://drive.explaineverything.com/thecode/YNUCFDU}{More Proofs} $\approx$ 30 min.
+    \item \href{https://drive.explaineverything.com/thecode/UAQXMXM}{Proof Techniques \& MW Help} $\approx$ 26 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51592}{Additional Proofs By Contradiction} $\approx$ 28 min.
+\end{itemize}
+
+\noindent Below is a list of lecture notes for this week:
+
+\begin{itemize}
+    \item \pdflink{./Notes/Algebra And Log Rule Review Lecture Notes.pdf}{Algebra And Log Rule Review}
+    \item \pdflink{./Notes/Proof Tutorial Lecture Notes.pdf}{Proof Tutorial}
+    \item \pdflink{./Notes/Rosen Proofs Lecture Notes.pdf}{Rosen Proofs}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/Proof Techniques Mastery Workbook.pdf}{Proof Techniques Mastery Workbook} \due{(9/18/23)} \cbox{assignment-week3}
+
+\subsection{Quiz}
+
+The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51597}{Proof Techniques} \due{(9/18/23)} \cbox{quiz-week3}
+
+\subsection{Chapter Summary}
+
+The first section that we are covering this week is \textbf{Section 1.7 - Introduction To Proofs}.
+
+\begin{notes}{Section 1.7 - Introduction To Proofs}
+    \subsection*{Overview}
+
+    Proof techniques are essential tools in mathematics and logic for verifying the validity of statements. They offer various approaches to establishing the truth of mathematical claims. Common techniques 
+    include direct proof, where conclusions are logically derived from premises, proof by contradiction, which assumes the opposite of the statement and finds a contradiction, mathematical induction for 
+    statements involving natural numbers, proof by contrapositive for proving the opposite of a statement, proof by exhaustion for finite cases, proof by counterexample to disprove statements, and proof by 
+    construction to demonstrate the existence of objects or solutions. These techniques enable mathematicians and logicians to provide rigorous evidence for mathematical arguments, with the choice of method 
+    depending on the nature of the statement being proven. \vspace*{1em}
+
+    \subsection*{Direct Proofs}
+
+    Direct proofs are a fundamental technique in mathematics and logic used to establish the truth of a mathematical statement or theorem. In a direct proof, one starts with the given premises, often called 
+    axioms or assumptions, and logically derives a conclusion or a new statement based on these premises. The goal is to show that the conclusion is true under the provided conditions.
+
+    The key steps in a direct proof typically involve applying established mathematical principles, theorems, and rules of logic to demonstrate that the conclusion logically follows from the given premises. 
+    Direct proofs are characterized by their clarity, simplicity, and the absence of any assumptions that contradict the premises.
+
+    In essence, direct proofs provide a straightforward and convincing way to demonstrate the validity of mathematical statements, making them an essential tool in mathematical reasoning and problem-solving. 
+    They form the foundation of mathematical proofs and are widely used across various branches of mathematics, from algebra and calculus to geometry and number theory. \vspace*{1em}
+
+    \begin{Highlight}[Direct Proofs Example]
+        \textbf{Theorem:} If \(n\) is an even integer, then \(n^2\) is also an even integer. \vspace*{1em}
+
+        \horizontalline{0}{0}
+
+        \textbf{Proof:} Let's assume that \(n\) is an even integer. By definition, this means that there exists an integer \(k\) such that \(n = 2k\). 
+        
+        Now, we want to prove that \(n^2\) is also an even integer. We can express \(n^2\) as:
+        
+        \[n^2 = (2k)^2 = 4k^2\]
+
+        \horizontalline{0}{0}
+        
+        Since \(k\) is an integer, \(4k^2\) is also an integer. Therefore, \(n^2\) can be expressed as \(n^2 = 2(2k^2)\), where \(2k^2\) is an integer. This means that \(n^2\) is divisible by 2, making it an 
+        even integer. Thus, we have shown that if \(n\) is an even integer, then \(n^2\) is also an even integer, which concludes our proof.
+    \end{Highlight}
+
+    \subsection*{Proof By Contraposition}
+
+    Proof by contraposition is a powerful technique in mathematical and logical reasoning used to establish the validity of a conditional statement (if-then statement). It is based on the idea that to prove an 
+    implication of the form "if $P$, then $Q$," you can instead prove its contrapositive, which is "if not $Q$, then not $P$." The contrapositive is logically equivalent to the original statement, and proving 
+    it can sometimes be simpler or more intuitive.
+
+    \begin{enumerate}
+        \item \textbf{Start with a Conditional Statement:} Begin with a conditional statement of the form "if $P$, then $Q$," where $P$ and $Q$ are propositions or statements.
+        
+        \item \textbf{Formulate the Contrapositive:} Rewrite the statement in its contrapositive form, which is "if not $Q$, then not $P$." In other words, negate both the consequent ($Q$) and the antecedent ($P$).
+        
+        \item \textbf{Prove the Contrapositive:} To establish the truth of the original statement, prove the contrapositive instead. This can be done using various proof techniques, such as direct proof, 
+        contradiction, or other appropriate methods.
+        
+        \item \textbf{Conclude the Original Statement:} Once you have successfully proven the contrapositive, you can conclude the truth of the original statement. If "if not $Q$, then not $P$" holds, then "if $P$, 
+        then $Q$" also holds, as they are logically equivalent.
+    \end{enumerate}
+    
+    Proof by contraposition is particularly useful when direct proof seems challenging or when it simplifies the argument. It is a valuable tool in mathematical proofs, logic, and various areas of science and 
+    engineering. By proving the contrapositive, you establish the validity of conditional statements efficiently and logically.
+    
+    \begin{Highlight}[Proof by Contraposition Example]
+        \textbf{Theorem:} If $n$ is an even integer, then $n^2$ is also an even integer.
+        
+        \horizontalline{0}{0}
+        
+        \textbf{Proof:} We will prove the contrapositive of the statement, which is: If $n^2$ is an odd integer, then $n$ is also an odd integer.
+        
+        Let's assume that $n$ is an even integer, which implies that $n = 2k$ for some integer $k$. Now, consider the square of $n$:
+        \[n^2 = (2k)^2 = 4k^2\]
+        
+        Since $k$ is an integer, $4k^2$ is also an integer, and it's clear that $4k^2$ is even because it can be expressed as $2(2k^2)$.
+        
+        Now, let's prove the contrapositive. If $n^2$ is an odd integer, we can write it as $n^2 = 2m + 1$ for some integer $m$. Substituting $n^2$ with $4k^2$, we get:
+        \[4k^2 = 2m + 1\]
+        
+        Rearranging this equation gives:
+        \[2(2k^2) = 2m + 1\]
+        
+        Subtracting 1 from both sides:
+        \[2(2k^2) - 1 = 2m\]
+        
+        Now, we have shown that $2m$ is an even integer, which means $m$ is also even since an even integer multiplied by 2 results in an even integer.
+        
+        So, $m = 2p$ for some integer $p$. Substituting this back into the equation:
+        \[2(2k^2) - 1 = 2(2p)\]
+        
+        Simplifying:
+        \[4k^2 - 1 = 4p\]
+        
+        Now, we have expressed $4k^2 - 1$ as $4p$, which is even, and this implies that $4k^2 - 1$ is also even.
+        
+        Since $4k^2 - 1$ is even, $n^2$ (which is equal to $4k^2 - 1$) must be even, which contradicts our initial assumption that $n^2$ is odd. Therefore, our assumption that $n$ is even is false. 
+        Hence, we have proved the contrapositive: If $n^2$ is an odd integer, then $n$ is also an odd integer.
+        
+        \horizontalline{0}{0}
+
+        As a result, by contraposition, we have established the original statement: If $n$ is an even integer, then $n^2$ is also an even integer.
+    \end{Highlight}
+
+    \subsection*{Proof By Contradiction}
+
+    Proof by Contradiction, also known as reductio ad absurdum, is a powerful mathematical technique used to establish the truth of a statement by assuming the opposite and demonstrating that this 
+    assumption leads to a logical contradiction. This method rests on the principle that if assuming the negation of a statement results in an inconsistency or absurdity, then the original statement 
+    must be true.
+
+    In a proof by contradiction, you start with the negation of the statement you want to prove and then proceed to derive a contradiction from this assumption. This contradiction could be anything 
+    that clearly violates the laws of logic or mathematics, such as showing that 1 equals 0 or that a number is both even and odd. Since such contradictions cannot exist, the only logical conclusion 
+    is that the initial assumption (the negation of the statement you aimed to prove) must be false. Consequently, the original statement is proven to be true.
+
+    Proofs by contradiction are valuable in mathematics and logic because they provide a systematic way to establish the truth of a proposition when direct or other proof methods are challenging or 
+    not readily available. They are particularly useful in proving the existence of mathematical objects or properties and are a fundamental tool in various areas of mathematics and computer science.
+
+    \begin{Highlight}[Proof by Contradiction Example]
+        \textbf{Theorem:} There is no largest prime number. \vspace*{1em}
+    
+        \horizontalline{0}{0}
+    
+        \textbf{Proof:} Let's assume, for the sake of contradiction, that there exists a largest prime number, denoted as \(p\). We will now derive a contradiction from this assumption.
+    
+        Consider the number \(N = p + 1\). Now, \(N\) is either prime or not prime. There are two possibilities to explore:
+    
+        \textbf{Case 1:} \(N\) is prime. In this case, we have found a prime number (\(N\)) larger than our assumed largest prime (\(p\)), which contradicts our initial assumption.
+    
+        \textbf{Case 2:} \(N\) is not prime. This means that it must be divisible by some integer greater than 1, but less than or equal to \(p\), because \(p\) is assumed to be the largest prime. 
+        However, if \(N\) is divisible by an integer greater than 1 and less than or equal to \(p\), it cannot be prime. This also contradicts our initial assumption that \(N\) is prime.
+    
+        \horizontalline{0}{0}
+    
+        In both cases, we arrive at a contradiction. Therefore, our initial assumption that there exists a largest prime number (\(p\)) must be false. Hence, there is no largest prime number.
+    \end{Highlight}    
+\end{notes}
+
+The last section that we are covering this week is \textbf{Section 1.8 - Proof Methods And Strategy}.
+
+\begin{notes}{Section 1.8 - Proof Methods And Strategy}
+    \subsection*{Overview}
+
+    Proof methods and strategies are essential tools in mathematics and logic, providing systematic approaches to establish the validity of mathematical statements and arguments. Three fundamental 
+    proof techniques include direct proof, proof by contraposition, and proof by contradiction.
+
+    Direct proof is a foundational approach in mathematics, where one starts with given premises and employs logical reasoning to demonstrate that a specific conclusion logically follows from those 
+    premises. It relies on axioms, definitions, and previously proven theorems to construct a coherent argument that validates the desired result. Direct proof serves as the cornerstone of mathematical 
+    proof and is widely employed across various mathematical disciplines.
+
+    Proof by contraposition is a potent strategy where mathematicians aim to prove a statement by showing that its contrapositive, which is the negation of the statement's conclusion implying the 
+    negation of its hypothesis, is true. By establishing the contrapositive, they indirectly validate the original statement's correctness. This approach becomes particularly valuable when a direct 
+    proof may be challenging or less apparent.
+
+    Proof by contradiction involves assuming the opposite of the statement to be proven and demonstrating that this assumption leads to a logical contradiction. If the assumption indeed results in a 
+    contradiction, it implies that the original statement must be true. This method is particularly effective in proving the non-existence of solutions or disproving the presence of specific properties. 
+    These proof techniques serve as the foundation of mathematical reasoning, enabling mathematicians to explore mathematical concepts, validate conjectures, and contribute to the advancement of 
+    mathematical knowledge.
+
+    \subsection*{Exhaustive Proof}
+
+    Exhaustive proof is a rigorous mathematical technique involving the meticulous examination of every possible case or scenario within a given problem domain to establish the validity of a statement. 
+    This method, often used in discrete mathematics, ensures that no cases are left unverified, providing a high level of certainty in the proof's correctness. While exhaustive proofs are considered 
+    airtight, they can be time-consuming and labor-intensive, making them less practical for large or complex problem spaces. Mathematicians often choose more efficient proof techniques when possible, 
+    such as direct proofs or proof by contradiction.
+    
+    \begin{Highlight}[Exhaustive Proof Example]
+        \textbf{Theorem:} For any positive integer \(n\), if \(n\) is divisible by 2 and 3, then \(n\) is divisible by 6. 
+    
+        \horizontalline{0}{0}
+    
+        \textbf{Proof:} To prove this statement, we will examine every possible case for \(n\). Since we want to show that \(n\) is divisible by both 2 and 3, we need to consider all positive integers 
+        that satisfy this condition.
+    
+        \begin{enumerate}
+            \item \textbf{Case 1:} \(n = 6\) \\
+            In this case, \(n\) is both divisible by 2 and 3, and therefore, it is divisible by 6.
+    
+            \item \textbf{Case 2:} \(n = 12\) \\
+            Again, \(n\) is divisible by both 2 and 3, making it divisible by 6.
+    
+            \item \textbf{Case 3:} \(n = 18\) \\
+            Once more, \(n\) satisfies the conditions of being divisible by 2 and 3, leading to its divisibility by 6.
+    
+            \item \textbf{Case 4:} \(n = 24\) \\
+            In this case, \(n\) is divisible by both 2 and 3, hence it is divisible by 6.
+    
+            \item \textbf{Case 5:} \(n = 30\) \\
+            Finally, \(n\) is divisible by 2 and 3, making it divisible by 6.
+    
+        \end{enumerate}
+    
+        \horizontalline{0}{0}
+    
+        We have systematically examined all positive integers that are divisible by 2 and 3, and in each case, we found that they are also divisible by 6. Therefore, by exhausting all possibilities, 
+        we have proven that for any positive integer \(n\) divisible by 2 and 3, \(n\) is indeed divisible by 6.
+    \end{Highlight}
+    
+    \subsection*{Proof By Cases}
+
+    Proof by cases is a valuable mathematical proof technique that involves breaking down a complex problem into distinct, manageable scenarios or cases. Each case is examined individually to determine 
+    whether the statement holds true under those specific conditions. By considering all possible cases exhaustively, mathematicians can establish the validity of a theorem or proposition for all potential 
+    situations. This method provides a structured approach for tackling intricate problems, ensuring that every possible scenario is thoroughly analyzed and contributing to the overall rigor of mathematical 
+    proofs.
+
+    \begin{Highlight}[Proof by Cases Example]
+        \textbf{Theorem:} For any integer \(n\), if \(n\) is even, then \(n^2\) is also even.
+    
+        \horizontalline{0}{0}
+    
+        \textbf{Proof:} We'll prove this theorem by considering two cases. \vspace*{1em}
+    
+        \textbf{Case 1:} \(n\) is even. In this case, we can express \(n\) as \(n = 2k\) for some integer \(k\). Now, let's calculate \(n^2\):
+        \[n^2 = (2k)^2 = 4k^2\]
+        Since \(k\) is an integer, \(4k^2\) is also an integer, and \(n^2\) can be expressed as \(n^2 = 2(2k^2)\), where \(2k^2\) is an integer. Therefore, \(n^2\) is even when \(n\) is even.
+    
+        \textbf{Case 2:} \(n\) is odd. In this case, we can express \(n\) as \(n = 2k + 1\) for some integer \(k\). Now, let's calculate \(n^2\):
+        \[n^2 = (2k + 1)^2 = 4k^2 + 4k + 1\]
+        We observe that \(n^2\) is also an odd integer because it can be expressed as \(n^2 = 2(2k^2 + 2k) + 1\), where \(2k^2 + 2k\) is an integer.
+    
+        \horizontalline{0}{0}
+    
+        In both cases, we've shown that if \(n\) is even or odd, \(n^2\) is either even or odd, respectively. This exhaustively proves that for any integer \(n\), if \(n\) is even, then \(n^2\) is also even.
+    \end{Highlight}
+
+    \subsection*{Leveraging Proof By Cases}
+
+    Proof by cases is a strategy frequently employed in mathematical and logical reasoning, allowing mathematicians to tackle complex problems by breaking them down into distinct scenarios or cases and providing 
+    proofs for each scenario individually. By methodically considering all possible cases, this approach ensures the thorough examination of a theorem or problem, enhancing its rigor and credibility. Proof by 
+    cases is particularly valuable when one overarching method cannot address all potential situations, making it an essential tool for mathematicians seeking to establish the validity of their arguments across 
+    diverse scenarios and conditions.
+
+    \begin{Highlight}[Proof by Cases Example]
+        \textbf{Theorem:} For any integer \(n\), \(n^2\) is either even or odd.
+    
+        \horizontalline{0}{0}
+    
+        \textbf{Proof:} Let's consider two cases. \vspace*{1em}
+    
+        \textbf{Case 1:} \(n\) is even. In this case, we can write \(n\) as \(n = 2k\) for some integer \(k\). Now, let's examine \(n^2\):
+        
+        \[n^2 = (2k)^2 = 4k^2\]
+        
+        Since \(k\) is an integer, \(4k^2\) is also an integer. Thus, \(n^2\) is even.
+    
+        \textbf{Case 2:} \(n\) is odd. In this case, we can write \(n\) as \(n = 2k + 1\) for some integer \(k\). Now, let's examine \(n^2\):
+        
+        \[n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1\]
+        
+        Again, since \(k\) is an integer, \(2(2k^2 + 2k)\) is an integer. Therefore, \(n^2\) is odd.
+    
+        \horizontalline{0}{0}
+    
+        In both cases, we have shown that \(n^2\) is either even or odd, concluding our proof by cases.
+    \end{Highlight}
+    
+    \subsection*{Without Loss Off Generality}
+
+    (WLOG) is a frequently used term in mathematical proofs. It enables us to simplify the reasoning process by considering a specific case or subset of cases. Essentially, it allows for the assumption of a particular 
+    scenario that does not compromise the overall generality of the proof. Typically employed when dealing with multiple cases, WLOG permits us to choose one case and demonstrate that the result applies universally to 
+    all analogous cases, as the argument's generality encompasses the entire set. This technique enhances the clarity and conciseness of mathematical proofs.
+
+    \subsection*{Existence Proofs}
+
+    Existence proofs are a fundamental part of mathematical reasoning used to demonstrate that a particular mathematical object or solution to a problem indeed exists within a given context. These proofs aim to show 
+    that there is at least one example or instance that satisfies a particular property or condition. Existence proofs come in various forms, including constructive and non-constructive methods.
+
+    In a constructive existence proof, mathematicians provide a method or algorithm to explicitly construct an example that satisfies the given conditions. This type of proof not only establishes the existence of the 
+    object but also provides a way to find it. On the other hand, non-constructive existence proofs demonstrate that an object with the desired properties must exist, without necessarily providing a way to find it. These 
+    proofs often rely on logical reasoning and principles like contradiction.
+
+    Existence proofs are crucial in various mathematical disciplines, including number theory, set theory, and calculus, and they play a pivotal role in establishing the existence of solutions to equations, mathematical 
+    structures, or objects in abstract spaces. They help mathematicians and researchers affirm the reality of mathematical concepts and provide assurance that specific mathematical entities are not mere theoretical constructs 
+    but tangible components of mathematical reality.
+
+    \begin{Highlight}[Existence Proof]
+        \textbf{Theorem:} There exists at least one prime number with a last digit of 7. \vspace*{1em}
+    
+        \horizontalline{0}{0}
+    
+        \textbf{Proof:} Let's consider all the natural numbers that have a last digit of 7, i.e., numbers of the form \(n = 10k + 7\), where \(k\) is a non-negative integer. We will show that at least one of these 
+        numbers is prime.
+    
+        Suppose, for the sake of contradiction, that none of these numbers is prime. That would mean that for each such number \(n\), there exists a positive integer \(m > 1\) such that \(n\) is divisible by \(m\). 
+    
+        Now, let's construct a new number \(N\) by multiplying all these positive integers \(m\) together:
+        
+        \[N = 2 \cdot 3 \cdot 5 \cdot 7 \cdot 11 \cdot \ldots\]
+    
+        \horizontalline{0}{0}
+    
+        Since there are infinitely many natural numbers ending in 7, there are infinitely many factors in \(N\). But notice that none of these numbers can be 2 or 5 because they don't end in 7. So, \(N\) is greater than 
+        1, and it's divisible by a prime number greater than 1. 
+    
+        This contradicts the fundamental theorem of arithmetic, which states that every natural number greater than 1 can be uniquely expressed as a product of prime numbers. Therefore, there must be at least one prime 
+        number with a last digit of 7. This completes the proof.
+    \end{Highlight}
+    
+    \subsection*{Uniqueness Proofs}
+
+    Uniqueness proofs are a type of mathematical argument used to establish that a particular object or solution is unique within a given context or set of conditions. These proofs are typically employed when it's necessary 
+    to demonstrate that there is only one possible solution or object that satisfies a specific property or criterion.
+
+    In uniqueness proofs, the primary goal is to show that if there were two or more distinct objects or solutions that met the defined conditions, it would lead to a contradiction or inconsistency. This contradiction often 
+    arises from the assumption that multiple solutions exist when, in fact, only one can exist. By demonstrating that any two supposed solutions would be equivalent or identical, these proofs establish the uniqueness of the 
+    solution, providing mathematical certainty that no other possibilities exist within the specified context.
+
+    Uniqueness proofs are widely utilized across various mathematical disciplines, including algebra, calculus, number theory, and more. They play a crucial role in validating the existence of unique solutions or objects, 
+    strengthening the foundations of mathematical reasoning and problem-solving.
+
+    \begin{Highlight}[Uniqueness Proof Example]
+        \textbf{Theorem:} For any positive real number \(a\), there exists a unique positive real number \(x\) such that \(x^2 = a\).
+    
+        \horizontalline{0}{0}
+    
+        \textbf{Proof:} To prove the uniqueness of the square root, we'll first establish the existence of such a number. Suppose \(a\) is a positive real number. Consider the set \(S = \{x \in \mathbb{R}^+ \mid x^2 = a\}\). 
+        By definition, \(S\) contains at least one element since \(a\) itself satisfies \(x^2 = a\) when \(x = \sqrt{a}\). Therefore, there exists at least one positive real number \(x\) such that \(x^2 = a\).
+    
+        Now, let's prove uniqueness by contradiction. Assume there are two distinct positive real numbers, \(x\) and \(y\), both satisfying \(x^2 = a\) and \(y^2 = a\). Without loss of generality, assume \(x < y\). Then, consider 
+        the difference \(y - x\). Since both \(x\) and \(y\) are positive, this difference is also positive. Now, consider the square of this difference:
+        
+        \[(y - x)^2 = y^2 - 2xy + x^2 = a - 2xy + a = 2a - 2xy.\]
+    
+        Since \(x\) and \(y\) both satisfy \(x^2 = a\) and \(y^2 = a\), we have \(2a - 2xy = a - 2xy = 0\). However, this implies that \((y - x)^2 = 0\), which in turn implies \(y - x = 0\), or \(y = x\). This contradicts our 
+        assumption that \(x\) and \(y\) are distinct. Therefore, there cannot be two distinct positive real numbers \(x\) and \(y\) that both satisfy \(x^2 = a\). Hence, the square root of a positive real number \(a\) is unique.
+    
+        \horizontalline{0}{0}
+        
+        This uniqueness proof demonstrates that for any positive real number \(a\), there exists a unique positive real number \(x\) such that \(x^2 = a\).
+    \end{Highlight}
+    
+    \subsection*{Looking For Counterexamples}
+
+    Looking for counterexamples is a crucial strategy in mathematical proof and problem-solving. It involves searching for specific instances or cases that contradict a given statement or conjecture. The goal is to demonstrate 
+    that a universally quantified statement (one that claims something is true for all elements in a set) is false by providing a single example where it does not hold.
+
+    This proof strategy is particularly effective when dealing with universally quantified statements. By finding a counterexample, you show that the statement is not true for all cases, thereby invalidating it. Counterexamples 
+    can be especially useful in identifying the limits or boundary conditions of a mathematical assertion, helping to refine statements and theories.
+
+    In practice, mathematicians often rely on counterexamples to challenge conjectures, test the robustness of theorems, and explore the boundaries of mathematical concepts. By disproving a statement through counterexamples, 
+    mathematicians gain valuable insights into the nature of mathematical truths and refine their understanding of various mathematical principles.
+
+    \begin{Highlight}[Counterexample Example]
+        \textbf{Claim:} For all positive integers \(n\), \(n^2 + n\) is always prime.
+    
+        \horizontalline{0}{0}
+    
+        \textbf{Counterexample:} Let's look for a counterexample. Consider the case when \(n = 4\). In this case, \(n^2 + n = 4^2 + 4 = 20\). However, 20 is not a prime number, as it has divisors other than 1 and itself (2 and 10). 
+    
+        So, we have found a counterexample (when \(n = 4\)) where \(n^2 + n\) is not prime, which disproves the claim that it is always prime for all positive integers \(n\).
+    
+        \horizontalline{0}{0}
+    
+        Therefore, the claim is false, and we have successfully used a counterexample to demonstrate its invalidity.
+    \end{Highlight}
+    
+\end{notes}

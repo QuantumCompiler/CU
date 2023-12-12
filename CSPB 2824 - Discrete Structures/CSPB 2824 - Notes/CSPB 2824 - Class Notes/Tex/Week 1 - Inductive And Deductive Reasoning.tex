@@ -1,0 +1,263 @@
+\clearpage
+\chapter{Week 1: (8/28 - 9/3)}
+
+\section{Inductive And Deductive Reasoning}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week can be found below:
+
+\begin{itemize}
+    \item \textbf{Sections 1.1 \& 1.2} from Rosen and \textbf{Appendix 1}
+    \item \textbf{Chapter 1} from Jacobs \textbf{(Recommended)}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{two} Piazza posts this week. \due{(9/1/23)} \cbox{piazza-week1}
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://drive.explaineverything.com/thecode/GYWSZFB}{Inductive And Deductive Reasoning} $\approx$ 22 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51549}{Conjunctions And Disjunctions} $\approx$ 43 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51550}{Conditionals And Biconditionals} $\approx$ 39 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51552}{Fundamentals Of Algebra} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51553}{Applications Of Algegra} $\approx$ 6 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51554}{Applications Of Algebra Continued} $\approx$ 4 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51555}{Negative Times A Negative?} $\approx$ 4 min.
+\end{itemize}
+
+\noindent Below is a list of lecture notes for this week:
+
+\begin{itemize}
+    \item \pdflink{./Notes/Conditionals And Biconditionals Lecture Notes.pdf}{Conditionals And Biconditionals}
+    \item \pdflink{./Notes/Conjuctions And Disjunctions Lecture Notes.pdf}{Conjunctions And Disjunctions}
+    \item \href{https://www.stumblingrobot.com/2015/06/29/prove-consequences-of-the-field-axioms/}{Field Axiom Proofs}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is \pdflink{./Assignments/Logic And Reasoning Mastery Workbook.pdf}{Logic And Reasoning.} \due{(9/5/23)} \cbox{assignment-week1}
+
+\subsection{Quiz}
+
+The quiz's for this week can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51560}{Logic And Reasoning} \due{(9/5/23)} \cbox{quiz-week1}
+    \item \href{https://www.dictionary.com/games/quizzes/is-it-inductive-or-deductive-a-reasoning-challenge}{Inductive Vs. Deductive Reasoning} \due{(OPTIONAL)} \cbox{opquiz1-week1}
+    \item \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51556}{Algebra Reading Quiz} \due{(OPTIONAL)} \cbox{opquiz2-week1}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first section that we are covering this week is \textbf{Section 1.1 - Propositional Logic}
+
+\begin{notes}{Section 1.1 - Propositional Logic}
+
+    \subsubsection*{Overview}
+
+    Propositional logic, within the context of discrete structures, is a fundamental branch of mathematics that deals with analyzing and manipulating statements or propositions. These propositions are 
+    treated as discrete entities that can either be true or false, and they serve as building blocks for logical reasoning and problem solving in various fields, especially computer science.
+
+    In propositional logic, we focus on the relationships between propositions and how they combine to form more complex statements. Logical operators such as "and," "or," "not," "implies," and "if and 
+    only if" are used to connect propositions and create compound statements. This allows us to express relationships, conditions, and constraints in a formal and precise manner.
+
+    \subsubsection*{Conjunctions}
+
+    Conjunctions are an essential part of both language and logic. In language, conjunctions are words that connect words, phrases, or clauses to show how they are related. In logic, conjunctions serve 
+    a similar purpose by allowing us to combine two or more propositions to create a compound statement. The most common conjunction in logic is "and."
+
+    In logic, a conjunction represents a statement that is true only if both of the individual statements being combined are true. This mirrors the way we use "and" in everyday language. If both parts of a 
+    conjunction are true, then the entire conjunction is true; otherwise, it's false.
+
+    \begin{Highlight}[Conjunction Examples]
+        Let's consider two propositions:
+
+        \begin{itemize}
+            \item P: It is sunny today.
+            \item Q: I will go for a picnic.
+        \end{itemize}
+
+        Now, we can create a compound statement using the conjunction `and'.
+
+        \begin{equation}
+            P \wedge Q: \text{It is sunny today and I will go for a picnic.}
+        \end{equation}
+
+        In this case, the compound statement "It is sunny today and I will go for a picnic" is true only if both P and Q are true. If it's indeed sunny today (P is true) and you do plan to go for a picnic 
+        (Q is true), then the entire statement "It is sunny today and I will go for a picnic" is true.
+    \end{Highlight}
+
+    Conjunctions are particularly important in logic because they allow us to express complex conditions and relationships between different propositions. They're a fundamental tool for constructing logical 
+    statements that accurately reflect real-world situations or logical arguments.
+
+    \subsubsection*{Disjunctions}
+
+    Disjunctions are another important concept in both language and logic. In language, disjunctions are words that express alternatives or choices. In logic, disjunctions allow us to combine propositions to 
+    create a compound statement that is true if at least one of the individual statements is true. The most common disjunction in logic is "or."
+
+    In logic, a disjunction is true if at least one of the individual statements being combined is true. This corresponds to the way we use "or" in everyday language to present options or alternatives.
+
+    \begin{Highlight}[Disjunction Example]
+        Let's consider two propositions:
+
+        \begin{itemize}
+            \item P: It is raining today.
+            \item Q: I will stay inside.
+        \end{itemize}
+
+        Now, we can create a compound statement using the conjunction `and'.
+
+        \begin{equation}
+            P \vee Q: \text{It is raining today or I will stay indoors.}
+        \end{equation}
+
+        In this case, the compound statement "It is raining today or I will stay indoors" is true if either P is true (it's raining) or Q is true (you plan to stay indoors), or if both are true.
+
+        For example, if it's indeed raining today (P is true), then the entire statement "It is raining today or I will stay indoors" is true, even if you end up going outdoors. Similarly, if you plan to stay 
+        indoors (Q is true), the statement is also true, even if it's not raining.
+    \end{Highlight}
+
+    Disjunctions are crucial in logic because they help us express scenarios where multiple possibilities exist, and at least one of them needs to be true for the entire statement to be true. They enable us to 
+    model various conditions and decision-making processes in a structured and logical manner.
+
+    \subsubsection*{Conditional Statements}
+
+    Conditional statements, often referred to as implications, are a key concept in logic and reasoning. They express a relationship between two propositions where one proposition, known as the antecedent or premise, 
+    leads to or implies the truth of the other proposition, known as the consequent or conclusion. The primary conditional operator is "if...then," and conditional statements are crucial for modeling cause-and-effect 
+    relationships and logical implications.
+
+    \begin{Highlight}[Conditional Statement Example]
+        Let's consider two propositions:
+
+        \begin{itemize}
+            \item P: I study for the exam.
+            \item Q: I will get a good grade.
+        \end{itemize}
+
+        We can create a conditional statement using "if...then":
+
+        \begin{equation}
+            P \rightarrow Q: \text{If I study for the exam, then I will get a good grade.}
+        \end{equation}
+
+        In this case, the statement "If I study for the exam, then I will get a good grade" implies that studying (P) leads to getting a good grade (Q). If you study (P is true), then the conditional statement suggests 
+        that you will indeed get a good grade (Q is true).
+
+        However, the conditional statement does not specify what happens if you don't study (P is false). It only asserts that if you do study, there's an implication for the outcome of your grade.
+    \end{Highlight}
+
+    Conditional statements play a pivotal role in logical reasoning, mathematics, and computer science. They're used to define rules, express relationships between variables, and create logical structures. Additionally, 
+    they're central to constructing logical proofs and arguments. Understanding conditional statements is fundamental for accurately representing cause-and-effect connections and making reasoned conclusions.
+
+    \subsubsection*{Biconditionals}
+
+    Biconditionals, also known as "if and only if" statements, are another important concept in logic. They express a relationship between two propositions where both propositions are connected in such a way that if one is 
+    true, the other must also be true, and if one is false, the other must also be false. Biconditionals capture a sense of mutual exclusivity and equivalence between the two propositions.
+
+    \begin{Highlight}[Biconditional Statement Example]
+        Let's consider two propositions:
+
+        \begin{itemize}
+            \item P: The cake is chocolate.
+            \item Q: I will enjoy the dessert.
+        \end{itemize}
+
+        We can create a biconditional statement using "if and only if":
+
+        \begin{equation}
+            P \Leftrightarrow Q: \text{If I study for the exam, then I will get a good grade.}
+        \end{equation}
+
+        In this case, the biconditional statement "I will enjoy the dessert if and only if the cake is chocolate" expresses that the enjoyment of the dessert (Q) is directly tied to the cake being chocolate (P). If the cake 
+        is indeed chocolate (P is true), then you will enjoy the dessert (Q is true). Similarly, if the cake is not chocolate (P is false), you won't enjoy the dessert (Q is false).
+
+        Conversely, if you enjoy the dessert (Q is true), the statement asserts that the cake must be chocolate (P is true), and if you don't enjoy the dessert (Q is false), the cake must not be chocolate (P is false).
+    \end{Highlight}
+
+    Biconditionals are used to define equivalence between propositions, indicating that they are both true or both false simultaneously. They're useful for expressing situations where two conditions are inextricably linked and 
+    must hold together. In mathematics, they're used for defining properties that hold true in both directions. Understanding biconditionals is important for accurately representing scenarios where two propositions are 
+    interdependent and inseparable.
+
+    \subsubsection*{Converse Statement}
+
+    The converse of a conditional statement swaps the positions of the antecedent (premise) and the consequent (conclusion) of the original statement. In other words, if you have a statement "If P, then Q," the converse would 
+    be "If Q, then P."
+
+    \begin{Highlight}[Converse Statement Example]
+        The following is an example of a converse statement.
+
+        \begin{itemize}
+            \item Original Statement: If it's sunny (P), then I will go for a walk (Q).
+            \item Converse Statement: If I go for a walk (Q), then it's sunny (P).
+        \end{itemize}
+
+        It's important to note that the converse might not always be logically equivalent to the original statement. In some cases, it could be true, while in others, it might not hold true.
+    \end{Highlight}
+
+    \subsubsection*{Contrapositive Statement}
+
+    The contrapositive of a conditional statement involves both negating (changing from true to false, or vice versa) and swapping the positions of the antecedent and consequent. In essence, it's the combination of the converse 
+    and the negation of each proposition.
+
+    \begin{Highlight}[Contrapositive Statement Example]
+        The following is an example of a contrapositive statement.
+
+        \begin{itemize}
+            \item Original Statement: If it's raining (P), then I will stay indoors (Q).
+            \item Contrapositive Statement: If I don't stay indoors ($\neg$Q), then it's not raining ($\neg$P).
+        \end{itemize}
+
+        The contrapositive is always logically equivalent to the original statement. If the original statement is true, its contrapositive is also true, and if the original statement is false, its contrapositive is false.
+    \end{Highlight}
+
+    \subsubsection*{Inverse Statement}
+
+    The inverse of a conditional statement involves negating both the antecedent and the consequent of the original statement.
+
+    \begin{Highlight}[Inverse Statement Example]
+        The following is an example of an inverse statement.
+
+        \begin{itemize}
+            \item Original Statement: If I exercise (P), then I will be tired (Q).
+            \item Inverse Statement: If I don't exercise ($\neg$P), then I won't be tired ($\neg$Q).
+        \end{itemize}
+
+        Like the converse, the inverse might not always be logically equivalent to the original statement. In some cases, it could be true, while in others, it might not hold true.
+    \end{Highlight}
+
+    Understanding these related statements is valuable for analyzing the different ways that logical relationships can be manipulated and transformed. They are often used in mathematical proofs, reasoning, and decision-making 
+    processes to explore the implications of conditional statements from different angles.
+\end{notes}
+
+The second section that we are covering this week is \textbf{Section 1.2 - Applications of Propositional Logic}
+
+\begin{notes}{Section 1.2 - Applications of Propositional Logic}
+    Propositional logic, a foundational concept in formal logic, holds significant applications across a diverse range of fields due to its ability to represent and analyze relationships between statements. In computer science 
+    and programming, it serves as the bedrock for constructing decision structures, enabling the creation of conditional statements and loops that define the behavior of software. This logical framework also finds a pivotal role 
+    in digital circuit design, where it facilitates the creation of logic gates and memory units, forming the basis of modern processors and electronic systems.
+
+    The realm of artificial intelligence heavily relies on propositional logic for knowledge representation and reasoning. AI systems employ logical inference and deduction mechanisms to make informed decisions and solve complex 
+    problems. In the domain of database management, propositional logic assists in designing intricate queries that efficiently retrieve data based on specific conditions, enhancing the effectiveness of data storage and retrieval 
+    processes.
+
+    Formal verification, a critical aspect of software and hardware engineering, leans on propositional logic to ensure the correctness and compliance of systems with predetermined requirements. It enables engineers to rigorously 
+    prove that a given system behaves as intended. Moreover, in the realm of cryptography and security, propositional logic underpins the development of encryption algorithms, secure communication protocols, and authentication 
+    mechanisms, safeguarding sensitive information and digital transactions.
+
+    Beyond the technological sphere, propositional logic has broader implications. It plays a role in mathematical proofs, enabling mathematicians to construct logical chains of reasoning and establish the validity of theorems. 
+    The field of philosophy benefits from its analytical capabilities, using propositional logic to dissect complex arguments and analyze language structure. Similarly, it aids linguists in formalizing intricate linguistic constructs. 
+
+    In decision analysis, propositional logic supports the modeling of intricate decision scenarios, enabling the evaluation of various choices and potential outcomes. Networks and communication systems benefit from its application 
+    in modeling network protocols, routing strategies, and data transmission. Even within interdisciplinary domains like game theory, propositional logic is instrumental in modeling strategic interactions and rational decision-making 
+    processes. Its reach extends into robotics, shaping behavior rules, path planning algorithms, and obstacle avoidance strategies for autonomous systems. From legal reasoning to philosophical analysis, propositional logic provides 
+    a structured framework to formalize arguments and explore complex concepts.
+
+    In conclusion, propositional logic's power to express relationships, conditions, and implications in a precise, systematic manner makes it an indispensable tool across diverse academic, scientific, and technological landscapes. 
+    Its applications permeate fields as varied as computer science, AI, cryptography, philosophy, and beyond, highlighting its role in advancing logical reasoning, problem-solving, and strategic decision-making.
+\end{notes}
