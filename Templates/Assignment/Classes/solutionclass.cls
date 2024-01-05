@@ -11,6 +11,10 @@
 \newcommand{\documentNumber}{Assignment Number}
 \newcommand{\universityName}{University Of Colorado}
 %---------------------------------------------------------------------------
+%	LOCAL DIRECTORIES
+%---------------------------------------------------------------------------
+\newcommand{\AssDir}{./Assignment/}
+%---------------------------------------------------------------------------
 %	LANGUAGE AND ENCODING
 %---------------------------------------------------------------------------
 \RequirePackage[portuguese, english]{babel} % Allows to use multiple languages in the document
@@ -34,7 +38,6 @@
 \RequirePackage{amsmath} % for mathematical symbols
 \RequirePackage{amssymb} % for mathematical symbols
 \RequirePackage{mathtools} % for mathematical typesetting
-% \RequirePackage{physics} % for mathematical physics
 \RequirePackage{stmaryrd} % for mathematical symbols
 \RequirePackage{tensor} % for tensors
 \RequirePackage{calc} % for mathematical calculations
@@ -107,6 +110,7 @@
 \RequirePackage{hyperref} % Hyperref package
 \RequirePackage{pdfpages} % Embed a pdf page
 \RequirePackage{mdframed} % Boxes
+\RequirePackage{attachfile2} % Add pdf as a link to this pdf
 %---------------------------------------------------------------------------
 %	HEADER AND FOOTER
 %---------------------------------------------------------------------------
@@ -489,6 +493,11 @@
 %---------------------------------------------------------------------------
 %	CUSTOM COMMANDS
 %---------------------------------------------------------------------------
+\newcommand{\cbox}[1]{\CheckBox[name=#1, width=0.75\baselineskip, height=0.75\baselineskip]{}}
+\newcommand{\due}[1]{\textcolor{red}{#1}}
+\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
+\newcommand{\assignment}[2]{\due{(#1)} \cbox{#2}}
+\newcommand{\link}[2]{\href{#1}{#2}}
 \newcommand{\modulo}{\text{ \textbf{mod} }}
 \newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
 \newcommand{\qed}{$\square$}
