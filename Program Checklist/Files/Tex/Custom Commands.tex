@@ -12,14 +12,22 @@
 }
 \newcommand{\HomeTarget}{\hypertarget{Home}{\textbf{CU Boulder Applied Computer Science Program}}}
 \newcommand{\HomeLink}{\hyperlink{Home}{Applied Computer Science}}
-\newcommand{\coreclass}{\cellcolor{yellow!25}}
-\newcommand{\electiveclass}{\cellcolor{gray!25}}
-\newcommand{\credithours}{\cellcolor{cyan!25}}
-\newcommand{\header}{\cellcolor{gray!25}}
-\newcommand{\completed}{\cellcolor{green!25} \footnotesize Completed }
-\newcommand{\inprogress}{\cellcolor{orange!25} \footnotesize In Progress }
-\newcommand{\scheduled}{\cellcolor{magenta!25} \footnotesize Scheduled }
-\newcommand{\notsched}{\cellcolor{red!50} \footnotesize Not Scheduled }
+\newcommand{\cyancell}{\cellcolor{cyan!25}}
+\newcommand{\graycell}{\cellcolor{gray!25}}
+\newcommand{\greencell}{\cellcolor{green!25}}
+\newcommand{\greycell}{\cellcolor{gray!65}}
+\newcommand{\magentacell}{\cellcolor{magenta!25}}
+\newcommand{\orangecell}{\cellcolor{orange!25}}
+\newcommand{\redcell}{\cellcolor{red!50}}
+\newcommand{\yellowcell}{\cellcolor{yellow!25}}
+\newcommand{\coreclass}{\yellowcell}
+\newcommand{\electiveclass}{\graycell}
+\newcommand{\credithours}[1]{\cyancell #1}
+\newcommand{\header}[1]{\greycell #1}
+\newcommand{\completed}[1]{\greencell \footnotesize Completed - #1}
+\newcommand{\inprogress}[1]{\orangecell \footnotesize In Progress - #1}
+\newcommand{\scheduled}[1]{\magentacell \footnotesize Scheduled - #1}
+\newcommand{\notsched}{\redcell \footnotesize Not Scheduled}
 % Core Classes
 % CSPB 1300
 \newcommand{\CSPBIntro}{\href{https://www.colorado.edu/program/cspb/cspb-1300-computer-science-1-starting-computing}{\textbf{Computer Science 1: Starting Computing}}}
