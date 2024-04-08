@@ -1,0 +1,625 @@
+%---------------------------------------------------------------------------
+%	CSPB 1300: Computer Science 1: Starting Computing
+%---------------------------------------------------------------------------
+\course{\CSPBIntroTarget - Prerequisites: \textbf{N/A} - Credits: \textbf{4}}{
+    \noindent \textbf{Brief Description of Course Content} - The course covers techniques for writing computer programs in high level programming languages to solve problems of interest in a range of application domains. This class is intended for students with little to no experience with programming. \\
+
+    \noindent \textbf{Specific Goals} - By the end of this course, students should be well positioned to learn any mainstream programming language, and have a foundation for learning more advanced concepts for software engineering and computer science. \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Understand how to break down hard problems into a series of sub-problems.
+        \item Be able to use fundamental programming constructs (such as variables, conditional and iterative control structures) in Python and C++.
+        \item Understand and be able to implement simple input and output (I/O) (e.g. interactive input from the user, or using disk storage).
+        \item Design functions and reason about their role in programs, including an understanding of passing arguments and returning values.
+        \item Learn the properties of data types, including primitive types like numbers and booleans, as well as complex data types like lists and dictionaries.
+        \item Use an Integrated Development Environment (IDE) to write code.  Begin to understand the art of debugging as part of software development.
+        \item Design and create code using the fundamentals of object-oriented design methods.
+        \item Develop an understanding of software development as a dynamic, social process, and that learning how to seek out information is a necessary skill for success.
+        \item Leverage two different programming languages to understand programming concepts in general rather than just in the particular.
+        \item Understand type systems (dynamic vs static).
+        \item Know the differences between interpreted and compiled languages.
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Python Basics
+        \item Debugging
+        \item Modules and Functions
+        \item Selection
+        \item Iterable Data Structures
+        \item Classes and Objects
+        \item Intro to C++ \& C++ program composition
+    \end{itemize}
+    
+    \noindent \textbf{Mathematic Concepts Used}
+    \begin{itemize}
+        \item Basic Algebra
+        \item Modulo
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 2270: Computer Science 2: Data Structures
+%---------------------------------------------------------------------------
+\course{\CSPBDataStructTarget - Prerequisites: \CSPBIntroLink - Credits: \textbf{4}}{
+    \noindent \textbf{Brief Description of Course Content} - Studies data abstractions (e.g., stacks, queues, lists, trees) and their representation techniques (e.g., linking, arrays). Introduces concepts used in algorithm design and analysis including criteria for selecting data structures to fit their applications. \\
+
+    \noindent Topics include data and program representations, computer organization effect on performance and mechanisms used for program isolation and memory management. \\
+    
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Document code including precondition/postcondition contracts for functions and invariants for classes.
+        \item Determine quadratic, linear and logarithmic running time behavior in simple algorithms, write big-O expressions to describe this behavior, and state the running time behaviors for all basic operations on the data structures presented in the course.
+        \item Create and recognize appropriate test data for simple problems, including testing boundary conditions and creating/running test cases, and writing simple interactive test programs to test any newly implemented class.
+        \item Define basic data types (vector, stack, queue, priority queue, map, list).
+        \item Specify, design and test new classes using the principle of information hiding for the following data structures: array-based collections (including dynamic arrays), list-based collections (singly-linked lists, doubly-linked lists, circular-linked lists), stacks, queues, priority queues, binary search trees, heaps, hash tables, graphs (e.g. for depth-first and breadth-first search), and at least one balanced search tree.
+        \item Be able to describe how basic data types are stored in memory (sequential or distributed), predict what may happen when they exceed those bounds.
+        \item Correctly use and manipulate pointer variables to change variables and build dynamic data structures.
+        \item Determine an appropriate data structure for given problems.
+        \item Follow, explain, trace, and be able to implement standard computer science algorithms using standard data types, such as a stack-based evaluation of arithmetic expressions or a traversal of a graph.
+        \item Recognize situations in which a subtask is nothing more than a simpler version of the larger problem and design recursive solutions for these problems.
+        \item Follow, explain, trace, and be able to implement binary search and a variety of quadratic sorting algorithms including mergesort, quicksort and heapsort.
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Cost of algorithms and Big O notation.
+        \item Memory and pointers, structs, and dynamic memory allocation.
+        \item Linked lists, stacks and queues.
+        \item Trees: Binary trees, binary search trees, tree traversal, recursion.
+        \item Tree balancing: red-black trees.
+        \item Graphs: graph traversal algorithms, depth-first and breadth-first search.
+        \item Hash tables, hash functions, collision resolution algorithms.
+        \item Algorithms for sorting, such as insertion sort, bubble sort, quick sort, and merge sort.
+    \end{itemize}
+    
+    \noindent \textbf{Mathematic Concepts Used}
+    \begin{itemize}
+        \item Logarithms
+        \item Big O
+        \item Recursion
+        \item Trees
+        \item Graphs
+    \end{itemize}   
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 2400: Computer Systems
+%---------------------------------------------------------------------------
+\course{\CSPBCompSysTarget - Prerequisites: \CSPBDataStructLink - Credits: \textbf{4}}{
+    \noindent \textbf{Brief Description of Course Content} - Covers how programs are represented and executed by modern computers, including low level machine representations of programs and data, an understanding of how computer components and the memory hierarchy influence performance. \\
+
+    \noindent Topics include data and program representations, computer organization effect on performance and mechanisms used for program isolation and memory management. \\
+    
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Explain and perform common logical operations (and, or, negation, conversion) on binary variables and binary vectors and identify and apply common boolean algebraic laws such as DeMorgan’s laws, idempotence, etc.
+        \item An ability to translate between integer binary and decimal data, detect and identify the outcome of operations due to limited data representations (e.g. overflow), distinguish between the data representations and ranges for signed and unsigned data types.
+        \item Translate IEEE floating point representation to and from binary and real numbers and identify the limitations of fixed-precision floating point representation.
+        \item An ability to related compiler-generated assembly programs to the corresponding higher level language structures with sufficient ability to enable debugging high level programs. Given a machine language representation of a program compiled in a higher level language, students should be identify and describe the operation of conditional statements, loops, function calls, switch statements.
+        \item The ability to explain how higher level language functions are implemented using the stack of an underlying machine, including how local variables are allocated, trace the execution due to recursion and identify and trace the effect of buffer-overflow of the stack.
+        \item An ability to explain how high level program structures can be restructured to facilitate optimization for pipelined architectures and cache memory hierarchies.
+        \item An ability to explain how computer memory is organized and represented both to the programmer and to the computer architecture by the operating system through the use of virtual memory mapping.
+        \item An understanding of how to use asynchronous signals, concurrent programs and the programming issues that arise with such programs, such as race conditions.
+        \item Identify and construct processes on a common computer platform, identify and perform basic synchronization between processes and understand the costs and benefits of using processes.
+        \item An ability to explain how global memory, function-local and dynamic memory allocation is performed and the performance benefits of each form of memory allocation.
+        \item An ability to explain how programming errors may affect program correctness, including errors in function calls, memory allocation, integer and floating point data representations.
+        \item An ability to measure program performance and use that measured information to determine how to improve program performance.
+        \item An ability to use a machine-level debugger and inspect the memory and register state of programs.
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Vectors
+        \item Linear functions
+        \item Number representation in computers
+        \item Program representation
+        \item Computer security: stack overflows and code injection
+        \item Computer organization and its impact on computer performance
+        \item Memory hierarchy and its impact on computer performance and security
+        \item Cache organization
+        \item Processes, exceptions and signals
+        \item Virtual and dynamic memory management
+        \item Linking and loading programs
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Boolean Logic
+        \item Binary
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 2824: Discrete Structures
+%---------------------------------------------------------------------------
+\course{\CSPBDiscTarget - Co-Requisites: \CSPBIntroLink - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - The course covers fundamental ideas from discrete mathematics, especially for computer science students. It focuses on topics that will be foundational for future courses including algorithms, artificial intelligence, programming languages, theoretical computer science, computer systems, cryptography, networks, computer/network security, databases, and compilers. \\
+
+    \noindent \textbf{Specific Goals} \\
+
+    \noindent \textbf{Specific Outcomes of Instruction} \\
+    We will build on the following 6 primary learning goals throughout the term:
+    \begin{itemize}
+        \item Understand and construct logical arguments and proofs using formal logic, truth tables, and proof techniques.
+        \item Understand and use the basics structures of sets, functions, sums and matrices.
+        \item Use and understand algorithms, number theory and cryptography.
+        \item Demonstrate and make arguments using counting, and probability.
+        \item Use, develop, and analyze formal relations, and graph theory.
+        \item Develop the skills of “Mathematical Maturity” including:
+        \begin{itemize}
+            \item The capacity to generalize from a specific example to broad concept.
+            \item The capacity to handle increasingly abstract ideas.
+            \item A significant shift from learning by memorization to learning through understanding.
+            \item The ability to recognize mathematical patterns and think abstractly.
+            \item Read, write and critique formal proofs.
+            \item Teach yourself and fill in missing details.
+        \end{itemize}
+    \end{itemize}
+
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Logic
+        \item Proof techniques
+        \item Algorithms
+        \item Modular Arithmetic
+        \item Number theory
+        \item Cryptography
+        \item Induction
+        \item Combinatorics
+        \item Probability
+        \item Bayes Thm
+        \item Relations
+        \item Graphs
+    \end{itemize}
+
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Basic Algebra
+        \item Program Entry Requirements
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 3104: Algorithms
+%---------------------------------------------------------------------------
+\course{\CSPBAlgoTarget - Prerequisites: \CSPBDataStructLink \& \CSPBDiscLink - Credits: \textbf{4}}{
+    \noindent \textbf{Brief Description of Course Content} - Covers the fundamentals of algorithms and various algorithmic strategies, including time and space complexity, sorting algorithms, recurrence relations, divide and conquer algorithms, greedy algorithms, dynamic programming, linear programming, graph algorithms, problems in P and NP, and approximation algorithms. \\
+
+    \noindent \textbf{Specific Goals} \\ 
+
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Understanding properties of algorithms.
+        \item Proving these properties mathematically.
+        \item Proving rigorous time and space complexity bounds on the performance.
+        \item Understand the relative merits or demerits of an algorithm, in practice.
+        \item Use algorithms to solve core problems that may arise inside applications.
+        \item Learn key tricks (motifs) underlying the design of new algorithms for emerging applications.
+    \end{itemize}
+
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Introduction to Algorithms: Complexity analysis
+        \item Divide and Conquer Algorithms
+        \item Sorting and Order Statistics
+        \item Advanced Data Structures: heaps, balanced trees and hash-functions
+        \item Dynamic Programming
+        \item Greedy Algorithms
+        \item Graph Algorithms: Search, Minimum Spanning Trees, Shortest Paths, Network Flows
+        \item Introduction to Linear and Integer Programming
+        \item Basics of Computational Complexity: P, NP, reductions and open problems
+    \end{itemize}
+
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Recursion
+        \item Logarithmic
+        \item Exponential Functions
+        \item Induction
+        \item Graph Theory
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 3155: Principles of Programming Languages
+%---------------------------------------------------------------------------
+\course{\CSPBPrincProgTarget - Prerequisites: \CSPBDataStructLink \& \CSPBDiscLink - Credits: \textbf{4}}{
+    \noindent \textbf{Brief Description of Course Content} - Study fundamental concepts on which programming of languages are based, and execution models supporting them. Topics include values, variables, bindings, type systems, control structures, exceptions, concurrency, and modularity. Learn how to select a language and to adapt to a new language. \\
+
+    \noindent \textbf{Specific Goals} \\
+
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Learn new programming languages quickly
+        \item Choose the language for a programming task
+        \item Write pure functional code
+        \item Write new languages or APIs with clear semantics
+        \item Read and write context-free grammars and parsers
+    \end{itemize}
+
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Scala
+        \item Javascript
+        \item Program Semantics
+        \item Context-free grammars
+        \item Recursion and higher-order functions
+        \item Algebraic Data Types
+        \item Expression Trees
+        \item Type checking
+        \item Mutable State
+        \item Scope, bindings, and closures
+        \item Currying
+        \item Callbacks and Continuation-Passing Style
+    \end{itemize}
+
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Regular Expressions
+        \item Context-Free Grammars
+        \item Proofs About Program Properties
+        \item Recursion and Induction
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 3308: Software Development Methods and Tools
+%---------------------------------------------------------------------------
+\course{\CSPBSoftDevTarget - Prerequisites: \CSPBDataStructLink - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - Covers tools and practices for software development with a strong focus on best practices used in industry and professional development, such as agile methodologies, pair-programming and test-driven design. Students develop web services and applications while learning these methods and tools. \\
+
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Learn and use new software development tools; understand technical documentation for software tools
+        \item Work in small, distributed groups on software projects
+        \item Lead Agile development teams
+        \item Write functional web applications
+        \item Use distributed version control fluently, including merging and branching
+        \item Write unit tests and use test-driven design to build software
+        \item Compose SQL queries to access data
+        \item Write clear and helpful documentation
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Unix shell
+        \item Shell Scripting
+        \item Regular Expressions
+        \item Agile Development Methods
+        \item Makefiles and Build tools
+        \item Unit Testing
+        \item HTML, CSS, and Javascript
+        \item SQL
+        \item Cloud Computing
+        \item Web Services
+        \item Platform as a Service (PaaS)
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Regular Expressions
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 2820: Linear Algebra with Computer Science Applications
+%---------------------------------------------------------------------------
+\course{\CSPBLinAlgTarget - Prerequisites: \CSPBDiscLink - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - Introduces the fundamentals of linear algebra in the context of computer science applications. Includes vector spaces, matrices, linear systems, and eigenvalues. Includes the basics of floating point computation and numerical linear algebra. \\
+
+    \noindent \textbf{Specific Goals} - By the end of this course, students should be well positioned to apply linear algebra skills in a computer science context. \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Use and reason about vectors, theoretically and in computer science applications
+        \item Use and reason about matrices, theoretically and in computer science applications
+        \item Understand and apply linear functions, and the relation between linear functions and matrices
+        \item Solve systems of linear equations, and reason about the computational complexity of them
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Vectors
+        \item Linear functions
+        \item Norm and distance
+        \item Writing linear algebra code
+        \item Clustering
+        \item Linear independence
+        \item Matrices
+        \item Matrix examples
+        \item Linear equations
+        \item Linear dynamical systems
+        \item Matrix multiplication
+        \item Matrix inverses
+        \item Least squares
+        \item Eigenvalues, eigenvectors, and singular values
+        \item Least squares data fitting
+        \item Least squares classification
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Algebra
+        \item Proofs
+        \item Real Numbers
+        \item Inequalities
+        \item Linear Algebra
+    \end{itemize}
+}
+
+
+%---------------------------------------------------------------------------
+%	CSPB 3022: Introduction to Data Science with Probability and Statistics
+%---------------------------------------------------------------------------
+\course{\CSPBDataSciTarget - Prerequisites: \CSPBIntroLink - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - Introduces students to the tools methods and theory behind extracting insights from data. Covers algorithms of cleaning and munging data, probability theory and common distributions, statistical simulation, drawing inferences from data, and basic statistical modeling. \\
+
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Recognize the importance of data collection, identify limitations in data collection methods and other sources of statistical bias, and determine their implications and how they affect the scope of inference.
+        \item Use statistical software to summarize data numerically and visually, and to perform data analysis.
+        \item Have a conceptual understanding of the unified nature of statistical inference.
+        \item Apply estimation and testing methods to analyze single variables or the relationship between two variables in order to understand natural phenomena and make data-based decisions.
+        \item Model numerical response variables using a single explanatory variable or multiple explanatory variables in order to investigate relationships between variables.
+        \item Interpret results correctly, effectively, and in context without relying on statistical jargon.
+        \item Critique data-based claims and evaluate data-based decisions.
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Data Exploration and Probability
+        \item Conditional probability and Bayes rule
+        \item Discrete/continuous random variables and computing with distributions
+        \item Joint distributions, covariance, correlation and sums of random variables
+        \item Using Jupyter python environment
+        \item Python tools for data science – NumPy and Pandas
+        \item Basic statistical estimation, random samples, bootstrap and resampling techniques, unbiased estimators and confidence intervals for measure data
+        \item T-Test
+        \item Linear Regression and classification
+        \item Maximum likelihood estimation and analysis of variance
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Counting Theory
+        \item Probabilities
+        \item Integration
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 3202: Introduction to Artificial Intelligence
+%---------------------------------------------------------------------------
+\course{\CSPBArtIntellTarget - Prerequisites: \CSPBDataStructLink \& \CSPBLinAlgLink \& \CSPBDataSciLink - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - Surveys artificial intelligence techniques of search, knowledge representation and reasoning, probabilistic inference, machine learning, and natural language. \\
+
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item An ability to explain what AI is about, what it can solve, its brief history and applications, and its social impact.
+        \item An ability to explain key concepts such as agents, environment and how the type of the agent and the environment affect the choice of an algorithm.
+        \item An ability to explain how each AI algorithm works and implement those in codes.
+        \item An ability to explain the algorithm properties such as completeness, optimality, time and space complexity and can compare algorithm efficiencies.
+        \item Determine suitable AI algorithms to apply to a specific problem.
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Search
+        \begin{itemize}
+            \item Classical search: DFS, BPS, iterative deepening, UCS
+            \item Non-classical search: heuristics, greedy search, A*
+            \item CSP
+            \item Adversarial Search
+        \end{itemize}
+        \item Probabilistic Search
+        \begin{itemize}
+            \item MDP
+            \item Reinforcement Learning
+            \item BayesNets, HMM
+        \end{itemize}
+        \item Machine learning in AI
+        \begin{itemize}
+            \item Machine learning basics
+            \item Logistic regression, perceptron, ANN, other ML models (e.g. decision tree)
+            \item Deep learning, applications in computer vision, NLP, robotics
+        \end{itemize}
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Data Structures: Queue, Stack, Tree, Graph
+        \item Probability Basics: Bayes Rule, Conditional Probability, Joint Probability
+        \item Basic Math Functions: Logarithm, Exponent, Argmax/Argmin, Max/Min
+        \item Basic Calculus: Concept of Partial Differentiation, Gradient, Chain Rule
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 3287: Design and Analysis of Database Systems
+%---------------------------------------------------------------------------
+\course{\CSPBDataBaseTarget - Prerequisites: \CSPBDataStructLink - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - Analyzes design of data systems, including data stored in file systems, database management systems and physical data organizations. Studies calculus of data models, query languages, concurrency and data privacy and security. \\
+
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Understand the theoretical underpinnings of modern databases
+        \item Be capable of choosing appropriate models and their related databases
+        \item Gain familiarity with the underlying mechanisms of various database implementations
+        \item Develop troubleshooting and optimization skills for Relational Database Management Systems
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Relational Algebra and Algebraic Query Languages
+        \item Structured Query Language (SQL)
+        \item Data Modelling and Normalization
+        \item Entity Relationship Models and E/R Design Techniques
+        \item Keys, Constraints and Indexes
+        \item Transactions and Optimization
+        \item Hardware and implementation issues
+        \item NoSQL, Key-Value and Column Databases
+        \item Introduction to the CAP Theorem
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Discrete Mathematics
+        \item Algebra
+        \item Set Theory
+        \item Boolean Algebra
+        \item Algorithmic Complexity (Big O Notation)
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 3702: Cognitive Science
+%---------------------------------------------------------------------------
+\course{\CSPBCogSciTarget - Prerequisites: \textbf{N/A} - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - This course serves as an introduction to Cognitive Science, the study of the mind, as an interdisciplinary field with roots in Computer Science along with Psychology, Education, and a variety of other fields. Our survey of this area centers on how these ideas of mind both inform and are influenced by computer science ideas. \\
+
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction} - By the end of the course, you should have developed an understanding of the human mind and be able to contribute to discussions, research, and technical work related to the course topics. Hopefully, many of you will be interested in one or more of the areas presented in the course and may use that to shape your projects in future courses or further efforts in your career path. \\
+    
+    \noindent \textbf{Brief List of Topics to be Covered} - This course is divided into 5 sections:
+    \begin{itemize}
+        \item The Metaphor of Mind as Machine
+        \item Problem Solving for Minds and Machines
+        \item Vision for Minds and Machines
+        \item Game Theory as Simplified Decision Making
+        \item Developmental Processes and Evolution for Minds and Machines
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Basic Algebra
+        \item Probability \& Statistics
+        \item Matrix Multiplication
+    \end{itemize}
+    Many of these concepts are briefly explained in the lessons as a refresher. \\
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 3753: Design and Analysis of Operating Systems
+%---------------------------------------------------------------------------
+\course{\CSPBOpSysTarget - Prerequisites: \CSPBDataStructLink \& \CSPBDiscLink \& \CSPBSoftDevLink - Credits: \textbf{4}}{
+    \noindent \textbf{Brief Description of Course Content} - Examines the structure and function of operating systems as an intermediary between applications and computer hardware. \\
+
+    \noindent Topics include OS design goals, hardware management, multitasking, process and thread abstractions, file and memory management, security, and networking. Upon completion, students should be able to perform operating systems functions at the support level in a single-user environment. \\
+    
+    \noindent Microcontrollers are ubiquitous in the modern world, in everything from your toaster, microwave, and refrigerator, to the complex and sophisticated systems in satellites and self-driving vehicles.  We have augmented our Operating Systems course to use a Raspberry Pi in hands-on assignments such as adding systems calls to the Linux operating system running on the Raspberry Pi.  The goal is for you to learn to apply the theory of operating systems and gain experience physically working with and changing a real working computer. \\
+    
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction} - Upon completion of this course, students are able to: \\
+    \begin{itemize}
+        \item Explain basic concepts in the design and structure of operating systems, including kernel/user mode, system calls, preemptive multitasking, and monolithic/microkernel structure.
+        \item Describe how interrupt-based processing achieves efficient management of device input/output communication.
+        \item Define processes and threads, describe different ways to communicate between processes and threads, and apply mutual exclusion-based solutions to synchronize multi-threaded processes without deadlock occurring.
+        \item Identify different scheduling algorithms and their suitability for different types of applications, including compute-bound, I/O-bound and real time.
+        \item Explain the concept of virtual memory, the rationale for on-demand paging, and the role of working sets to avoid thrashing in a caching-based memory hierarchy.
+        \item Demonstrate understanding of fundamental concepts in file system design, including linked and indexed file allocation, mounting, a virtual file system layer, memory mapping, journaling, and performance optimizations for storage media (magnetic and solid state).
+        \item Describe basic concepts to secure and protect operating systems.
+        \item Explain basic concepts in networked operating systems design, including layered network architecture and distributed file systems structure.
+        \item Describe the basic concept of a virtual machine and different types of virtual machines.
+        \item Successfully modify, add functionality to, and re-compile the kernel of an operating system.
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Operating System Design and Structure
+        \item Device Input/Output Management
+        \item Process and Thread Management and Scheduling
+        \item Inter-Process Communication and Synchronization
+        \item Memory Management
+        \item File System and Storage Management
+        \item Security
+        \item Networking
+        \item Virtual Machines
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Basic Arithmatic
+        \item Averages
+        \item Recursions
+        \item Random Numbers and Distributions
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 4122: Information Visualization
+%---------------------------------------------------------------------------
+\course{\CSPBInfoVisTarget - Prerequisites: \CSPBIntroLink - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - Studies interactive visualization techniques that help people analyze data. This course introduces design, development, and validation approaches for interactive visualizations with applications in various domains, including the analysis of text collections, software visualization, network analytics, and the biomedical sciences. It covers underlying principles, provides an overview of existing techniques, and teaches the background necessary to design innovative visualizations. \\
+
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Define information visualization and describe its role in data analysis
+        \item Illustrate underlying principles in information visualization
+        \item Explain the four nested levels of visualization design
+        \item Design an interactive data visualization
+        \item Build a prototype implementation of an interactive visualization using existing tools/frameworks
+        \item Critique visualization techniques and tools
+        \item Evaluate the utility of visualization system
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Review existing design approaches
+        \item Learn a framework for analyzing and critiquing interactive visualizations
+        \item Develop your own visualizations using existing tools and frameworks
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item No significant mathematical concepts needed for this course.
+    \end{itemize}
+}
+
+%---------------------------------------------------------------------------
+%	CSPB 4502: Data Mining
+%---------------------------------------------------------------------------
+\course{\CSPBDataMinTarget - Prerequisites: \CSPBDataStructLink - Credits: \textbf{3}}{
+    \noindent \textbf{Brief Description of Course Content} - Introduces basic data mining concepts and techniques for discovering interesting patterns hidden in large-scale data sets, focusing on issues relating to effectiveness and efficiency. Topics covered include data preprocessing, data warehouse, association, classification, clustering, and mining specific data types such as time-series, social networks, multimedia, and Web data. \\
+
+    \noindent \textbf{Specific Goals} \\
+    
+    \noindent \textbf{Specific Outcomes of Instruction}
+    \begin{itemize}
+        \item Apply the concepts and techniques of Data mining on data sets
+        \item Preprocess and clean data for use in data mining
+        \item Discover interesting patterns from large amounts of data
+    \end{itemize}
+    
+    \noindent \textbf{Brief List of Topics to be Covered}
+    \begin{itemize}
+        \item Data preprocessing
+        \item Data warehouse 
+        \item Association
+        \item Classification
+        \item Clustering
+        \item Mining specific data types such as time-series, social networks, multimedia, and Web data
+    \end{itemize}
+    
+    \noindent \textbf{Mathematical Concepts Used}
+    \begin{itemize}
+        \item Statistics
+    \end{itemize}
+}
