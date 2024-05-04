@@ -1,0 +1,309 @@
+\section*{Vectors}
+
+\subsection*{C++ Vector Overview}
+
+In C++, a vector is a dynamic array-like container provided by the Standard Template Library (STL). It is a sequence container that can dynamically resize itself to accommodate elements. Unlike an 
+array, which has a fixed size determined at compile time, a vector can grow or shrink in size as elements are added or removed. Vectors offer various advantages over arrays, such as automatic memory 
+management, the ability to easily change their size, and built-in functions for common operations like inserting, erasing, and accessing elements. Vectors provide similar functionality to arrays but 
+with added flexibility and convenience.
+
+\subsection*{How Do You Declare And Initialize A Vector With Values?}
+
+\begin{highlight}[Initializing A Vector]
+
+The way we initialize a vector in C++ with values is like the following:
+
+\begin{code}
+#include <vector>
+
+int main() {
+    // Declare and initialize a vector of integers
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+    // Declare and initialize a vector of strings
+    std::vector<std::string> names = {"Alice", "Bob", "Charlie"};
+
+    // Declare an empty vector
+    std::vector<double> values;
+
+    return 0;
+}
+\end{code}
+
+\end{highlight}
+
+\subsection*{Vector Operations In C++}
+
+Here are some common vector operations in C++. First, we look at how we access elements in a vector.
+
+\begin{highlight}[Accessing Vector Elements]
+
+\subsubsection*{Accessing Elements}
+
+Here is how someone accesses elements in a vector:
+
+\begin{code}
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Accessing elements using the indexing operator []
+int firstElement = numbers[0];  // Access the first element (1)
+int thirdElement = numbers[2];  // Access the third element (3)
+
+// Accessing elements using the at() member function
+int secondElement = numbers.at(1);  // Access the second element (2)
+int fourthElement = numbers.at(3);  // Access the fourth element (4)
+\end{code}
+
+\end{highlight}
+
+Here is how someone adds elements to a vectors.
+
+\begin{highlight}[Adding Vector Elements]
+
+\subsubsection*{Adding To End}
+
+Adding an element at the end of a vector with \function{push\_back()}:
+
+\begin{code}
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    
+    // Add the number 6 to the end of the vector
+    numbers.push_back(6);
+    
+    // Print the modified vector
+    for (int i = 0; i < numbers.size(); i++) {
+        std::cout << numbers[i] << std::endl;
+    }
+\end{code}
+
+\end{highlight}
+
+Here is how vectors can be cleared.
+
+\begin{highlight}[Clearing Vectors]
+
+\subsubsection*{Clearing All Elements}
+
+Clearing all the elements from a vector with \function{clear()}:
+
+\begin{code}
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Remove all elements from the vector
+numbers.clear();
+
+// Print the modified vector
+for (int i = 0; i < numbers.size(); i++) {
+    std::cout << numbers[i] << std::endl;
+}    
+\end{code}
+
+\end{highlight}
+
+If you want to find the capacity of a vector, this is how its done.
+
+\begin{highlight}[Finding Capacity Of Vector]
+
+\subsubsection*{Finding Capacity}
+
+Finding the capacity of the vector with \function{capacity()}:
+
+\begin{code}
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Find the capacity of the vector
+int capacity = numbers.capacity();
+
+// Print the capacity of the vector
+std::cout << "The capacity of the vector is: " << capacity << std::endl;
+\end{code}
+
+\end{highlight}
+
+To find the size of vector, this is how its done.
+
+\begin{highlight}[Finding Size Of Vector]
+
+\subsubsection*{Finding Size}
+
+Finding the size of the vector with \function{size()}:
+
+\begin{code}
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Find the size of the vector
+int size = numbers.size();
+
+// Print the size of the vector
+std::cout << "The size of the vector is: " << size << std::endl;
+\end{code}
+
+\end{highlight}
+
+Next, we look at how we modify elements in a vector.
+
+\begin{highlight}[Modifying Vector Elements]
+
+\subsubsection*{Modifying Elements}
+
+Here is how someone modifies elements in a vector:
+
+\begin{code}
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Modifying elements using the indexing operator []
+numbers[0] = 10;  // Modify the value of the first element to 10
+numbers[2] = 30;  // Modify the value of the third element to 30
+
+// Modifying elements using the at() member function
+numbers.at(1) = 20;  // Modify the value of the second element to 20
+numbers.at(3) = 40;  // Modify the value of the fourth element to 40  
+\end{code}
+
+\end{highlight}
+
+There are multiple ways to remove an element at an index of a vector, here is one.
+
+\begin{highlight}[Removing Element Of Vector]
+
+\subsubsection*{Removing Element At Index}
+
+Removing an element at an index of a vector with \function{erase()}:
+
+\begin{code}
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Remove the element at index 2 from the vector
+int element_to_remove = numbers[2];
+numbers.erase(numbers.begin() + 2);
+
+// Print the modified vector
+for (int i = 0; i < numbers.size(); i++) {
+    std::cout << numbers[i] << std::endl;
+}
+\end{code}
+
+\end{highlight}
+
+Another way to remove an element is to remove the last element of a vector.
+
+\begin{highlight}[Removing Last Element Of Vector]
+
+\subsubsection*{Removing Last Element}
+
+Removing the last element from a vector with \function{pop\_back()}:
+
+\begin{code}
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Remove the last element from the vector
+int last_element = numbers.back();
+numbers.pop_back();
+
+// Print the modified vector
+for (int i = 0; i < numbers.size(); i++) {
+    std::cout << numbers[i] << std::endl;
+}
+\end{code}
+
+\end{highlight}
+
+Vectors can be sorted as well, here is how this is done.
+
+\begin{highlight}[Sorting Vectors]
+
+\subsubsection*{Sorting}
+
+Vectors can be sorted with sorting algorithms or the built in STL function \function{sort()}:
+
+\begin{code}
+std::vector<int> numbers = {5, 2, 8, 1, 9};
+
+// Sort the vector in ascending order
+std::sort(numbers.begin(), numbers.end());
+
+// Print the sorted vector
+for (const auto& num : numbers) {
+    std::cout << num << " ";
+}
+std::cout << std::endl;
+\end{code}
+
+\end{highlight}
+
+Here is a summary of some common vector operations.
+
+\begin{itemize}
+    \item Accessing Elements:
+    \begin{itemize}
+        \item Using the indexing operator \function{[]} to access individual elements by their index.
+        \item Using the \function{at()} member function to access elements with bounds checking.
+        \item Using iterators to traverse the vector and access elements.
+    \end{itemize}
+    \item Iterating \& Traversing:
+    \begin{itemize}
+        \item Using range-based \function{for} loops or iterators to iterate over the elements of the vector.
+        \item Using algorithms like \function{for\_each()}, \function{transform()}, or \function{accumulate()} from the \function{algorithm} library to perform operations on each element.
+    \end{itemize}
+    \item Modifying Elements:
+    \begin{itemize}
+        \item Using the assignment operator \function{=} to modify individual elements directly.
+        \item Using the \function{push\_back()} member function to add elements at the end of the vector.
+        \item Using the \function{pop\_back()} member function to remove the last element from the vector.
+        \item Using the \function{insert()} member function to insert elements at a specified position.
+        \item Using the \function{erase()} member function to remove elements at a specified position or range.
+    \end{itemize}
+    \item Size \& Capacity:
+    \begin{itemize}
+        \item Using the \function{size()} member function to get the current number of elements in the vector.
+        \item Using the \function{empty()} member function to check if the vector is empty.
+        \item Using the \function{resize()} member function to change the size of the vector.
+        \item Using the \function{reserve()} member function to allocate memory for a specified number of elements.
+    \end{itemize}
+    \item Sorting \& Manipulating Order:
+    \begin{itemize}
+        \item Using the \function{sort()} function from the \function{algorithm} library to sort the elements in the vector.
+        \item Using the \function{reverse()} function from the \function{algorithm} library to reverse the order of elements.
+        \item Using algorithms like \function{find()}, \function{count()}, or \function{binary\_search()} from the \function{algorithm} library to search for elements.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Benefits Of Vectors Over Arrays}
+
+There are many benefits to using a vector over an array. Some examples of this are dynamic size, automatic memory management, convenient functions, range checking, and copy and assignment. These are
+not all of the advantages, rather just some commond examples. Diving into these examples a little bit more:
+
+\begin{itemize}
+    \item \textbf{Automatic Memory Management:} Vectors handle memory allocation and deallocation automatically. When elements are added or removed, the vector manages the underlying memory for you. 
+    Arrays, on the other hand, require manual memory management.
+    \item \textbf{Convenient Functions:} Vectors provide a range of built-in functions that make working with elements more convenient. For example, vectors have functions like \textbf{push\_back()} 
+    to add elements at the end, \textbf{pop\_back()} to remove elements from the end, and \textbf{insert()} to insert elements at specific positions. Arrays lack such built-in functions, requiring 
+    manual manipulation of elements.
+    \item \textbf{Copy and Assignment:} Vectors can be easily copied or assigned to another vector using the assignment operator (\function{=}) or the copy constructor. This simplifies the process of creating 
+    copies or working with multiple vectors. Arrays do not have built-in copy or assignment mechanisms, requiring manual copying of each element.
+    \item \textbf{Dynamic Size:} Vectors have a flexible and resizable size, allowing elements to be added or removed easily. In contrast, arrays have a fixed size determined at compile-time, making 
+    it difficult to change their size dynamically.
+    \item \textbf{Range Checking:} Vectors perform bounds checking to ensure that accessing elements stays within the valid range. This helps prevent accessing elements outside the vector's size, 
+    which can lead to runtime errors. Arrays do not perform such range checking, allowing access to elements beyond the declared size, which can lead to undefined behavior.
+\end{itemize}
+
+\noindent Overall, vectors provide more flexibility, convenience, and safety compared to arrays in terms of size management, memory handling, and operations on elements.
+
+\subsection*{C++ Vector Functions Recap}
+
+Here is a quick summary of vector functions in C++:
+
+\begin{itemize}
+    \item \function{back():} The `back()' method in C++ returns a reference to the last element in a vector.
+    \item \function{capacity():} The `capacity()' method in C++ returns the current storage capacity of a vector, which represents the maximum number of elements that the vector can hold without requiring reallocation of memory.
+    \item \function{clear():} The `clear()' method in C++ removes all elements from a vector, effectively emptying it.
+    \item \function{erase():} The `erase()' method in C++ removes one or a range of elements from a vector, based on the specified position or iterator.
+    \item \function{find():} The `find()' function in C++ searches for a specified element in a vector and returns an iterator pointing to the first occurrence of the element. 
+    \item \function{front():} The `front()' method in C++ returns a reference to the first element in a vector.
+    \item \function{pop\_back():} The `pop\_back()' method in C++ removes the last element from a vector. 
+    \item \function{push\_back():} The `push\_back()' method in C++ adds an element to the end of a vector.
+    \item \function{resize():} The `resize()' method in C++ changes the size of the vector, either increasing or decreasing it.
+    \item \function{size():} The `size()' method in C++ returns the number of elements in a vector, representing the current size of the vector.
+\end{itemize}
+
+\clearpage

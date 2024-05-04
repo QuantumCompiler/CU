@@ -1,0 +1,68 @@
+%---------------------------------------------------------------------------
+%	Document Class
+%---------------------------------------------------------------------------
+\documentclass{solutionclass} 
+%---------------------------------------------------------------------------
+%	Header and Footer Styling
+%---------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhead[L]{\footnotesize{Taylor Larrechea}}
+\fancyfoot[L]{\footnotesize{CSPB 2270}}
+\fancyhead[C]{\footnotesize{Computer Science 2: Data Structures}}
+\fancyhead[R]{\footnotesize{University of Colorado}}
+\fancyfoot[R]{\footnotesize{Class Notes}}
+\backgroundsetup{
+    scale = 1,
+    angle = 0,
+    opacity = 0.1,
+    contents = {
+    \includegraphics[scale = 0.25, keepaspectratio]{Figures/CU Seal.png}
+    }
+}
+%---------------------------------------------------------------------------
+%	Begin Document
+%---------------------------------------------------------------------------
+\begin{document}
+% ------------------------- Front Page Info
+\pretitle
+{CSPB 2270}
+{Computer Science 2: Data Structures}
+{Taylor Larrechea}
+%---------------------------------------------------------------------------
+%	Sections
+%---------------------------------------------------------------------------
+% ------------------------- Sections Table
+\makeatletter
+    \startcontents[sections]
+    \thispagestyle{fancy}
+\makeatother
+\vspace{-2em}
+%---------------------------------------------------------------------------
+%	Introduction / Individual Sections
+%---------------------------------------------------------------------------
+% % ------------------------- Week 1
+\input{Tex Files/C++ Review - Debugging - Unit Testing}
+% % ------------------------- Week 2
+\input{Tex Files/Object Orientation in C++ & ADT}
+% % ------------------------- Week 3
+\input{Tex Files/Pointers And Lists.tex}
+% % ------------------------- Week 4
+\input{Tex Files/Recursion & Trees.tex}
+% % ------------------------- Week 5
+\input{Tex Files/Balanced Trees.tex}
+% % ------------------------- Week 6
+\input{Tex Files/Code Complexity, Binary Search Tree, Sorting Methods.tex}
+% % ------------------------- Week 7
+\input{Tex Files/BTree, Sets, Midterm.tex}
+% % ------------------------- Week 8
+\input{Tex Files/Priority Queue, Heap, Treap.tex}
+% % ------------------------- Week 9
+\input{Tex Files/Hash Tables.tex}
+% % ------------------------- Week 10
+\input{Tex Files/Codecs And Huffman Compression.tex}
+% % ------------------------- Week 11
+\input{Tex Files/Graphs, Exam 2.tex}
+\end{document}
+%---------------------------------------------------------------------------
+%	
+%---------------------------------------------------------------------------
