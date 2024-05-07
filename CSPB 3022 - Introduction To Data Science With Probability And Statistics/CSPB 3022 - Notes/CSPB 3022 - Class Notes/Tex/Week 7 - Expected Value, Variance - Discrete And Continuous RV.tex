@@ -1,0 +1,78 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Week 7: (2/26 - 3/3)}
+\renewcommand{\SectionTitle}{Expected Value, Variance - Discrete And Continuous RV}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Piazza}
+
+Must post / respond to two Piazza posts. \assignment{3/5/24}{Piazza7DueDate}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76404/mod_resource/content/2/lab6_video.mp4}{Random Variables And Distributions Notebook Walkthrough}{83}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76405/mod_resource/content/1/CSCI3022_002_CASEE240_10_4_2023.mp4}{RV And Distributions, Expectation And Variance}{54}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76407/mod_resource/content/1/CSCI3022_002_CASEE240_10_6_2023.mp4}{Joint Distributions, Covariance, Independence}{54}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76421/mod_resource/content/2/CSCI3022_002_CASEE240_10_9_2023.mp4}{Covariance And Correlation, Independence}{54}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Expected Value, Variance Discrete And Continuous RV Lecture Notes.pdf}{Expected Value, Variance Discrete And Continuous RV Lecture Notes}
+    \item \pdflink{\LecNoteDir More With RV -  Discrete Vs. Continuous - Expected Value And Variance Lecture Notes.pdf}{More With RV -  Discrete Vs. Continuous - Expected Value And Variance Lecture Notes}
+    \item \pdflink{\LecNoteDir Joint Distributions - Covariance And Correlation Lecture Notes.pdf}{Joint Distributions - Covariance And Correlation Lecture Notes}
+    \item \pdflink{\LecNoteDir Sampling Lecture Notes.pdf}{Sampling Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item The assignment for this week is \textbf{Expected Value, Variance - Discrete And Continuous RV}. \assignment{3/5/24}{Ass6DueDate}
+\end{itemize}
+
+\subsection{Concept Summary}
+
+\begin{notes}{Expected Value, Variance - Discrete And Continuous RV}
+    \subsection*{Overview}
+
+    Expected Value and Variance are fundamental statistical measures that describe the distribution of random variables (RVs). They play crucial roles in the fields of probability, statistics, and 
+    many practical applications like finance and risk management. Expected value provides a measure of the central tendency of a random variable, while variance measures the spread or dispersion 
+    around this central value. Understanding these concepts for both discrete and continuous random variables allows for deeper insights into the behavior of random processes and decision-making 
+    under uncertainty. \vspace*{1em}
+    
+    \subsubsection*{Expected Value}
+    
+    The Expected Value (EV) of a random variable gives a sense of the 'average' outcome one might expect if an experiment were repeated many times:
+    \begin{itemize}
+        \item \textbf{Discrete Random Variables}: The expected value is calculated by summing the products of each possible value of the random variable and its corresponding probability. It is denoted 
+        as $E(X) = \sum_{i=1}^n x_i p_i$, where $x_i$ are the possible values and $p_i$ their probabilities.
+        \item \textbf{Continuous Random Variables}: For continuous variables, the expected value is determined by integrating the product of the variable's values and their probability density function 
+        (PDF) over the possible range of values. It is expressed as $E(X) = \int_{-\infty}^{\infty} x f(x) \, dx$, where $f(x)$ is the PDF.
+    \end{itemize}
+    
+    \subsubsection*{Variance}
+    
+    Variance quantifies the variability or spread of a random variable's possible outcomes around its expected value:
+    \begin{itemize}
+        \item \textbf{Discrete Random Variables}: Variance is calculated by summing the squared differences between each possible value and the expected value, each weighted by its probability: $\text{Var}(X) = \sum_{i=1}^n (x_i - E(X))^2 p_i$.
+        \item \textbf{Continuous Random Variables}: Similar to the discrete case, but involving integration: $\text{Var}(X) = \int_{-\infty}^{\infty} (x - E(X))^2 f(x) \, dx$.
+    \end{itemize}
+    
+    Both expected value and variance are essential for understanding the distribution characteristics of random variables, influencing everything from risk assessment to optimization in various applications.
+    
+    \subsubsection*{Summary}
+    
+    Expected Value and Variance are critical in both theoretical and applied statistics, providing key insights into the likelihood and variability of outcomes for discrete and continuous random variables. 
+    These measures help statisticians and data scientists to predict outcomes and make informed decisions based on the underlying probabilities. Understanding these concepts is fundamental for analyzing 
+    risk, optimizing strategies, and modeling in uncertain environments.    
+\end{notes}
