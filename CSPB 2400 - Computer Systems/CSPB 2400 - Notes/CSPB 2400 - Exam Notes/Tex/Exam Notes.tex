@@ -1,0 +1,1372 @@
+\begin{examnotes}{Exam 1 Notes}
+    \subsubsection*{Compilation}
+    
+    The following are definitions of common compilation processes.
+
+    \begin{itemize}
+        \item \textbf{Preprocessing (CPP)}: The preprocessor handles directives for source code file inclusion, macro definitions, and conditional compilation.
+        \item \textbf{Compilation (CC)}: The compiler takes the preprocessed source code and converts it into assembly code.
+        \item \textbf{Assembly (AS)}: The assembler then takes this assembly code and translates it into machine code, producing object files.
+        \item \textbf{Linking (LD)}: Finally, the linker combines these object files into a single executable program.
+    \end{itemize}
+
+    \subsubsection*{Memory Hierarchy}
+
+    At the top, we have registers, which are the fastest type of memory within a computer. Below registers are levels of cache memory (L1, L2, and L3), each slower than the last but still faster than 
+    RAM (Random Access Memory). Further down are disks, like HDDs or SSDs, which provide more storage but at slower access speeds. Lastly, remote storage, which can be cloud storage or network-attached 
+    storage, offers the most space but has the slowest access speed due to its physical and network distance from the CPU.
+
+    \begin{highlight}[Memory Hierarchy]
+        \begin{equation*}
+            \texttt{Registers} \rightarrow \texttt{L1 Cache} \rightarrow \texttt{L2 Cache} \rightarrow \texttt{L3 Cache} \rightarrow \texttt{RAM} \rightarrow \texttt{Disks} \rightarrow \texttt{Remote Storage}
+        \end{equation*}
+    \end{highlight}
+
+    \subsubsection*{Abstraction}
+
+    In the context of computer systems, an abstraction is a simplification where complex details are hidden to reduce complexity and increase efficiency. It allows users and programs to interact with 
+    systems and devices at a higher level without concern for the underlying implementation details. This concept is central to computer science because it enables the development of complex systems 
+    and applications by breaking them down into more manageable parts. Each layer of abstraction provides a set of interfaces for the level above, ensuring that changes in one layer do not necessarily 
+    affect others.
+
+    \begin{itemize}
+        \item Files abstract the details of I/O devices, allowing users and programs to interact with data storage without needing to understand the specifics of the hardware.
+        \item Virtual memory abstracts the physical memory, giving an application the impression of having a contiguous and large amount of memory while physically it could be fragmented and less than 
+        the virtual space.
+        \item Processes abstract the execution of multiple tasks, giving the impression that there is more than one processor executing different tasks simultaneously when, in fact, the CPU switches 
+        between tasks to give the illusion of concurrency.
+    \end{itemize}
+
+    \subsubsection*{Propositional Logic}
+
+    Propositional logic is a branch of logic that deals with propositions, which are statements that can be either true or false. It involves logical operations such as:
+
+    \begin{itemize}
+        \item \textbf{AND (Conjunction)}: A logical operator that results in true if both operands are true.
+        \item \textbf{OR (Disjunction)}: A logical operator that results in true if at least one of the operands is true.
+        \item \textbf{XOR (Exclusive OR)}: A logical operator that results in true only if one operand is true and the other is false.
+    \end{itemize}
+
+    \begin{center}
+        \begin{tabular}[h]{|c|c|c|c|c|}
+            \hline \text{A} & \text{B} & \text{A \& B} & \text{A | B} & \text{A \string^ B} \\ \hline
+            0 & 0 & 0 & 0 & 0 \\ \hline
+            0 & 1 & 0 & 1 & 1 \\ \hline
+            1 & 0 & 0 & 1 & 1 \\ \hline
+            1 & 1 & 1 & 1 & 0 \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \subsubsection*{Bitwise Operations}
+
+    Bitwise operators perform operations on binary representations of numbers:
+
+    \begin{itemize}
+        \item \textbf{\& (AND)}: Sets each bit to 1 if both bits are 1.
+        \item \textbf{\string| (OR)}: Sets each bit to 1 if one of the bits is 1.
+        \item \textbf{\string^ (XOR)}: Sets each bit to 1 if only one of the two bits is 1.
+        \item \textbf{\string~ (NOT)}: Inverts all the bits.
+        \item \textbf{! (Logical NOT)}: Inverts the truth value (used with Boolean values, not bitwise).
+        \item \textbf{>> (Right Shift)}: Shifts the bits of a number to the right by a specified number of positions.
+        \item \textbf{<< (Left Shift)}: Shifts the bits of a number to the left by a specified number of positions.
+    \end{itemize}
+
+    \subsubsection*{Decimal To Binary}
+
+    To convert a decimal number to binary, divide the number by 2 and record the remainder. Repeat this process with the quotient until the quotient is 0. The binary representation is the sequence of 
+    remainders read in reverse (from the last remainder obtained to the first).
+
+    \subsubsection*{Decimal To Hexadecimal}
+
+    To convert a decimal number to hexadecimal:
+
+    \begin{enumerate}
+        \item Divide the decimal number by 16.
+        \item Record the remainder.
+        \item Continue dividing the quotient by 16 until you get a quotient of zero.
+        \item The hexadecimal number is the sequence of remainders read in reverse (from the last remainder to the first).
+        \item Each remainder corresponds to a hexadecimal digit: 0-9 for remainders 0-9 and A-F for remainders 10-15.
+    \end{enumerate}
+
+    \subsubsection*{Binary To Decimal}
+
+    To convert binary to decimal, each bit in the binary number is multiplied by the base (2) raised to the power of its position. Starting from the rightmost bit (least significant bit), the position 
+    starts at 0 and increases by 1 as you move left. Summing these products gives the decimal equivalent.
+
+    \begin{highlight}[Binary To Decimal Formula]
+        Mathematically, if $b_{n}b_{n-1} \dots b_{2}b_{1}b_{0}$ is a binary number, its decimal equivalent $D$ is:
+
+        \begin{center}
+            \begin{highlightbox}
+                D = \sum_{i = 0}^{n} b_{i} \cdot 2^{i}
+            \end{highlightbox}
+        \end{center}
+
+        Here, $b_{i}$ represents each binary digit (0 or 1), and $n$ is the position of the digit from the right.
+    \end{highlight}
+
+    \subsubsection*{Binary To Hexadecimal}
+
+    To convert binary to hexadecimal:
+
+    \begin{enumerate}
+        \item Group the binary number into sets of four digits (bits), starting from the right. If the leftmost group has less than four bits, add zeros to make a group of four.
+        \item Convert each 4-bit group to its hexadecimal equivalent, using the fact that each group represents a number from 0 to 15.
+        \item The hexadecimal number is the sequence of these hexadecimal digits read from left to right.
+    \end{enumerate}
+
+    \subsubsection*{Hexadecimal To Decimal}
+
+    To convert hexadecimal to decimal:
+
+    \begin{enumerate}
+        \item Assign each digit of the hexadecimal number a positional value, starting from 0 on the right.
+        \item Convert each hexadecimal digit to its decimal equivalent (0-9 stay the same, and A-F correspond to 10-15).
+        \item Multiply each digit by 16 raised to the power of its positional value.
+        \item Sum these values.
+    \end{enumerate}
+
+    \begin{highlight}[Hexadecimal To Decimal Formula]
+        Mathematically, if $h_{n}h_{n-1} \dots h_{2}h_{1}h_{0}$ is a hexadecimal number, its decimal equivalent $D$ is
+
+        \begin{center}
+            \begin{highlightbox}
+                D = \sum_{i = 0} h_{i} \cdot 16^{i}
+            \end{highlightbox}
+        \end{center}
+
+        Here, $h_{i}$ represents each hexadecimal digit, and $n$ is the position of the digit from the right.
+    \end{highlight}
+
+    \subsubsection*{Hexadecimal To Binary}
+
+    To convert hexadecimal to binary:
+
+    \begin{enumerate}
+        \item Convert each hexadecimal digit to its 4-bit binary equivalent.
+        \item Each digit in hexadecimal corresponds to four binary digits, as hexadecimal is base-16 and binary is base-2.
+        \item Concatenate these binary groups to get the final binary number.
+    \end{enumerate}
+
+    \subsubsection*{Binary, Decimal, Hexadecimal Conversions}
+
+    \begin{center}
+        \begin{tabular}[h]{|c|c|c|}
+            \hline \text{Decimal} & \text{Hexadecimal} & \text{Binary} \\ \hline
+            \texttt{0} & \texttt{0} & \texttt{0000} \\ \hline
+            \texttt{1} & \texttt{1} & \texttt{0001} \\ \hline
+            \texttt{2} & \texttt{2} & \texttt{0010} \\ \hline
+            \texttt{3} & \texttt{3} & \texttt{0011} \\ \hline
+            \texttt{4} & \texttt{4} & \texttt{0100} \\ \hline
+            \texttt{5} & \texttt{5} & \texttt{0101} \\ \hline
+            \texttt{6} & \texttt{6} & \texttt{0110} \\ \hline
+            \texttt{7} & \texttt{7} & \texttt{0111} \\ \hline
+            \texttt{8} & \texttt{8} & \texttt{1000} \\ \hline
+            \texttt{9} & \texttt{9} & \texttt{1001} \\ \hline
+            \texttt{10} & \texttt{A} & \texttt{1010} \\ \hline
+            \texttt{11} & \texttt{B} & \texttt{1011} \\ \hline
+            \texttt{12} & \texttt{C} & \texttt{1100} \\ \hline
+            \texttt{13} & \texttt{D} & \texttt{1101} \\ \hline
+            \texttt{14} & \texttt{E} & \texttt{1110} \\ \hline
+            \texttt{15} & \texttt{F} & \texttt{1111} \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \subsubsection*{Left Shift}
+
+    In this operation, the binary digits of a number are moved a certain number of places to the left. For every shift left, a zero is added to the rightmost end, and the leftmost bit is discarded. 
+    This operation effectively multiplies the original number by 2 for each shift position (since binary is base 2). For instance, shifting \texttt{1011} left by one position results in \texttt{0110}, 
+    which doubles the original number. The 3-bit left shift multiplies the number by $2^{3}$ or 8.
+
+    \subsubsection*{Logical Right Shift}
+
+    This operation shifts all the bits to the right by the specified number of positions. For non-negative numbers, logical and arithmetic right shifts yield the same result. It fills in the leftmost 
+    bits with zeros. This operation effectively divides a number by 2 raised to the number of shifts.
+
+    \subsubsection*{Arithmetic Right Shift}
+
+    Used with signed numbers, it shifts values to the right but fills in the new leftmost bit with the sign bit (the original leftmost bit) instead of zeros. This preserves the sign of the number in 
+    two's complement form, which is used to represent negative numbers. This operation effectively divides a number by 2 raised to the number of shifts.
+
+    \subsubsection*{C Word Type Declarations}
+
+    In C, different data types have different sizes when declared. The following is a table of typical data types and the number of bytes that the specific data type takes up in memory.
+
+    \begin{center}
+        \begin{tabular}[h]{|c|c|c|}
+            \hline \text{Data Type} & \text{32 Bit Architecture} & \text{64 Bit Architecture} \\ \hline
+            \texttt{char} & 1 & 1 \\ \hline
+            \texttt{short int} & 2 & 2 \\ \hline
+            \texttt{int} & 4 & 4 \\ \hline
+            \texttt{long int} & 4 & 8 \\ \hline
+            \texttt{long long int} & 8 & 8 \\ \hline
+            \texttt{char\string*} & 4 & 8 \\ \hline
+            \texttt{float} & 4 & 4 \\ \hline
+            \texttt{double} & 8 & 8 \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \subsubsection*{Unsigned Integer Representation}
+
+    In unsigned integers (integers that can only be positive) the number conversion from binary to decimal is in the traditional sense.
+
+    \begin{highlight}[Unsigned Integer Examples]
+        Below are some examples of unsigned integers:
+        \begin{align*}
+            \texttt{0b00001101} & = 13 \\
+            \texttt{0b01110010} & = 114 \\
+            \texttt{0b00101011} & = 43 \\
+            \texttt{0b10101110} & = 174
+        \end{align*}
+    \end{highlight}
+
+    \subsubsection*{Signed Integer Representation}
+
+    In signed integers (integers that can be negative) the most significant bit (MSB) is referred to as the `sign' bit. 0 for positive and 1 for negative. The process of converting a binary number to
+    a decimal is the same, but the MSB is calculated in the number as $-1 \cdot 2^{n}$ where $n$ is the MSB. The rest of the digits are calculated in the same manner as an unsigned (positive) value.
+
+    \begin{highlight}[Signed Integer Examples]
+        Below are some examples of signed integers:
+        \begin{align*}
+            \texttt{0b10101001} & = -87 \\
+            \texttt{0b10101110} & = -82 \\
+            \texttt{0b10110011} & = -77 \\
+            \texttt{0b11011101} & = -35 \\
+            \texttt{0b11111100} & = -4 \\
+            \texttt{0b00001101} & = 13 \\
+            \texttt{0b00101011} & = 43 \\
+            \texttt{0b01110010} & = 114
+        \end{align*}
+    \end{highlight}
+
+    \subsubsection*{Binary Addition}
+
+    The formula for binary addition is:
+
+    \begin{enumerate}
+        \item Start from the least significant bit (rightmost side).
+        \item Add the bits in each column.
+        \item If the sum in a column is 2 (10 in binary), write 0 and carry over 1 to the next left column.
+        \item If the sum is 3 (11 in binary), write 1 and carry over 1.
+        \item Proceed to the next column to the left, adding the carried over value.
+    \end{enumerate}
+
+    \subsubsection*{Binary Subtraction}
+
+    Binary subtraction is similar to decimal subtraction except it follows the rules of base 2. Here's a formulaic approach:
+
+    \begin{enumerate}
+        \item Start from the least significant bit (rightmost side).
+        \item Subtract the second number's bit from the first number's bit in each column.
+        \begin{itemize}
+            \item $0 - 0 = 0$
+            \item $0 - 1 = 1$ \text{(With a borrow of 1)}
+            \item $1 - 0 = 1$
+            \item $1 - 1 = 0$
+        \end{itemize}
+        \item If the bit from the first number is less than the bit from the second number, borrow 1 from the next column to the left (which is equivalent to adding 2 in binary).
+        \item Continue the process for each column until the subtraction is complete.
+    \end{enumerate}
+
+    \subsubsection*{Unsigned Integer Overflow}
+
+    Because there are minimum and maximums for numbers represented in binary for a given number of bits, overflow can occur. The range of values for a binary number $b$ will range from
+
+    \begin{equation*}
+        0 \rightarrow 2^{n} - 1
+    \end{equation*}
+    where $n$ is the number of digits in the binary representation. For example, an 8 bit unsigned integer can range from 0 to 255.
+
+    \subsubsection*{Signed Integer Overflow}
+
+    Overflow applies the same for signed integers as it does for unsigned integers, but just slightly different. Because signed integers can represent negative values, the range of values for a binary
+    number $b$ will range from
+
+    \begin{equation*}
+        -1 \cdot 2^{n - 1} \rightarrow 2^{n} - 1
+    \end{equation*}
+    where $n$ again is the number of digits in the binary representation. For example, an 8 bit signed integer can range from -128 to 127.
+
+    \subsubsection*{Floating Point Representation}
+
+    For a floating point value, there are two main parts:
+
+    \begin{itemize}
+        \item \textbf{Integer Values}: These bits are in front of the decimal point - \texttt{\textbf{XX}.YYY \dots}
+        \item \textbf{Fractional Values}: These bits are after the decimal point = \texttt{\dots XX.\textbf{YYY} \dots}
+    \end{itemize}
+
+    \begin{highlight}[Fractional Binary To Decimal]
+        To convert from a binary fractional number we add up the integer values like regular binary to decimal conversions. For the fractional bits, we add up the fractional bits with negative exponents
+        indexing from $-1$ to $n$. For $n$ fractional bits $b_{f}$, the fractional representation $F$ is calculated with
+
+        \begin{center}
+            \begin{highlightbox}
+                F = \sum_{f = 1}^{n} b_{f} \cdot 2^{-f}.
+            \end{highlightbox}
+        \end{center}
+    \end{highlight}
+
+    Take for example the following example.
+
+    \begin{highlight}[Fractional Binary Example]
+        Take for example the fractional binary number \texttt{11.0001} is going to be
+        \begin{align*}
+            \text{Integer Values} & = 1 \cdot 2^{1} + 1 \cdot 2^{0} = 2 + 1 = 3 \\
+            \text{Fractional Values} & = 0 \cdot 2^{-1} + 0 \cdot 2^{-2} + 0 \cdot 2^{-3} + 1 \cdot 2^{-4} = \frac{1}{16} = 0.0625.
+        \end{align*}
+
+        The final decimal value $D$ is then 
+
+        \begin{center}
+            \begin{highlightbox}
+                D = 3.0625_{10}.
+            \end{highlightbox}
+        \end{center}
+    \end{highlight}
+
+    \subsubsection*{IEEE Floating Point Representation}
+
+    The IEEE Standard for Floating-Point Arithmetic (IEEE 754) is a technical standard for floating-point computation established by the Institute of Electrical and Electronics Engineers (IEEE). The 
+    standard defines formats for representing floating-point numbers (including negative zero and special "Not a Number" (NaN) values) and establishes guidelines for floating-point arithmetic in 
+    computer systems.
+
+    The key components of IEEE floating point representation are:
+
+    \begin{itemize}
+        \item \textbf{Sign Bit}: A single bit is used to denote the sign of the number. A 0 represents a positive number, and a 1 represents a negative number.
+        \item \textbf{Exponent}: A set of bits that follow the sign bit, used to represent the exponent for the number. The exponent is stored in a biased form, meaning that a fixed value (the bias) 
+        is subtracted from the actual exponent to get the stored exponent. The bias is $2^{k - 1} - 1$, where $k$ is the number of bits in the exponent field. The exponent in IEEE 754 is used to 
+        represent both very large and very small numbers.
+        \item \textbf{Mantissa (Significand)}: This is the fraction part of the floating-point number, representing the significant digits of the number. The binary point is assumed to be just to the 
+        right of an implicit leading bit (which is typically a 1, except for denormal numbers). The mantissa is normalized, meaning that it is scaled to be just less than 1 (for normalized numbers), 
+        which is represented by the implicit leading bit.
+        \item \textbf{Special Values}: IEEE floating-point format can represent special values such as infinity (both positive and negative) and NaN (Not a Number), which are used to denote results 
+        of certain operations that do not yield a numerical value.
+    \end{itemize}
+
+    \subsubsection*{Denormalized And Normalized Values}
+
+    Normalized and denormalized values play a crucial role in the IEEE floating-point representation. In the context of IEEE 754 standard, normalized values are represented with an implicit leading 
+    bit equal to 1, allowing for a higher precision and a wider range of representable numbers. On the other hand, denormalized values, also known as subnormal numbers, lack the implicit leading bit 
+    and are used to represent numbers close to zero, which fall below the normal range of the floating-point format. These denormalized numbers enable a graceful underflow, ensuring that very small 
+    numbers can still be represented with reduced precision.
+
+    Denormalized numbers can be summed up with the following:
+
+    \begin{itemize}
+        \item Denormalized numbers are used to represent values that are too small to be normalized (those that are closer to zero than what can be represented by a normalized value). These numbers 
+        do not have an implicit leading 1.
+        \item In denormalized form, the exponent is all zeros, and the mantissa is allowed to begin with a series of zeros. This allows for representation of numbers closer to zero than is possible 
+        with normalized form, albeit with less precision.
+        \item For example, a binary number \texttt{0.00101} (in denormalized form) cannot assume an implicit leading 1 and must store all bits explicitly.
+    \end{itemize}
+
+    Normalized numbers can be summed up with the following:
+
+    \begin{itemize}
+        \item In normalized representation, the floating-point number is scaled such that the leading digit of the mantissa is always a 1 (except for 0). Because this leading digit is always 1, it 
+        doesn't need to be stored, which effectively gives one more bit of precision. This is known as an "implicit leading bit."
+        \item For a binary floating-point system, this means the mantissa (or significand) is always in the range of [1,2) (including 1 but excluding 2).
+        \item For example, a binary number \texttt{1.101} (in normalized form) is represented with an implicit 1, so only \texttt{.101} needs to be stored.
+        \item The exponent is adjusted accordingly to represent the correct scale of the number and is not all zeros or all ones.
+    \end{itemize}
+
+    \begin{highlight}[IEEE To Decimal]
+        When converting from IEEE floating point binary to decimal, there are specific values that we need to calculate to in order to convert the number to decimal representation. Here is the recipe 
+        for doing so:
+
+        \begin{itemize}
+            \item \textbf{Bias}: $b = 2^{k - 1} - 1$ where $k$ is the number of bits in the exponent.
+            \item \textbf{Exponent}: $e = \text{value of exponent in decimal}$.
+            \item \textbf{Exponent With Bias}: $\mathbf{E = e - b} \text{ (Normalized) i.e. } e \neq 0$, $\mathbf{E = 1 - b} \text{ (Denormalized) i.e. } e = 0$.
+            \item \textbf{Mantissa}: $\mathbf{M = 1 + f} \text{ (Normalized) i.e. } e \neq 0$, $\mathbf{M = f} \text{ (Denormalized) i.e. } e = 0$.
+            \item \textbf{Sign}: $s$: 1 if sign bit is 0, -1 if sign bit is 1.
+        \end{itemize}
+        Compiling this to calculate the decimal representation $D$ we have
+
+        \begin{center}
+            \begin{highlightbox}
+                D = s \cdot 2^{E} \cdot M.
+            \end{highlightbox}
+        \end{center}
+    \end{highlight}
+
+    \begin{highlight}[IEEE To Decimal Example]
+        Consider the IEEE floating point binary number $\texttt{0b101001100000}$ that has 1 sign bit, 5 exponent bits, and 6 fractional bits.
+        \begin{align*}
+            \text{\textbf{Sign}: } s: & \hspace*{5pt} \text{Sign bit is a 1} \hspace*{5pt} \therefore \hspace*{5pt} s = -1 \\
+            \text{\textbf{Bias}: } b: & \hspace*{5pt} b_{n} = 5 \hspace*{5pt} \therefore \hspace*{5pt} b = 2^{5 - 1} - 1 = 2^{4} - 1 = 16 - 1 = 15 \\
+            \text{\textbf{Exponent}: } e: & \hspace*{5pt} e = 0 \cdot 2^{4} + 1 \cdot 2^{3} + 0 \cdot 2^{2} + 0 \cdot 2^{1} + 1 \cdot 2^{0} = 9 \\
+            \text{\textbf{Biased Exponent}: } E: & \hspace*{5pt} e \neq 0 \hspace*{5pt} \therefore \hspace*{5pt} \text{Norm. } \therefore \hspace*{5pt} E = e - b = 9 - 15 = -6 \\
+            \text{\textbf{Fraction}: } f: & \hspace*{5pt} e \neq 0 \hspace*{5pt} \therefore \hspace*{5pt} \text{Norm. } \therefore \hspace*{5pt} f = 1 \cdot 2^{-1} + 0 \cdot 2^{-2} + \dots + 0 \cdot 2^{-6} = 1/2 \\
+            \text{\textbf{Mantissa}: } M: & \hspace*{5pt} e \neq 0 \hspace*{5pt} \therefore \hspace*{5pt} \text{Norm. } \therefore \hspace*{5pt} M = 1 + 1 / 2 = 3 / 2 = \texttt{0b1.1} \\
+            \text{\textbf{Decimal Value}: } D & = s \cdot 2^{E} \cdot M = -1 \cdot 2^{-6} \cdot 3 / 2 = -1 \cdot \frac{1}{64} \cdot \frac{3}{2} = -\frac{3}{128} = -0.0234375.
+        \end{align*}
+        Therefore the decimal value is then
+
+        \begin{center}
+            \begin{highlightbox}
+                \texttt{101001100000}_{2} = -\frac{3}{128} = -0.0234375_{10}.
+            \end{highlightbox}
+        \end{center}
+    \end{highlight}
+
+    \begin{highlight}[Decimal To IEEE]
+        We can convert decimal values to IEEE as well. Below is a recipe for doing so.
+
+        \begin{itemize}
+            \item Determine the sign bit $(s)$ based on the sign of the decimal value. If the value is positive, the sign bit is 0; if the value is negative, the sign bit is 1.
+            \item Convert the absolute value of the decimal number into binary form.
+            \item Calculate the bias $(b)$ for the number of exponents.
+            \item Calculate the maximum number of shifts $(\mathbf{\alpha})$ when writing the binary number in scientific notation.
+            \begin{itemize}
+                \item $\alpha = 1 - b$
+            \end{itemize}
+            \item Normalize the absolute value of the binary number in the form $1.xxx \cdot 2^{y}$
+            \item If $y > \alpha$
+            \begin{itemize}
+                \item $E = y$, value is normalized.
+            \end{itemize}
+            \item If $y < \alpha$
+            \begin{itemize}
+                \item Normalize the absolute value of the binary number in the form $0.xxx \cdot 2^{\alpha}$. $E = \alpha$, value is denormalized.
+            \end{itemize}
+            \item Calculate the exponent of the binary number and represent it in binary.
+            \begin{itemize}
+                \item If the value is \textbf{normalized}:
+                \begin{itemize}
+                    \item $e = E + b$
+                \end{itemize}
+                \item If the value is \textbf{denormalized}:
+                \begin{itemize}
+                    \item $e = 0$
+                \end{itemize}
+            \end{itemize}
+            \item Grab the mantissa (the digits after the decimal place in normalized binary number), these are the fraction bits $(f)$.
+            \item Stitch the results together: \texttt{s} + \texttt{e} + \texttt{f}
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Decimal To IEEE Example]
+        Consider the decimal number $d = -0.046875$, approximate this value to floating point IEEE with 4 exponent bits and 5 fractional bits.
+        \begin{align*}
+            \text{\textbf{Sign}: } & \text{This number is negative therefore } s = 1 \\
+            \text{\textbf{Bias}: } b & = 2^{k - 1} - 1 = 2^{4 - 1} - 1 = 7 \hspace*{5pt} \text{($k$ is the number of exponent bits)} \\
+            \text{\textbf{Alpha}: } \alpha & = 1 - b = 1 - 7 = -6 \hspace*{5pt} \text{(Max number of shifts is $-6$)} \\
+            \text{\textbf{Absolute Value}: } |d| & = 0.046875 = 3 / 64 \\
+            \text{\textbf{Abs. Value In Binary}: } b_{d} & = 1 / 32 + 1 / 64 = 1 \cdot 2^{-5} + 1 \cdot 2^{-6} = \texttt{0b0.000011} \\
+            \text{\textbf{Normalized Binary}: } \hat{b}_{d} & = 1.1 \cdot 10^{-5} \hspace*{5pt} \text{($-5 > \alpha \therefore E = -5$)} \\
+            \text{\textbf{Normalized Exponent}: } e & = E + b = -5 + 7 = 2 \hspace*{5pt} \text{($e > 0$ therefore Norm.)} \\
+            \text{\textbf{Normalized Exponent In Binary}: } e & = \texttt{0010} \\
+            \text{\textbf{Mantissa}: } M & = \texttt{1000}, \text{ Values to right of normalized binary value}
+        \end{align*}
+        The finally binary representation is then
+
+        \begin{center}
+            \begin{highlightbox}
+                -0.046857_{10} = \texttt{0b1001010000}_{2}.
+            \end{highlightbox}
+        \end{center}
+    \end{highlight}
+
+    \subsubsection*{Rounding}
+
+    Rounding a value to IEEE is performed the same as rounding with decimals. Round the decimal value to the corresponding decimal value, and then convert to binary representation.
+\end{examnotes}
+
+\begin{examnotes}{Exam 2 Notes}
+    \subsubsection*{Registers}
+
+    Registers are small, fast storage locations directly inside the CPU that are used to hold data temporarily during the execution of programs. In the x86 architecture, which has evolved over the 
+    years from 16-bit to 32-bit (x86) and then 64-bit (x86-64 or AMD64) versions, registers have specific roles and sizes that influence their usage in various operations.
+
+    \begin{itemize}
+        \item \textbf{General-Purpose Registers (GPRs)}: Initially, x86 CPUs had 8-bit and 16-bit GPRs, but this expanded to 32-bit in the 386 and later processors, and 64-bit in x86-64 processors. 
+        These registers include:
+        \begin{itemize}
+            \item \texttt{AX, BX, CX, DX} (\textbf{Accumulator, Base, Count, Data}): Used for arithmetic, data storage, loop counters, and more. In 32-bit mode, they are extended to \texttt{EAX, EBX, ECX,} 
+            and \texttt{EDX,} and further to \texttt{RAX, RBX, RCX,} and \texttt{RDX} in 64-bit mode.
+            \item \texttt{SI, DI, BP, SP} (\textbf{Source Index, Destination Index, Base Pointer, Stack Pointer}): Used for string operations, stack management, and memory addressing. Extended to 
+            \texttt{ESI, EDI, EBP, ESP} in 32-bit, and \texttt{RSI, RDI, RBP, RSP} in 64-bit.
+            \item \textbf{8 new general-purpose registers} (\texttt{R8} to \texttt{R15}) are available in x86-64, providing additional flexibility.
+        \end{itemize}
+        \item \textbf{Segment Registers}: Used in real mode and protected mode for memory segmentation, helping with memory management by dividing memory into smaller segments.
+        \begin{itemize}
+            \item \texttt{CS, DS, ES, FS, GS, SS} (\textbf{Code, Data, Extra, more segment registers}): They are primarily used to hold the segments' base addresses used by the CPU to access memory.
+        \end{itemize}
+        \item \textbf{Instruction Pointer (IP)}: The IP (or \texttt{EIP} in 32-bit, \texttt{RIP} in 64-bit) register points to the next instruction to be executed. It's automatically updated by the CPU.
+        \item \textbf{Flag Registers}: The \texttt{FLAGS} register (\texttt{EFLAGS} in 32-bit, \texttt{RFLAGS} in 64-bit) contains flags that indicate the status of the processor and the outcome of 
+        various operations, such as the Zero flag, Carry flag, etc.
+        \item \textbf{Control Registers}: Used in protected mode to control operations such as memory management, task switching, and more. \texttt{CR0, CR2, CR3,} and \texttt{CR4} are examples.
+        \item \textbf{MMX, XMM, and YMM Registers}: Used for SIMD (Single Instruction, Multiple Data) operations to perform parallel processing on multiple data points. These are beyond the basic x86 
+        registers and are used for advanced multimedia and arithmetic operations.
+    \end{itemize}
+
+    \subsubsection*{Assembly Instructions}
+
+    In the context of assembly language, there are common operations that can be used for registers and memory addresses. Below are some common operations found in assembly.
+
+    \begin{center}
+        \begin{tabular}{|l|l|l|}
+            \hline \textbf{Instruction} & \textbf{Description} & \textbf{Syntax} \\ \hline
+            \texttt{ADD} & Performs addition operation & \texttt{ADD destination, source} \\ \hline
+            \texttt{CALL} & Calls a procedure & \texttt{CALL procedure\_label} \\ \hline
+            \texttt{CMP} & Compares two values & \texttt{CMP operand1, operand2} \\ \hline
+            \texttt{DEC} & Decrements the value of a register/memory & \texttt{DEC destination} \\ \hline
+            \texttt{INC} & Increments the value of a register/memory & \texttt{INC destination} \\ \hline
+            \texttt{JE} & Jump if equal (zero flag set) & \texttt{JE label} \\ \hline
+            \texttt{JNE} & Jump if not equal (zero flag clear) & \texttt{JNE label} \\ \hline
+            \texttt{JMP} & Unconditional jump to a label & \texttt{JMP label} \\ \hline
+            \texttt{LEA} & Computes address of memory operand and stores in register & \texttt{LEA register, memory\_reference} \\ \hline
+            \texttt{MOV} & Transfers data from one location to another & \texttt{MOV destination, source} \\ \hline
+            \texttt{POP} & Pops a value from the stack & \texttt{POP destination} \\ \hline
+            \texttt{PUSH} & Pushes a value onto the stack & \texttt{PUSH source} \\ \hline
+            \texttt{RET} & Returns from a procedure & \texttt{RET} \\ \hline
+            \texttt{SUB} & Performs subtraction operation & \texttt{SUB destination, source} \\ \hline
+            \texttt{TEST} & Tests bits by performing a bitwise AND & \texttt{TEST operand1, operand2} \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \subsubsection*{Signed Data}
+
+    When dealing with signed data, the CPU uses the sign flag (\texttt{SF}), overflow flag (\texttt{OF}), and zero flag (\texttt{ZF}) to determine the outcome of a comparison. Here are some of the 
+    conditional jump instructions tailored for signed comparisons:
+
+    \begin{itemize}
+        \item \texttt{JG} (\textbf{Jump if Greater}): Jumps if the result of a subtraction is positive, and no overflow occurs (\texttt{SF=OF} and \texttt{ZF=0}).
+        \item \texttt{JL} (\textbf{Jump if Less}): Jumps if the result is negative considering signed operands (\texttt{SF} $\neq$ \texttt{OF}).
+        \item \texttt{JE} (\textbf{Jump if Equal}): Jumps if the operands are equal (\texttt{ZF=1}), applicable to both signed and unsigned comparisons.
+        \item \texttt{JGE} (\textbf{Jump if Greater or Equal}): Jumps if a signed number is greater than or equal to another (\texttt{SF=OF}).
+        \item \texttt{JLE} (\textbf{Jump if Less or Equal}): Jumps if a signed number is less than or equal or if the result is zero (\texttt{ZF=1} or \texttt{SF} $\neq$ \texttt{OF}).
+    \end{itemize}
+
+    \subsubsection*{Unsigned Data}
+
+    For unsigned data comparisons, the CPU relies on the carry flag (\texttt{CF}) and zero flag (\texttt{ZF}) to make jump decisions:
+
+    \begin{itemize}
+        \item \texttt{JA} (\textbf{Jump if Above}): Jumps if the first operand is greater than the second operand in an unsigned comparison (\texttt{CF=0} and \texttt{ZF=0}).
+        \item \texttt{JB} (\textbf{Jump if Below}): Jumps if the first unsigned operand is less than the second (\texttt{CF=1}).
+        \item \texttt{JAE} (\textbf{Jump if Above or Equal}): Jumps if the first operand is greater than or equal to the second operand in an unsigned comparison (\texttt{CF=0}).
+        \item \texttt{JBE} (\textbf{Jump if Below or Equal}): Jumps if the first operand is less than or equal to the second operand in an unsigned comparison (\texttt{CF=1} or \texttt{ZF=1}).
+    \end{itemize}
+
+    \begin{highlight}[Assembly Instruction Example]
+        Below is an example of some assembly instructions and their outcomes. Assume the register \texttt{\%rax} holds the value 10, and \texttt{\%rcx} holds the value 4.
+        \begin{align*}
+            \texttt{leal (\%rax, \%rax, 2), \%rdx : } & \texttt{\%rdx = \%rax + 2(\%rax) = 3(\%rax) = 3(10) = 30} \\
+            \texttt{leal 4 (\%rcx, \%rax), \%rdx : } & \texttt{\%rdx = 4 + \%rcx + \%rax = 4 + 4 + 10 = 18} \\
+            \texttt{leal (, \%rcx, 4), \%rdx : } & \texttt{\%rdx = 0 + 4(\%rcx) = 4(4) = 16} \\
+            \texttt{leal 4 (\%rax, \%rcx, 8), \%rdx : } & \texttt{\%rdx = 4 + \%rax + 8(\%rcx) = 4 + 10 + 8(4) = 14 + 32 = 46}
+        \end{align*}
+        Please note, the parenthesis in the RHS of the computations above are being used as multiplication symbols.
+    \end{highlight}
+
+    \subsubsection*{Memory Addressing}
+
+    Memory addressing is the scheme used by a CPU to locate and access data in the computer's memory. Each byte in memory has a unique address, much like houses on a street. Instructions in assembly 
+    language use these addresses to specify where data should be read from or written to.
+
+    \subsubsection*{Operands}
+
+    In the context of assembly language, an operand can be considered as an argument to an instruction that specifies what data is to be operated on. Operands can be immediate values (directly provided 
+    in the instruction), register values (which hold a small amount of data within the CPU for quick access), or memory addresses (which point to locations in RAM).
+
+    \subsubsection*{Register Values And Arithmetic Computations}
+
+    Registers are used for a variety of purposes in assembly language, including but not limited to holding operands for arithmetic computations. Here's how register values are typically involved in 
+    arithmetic computations with memory addresses:
+
+    \begin{itemize}
+        \item \textbf{Register as Direct Operand}: A register can hold one of the operands for an arithmetic operation. For example, \texttt{ADD EAX, EBX} adds the contents of \texttt{EBX} to \texttt{EAX} 
+        and stores the result in \texttt{EAX}.
+        \item \textbf{Memory Addressing Modes}: When combined with arithmetic operations, several addressing modes can be used to refer to memory addresses:
+        \begin{itemize}
+            \item \textbf{Immediate Addressing}: Using a literal number. For instance, \texttt{ADD EAX, 5} adds 5 to the contents of \texttt{EAX}.
+            \item \textbf{Direct Addressing}: Using a direct memory address. For example, \texttt{ADD EAX, (0x0040)} adds the value at memory address \texttt{0x0040} to \texttt{EAX}.
+            \item \textbf{Indirect Addressing}: Using a register to hold the memory address. For example, \texttt{ADD EAX, (EBX)} adds to \texttt{EAX} the value at the memory address contained in 
+            \texttt{EBX}.
+            \item \textbf{Based Addressing with Displacement}: Using a register plus an offset. For example, \texttt{ADD EAX, (EBX + 8)} adds to \texttt{EAX} the value at the memory address \texttt{EBX} 
+            plus 8 bytes.
+        \end{itemize}
+        \item \textbf{Computation Results}: After an arithmetic operation is performed, the result can be stored back in a register or in a memory location, depending on the instruction used.
+    \end{itemize}
+
+    CPUs use memory addressing to:
+
+    \begin{itemize}
+        \item Retrieve instructions to be executed.
+        \item Access data operands for instruction execution.
+        \item Store the results of computations.
+    \end{itemize}
+
+    \begin{highlight}[Memory Addressing Example]
+        Below are some simple examples of memory addressing and arithmetic operations with registers and memory addressing:
+        \begin{align*}
+            \texttt{addl 16 (\%ebp), \%ecx : } & \texttt{Reg[ecx] = Reg[ecx] + Mem[Reg[ebp]] + 16} \\
+            \texttt{addq \$0x11, (\%rax) : } & \texttt{Mem[Reg[rax]] = 17 + Mem[Reg[rax]]} \\
+            \texttt{subl \$0x11, (\%eax) : } & \texttt{Mem[Reg[eax]] = Mem[Reg[eax]] - 17}
+        \end{align*}
+        When registers are enclosed by parenthesis, this means we are accessing that register in memory. And thus, the operations must deal with the value in memory and not just the value of the register.
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 3 Notes}
+    \subsection*{Amdahl's Law}
+
+    Amdahl's Law is a principle that helps in understanding the potential speedup in the overall performance of a system when only part of the system is improved. It's particularly relevant in the 
+    context of parallel computing and optimizing performance through hardware upgrades or software optimization.
+
+    The formula for Amdahl's law is
+
+    \begin{center}
+        \begin{highlightbox}
+            S = \frac{1}{(1 - \alpha) + \alpha / k}
+        \end{highlightbox}
+    \end{center}
+    where in the aforementioned formula the variables are
+
+    \begin{itemize}
+        \item $S$: The maximum possible speedup of the entire process.
+        \item $\alpha$: The proportion of the process that benefits from the improved system performance.
+        \item $k$: The ratio of how much a process can be sped up.
+    \end{itemize}
+
+    \subsection*{Sector Access}
+
+    Accessing a sector in a disk involves reading from or writing to a specific, small, fixed-size portion of the disk. Disks, whether they are hard disk drives (HDDs) or solid-state drives (SSDs), 
+    are organized into platters (for HDDs) or blocks (for SSDs), which are further divided into tracks and sectors. Let's focus primarily on HDDs for the classic understanding of disk sectors, 
+    though the general concept applies to SSDs with some differences due to their lack of moving parts.
+
+    \subsubsection*{Sector Definition}
+
+    A sector is the smallest storage unit on a disk that can be read from or written to. Historically, sectors on hard drives have been 512 bytes in size, but newer hard drives use a larger sector 
+    size of 4096 bytes (or 4K), known as Advanced Format (AF). Each sector has its own unique address, which the disk controller uses to read or write data.
+
+    \subsubsection*{Accessing A Sector}
+
+    To access a sector, the disk's read/write head must be positioned over the correct track (for HDDs, this is a circular path on the surface of a platter) and then wait for the disk to rotate until 
+    the desired sector is under the head. This process involves two main components:
+
+    \begin{enumerate}
+        \item \textbf{Seek Time}: The time it takes for the read/write head to move to the correct track. Seek time can vary significantly, depending on how far the head needs to move.
+        \item \textbf{Rotational Latency}: Once the head is over the correct track, it must wait for the disk to rotate the correct sector under the head. The average rotational latency depends on 
+        the rotation speed of the disk, measured in revolutions per minute (RPM).
+    \end{enumerate}
+    The formula for calculating the time it takes to access a sector is made up of three parts: average seek time, average rotation, and average transfer time. Formally as an expression this is
+
+    \begin{center}
+        \begin{highlightbox}
+            T_{\alpha} = T_{\sigma} + T_{\rho} + T_{\tau} = T_{\sigma} + \frac{1}{2} \cdot \left(\frac{60}{\text{Rot. Rate}}\right) \cdot 1000 + \frac{60}{\text{Rot. Rate}} \cdot \left(\frac{1}{\text{Sectors / Track}}\right) \cdot 1000
+        \end{highlightbox}
+    \end{center}
+    where $\sigma$ is the average seek time, $\rho$ is the average rotation, and $\tau$ is the average sectors per track.
+
+    \subsection*{Pipeline Speed Up}
+
+    Pipeline speed up is a concept in computer architecture that refers to the increase in processing speed that can be achieved by using an instruction pipeline. The basics of pipelining are
+
+    \begin{itemize}
+        \item \textbf{Instruction Pipeline}: It's like an assembly line in a factory. Each stage of the pipeline completes part of the instruction. While one stage is processing one part of an instruction, 
+        another stage can process a different part of another instruction.
+        \item \textbf{Stages}: Common stages in a simple instruction pipeline include instruction fetch, instruction decode, execute, memory access, and write-back.
+    \end{itemize}
+
+    \subsection*{Combinatorial Logic}
+
+    Combinatorial logic functions are a foundational concept in digital circuit design. They are logic circuits whose outputs depend only on the current state of their inputs and not on any prior 
+    history (in contrast to sequential logic circuits, which have outputs that depend on a combination of current input states and historical input states).
+
+    \subsubsection*{Solving Combinatorial Logic Problems}
+
+    When solving a combinatorial logic problem (in the context of what was seen in the quizzes) the goal is to maximize the clock speed. When a register is added between stages, it allows the stages
+    to operate independently in a pipelined fashion. To maximize the clock speed, we want to minimize the delay of the longest pipeline in the process. The steps for determining the highest possible
+    clock speed is:
+
+    \begin{enumerate}
+        \item Add a register between the first two stages, calculate the delay for the first delay plus the delay of the newly added register, calculate the delay for the rest of the process, and keep
+        track of the largest delay in this scenario.
+        \item Add a register between the last two stages, calculate the delay for first two delays plus the delay of the newly added register, calculate the delay for the rest of the process, and keep
+        track of the largest delay in this scenario.
+        \item Determine the smallest delay between the two largest delays found in step 1 and 2, and calculate the clock speed with the smallest delay with the following formula
+        \begin{center}
+            \begin{highlightbox}
+                \text{C.S} = \frac{1}{\alpha \cdot 10^{-12}}
+            \end{highlightbox}
+        \end{center}
+        where $\alpha$ is the smallest of the two largest delays in ps (pico seconds $10^{-12} (s)$). The resulting calculation is in Hz (hertz ($1 / s$)).
+    \end{enumerate}
+
+    \subsection*{Memory Aliasing}
+
+    Memory aliasing refers to a situation in computer systems where two or more different memory addresses refer to the same physical memory location. This can occur in various contexts and can have 
+    both intentional and unintentional consequences. The common causes for memory aliasing are
+
+    \begin{itemize}
+        \item \textbf{Pointers In Programming}: In languages like C or C++, if two or more pointers point to the same memory address, changing the memory value through one pointer affects the value 
+        seen by all pointers aliasing that address.
+        \item \textbf{CPU Caches}: Multiple cache lines may map to the same memory location, especially in systems with virtually indexed, physically tagged caches.
+        \item \textbf{Memory-Mapped I/O}: Devices mapped to the same address space can cause aliasing, where different device registers are accessed using the same memory addresses.
+        \item \textbf{Virtual Memory Systems}: Different virtual addresses may map to the same physical address through the page table mechanism, either within the same process or across different 
+        processes.
+        \item \textbf{Compiler Optimizations}: When the compiler tries to optimize code, it assumes that different variables occupy different memory locations. Aliasing can break these assumptions 
+        and lead to incorrect optimizations.
+    \end{itemize}
+    Memory aliasing has several implications when it happens, here are some examples of these implications
+
+    \begin{itemize}
+        \item \textbf{Correctness}: It can lead to bugs that are difficult to track down because the same memory is being manipulated from multiple reference points.
+        \item \textbf{Performance}: Aliasing can hinder certain optimizations because the compiler must assume that operations affecting one alias could affect all aliases.
+        \item \textbf{Consistency}: In multi-threaded environments, memory aliasing complicates the coherence protocols that ensure memory consistency across different CPU cores and caches.
+    \end{itemize}
+
+    \subsection*{Program Optimizations}
+
+    We can optimize code in numerous ways, cutting down on executions, function calls, etc.
+
+    \begin{highlight}[Machine Independent Optimization]
+        Machine independent optimizations are code transformations that improve performance and are not specific to any particular machine architecture. These optimizations generally improve the 
+        efficiency of the code by reducing the number of instructions, improving algorithmic complexity, or enhancing data access patterns. They are typically performed by the compiler at a high 
+        level, without considering the specifics of the underlying hardware.
+
+    \begin{code}[C++]
+    // Without
+    int compute_area(int width, int height) {
+        int area1 = width * height;
+        int area2 = width * height; // Redundant computation
+        return area1 + area2;
+    }
+    // With
+    int compute_area(int width, int height) {
+        int area = width * height; // Compute once
+        return area + area; // Reuse the result
+    }    
+    \end{code}
+    \end{highlight}
+
+    \begin{highlight}[Loop Unrolling]
+        Loop unrolling is an optimization technique that aims to increase a program's execution speed by reducing or eliminating the overhead of loop control. By executing more than one iteration 
+        of the loop per cycle through the loop control code, it can also improve the opportunities for other optimizations, such as instruction pipelining in the processor.
+
+    \begin{code}[C++]
+    // Without
+    for (int i = 0; i < N; ++i) {
+        dest[i] = src[i] + 1;
+    }
+    // With
+    // Handle the main part of the loop in steps of 4 to reduce loop overhead.
+    for (int i = 0; i < N; i += 4) {
+        dest[i] = src[i] + 1;
+        dest[i+1] = src[i+1] + 1;
+        dest[i+2] = src[i+2] + 1;
+        dest[i+3] = src[i+3] + 1;
+    }
+    
+    // Handle the remainder of the elements that didn't fit into groups of 4
+    for (int i = N - N % 4; i < N; ++i) {
+        dest[i] = src[i] + 1;
+    }    
+    \end{code}
+    \end{highlight}
+
+    \begin{highlight}[Unrolling And Multiple Accumulators]
+        Loop unrolling with multiple accumulators is a further enhancement of the loop unrolling optimization. In this technique, not only is the loop unrolled to reduce the loop overhead, but 
+        multiple accumulator variables are also used to hold intermediate results. This can reduce dependencies between loop iterations and allow for more parallelism, especially on hardware that can 
+        perform multiple operations simultaneously.
+
+    \begin{code}[C++]
+    // Without
+    int sum = 0;
+    for (int i = 0; i < N; ++i) {
+        sum += array[i];
+    }
+    // With
+    int sum0 = 0, sum1 = 0, sum2 = 0, sum3 = 0;
+    for (int i = 0; i < N; i += 4) {
+        sum0 += array[i];
+        sum1 += array[i + 1];
+        sum2 += array[i + 2];
+        sum3 += array[i + 3];
+    }
+    int totalSum = sum0 + sum1 + sum2 + sum3;
+    
+    // Handle the remainder of the elements that didn't fit into groups of 4
+    for (int i = N - N % 4; i < N; ++i) {
+        totalSum += array[i];
+    }    
+    \end{code}
+    \end{highlight}
+
+    \begin{highlight}[Strength Reduction]
+        Strength reduction is an optimization technique where more expensive operations are replaced with equivalent but less costly operations. It’s particularly effective in loops where an expensive 
+        operation, like multiplication or division, can be replaced with addition or subtraction.
+    \begin{code}[C++]
+    // Without
+    for (int i = 0; i < N; ++i) {
+        array[i * 4] = i * 4; // Multiplication inside loop
+    }
+    // With
+    for (int i = 0, j = 0; i < N; ++i, j += 4) {
+        array[j] = j; // Replace multiplication with addition
+    }    
+    \end{code}
+    \end{highlight}
+
+    \begin{highlight}[Parallel Accumulators]
+        Parallel accumulators are an optimization technique used to minimize dependencies between successive iterations of a loop that would otherwise limit the degree of parallelism achievable. By 
+        using separate accumulator variables in a loop that performs a reduction (like summing values), a program can take advantage of parallel execution capabilities of modern processors.
+
+    \begin{code}[C++]
+    // Without
+    int sum = 0;
+    for (int i = 0; i < N; ++i) {
+        sum += array[i];
+    }
+    // With
+    int sum1 = 0, sum2 = 0;
+    for (int i = 0; i < N / 2; ++i) {
+        sum1 += array[2 * i];
+        sum2 += array[2 * i + 1];
+    }
+    int totalSum = sum1 + sum2;
+    
+    // Handle the case where N is odd
+    if (N % 2 != 0) {
+        totalSum += array[N - 1];
+    }    
+    \end{code}
+    \end{highlight}
+
+    \begin{highlight}[Common Subexpression Elimination]
+        Common subexpression elimination (CSE) is an optimization technique that identifies instances of identical expressions being evaluated multiple times, and eliminates the redundancy by computing 
+        the expression once and reusing the result. This reduces the computation time and can also decrease code size, improving cache performance.
+
+    \begin{code}[C++]
+    // Without
+    int width = 5;
+    int height = 10;
+    int area = width * height; // Computed here
+    int perimeter = 2 * (width + height);
+    int doubleArea = 2 * (width * height); // Computed again - a common subexpression
+    // With
+    int width = 5;
+    int height = 10;
+    int area = width * height; // Compute once
+    int perimeter = 2 * (width + height);
+    int doubleArea = 2 * area; // Reuse the computed area    
+    \end{code}
+    \end{highlight}
+
+    \begin{highlight}[Inlining]
+        Inlining is an optimization where the compiler replaces a function call with the actual code of the function. It eliminates the overhead associated with function calls such as parameter passing, 
+        return value computation, and stack frame management. This is especially beneficial for small, frequently called functions.
+
+    \begin{code}[C++]
+    // Without
+    int square(int num) {
+        return num * num;
+    }
+    
+    int main() {
+        int total = 0;
+        for (int i = 0; i < N; ++i) {
+            total += square(i);
+        }
+        return total;
+    }
+    // With
+    int main() {
+        int total = 0;
+        for (int i = 0; i < N; ++i) {
+            int temp = i * i; // Inlining 'square(i)'
+            total += temp;
+        }
+        return total;
+    }    
+    \end{code}
+    \end{highlight}
+
+    \subsection*{Spatial Locality}
+
+    Spatial locality is a principle that helps to optimize how computer systems access and store data, and it's particularly relevant in the context of memory hierarchies, including caches. The concept 
+    of spatial locality refers to the tendency of a processor to access data locations that are physically close to recently accessed locations. The formal definition of spatial locality is
+
+    \begin{itemize}
+        \item \textbf{Spatial Locality}: The principle that if a particular storage location is accessed, the locations with nearby addresses are likely to be accessed soon. This is due to the structure 
+        of most programs, where data is often organized sequentially in memory (like arrays or adjacent fields in a structure).
+    \end{itemize}
+
+    \subsection*{Cache}
+
+    A cache in computing is a smaller, faster storage layer that stores copies of data from a more substantial, slower storage layer. The primary goal of a cache is to increase data retrieval performance 
+    by reducing the time it takes to access data. Caches are ubiquitous in computer systems, found in web browsers, operating systems, and most importantly, within the CPU to speed up access to memory.
+
+    Caches consist of fundamental parameters that are used to determine quantities like the Cache Offset, Cache Index, and Cache Tag.
+
+    \begin{center}
+        \begin{highlightenv}
+            The following are fundamental parameters regarding caches:
+            \begin{align*}
+                S & = 2^{s} & \text{(Number of Sets)} \\
+                s & = \log_{2}{(S)} & \text{(Number of \textit{Set Index} Bits)} \\
+                E & & \text{(Number of Lines Per Set)} \\
+                B & = 2^{b} & \text{(Block Size (Bytes))} \\
+                b & = \log_{2}{(b)} & \text{(Number of \textit{Block Offset} Bits)} \\
+                M & = 2^{m} & \text{(Maximum Number of Unique Memory Addresses)} \\
+                m & = \log_{2}{(m)} & \text{(Number of Physical (Main Memory) Address Bits)} \\
+                t & = m - (s + b) & \text{(Number of \textit{Tag} Bits)} \\
+                C & = B \cdot E \cdot S & \text{(Cache Size (Bytes))}
+            \end{align*}
+        \end{highlightenv}
+    \end{center}
+
+    \subsubsection*{Cache Offset}
+
+    The cache offset, also known as the block offset, refers to the position of a byte or word within a cache block or line. When data is loaded into the cache, it's not loaded in single bytes but 
+    rather in blocks of contiguous bytes. The offset specifies the exact byte within this block where the desired data is located. It's used to pinpoint the data within the cache line once the correct 
+    cache line is identified.
+
+    \subsubsection*{Cache Index}
+
+    The cache index helps in determining which cache line (or slot) within the cache is to be used for storing and retrieving a specific block of data. The cache is divided into several lines, and 
+    the index specifies which line data is stored in or should be looked for. The index is derived from the memory address being accessed, usually by taking certain bits from the middle of the address.
+
+    \subsubsection*{Cache Tag}
+
+    The cache tag stores information about the data's identity in the cache line. It's used to verify that the data in the cache line is the same as the data being requested by the CPU. When a memory 
+    address is accessed, a part of it is used to form the cache tag. The cache controller compares this tag with the tags in the cache to determine if the requested data is present (a hit) or not (a miss).
+
+    \subsubsection*{Cache Hit Or Miss}
+
+    \begin{itemize}
+        \item \textbf{Cache Hit}: A cache hit occurs when the data requested by the CPU is found in the cache. This means the CPU can directly read from the cache without having to access the slower 
+        main memory, leading to faster data retrieval.
+        \item \textbf{Cache Miss}: A cache miss occurs when the requested data is not found in the cache. This forces the CPU to fetch the data from the main memory, which is a slower process. A cache 
+        miss also triggers the process of loading the requested data into the cache for future access, possibly replacing existing data based on the cache's replacement policy.
+    \end{itemize}
+\end{examnotes}
+
+\begin{examnotes}{Exam 4 Notes}
+    \subsection*{Linking}
+
+    Linking is a fundamental process in software development that combines various pieces of compiled code into a single executable program. In UNIX-like systems, linking can be either static or dynamic:
+
+    \begin{itemize}
+        \item \textbf{Dynamic Linking}: Libraries are linked at runtime, which allows multiple programs to share the code of a single library file on disk, reducing overall memory usage.
+        \item \textbf{Static Linking}: The linker combines all the necessary library routines and modules into a single executable file at compile time.
+    \end{itemize}
+
+    \subsubsection*{Symbol Resolution In Linking}
+
+    During the linking process, the linker must resolve references to symbols (variables, functions, etc.) that are defined in one module but used in another. This resolution can become complex when 
+    multiple definitions of the same symbol are found across different modules. Here, the concepts of strong and weak symbols are crucial.
+
+    \subsubsection*{Strong Symbols}
+
+    \begin{itemize}
+        \item \textbf{Definition}: Strong symbols are typically defined as functions and initialized global variables. The linker uses strong symbols to resolve ambiguities when the same symbol 
+        appears multiple times.
+        \item \textbf{Characteristics}:
+        \begin{itemize}
+            \item Have higher precedence during symbol resolution.
+            \item If there are multiple strong symbols of the same name across different modules, it leads to a linking error, as each symbol is assumed to represent different entities.
+        \end{itemize}
+    \end{itemize}
+
+    \subsubsection*{Weak Symbols}
+
+    \begin{itemize}
+        \item \textbf{Definition}: Weak symbols are generally used for uninitialized global variables and provide a way for the linker to resolve symbols when multiple definitions occur without causing errors.
+        \item \textbf{Characteristics}:
+        \begin{itemize}
+            \item If a weak symbol and a strong symbol of the same name exist, the strong symbol is preferred, and no error is raised.
+            \item If multiple weak symbols of the same name exist, any of them might be chosen by the linker, and the choice does not result in a linking error.
+        \end{itemize}
+    \end{itemize}
+
+    \subsubsection*{Rules For Symbol Resolution}
+
+    Given these definitions, UNIX linkers typically follow a set of rules to handle duplicate symbols:
+
+    \begin{itemize}
+        \item \textbf{Any Weak If Only Weak Present}: If multiple weak symbols with the same name exist and no strong symbol is present, the linker arbitrarily chooses one. This flexibility is useful 
+        for linking against large libraries where weak symbols can act as placeholders or defaults.
+        \item \textbf{No Multiple Strong Symbols}: If more than one definition of a strong symbol is found, it results in a linker error. This ensures that each strong symbol is unique.
+        \item \textbf{Strong Over Weak}: If both strong and weak symbols with the same name exist, the strong symbol takes precedence. This rule allows for optional features in libraries where a weak 
+        symbol provides a default implementation, and a strong symbol in the user's code provides a custom implementation.
+    \end{itemize}
+
+    \begin{highlight}[Symbol Tables]
+        Symbol tables are a crucial aspect of the compilation process in programming. They serve as a repository where information about the identifiers (symbols) used in a program is stored. These 
+        identifiers can be variable names, function names, constants, and data types. The symbol table is used by the compiler and linker to ensure that all symbols are correctly identified and accessible.
+    
+        \subsubsection*{Functions Of Symbol Tables}
+    
+        \begin{itemize}
+            \item \textbf{Scope Management}: They help in managing the scope of variables. Local variables in different functions can use the same name without conflict because the symbol table will treat 
+            them as separate entries.
+            \item \textbf{Storage Of Symbol Information}: Symbol tables store details such as the name of the symbol, its type, scope (local or global), and sometimes its memory location.
+            \item \textbf{Type Checking}: Symbol tables are used during semantic analysis by compilers to check for type inconsistencies in operations.
+        \end{itemize}
+    
+        \subsubsection*{Components Of Symbol Tables}
+    
+        \begin{itemize}
+            \item \textbf{Symbol}: The variable (symbol) that is present in one of source files.
+            \item \textbf{Entry}: A boolean value that indicates if a symbol is present in the table.
+            \item \textbf{Type}: The type of symbol that is / isn't present in the table: \texttt{static}, \texttt{extern}, \texttt{global}, \texttt{local}.
+            \item \textbf{Location (Module)}: Where the symbol is defined in reference to the source files.
+            \item \textbf{Section}: Location of where the symbol is stored in compilation.
+        \end{itemize}
+
+        \subsubsection*{Types}
+
+        Symbols are categorized into main types:
+
+        \begin{itemize}
+            \item \textbf{\texttt{extern}}: The \texttt{extern} keyword is used to declare a variable or function and indicates that its definition is in another file or translation unit.
+            \begin{itemize}
+                \item \textbf{Usage}: \texttt{extern} is primarily used when you need to access a variable or function defined in another source file or to declare the variable in a header file that 
+                multiple source files include.
+                \item \textbf{Characteristics}:
+                \begin{itemize}
+                    \item Does not allocate memory by itself.
+                    \item Requires an external definition with a matching type.
+                    \item Useful in managing global variables across different files.
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{\texttt{global}}: Global variables and functions are those defined outside any function (usually at the top of the source file) and can be accessed from any function in the program.
+            \begin{itemize}
+                \item \textbf{Usage}: Global symbols are accessible throughout the program from any translation unit that includes a declaration of them. This is default for functions in C and C++.
+                \item \textbf{Characteristics}:
+                \begin{itemize}
+                    \item Stored usually in the global data segment.
+                    \item Persistent for the lifetime of the application.
+                    \item Can cause issues like name clashes and are generally discouraged in modern programming due to their impact on code maintainability and testing.
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{\texttt{local}}: Local variables are declared inside a function or block and can only be accessed within that function or block (scope-limited).
+            \begin{itemize}
+                \item \textbf{Usage}: Local variables are used to store temporary state or intermediate results within a function.
+                \item \textbf{Characteristics}:
+                \begin{itemize}
+                    \item Stored on the stack (typically).
+                    \item Automatically allocated and deallocated when the function is called and returns, respectively.
+                    \item Not visible outside the function or block where they are declared.
+                \end{itemize}
+            \end{itemize}
+            \item \textbf{\texttt{static}}: The \texttt{static} keyword can modify both local and global variables. It alters the storage duration of the variable it qualifies.
+            \item \textbf{Usage}:
+            \begin{itemize}
+                \item \textbf{Global Static}: When used outside any function, it restricts the scope of the variable to the file in which it is declared, making it a private global.
+                \item \textbf{Local Static}: When used within a function, the variable retains its value between function calls.
+            \end{itemize}
+            \item \textbf{Characteristics}:
+            \begin{itemize}
+                \item Local static variables are initialized only once, and they exist until the end of the program.
+                \item Global static variables are only accessible within the same translation unit (source file), protecting against namespace pollution.
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection*{Sections}
+
+        For each symbol, there is a location where the symbol is stored upon compilation:
+
+        \begin{itemize}
+            \item \textbf{\texttt{.bss} (Block Started by Symbol)}: The section where uninitialized \texttt{static} variables, and \texttt{global} or \texttt{static} variables that are initialized to 
+            zero are stored. This section is used for declaring variables that are not initialized by the programmer. By default, the system initializes them to zero. 
+            \item \textbf{\texttt{COMMON}}: The section where uninitialized \texttt{global} variables are stored. This is a special section used in the context of weak linkage and tentative definitions. 
+            If a global variable is declared but not initialized (a common practice in C for external variables), it is typically placed in the \texttt{COMMON} section. This allows the linker to handle 
+            multiple tentative definitions.
+            \item \textbf{\texttt{.data}}: The section where initialized \texttt{global} and \texttt{static} variables are stored. Both \texttt{global} and \texttt{static} variables in this context retain
+            their values through execution.
+            \item \textbf{\texttt{.rodata} (Read-Only Data)}: This section stores constant values and string literals that should not be modified, making them read-only at runtime.
+            \item \textbf{\texttt{.text}}: This section contains the executable code of the program. It is where the machine instructions reside.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Exceptional Flow Control}
+
+    Exceptional Control Flow (ECF) involves mechanisms that alter the normal sequential execution order of programs. ECF mechanisms include signals, process context switching, and system calls like 
+    \texttt{fork()}. These are essential for operating systems to perform efficient multitasking, handle asynchronous events, and manage multiple processes.
+
+    \begin{highlight}[\texttt{fork()} System Call]
+        One example of ECF is the \texttt{fork()} system call. This system call produces children from a parent process (and sometimes a child from an already existing child). The core tenants of the 
+        \texttt{fork()} system call are:
+    
+        \begin{itemize}
+            \item \textbf{Control Flow Implications}: After a \texttt{fork()}, the child process may execute the same or different code based on the return value. This leads to complex flow control 
+            scenarios, especially when multiple \texttt{fork()} calls are nested or combined with other control flow mechanisms like loops and conditionals.
+            \item \textbf{Functionality}: The \texttt{fork()} system call is used to create a new process by duplicating the calling process. The new process is referred to as the child process, while 
+            the original process is the parent.
+            \item \textbf{Memory Handling}: Initially, both processes share the same physical memory pages, but typically a copy-on-write mechanism is used where pages are duplicated only if either process 
+            attempts to modify them.
+            \item \textbf{Memory Sharing}: Initially, the child process shares the same memory segments (code, data, and stack) with the parent process. Modern operating systems typically use a 
+            copy-on-write mechanism where the actual copying of the memory pages is deferred until one of the processes attempts to modify a page.
+            \item \textbf{Process Tree}: When \texttt{fork()} is executed, it returns twice: once in the parent process (returning the child's PID) and once in the child process (returning 0). This dual 
+            return allows both processes to execute the same subsequent code but often follow different branches depending on the return value.
+            \item \textbf{Return Value}: \texttt{fork()} returns twice, once in the parent process and once in the child process. In the parent, it returns the PID of the newly created child, while 
+            in the child, it returns 0. If \texttt{fork()} fails, it returns $-1$ in the parent.
+        \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Signal Handling}
+
+    In UNIX and UNIX-like systems, signals are one of the primary methods for exceptional control flow, providing a way for processes to interrupt or notify each other asynchronously. Signals can 
+    indicate events like division by zero, termination requests, or user-defined conditions. They are used for a variety of purposes including process control, inter-process communication, and 
+    handling asynchronous events.
+
+    The key concepts of signal handling are:
+
+    \begin{itemize}
+        \item \textbf{Signal Delivery}: When a signal is generated, the operating system delivers it to the target process. This process then interrupts its current task to handle the signal.
+        \item \textbf{Signal Generation}: Signals can be generated by errors, explicit requests via system calls (like kill), or hardware exceptions.
+        \item \textbf{Signal Handlers}: Processes can register signal handlers, specific functions that are executed when signals are received. If a signal handler is not set, a default action is 
+        taken (usually terminating the process).
+    \end{itemize}
+
+    \begin{highlight}[\texttt{kill()} System Call]
+        The \texttt{kill()} function is a critical tool in UNIX and UNIX-like operating systems, used primarily for sending signals to processes or groups of processes. It enables a process to communicate 
+        with other processes through predefined signals, which can indicate various system events or requests.
+
+        \subsubsection*{Overview Of \texttt{kill()}}
+
+        \begin{itemize}
+            \item \textbf{Function Prototype}: \texttt{int kill(pid\_t pid, int sig)};
+            \item \textbf{Parameters}:
+            \begin{itemize}
+                \item \texttt{pid}: The process ID of the target process to which the signal is sent. This can also be a special value to target a group of processes.
+                \item \texttt{sig}: The signal number to be sent. This can be any of the standard signals defined in \texttt{<signal.h>}, like \texttt{SIGKILL}, \texttt{SIGTERM}, \texttt{SIGSTOP}, \texttt{SIGUSR1}, etc.
+            \end{itemize}
+            \item \textbf{Return Value}: Returns 0 on success, and -1 on failure, setting \texttt{errno} to indicate the error.
+        \end{itemize}
+
+        \subsubsection*{Usage Of \texttt{pid} Parameter}
+
+        \begin{itemize}
+            \item \textbf{Positive Value (\texttt{pid} $> 0$)}: Sends the signal to the process with the specified process ID.
+            \item \textbf{Negative One (\texttt{pid} $== -1$)}: Sends the signal to all processes for which the calling process has permission to send signals, except for the system processes and the 
+            process sending the signal.
+            \item \textbf{Negative Value (\texttt{pid} $< 0$)}: Sends the signal to all processes in the process group whose ID is the absolute value of \texttt{pid}.
+            \item \textbf{Zero (\texttt{pid} $== 0$)}: Sends the signal to all processes in the sender's process group, which typically includes all processes started from the same terminal.
+        \end{itemize}
+
+        \subsubsection*{Error Handling}
+
+        On failure, \texttt{kill} sets \texttt{errno} to one of the following values:
+
+        \begin{itemize}
+            \item \textbf{\texttt{EINVAL}}: The signal number is invalid.
+            \item \textbf{\texttt{EPERM}}: The process does not have permission to send the signal to any of the target processes.
+            \item \textbf{\texttt{ESRCH}}: The target process or process group does not exist.
+        \end{itemize}
+
+        The \texttt{kill()} function is an essential aspect of UNIX system programming, providing robust capabilities for process control and inter-process communication. Understanding its behavior 
+        and implications is crucial for effective system management and application development in UNIX environments. This function illustrates the powerful, albeit low-level, mechanisms available 
+        in UNIX systems for managing the process lifecycle and system resources.
+    \end{highlight}
+
+    \begin{highlight}[\texttt{signal()} System Call]
+        The \texttt{signal} system call is essential for setting up signal handling in UNIX and UNIX-like operating systems. It allows processes to manage how they respond to the various signals they 
+        might receive, which are typically used to indicate system events, errors, or external interruptions.
+
+        \subsubsection*{Overview}
+
+        \begin{itemize}
+            \item \textbf{Function Prototype}: \texttt{void (*signal(int sig, void (*func)(int)))(int)};
+            \item \textbf{Parameters}:
+            \begin{itemize}
+                \item \textbf{\texttt{sig}}: The signal number to handle. This is an integer representing one of the system-defined signals like \texttt{SIGINT}, \texttt{SIGTERM}, \texttt{SIGCHLD}, etc.
+                \item \textbf{\texttt{func}}: A pointer to a function that will handle the signal, or a special constant like \texttt{SIG\_IGN} for ignoring the signal or \texttt{SIG\_DFL} for default handling.
+            \end{itemize}
+            \item \textbf{Return Value}: Returns the address of the previous signal handler for the specified signal, or \texttt{SIG\_ERR} in case of error.
+        \end{itemize}
+
+        \subsubsection*{Key Features}
+
+        \begin{itemize}
+            \item \textbf{Default Behavior}: Setting the handler to \texttt{SIG\_DFL} restores the default action for the signal, which often results in the process being terminated or stopped.
+            \item \textbf{Ignoring Signals}: By passing \texttt{SIG\_IGN} as the handler, the process can ignore the specified signal (except for signals that cannot be caught or ignored, like \texttt{SIGKILL} and \texttt{SIGSTOP}).
+            \item \textbf{Signal Handlers}: A signal handler is a function designated to be called when a specific signal is received. It should have the following prototype: \texttt{void handler(int sig)};
+        \end{itemize}
+
+        \subsubsection*{Signal Handling}
+
+        \begin{itemize}
+            \item \textbf{Asynchronous Events}: Signals are asynchronous by nature, meaning they can interrupt the process at almost any point in its execution.
+            \item \textbf{Atomic Operations}: Signal handlers should perform atomic operations or operate in a context where interruptions do not cause inconsistency or data corruption. They are 
+            typically used to set flags or handle simple state changes.
+        \end{itemize}
+
+        The \texttt{signal()} system call provides fundamental capabilities for handling asynchronous events in UNIX systems. It allows programs to define custom responses to various signals, which 
+        can enhance program robustness, enable graceful exits, and manage system resources effectively. Understanding and using \texttt{signal} effectively is crucial for advanced system programming 
+        and developing resilient applications in a UNIX environment.
+    \end{highlight}
+
+    Exceptional Control Flow (ECF) is a fundamental concept in systems programming, where the normal linear execution sequence of a program is interrupted or altered using mechanisms such as interrupts, 
+    signals, traps, system calls, and context switches. These mechanisms allow an operating system to perform more complex tasks like handling multiple processes, managing asynchronous events, and 
+    sharing resources among different programs efficiently.
+
+    \subsection*{Virtual Memory}
+    
+    Virtual Memory is a fundamental concept in modern computing systems, primarily designed to decouple the user's view of memory from the physical limitations of the available main memory. It provides 
+    an abstraction that allows each process to act as though it has its own contiguous block of addresses that it can read and write to, independently of the actual physical memory available.
+
+    \subsubsection*{Key Features Of Virtual Memory}
+
+    \begin{itemize}
+        \item \textbf{Abstraction Of Physical Memory}: Virtual memory abstracts the underlying physical memory hardware, allowing an operating system to use hardware like disk storage to extend available memory.
+        \item \textbf{Memory Management}: It simplifies memory management by allowing the system to move memory pages between physical memory and disk transparently.
+        \item \textbf{Process Isolation}: Each process operates in its own virtual address space, which isolates it from other processes and the operating system, enhancing security and stability.
+    \end{itemize}
+
+    \subsubsection*{Components Of Virtual Memory}
+
+    \begin{itemize}
+        \item \textbf{Physical Address Space}: The actual RAM available on the system.
+        \item \textbf{Virtual Address Space}: This is the contiguous address space that processes use to access memory. Each process has its own virtual address space, which is mapped to the physical memory.
+    \end{itemize}
+
+    \subsubsection*{Address Translation}
+
+    \begin{itemize}
+        \item \textbf{Page Table}: A data structure used by the operating system to store mappings from virtual pages to physical frames.
+        \item \textbf{Virtual Addresses} are translated to \textbf{Physical Addresses} using data structures like page tables.
+    \end{itemize}
+
+    \subsubsection*{Pages And Page Tables}
+
+    \begin{itemize}
+        \item \textbf{Page}: A fixed-size block of memory. Virtual memory is divided into pages, which are mapped into physical memory frames of the same size.
+        \item \textbf{Page Table}: Holds the mapping of virtual pages to physical frames. Modern systems often use a multi-level page table structure to optimize memory usage and access time.
+    \end{itemize}
+
+    \begin{highlight}[Virtual Memory Translation]
+        Problems that consist of taking a memory addresses and translating them into their virtual and physical addresses respectively consist of some common variables:
+
+        \begin{center}
+            \begin{highlightenv}
+                \begin{align*}
+                    N & = 2^{n} & \text{(Number of virtual address bits $(n)$)} \\
+                    M & = 2^{m} & \text{(Number of physical address bits $(m)$)} \\
+                    P & = 2^{p} & \text{(Page size in bytes $(P)$)} \\
+                    S & = 2^{s} & \text{(Number of TLB index bits $(s)$)}
+                \end{align*}
+            \end{highlightenv}
+        \end{center}
+        When translating an address into both the virtual address and physical address, there are specific values for both the virtual and physical addresses:
+
+        \begin{center}
+            \begin{highlightenv}
+                \begin{align*}
+                    \text{Physical Page Offset (PPO)} & = \text{First $p$ bits from, right to left of address in binary} \\
+                    \text{Physical Page Number (PPN)} & = \text{Address found from TLB or Page Table, valid bit must be set} \\
+                    \text{Physical Address (PA)} & = \text{PPN + PPO (Concatenated, not summed) = $m$ in size} \\
+                    \text{Virtual Page Offset (VPO)} & = \text{First $p$ bits from, right to left of address in binary} \\
+                    \text{Virtual Page Number (VPN)} & = \text{Bits from $p$ to $n - 1$ of address in binary} \\
+                    \text{Virtual Address (VA)} & = \text{VPN + VPO (Concatenated, not summed), = $n$ in size} \\
+                    \text{TLB Index (TLBI)} & = \text{$(p, p + s - 1)$ bits from \underline{Virtual Address}} \\
+                    \text{TLB Tag (TLBT)} & = \text{$(p + s, n - 1)$ bits from \underline{Virtual Address}}
+                \end{align*}
+            \end{highlightenv}
+        \end{center}
+        The procedure for translating an address into both its virtual and physical address representation is:
+
+        \begin{enumerate}
+            \item Translate the original address from hexadecimal \texttt{0xXXXX} into binary.
+            \begin{itemize}
+                \item Add padding (trailing zeros) if original address is smaller in total bits than virtual or physical address.
+            \end{itemize}
+            \item Calculate the number of offset bits $p$.
+            \item Calculate the VPO and PPO of the address in binary, convert to hexadecimal.
+            \item Calculate the VPN of the address in binary, convert to hexadecimal.
+            \item Calculate the number of TLB Index bits $s$.
+            \begin{itemize}
+                \item Calculate the TLBI from the VA, translate to hexadecimal.
+                \item Calculate the TLBT from the VA, translate to hexadecimal.
+            \end{itemize}
+            \item Refer to the TLB to determine if there is a TLB hit.
+            \begin{itemize}
+                \item A valid TLB hit occurs when an index (referred to as the set \#), has a valid tag (V = Y) in any of the ways.
+                \begin{itemize}
+                    \item If there is a TLB hit, the PPN can be found from the TLB.
+                    \item If there is no TLB hit, we must refer to the Page Table to see if there is a valid PPN.
+                \end{itemize}
+            \end{itemize}
+            \item Refer to the Page Table with the aforementioned VPN to determine the PPN.
+            \begin{itemize}
+                \item The valid tag must be set in this case.
+            \end{itemize}
+            \item Calculate the PA if there was indeed a PPN either from step 6 or 7.
+        \end{enumerate}
+    \end{highlight}
+
+    Virtual Memory is a sophisticated system that underpins modern operating systems, allowing them to efficiently use both the physical memory (RAM) and secondary storage (like HDDs or SSDs) to 
+    manage the execution of multiple processes. This system enhances the computer's multitasking capabilities, improves security and isolation among processes, and abstracts complex memory management 
+    details from the user and application programs.
+
+    \subsection*{Allocation \texttt{malloc}}
+
+    There are different forms memory allocation, the key concepts of memory allocation are:
+
+    \begin{itemize}
+        \item \textbf{Boundary Tag Method}:
+        \begin{itemize}
+            \item This method involves using the headers and footers of blocks as "tags" to hold information about the block size and allocation status. These tags help in merging adjacent free blocks 
+            during deallocation (coalescing), effectively reducing fragmentation.
+            \item Both the header and footer of a block generally contain the same information so that blocks can be merged efficiently whether the allocator is moving forward or backward through the heap.
+        \end{itemize}
+        \item \textbf{Implicit List Allocator}:
+        \begin{itemize}
+            \item An implicit list uses the blocks themselves to keep track of memory allocations. Each block on the heap typically contains a header and possibly a footer that store metadata about 
+            the block, such as its size and whether it's allocated or free.
+            \item The allocator traverses the heap from the beginning to find a free block that fits the size requirement of a malloc call (first-fit, best-fit, etc.).
+        \end{itemize}
+        \item \textbf{Malloc And Free Operations}:
+        \begin{itemize}
+            \item \textbf{\texttt{malloc(size)}}: Allocates a block of at least \textbf{\texttt{size}} bytes and returns a pointer to the allocated memory. The allocator might also include additional 
+            bytes for alignment and metadata (headers and footers).
+            \item \textbf{\texttt{free(ptr)}}: Deallocates the block of memory pointed to by \texttt{ptr}, potentially merging it with adjacent free blocks to form larger free blocks and reduce fragmentation.
+        \end{itemize}
+    \end{itemize}
+
+    \subsubsection*{Best Fit}
+
+    The Best Fit method searches the entire free list and takes the smallest block that is adequate to fulfill the request. This approach aims to find the closest matching block in size to the requested memory.
+
+    \subsubsection*{Advantages}
+
+    \begin{itemize}
+        \item \textbf{Efficient Utilization Of Space}: It tends to use memory more efficiently over the long term, as it leaves larger blocks of memory available for future allocations.
+        \item \textbf{Reduced Fragmentation}: By allocating the smallest block that meets the size requirement, Best Fit minimizes the leftover space in memory blocks, reducing external fragmentation.
+    \end{itemize}
+
+    \subsubsection*{Disadvantages}
+
+    \begin{itemize}
+        \item \textbf{Maintenance Overhead}: Best Fit requires more complex bookkeeping to keep track of the sizes of all free blocks, which can add overhead.
+        \item \textbf{Performance}: Scanning the entire list to find the optimal block can be slower, especially if the free list is long. This comprehensive search increases allocation time.
+        \item \textbf{Possible Internal Fragmentation}: Although it reduces external fragmentation, it may increase internal fragmentation if the best fit block is slightly larger than needed.
+    \end{itemize}
+
+    \subsubsection*{First Fit}
+
+    The First Fit method of memory allocation scans the heap from the beginning and allocates the first block that is large enough to satisfy the request. It stops searching as soon as it finds a 
+    block of sufficient size.
+
+    \subsubsection*{Advantages}
+
+    \begin{itemize}
+        \item \textbf{Simplicity}: The algorithm is straightforward and easy to implement.
+        \item \textbf{Speed}: First Fit generally performs faster than Best Fit for allocation because it stops searching as soon as it finds a free block that fits, rather than continuing to search for a better fit.
+    \end{itemize}
+
+    \subsubsection*{Disadvantages}
+
+    \begin{itemize}
+        \item \textbf{Fragmentation}: It may lead to higher fragmentation compared to Best Fit because it can leave smaller unusable spaces scattered throughout the heap. This happens as it might skip 
+        smaller blocks that are a better fit in favor of the first block that fits the request.
+        \item \textbf{Suboptimal Allocation}: Over time, it could result in larger free blocks at the end of the heap being underutilized.
+    \end{itemize}
+\end{examnotes}

@@ -1,0 +1,655 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Week 14: (4/22 - 4/28)}
+\renewcommand{\SectionTitle}{Linking}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is:
+
+\begin{itemize}
+    \item Computer Systems: Chapter 7.5 - Symbols And Symbol Tables
+    \item Computer Systems: Chapter 7.6 - Symbol Resolution
+    \item Computer Systems: Chapter 7.7 - Relocation
+    \item Computer Systems: Chapter 7.8 - Executable Object Files
+    \item Computer Systems: Chapter 7.9 - Loading Executable Object Files
+    \item Computer Systems: Chapter 7.10 - Dynamic Linking With Shared Libraries
+    \item Computer Systems: Chapter 7.11 - Linking And Loading Shared Libraries
+    \item Computer Systems: Chapter 7.12 - Position Independent Code (PIC)
+    \item Computer Systems: Chapter 7.13 - Library Interpositioning
+\end{itemize}
+
+\subsection{Piazza}
+
+Piazza discussions are optional this week. \assignment{4/30/24}{PiazzaWeek14}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=pnxRgwYbB3k}{Linking And Loading - Loading}{14}
+    \item \lecture{https://www.youtube.com/watch?v=PM4K1JRZ7YY}{Linking And Loading - Library Interposition}{12}
+    \item \lecture{https://www.youtube.com/watch?v=v62G2ySAGxY}{Malloc Lab Orientation}{14}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-2400-spring-2023/lab6-malloclab-QuantumCompiler}{Malloc Lab} \assignment{5/3/24}{Ass6DueDate}
+    \item \href{https://github.com/cu-cspb-2400-spring-2023/lab6-malloclab-QuantumCompiler}{Malloc Lab Extra Credit} \assignment{5/3/24}{Ass6DueDate}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \link{https://applied.cs.colorado.edu/course/view.php?id=249&section=16}{Chapter 7 Quiz} \textbullet \pdflink{\QuizDir CSPB 2400 Quiz 10.pdf}{Chapter 7 Finalized Quiz} \assignment{4/30/24}{Quiz7DueDate}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 7: Linking}. The first section that is being covered from this chapter this week is \textbf{Section 7.5: Symbols And Symbol Tables}.
+
+\begin{notes}{Section 7.5: Symbols And Symbol Tables}
+    \subsection*{Symbols and Symbol Tables}
+
+    Symbols and symbol tables are integral components of the compilation and linking processes in software development. Symbols represent various entities in code like variables, functions, and constants, 
+    and are crucial for identification and operation execution in a program. Symbol tables, on the other hand, record and organize information about these symbols, including their types, scopes, and 
+    linkage properties. \vspace*{1em}
+    
+    \subsubsection*{Understanding Symbols:}
+    
+    \begin{itemize}
+        \item In programming, symbols are the names assigned to computational entities such as functions, variables, and constants that need to be uniquely identified across the source code and during compilation.
+        \item Symbols come with associated attributes which include type (e.g., integer, function), scope (e.g., local, global), and sometimes the address in memory where they are stored.
+        \item The compiler uses these symbols to verify consistency in variable and function usage across the program and to help the linker in resolving references during the final assembly of the program.
+    \end{itemize}
+    
+    \subsubsection*{Role of Symbol Tables:}
+    
+    Symbol tables are data structures that store details about the symbols used in a program:
+    \begin{enumerate}
+        \item \textbf{Structure:} They are often implemented as hash tables or dictionaries where each entry links a symbol and its detailed attributes.
+        \item \textbf{Contents:} Information in a symbol table entry typically includes the symbol' s name, type, scope, memory address, and additional metadata such as the module where it is defined.
+        \item \textbf{Functionality:} During compilation, the symbol table helps in name resolution; during linking, it aids in binding references to their definitions across object files.
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        To illustrate, consider a simple C code snippet:
+    \begin{code}[C]
+    int global_var = 10;
+
+    int add(int a, int b) {
+        return a + b;
+    }
+    \end{code}
+        When compiled into a relocatable object file (e.g., using `gcc -c example.c`), the symbol table entries might include:
+        \begin{itemize}
+            \item An entry for `global\_var' with attributes indicating it is a global integer variable, located at a certain memory address.
+            \item An entry for `add' showing it is a function taking two integers and returning an integer, along with its code's address in the text segment and scope as global.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Importance and Benefits:}
+    
+    \begin{itemize}
+        \item \textbf{Error Detection:} Symbol tables are crucial for compilers to detect errors like duplicate symbols or undefined references, ensuring code reliability.
+        \item \textbf{Code Optimization:} They allow compilers to optimize code by understanding usage patterns and scopes of variables and functions.
+        \item \textbf{Efficient Linking:} Symbol tables facilitate efficient linking by providing necessary information to resolve external and internal links during program assembly.
+    \end{itemize}
+    
+    \subsubsection*{Challenges in Management:}
+    
+    \begin{itemize}
+        \item The complexity of managing large symbol tables effectively, especially in projects with extensive codebases, requires efficient data structures and algorithms for quick lookup and updates.
+        \item Accuracy and consistency across compilation and linking phases must be meticulously maintained to prevent runtime errors and ensure stable program execution.
+    \end{itemize}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 7.6: Symbol Resolution}.
+
+\begin{notes}{Section 7.6: Symbol Resolution}
+    \subsection*{Symbol Resolution}
+
+    Symbol resolution is a critical phase in the compilation and linking process where the associations between symbol references and their definitions are established. This step is essential for 
+    transforming multiple pieces of object code into a coherent executable program by ensuring that all references point to the correct locations. \vspace*{1em}
+    
+    \subsubsection*{Process Overview:}
+    
+    \begin{itemize}
+        \item Symbol resolution occurs during the linking phase where the linker looks for the definitions corresponding to all symbol references in the object files and libraries included in a program.
+        \item The goal is to match each symbol used in the program (e.g., function and variable names) with its corresponding definition found in the same or another object file.
+        \item This process involves a detailed lookup in the symbol tables embedded within each object file or library to find where each symbol is defined.
+    \end{itemize}
+    
+    \subsubsection*{Steps Involved in Symbol Resolution:}
+    
+    The linker performs several key steps to achieve symbol resolution:
+    \begin{enumerate}
+        \item \textbf{Identifying Symbols:} It starts by collecting all the symbols from the symbol tables of the various object files.
+        \item \textbf{Resolving Multiple Definitions:} If multiple definitions of a symbol are found, the linker must decide which one to use based on the scope (local vs. global) and other attributes.
+        \item \textbf{Handling Undefined Symbols:} The linker also checks for symbols that are referenced but not defined in any of the linked files. This situation must be resolved either by linking 
+        with additional libraries or by notifying an error.
+        \item \textbf{Assigning Addresses:} Once all symbols have been resolved, the linker assigns final memory addresses to the symbols, updating all references within the code to these addresses.
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        Consider two C source files, \texttt{main.c} and \texttt{helper.c}, with the following contents:
+    
+    \begin{code}[C]
+    /* main.c */
+    #include <stdio.h>
+    void print_hello();
+    
+    int main() {
+        print_hello();
+        return 0;
+    }
+    \end{code}
+
+    \begin{code}[C]
+    /* helper.c */
+    #include <stdio.h>
+    
+    void print_hello() {
+        printf("Hello, world!\n");
+    }
+    \end{code}
+        
+        Compiling these files separately generates two object files, \texttt{main.o} and \texttt{helper.o}. During the linking phase:
+        \begin{itemize}
+            \item The linker notices that \texttt{main.o} references the symbol \texttt{print\_hello} which is undefined within it.
+            \item It then finds the definition of \texttt{print\_hello} in \texttt{helper.o}.
+            \item Symbol resolution involves updating references in \texttt{main.o} to point to the correct location of \texttt{print\_hello} in \texttt{helper.o}.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Challenges and Considerations:}
+    
+    \begin{itemize}
+        \item \textbf{Complexity:} The symbol resolution process can become complex in large systems with many interdependent modules and libraries.
+        \item \textbf{Errors:} Unresolved symbols are a common source of errors during linking, often due to missing files or libraries, which require careful management and accurate dependency specification.
+        \item \textbf{Performance:} Efficient symbol resolution is critical for the performance of the linking process, especially in environments where build time is a constraint.
+    \end{itemize}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 7.7: Relocation}.
+
+\begin{notes}{Section 7.7: Relocation}
+    \subsection*{Relocation}
+
+    Relocation is a fundamental process in the linking and loading phases of program compilation, where symbolic references in the code are adjusted so that they point to the correct execution addresses. 
+    This step is crucial for the flexible execution of programs across different memory environments. \vspace*{1em}
+    
+    \subsubsection*{Overview of Relocation:}
+    
+    \begin{itemize}
+        \item Relocation involves modifying the code and data in a program to correspond to the actual memory locations allocated to it by the system at load time or link time.
+        \item This process ensures that the program can function correctly regardless of where it is loaded into memory, supporting the use of shared libraries and dynamic loading.
+        \item Relocation is performed by the linker during the linking process and/or by the operating system at runtime when using dynamic linking.
+    \end{itemize}
+    
+    \subsubsection*{Types of Relocation:}
+    
+    Relocation operations can be classified into several types based on when and how they are performed:
+    \begin{enumerate}
+        \item \textbf{Static Relocation:} Done at compile-time by the linker, static relocation fixes all symbolic references before the program is run. This is typical for statically linked executables.
+        \item \textbf{Dynamic Relocation:} Occurs at runtime and is handled by the dynamic linker (part of the operating system). This type is used for shared libraries and dynamic executables where 
+        the actual memory locations cannot be determined in advance.
+    \end{enumerate}
+    
+    \subsubsection*{Relocation Process Steps:}
+    
+    The relocation process generally includes the following key steps:
+    \begin{enumerate}
+        \item \textbf{Collecting Relocation Entries:} The linker or loader collects all the relocation entries from the object files or executables. These entries indicate which parts of the code need 
+        to be modified.
+        \item \textbf{Symbol Resolution:} It resolves all symbolic references to their actual memory addresses provided either by the linker's symbol table or runtime symbol information.
+        \item \textbf{Address Modification:} Based on the resolved addresses, the code and data sections of the program are updated so that all internal and external references point to the correct locations.
+        \item \textbf{Adjustment of Program Headers:} If necessary, program headers and other metadata are adjusted to reflect the new location of code and data segments.
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        Consider a scenario where two object files, \texttt{file1.o} and \texttt{file2.o}, are linked together. Suppose \texttt{file1.o} contains a function call to a function defined in \texttt{file2.o}:
+    
+    \begin{code}[C]
+    /* file1.c */
+    extern int func_in_file2();
+    int main() {
+        return func_in_file2();
+    }
+    
+    /* file2.c */
+    int func_in_file2() {
+        return 42;
+    }
+    \end{code}
+        
+        During linking, the linker identifies that \texttt{func\_in\_file2()} is defined in \texttt{file2.o} and updates the call in \texttt{file1.o} to point to the correct address in the combined executable.
+        \begin{itemize}
+            \item Relocation entries for \texttt{func\_in\_file2()} in \texttt{file1.o} are processed to reflect its new memory address as determined post-linking.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Challenges in Relocation:}
+    
+    \begin{itemize}
+        \item \textbf{Complexity:} Handling the various types of relocation and ensuring that all references are correctly updated is complex, particularly in systems with extensive code bases and multiple dependencies.
+        \item \textbf{Performance:} Relocation, especially dynamic relocation, can impact the startup time of programs as adjustments need to be made at runtime.
+        \item \textbf{Security:} Incorrectly handled relocations can lead to vulnerabilities (like buffer overflows or execution of malicious code), necessitating careful management and security checks 
+        during the relocation process.
+    \end{itemize}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 7.8: Executable Object Files}.
+
+\begin{notes}{Section 7.8: Executable Object Files}
+    \subsection*{Executable Object Files}
+
+    Executable object files, also known simply as executables, are files that are directly executable by the computer's CPU. They are the final output of the compilation and linking processes and contain 
+    binary code that can be directly loaded into memory and run by the operating system. \vspace*{1em}
+    
+    \subsubsection*{Characteristics of Executables:}
+    
+    \begin{itemize}
+        \item Executable files are self-contained, containing all the necessary code and data (including the operating system-specific metadata) required to execute a program.
+        \item They are distinct from source code and other types of object files in that they have been fully linked, meaning all external references have been resolved and set to their respective memory addresses.
+        \item The format of executable files can vary depending on the operating system and architecture; common formats include Portable Executable (PE) for Windows, Executable and Linkable Format 
+        (ELF) for Unix/Linux, and Mach-O for macOS.
+    \end{itemize}
+    
+    \subsubsection*{Composition of Executable Object Files:}
+    
+    Executable files generally consist of several key sections, each serving a specific purpose in the program's execution:
+    \begin{enumerate}
+        \item \textbf{Header:} Contains metadata about the file, such as its type, architecture, and sizes of different sections.
+        \item \textbf{Text Section:} The actual machine code that is executed by the CPU. This section is what typically defines the executable as being 'executable'.
+        \item \textbf{Data Section:} Includes global and static variables that are pre-initialized in the code.
+        \item \textbf{BSS Section:} Stands for "Block Started by Symbol." It is used for declaring variables that are not initialized by the programmer; they are automatically initialized to zero by 
+        the operating system when the program runs.
+        \item \textbf{Resource Section:} (Optional, typically found in Windows executables) Contains icons, menus, and other GUI elements as well as other non-code resources used by the executable.
+        \item \textbf{Relocation Table:} Provides information on how to adjust the addresses within the executable when it is loaded into memory.
+        \item \textbf{Symbol Table and Debugging Information:} Includes information used for debugging purposes, such as the names and line numbers of the source code files that contributed to the executable code.
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        Imagine a simple program written in C that prints "Hello, World!" to the console:
+    \begin{code}[C]
+    #include <stdio.h>
+
+    int main() {
+        printf("Hello, World!\n");
+        return 0;
+    }
+    \end{code}
+        Compiling and linking this program using a command like `gcc -o hello.exe hello.c' will produce an executable file named `hello.exe', This executable will include:
+        \begin{itemize}
+            \item A text section containing the compiled machine code for the `main' function and the `printf' call.
+            \item A data section possibly containing any global variables (if defined).
+            \item A BSS section (if there are uninitialized global variables).
+            \item A relocation table that indicates how the machine code might be adjusted when the program is loaded into memory.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Significance and Usage:}
+    
+    \begin{itemize}
+        \item Executable object files are crucial for the distribution of software. They allow programs to be packaged in a form that is immediately runnable on target systems without the need for 
+        further compilation or linking.
+        \item They facilitate the implementation of complex programs by allowing various modules to be compiled separately and linked into a single, runnable file.
+    \end{itemize}
+    
+    \subsubsection*{Challenges in Managing Executable Files:}
+    
+    \begin{itemize}
+        \item Ensuring compatibility across different systems and architectures can be challenging due to differences in executable formats and system expectations.
+        \item Security is a significant concern as executables can contain malicious code if not properly verified.
+        \item Performance optimization is critical, as inefficiently compiled or linked executables can lead to slow program execution and poor resource management.
+    \end{itemize}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 7.9: Loading Executable Object Files}.
+
+\begin{notes}{Section 7.9: Loading Executable Object Files}
+    \subsection*{Loading Executable Object Files}
+
+    Loading executable object files into memory is a critical step in the execution process of any program. This process involves reading the executable file from disk, interpreting its contents, and 
+    placing them into memory so that the operating system can begin execution. \vspace*{1em}
+    
+    \subsubsection*{Overview of the Loading Process:}
+    
+    \begin{itemize}
+        \item The loading of executable files is managed by the operating system' s loader component, which reads the executable file' s structure (headers and sections) to determine how to properly 
+        allocate memory and prepare the program for execution.
+        \item This process ensures that the executable is brought into the system' s memory in a manner that respects the needs and constraints defined in the executable file format, such as segment 
+        sizes and permissions.
+        \item Common executable formats include ELF (Executable and Linkable Format) for Unix/Linux systems, PE (Portable Executable) for Windows, and Mach-O for macOS, each requiring different 
+        handling by the respective loaders.
+    \end{itemize}
+    
+    \subsubsection*{Key Steps in Loading an Executable:}
+    
+    The typical steps involved in loading an executable object file into memory include:
+    \begin{enumerate}
+        \item \textbf{Reading and Parsing Headers:} The loader first reads the headers of the executable, which contain metadata about the file format, the required memory layout, and execution start points.
+        \item \textbf{Allocating Memory:} Based on information from the headers, memory is allocated for the executable' s code (text section), data (data section), and uninitialized data (BSS section).
+        \item \textbf{Copying Sections:} The text and data sections from the executable file are copied into the allocated memory. The BSS section is also initialized to zero.
+        \item \textbf{Relocation:} If the executable isn' t position-independent, the loader adjusts internal addresses within the text and data sections according to the actual memory addresses 
+        allocated (relocation process).
+        \item \textbf{Setting Execution Permissions:} The loader sets appropriate permissions (read, write, execute) on the memory segments to protect the integrity of the executable.
+        \item \textbf{Jumping to Entry Point:} Finally, the loader transfers control to the executable' s entry point (usually the `main' function in C and C++ programs), starting program execution.
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        Consider the executable file `hello.exe' generated from a simple C program:
+    \begin{code}[C]
+    #include <stdio.h>
+
+    int main() {
+        printf("Hello, World!\n");
+        return 0;
+    }
+        \end{code}
+        Upon executing `hello.exe', the operating system's loader performs the following tasks:
+        \begin{itemize}
+            \item Reads the ELF header to determine the size and location of the text, data, and BSS sections.
+            \item Allocates memory for these sections and copies the text and data sections from disk to memory. Initializes the BSS section to zero.
+            \item Relocates any absolute addresses based on where sections were loaded in memory.
+            \item Sets memory permissions to prevent execution of data sections and modification of code sections.
+            \item Transfers control to the start of the text section, effectively beginning the execution of the program.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Importance and Challenges:}
+    
+    \begin{itemize}
+        \item \textbf{Importance:} Proper loading is essential for the correct and secure functioning of executable files, ensuring that all program components are correctly aligned and executable.
+        \item \textbf{Challenges:} The loading process must handle various file formats and systems architectures efficiently. Additionally, it must ensure security against common exploits such as 
+        buffer overflows and code injection by setting appropriate memory permissions.
+    \end{itemize}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 7.10: Dynamic Linking With Shared Libraries}.
+
+\begin{notes}{Section 7.10: Dynamic Linking With Shared Libraries}
+    \subsection*{Dynamic Linking With Shared Libraries}
+
+    Dynamic linking with shared libraries is a method by which a program loads and links its dependencies (libraries) at runtime rather than at compile-time. This approach allows multiple programs to 
+    share the same library code in memory, reducing resource consumption and improving system efficiency. \vspace*{1em}
+    
+    \subsubsection*{Concept of Dynamic Linking:}
+    
+    \begin{itemize}
+        \item Unlike static linking, where library code is copied into each executable, dynamic linking defers the resolution of functions and variables until a program is run. This means that only 
+        one copy of the library needs to be in memory, which can be used by all programs needing access to the library.
+        \item Dynamic linking involves using a dynamic linker (sometimes called a dynamic loading routine) that loads the necessary libraries into memory at runtime and adjusts the program's function 
+        calls and variable accesses to point to the correct locations in these libraries.
+        \item This technique is essential for using dynamically loaded libraries (DLLs on Windows or shared objects in Unix/Linux).
+    \end{itemize}
+    
+    \subsubsection*{Key Processes in Dynamic Linking:}
+    
+    Dynamic linking typically involves several important steps:
+    \begin{enumerate}
+        \item \textbf{Identifying Library Dependencies:} The dynamic linker first identifies the shared libraries that the executable depends on using information stored in its headers.
+        \item \textbf{Loading Libraries:} The required libraries are loaded into memory if they are not already present.
+        \item \textbf{Symbol Resolution:} Function and variable names in the executable are linked to their actual data or function definitions in the library.
+        \item \textbf{Relocation:} Addresses within the loaded libraries are adjusted so that they function correctly at their new memory locations.
+        \item \textbf{Initialization:} Library initialization routines are run to prepare the library for execution in the context of the current program.
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        Consider a program that uses the standard C library to output text to the console:
+    \begin{code}[C]
+    #include <stdio.h>
+
+    int main() {
+        printf("Hello, World!\n");
+        return 0;
+    }
+    \end{code}
+        During execution, the operating system performs the following tasks using dynamic linking:
+        \begin{itemize}
+            \item Detects that `printf' belongs to the C standard library (`libc.so' on Unix/Linux or `msvcrt.dll' on Windows).
+            \item Loads the `libc.so' or `msvcrt.dll' into memory, if it is not already loaded by another program.
+            \item Connects the call to `printf' in the program with the actual function in the library.
+            \item The address of `printf' is adjusted to point to its memory location within the dynamically loaded library.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Benefits and Challenges:}
+    
+    \begin{itemize}
+        \item \textbf{Benefits:}
+            \begin{itemize}
+                \item \emph{Memory Efficiency:} Saves memory by sharing library code among multiple programs.
+                \item \emph{Ease of Updates:} Updating a library does not require re-linking the programs that use it.
+                \item \emph{Flexibility:} Programs can use additional functionalities from new library versions without changing the executable.
+            \end{itemize}
+        \item \textbf{Challenges:}
+            \begin{itemize}
+                \item \emph{Dependency Management:} Requires careful management of library versions to avoid "DLL Hell" where incompatible library versions interfere with each other.
+                \item \emph{Performance Overhead:} Dynamic linking can introduce a runtime performance overhead due to the extra work needed to resolve symbols and load libraries.
+                \item \emph{Security Risks:} Increased complexity of managing dynamically linked libraries can lead to security vulnerabilities if not handled correctly.
+            \end{itemize}
+    \end{itemize}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 7.11: Loading And Linking Shared Libraries From Applications}.
+
+\begin{notes}{Section 7.11: Loading And Linking Shared Libraries From Applications}
+    \subsection*{Loading And Linking Shared Libraries From Applications}
+
+    Loading and linking shared libraries from applications is a dynamic process that occurs at runtime, allowing applications to use various functionalities housed within external shared libraries 
+    (such as DLLs in Windows or SO files in Unix/Linux). This approach optimizes memory usage and enhances application flexibility by loading only the necessary libraries when they are required. \vspace*{1em}
+    
+    \subsubsection*{Understanding the Process:}
+    
+    \begin{itemize}
+        \item This process is managed by the operating system's dynamic linker/loader, which handles the tasks of locating the appropriate shared library files, mapping them into the application's 
+        address space, and resolving symbol references to these libraries.
+        \item Dynamic linking with shared libraries enables applications to call functions and access data stored in these external files as if they were part of the application itself.
+        \item The use of shared libraries reduces the overall memory footprint of applications and allows for the easy update of library code without requiring changes to the dependent applications.
+    \end{itemize}
+    
+    \subsubsection*{Key Steps Involved:}
+    
+    The process typically involves several steps to integrate shared libraries with applications:
+    \begin{enumerate}
+        \item \textbf{Library Search:} The dynamic linker uses a set of predefined rules and environment variables (like `LD\_LIBRARY\_PATH' in Unix) to locate the required shared library files.
+        \item \textbf{Library Loading:} Once found, the shared library files are loaded into memory. This is typically done lazily (on-demand), meaning that the loading occurs the first time a 
+        function from the library is called.
+        \item \textbf{Symbol Resolution:} The linker then performs symbol resolution where it matches function calls and variable references in the application to the actual entries within the 
+        loaded shared libraries.
+        \item \textbf{Relocation:} Necessary adjustments are made to the function and variable addresses in the application to point to the correct locations within the shared library.
+        \item \textbf{Initialization:} Any initialization routines in the shared libraries are executed to prepare the library for operation within the context of the application.
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        Imagine an application that requires graphical capabilities provided by a library like OpenGL:
+        \begin{code}[C]
+        #include <GL/gl.h>
+    
+        void renderScene() {
+            glClear(GL_COLOR_BUFFER_BIT);
+            glBegin(GL_TRIANGLES);
+                glVertex3f(-0.5, -0.5, 0.0);
+                glVertex3f(0.5, 0.0, 0.0);
+                glVertex3f(0.0, 0.5, 0.0);
+            glEnd();
+            glFlush();
+        }
+    
+        int main() {
+            renderScene();
+            return 0;
+        }
+        \end{code}
+        During the execution of this program, the operating system performs the following actions:
+        \begin{itemize}
+            \item Identifies the need for the OpenGL library (`libGL.so' on Unix/Linux or `opengl32.dll' on Windows).
+            \item Loads the OpenGL library into memory if it's not already loaded.
+            \item Links function calls like `glClear' and `glBegin' to their definitions in the OpenGL library.
+            \item Handles any necessary address adjustments (relocation) to ensure the calls function properly.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Benefits and Potential Issues:}
+    
+    \begin{itemize}
+        \item \textbf{Benefits:}
+            \begin{itemize}
+                \item \emph{Modularity:} Allows applications to be more modular and adaptable to different environments since they can share common library code.
+                \item \emph{Efficiency:} Reduces the memory and storage footprint of applications by sharing library code among multiple programs.
+                \item \emph{Upgradability:} Simplifies updates to software components by allowing individual libraries to be updated without recompiling dependent applications.
+            \end{itemize}
+        \item \textbf{Challenges:}
+            \begin{itemize}
+                \item \emph{Complex Dependency Management:} Requires careful management of library versions to prevent conflicts (commonly referred to as "DLL Hell").
+                \item \emph{Runtime Overhead:} The dynamic nature of the process can introduce delays and performance overhead due to on-the-fly symbol resolution and loading.
+                \item \emph{Security Risks:} Increases the vulnerability to security risks if not properly managed, as malicious code can potentially be injected through dynamic libraries.
+            \end{itemize}
+    \end{itemize}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 7.12: Position-Independent Code (PIC)}.
+
+\begin{notes}{Section 7.12: Position-Independent Code (PIC)}
+    \subsection*{Position-Independent Code (PIC)}
+
+    Position-Independent Code (PIC) is a type of code executable that can run correctly regardless of its absolute memory address. PIC is widely used in the implementation of shared libraries and 
+    dynamic linking because it allows a program to be loaded at any memory address without modification. This flexibility significantly enhances the security and usability of software systems by 
+    enabling address space layout randomization (ASLR). \vspace*{1em}
+    
+    \subsubsection*{Concept of Position-Independent Code:}
+    
+    \begin{itemize}
+        \item PIC avoids hard-coded absolute memory addresses for data and function references. Instead, it uses relative addressing and other indirect techniques to reference data and functions, 
+        which makes the executable code flexible and relocatable.
+        \item This approach allows multiple instances of the same program to share a single copy of executable code in memory, reducing overall system memory usage.
+        \item PIC is particularly important for operating systems that support dynamic linking and loading as it simplifies the process and increases the efficiency of these operations.
+    \end{itemize}
+    
+    \subsubsection*{How PIC Works:}
+    
+    The creation of position-independent code involves several key techniques:
+    \begin{enumerate}
+        \item \textbf{Relative Addressing:} Instead of using absolute addresses, PIC uses offsets relative to the Program Counter (PC) or a similar register. This method ensures that the code does 
+        not depend on being located at a specific address to function correctly.
+        \item \textbf{Global Offset Table (GOT):} A table of addresses that is created to manage references to global variables and functions. The GOT remains at a fixed offset relative to the program's 
+        base address, allowing the actual memory addresses to be resolved at runtime.
+        \item \textbf{Procedure Linkage Table (PLT):} Used for managing function calls to external functions. The PLT works with the GOT to defer the resolution of function addresses until the functions 
+        are actually called (lazy binding).
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        Consider a simple C function that returns the location of a variable:
+    \begin{code}[C]
+    int global_variable = 42;
+
+    int get_global_variable() {
+        return global_variable;
+    }
+    \end{code}
+        In a position-independent version of this code, the reference to `global\_variable' would be handled through a GOT entry rather than a direct memory address. During execution:
+        \begin{itemize}
+            \item The address of `global\_variable' in the GOT is updated dynamically based on where the shared library is loaded.
+            \item The function `get\_global\_variable' accesses `global\_variable' using its GOT entry, allowing the function to execute correctly regardless of the actual physical location of the code 
+            or the data segment.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Advantages and Challenges:}
+    
+    \begin{itemize}
+        \item \textbf{Advantages:}
+            \begin{itemize}
+                \item \emph{Flexibility:} Enables code to be reused at multiple memory addresses, reducing memory footprint.
+                \item \emph{Security:} Enhances security through ASLR, making it more difficult for attackers to predict the location of specific code segments.
+                \item \emph{Efficiency:} Simplifies the process of loading and linking shared libraries by eliminating the need for additional relocation steps.
+            \end{itemize}
+        \item \textbf{Challenges:}
+            \begin{itemize}
+                \item \emph{Performance Overhead:} The indirect addressing mechanisms used in PIC can introduce slight runtime performance penalties compared to non-PIC.
+                \item \emph{Complexity in Implementation:} Requires more complex link-time and load-time mechanisms to manage relative addressing and symbol resolution.
+            \end{itemize}
+    \end{itemize}    
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 7.13: Library Interpositioning}.
+
+\begin{notes}{Section 7.13: Library Interpositioning}
+    \subsection*{Library Interpositioning}
+
+    Library interpositioning is an advanced technique used in software engineering to modify the behavior of library functions without altering their code. It allows developers to intercept and 
+    potentially alter function calls, results, and behaviors between an application and its libraries. This is particularly useful for debugging, monitoring performance, modifying functionalities, or 
+    adding new features to existing binaries dynamically. \vspace*{1em}
+    
+    \subsubsection*{Concept of Library Interpositioning:}
+    
+    \begin{itemize}
+        \item Library interpositioning involves placing a user-defined library between the application and the actual system libraries. This interposed library contains "wrapper" functions that are 
+        named the same as the original library functions they intend to intercept.
+        \item When the application calls a function, the call is first routed to the corresponding function in the interposed library. The interposed function can then choose to directly pass the call 
+        along to the original function, modify the input parameters, handle the call itself, or modify the output before returning it to the application.
+        \item This technique is implemented using dynamic linking mechanisms and can be controlled by environment variables or configuration files that specify which libraries to intercept.
+    \end{itemize}
+    
+    \subsubsection*{Mechanics of Interpositioning:}
+    
+    Interpositioning is typically achieved through the following steps:
+    \begin{enumerate}
+        \item \textbf{Creating the Interposed Library:} Develop a custom dynamic library that contains the interposed functions. These functions should match the signatures of the original functions they replace.
+        \item \textbf{Redirecting Function Calls:} Use dynamic linker features (such as the LD\_PRELOAD environment variable on Unix-like systems) to load the interposed library prior to other libraries. 
+        This ensures that the interposed functions are found first when function calls are resolved.
+        \item \textbf{Handling Calls:} In each wrapper function, decide whether to modify inputs or outputs, directly call the original function using function pointers, or perform entirely custom behavior.
+    \end{enumerate}
+    
+    \begin{highlight}[Practical Example]
+        Imagine you want to monitor how often a program calls the `malloc' function to allocate memory, and what sizes it requests:
+    \begin{code}[C]
+    // file: my_malloc_interposer.c
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    void* malloc(size_t size) {
+        printf("malloc called with size: %zu\n", size);
+        void *(*original_malloc)(size_t) = dlsym(RTLD_NEXT, "malloc");
+        return original_malloc(size);
+    }
+    \end{code}
+        This custom `malloc' function will first print the size requested, then call the original `malloc' function to actually allocate memory. To use this interposed function, compile it into a shared 
+        library and set it to preload:
+        \begin{verbatim}
+        gcc -fPIC -shared -o mymalloc.so my_malloc_interposer.c -ldl
+        export LD_PRELOAD=./mymalloc.so
+        ./your_application
+        \end{verbatim}
+        The application `your_application' will now report every call to `malloc' as it runs.
+    \end{highlight}
+    
+    \subsubsection*{Advantages and Applications:}
+    
+    \begin{itemize}
+        \item \textbf{Debugging:} Great for tracking down memory leaks or understanding external library usage patterns without needing to modify the original source code.
+        \item \textbf{Performance Monitoring:} Can be used to add logging or performance tracking to critical library functions to help optimize application performance.
+        \item \textbf{Security:} Useful for injecting security checks or other features into existing binary applications in a non-invasive way.
+    \end{itemize}
+    
+    \subsubsection*{Challenges:}
+    
+    \begin{itemize}
+        \item \textbf{Complexity:} Correctly implementing library interposition requires a deep understanding of dynamic linking and the application’s library dependencies.
+        \item \textbf{Stability:} Misimplementations can lead to application instability or subtle bugs due to changes in expected function behavior.
+        \item \textbf{Performance Impact:} While it is a powerful tool, it can introduce overheads and performance penalties, especially if the interposed functions are significantly more complex than the originals.
+    \end{itemize}    
+\end{notes}
