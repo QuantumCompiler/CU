@@ -183,7 +183,9 @@
         \begin{minipage}{\textwidth}
             \centering
             \textbf{Sections}
-            \printcontents[sections]{}{1}{}{}
+            \begin{multicols}{2}
+                \printcontents[sections]{}{1}{}{}
+            \end{multicols}
         \end{minipage}
     };
 \end{tikzpicture}%
@@ -205,6 +207,33 @@
 }{%
 }{}{}
 \makeatother
+\newif\iffirstchapter
+\firstchaptertrue
+\let\oldchapter\chapter
+\renewcommand{\chapter}{%
+    \iffirstchapter
+    % For the first chapter, use the custom chapter title and ToC
+    \def\temp{%
+        \titleformat{\chapter}[display]
+        {\normalfont\bfseries\color{myDColor}}
+        {\filleft\chapterNumberAndMinitoc}{0.5em}
+        {\titlerule[2.5pt]\titlerule\vspace{4pt}\LARGE\textsc}
+        \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+    }
+    \global\firstchapterfalse
+    \else
+    % For subsequent chapters, use a standard chapter title with no ToC
+    \def\temp{%
+        \titleformat{\chapter}[display]
+        {\normalfont\bfseries}
+        {}{-8em}
+        {\titlerule[2.5pt]\titlerule\vspace{2pt}\LARGE\textsc}
+        \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+    }
+    \fi
+    \temp % Apply the chosen title format
+    \oldchapter
+}
 % This command create a polygon on the left side of the section title
 \newcommand{\polygonSection}{%
 \begin{tikzpicture}[remember picture, overlay,baseline=1.5ex]
