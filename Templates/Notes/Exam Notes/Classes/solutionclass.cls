@@ -1,14 +1,20 @@
 %---------------------------------------------------------------------------
-%	FORMAT AND CLASS
+%	DOCUMENT VARIABLES
 %---------------------------------------------------------------------------
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{solutionclass}[]
-\LoadClass[a4paper, twoside, 11pt, twocolumn]{book}
 \newcommand{\authorName}{Student Name}
 \newcommand{\classCode}{Course Code}
 \newcommand{\className}{Course Name}
 \newcommand{\documentName}{Document Name}
 \newcommand{\universityName}{University Of Colorado}
+%---------------------------------------------------------------------------
+%	LOCAL DIRECTORIES
+%---------------------------------------------------------------------------
+%---------------------------------------------------------------------------
+%	FORMAT AND CLASS
+%---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{solutionclass}[]
+\LoadClass[a4paper, twoside, 10pt]{book}
 %---------------------------------------------------------------------------
 %	LANGUAGE AND ENCODING
 %---------------------------------------------------------------------------
@@ -87,8 +93,8 @@
                 pdfusetitle]{hyperref} % Hyperlinks
 \RequirePackage[top = 2cm,
                 bottom = 2cm,
-                left = 0.75cm,
-                right = 0.75cm,
+                left = 1.75cm,
+                right = 1.75cm,
                 ]{geometry} % Page margins
 \RequirePackage[shortlabels]{enumitem} % Customized lists
 \RequirePackage{microtype} % Improves typography
@@ -175,7 +181,9 @@
         \begin{minipage}{\textwidth}
             \centering
             \textbf{Sections}
-            \printcontents[sections]{}{1}{}{}
+            \begin{multicols}{2}
+                \printcontents[sections]{}{1}{}{}
+            \end{multicols}
         \end{minipage}
     };
 \end{tikzpicture}%
@@ -197,6 +205,33 @@
 }{%
 }{}{}
 \makeatother
+\newif\iffirstchapter
+\firstchaptertrue
+\let\oldchapter\chapter
+\renewcommand{\chapter}{%
+    \iffirstchapter
+    % For the first chapter, use the custom chapter title and ToC
+    \def\temp{%
+        \titleformat{\chapter}[display]
+        {\normalfont\bfseries\color{myDColor}}
+        {\filleft\chapterNumberAndMinitoc}{0.5em}
+        {\titlerule[2.5pt]\titlerule\vspace{4pt}\LARGE\textsc}
+        \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+    }
+    \global\firstchapterfalse
+    \else
+    % For subsequent chapters, use a standard chapter title with no ToC
+    \def\temp{%
+        \titleformat{\chapter}[display]
+        {\normalfont\bfseries}
+        {}{-8em}
+        {\titlerule[2.5pt]\titlerule\vspace{2pt}\LARGE\textsc}
+        \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+    }
+    \fi
+    \temp % Apply the chosen title format
+    \oldchapter
+}
 % This command create a polygon on the left side of the section title
 \newcommand{\polygonSection}{%
 \begin{tikzpicture}[remember picture, overlay,baseline=1.5ex]
@@ -478,6 +513,19 @@
         arc = 3mm,
         coltext = white,
     ]{\BODY}}
+\NewEnviron{highlightenv}[1][175mm]{
+    \begin{tcolorbox}[
+        boxrule = 1pt,
+        colframe = myLColor,
+        colback = black!80,
+        rounded corners,
+        arc = 3mm,
+        coltext = white,
+        width= #1
+    ]
+    \BODY
+    \end{tcolorbox}
+}
 % This renewcommand was created to change the arrow notation from vectors to the bold notation of them.
 \renewcommand\vec{\boldsymbol}
 % This command was created to make comments inside the text using the a more beautifull " ".
@@ -488,27 +536,55 @@
 %---------------------------------------------------------------------------
 %	CUSTOM COMMANDS
 %---------------------------------------------------------------------------
+\newcommand{\assignment}[2]{\due{(#1)} \cbox{#2}}
 \newcommand{\cbox}[1]{\CheckBox[name=#1, width=0.75\baselineskip, height=0.75\baselineskip]{}}
 \newcommand{\due}[1]{\textcolor{red}{#1}}
-\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
-\newcommand{\assignment}[2]{\due{(#1)} \cbox{#2}}
+\newcommand{\horizontalline}[2]{
+    \par
+    \vskip#1em
+    \noindent\rule{\textwidth}{0.5pt}
+    \par
+    \vskip#2em
+    \noindent
+}
 \newcommand{\link}[2]{\href{#1}{#2}}
 \newcommand{\modulo}{\text{ \textbf{mod} }}
-\newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
+\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
 \newcommand{\qed}{$\square$}
-\newcommand{\horizontalline}[2]{
-    \par % Ensure that we are in vertical mode
-    \vskip#1em % Space above the line
-    \noindent\rule{\textwidth}{0.5pt} % The line itself
-    \par % Go back to vertical mode
-    \vskip#2em % Space below the line
-    \noindent % Ensures next paragraph does not indent
+\newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
+\newcommand{\testimonial}[1]{
+    \horizontalline{0}{0}
+    \begin{center}
+        \Large{\textbf{I have neither given nor received unauthorized assistance.}}
+        \horizontalline{0}{0.5}
+        \large{\textbf{\authorName}}
+        \horizontalline{0}{0}
+    \end{center}
+    \noindent The original assignment for this problem can be found \pdflink{\AssDir #1}{here}.
 }
+%---------------------------------------------------------------------------
+%	CUSTOM ENVIRONMENTS
+%---------------------------------------------------------------------------
+% Cheat sheet
+\newenvironment{cheatsheet}[1]{
+    \clearpage
+    \twocolumn
+    \subsection*{#1}
+}
+{\onecolumn \clearpage}
+% Code
 \lstnewenvironment{code}[1][]
 {
     \lstset{style=stackoverflow, language=#1}
 }
 {}
+% Exam notes
+\newenvironment{examnotes}[1]{
+    \clearpage
+    \subsection*{#1}
+}
+{\clearpage}
+% Notes
 \newtcolorbox{mynotesbox}{
     breakable,
     boxrule=0pt,
@@ -527,7 +603,43 @@
     right=10pt,
     before upper={\setlength{\parskip}{0pt}\setlength{\parindent}{1em}},
 }
-\newenvironment{examnotes}[1]{
+\newenvironment{notes}[1]
+{
+    \subsection*{#1}
+    \horizontalline{-1}{-1}
+    \begin{mynotesbox}
+}
+{
+    \end{mynotesbox}
+    \horizontalline{-1}{0}
+}
+% Problem
+\newenvironment{problem}[1]{
+    \clearpage
+    \section{#1}
+    \horizontalline{0}{-1}
+}
+{}
+% Statement
+\newenvironment{statement}[1]{
+    \subsection*{#1}
+    \begin{mdframed}[
+        linewidth=1pt,
+        linecolor=black,
+        topline=true,
+        bottomline=true,
+        rightline=true,
+        leftline=true,
+        leftmargin=0pt,
+        innerleftmargin=15pt,
+        innerrightmargin=15pt]
+}
+{\end{mdframed}}
+% Summary
+\newenvironment{summary}[1]
+{
     \clearpage
     \subsection*{#1}
-}{\clearpage}
+    \horizontalline{0}{-1}
+    }
+{}
