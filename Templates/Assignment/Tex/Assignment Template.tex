@@ -4,16 +4,7 @@
 % Chapter page
 \section{\documentName}
 
-\horizontalline{0}{0}
-
-\begin{center}
-    \Large{\textbf{I have neither given nor received unauthorized assistance.}}
-    \horizontalline{0}{0.5}
-    \large{\textbf{\authorName}}
-    \horizontalline{0}{0}
-\end{center}
-
-\noindent The original assignment for this problem can be found \pdflink{\AssDir Sample Assignment.pdf}{here}.
+\testimonial{Sample Assignment.pdf}
 
 % Problem
 \begin{problem}{Sample Problem}
@@ -32,5 +23,11 @@
     \begin{code}[Python]
     print("This is how you annotate code with this custom environment!")
     \end{code}
+
+    \begin{center}
+        \begin{highlightenv}[150mm]
+            Here is a customizable environment box.
+        \end{highlightenv}
+    \end{center}
     \end{highlight}
 \end{problem}

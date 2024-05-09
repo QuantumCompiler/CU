@@ -1,9 +1,6 @@
 %---------------------------------------------------------------------------
-%	FORMAT AND CLASS
+%	DOCUMENT VARIABLES
 %---------------------------------------------------------------------------
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{solutionclass}[]
-\LoadClass[a4paper, twoside, 10pt]{book}
 \newcommand{\authorName}{Student Name}
 \newcommand{\classCode}{Course Code}
 \newcommand{\className}{Course Name}
@@ -14,6 +11,12 @@
 %	LOCAL DIRECTORIES
 %---------------------------------------------------------------------------
 \newcommand{\AssDir}{./Assignment/}
+%---------------------------------------------------------------------------
+%	FORMAT AND CLASS
+%---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{solutionclass}[]
+\LoadClass[a4paper, twoside, 10pt]{book}
 %---------------------------------------------------------------------------
 %	LANGUAGE AND ENCODING
 %---------------------------------------------------------------------------
@@ -483,6 +486,19 @@
         arc = 3mm,
         coltext = white,
     ]{\BODY}}
+\NewEnviron{highlightenv}[1][175mm]{
+    \begin{tcolorbox}[
+        boxrule = 1pt,
+        colframe = myLColor,
+        colback = black!80,
+        rounded corners,
+        arc = 3mm,
+        coltext = white,
+        width= #1
+    ]
+    \BODY
+    \end{tcolorbox}
+}
 % This renewcommand was created to change the arrow notation from vectors to the bold notation of them.
 \renewcommand\vec{\boldsymbol}
 % This command was created to make comments inside the text using the a more beautifull " ".
@@ -493,27 +509,91 @@
 %---------------------------------------------------------------------------
 %	CUSTOM COMMANDS
 %---------------------------------------------------------------------------
+\newcommand{\assignment}[2]{\due{(#1)} \cbox{#2}}
 \newcommand{\cbox}[1]{\CheckBox[name=#1, width=0.75\baselineskip, height=0.75\baselineskip]{}}
 \newcommand{\due}[1]{\textcolor{red}{#1}}
-\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
-\newcommand{\assignment}[2]{\due{(#1)} \cbox{#2}}
+\newcommand{\horizontalline}[2]{
+    \par
+    \vskip#1em
+    \noindent\rule{\textwidth}{0.5pt}
+    \par
+    \vskip#2em
+    \noindent
+}
 \newcommand{\link}[2]{\href{#1}{#2}}
 \newcommand{\modulo}{\text{ \textbf{mod} }}
-\newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
+\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
 \newcommand{\qed}{$\square$}
-\newcommand{\horizontalline}[2]{
-    \par % Ensure that we are in vertical mode
-    \vskip#1em % Space above the line
-    \noindent\rule{\textwidth}{0.5pt} % The line itself
-    \par % Go back to vertical mode
-    \vskip#2em % Space below the line
-    \noindent % Ensures next paragraph does not indent
+\newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
+\newcommand{\testimonial}[1]{
+    \horizontalline{0}{0}
+    \begin{center}
+        \Large{\textbf{I have neither given nor received unauthorized assistance.}}
+        \horizontalline{0}{0.5}
+        \large{\textbf{\authorName}}
+        \horizontalline{0}{0}
+    \end{center}
+    \noindent The original assignment for this problem can be found \pdflink{\AssDir #1}{here}.
 }
+%---------------------------------------------------------------------------
+%	CUSTOM ENVIRONMENTS
+%---------------------------------------------------------------------------
+% Cheat sheet
+\newenvironment{cheatsheet}[1]{
+    \clearpage
+    \twocolumn
+    \subsection*{#1}
+}
+{\onecolumn \clearpage}
+% Code
 \lstnewenvironment{code}[1][]
 {
     \lstset{style=stackoverflow, language=#1}
 }
 {}
+% Exam notes
+\newenvironment{examnotes}[1]{
+    \clearpage
+    \subsection*{#1}
+}
+{\clearpage}
+% Notes
+\newtcolorbox{mynotesbox}{
+    breakable,
+    boxrule=0pt,
+    boxsep=0pt,
+    colback=white, 
+    colframe=white, 
+    opacityback=0,
+    opacityframe=0,
+    sharp corners,
+    arc=0pt,
+    leftrule=0pt,
+    rightrule=0pt,
+    bottomrule=0pt,
+    toprule=0pt,
+    left=10pt,
+    right=10pt,
+    before upper={\setlength{\parskip}{0pt}\setlength{\parindent}{1em}},
+}
+\newenvironment{notes}[1]
+{
+    \subsection*{#1}
+    \horizontalline{-1}{-1}
+    \begin{mynotesbox}
+}
+{
+    \end{mynotesbox}
+    \horizontalline{-1}{0}
+}
+% Problem
+\newenvironment{problem}[1]{
+    \clearpage
+    \section{#1}
+    \horizontalline{0}{-1}
+}
+{}
+% Statement
 \newenvironment{statement}[1]{
     \subsection*{#1}
     \begin{mdframed}[
@@ -526,14 +606,9 @@
         leftmargin=0pt,
         innerleftmargin=15pt,
         innerrightmargin=15pt]
-    }
+}
 {\end{mdframed}}
-\newenvironment{problem}[1]{
-    \clearpage
-    \section{#1}
-    \horizontalline{0}{-1}
-    }
-{}
+% Summary
 \newenvironment{summary}[1]
 {
     \clearpage
