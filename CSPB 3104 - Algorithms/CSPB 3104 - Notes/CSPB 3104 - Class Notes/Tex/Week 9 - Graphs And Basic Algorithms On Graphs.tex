@@ -1,0 +1,237 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Week 9: (3/11 - 3/17)}
+\renewcommand{\SectionTitle}{Graphs And Basic Algorithms On Graphs}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is:
+
+\begin{itemize}
+    \item CLRS Chapter 22.1
+    \item CLRS Chapter 22.2
+    \item CLRS Chapter 22.3
+    \item CLRS Chapter 22.4
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to two Piazza posts. \assignment{3/19/24}{Piazza8DueDate}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=-o0x1uXtPHM}{Introduction To Graphs}{14}
+    \item \lecture{https://www.youtube.com/watch?v=tYk2vvm09D0}{Breadth First Search}{17}
+    \item \lecture{https://www.youtube.com/watch?v=Ig25N9h33Zg}{Depth First Search}{33}
+    \item \lecture{https://www.youtube.com/watch?v=NSjjPtcrz3g}{Topological Sorting}{11}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item The assignment for this week is \textbf{Problem Set 7 - Graphs}. \assignment{3/21/24}{Ass8DueDate}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \link{https://applied.cs.colorado.edu/mod/quiz/view.php?id=55677}{Quiz 8} \textbullet \pdflink{\QuizDir CSPB 3104 Quiz 8.pdf}{Finalized Quiz 8} \assignment{3/18/24}{Quiz8DueDate}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 22: Elementary Graph Algorithms}. The first section that is being covered from this chapter this week is \textbf{Section 22.1: Representations Of Graphs}.
+
+\begin{notes}{Section 22.1: Representations Of Graphs}
+    \subsubsection*{Representations of Graphs}
+
+    Graphs can be represented in various ways, each with its own advantages and disadvantages. The two most common representations are adjacency lists and adjacency matrices. These representations 
+    are crucial for designing and analyzing algorithms that operate on graphs. \vspace*{1em}
+    
+    \subsubsection*{Adjacency Lists}
+    
+    An adjacency list represents a graph as an array of lists. Each list corresponds to a vertex in the graph and contains all vertices adjacent to it. This representation is efficient in terms of 
+    space, especially for sparse graphs where the number of edges is much less than the square of the number of vertices. 
+    
+    \begin{itemize}
+        \item \textbf{Advantages:} Space-efficient for sparse graphs; easy to iterate over the neighbors of a vertex.
+        \item \textbf{Disadvantages:} Checking whether an edge exists between two vertices can be less efficient than with an adjacency matrix.
+    \end{itemize}
+    
+    \subsubsection*{Adjacency Matrices}
+    
+    An adjacency matrix represents a graph as a 2D array of size $V \times V$ where $V$ is the number of vertices in the graph. Each cell at position $(i, j)$ in the matrix indicates whether there is 
+    an edge from vertex $i$ to vertex $j$, typically with a 1 for the presence of an edge and a 0 for its absence.
+    
+    \begin{itemize}
+        \item \textbf{Advantages:} Efficient for checking the existence of an edge between any two vertices; easy to add or remove edges.
+        \item \textbf{Disadvantages:} Space-inefficient for sparse graphs, as it requires storing $V^2$ elements regardless of the number of edges.
+    \end{itemize}
+    
+    \subsubsection*{Choosing the Right Representation}
+    
+    The choice between adjacency lists and matrices largely depends on the specific requirements of the algorithm and the nature of the graph being dealt with. Adjacency lists are generally preferred 
+    for sparse graphs due to their space efficiency, while adjacency matrices may be more suitable for dense graphs or when frequent edge existence checks are necessary.
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 22.2: Breadth-First Search}.
+
+\begin{notes}{Section 22.2: Breadth-First Search}
+    \subsubsection*{Breadth-first Search (BFS)}
+
+    Breadth-first Search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a 
+    'search key') and explores the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    \begin{itemize}
+        \item BFS explores a graph in the broadest manner by visiting all neighbors of a starting vertex before moving to their children.
+        \item It uses a queue to keep track of the next location to visit.
+        \item BFS can be used to find the shortest path between two nodes in an unweighted graph.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    \begin{enumerate}
+        \item Start by putting any one of the graph's vertices at the back of a queue.
+        \item Take the front item of the queue and add it to the visited list.
+        \item Create a list of that vertex's adjacent nodes. Add the ones which aren't in the visited list to the back of the queue.
+        \item Keep repeating steps 2 and 3 until the queue is empty.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    \begin{itemize}
+        \item Finding shortest paths in unweighted graphs.
+        \item Crawling web pages from a given URL.
+        \item Social networking applications where you want to find people within a certain distance 'k' from a person.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Breadth-first Search]
+        Below is a simple Python example of BFS algorithm implementation to traverse graphs.
+    \begin{code}[Python]
+    from collections import deque
+    
+    def bfs(graph, start):
+        visited = set()
+        queue = deque([start])
+        
+        while queue:
+            vertex = queue.popleft()
+            if vertex not in visited:
+                visited.add(vertex)
+                print(vertex, end=" ")
+                
+                # Add all unvisited neighbours to the queue.
+                queue.extend(neighbour for neighbour in graph[vertex] if neighbour not in visited)
+    \end{code}
+        
+        This Python function demonstrates performing a BFS on a graph represented as an adjacency list. Starting from a given node, it visits all nodes of the graph in the breadth-first manner.
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 22.3: Depth-First Search}.
+
+\begin{notes}{Section 22.3: Depth-First Search}
+    \subsubsection*{Depth-first Search (DFS)}
+
+    Depth-first Search (DFS) is a fundamental algorithm used in graph theory to explore vertices and edges of a graph. It emphasizes diving as deep as possible into the graph's branches before 
+    backtracking. This strategy makes DFS an excellent tool for exploring maze structures, solving puzzles, and analyzing networks. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    \begin{itemize}
+        \item DFS explores a graph by starting at the root (or any arbitrary node) and explores as far as possible along each branch before backtracking.
+        \item It uses a stack (either the function call stack through recursion or an explicit stack data structure) to keep track of the path it's exploring.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    \begin{enumerate}
+        \item Mark the current vertex as visited and print or record it.
+        \item For each adjacent vertex connected to the current vertex, if it has not been visited, recursively visit that vertex.
+        \item Continue until all vertices that are reachable from the original source vertex have been explored.
+        \item If there are still unvisited vertices, select one as a new source and repeat the process, ensuring all vertices in the graph are explored.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    \begin{itemize}
+        \item Pathfinding and checking for connected components in a graph.
+        \item Topological sorting.
+        \item Finding strongly connected components.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Depth-first Search]
+        Below is a Python example demonstrating the DFS algorithm.
+    \begin{code}[Python]
+    def dfs(graph, node, visited=set()):
+        if node not in visited:
+            print(node, end=" ")
+            visited.add(node)
+            for neighbour in graph[node]:
+                dfs(graph, neighbour, visited)
+    \end{code}
+    
+        This Python function showcases how to perform a DFS on a graph represented as an adjacency list. It emphasizes a recursive approach to traverse all vertices of the graph, marking each as visited 
+        and exploring as far as possible before backtracking.
+    \end{highlight}    
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 22.4: Topological Sort}.
+
+\begin{notes}{Section 22.4: Topological Sort}
+    \subsubsection*{Topological Sort}
+
+    Topological sort is an algorithm for linearly ordering the vertices of a directed acyclic graph (DAG) such that for every directed edge $uv$ from vertex $u$ to vertex $v$, $u$ comes before $v$ in 
+    the ordering. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    \begin{itemize}
+        \item Topological sorting is only possible if the graph has no directed cycles, i.e., it must be a DAG.
+        \item A common approach to find a topological sort is to use Depth-first Search (DFS).
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    \begin{enumerate}
+        \item Call DFS to compute the finishing times for each vertex.
+        \item As each vertex is finished, insert it onto the front of a linked list.
+        \item After all vertices have been processed, return the linked list of vertices.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    \begin{itemize}
+        \item Scheduling tasks under precedence constraints.
+        \item Course scheduling.
+        \item Determining the order of compilation tasks in programming projects.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Topological Sort]
+        Below is an example of how to implement topological sorting in Python using DFS.
+    \begin{code}[Python]
+    def dfs(graph, node, visited, stack):
+        visited.add(node)
+        for neighbour in graph[node]:
+            if neighbour not in visited:
+                dfs(graph, neighbour, visited, stack)
+        stack.insert(0, node)
+    
+    def topological_sort(graph):
+        visited = set()
+        stack = []
+        for node in graph:
+            if node not in visited:
+                dfs(graph, node, visited, stack)
+        return stack
+    \end{code}
+    
+        This Python function demonstrates a DFS-based approach to achieve a topological sort of a directed acyclic graph. The vertices are pushed onto a stack in the reverse order of their finishing 
+        times, ensuring that all directed edges point from a vertex earlier in the order to a vertex later in the order.
+    \end{highlight}    
+\end{notes}

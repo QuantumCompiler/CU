@@ -1,0 +1,267 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Week 11: (4/1 - 4/7)}
+\renewcommand{\SectionTitle}{Strongly Connected Components and Spanning Trees}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is:
+
+\begin{itemize}
+    \item CLRS Chapter 22.5
+    \item CLRS Chapter 23.1
+    \item CLRS Chapter 23.2
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to two Piazza posts. \assignment{4/9/24}{Piazza11DueDate}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=RefZhyI2Fyg}{Strongly Connected Components: Introduction}{15}
+    \item \lecture{https://www.youtube.com/watch?v=ldWNg7HzGIE}{Strongly Connected Components: Properties}{16}
+    \item \lecture{https://www.youtube.com/watch?v=aeW1MxuBo0s}{Strongly Connected Components: Algorithms}{16}
+    \item \lecture{https://www.youtube.com/watch?v=ZeapY64_Pvk}{Minimal Spanning Trees: Introduction}{26}
+    \item \lecture{https://www.youtube.com/watch?v=9mC5QWE3HjU}{Minimal Spanning Trees: Prim's Algorithm}{37}
+    \item \lecture{https://www.youtube.com/watch?v=N8K2quW4Fjs}{Minimal Spanning Tree: Kruskal's Algorithm}{8}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item The assignment for this week is \textbf{Problem Set 8 - Strongly Connected Components and Spanning Trees}. \assignment{4/11/24}{Ass9DueDate}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \link{https://applied.cs.colorado.edu/mod/quiz/view.php?id=55691}{Quiz 9} \textbullet \pdflink{\QuizDir CSPB 3104 Quiz 9.pdf}{Finalized Quiz 9} \assignment{4/8/24}{Quiz9DueDate}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \link{https://applied.cs.colorado.edu/mod/quiz/view.php?id=55695}{Practice Exam 3} \assignment{4/2/24}{PracticeExam3DueDate}
+    \item \link{https://applied.cs.colorado.edu/mod/quiz/view.php?id=55696}{Exam 3} \textbullet \pdflink{\ExamsDir Spot Exam 3.pdf}{Spot Exam 3} \assignment{4/2/24}{Exam3DueDate}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 22: Elementary Graph Algorithms}. The section that is being covered from this chapter this week is \textbf{Section 22.5: Strongly Connected Components}.
+
+\begin{notes}{Section 22.5: Strongly Connected Components}
+    \subsection*{Strongly Connected Components (SCCs)}
+
+    Strongly Connected Components (SCCs) refer to maximal subgraphs of a directed graph, where every vertex is reachable from every other vertex within the same subgraph. In essence, if there is a 
+    path from any vertex in a component to any other vertex in the same component, then that component is strongly connected. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+
+    \begin{itemize}
+        \item The concept of SCCs is fundamental in the analysis of directed graphs.
+        \item Kosaraju's algorithm and Tarjan's algorithm are two well-known algorithms for finding SCCs in a directed graph.
+        \item Both algorithms involve depth-first search (DFS) but differ in their approaches to processing the vertices.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+
+    Kosaraju's algorithm can be summarized in the following steps:
+    \begin{enumerate}
+        \item Perform a DFS on the original graph, recording the finish times for each vertex.
+        \item Compute the transpose of the graph (reverse the direction of every edge).
+        \item Perform a DFS on the transposed graph, in the order of decreasing finish times from the first DFS.
+        \item Each DFS in the transposed graph gives a strongly connected component.
+    \end{enumerate}
+    Tarjan's algorithm, on the other hand, keeps track of low-link values and uses a stack to manage components during the DFS.
+    
+    \subsubsection*{Applications:}
+
+    \begin{itemize}
+        \item SCCs are used in theoretical computer science to understand the structure of complex directed graphs.
+        \item They can identify closed loops or cycles within networks, which is useful in networking, the analysis of social networks, and in the study of biological systems.
+        \item Understanding SCCs can also aid in optimizing navigational or routing strategies in directed graphs.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Finding SCCs]
+
+    Below is a simplified example of applying Kosaraju's algorithm to find SCCs in a directed graph.
+
+    \begin{code}[Python]
+    def kosaraju(graph):
+        stack = []
+        visited = set()
+        scc = []
+    
+        def dfs(vertex):
+            if vertex not in visited:
+                visited.add(vertex)
+                for neighbour in graph[vertex]:
+                    dfs(neighbour)
+                stack.append(vertex)
+    
+        def reverse(graph):
+            reversed_graph = {v: [] for v in graph}
+            for vertex, edges in graph.items():
+                for edge in edges:
+                    reversed_graph[edge].append(vertex)
+            return reversed_graph
+    
+        def dfs_reverse(vertex, temp):
+            if vertex not in visited:
+                visited.add(vertex)
+                temp.append(vertex)
+                for neighbour in reversed_graph[vertex]:
+                    dfs_reverse(neighbour, temp)
+    
+        for vertex in graph:
+            dfs(vertex)
+    
+        reversed_graph = reverse(graph)
+        visited.clear()
+    
+        while stack:
+            vertex = stack.pop()
+            if vertex not in visited:
+                temp = []
+                dfs_reverse(vertex, temp)
+                scc.append(temp)
+    
+        return scc
+    \end{code}
+    This function demonstrates the process of identifying SCCs in a directed graph using Kosaraju's algorithm, utilizing DFS, graph transposition, and stack operations.
+    \end{highlight}    
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 23: Minimum Spanning Trees} and the first section that is being a minimum covered is \textbf{Section 23.1: Growing A Minimum Spanning Tree}.
+
+\begin{notes}{Section 23.1: Growing A Minimum Spanning Tree}
+    \subsection*{Growing A Minimum Spanning Tree}
+
+    A Minimum Spanning Tree (MST) of a weighted, undirected graph is a subset of the edges that connects all vertices together, without any cycles, and with the minimal possible total edge weight. The 
+    process of growing a minimum spanning tree involves incrementally adding edges to construct the MST, ensuring that the selected edges at each step contribute to the minimum overall weight without 
+    forming a cycle. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+
+    \begin{itemize}
+        \item Prim's and Kruskal's algorithms are two classic approaches for growing a minimum spanning tree.
+        \item Prim's algorithm builds the MST by starting with an arbitrary vertex and adding the cheapest edge from the tree to a vertex not yet in the tree at each step.
+        \item Kruskal's algorithm builds the MST by sorting all the edges by their weights and adding them one by one, skipping those that would form a cycle.
+        \item Both algorithms make use of greedy strategies to ensure that at each step, the choice made contributes to an overall optimal solution.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+
+    For Prim's algorithm, the steps can be outlined as follows:
+    \begin{enumerate}
+        \item Initialize a tree with a single vertex, chosen arbitrarily from the graph.
+        \item Grow the tree by adding the cheapest edge from the tree to any vertex not yet in the tree.
+        \item Repeat step 2 until all vertices are included in the tree.
+    \end{enumerate}
+    For Kruskal's algorithm, the steps are:
+
+    \begin{enumerate}
+        \item Sort all the edges in non-decreasing order of their weight.
+        \item Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If cycle is not formed, include this edge. Otherwise, discard it.
+        \item Repeat step 2 until there are \(V-1\) edges in the tree, where \(V\) is the number of vertices in the graph.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+
+    \begin{itemize}
+        \item Designing minimum cost networks like electrical grids, computer networks, and road networks.
+        \item Approximating solutions for NP-hard problems, such as the traveling salesman problem.
+        \item Cluster analysis in data science.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Growing a Minimum Spanning Tree]
+
+    Below is a simple implementation of Prim's algorithm for growing a minimum spanning tree.
+
+    \begin{code}[Python]
+    import heapq
+    
+    def prim(graph, start):
+        mst = []  # Store the edges in the MST
+        visited = set([start])
+        edges = [(cost, start, to) for to, cost in graph[start].items()]
+        heapq.heapify(edges)
+    
+        while edges:
+            cost, frm, to = heapq.heappop(edges)
+            if to not in visited:
+                visited.add(to)
+                mst.append((frm, to, cost))
+    
+                for next_to, next_cost in graph[to].items():
+                    if next_to not in visited:
+                        heapq.heappush(edges, (next_cost, to, next_to))
+    
+        return mst
+    \end{code}
+    This function uses Prim's algorithm to grow a minimum spanning tree from a given start vertex. The graph is represented as a dictionary of dictionaries, where the outer dictionary holds vertices, 
+    and each inner dictionary maps adjacent vertices to edge weights.
+    \end{highlight}    
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 23.2: The Algorithms Of Kruskal And Prim}.
+
+\begin{notes}{Section 23.2: The Algorithms Of Kruskal And Prim}
+    \subsection*{The Algorithms of Kruskal and Prim}
+
+    Kruskal's and Prim's algorithms are two efficient methods used to find a Minimum Spanning Tree (MST) of a connected, edge-weighted graph. The MST is a subset of the edges that connects all the 
+    vertices together, without any cycles, and with the minimal total edge weight. \vspace*{1em}
+    
+    \subsubsection*{Kruskal's Algorithm:}
+
+    Kruskal's algorithm is a greedy algorithm that builds the MST by selecting the shortest edge that does not form a cycle and adding it to the growing spanning tree. The process is repeated until 
+    the tree spans all the vertices.
+
+    \begin{enumerate}
+        \item Sort all edges in the graph in increasing order of their weights.
+        \item Initialize a forest (a set of trees), where each vertex in the graph is a separate tree.
+        \item Repeat the following until the forest forms a single tree (the MST): Choose the smallest edge from the sorted edge list. If the edge connects two different trees, add it to the MST (and merge the two trees). Otherwise, discard the edge.
+        \item The resulting MST is the union of all selected edges.
+    \end{enumerate}
+    
+    \subsubsection*{Prim's Algorithm:}
+
+    Prim's algorithm, another greedy approach, starts with a single vertex and grows the MST by adding the cheapest possible connection from the tree to another vertex not in the tree.
+    
+    \begin{enumerate}
+        \item Start with a tree containing a single chosen vertex from the graph.
+        \item At each step, add the cheapest edge that connects a vertex in the tree to a vertex outside the tree.
+        \item Repeat step 2 until all vertices are included in the tree.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+
+    Both algorithms are used in various applications, including:
+
+    \begin{itemize}
+        \item Designing network layouts (e.g., computer networks, telecommunications networks).
+        \item Planning road systems to minimize cost.
+        \item Solving certain approximation problems in algorithms.
+        \item Generating mazes for computer games.
+    \end{itemize}
+    
+    \begin{highlight}[Comparison]
+    While both Kruskal's and Prim's algorithms are efficient for finding the MST, their performance may vary depending on the structure of the graph and the specific use case. Kruskal's algorithm is 
+    generally simpler to implement and can be more efficient for sparse graphs. Prim's algorithm can be faster for dense graphs, especially when implemented with a priority queue.
+    \end{highlight}    
+\end{notes}

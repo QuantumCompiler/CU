@@ -1,0 +1,327 @@
+\clearpage
+
+\newcommand{\ChapTitle}{Week 1: (1/15 - 1/21)}
+\newcommand{\SectionTitle}{Introduction To Algorithms}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is:
+
+\begin{itemize}
+    \item CLRS Chapter 1.
+    \item CLRS Chapter 2.
+    \item CLRS Chapter 3.
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to two Piazza posts. \assignment{1/23/24}{Piazza1DueDate}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=ZEDBVAFQ2Dk}{Introduction To Algorithms}{29}
+    \item \lecture{https://www.youtube.com/watch?v=0x4mRlsLQpc}{Insertion Sort}{44}
+    \item \lecture{https://www.youtube.com/watch?v=sD_Da1trJpY}{Time And Space Complexity}{31}
+    \item \lecture{https://www.youtube.com/watch?v=37HQef1Fk8Y}{Asymptotic Notation}{31}
+    \item \lecture{https://www.youtube.com/watch?v=eMrfI7-u6m0}{Pitfalls: Logarithms And Exponentials}{16}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item The assignment for this week is \textbf{Introduction To Algorithms}. \assignment{1/25/24}{Ass1DueDate}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \link{https://applied.cs.colorado.edu/mod/quiz/view.php?id=55585}{Quiz 1} \textbullet \pdflink{\QuizDir CSPB 3104 Quiz 1.pdf}{Finalized Quiz 1} \assignment{1/22/24}{Quiz1DueDate}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 1: The Role Of Algorithms In Computing}. The first section from this chapter is \textbf{Section 1.1: Algorithms}.
+
+\begin{notes}{Section 1.1: Algorithms}
+    \subsection*{Overview}
+
+    At its core, an algorithm is a step-by-step procedure or a set of rules designed to perform a specific task or solve a particular problem. In computer science, algorithms are fundamental as they 
+    provide the methodical instructions that a computer follows to execute various tasks. \vspace*{1em}
+
+    \subsection*{Key Aspects}
+
+    \begin{itemize}
+        \item \textbf{Step-by-Step Procedure}: An algorithm is like a recipe in a cookbook. It contains steps that are performed in a sequence. Each step is clear and unambiguous. For example, an algorithm 
+        to add two numbers will have steps like: 'take the first number', 'take the second number', and 'add them together'.
+        \item \textbf{Specific Task or Problem}: Algorithms are designed with a goal in mind. This can range from simple tasks like sorting a list of numbers to more complex operations like compressing 
+        data or finding the shortest path in a network.
+        \item \textbf{Efficiency}: An important aspect of algorithms is their efficiency, which is generally measured in terms of time (how fast the algorithm runs) and space (how much memory it uses). 
+        Efficient algorithms can handle large data sets or complex computations more effectively.
+        \item \textbf{Determinism and Correctness}: Typically, for a given input, an algorithm should produce a predictable and correct output. This consistency is crucial for reliability in computer 
+        programs.
+        \item \textbf{Pseudocode and Implementation}: Algorithms are often initially described in pseudocode, a language-like notation that outlines the algorithm steps in human-readable form. They are 
+        then implemented in programming languages like Python, Java, or C++.
+    \end{itemize}
+
+    Algorithms form the backbone of all computer programs and applications. Understanding them is key to being an effective computer scientist, as they help you to understand how to approach problems 
+    systematically and efficiently.
+\end{notes}
+
+The next section from this chapter is \textbf{Section 1.2: Algorithms As A Technology}.
+
+\begin{notes}{Section 1.2: Algorithms As A Technology}
+    \subsection*{Overview}
+
+    When we talk about algorithms as a technology, we're essentially considering them as tools or solutions that can be applied to solve real-world problems using computers. The efficiency of these 
+    algorithms is a critical aspect, as it determines how effectively and quickly these problems can be solved. \vspace*{1em}
+
+    \subsection*{Key Aspects}
+
+    \begin{itemize}
+        \item \textbf{Algorithms as Tools}: Just like a hammer is a tool for a carpenter, algorithms are tools for computer scientists. They are applied to process data, solve complex calculations, 
+        make decisions based on input, and more. In the modern world, algorithms are behind everything from simple web searches to complex machine learning models.
+        \item \textbf{Measuring Efficiency}: The efficiency of an algorithm is measured mainly in two ways:
+        \begin{itemize}
+            \item \textbf{Time Complexity}: This refers to the amount of time an algorithm takes to complete its task as a function of the size of the input data. It's often expressed using Big 
+            $\mathcal{O}$ notation (like $\mathcal{O}(n)$, $\mathcal{O}(\log{(n)})$, etc.), which gives an upper bound on the time. A faster algorithm has lower time complexity.
+            \item \textbf{Space Complexity}: This measures the amount of memory space required by an algorithm to run. An efficient algorithm uses space judiciously, especially important when dealing 
+            with large data sets.
+        \end{itemize}
+        \item \textbf{Importance of Efficiency}: Efficient algorithms can handle larger data sets and more complex problems without requiring excessive computational resources. This is especially important 
+        in a world where data is growing exponentially. For example, an inefficient sorting algorithm might work fine for a small list but becomes impractically slow for a list with millions of elements.
+        \item \textbf{Trade-offs}: There's often a trade-off between time and space complexity. Sometimes, an algorithm that's faster will use more memory, and vice versa. The choice of algorithm often 
+        depends on the specific constraints and requirements of the problem you're trying to solve.
+        \item \textbf{Real-World Applications}: Efficient algorithms power everything from Google's search engine to the routing of data over networks. Inefficient algorithms can lead to slow performance, 
+        high energy consumption, and poor scalability.
+    \end{itemize}
+
+    Understanding the efficiency of algorithms is key to designing effective solutions in computer science. It's about finding the right balance between speed and resource usage, which can vary greatly 
+    depending on the problem at hand.
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 2: Getting Started}. The first section from this chapter is \textbf{Section 2.1: Insertion Sort}.
+
+\begin{notes}{Section 2.1: Insertion Sort}
+    \subsection*{Overview}
+
+    Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It's much less efficient on large lists than more advanced algorithms like quicksort, 
+    heapsort, or merge sort. However, its simplicity makes it easy to understand and implement, especially for small datasets or as a teaching tool. \vspace*{1em}
+
+    \subsection*{Key Aspects}
+
+    \begin{itemize}
+        \item \textbf{Basic Concept}: Imagine you are playing cards. When you're dealt a card, you insert it into the correct position to keep your hand sorted. Insertion sort works similarly. It iterates 
+        through an input list and removes one element per iteration, finding the location it belongs to in the already-sorted part of the list, and inserts it there.
+        \item \textbf{How It Works}:
+        \begin{itemize}
+            \item Start with the second element of the list (the first element is considered already sorted).
+            \item Compare this element with the elements before it, moving backward.
+            \item If the current element is smaller than the compared element, swap them.
+            \item Continue moving backward and swapping as long as the current element is smaller than the compared elements.
+            \item Once the correct position is found where the current element is no longer smaller than the compared element, or you reach the beginning of the array, the current element is placed, 
+            and the algorithm moves to the next element in the unsorted part of the list.
+            \item Repeat this process until the entire list is sorted.
+        \end{itemize}
+        \item \textbf{Time Complexity}:
+        \begin{itemize}
+            \item Best Case: $\mathcal{O}(n)$ - This happens when the list is already sorted, and only minimal comparisons are needed.
+            \item Average and Worst Case: $\mathcal{O}(n^{2})$ - When the list is in reverse order, or elements are randomly distributed, each element may need to be compared with all other sorted elements.
+        \end{itemize}
+        \item \textbf{Space Complexity}: $\mathcal{O}(1)$ - Insertion sort is a space-efficient algorithm because it only requires a constant amount of additional storage space.
+        \item \textbf{Use Cases}:
+        \begin{itemize}
+            \item Small Lists: It's efficient for small data sets.
+            \item Partially Sorted Lists: It's efficient if the list is already partially sorted.
+            \item Online Algorithms: It can sort the list as it receives it, making it useful in situations where the complete list of data isn't available initially (online algorithms).
+        \end{itemize}
+        \item \textbf{Advantages}:
+        \begin{itemize}
+            \item Simple to understand and implement.
+            \item Efficient for small data sets.
+            \item More efficient than other simple algorithms like bubble sort.
+            \item Stable: Maintains the relative order of equal elements.
+            \item Can sort a list as it receives it.
+        \end{itemize}
+        \item \textbf{Disadvantages}:
+        \begin{itemize}
+            \item Inefficient for large data sets due to its $\mathcal{O}(n^{2})$ time complexity.
+            \item Many shifts and comparisons are required.
+        \end{itemize}
+    \end{itemize}
+
+    Insertion sort is a great starting point for understanding sorting algorithms and concepts like in-place sorting and algorithm efficiency. Here is the insertion sort in C++.
+
+    \begin{code}[C++]
+    void insertionSort(int arr[], int length) {
+        int i, key, j;
+        for (i = 1; i < length; i++) {
+            key = arr[i]; // The element to be inserted in the sorted sequence
+            j = i - 1;
+    
+            // Move elements of arr[0..i-1], that are greater than key,
+            // to one position ahead of their current position
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key; // Place key at after the element just smaller than it.
+        }
+    }
+    \end{code}
+\end{notes}
+
+The next section from this chapter is \textbf{Section 2.2: Analyzing Algorithms}.
+
+\begin{notes}{Section 2.2: Analyzing Algorithms}
+    \subsection*{Overview}
+
+    Analyzing algorithms is an essential part of computer science, as it helps you understand how efficient an algorithm is in terms of time and space usage. This analysis is crucial for choosing the 
+    right algorithm for a particular problem, especially when dealing with large datasets or resource-constrained environments.
+
+    \subsection*{Key Aspects}
+
+    \begin{itemize}
+        \item \textbf{Time Complexity}: This measures how the runtime of an algorithm increases with the size of the input. It's a way to estimate the time taken for an algorithm to run, relative to 
+        the size of its input.
+        \begin{itemize}
+            \item \textbf{Big O Notation}: The most common way to express time complexity. It provides an upper bound on the time complexity, ensuring that the algorithm will not take more time than 
+            the given complexity in the worst case.
+            \item \textbf{Common Time Complexities}: Constant $\mathcal{O}(1)$, logarithmic $\mathcal{O}(\log{(n)})$, linear $\mathcal{O}(n)$, linearithmic $\mathcal{O}(n \log{(n)})$, quadratic 
+            $\mathcal{O}(n^{2})$, cubic $\mathcal{O}(n^{3})$, exponential $\mathcal{O}(2^{n})$, etc.
+        \end{itemize}
+        \item \textbf{Space Complexity}: This refers to the amount of memory space required by an algorithm in its execution. Space complexity becomes crucial for applications that run on devices with 
+        limited memory.
+        \begin{itemize}
+            \item \textbf{Auxiliary Space}: Apart from space complexity, sometimes you look at the extra space or temporary space used by an algorithm.
+        \end{itemize}
+        \item \textbf{Worst, Average, and Best Case Analysis}:
+        \begin{itemize}
+            \item \textbf{Worst Case}: The maximum time or space required by the algorithm for any input of size n. It's a guarantee that the algorithm will not take more time or space than this.
+            \item \textbf{Average Case}: It's more practical as it provides a more realistic measure of the algorithm's performance. It's the average time or space taken by the algorithm over all 
+            possible inputs.
+            \item \textbf{Best Case}: The minimum time or space taken by the algorithm for any input of size n. It's usually not as useful as worst or average cases but sometimes relevant for comparison.
+        \end{itemize}
+        \item \textbf{Amortized Analysis}: In some cases, an algorithm might have a very high time complexity for a particular operation but generally runs faster. Amortized analysis gives the average 
+        time per operation, taken over a sequence of operations.
+        \item \textbf{Empirical Analysis}: This involves running the algorithm with different inputs and measuring the time and space it uses. This approach gives practical insights but is influenced 
+        by hardware and software environments.
+        \item \textbf{Theoretical vs. Practical}: While theoretical analysis gives you complexity in terms of n, practical performance can be influenced by factors like constant factors, lower-order 
+        terms, the architecture of the machine, and so on.
+        \item \textbf{Algorithmic Paradigms}: Sometimes, the analysis is also done based on the approach used by the algorithm, like Divide and Conquer, Dynamic Programming, Greedy Techniques, etc.
+    \end{itemize}
+
+    Understanding these aspects of algorithm analysis can help you predict how an algorithm will perform in various situations, which is crucial for making informed decisions in software development 
+    and system design.
+\end{notes}
+
+The last section from this chapter is \textbf{Section 2.3: Designing Algorithms}.
+
+\begin{notes}{Section 2.3: Designing Algorithms}
+    \subsection*{Overview}
+
+    Understanding these aspects of algorithm analysis can help you predict how an algorithm will perform in various situations, which is crucial for making informed decisions in software development 
+    and system design.
+
+    \subsection*{Procedure}
+
+    \begin{itemize}
+        \item \textbf{Divide}:
+        \begin{itemize}
+            \item The first step is to divide the original problem into smaller sub-problems. These sub-problems should ideally be similar to the original problem but smaller in scale.
+            \item The division continues recursively until the sub-problems are small enough to be solved straightforwardly (base case).
+        \end{itemize}
+        \item \textbf{Conquer}:
+        \begin{itemize}
+            \item Solve each sub-problem. As you've broken the problem down into smaller pieces, these can often be solved more easily and efficiently.
+            \item If the sub-problems are still complex, apply the divide and conquer strategy recursively to them.
+        \end{itemize}
+        \item \textbf{Combine}:
+        \begin{itemize}
+            \item Finally, combine the solutions of the sub-problems to form a solution to the original problem.
+            \item The method of combining may vary depending on the problem.
+        \end{itemize}
+    \end{itemize}
+
+    \subsection*{Characteristics and Advantages}
+
+    \begin{itemize}
+        \item \textbf{Recursive Nature}: Divide and conquer is inherently recursive, as it involves solving smaller instances of the same problem.
+        \item \textbf{Efficiency}: It can significantly reduce the time complexity for many problems, especially those where a direct approach would be inefficient.
+        \item \textbf{Parallelism}: Sub-problems can often be solved in parallel, making divide and conquer algorithms well-suited for parallel processing and multi-threading.
+    \end{itemize}
+
+    \subsection*{Classic Examples}
+
+    \begin{itemize}
+        \item \textbf{Merge Sort}: An array is divided into halves, each half is sorted (conquer), and then the sorted halves are merged back together (combine).
+        \item \textbf{Quick Sort}: The array is partitioned around a 'pivot' element, and then the sub-arrays are sorted independently.
+        \item \textbf{Binary Search}: The problem of searching for an element in a sorted array is divided by comparing the target with the middle element, effectively halving the search space each time.
+        \item \textbf{Strassen's Algorithm for Matrix Multiplication}: This approach improves the efficiency of matrix multiplication by dividing matrices and reducing the number of multiplications needed.
+    \end{itemize}
+
+    \subsection*{Considerations}
+
+    \begin{itemize}
+        \item \textbf{Overheads}: The overhead of recursion and combining solutions can sometimes make a divide and conquer algorithm less efficient for small datasets.
+        \item \textbf{Stack Space}: Recursive methods can use significant stack space, which might be a limiting factor for very deep recursive calls.
+    \end{itemize}
+
+    Understanding Divide and Conquer is crucial for computer science students, as it forms the basis for many efficient and widely-used algorithms. It's a great example of how a problem can be simplified 
+    and made more manageable through recursion and systematic approach.
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 3: Growth Of Functions}. The first section from this chapter is \textbf{Section 3.1: Asymptotic Notation}.
+
+\begin{notes}{Section 3.1: Asymptotic Notation}
+    \subsection*{Overview}
+
+    Asymptotic notation in computer science is a mathematical tool used to describe the behavior of algorithms, particularly in terms of their time and space complexity. It provides a way to analyze 
+    an algorithm's efficiency by considering the limits of its performance as the input size grows towards infinity. There are three primary types of asymptotic notation: \vspace*{1em}
+
+    \subsection*{Notations}
+
+    \begin{itemize}
+        \item \textbf{Big $\mathcal{O}$ Notation ($\mathcal{O}$-notation)}:
+        \begin{itemize}
+            \item \textbf{Description}: Big $\mathcal{O}$ notation describes the upper bound of the complexity. It gives the worst-case scenario of an algorithm's growth rate.
+            \item \textbf{Usage}: It's used to describe the maximum amount of time (or space) an algorithm requires for any input of size n.
+            \item \textbf{Example}: If an algorithm has a time complexity of $\mathcal{O}(n^{2})$, it means that the time taken will increase at most quadratically with the size of the input.
+        \end{itemize}
+        \item \textbf{Omega Notation ($\Omega$-notation)}:
+        \begin{itemize}
+            \item \textbf{Description}: Omega notation is used to describe the lower bound of the complexity. It provides a guarantee of at least this amount of resources the algorithm needs.
+            \item \textbf{Usage}: It shows the best-case scenario (minimum performance) for an algorithm.
+            \item \textbf{Example}: If an algorithm has a time complexity of $\Omega(n)$, it means that the algorithm will take at least linear time in the best case.
+        \end{itemize}
+        \item \textbf{Theta Notation ($\Theta$-notation)}:
+        \begin{itemize}
+            \item \textbf{Description}: Theta notation tightly bounds the complexity from above and below, meaning it defines both the upper and lower limits of the time or space complexity.
+            \item \textbf{Usage}: It's used when we want to indicate that an algorithm has both upper and lower bounds that are asymptotically the same.
+            \item \textbf{Example}: An algorithm with time complexity $\Theta(n \log{(n)})$ will have its running time increase logarithmically in the best case and linearithmically in the worst case.
+        \end{itemize}
+    \end{itemize}
+
+    \subsection*{Key Points}
+
+    \begin{itemize}
+        \item \textbf{Asymptotic Behavior}: These notations are not about providing exact running times or space requirements but rather describing the growth rate relative to the input size as it 
+        becomes very large.
+        \item \textbf{Simplification}: Constants and lower-order terms are usually ignored in asymptotic analysis. For instance, $3n^{2} + 2n + 1$ is simply $\mathcal{O}(n^{2})$.
+        \item \textbf{Widely Used in Algorithm Analysis}: Asymptotic notations are crucial for comparing algorithms, especially when deciding which algorithm to use for a given problem.
+    \end{itemize}
+
+    Understanding these notations is fundamental in computer science as it allows you to abstract away from machine-specific details and focus on the algorithm's inherent efficiency. It's an essential 
+    part of algorithm design and analysis, providing a common language to compare and discuss the performance of different algorithms.
+\end{notes}

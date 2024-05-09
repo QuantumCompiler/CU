@@ -1,0 +1,478 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Week 5: (2/12 - 2/18)}
+\renewcommand{\SectionTitle}{Red-Black Trees, Augmented Data Structures And Hashtables}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is:
+
+\begin{itemize}
+    \item CLRS Chapter 11.1.
+    \item CLRS Chapter 11.2.
+    \item CLRS Chapter 11.3.
+    \item CLRS Chapter 13.1.
+    \item CLRS Chapter 13.2.
+    \item CLRS Chapter 13.3.
+    \item CLRS Chapter 14.1.
+    \item CLRS Chapter 14.2.
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to two Piazza posts. \assignment{2/20/24}{Piazza5DueDate}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=akzre3pouOk}{Red Black Trees: Basics}{33}
+    \item \lecture{https://www.youtube.com/watch?v=PpiFlEFGbMk}{Red Black Trees: Operations}{30}
+    \item \lecture{https://www.youtube.com/watch?v=JuoI0xLKSnI}{Augmenting Trees: Dynamic Order Statistics}{15}
+    \item \lecture{https://www.youtube.com/watch?v=d0rlrRZc-0s}{Treaps}{29}
+    \item \lecture{https://www.youtube.com/watch?v=g8O-nqqM-Sk}{Hashtables: Basics}{25}
+    \item \lecture{https://www.youtube.com/watch?v=T_EsxAC7vT4}{Universal Hash Functions}{21}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item The assignment for this week is \textbf{Problem Set 5 - Red-Black Trees, Augmented Data Structures And Hashtables}. \assignment{2/22/24}{Ass5DueDate}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \link{https://applied.cs.colorado.edu/mod/quiz/view.php?id=55636}{Quiz 5} \textbullet \pdflink{\QuizDir CSPB 3104 Quiz 5.pdf}{Finalized Quiz 5} \assignment{2/19/24}{Quiz5DueDate}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 11: Hash Tables}. The first section that is covered from this chapter this week is \textbf{Section 11.1: Direct-Address Tables}.
+
+\begin{notes}{Section 11.1: Direct-Address Tables}
+    \subsubsection*{Direct-Address Tables}
+
+    Direct-Address Tables represent a straightforward yet efficient method for storing and retrieving data when the universe $U$ of keys is reasonably small. This data structure allows for constant-time 
+    operations for many common tasks, such as search, insert, and delete, by directly using the keys as indices in an array.
+    
+    \begin{itemize}
+        \item \textbf{Concept and Structure}
+        \begin{itemize}
+            \item In a direct-address table, each position or slot of the table corresponds to a key in the universe of possible keys. If there is an element with key $k$, it is placed in slot $k$.
+            \item This one-to-one correspondence between keys and table positions ensures that operations can be performed in $O(1)$ time.
+        \end{itemize}
+        
+        \item \textbf{Operations}
+        \begin{itemize}
+            \item \textbf{Search}: To find an element with a specific key $k$, directly access the slot $k$ in the table.
+            \item \textbf{Insert}: To insert an element with key $k$, place it in slot $k$.
+            \item \textbf{Delete}: To remove an element with key $k$, clear the slot $k$.
+        \end{itemize}
+        
+        \item \textbf{Limitations}
+        \begin{itemize}
+            \item The main limitation of direct-address tables is their space complexity. For a large universe of keys, where only a small subset of keys are actually used, direct-address tables can 
+            be impractically large.
+            \item They are most effective when the range of key values is not significantly larger than the number of elements to be stored.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Direct-Address Tables]
+        The Python code below demonstrates a basic implementation of a direct-address table for storing and retrieving integer keys.
+    \begin{code}[Python]
+    class DirectAddressTable:
+        def __init__(self, size):
+            self.table = [None] * size
+    
+        def insert(self, key, data):
+            self.table[key] = data
+    
+        def delete(self, key):
+            self.table[key] = None
+    
+        def search(self, key):
+            return self.table[key]
+    \end{code}
+        This example illustrates the simplicity and efficiency of direct-address tables for scenarios where the keys are integers and the universe of keys is small.
+    \end{highlight}      
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 11.2: Hash Tables}.
+
+\begin{notes}{Section 11.2: Hash Tables}
+    \subsubsection*{Hash Tables}
+
+    Hash tables are a powerful data structure used to implement associative arrays, which map keys to values. They achieve high efficiency for searching, insertion, and deletion operations by using a 
+    hash function to compute an index into an array of buckets or slots, where the desired value can be stored or found.
+    
+    \begin{itemize}
+        \item \textbf{Hash Function}
+        \begin{itemize}
+            \item The hash function takes a key and maps it to an integer, which is used as the index at which the data associated with the key is stored. A well-designed hash function reduces collisions 
+            and distributes keys uniformly across the table.
+        \end{itemize}
+        
+        \item \textbf{Handling Collisions}
+        \begin{itemize}
+            \item \textbf{Chaining}: This method involves storing all elements that hash to the same index in a linked list attached to each bucket. While simple, its worst-case search time can degrade 
+            to $O(n)$ if many elements hash to the same value.
+            \item \textbf{Open Addressing}: This method finds another slot for the colliding element using strategies like linear probing, quadratic probing, or double hashing. It can suffer from clustering, 
+            which affects performance, but maintains a constant $O(1)$ average time complexity for search, insert, and delete under good conditions.
+        \end{itemize}
+        
+        \item \textbf{Load Factor and Resizing}
+        \begin{itemize}
+            \item The load factor, defined as the number of stored entries divided by the number of buckets, affects the performance of the hash table. A high load factor increases the likelihood of 
+            collisions.
+            \item Hash tables resize and rehash their contents to a larger array once the load factor exceeds a certain threshold, ensuring that the average time complexities for insertions, deletions, 
+            and searches remain at $O(1)$ under the assumption of good hashing.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The average-case time complexity for search, insert, and delete operations in a well-implemented hash table is $O(1)$, assuming a good hash function and low load factor.
+            \item In the worst case, particularly with poor hash function choice or high load factor, the time complexity can degrade to $O(n)$, where $n$ is the number of entries in the table. This 
+            scenario is more common with chaining when many keys hash to the same index.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for a Simple Hash Table Using Chaining]
+        This Python code provides a basic implementation of a hash table using chaining to handle collisions, with functions for insertion, searching, and deletion.
+    \begin{code}[Python]
+    class HashTable:
+        def __init__(self, size):
+            self.size = size
+            self.table = [[] for _ in range(self.size)]
+    
+        def hash_function(self, key):
+            return key % self.size
+    
+        def insert(self, key, value):
+            hash_index = self.hash_function(key)
+            for i, (k, v) in enumerate(self.table[hash_index]):
+                if k == key:
+                    self.table[hash_index][i] = (key, value)  # Update existing key
+                    return
+            self.table[hash_index].append((key, value))  # Insert new key
+    
+        def search(self, key):
+            hash_index = self.hash_function(key)
+            for k, v in self.table[hash_index]:
+                if k == key:
+                    return v
+            return None
+    
+        def delete(self, key):
+            hash_index = self.hash_function(key)
+            for i, (k, v) in enumerate(self.table[hash_index]):
+                if k == key:
+                    del self.table[hash_index][i]
+                    return
+    \end{code}
+        This implementation illustrates the basic principles and efficiency of hash tables, highlighting the constant average-case time complexity for key-based operations.
+    \end{highlight}
+\end{notes}
+
+The last section that is covered from this chapter this week is \textbf{Section 11.3: Hash Functions}.
+
+\begin{notes}{Section 11.3: Hash Functions}
+    \subsubsection*{Hash Functions}
+
+    Hash functions are a critical component of hash tables, responsible for mapping keys to indices in the table. A good hash function is essential for distributing keys uniformly across the hash table, 
+    minimizing collisions, and ensuring efficient data retrieval and storage operations.
+    
+    \begin{itemize}
+        \item \textbf{Characteristics of a Good Hash Function}
+        \begin{itemize}
+            \item \textbf{Uniform Distribution}: The hash function should distribute keys as evenly as possible over the hash table to minimize collisions.
+            \item \textbf{Deterministic}: Given a particular key, the hash function should always produce the same index.
+            \item \textbf{Efficient to Compute}: The hash function should be quick to calculate, allowing for fast data retrieval and insertion.
+            \item \textbf{Minimizes Collisions}: While collisions are inevitable, a good hash function should minimize their occurrence.
+        \end{itemize}
+        
+        \item \textbf{Types of Hash Functions}
+        \begin{itemize}
+            \item \textbf{Division Method}: This method involves taking the remainder of the key divided by the table size. It is simple and effective for certain key distributions.
+            \item \textbf{Multiplication Method}: The key is multiplied by a constant fractional part, and the fractional part of the result is used to determine the index. This method offers good 
+            performance for a wide range of key values.
+            \item \textbf{Universal Hashing}: A set of hash functions is used, and one is chosen at random for each instance of the hash table. This approach reduces the likelihood of collisions and 
+            provides better worst-case guarantees.
+        \end{itemize}
+        
+        \item \textbf{Collision Resolution Techniques}
+        \begin{itemize}
+            \item When two keys hash to the same index, collision resolution techniques such as chaining or open addressing are employed to handle the collision.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The efficiency of hash table operations significantly depends on the quality of the hash function. A well-designed hash function can maintain the average-case time complexity of hash 
+            table operations at $O(1)$.
+            \item Poor hash function design can lead to clustering or many collisions, degrading performance to $O(n)$ in the worst case.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Considerations in Designing Hash Functions]
+        When designing or choosing a hash function for a particular application, it is crucial to consider the types of keys to be used, the expected distribution of those keys, and the size of the 
+        hash table. The goal is to achieve a balance between computational efficiency and the uniform distribution of keys across the table, minimizing the risk of collisions and the subsequent need 
+        for collision resolution.
+    \end{highlight}    
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 13: Red-Black Trees}. The first section that is being covered from this chapter this week is \textbf{Section 13.1: Properties Of Red-Black Trees}.
+
+\begin{notes}{Section 13.1: Properties Of Red-Black Trees}
+    \subsubsection*{Properties of Red-Black Trees}
+
+    Red-black trees are a type of self-balancing binary search tree, where each node contains an extra bit for denoting the color of the node, either red or black. This structure ensures that the tree 
+    remains approximately balanced, resulting in improved performance for search, insertion, and deletion operations. The properties of red-black trees are crucial for maintaining this balance and 
+    guaranteeing a worst-case time complexity of $O(\log{(n)})$ for these operations.
+    
+    \begin{itemize}
+        \item \textbf{Properties}
+        \begin{itemize}
+            \item \textbf{Property 1: Every node is either red or black.}
+            \item \textbf{Property 2: The root is always black.}
+            \item \textbf{Property 3: All leaves (NIL nodes) are black.}
+            \item \textbf{Property 4: If a node is red, then both its children are black.} This property prevents the formation of a red node having a red parent, which helps in maintaining the balance 
+            of the tree.
+            \item \textbf{Property 5: For each node, all simple paths from the node to descendant leaves contain the same number of black nodes.} This property, also known as the "black-height" property, 
+            ensures that the path from the root to the farthest leaf is no more than twice as long as the path from the root to the nearest leaf, maintaining the tree's balanced height.
+        \end{itemize}
+        
+        \item \textbf{Implications of the Properties}
+        \begin{itemize}
+            \item These properties together enforce a critical balance across the tree, ensuring that the longest path from the root to a leaf is no more than twice as long as the shortest path from 
+            the root to a leaf. This balance is key to the $O(\log{(n)})$ search time.
+            \item The requirements for coloration and black-height contribute to a self-balancing nature, where operations such as insertions and deletions may require a series of color changes and 
+            rotations to restore red-black properties, but the resulting tree remains balanced.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The balancing properties of red-black trees ensure that the height of the tree is always $O(\log{(n)})$ where $n$ is the number of nodes in the tree. Consequently, search, insertion, 
+            and deletion operations all have $O(\log{(n)})$ worst-case time complexity.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Maintaining Red-Black Tree Properties]
+        Operations on red-black trees, such as insertion and deletion, require careful manipulation to maintain the five properties. This often involves recoloring nodes and performing tree rotations. 
+        Despite the complexity of these operations, the payoff is a highly efficient, self-balancing tree ideal for applications requiring frequent insertions and deletions, where balanced search times 
+        are critical.
+    \end{highlight}      
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 13.2: Rotations}.
+
+\begin{notes}{Section 13.2: Rotations}
+    \subsubsection*{Rotations in Red-Black Trees}
+
+    Rotations are fundamental operations in red-black trees, used to maintain the tree's balancing properties after insertions and deletions. These operations are pivotal for preserving the red-black 
+    properties, ensuring the tree remains balanced and maintains its $O(\log{(n)})$ search, insertion, and deletion complexities. There are two primary types of rotations: left rotations and right rotations.
+    
+    \begin{itemize}
+        \item \textbf{Left Rotation}
+        \begin{itemize}
+            \item A left rotation around a node $x$ involves moving $x$ to its left child's position, while $x$'s right child moves up to $x$'s original position. The left child of $x$'s original right 
+            child becomes $x$'s new right child.
+            \item The purpose of a left rotation is to decrease the height of the right subtree and increase the height of the left subtree, helping to maintain the tree's balanced property.
+        \end{itemize}
+        
+        \item \textbf{Right Rotation}
+        \begin{itemize}
+            \item A right rotation is the inverse of a left rotation. It involves moving a node $x$ to its right child's position, while $x$'s left child moves up to $x$'s original position. The right 
+            child of $x$'s original left child becomes $x$'s new left child.
+            \item Right rotations are used to decrease the height of the left subtree and increase the height of the right subtree, contributing to the balance of the tree.
+        \end{itemize}
+        
+        \item \textbf{Application of Rotations}
+        \begin{itemize}
+            \item Rotations are used during the insertion and deletion processes in red-black trees. After a new node is inserted or a node is deleted, the tree may violate the red-black properties. 
+            Rotations, along with color changes, are used to restore these properties.
+            \item The choice between performing a left or right rotation depends on the structure of the tree at the point where the red-black properties are violated.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item Each rotation operation can be performed in $O(1)$ time, as it involves only a fixed number of pointer changes.
+            \item Despite the potential for multiple rotations during an insertion or deletion operation, the overall time complexity of these operations remains $O(\log{(n)})$, as the height of the tree 
+            is logarithmic in the number of nodes.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Significance of Rotations]
+        Rotations are critical for maintaining the balance of red-black trees. By carefully applying these operations, it's possible to ensure that the tree satisfies all red-black properties after 
+        each insertion and deletion, preserving the $O(\log{(n)})$ complexity for fundamental operations and ensuring efficient performance.
+    \end{highlight}      
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 13.2: Insertion}.
+
+\begin{notes}{Section 13.2: Insertion}
+    \subsubsection*{Insertion in Red-Black Trees}
+
+    Insertion in red-black trees is a process that adds a new node to the tree while maintaining the red-black properties. The insertion process involves placing the new node in the correct location 
+    in the binary search tree and then restoring the red-black properties through a series of rotations and recolorings.
+    
+    \begin{itemize}
+        \item \textbf{Insertion Steps}
+        \begin{itemize}
+            \item \textbf{Step 1: Insertion as in a Binary Search Tree (BST)}: Initially, the new node is inserted using the standard BST insertion procedure. The new node is inserted as a leaf node 
+            and colored red.
+            \item \textbf{Step 2: Restoration of Red-Black Properties}: After the initial insertion, the tree may violate the red-black properties. A series of rotations and recolorings are performed 
+            to restore these properties. The specific actions depend on the relationship between the newly inserted node, its parent, and its uncle (the sibling of its parent).
+        \end{itemize}
+        
+        \item \textbf{Case Analysis for Restoration}
+        \begin{itemize}
+            \item \textbf{Case 1: The parent of the newly inserted node is black}. In this case, the insertion does not violate any red-black properties, and no further actions are necessary.
+            \item \textbf{Case 2: The parent and uncle of the newly inserted node are both red}. Recolor the parent and uncle to black and the grandparent to red, then continue to fix any further 
+            violations up the tree.
+            \item \textbf{Case 3: The parent is red but the uncle is black}, leading to two subcases based on the node's position relative to its parent and grandparent. Rotations and possibly 
+            recoloring are used to restore properties.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The insertion operation, including the restoration of red-black properties, has a worst-case time complexity of $O(\log{(n)})$, where $n$ is the number of nodes in the tree. This is 
+            because the height of the tree is logarithmic in the number of nodes, and the restoration process involves a constant number of rotations and recolorings.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Importance of Insertion Procedure]
+        The careful design of the insertion procedure ensures that red-black trees maintain their balancing properties, allowing them to provide efficient search, insertion, and deletion operations. 
+        The restoration step is crucial for maintaining the tree's balanced height, which is key to achieving $O(\log{(n)})$ performance for dynamic set operations.
+    \end{highlight}    
+\end{notes}
+
+The last chapter that is being covered this \textbf{Chapter 14: Augmenting Data Structures}. The first section that is being covered from this chapter this week is \textbf{Section 14.1: Dynamic Order Statistics}.
+
+\begin{notes}{Section 14.1: Dynamic Order Statistics}
+    \subsubsection*{Dynamic Order Statistics}
+
+    Dynamic Order Statistics refers to the problem of efficiently maintaining and querying the $k^{th}$ smallest (or largest) element in a dynamically changing set. This set may undergo insertions and 
+    deletions of elements, and the goal is to be able to quickly find the $k^{th}$ order statistic after each such modification. Augmented data structures, particularly augmented red-black trees, are 
+    commonly used to solve this problem.
+    
+    \begin{itemize}
+        \item \textbf{Augmented Red-Black Trees for Dynamic Order Statistics}
+        \begin{itemize}
+            \item To support dynamic order statistics, red-black trees are augmented with additional information. Specifically, each node in the tree stores the size of the subtree rooted at that node 
+            (including itself).
+            \item This size attribute allows the tree to support a \textit{Select} operation, which returns the node containing the $k^{th}$ smallest element, and a \textit{Rank} operation, which returns 
+            the position of a given element in the linear order of elements maintained by the tree.
+        \end{itemize}
+        
+        \item \textbf{Select Operation}
+        \begin{itemize}
+            \item The \textit{Select} operation recursively traverses the tree, using the size of the left subtree of each node to determine whether the $k^{th}$ smallest element lies in the left subtree, 
+            the right subtree, or is the current node itself.
+        \end{itemize}
+        
+        \item \textbf{Rank Operation}
+        \begin{itemize}
+            \item The \textit{Rank} operation determines the position of a node (the rank) by traversing the path from the node to the root. It adds the sizes of left subtrees plus one (for the node 
+            itself) whenever the path moves from a node to its right child.
+        \end{itemize}
+        
+        \item \textbf{Maintaining the Size Attribute}
+        \begin{itemize}
+            \item The size attribute of each node is maintained through insertions and deletions by updating the sizes of all nodes along the path from the inserted or deleted node to the root.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item Both the \textit{Select} and \textit{Rank} operations can be performed in $O(\log n)$ time on an augmented red-black tree, where $n$ is the number of elements in the tree. This 
+            efficiency is due to the balanced nature of red-black trees and the direct access provided by the size attribute.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Significance of Dynamic Order Statistics]
+        Dynamic order statistics are crucial for applications that require efficient, real-time access to order-related information in a dynamic dataset, such as databases, information retrieval 
+        systems, and online analytics platforms. The augmentation of red-black trees for this purpose exemplifies a powerful technique for extending the functionality of basic data structures to meet 
+        specific computational needs.
+    \end{highlight}    
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 14.2: How To Augment A Data Structure}.
+
+\begin{notes}{Section 14.2: How To Augment A Data Structure}
+    \subsubsection*{How To Augment A Data Structure}
+
+    Augmenting a data structure involves enhancing a standard data structure with additional information or capabilities to support operations beyond its original scope. This process typically involves 
+    adding extra fields to the data structure's nodes and updating these fields during the data structure's modification operations (such as insertions and deletions) to maintain the integrity of the 
+    augmented information.
+    
+    \begin{itemize}
+        \item \textbf{Steps for Augmenting a Data Structure}
+        \begin{itemize}
+            \item \textbf{Identify the Additional Information Needed}: Determine what extra information is necessary to support the new operations.
+            \item \textbf{Modify the Node Structure}: Add fields to the nodes of the data structure to store the additional information.
+            \item \textbf{Update the Modification Operations}: Modify the insert, delete, and any other operations that alter the data structure to maintain and update the new fields appropriately.
+            \item \textbf{Implement the New Operations}: Develop the new operations that utilize the augmented information to perform their tasks efficiently.
+        \end{itemize}
+        
+        \item \textbf{Example: Augmenting a Binary Search Tree to Support Size Information}
+        \begin{itemize}
+            \item The goal is to augment a binary search tree (BST) to keep track of the size of each subtree, allowing for efficient calculation of the rank of elements and selection of the $k^{th}$ 
+            smallest element.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for an Augmented BST]
+        This Python code demonstrates how to augment a BST to include size information in each node, supporting efficient size-based selections and rankings.
+    \begin{code}[Python]
+    class TreeNode:
+        def __init__(self, key, left=None, right=None):
+            self.key = key
+            self.left = left
+            self.right = right
+            self.size = 1  # Size of the subtree rooted at this node
+    
+    class AugmentedBST:
+        def __init__(self):
+            self.root = None
+    
+        def insert(self, key):
+            self.root = self._insert(self.root, key)
+    
+        def _insert(self, node, key):
+            if node is None:
+                return TreeNode(key)
+            if key < node.key:
+                node.left = self._insert(node.left, key)
+            else:
+                node.right = self._insert(node.right, key)
+            node.size = 1 + (node.left.size if node.left else 0) + (node.right.size if node.right else 0)
+            return node
+    
+        def select(self, k):
+            # Returns the kth smallest element in the BST
+            return self._select(self.root, k)
+    
+        def _select(self, node, k):
+            if node is None:
+                return None
+            left_size = node.left.size if node.left else 0
+            if k == left_size + 1:
+                return node.key
+            elif k <= left_size:
+                return self._select(node.left, k)
+            else:
+                return self._select(node.right, k - left_size - 1)
+    \end{code}
+        This augmented BST includes a `size` attribute in each node, representing the size of the subtree rooted at that node. The `insert` method updates this attribute to maintain the correct subtree 
+        sizes, enabling efficient implementations of operations like `select`, which finds the $k^{th}$ smallest element.
+    \end{highlight}      
+\end{notes}
