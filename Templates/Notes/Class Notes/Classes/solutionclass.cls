@@ -592,7 +592,7 @@
     breakable,
     boxrule=0pt,
     boxsep=0pt,
-    colback=white, 
+    colback=white,
     colframe=white, 
     opacityback=0,
     opacityframe=0,
