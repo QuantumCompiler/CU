@@ -401,8 +401,8 @@
     skin first=enhanced,
     skin middle=enhanced,
     skin last=enhanced,
-    before upper={\parindent15pt},
     breakable,
+    before upper={\parindent15pt},
     boxrule = 0pt,
     frame hidden,
     borderline west = {4pt}{0pt}{myDColor},
@@ -587,33 +587,13 @@
 }
 {\clearpage}
 % Notes
-\newtcolorbox{mynotesbox}{
-    breakable,
-    boxrule=0pt,
-    boxsep=0pt,
-    colback=white, 
-    colframe=white, 
-    opacityback=0,
-    opacityframe=0,
-    sharp corners,
-    arc=0pt,
-    leftrule=0pt,
-    rightrule=0pt,
-    bottomrule=0pt,
-    toprule=0pt,
-    left=10pt,
-    right=10pt,
-    before upper={\setlength{\parskip}{0pt}\setlength{\parindent}{1em}},
-}
 \newenvironment{notes}[1]
 {
     \subsection*{#1}
-    \horizontalline{-1}{-1}
-    \begin{mynotesbox}
+    \horizontalline{0}{1}
 }
 {
-    \end{mynotesbox}
-    \horizontalline{-1}{0}
+    \horizontalline{1}{0}
 }
 % Problem
 \newenvironment{problem}[1]{
