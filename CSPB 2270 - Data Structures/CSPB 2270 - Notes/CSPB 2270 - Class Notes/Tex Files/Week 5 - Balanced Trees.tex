@@ -1,10 +1,10 @@
 \clearpage
 
-\chapter{Week 5}
+\renewcommand{\ChapTitle}{Balanced Trees}
 
-\section{Balanced Trees}
-
-\horizontalline
+\chapter{\ChapTitle}
+\section{\ChapTitle}
+\horizontalline{0}{0}
 
 \subsection{Activities}
 
@@ -28,51 +28,47 @@ Here are the lectures that can be found for this week:
 
 \subsection{Programming Assignment}
 
-There is no new programming assignment for Week 5. The previous programming assignment of Week 4 - \href{https://github.com/cu-cspb-2270-Summer-2023/pa3-RelativiBit}{Binary Search Tree}.
+There is no new programming assignment for Week 5. The previous programming assignment of Week 4 - \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%202270%20-%20Data%20Structures/CSPB%202270%20-%20Programming%20Assignments/CSPB%202270%20-%20Assignment%203%20-%20Binary%20Search%20Tree}{Binary Search Tree}.
 
-\subsection{Chapter 8 - Balanced Trees}
+\subsection{Chapter Summary}
 
-The chapter of this week is Chapter 8 - Balanced Trees.
+The chapter of this week is \textbf{Chapter 8 - Balanced Trees}.
 
-\subsection*{Sec. 8.1 - Red-Black Tree: A Balanced Tree}
+\begin{notes}{Section 8.1 - Red-Black Tree: A Balanced Tree}
+    Red-Black trees are a type of self-balancing binary search tree that maintain balance through a set of rules and operations. Each node in a Red-Black tree is assigned a color, either red or black, and follows specific rules that ensure the tree remains balanced. These rules include maintaining the black height property, where the number of black 
+    nodes on any path from the root to a leaf is the same, and ensuring that no red node has a red child. Red-Black trees offer efficient operations for insertion, deletion, and searching, with a guaranteed worst-case time complexity of $\mathcal{O}(\log{(n)})$. The self-balancing nature of Red-Black trees makes them suitable for a wide range of applications where 
+    maintaining balance and efficient operations are crucial.
+    
+    These rules of Red-Black trees employ that they remain balanced and prevent long paths or imbalances, guaranteeing an efficient search, insertion, and deletion operations with a worst-case time complexity of $\mathcal{O}(\log{(n)})$. The rules for these trees are as follows:
+    
+    \begin{itemize}
+        \item Every node in a Red-Black tree is either red or black.
+        \item The root node of the tree is always black.
+        \item All leaves (null or empty nodes) are considered black.
+        \item If a node is red, both its children are black.
+        \item Every path from a node to its descendant leaves contains the same number of black nodes. This is known as the black height property.
+        \item Red nodes cannot have red children. A red node can only have black children.
+        \item Null or empty nodes are considered black and do not affect the black height property.
+    \end{itemize}
+\end{notes}
 
-Red-Black trees are a type of self-balancing binary search tree that maintain balance through a set of rules and operations. Each node in a Red-Black tree is assigned a color, either red or black, and follows specific rules that ensure the tree remains balanced. These rules include maintaining the black height property, where the number of black 
-nodes on any path from the root to a leaf is the same, and ensuring that no red node has a red child. Red-Black trees offer efficient operations for insertion, deletion, and searching, with a guaranteed worst-case time complexity of $\mathcal{O}(\log{(n)})$. The self-balancing nature of Red-Black trees makes them suitable for a wide range of applications where 
-maintaining balance and efficient operations are crucial.
+\begin{notes}{Section 8.2 - Red-Black Tree: Rotations}
+    \subsubsection{Overview}
 
-These rules of Red-Black trees employ that they remain balanced and prevent long paths or imbalances, guaranteeing an efficient search, insertion, and deletion operations with a worst-case time complexity of $\mathcal{O}(\log{(n)})$. The rules for these trees are as follows:
-
-\begin{itemize}
-    \item Every node in a Red-Black tree is either red or black.
-    \item The root node of the tree is always black.
-    \item All leaves (null or empty nodes) are considered black.
-    \item If a node is red, both its children are black.
-    \item Every path from a node to its descendant leaves contains the same number of black nodes. This is known as the black height property.
-    \item Red nodes cannot have red children. A red node can only have black children.
-    \item Null or empty nodes are considered black and do not affect the black height property.
-\end{itemize}
-
-\subsection*{Sec. 8.2 - Red-Black Tree: Rotations}
-
-\subsubsection{Overview}
-
-Rotations in Red-Black trees are fundamental operations used to maintain balance and restructure the tree during insertion and deletion operations. There are two types of rotations: left rotation and right rotation. A left rotation is performed to move a node's right child up and the node down, effectively rotating them towards the left. 
-Similarly, a right rotation moves a node's left child up and the node down, rotating them towards the right. These rotations preserve the Red-Black tree properties and help in maintaining a balanced tree structure. They are essential for adjusting the tree during operations to ensure efficient search, insertion, and deletion operations 
-while keeping the tree balanced.
-
-\subsubsection{Left Rotation Algorithm}
-
-The left rotation algorithm in Red-Black trees is used to balance the tree and maintain the Red-Black properties during insertion and deletion operations. It involves reorganizing the structure of the tree by rotating a node and its right child towards the left. During the left rotation, the right child of the node becomes the new parent,
-while the original node becomes the left child of the new parent. The left child of the right child becomes the right child of the original node. This rotation helps in adjusting the tree's structure to ensure that the Red-Black properties, such as color balance and ordered key values, are maintained. It is a crucial operation in Red-Black trees 
-to maintain a balanced and efficient data structure.
-
-\begin{solution}[Left Rotation Algorithm Example]
-
-    Below is an example of the left rotation algorithm in C++:
-
-    \horizontalline
-
-    \begin{verbatim}
+    Rotations in Red-Black trees are fundamental operations used to maintain balance and restructure the tree during insertion and deletion operations. There are two types of rotations: left rotation and right rotation. A left rotation is performed to move a node's right child up and the node down, effectively rotating them towards the left. 
+    Similarly, a right rotation moves a node's left child up and the node down, rotating them towards the right. These rotations preserve the Red-Black tree properties and help in maintaining a balanced tree structure. They are essential for adjusting the tree during operations to ensure efficient search, insertion, and deletion operations 
+    while keeping the tree balanced.
+    
+    \subsubsection{Left Rotation Algorithm}
+    
+    The left rotation algorithm in Red-Black trees is used to balance the tree and maintain the Red-Black properties during insertion and deletion operations. It involves reorganizing the structure of the tree by rotating a node and its right child towards the left. During the left rotation, the right child of the node becomes the new parent,
+    while the original node becomes the left child of the new parent. The left child of the right child becomes the right child of the original node. This rotation helps in adjusting the tree's structure to ensure that the Red-Black properties, such as color balance and ordered key values, are maintained. It is a crucial operation in Red-Black trees 
+    to maintain a balanced and efficient data structure.
+    
+    \begin{highlight}[Left Rotation Algorithm Example]
+        Below is an example of the left rotation algorithm in C++:
+    
+    \begin{code}[C++]
     struct Node {
         int key;
         Node* left;
@@ -87,30 +83,24 @@ to maintain a balanced and efficient data structure.
         newParent->left = node;
         return newParent;
     }
-    \end{verbatim}
-
-    \horizontalline
+    \end{code}
+        In this example, we have a `Node' struct representing a node in a Red-Black tree. The `leftRotate' function performs a left rotation on a given node. It reassigns the parent and child pointers to rotate the node towards the left. The `newParent' node becomes the new parent, and the original node becomes the left child of the new parent. 
+        This operation helps in rebalancing the tree while preserving the Red-Black properties.
     
-    In this example, we have a `Node' struct representing a node in a Red-Black tree. The `leftRotate' function performs a left rotation on a given node. It reassigns the parent and child pointers to rotate the node towards the left. The `newParent' node becomes the new parent, and the original node becomes the left child of the new parent. 
-    This operation helps in rebalancing the tree while preserving the Red-Black properties.
-
-    The left rotation algorithm in Red-Black trees is implemented through the `leftRotate' function. It rearranges the structure of the tree by rotating a node and its right child towards the left. The new parent becomes the right child's left child, and the original node becomes the left child of the new parent. This operation plays a crucial 
-    role in maintaining balance and ensuring the Red-Black properties are satisfied in the tree.
-\end{solution}
-
-\subsubsection{Right Rotation Algorithm}
-
-The right rotation algorithm in Red-Black trees is a fundamental operation used to rebalance the tree while preserving the Red-Black properties. It involves rotating a node and its left child towards the right. The left child becomes the new parent, with the original node as its right child. Additionally, the right child of the new parent becomes 
-the left child of the original node. By performing this rotation, the structure of the tree is adjusted to maintain balance and ensure that the Red-Black properties, such as maintaining the black height and avoiding consecutive red nodes, are satisfied. The right rotation algorithm is crucial in maintaining the integrity and stability of Red-Black 
-trees during insertions and deletions.
-
-\begin{solution}[Right Rotation Algorithm Example]
-
-    Below is an example of the right rotation algorithm in C++:
-
-    \horizontalline
-
-    \begin{verbatim}
+        The left rotation algorithm in Red-Black trees is implemented through the `leftRotate' function. It rearranges the structure of the tree by rotating a node and its right child towards the left. The new parent becomes the right child's left child, and the original node becomes the left child of the new parent. This operation plays a crucial 
+        role in maintaining balance and ensuring the Red-Black properties are satisfied in the tree.
+    \end{highlight}
+    
+    \subsubsection{Right Rotation Algorithm}
+    
+    The right rotation algorithm in Red-Black trees is a fundamental operation used to rebalance the tree while preserving the Red-Black properties. It involves rotating a node and its left child towards the right. The left child becomes the new parent, with the original node as its right child. Additionally, the right child of the new parent becomes 
+    the left child of the original node. By performing this rotation, the structure of the tree is adjusted to maintain balance and ensure that the Red-Black properties, such as maintaining the black height and avoiding consecutive red nodes, are satisfied. The right rotation algorithm is crucial in maintaining the integrity and stability of Red-Black 
+    trees during insertions and deletions.
+    
+    \begin{highlight}[Right Rotation Algorithm Example]
+        Below is an example of the right rotation algorithm in C++:
+    
+    \begin{code}[C++]
     struct Node {
         int data;
         Node* left;
@@ -139,26 +129,20 @@ trees during insertions and deletions.
         pivot->right = node;
         node->parent = pivot;
     }
-    \end{verbatim}
+    \end{code}
+        The provided example demonstrates the right rotation algorithm in a Red-Black tree. The `rightRotate' function performs a right rotation on a given node by reassigning pointers and adjusting parent-child relationships. This operation helps maintain balance and uphold the Red-Black properties. In the example, a node with a left 
+        child is rotated to the right, resulting in the left child becoming the new parent and the original node as its right child. The example showcases the usage of the right rotation algorithm in constructing and manipulating Red-Black trees.
+    \end{highlight}
+\end{notes}
 
-    \horizontalline
+\begin{notes}{Section 8.3 - Red-Black Tree Insertion}
+    Insertion in a Red-Black tree involves a process to maintain the tree's balance and adherence to Red-Black properties. The algorithm begins with a standard binary search tree insertion, followed by adjustments to ensure the tree remains a valid Red-Black tree. After inserting a new node, color violations and structural imbalances are resolved 
+    through a series of rotations and recoloring operations. These adjustments aim to preserve the key properties of Red-Black trees, such as black height consistency and the absence of consecutive red nodes. The insertion process guarantees an efficient and balanced Red-Black tree structure suitable for fast search, insertion, and deletion operations.
     
-    The provided example demonstrates the right rotation algorithm in a Red-Black tree. The `rightRotate' function performs a right rotation on a given node by reassigning pointers and adjusting parent-child relationships. This operation helps maintain balance and uphold the Red-Black properties. In the example, a node with a left 
-    child is rotated to the right, resulting in the left child becoming the new parent and the original node as its right child. The example showcases the usage of the right rotation algorithm in constructing and manipulating Red-Black trees.
-\end{solution}
-
-\subsection*{Sec. 8.3 - Red-Black Tree Insertion}
-
-Insertion in a Red-Black tree involves a process to maintain the tree's balance and adherence to Red-Black properties. The algorithm begins with a standard binary search tree insertion, followed by adjustments to ensure the tree remains a valid Red-Black tree. After inserting a new node, color violations and structural imbalances are resolved 
-through a series of rotations and recoloring operations. These adjustments aim to preserve the key properties of Red-Black trees, such as black height consistency and the absence of consecutive red nodes. The insertion process guarantees an efficient and balanced Red-Black tree structure suitable for fast search, insertion, and deletion operations.
-
-\begin{solution}[Insertion Algorithm Example]
-
-    Below is an example of the insertion algorithm in C++:
-
-    \horizontalline
-
-    \begin{verbatim}
+    \begin{highlight}[Insertion Algorithm Example]
+        Below is an example of the insertion algorithm in C++:
+    
+    \begin{code}[C++]
     #include <iostream>
     #include <memory>
     
@@ -190,27 +174,21 @@ through a series of rotations and recoloring operations. These adjustments aim t
             root = root->parent;
         }
     }
-    \end{verbatim}
+    \end{code}
+        In this example, a Red-Black tree is implemented using a `Node' struct and a `RedBlackTree' class. The `Insert' function performs a standard binary search tree insertion, followed by the `InsertFixup' function that adjusts the tree to maintain Red-Black properties. The `LeftRotate' and `RightRotate' functions are used for performing 
+        left and right rotations, respectively. The example demonstrates the basic structure and flow of inserting elements into a Red-Black tree, ensuring the tree remains balanced and adheres to the Red-Black properties.
+    \end{highlight}
+\end{notes}
 
-    \horizontalline
+\begin{notes}{Section 8.4 - Red-Black Tree: Removal}
+    In Red-Black trees, removal of nodes involves a complex process to maintain the tree's balance and preserve its Red-Black properties. The removal algorithm typically follows the steps of a standard binary search tree deletion, but with additional adjustments and rotations to ensure the resulting tree remains balanced. The removal process 
+    includes cases for handling different scenarios such as removing a node with no children, removing a node with one child, or removing a node with two children. Through careful restructuring, recoloring, and rotation operations, the Red-Black tree is modified to satisfy the Red-Black properties while preserving the search tree structure. This 
+    ensures efficient and consistent removal of nodes while maintaining the desired balance and characteristics of the Red-Black tree.
     
-    In this example, a Red-Black tree is implemented using a `Node' struct and a `RedBlackTree' class. The `Insert' function performs a standard binary search tree insertion, followed by the `InsertFixup' function that adjusts the tree to maintain Red-Black properties. The `LeftRotate' and `RightRotate' functions are used for performing 
-    left and right rotations, respectively. The example demonstrates the basic structure and flow of inserting elements into a Red-Black tree, ensuring the tree remains balanced and adheres to the Red-Black properties.
-\end{solution}
-
-\subsection*{Sec. 8.4 - Red-Black Tree: Removal}
-
-In Red-Black trees, removal of nodes involves a complex process to maintain the tree's balance and preserve its Red-Black properties. The removal algorithm typically follows the steps of a standard binary search tree deletion, but with additional adjustments and rotations to ensure the resulting tree remains balanced. The removal process 
-includes cases for handling different scenarios such as removing a node with no children, removing a node with one child, or removing a node with two children. Through careful restructuring, recoloring, and rotation operations, the Red-Black tree is modified to satisfy the Red-Black properties while preserving the search tree structure. This 
-ensures efficient and consistent removal of nodes while maintaining the desired balance and characteristics of the Red-Black tree.
-
-\begin{solution}[Removal Algorithm Example]
-
-    Below is an example of the removal algorithm in C++:
-
-    \horizontalline
-
-    \begin{verbatim}
+    \begin{highlight}[Removal Algorithm Example]
+        Below is an example of the removal algorithm in C++:
+    
+    \begin{code}[C++]
     // Remove a node with value 'value' from the Red-Black tree
     void removeNode(int value) {
         Node* nodeToRemove = searchNode(value); // Find the node to remove
@@ -263,11 +241,8 @@ ensures efficient and consistent removal of nodes while maintaining the desired 
     }
     
     // Other necessary functions for Red-Black tree implementation
-    \end{verbatim}
-
-    \horizontalline
-    
-    In the provided example, we have a Red-Black tree implementation in C++. The `removeNode' function is responsible for removing a node with a specified value from the tree. The function first searches for the node to remove using the `searchNode' function. If the node is found, it calls the `deleteNode' function to delete 
-    the node from the tree. The `deleteNode' function performs the standard binary search tree deletion steps and then performs additional adjustments and rotations to maintain the Red-Black tree properties. These additional operations ensure that the tree remains balanced and satisfies the Red-Black properties even after the removal of a node.
-\end{solution}
-
+    \end{code}
+        In the provided example, we have a Red-Black tree implementation in C++. The `removeNode' function is responsible for removing a node with a specified value from the tree. The function first searches for the node to remove using the `searchNode' function. If the node is found, it calls the `deleteNode' function to delete 
+        the node from the tree. The `deleteNode' function performs the standard binary search tree deletion steps and then performs additional adjustments and rotations to maintain the Red-Black tree properties. These additional operations ensure that the tree remains balanced and satisfies the Red-Black properties even after the removal of a node.
+    \end{highlight}    
+\end{notes}
