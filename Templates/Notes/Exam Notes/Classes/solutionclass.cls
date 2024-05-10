@@ -90,6 +90,7 @@
                 menucolor = LinkColor,
                 linktocpage = true,
                 bookmarks = true,
+                pdfnewwindow = true,
                 pdfusetitle]{hyperref} % Hyperlinks
 \RequirePackage[top = 2cm,
                 bottom = 2cm,
