@@ -551,6 +551,7 @@
     \vskip#2em
     \noindent
 }
+\newcommand{\lecture}[3]{\link{#1}{#2}{ $\approx$ #3 \textbf{min}.}}
 \newcommand{\link}[2]{\href{#1}{#2}}
 \newcommand{\modulo}{\text{ \textbf{mod} }}
 \newcommand{\pdflink}[2]{\href{run:#1}{#2}}
