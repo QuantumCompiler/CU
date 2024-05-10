@@ -9,6 +9,10 @@
 %---------------------------------------------------------------------------
 %	LOCAL DIRECTORIES
 %---------------------------------------------------------------------------
+\newcommand{\ExamNotesDir}{./Exam Notes/}
+\newcommand{\ExamDir}{./Exams/}
+\newcommand{\InterviewDir}{./Interview Notes/}
+\newcommand{\LectureNotesDir}{./Lecture Notes/}
 %---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
@@ -90,6 +94,7 @@
                 menucolor = LinkColor,
                 linktocpage = true,
                 bookmarks = true,
+                pdfnewwindow = true,
                 pdfusetitle]{hyperref} % Hyperlinks
 \RequirePackage[top = 2cm,
                 bottom = 2cm,
