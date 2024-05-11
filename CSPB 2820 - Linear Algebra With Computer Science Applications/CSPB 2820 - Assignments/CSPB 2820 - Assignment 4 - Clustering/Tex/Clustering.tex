@@ -49,7 +49,7 @@
         Describe the K-Means algorithm in your own words to someone who has never heard of it. Explain each step.
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         \subsubsection*{Overview}
 
         The $k$-means algorithm is an algorithm that helps group or `cluster' vectors together based off of their distances from one another. The algorithm works with a fixed number of vectors usually 
@@ -83,7 +83,7 @@
         Overall, the $k$-means algorithm is a very efficient way to group data points in a data set together based off of similar characteristics. Initially, the centroid location is randomly positioned within
         the data set and it is constantly updated based off of the mean of the data that it is assigned to. After this process repeats multiple times, we end up with a clustering of data where the data in the data
         set usually share some common characteristic with one another.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 1 Summary
@@ -159,7 +159,7 @@
         Explain example 4.4.1 in detail. Why is this an interesting example? What is $k$ in this example?
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         \subsubsection*{Overview}
 
         This example demonstrates a use of the $k$-means algorithm to cluster data that represents hand written digits. There are a total of 60,000 images in the MNIST database of handwritten images.
@@ -203,7 +203,7 @@
         This is an interesting example, because of how blurry the digits may be in some cases, the $k$-means algorithm does a pretty good job of representing digits. Since the algorithm doesn't really know
         anything about how digits look to the human eye, it does an exceptionally good job at re-creating digits regardless of how blurry they might be to us who know what these digits look like if they are
         written clearly.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 3 Summary
@@ -260,7 +260,7 @@
         \end{enumerate}
     \end{statement}
 
-    \begin{Highlight}[Solution - Part (a)]
+    \begin{highlight}[Solution - Part (a)]
         \noindent For this problem, I will be using \textbf{Method 4}.
 
         \subsubsection*{VMLS Solution:}
@@ -288,9 +288,9 @@
             J(z) = \sum^{L}_{i = 1} ||(x_{i} - \bar{x}) - (z - \bar{x})||^{2} = \sum^{L}_{i = 1} (||x_{i} - \bar{x}||^{2} - 2(x_{i} - \bar{x})^{T}(z - \bar{x}) + L||z - \bar{x}||^{2}).
         \end{equation}
         The minus sign in equation (2) is coming from the fact that we are computing the distance and not the sum. The variable $L$ comes from scaling the difference between $z$ and $\bar{x}$.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (b)]
+    \begin{highlight}[Solution - Part (b)]
         \noindent For this problem, I will be using \textbf{Method 4}.
 
         \subsubsection*{VMLS Solution:}
@@ -328,9 +328,9 @@
             \sum^{L}_{i = 1} (x_{i} - \bar{x})^{T}(z - \bar{x}) = \sum^{L}_{i = 1} (\bar{x} - \bar{x})^{T}(z - \bar{x}) = \sum^{L}_{i = 1} (0)^{T}(z - \bar{x}) = 0
         \end{equation}
         and thus we have $\sum^{L}_{i = 1}(x_{i} - \bar{x})^{T}(z - \bar{x}) = 0$.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (c)]
+    \begin{highlight}[Solution - Part (c)]
         \noindent For this problem, I will be using \textbf{Method 4}. 
 
         \subsubsection*{VMLS Solution:}
@@ -370,7 +370,7 @@
         \begin{equation}
             J(z) > J(\bar{x}).
         \end{equation}
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 4 Summary
@@ -428,7 +428,7 @@
         \end{equation*}
     \end{statement}
 
-    \begin{Highlight}[Solution - Part (a)]
+    \begin{highlight}[Solution - Part (a)]
         \noindent For this problem, I will be using \textbf{Method 4}. 
 
         \subsubsection*{VMLS Solution:}
@@ -446,9 +446,9 @@
             z_{j} = \frac{1}{|G_{j}|} \sum_{k \in G_{j}} x_{k}.
         \end{equation}
         In equation (1), since $|G_{j}|$ is nonnegative, it is impossible for $z_{j}$ to be nonnegative as long as $x_{k}$ is nonnegative. Therefore $z_{j}$ is nonnegative.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (b)]
+    \begin{highlight}[Solution - Part (b)]
         \noindent For this problem, I will be using \textbf{Method 4}. 
 
         \subsubsection*{VMLS Solution:}
@@ -480,9 +480,9 @@
             \mathbf{1}^{T}z_{j} = \frac{1}{|G_{j}|} \sum_{k \in G_{j}} \mathbf{1}^{T}x_{k} = \frac{|G_{j}|}{|G_{j}|} = 1.
         \end{equation}
         $z_{j}$ represents the proportions because the entries are nonnegative and sum to one.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (c)]
+    \begin{highlight}[Solution - Part (c)]
         \noindent For this problem, I will be using \textbf{Method 4}. 
 
         \subsubsection*{VMLS Solution:}
@@ -507,7 +507,7 @@
         This means for the vectors $x_{i}$, the entries in them are either going to be 0 or 1. When you sum the vectors to get a final value, the final value is going to represent a percentage of what vectors
         are 0 or 1. Essentially, $z_{j}$ then represents what fraction of the individual vectors $x_{i}$ are 1. If each individual vector $x_{i}$ is 0, then $z_{j}$ will be 0. If each individual vector $x_{i}$
         is 1, then $z_{j} = 1$.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 5 Summary
