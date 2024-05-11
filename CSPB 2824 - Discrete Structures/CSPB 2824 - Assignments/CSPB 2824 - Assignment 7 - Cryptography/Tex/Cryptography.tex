@@ -29,7 +29,7 @@
         \end{enumerate}
     \end{statement}
 
-    \begin{Highlight}[Solution - Part (a)]
+    \begin{highlight}[Solution - Part (a)]
         \begin{enumerate}[label = (\alph*)]
             \item Find 5 numbers $x$ such that: $x \cdot 3 \modulo 10 = 1$:
             \begin{itemize}
@@ -40,25 +40,25 @@
                 \item $47 \cdot 3 \modulo 10 = 141 \modulo 10 = 1 \rightarrow x = 47$
             \end{itemize}
         \end{enumerate}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (b)]
+    \begin{highlight}[Solution - Part (b)]
         \begin{enumerate}[label = (\alph*), start = 2]
             \item Are modular inverses unique the same way multiplication inverses are unique? Answer why or why not ?
         \end{enumerate}
 
         For a given integer $n$, there is only one multiplicative inverse of $n$. As for modular inverses, there can be many different modular inverses as long the numbers that are being modded
         are relatively prime. So no, modular inverses are not unique the same way multiplication inverses are unique.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (c)]
+    \begin{highlight}[Solution - Part (c)]
         \begin{enumerate}[label = (\alph*), start = 3]
             \item What is the same about each of the x's you found in Question 1?
         \end{enumerate}
 
         The $x$ value that is found in part (a) when multiplied with 3, is relatively prime with 10. A pattern arrives in that each $x$ that I found in part (a) is just 10 more than the previous
         $x$ value. So, $x$ has to generate a number that makes it relatively prime with 10.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 1 Summary
@@ -108,7 +108,7 @@
         What is the rule for when Modular inverses exist?
     \end{statement}
 
-    \begin{Highlight}[Solution - Part (a)]
+    \begin{highlight}[Solution - Part (a)]
         \begin{enumerate}[label = (\alph*)]
             \item Try $x \cdot 5 \modulo 10 = 1$ and $x \cdot 2 \modulo 10 = 1$
             \begin{itemize}
@@ -116,9 +116,9 @@
                 \item $x \cdot 2 \modulo 10 = 1$ \hspace*{10pt} The gcd(10,2) = 2 and therefore a modular inverse does not exist.
             \end{itemize}
         \end{enumerate}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Parts (b)-(g)]
+    \begin{highlight}[Solution - Parts (b)-(g)]
         \begin{enumerate}[label = (\alph*), start = 2]
             \item $x \cdot 7 \modulo 10 = 1$ \hspace*{10pt} $x = 3 \rightarrow 3 \cdot 7 \modulo 10 = 21 \modulo 10 = 1$. A modular inverse exists.
             \item $x \cdot 26 \modulo 13 = 1$ \hspace*{10pt} The gcd(26,13) = 13 and therefore a modular inverse does not exist.
@@ -127,12 +127,12 @@
             \item $x \cdot 6 \modulo 35 = 1$ \hspace*{10pt} $x = 6 \rightarrow 6 \cdot 6 \modulo 35 = 36 \modulo 35 = 1$. A modular inverse exists.
             \item $x \cdot 7 \modulo 13 = 1$ \hspace*{10pt} $x = 2 \rightarrow 2 \cdot 7 \modulo 13 = 14 \modulo 13 = 1$. A modular inverse exists.
         \end{enumerate}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Synopsis]
+    \begin{highlight}[Synopsis]
         The rule for when modular inverses exist is in the equation $x \cdot a \modulo b = 1$, gcd(b,a) must equal 1. $a$ and $b$ must be relatively prime.
         If $a$ and $b$ are relatively prime, then their Bezout coefficients are the modular inverses of the original equation.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 2 Summary
@@ -172,7 +172,7 @@
         Work through \#1 - 4 page 284. Summarize important ideas here that show you have studied this topic.
     \end{statement}
 
-    \begin{Highlight}[Solution - \# 1]
+    \begin{highlight}[Solution - \# 1]
         \begin{enumerate}
             \item Show that 15 is an inverse of 7 modulo 26.
             \begin{itemize}
@@ -189,9 +189,9 @@
                 15 is a modular inverse of 7 modulo 26.
             \end{itemize}
         \end{enumerate}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - \# 2]
+    \begin{highlight}[Solution - \# 2]
         \begin{enumerate}[start = 2]
             \item Show that 937 is an inverse of 13 modulo 2436.
             \begin{itemize}
@@ -210,9 +210,9 @@
                 937 is a modular inverse of 13 modulo 2436.
             \end{itemize}
         \end{enumerate}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - \# 3]
+    \begin{highlight}[Solution - \# 3]
         \begin{enumerate}[start = 3]
             \item By inspection (as discussed prior to Example 1), find an inverse of 4 modulo 9.
             \begin{itemize}
@@ -222,9 +222,9 @@
                 \end{equation*}
             \end{itemize}
         \end{enumerate}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - \#4]
+    \begin{highlight}[Solution - \#4]
         \begin{enumerate}[start = 4]
             \item By inspection (as discussed prior to Example 1), find an inverse of 2 modulo 17.
             \begin{itemize}
@@ -234,9 +234,9 @@
                 \end{equation*}
             \end{itemize}
         \end{enumerate}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Synopsis]
+    \begin{highlight}[Synopsis]
         After working through problems 1 through 4 (I am only showing problems 1 and 3 for space simplicity) the first thing that I noticed for a modular inverse to occur is that the gcd of the two
         numbers in the modulo must be \textbf{relatively prime}. If these two numbers are relatively prime, then a modular inverse will exist for those numbers. Then, for a number to be considered
         relatively prime we must have the following expression be true:
@@ -260,7 +260,7 @@
         \begin{equation*}
             4 \cdot (-2) \equiv 1 \modulo 9.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 3 Summary
@@ -324,7 +324,7 @@
         \end{enumerate}
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         \begin{enumerate}
             \item 12,9: Euclid's algorithm will show that the gcd(12,9) = 3 and therefore the smallest cup measure is 3. \textbf{Tossed into Volcano}.
             \item 27,5: Euclid's algorithm will show that the gcd(27,5) = 1 and therefore the smallest cup measure is 1. \textbf{Not tossed into Volcano}.
@@ -339,7 +339,7 @@
 
         From the above, we can see that the days that the person is thrown into the Volcano are on days 1,3,4,5 and 6. This is because the cup measurements that wash up on the beach have a gcd greater
         than 1.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 4 Summary
@@ -383,7 +383,7 @@
         \end{itemize}
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         On day 8, jugs with measurements 141 and 19 wash up on the shore. First, we want to calculate the gcd of these jugs. Namely,
         \setcounter{equation}{0}
         \begin{align}
@@ -418,7 +418,7 @@
         \end{equation}
         These values ($s$ and $t$) will allow us to make a cup measure of 1 on day 8 where the jug measurements are 141 and 9. Essentially, we take out 7 measurements of 141 and add in 52 measurements
         of 19.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 5 Summary
@@ -468,7 +468,7 @@
         Explain mathematically what each case means in terms of Primes, GCD, etc.. Give an example of each.
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         \begin{itemize}
             \item Some pairs of jugs you can use to measure any amount asked for.
             \begin{itemize}
@@ -489,7 +489,7 @@
                 not all possible measurements.
             \end{itemize}
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 6 Summary
@@ -551,7 +551,7 @@
         \end{enumerate}
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         \begin{enumerate}
             \item Using 77 and 14, what variables represent 77 and 14 in the algorithm? (be specific)
             \begin{itemize}
@@ -614,7 +614,7 @@
                 \item $s_{1},t_{1},s_{2},t_{2}$ are being updated. So four variables are being updated in the pink code.
             \end{itemize}
         \end{enumerate}
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 7 Summary
@@ -648,7 +648,7 @@
         Write the code for the Extended Euclidean Algorithm using Sriram’s algorithm. Show the code here in plain text with comments - use feedback on code style from last week. This can be a screenshot.
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         Below is my code for the extended Euclidean algorithm in Python.
     \begin{lstlisting}[style=stackoverflow, language=python]
     # EEA - Greatest Common Divisor or Euclidean algorithm for two numbers m and n
@@ -690,7 +690,7 @@
     \end{lstlisting}
     I used parallel assignment in Python to cut down on the syntax of the actual function itself. Comments are listed in green text that explain the input, algorithm, and output for this function.
     This code came from Siriam's video in this weeks lectures.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 8 Summary
@@ -721,7 +721,7 @@
         Test your code with \#41 - 44 page 273. Show the results as linear combinations as instructed (either by hand or you can include as code).
     \end{statement}
 
-    \begin{Highlight}[HW Helper Function]
+    \begin{highlight}[HW Helper Function]
         Before I go into testing my code with the problems in the book, I want share a function that I created to output cleaner results.
 
     \begin{lstlisting}[style=stackoverflow, language=python]
@@ -733,9 +733,9 @@
         print(f"The gcd(m,n) = {result[0]}, the Bezout coefficients are s = {result[1]}, t = {result[2]}.")
         print(f"Finally, we have: {result[0]} = ({result[1]}){m_0} + ({result[2]}){n_0} expressed as a linear combination.")
     \end{lstlisting}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - \# 41]
+    \begin{highlight}[Solution - \# 41]
     \begin{lstlisting}[style=stackoverflow]
     HWHelper(26,91) #Output follows after this
 
@@ -744,9 +744,9 @@
     The gcd(m,n) = 13, the Bezout coefficients are s = -3, t = 1.
     Finally, we have: 13 = (-3)26 + (1)91 expressed as a linear combination.
     \end{lstlisting}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - \# 42]
+    \begin{highlight}[Solution - \# 42]
     \begin{lstlisting}[style=stackoverflow]
     HWHelper(252,356) #Output follows after this
 
@@ -755,9 +755,9 @@
     The gcd(m,n) = 4, the Bezout coefficients are s = -24, t = 17.
     Finally, we have: 4 = (-24)252 + (17)356 expressed as a linear combination.
     \end{lstlisting}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - \# 43]
+    \begin{highlight}[Solution - \# 43]
     \begin{lstlisting}[style=stackoverflow]
     HWHelper(144,89) #Output follows after this
 
@@ -766,9 +766,9 @@
     The gcd(m,n) = 1, the Bezout coefficients are s = 34, t = -55.
     Finally, we have: 1 = (34)144 + (-55)89 expressed as a linear combination.
     \end{lstlisting}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - \# 44]
+    \begin{highlight}[Solution - \# 44]
     \begin{lstlisting}[style=stackoverflow]
     HWHelper(1001,100001) #Output follows after this
 
@@ -777,7 +777,7 @@
     The gcd(m,n) = 11, the Bezout coefficients are s = -999, t = 10.
     Finally, we have: 11 = (-999)1001 + (10)100001 expressed as a linear combination.
     \end{lstlisting}
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 9 Summary
@@ -813,7 +813,7 @@
         Create a similar SIMPLE 4 letter word as an example following this format and using the keys from the example.
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         The four letter word that I am going to use in this example is \textbf{WORK}. \vspace*{1em}
 
         The key that is going to be used to encrypt this word is (2537,13). It follows that
@@ -857,7 +857,7 @@
         \begin{equation}
             \mathbf{1744} \hspace*{5pt} \mathbf{1951}.
         \end{equation}
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 10 Summary
