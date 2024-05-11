@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 8: (10/16 - 10/22)}
 
-\section{Matrix Operations}
+\renewcommand{\ChapTitle}{Matrix Operations}
+\renewcommand{\SectionTitle}{Matrix Operations}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -28,11 +31,11 @@ The lectures for this week and their links can be found below:
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/VMLS Assignment 7 - Chapter 7.pdf}{VMLS - Assignment 7: Chapter 7.} \due{(10/23/23)} \cbox{assignment-week8}
+The assignment for this week is \pdflink{\AssDir Assignment 7 - Matrix Operations.pdf}{Assignment 7 - Matrix Operations} \due{(10/23/23)} \cbox{assignment-week8}
 
 \subsection{Quiz}
 
-The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50753}{Chapter 7.} \due{(10/23/23)} \cbox{quiz-week8}
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50753}{Chapter 7} \textbullet \pdflink{\QuizDir Quiz 7 - Matrix Operations.pdf}{Quiz 7 - Matrix Operations} \due{(10/23/23)} \cbox{quiz-week8}
 
 \subsection{Chapter Summary}
 
@@ -70,7 +73,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 7 - Matrix Exa
     and engineering, where they are used to manipulate and analyze spatial data, model physical phenomena, and create realistic visual representations. These transformations are mathematically represented using 
     rotation matrices, and they play a crucial role in understanding symmetry, transforming coordinate systems, and solving complex spatial problems.
 
-    \begin{Highlight}[Rotations Formula]
+    \begin{highlight}[Rotations Formula]
         The provided equation represents a 2D rotation transformation. In this transformation, a 2D vector \(x\) is rotated by an angle \(\theta\), resulting in a new vector \(y\). The rotation is performed 
         using a 2x2 matrix:
 
@@ -94,7 +97,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 7 - Matrix Exa
 
         This equation essentially describes how to perform a 2D rotation of a vector \(x\) by an angle \(\theta\) using a matrix. The matrix elements are determined by trigonometric functions of the rotation 
         angle, ensuring that the rotated vector \(y\) retains its length and orientation in the new coordinate system. This concept is fundamental in geometry, graphics, and various engineering applications.
-    \end{Highlight}
+    \end{highlight}
 
     \textbf{Principles of Rotation:}
 
@@ -144,7 +147,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 7 - Matrix Exa
     Reflection is a fundamental geometric transformation that involves flipping or mirroring an object or a point across a specified axis or plane. It plays a crucial role in various fields, including 
     geometry, physics, computer graphics, and engineering. This transformation essentially changes the orientation of an object or point while preserving its size and shape. \vspace*{1em}
 
-    \begin{Highlight}[Reflections Formula]
+    \begin{highlight}[Reflections Formula]
         The provided equation represents a 2D reflection transformation matrix. In this transformation, a 2D vector \(x\) is reflected across a line (or mirror line) at an angle \(2\theta\) with respect 
         to the x-axis, resulting in a new vector \(y\). The reflection matrix is defined as:
         
@@ -170,7 +173,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 7 - Matrix Exa
         trigonometric functions of the reflection angle, ensuring that the reflected vector \(y\) retains its orientation with respect to the mirror line. Reflection matrices are fundamental tools in 
         geometry, graphics, and various engineering applications.
         
-    \end{Highlight}
+    \end{highlight}
     
     \textbf{Key points about reflection:}
     
@@ -301,7 +304,7 @@ The next section that we will cover this week is \textbf{VMLS Section 7.3 - Inci
 
     Incidence matrices are a powerful tool for efficiently representing and analyzing graph structures, making them a cornerstone of graph theory and related fields.
 
-    \begin{Highlight}[Incidence Matrix Example With Graph]
+    \begin{highlight}[Incidence Matrix Example With Graph]
         The provided matrix and graph together represent an incidence matrix and its corresponding directed graph. In the context of graph theory, the incidence matrix illustrates the relationships 
         between nodes and edges in a directed graph. Here's how to interpret this:
         \begin{equation*}
@@ -340,7 +343,7 @@ The next section that we will cover this week is \textbf{VMLS Section 7.3 - Inci
 
         This combination of an incidence matrix and directed graph provides a concise representation of the structure and relationships within a directed graph, making it a valuable tool in various 
         fields such as network analysis, optimization, and transportation planning.
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The last section that we will cover this week is \textbf{VMLS Section 7.4 - Convolution}.

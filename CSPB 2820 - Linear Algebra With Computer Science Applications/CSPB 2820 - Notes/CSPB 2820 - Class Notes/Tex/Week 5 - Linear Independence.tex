@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 5: (9/25 - 10/1)}
 
-\section{Linear Independence}
+\renewcommand{\ChapTitle}{Linear Independence}
+\renewcommand{\SectionTitle}{Linear Independence}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -31,11 +34,11 @@ The lectures for this week and their links can be found below:
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/VMLS Assignment 5 - Chapter 5.pdf}{VMLS - Assignment 5: Chapter 5.} \due{(10/3/23)} \cbox{assignment-week5}
+The assignment for this week is \pdflink{\AssDir Assignment 5 - Linear Independence.pdf}{Assignment 5 - Linear Independence} \due{(10/3/23)} \cbox{assignment-week5}
 
 \subsection{Quiz}
 
-The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50725}{Chapter 5.} \due{(10/2/23)} \cbox{quiz-week5}
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50725}{Chapter 5} \textbullet \pdflink{\QuizDir Quiz 5 - Linear Independence.pdf}{Quiz 5 - Linear Independence} \due{(10/2/23)} \cbox{quiz-week5}
 
 \subsection{Chapter Summary}
 
@@ -65,7 +68,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 5 - Linear Ind
     systems of equations. Whether in data analysis, engineering, physics, or computer science, an understanding of linear independence is essential for making sense of complex mathematical structures 
     and real-world problems.
 
-    \begin{Highlight}[Linear Independence Definition]
+    \begin{highlight}[Linear Independence Definition]
         For a collection of vectors to be considered \textit{\textbf{linearly independent}} of one another, the collection of vectors must not be linearly dependent. Mathematically this means
 
         \begin{equation*}
@@ -73,7 +76,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 5 - Linear Ind
         \end{equation*}
         where the above equation is only valid if $\beta_{i} = \dots = \beta_{k} = 0$. For a collection of vectors to be \textit{\textbf{linearly dependent}}, the above equation is valid where not all
         of the coefficients $\beta$ are equal to zero. Namely, $\beta_{i} \neq \dots \neq \beta_{k} \neq 0$.
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The next section that we will cover is \textbf{VMLS Section 5.2 - Basis}.
@@ -103,7 +106,7 @@ The next section that we will cover is \textbf{VMLS Section 5.2 - Basis}.
     and linear operators, simplifying complex problems by breaking them down into more manageable components. In essence, bases are the foundation upon which much of linear algebra is built, making 
     them an essential concept for anyone delving into this mathematical field.
 
-    \begin{Highlight}[Basis Example]
+    \begin{highlight}[Basis Example]
         In linear algebra, a basis is a fundamental concept that forms the building blocks for vector spaces. A basis is a set of vectors that can be used to represent any vector within that vector space 
         uniquely. To visualize this concept, let's consider a 2D vector space.
     
@@ -137,18 +140,18 @@ The next section that we will cover is \textbf{VMLS Section 5.2 - Basis}.
         This illustration demonstrates how vectors within a vector space can be uniquely represented using a basis. The coefficients $v_1$ and $v_2$ are the coordinates of the vector $\mathbf{v}$ with respect 
         to the basis vectors $\mathbf{e}_1$ and $\mathbf{e}_2$, respectively. The concept of a basis is crucial in linear algebra as it forms the foundation for various operations and transformations within 
         vector spaces.
-    \end{Highlight}
+    \end{highlight}
 
     Consequently, there is a way that we can represent a vector as a linear combination of vectors for a given basis.
 
-    \begin{Highlight}[Basis Representation]
+    \begin{highlight}[Basis Representation]
         For any $n$-vector $b$, we can write $b$ as 
 
         \begin{equation*}
             b = b_{1}e_{1} + \dots + b_{n}e_{n}
         \end{equation*}
         where $e_{i}$ are the basis of $b$. In this context $\mathbf{e}$, represents unit vectors in this space.
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The next section that we will cover is \textbf{VMLS Section 5.3 - Orthonormal Vectors}.
@@ -185,14 +188,14 @@ The next section that we will cover is \textbf{VMLS Section 5.3 - Orthonormal Ve
     An orthonormal basis consists of vectors that are both orthogonal and normalized. These bases are instrumental in linear algebra and various scientific and engineering disciplines, as they simplify 
     calculations, facilitate vector representations, and ensure consistent magnitudes in mathematical operations.
 
-    \begin{Highlight}[Orthonormal Basis]
+    \begin{highlight}[Orthonormal Basis]
         To represent an $n$-vector $x$ with an orthonormal basis $a_{1}, \dots, a_{n}$ we use
 
         \begin{equation*}
             x = \sum_{i = 1}^{n} (a_{i}^{T}x)a_{i}.
         \end{equation*}
         $x$ is expressed as a linear combination of $a_{1}, \dots, a_{n}$.
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The last section that we will cover is \textbf{VMLS Section 5.4 - Gram-Schmidt Algorithm}
@@ -217,7 +220,7 @@ The last section that we will cover is \textbf{VMLS Section 5.4 - Gram-Schmidt A
     The Gram-Schmidt algorithm is a method for converting a set of linearly independent vectors into an orthonormal basis. By ensuring orthogonality and normalization, it simplifies mathematical operations 
     and is a fundamental tool in linear algebra and various scientific disciplines.
 
-    \begin{Highlight}[Gram-Schmidt Algorithm]
+    \begin{highlight}[Gram-Schmidt Algorithm]
         Given n-vectors $\mathbf{a}_1, \ldots, \mathbf{a}_k$ for $i = 1, \ldots, k$, perform the following steps:
 
         \begin{enumerate}
@@ -226,5 +229,5 @@ The last section that we will cover is \textbf{VMLS Section 5.4 - Gram-Schmidt A
             \item \textbf{Normalization:} $\mathbf{q}_i = \frac{\mathbf{\tilde{q}}_i}{\|\mathbf{\tilde{q}}_i\|}$
         \end{enumerate}
 
-    \end{Highlight}
+    \end{highlight}
 \end{notes}

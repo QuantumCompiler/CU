@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 3: (9/11 - 9/17)}
 
-\section{Norm And Distance}
+\renewcommand{\ChapTitle}{Norm And Distance}
+\renewcommand{\SectionTitle}{Norm And Distance}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -30,11 +33,11 @@ The lectures for this week and their links can be found below:
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/VMLS Assignment 3 - Chapter 3.pdf}{VMLS - Assignment 3: Chapter 3.} \due{(9/18/23)} \cbox{assignment-week3}
+The assignment for this week is \pdflink{\AssDir Assignment 3 - Norm And Distance.pdf}{Assignment 3 - Norm And Distance} \due{(9/18/23)} \cbox{assignment-week3}
 
 \subsection{Quiz}
 
-The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50699}{Chapter 3.} \due{(9/18/23)} \cbox{quiz-week3}
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50699}{Chapter 3} \textbullet \pdflink{\QuizDir Quiz 3 - Norm And Distance.pdf}{Quiz 3 - Norm And Distance} \due{(9/18/23)} \cbox{quiz-week3}
 
 \subsection{Chapter Summary}
 
@@ -48,13 +51,13 @@ The chapter that we will review this week is \textbf{VMLS Chapter 3 - Norm And D
     in an n-dimensional space is denoted as $||b||$, where $b$ represents the vector. The norm is a fundamental concept in linear algebra and has various applications in fields such as physics, 
     engineering, and machine learning, where it is used for tasks like vector normalization and distance calculations.
 
-    \begin{Highlight}[Norm Equation]
+    \begin{highlight}[Norm Equation]
         The equation for calculating a norm is
 
         \begin{equation*}
             ||x|| = \sqrt{x^{2}_{1} + x^{2}_{2} + \dots + x^{2}_{n}}.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Properties of Norm}
 
@@ -80,13 +83,13 @@ The chapter that we will review this week is \textbf{VMLS Chapter 3 - Norm And D
     or alternating quantities. The RMS value preserves the energy content of the dataset and is often used in fields like physics, engineering, and signal processing to quantify signal strength, power, or 
     variability. It serves as a common metric for comparing varying quantities to constant values, providing a meaningful and widely applicable representation of their magnitude.
 
-    \begin{Highlight}[Root Mean Square Equation]
+    \begin{highlight}[Root Mean Square Equation]
         The equation for the root mean square is
 
         \begin{equation*}
             \mathbf{rms}(x) = \sqrt{\frac{x^{2}_{1} + \dots + x^{2}_{n}}{n}} = \frac{||x||}{\sqrt{n}}.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Norm Of Sum}
 
@@ -95,13 +98,13 @@ The chapter that we will review this week is \textbf{VMLS Chapter 3 - Norm And D
     $\|x + y\| \leq \|x\| + \|y\|$. This inequality signifies that the shortest path between two points in Euclidean space is a straight line. The norm of the sum plays a crucial role in various mathematical and 
     scientific disciplines, such as physics and engineering, where it helps quantify the combined effect or magnitude of multiple vector quantities.
 
-    \begin{Highlight}[Norm Of Sum Equation]
+    \begin{highlight}[Norm Of Sum Equation]
         To calculate the norm of sum of vectors we use
 
         \begin{equation*}
             ||x + y|| = \sqrt{||x||^{2} + 2x^{T}y + ||y||^{2}}.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Norm Of Block Vectors}
 
@@ -110,13 +113,13 @@ The chapter that we will review this week is \textbf{VMLS Chapter 3 - Norm And D
     the squares of the norms of its constituent sub-vectors. This allows for the measurement of the overall magnitude or length of the block vector, while considering the individual magnitudes of its components. 
     Block vectors and their norms find applications in various areas, including multivariate statistics, data analysis, and numerical optimization, where structured data representations are common.
 
-    \begin{Highlight}[Norm Of Block Vectors Equation]
+    \begin{highlight}[Norm Of Block Vectors Equation]
         To calculate the norm of block vectors we use
 
         \begin{equation*}
             ||(a,b,c)|| = \sqrt{||a||^{2} + ||b||^{2} + ||c||^{2}} = ||(||a||,||b||,||c||)||.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 
 
     \subsection*{Chebyshev Inequality}
@@ -127,13 +130,13 @@ The chapter that we will review this week is \textbf{VMLS Chapter 3 - Norm And D
     of such an event occurring. This inequality is valuable for estimating the likelihood of extreme events or outliers in a dataset and is widely used in statistics and probability theory for setting confidence intervals 
     and making probabilistic statements about data distributions.
 
-    \begin{Highlight}[Chebyshev Inequality Equation]
+    \begin{highlight}[Chebyshev Inequality Equation]
         We can represent the Chebyshev Inequality in terms of the root mean square of a vector with
 
         \begin{equation*}
             \frac{k}{n} \leq \Bigg(\frac{\mathbf{rms}(x)}{a}\Bigg)^{2}.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The next section that we will review this week is \textbf{VMLS Section 3.4 - Angle}.
@@ -153,13 +156,13 @@ The next section that we will review this week is \textbf{VMLS Section 3.4 - Ang
     \cdot \| \mathbf{b} \| \). Geometrically, this means that the angle between the vectors is related to their inner product and magnitudes, providing a measure of how much the vectors align. The Cauchy-Schwarz inequality has 
     wide-ranging applications in mathematics, physics, engineering, and statistics, serving as a fundamental tool for establishing bounds and relationships between vectors in various contexts.
 
-    \begin{Highlight}[Cauchy-Schwarz Inequality Equation]
+    \begin{highlight}[Cauchy-Schwarz Inequality Equation]
         To calculate the Cauchy-Schwarz inequality we use
 
         \begin{equation*}
             |a^{T}b| \leq ||a|| ||b||.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Correlation Coefficient}
 
@@ -168,7 +171,7 @@ The next section that we will review this week is \textbf{VMLS Section 3.4 - Ang
     A positive coefficient implies that as one variable increases, the other tends to increase as well, while a negative coefficient suggests that as one variable increases, the other tends to decrease. The correlation coefficient 
     is widely employed in fields like statistics, economics, and social sciences to analyze data, make predictions, and determine the degree of association between variables.
 
-    \begin{Highlight}[Correlation Coefficient Equation]
+    \begin{highlight}[Correlation Coefficient Equation]
         Given two vectors $a$ and $b$, their associated de-meaned vectors are
 
         \begin{equation*}
@@ -192,7 +195,7 @@ The next section that we will review this week is \textbf{VMLS Section 3.4 - Ang
         \begin{equation*}
             \rho = \frac{u^{T}v}{n}.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Standard Deviation Of Sum}
 
@@ -201,11 +204,11 @@ The next section that we will review this week is \textbf{VMLS Section 3.4 - Ang
     and is often employed in fields like finance and data analysis to assess risk or measure the overall variability of a portfolio or dataset resulting from the aggregation of individual vector components. Calculating the standard 
     deviation of the sum involves considering both the individual standard deviations of the vectors and their pairwise covariances, providing valuable insights into the behavior of the combined vector.
 
-    \begin{Highlight}[Standard Deviation Of Sum Equation]
+    \begin{highlight}[Standard Deviation Of Sum Equation]
         To calculate the standard deviation of sum we use
 
         \begin{equation*}
             \mathbf{std}(a + b) = \sqrt{\mathbf{std}(a)^{2} + 2\rho\mathbf{std}(a)\mathbf{std}(b) + \mathbf{std}(b)^{2}}.
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 \end{notes}

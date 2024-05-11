@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 2: (9/4 - 9/10)}
 
-\section{Linear Functions}
+\renewcommand{\ChapTitle}{Linear Functions}
+\renewcommand{\SectionTitle}{Linear Functions}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -32,11 +35,11 @@ The lectures for this week and their links can be found below:
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/VMLS Assignment 2 - Chapter 2.pdf}{VMLS - Assignment 2: Chapter 2.} \due{(9/11/23)} \cbox{assignment-week2}
+The assignment for this week is \pdflink{\AssDir Assignment 2 - Linear Functions.pdf}{Assignment 2 - Linear Functions} \due{(9/11/23)} \cbox{assignment-week2}
 
 \subsection{Quiz}
 
-The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50687}{Chapter 2.} \due{(9/11/23)} \cbox{quiz-week2}
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50687}{Chapter 2} \textbullet \pdflink{\QuizDir Quiz 2 - Linear Functions.pdf}{Quiz 2 - Linear Functions} \due{(9/11/23)} \cbox{quiz-week2}
 
 \subsection{Chapter Summary}
 
@@ -119,7 +122,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 2 - Linear Fun
     concept with broad applications in various mathematical and scientific disciplines, particularly in linear algebra. It simplifies the analysis of linear transformations and systems, making it indispensable in fields 
     such as physics, engineering, economics, and computer science.
 
-    \begin{Highlight}[Linearity Example]
+    \begin{highlight}[Linearity Example]
         Consider a linear transformation \(T\) that maps vectors from \(\mathbb{R}^2\) to \(\mathbb{R}\) defined as follows:
         
         \begin{equation*}
@@ -151,7 +154,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 2 - Linear Fun
         \end{enumerate}
         \horizontalline{0}{0}
         Therefore, the transformation \(T\) is linear, as it satisfies both the homogeneity and additivity properties, making it a valid example of linearity.
-    \end{Highlight}
+    \end{highlight}
 
     \subsubsection*{Inner Product Representation of a Linear Function}
     
@@ -182,7 +185,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 2 - Linear Fun
     
     This concept holds significant value in linear algebra and various mathematical applications, providing a deeper understanding of the interplay between linear functions and inner products.
 
-    \begin{Highlight}[Inner Product Representation Example]
+    \begin{highlight}[Inner Product Representation Example]
         Let's illustrate the concept of the inner product representation of a linear function with an example.
         
         \horizontalline{0}{0}
@@ -250,7 +253,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 2 - Linear Fun
         This representation allows us to express \(f\) as the inner product of its argument \(\mathbf{x}\) with the fixed vector \(\mathbf{a}\), which simplifies computations and provides insights into the function's behavior.
         
         In this example, we've demonstrated how a linear function can be represented using the inner product of its argument with a fixed vector.
-    \end{Highlight}
+    \end{highlight}
     
     \subsubsection*{Affine Functions}
     
@@ -277,7 +280,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 2 - Linear Fun
     For instance, the maximum function, which returns the largest value among its arguments, doesn't hold the superposition property when \( n > 1 \). This non-conformance can be explicitly illustrated using specific coefficients and 
     vectors.
     
-    \begin{Highlight}[Affine Function Example]
+    \begin{highlight}[Affine Function Example]
         Let's delve deeper into the concept of affine functions with an example. \vspace*{1em}
 
         \horizontalline{0}{0}
@@ -324,7 +327,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 2 - Linear Fun
             The offset property is satisfied since \( b = 1 \) is present in the function definition as an additive constant.
         \end{enumerate}
         \horizontalline{0}{0}
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The next section that we will examine this week is \textbf{VMLS Section 2.2 - Taylor Approximations.}
@@ -389,7 +392,7 @@ The next section that we will examine this week is \textbf{VMLS Section 2.2 - Ta
     differentiability. This methodology is exemplified by a straightforward instance for $n = 1$. Over a comprehensive scale along the $x$-axis, the Taylor approximation $\hat{f}$ may exhibit discrepancies from the actual function $f$. Nevertheless, 
     within the vicinity of $z$, the Taylor approximation consistently proves to be an excellent approximation.
     
-    \begin{Highlight}[First-Order Taylor Approximation Example]
+    \begin{highlight}[First-Order Taylor Approximation Example]
         Let's illustrate the concept of a first-order Taylor approximation in the context of linear algebra.
         
         \horizontalline{0}{0}
@@ -443,7 +446,7 @@ The next section that we will examine this week is \textbf{VMLS Section 2.2 - Ta
         \horizontalline{0}{0}
         
         In this example, we've demonstrated how to find the first-order Taylor approximation of a linear function \(f\) near a specific point \(\mathbf{z}\) in \(\mathbb{R}^3\).
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The last section that we will examine this week is \textbf{VMLS Section 2.3 - Regression Model.}

@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 12: (11/13 - 11/19)}
 
-\section{Matrix Inverses}
+\renewcommand{\ChapTitle}{Matrix Inverses}
+\renewcommand{\SectionTitle}{Matrix Inverses}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -33,11 +36,11 @@ The lectures for this week and their links can be found below:
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/VMLS Assignment 11 - Chapter 11.pdf}{VMLS Assignment 11: Chapter 11} \due{(11/20/23)} \cbox{assignment-week12}
+The assignment for this week is \pdflink{\AssDir Assignment 11 - Matrix Inverses.pdf}{Assignment 11 - Matrix Inverses} \due{(11/20/23)} \cbox{assignment-week12}
 
 \subsection{Quiz}
 
-The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50812}{Chapter 11.} \due{(11/20/23)} \cbox{quiz-week12}
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50812}{Chapter 11} \textbullet \pdflink{\QuizDir Quiz 11 - Matrix Inverses.pdf}{Quiz 11 - Matrix Inverses} \due{(11/20/23)} \cbox{quiz-week12}
 
 \subsection{Chapter Summary}
 
@@ -49,7 +52,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 11 - Matrix In
     The concept of left and right inverses in matrices extends the idea of a multiplicative inverse from numbers to matrices. However, due to the non-commutative nature of matrix multiplication, the 
     distinction between left and right inverses becomes crucial. \vspace*{1em}
 
-    \begin{Highlight}[Left Inverse]
+    \begin{highlight}[Left Inverse]
         \begin{itemize}
             \item \textbf{Definition:} A matrix $X$ is a left inverse of matrix $A$ if it satisfies $XA = I$, where $I$ is the identity matrix.
             \item \textbf{Existence and Uniqueness:} A left inverse exists if and only if the columns of $A$ are linearly independent. It may not be unique unless $A$ is square.
@@ -59,9 +62,9 @@ The chapter that we will review this week is \textbf{VMLS Chapter 11 - Matrix In
             \end{equation*}
             where $X$ is an $n \times m$ matrix if $A$ is an $m \times n$ matrix.
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Right Inverse]
+    \begin{highlight}[Right Inverse]
         \begin{itemize}
             \item \textbf{Definition:} A matrix $Y$ is a right inverse of matrix $A$ if it satisfies $AY = I$.
             \item \textbf{Existence and Uniqueness:} A right inverse exists if and only if the rows of $A$ are linearly independent. It is not unique unless $A$ is square.
@@ -71,9 +74,9 @@ The chapter that we will review this week is \textbf{VMLS Chapter 11 - Matrix In
             \end{equation*}
             where $Y$ is an $n \times m$ matrix if $A$ is an $m \times n$ matrix.
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Invertibility]
+    \begin{highlight}[Invertibility]
         \begin{itemize}
             \item A matrix with both a left and a right inverse is invertible or nonsingular, and the left and right inverses are equal.
             \item \textbf{Mathematical Representation:} 
@@ -83,7 +86,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 11 - Matrix In
             Here, $X$ and $Y$ are equal and represent the inverse of $A$, denoted as $A^{-1}$.
             \item \textbf{Conditions for Invertibility:} A matrix is invertible if it is square and its columns (or rows) are linearly independent.
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Applications}
     \begin{enumerate}
@@ -163,14 +166,14 @@ The next section that we will be covering this week is \textbf{VMLS Section 11.3
     This section starts with an algorithm for solving linear equations $Rx = b$ where $R$ is an upper triangular $n \times n$ matrix with nonzero diagonal entries, making it invertible. The process, 
     known as back substitution, involves solving for the variables one at a time, starting from $x_n$ and working backwards. \vspace*{1em}
 
-    \begin{Highlight}[Algorithm For Back Substitution:]
+    \begin{highlight}[Algorithm For Back Substitution:]
         \item Given an upper triangular matrix $R$ and an $n$-vector $b$.
         \item For $i = n$ down to $1$, calculate $x_i$ using the formula:
         \begin{equation*}
             x_i = \frac{b_i - \sum_{j=i+1}^{n} R_{ij}x_j}{R_{ii}}
         \end{equation*}
         \item This method computes $x = R^{-1}b$ and is guaranteed to work due to nonzero diagonal entries of $R$.
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Complexity Analysis:}
     \begin{itemize}
@@ -180,14 +183,14 @@ The next section that we will be covering this week is \textbf{VMLS Section 11.3
     \subsection*{Solving Equations Using QR Factorization}
     The section introduces a method to solve square systems of linear equations $Ax = b$ using QR factorization, particularly useful when $A$ is invertible.
 
-    \begin{Highlight}[Algorithm for Solving via QR Factorization:]
+    \begin{highlight}[Algorithm for Solving via QR Factorization:]
         \begin{itemize}
             \item Given an invertible $n \times n$ matrix $A$ and an $n$-vector $b$.
             \item Compute the QR factorization $A = QR$.
             \item Calculate $y = Q^Tb$.
             \item Solve the triangular equation $Rx = y$ using back substitution.
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Complexity Analysis:}
     \begin{itemize}
@@ -208,12 +211,12 @@ The next section that we will be covering this week is \textbf{VMLS Section 11.3
     \subsection*{Computing the Matrix Inverse}
     The section describes a method to compute the inverse $B = A^{-1}$ of an invertible $n \times n$ matrix $A$ using QR factorization.
 
-    \begin{Highlight}[Algorithm for Computing the Inverse:]
+    \begin{highlight}[Algorithm for Computing the Inverse:]
         \begin{itemize}
             \item Perform QR factorization of $A$.
             \item For each $i = 1$ to $n$, solve $Rb_i = \tilde{q}_i$ using back substitution, where $b_i$ and $\tilde{q}_i$ are columns of $B$ and $Q^T$, respectively.
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Complexity Analysis:}
     \begin{itemize}
@@ -267,7 +270,7 @@ The last section that we will cover this week is \textbf{VMLS Section 11.5 - Pse
     The pseudo-inverse, denoted as $A^\dagger$ or $A^+$, is a generalization of the matrix inverse that applies to matrices that are not necessarily square or invertible. It plays a crucial role in 
     solving over-determined or under-determined systems of linear equations and has significant applications in various fields. \vspace*{1em}
     
-    \begin{Highlight}[Linearly Independent Columns and Gram Invertibility]
+    \begin{highlight}[Linearly Independent Columns and Gram Invertibility]
         \begin{itemize}
             \item An $m \times n$ matrix $A$ has linearly independent columns if and only if its $n \times n$ Gram matrix $A^T A$ is invertible.
             \item The pseudo-inverse for a square or tall matrix with linearly independent columns is given by:
@@ -275,9 +278,9 @@ The last section that we will cover this week is \textbf{VMLS Section 11.5 - Pse
                 A^\dagger = (A^T A)^{-1}A^T
             \end{equation*}
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
     
-    \begin{Highlight}[Pseudo-Inverse of Square or Wide Matrix]
+    \begin{highlight}[Pseudo-Inverse of Square or Wide Matrix]
         \begin{itemize}
             \item For a square or wide matrix $A$, a right inverse is given by:
             \begin{equation*}
@@ -285,12 +288,12 @@ The last section that we will cover this week is \textbf{VMLS Section 11.5 - Pse
             \end{equation*}
             \item This formula also defines the pseudo-inverse and reduces to the ordinary inverse when $A$ is square.
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
     
     \subsection*{General Cases}
     The pseudo-inverse is defined for any matrix, including cases where $A$ is tall with linearly dependent columns or wide with linearly dependent rows, and even when $A$ is square but not invertible.
     
-    \begin{Highlight}[Pseudo-Inverse via QR Factorization]
+    \begin{highlight}[Pseudo-Inverse via QR Factorization]
         \begin{itemize}
             \item For matrices that are left-invertible, the pseudo-inverse can be computed using QR factorization.
             \item The formula is given by:
@@ -300,7 +303,7 @@ The last section that we will cover this week is \textbf{VMLS Section 11.5 - Pse
             \item This computation involves QR factorization followed by back substitution on the columns of $Q^T$.
             \item The complexity of this method is $3mn^2$ flops for an $n \times m$ matrix.
         \end{itemize}
-    \end{Highlight}
+    \end{highlight}
     
     \subsection*{Solving Over and Under-Determined Systems}
     \begin{itemize}

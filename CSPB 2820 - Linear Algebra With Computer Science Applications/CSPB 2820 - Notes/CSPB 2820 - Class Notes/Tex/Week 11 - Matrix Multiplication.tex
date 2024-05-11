@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 11: (11/6 - 11/12)}
 
-\section{Matrix Multiplication}
+\renewcommand{\ChapTitle}{Matrix Multiplication}
+\renewcommand{\SectionTitle}{Matrix Multiplication}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -32,11 +35,11 @@ The lectures for this week and their links can be found below:
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/VMLS Assignment 10 - Chapter 10.pdf}{VMLS Assignment 10: Chapter 10} \due{(11/13/23)} \cbox{assignment-week11}
+The assignment for this week is \pdflink{\AssDir Assignment 10 - Matrix Multiplication.pdf}{Assignment 10 - Matrix Multiplication} \due{(11/13/23)} \cbox{assignment-week11}
 
 \subsection{Quiz}
 
-The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50797}{Chapter 10.} \due{(11/13/23)} \cbox{quiz-week11}
+The quiz for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=50797}{Chapter 10} \textbullet \pdflink{\QuizDir Quiz 10 - Matrix Multiplication.pdf}{Quiz 10 - Matrix Multiplication} \due{(11/13/23)} \cbox{quiz-week11}
 
 \subsection{Chapter Summary}
 
@@ -56,7 +59,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 10 - Matrix Mu
     The number of columns in the first matrix must equal the number of rows in the second matrix for multiplication to be defined. If we have a first matrix $A$ of size $m \times n$ 
     and a second matrix $B$ of size $n \times p$, then the resulting product matrix $C$ will have a size of $m \times p$. \vspace*{1em}
 
-    \begin{Highlight}[Mathematical Formula]
+    \begin{highlight}[Mathematical Formula]
         The element at the $i$-th row and $j$-th column of the product matrix $C$ is calculated as follows:
         \begin{equation*}
             c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj}
@@ -70,9 +73,7 @@ The chapter that we will review this week is \textbf{VMLS Chapter 10 - Matrix Mu
             \item Place the result in the $i$-th row and $j$-th column of the product matrix $C$.
             \item Repeat the process for all rows and columns of the resulting matrix.
         \end{enumerate}
-    \end{Highlight}
-    
-    
+    \end{highlight}
     
     \subsubsection*{Properties}
     \begin{itemize}
@@ -99,13 +100,13 @@ The next section that we will be covering this week is \textbf{VMLS Section 10.2
     A linear transformation can be seen as a function that maps vectors from one vector space to another while preserving vector addition and scalar multiplication. If we represent linear transformations 
     $T: U \rightarrow V$ and $S: V \rightarrow W$ by matrices $A$ and $B$, the composition of $S$ and $T$, denoted as $S \circ T$, is the function that applies $T$ to a vector, followed by $S$. \vspace*{1em}
 
-    \begin{Highlight}[Mathematical Representation]
+    \begin{highlight}[Mathematical Representation]
         The matrix representation of the composition $S \circ T$ is obtained by the matrix product $BA$, where $A$ and $B$ represent $T$ and $S$, respectively. For a vector $\vec{x}$ in $U$, the composition 
         is defined as:
         \begin{equation*}
             (S \circ T)(\vec{x}) = S(T(\vec{x})) = B(A\vec{x})
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
     
     \subsubsection*{Context}
     
@@ -154,14 +155,14 @@ The last section that we will cover this week is \textbf{VMLS Section 10.4 - QR 
 \begin{notes}{VMLS Section 10.4 - QR Factorization}
     \subsubsection*{Overview}
 
-    \begin{Highlight}[System State]
+    \begin{highlight}[System State]
         The section discusses the concept of matrix powers in the context of time-invariant linear dynamical systems with inputs. The evolution of the system's state over time is described by the equation:
         \begin{equation*}
             x_{t+\tau} = A^\tau x_t + \sum_{j=0}^{\tau-1} A^j B u_{t+\tau-j-1}
         \end{equation*}
         where $x_t$ is the state at time $t$, $A$ is the system matrix, $B$ is the input matrix, and $u_t$ is the input at time $t$. This demonstrates how the state at a future time point is influenced 
         by the powers of $A$ and the inputs up to that time.
-    \end{Highlight}
+    \end{highlight}
 
     
     \subsubsection*{Properties of Matrices with Orthonormal Columns}
@@ -175,7 +176,7 @@ The last section that we will cover this week is \textbf{VMLS Section 10.4 - QR 
         \end{itemize}
     \end{itemize}
 
-    \begin{Highlight}[QR Factorization]
+    \begin{highlight}[QR Factorization]
         QR factorization is a method to decompose a matrix $A$ into a product of two matrices $Q$ and $R$, where $Q$ has orthonormal columns and $R$ is upper triangular. If $A$ is an $n \times k$ matrix 
         with linearly independent columns, the QR factorization is expressed as:
         \begin{equation*}
@@ -183,7 +184,7 @@ The last section that we will cover this week is \textbf{VMLS Section 10.4 - QR 
         \end{equation*}
         This factorization is derived from the Gram-Schmidt process, which is used to obtain the orthonormal vectors that form the columns of $Q$. The matrix $R$ is then constructed to reflect the 
         coefficients used to express the original columns of $A$ as linear combinations of the columns of $Q$.
-    \end{Highlight}
+    \end{highlight}
     
     The section also mentions alternative algorithms for QR factorization that are more stable in the presence of round-off errors and are efficient for sparse matrices.
     
