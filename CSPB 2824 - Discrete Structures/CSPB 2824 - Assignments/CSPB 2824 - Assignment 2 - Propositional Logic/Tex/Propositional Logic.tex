@@ -85,7 +85,7 @@
         \end{enumerate}
     \end{statement}
 
-    \begin{Highlight}[Solution - Part (a)]
+    \begin{highlight}[Solution - Part (a)]
         We will first prove $p \rightarrow q \equiv \neg p \vee q$ with the use of a truth table.
 
         \begin{center}
@@ -98,9 +98,9 @@
             \end{tabular}
         \end{center}
         Consequently, $p \rightarrow q$ is logically equivalent to $\neg p \vee q$.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (b)]
+    \begin{highlight}[Solution - Part (b)]
         Starting with RBI, we can say
 
         \begin{align*}
@@ -112,9 +112,9 @@
         \end{align*}
 
         Consequently, $p \rightarrow q$ is logically equivalent to $\neg q \rightarrow \neg p$.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (c)]
+    \begin{highlight}[Solution - Part (c)]
         Starting with RBI, we can say
 
         \begin{align*}
@@ -122,9 +122,9 @@
             & \equiv p \vee q & \text{(Double Negation Law)}
         \end{align*}
         Consequently, $p \vee q$ and $\neg p \rightarrow q$ are logically equivalent.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (d)]
+    \begin{highlight}[Solution - Part (d)]
         Starting with RBI, we can say
 
         \begin{align*}
@@ -133,9 +133,9 @@
             & \equiv p \wedge q & \text{(Double Negation Law)}
         \end{align*}
         Consequently, $p \wedge q$ and $\neg(p \rightarrow \neg q)$ are logically equivalent.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (e)]
+    \begin{highlight}[Solution - Part (e)]
         Starting with RBI, we can say
 
         \begin{align*}
@@ -144,11 +144,11 @@
             & \equiv p \wedge \neg q & \text{(Double Negation Law)}
         \end{align*}
         Consequently, $\neg(p \rightarrow q)$ and $p \wedge \neg q$ are logically equivalent.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Insights]
+    \begin{highlight}[Insights]
         Most of these proofs started with RBI, where both De Morgan's Law and the Double Negation Law showed up frequently as well.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 \begin{summary}{Problem 2 Summary}
@@ -205,7 +205,7 @@
         \end{equation*}
     \end{statement}
 
-    \begin{Highlight}[Solution]
+    \begin{highlight}[Solution]
         Starting with $(a \wedge b) \vee (c \wedge d)$, we can show
 
         \begin{align*}
@@ -220,7 +220,7 @@
         $(a \wedge b)$ was treated as a single variable for the first line of this proof. Instead of complicating the above lines with another variable such as $\alpha$, I chose to wrap it with parenthesis
         to make the math clearer to me. After the second instance of the distributive law, I wrapped the disjunctions with parenthesis as well to make them resemble a single proposition instead of using a
         compound substitution.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 3 - Summary
@@ -264,7 +264,7 @@
         \end{enumerate}
     \end{statement}
 
-    \begin{Highlight}[Solution - Part (a)]
+    \begin{highlight}[Solution - Part (a)]
         `There is a student at your school who can speak Russian and who knows C++'.
         \setcounter{equation}{0}
         \begin{equation}
@@ -273,9 +273,9 @@
         Here we use $\exists$ to denote that over the entire domain of students, we are only concerned that there is at least one student who meets this criteria. We use $x$ to symbolize the domain of all
         students at the school and we use the conjunction `$\wedge$' to imply that the student knows Russian and C++. If the student knows Russian, $P(x)$ is true and if they know C++ as well, $Q(x)$ is true.
         The aforementioned statement will only be true if both $P(x)$ and $Q(x)$ applies to the current student.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (b)]
+    \begin{highlight}[Solution - Part (b)]
         `There is a student at your school who can speak Russian but who doesn't know C++.'
 
         \begin{equation}
@@ -284,9 +284,9 @@
         Similar to part (a), we once again use the existential quantifier to denote that we are only concerned if one or more students meet this criteria. Here, the only difference from part (a) is that we want 
         to implicate that this supposed student knows Russian but not C++. If $Q(x)$ applies to the student, then the aforementioned statement will be false, just as if $P(x)$ does not apply to the student. The 
         negation operator handles the scenario for when the student knows C++, the statement will also evaluate to false if the student does not know Russian.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (c)]
+    \begin{highlight}[Solution - Part (c)]
         `Every student at your school either can speak Russian or knows C++.'
 
         \begin{equation}
@@ -295,9 +295,9 @@
         In this example, we use $\forall$ to implicate that for the following statement to be true it must apply to all of the students at the school. After the universal quantifier, we include the domain of
         students to imply that for the disjunction $P(x) \vee Q(x)$ to be true, every student in the domain must either know Russian or C++. The statement will only evaluate to false for if there is a student
         that doesn't know Russian or C++.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (d)]
+    \begin{highlight}[Solution - Part (d)]
         `No student at your school can speak Russian or knows C++.'
 
         \begin{equation}
@@ -306,7 +306,7 @@
         Finally, for this example we once again use the universal quantifier with the entire domain of students. We apply the negation operator `$\neg$' to imply that no student at the school can speak Russian
         or knows C++. If the inside expression $(P(x) \vee Q(x))$ evaluates to true, then this implies that there is a student that either knows Russian or C++. This in turn would cause the statement to evaluate
         to false because we are constituting that there is not a single student that this applies to.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 \begin{summary}{Problem 4 - Summary}
@@ -370,7 +370,7 @@
         \end{enumerate}
     \end{statement}
 
-    \begin{Highlight}[Solution - Part (a)]
+    \begin{highlight}[Solution - Part (a)]
         Original expression: $\neg \forall x \forall y P(x,y)$.
 
         \setcounter{equation}{0}
@@ -379,9 +379,9 @@
         \end{equation}
         These two expressions are logically equivalent because the original is making the claim that it is not the case that for all elements in the domain the predicate is true. This is the same as saying that in 
         the domain there is at least one case where the predicate is false.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (b)]
+    \begin{highlight}[Solution - Part (b)]
         Original expression: $\neg \forall y \exists x P(x,y)$.
 
         \begin{equation}
@@ -389,9 +389,9 @@
         \end{equation}
         These two expressions are logically equivalent because the original is making the claim that it is not the case that for all elements in the domain $x$ and $y$ such that the predicate is true. This is the same 
         as saying that there is at least one element in the domain of $x$ for all elements in $y$ such that the predicate is false.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (c)]
+    \begin{highlight}[Solution - Part (c)]
         Original expression: $\neg \forall y \forall x (P(x,y) \vee Q(x,y))$.
 
         \begin{equation}
@@ -399,9 +399,9 @@
         \end{equation}
         The original expression is conveying that it can't be the case that all elements in $x$ and $y$ satisfy the condition where either $P(x,y)$ or $Q(x,y)$ is true. The modified expression states that there is at least
         an element in $x$ and $y$ where both $P(x,y)$ and $Q(x,y)$ are false.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (d)]
+    \begin{highlight}[Solution - Part (d)]
         Original expression: $\neg(\exists x \exists y \neg P(x,y) \wedge \forall x \forall y Q(x,y))$.
 
         \begin{equation}
@@ -409,9 +409,9 @@
         \end{equation}
         The simplest way I can attempt to explain this is that this is an example of how De Morgans Law applies to expressions with universal and existential quantifiers. Here, our conjunction flips to a disjunction and the 
         succeeding predicate $Q(x,y)$ is negated.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (e)]
+    \begin{highlight}[Solution - Part (e)]
         Original expression: $\neg \forall x (\exists y \forall z P(x,y,z) \wedge \exists z \forall y P(x,y,z))$.
 
         \begin{equation}
@@ -419,7 +419,7 @@
         \end{equation}
         This is once again another example of De Morgans Law with predicates and quantifiers. I have noticed a pattern here, when a negation operator is carried through an expression, it will flip a existential quantifier to a 
         universal and vice versa. Here our conjunction flips to a disjunction and our predicates are negated via the De Morgans Law.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 5 Summary
@@ -489,44 +489,44 @@
         \end{enumerate}
     \end{statement}
 
-    \begin{Highlight}[Solution - Part (a)]
+    \begin{highlight}[Solution - Part (a)]
         Original: 101 1110, 010 0001.
 
         \setcounter{equation}{0}
         \begin{equation}
             \text{OR: 111 111} \hspace{10pt} \text{AND: 000 0000} \hspace{10pt} \text{XOR: 111 1111}
         \end{equation}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (b)]
+    \begin{highlight}[Solution - Part (b)]
         Original: 1111 0000, 1010 1010
 
         \begin{equation}
             \text{OR: 1111 1010} \hspace{10pt} \text{AND: 1010 0000} \hspace{10pt} \text{XOR: 0101 1010}
         \end{equation}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (c)]
+    \begin{highlight}[Solution - Part (c)]
         Original: 00 0111 0001, 10 0100 1000
 
         \begin{equation}
             \text{OR: 10 0111 1001} \hspace{10pt} \text{AND: 00 0100 0000} \hspace{10pt} \text{XOR: 10 0011 1001}
         \end{equation}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution - Part (d)]
+    \begin{highlight}[Solution - Part (d)]
         Original: 11 1111 1111, 00 0000 0000
 
         \begin{equation}
             \text{OR: 11 1111 1111} \hspace{10pt} \text{AND: 00 0000 0000} \hspace{10pt} \text{XOR: 11 1111 1111}
         \end{equation}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Solution Insights]
+    \begin{highlight}[Solution Insights]
         This problem seemed to be really easy for me. In the bitwise OR, the corresponding truth value will be 1 if either bits are a 1 and will be 0 if both bits are 0. For the AND, both bits of the bit strings that are being 
         compared must be 1 for it to be 1 and otherwise it will be 0. For the XOR, when comparing the strings, the comparison will only be 1 if one bit from one string is a 1 and the other is a 0. Otherwise, if both are 1's or 
         both are 0's then XOR will evaluate to 0.
-    \end{Highlight}
+    \end{highlight}
 \end{problem}
 
 % Problem 6 Summary

@@ -1,5 +1,13 @@
 %---------------------------------------------------------------------------
-%	FORMAT
+%	DOCUMENT VARIABLES
+%---------------------------------------------------------------------------
+\newcommand{\authorName}{Taylor Larrechea}
+\newcommand{\classCode}{CSPB 2824}
+\newcommand{\className}{Discrete Structures}
+\newcommand{\documentName}{Propositional Logic Mastery Workbook}
+\newcommand{\universityName}{University Of Colorado}
+%---------------------------------------------------------------------------
+%	FORMAT AND CLASS
 %---------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{solutionclass}[]
@@ -28,11 +36,11 @@
 \RequirePackage{amsmath} % for mathematical symbols
 \RequirePackage{amssymb} % for mathematical symbols
 \RequirePackage{mathtools} % for mathematical typesetting
-% \RequirePackage{physics} % for mathematical physics
 \RequirePackage{stmaryrd} % for mathematical symbols
 \RequirePackage{tensor} % for tensors
 \RequirePackage{calc} % for mathematical calculations
-\RequirePackage{listings}
+\RequirePackage{listings} % for code listing
+\RequirePackage{cancel} % 
 \renewcommand{\theequation}{\arabic{equation}}
 %---------------------------------------------------------------------------
 %	CODE ANNOTATIONS
@@ -79,6 +87,7 @@
                 menucolor = LinkColor,
                 linktocpage = true,
                 bookmarks = true,
+                pdfnewwindow = true,
                 pdfusetitle]{hyperref} % Hyperlinks
 \RequirePackage[top = 2cm,
                 bottom = 2cm,
@@ -99,38 +108,28 @@
 \RequirePackage{background} % Background image
 \RequirePackage{hyperref} % Hyperref package
 \RequirePackage{pdfpages} % Embed a pdf page
-\RequirePackage{mdframed}
+\RequirePackage{mdframed} % Boxes
+\RequirePackage{attachfile2} % Add pdf as a link to this pdf
 %---------------------------------------------------------------------------
-%	BIBLIOGRAFY
+%	HEADER AND FOOTER
 %---------------------------------------------------------------------------
-\RequirePackage[backend    = biber, 
-                style      = ext-authoryear-comp,
-                sorting    = nyvt, 
-                backref    = false,
-                articlein  = false,
-                uniquename = true,
-                doi        = true, 
-                dashed     = false]{biblatex} % Custom bibliography
+\pagestyle{fancy}
+\fancyhead[L]{\footnotesize{\authorName}}
+\fancyfoot[L]{\footnotesize{\classCode}}
+\fancyhead[C]{\footnotesize{\className}}
+\fancyhead[R]{\footnotesize{\universityName}}
+\fancyfoot[R]{\footnotesize{\documentName}}
 %---------------------------------------------------------------------------
-%	BIBLIOGRAFY SETTINGS
+%	BACKGROUND
 %---------------------------------------------------------------------------
-% The below settings add the .bib archive and define the format which will be compilated
-\addbibresource{bib.bib} %Load references
-\DeclareFieldFormat[article,periodical]{volume}{\mkbibbold{#1}}
-% The below commands was created to make a onte kind of reference citing
-\newcommand{\therefs}{%
-    {%\bfseries%
-    \newline%
-    \textcolor{myLColor}{References:}%
+\backgroundsetup{
+    scale = 1,
+    angle = 0,
+    opacity = 0.1,
+    contents = {
+    \includegraphics[scale = 0.25, keepaspectratio]{./Figures/CU Seal.png}
     }
 }
-% The below setting was written to print the references
-\AtEndDocument{%
-    \clearpage
-    \pagestyle{empty} % clears the middle part of the headers from here on (no year to specify)
-    \markboth{\textsc{References}}{\textsc{References}} % ensures headers are working as intended during reference chapter
-    \printbibliography[heading=bibintoc, title=References]
-} % prints references
 %---------------------------------------------------------------------------
 %	TIKZ SETTINGS
 %---------------------------------------------------------------------------
@@ -180,7 +179,9 @@
         \begin{minipage}{\textwidth}
             \centering
             \textbf{Sections}
-            \printcontents[sections]{}{1}{}{}
+            \begin{multicols}{2}
+                \printcontents[sections]{}{1}{}{}
+            \end{multicols}
         \end{minipage}
     };
 \end{tikzpicture}%
@@ -202,6 +203,33 @@
 }{%
 }{}{}
 \makeatother
+\newif\iffirstchapter
+\firstchaptertrue
+\let\oldchapter\chapter
+\renewcommand{\chapter}{%
+    \iffirstchapter
+    % For the first chapter, use the custom chapter title and ToC
+    \def\temp{%
+        \titleformat{\chapter}[display]
+        {\normalfont\bfseries\color{myDColor}}
+        {\filleft\chapterNumberAndMinitoc}{0.5em}
+        {\titlerule[2.5pt]\titlerule\vspace{4pt}\LARGE\textsc}
+        \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+    }
+    \global\firstchapterfalse
+    \else
+    % For subsequent chapters, use a standard chapter title with no ToC
+    \def\temp{%
+        \titleformat{\chapter}[display]
+        {\normalfont\bfseries}
+        {}{-8em}
+        {\titlerule[2.5pt]\titlerule\vspace{2pt}\LARGE\textsc}
+        \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+    }
+    \fi
+    \temp % Apply the chosen title format
+    \oldchapter
+}
 % This command create a polygon on the left side of the section title
 \newcommand{\polygonSection}{%
 \begin{tikzpicture}[remember picture, overlay,baseline=1.5ex]
@@ -364,14 +392,13 @@
 %	NEW ENVIRONMENTS AND NEW COMMANDS
 %---------------------------------------------------------------------------
 % This environment was made to produce a box which maintain the width and height of the text inside it.
-\newtcolorbox{Highlight}[1][]{%
-    breakable,
+\newtcolorbox{highlight}[1][]{%
     enhanced,
     skin first=enhanced,
     skin middle=enhanced,
     skin last=enhanced,
-    before upper={\parindent15pt},
     breakable,
+    before upper={\parindent15pt},
     boxrule = 0pt,
     frame hidden,
     borderline west = {4pt}{0pt}{myDColor},
@@ -422,75 +449,81 @@
 % The below commands was made to personalize the align and align* environments to have a orange line between to equalities.
 \newcommand*\eqlineset{\pgfqkeys{/eqlines}}
 \eqlineset{
-picture/.style={baseline, remember picture},
-line/.style={thick, draw=myLColor, line cap=round},
-node/.style={
+    picture/.style={baseline, remember picture},
+    line/.style={thick, draw=myLColor, line cap=round},
+    node/.style={
     minimum size=+0pt, inner sep=+0pt, outer ysep=+.3333em, anchor=base,
     name=tma\thetikzmarkalign},
 }
 \newcounter{tikzmarkalign}
 \makeatletter
 \AtBeginEnvironment{align}{%
-\setcounter{tikzmarkalign}{0}%
-\newcommand*\noeq{\hphantom{={}}}%
-\newcommand*\eq{
+    \setcounter{tikzmarkalign}{0}%
+    \newcommand*\noeq{\hphantom{={}}}%
+    \newcommand*\eq{
     \ifnum\value{tikzmarkalign}=0
-    \mathrel{\tikz[/eqlines/picture]\node[/eqlines/node]{$=$};}
+        \mathrel{\tikz[/eqlines/picture]\node[/eqlines/node]{$=$};}
     \else
-    \mathrel{
+        \mathrel{
         \begin{tikzpicture}[/eqlines/picture]
-        \node[/eqlines/node] (tma\thetikzmarkalign) {$=$};
-        \unless\ifmeasuring@
+            \node[/eqlines/node] (tma\thetikzmarkalign) {$=$};
+            \unless\ifmeasuring@
             \path[/eqlines/line, overlay] (tma\thetikzmarkalign)
                         -- (tma\pgfinteval{\thetikzmarkalign-1});
-        \fi
+            \fi
         \end{tikzpicture}
-    }
+        }
     \fi
     \stepcounter{tikzmarkalign}
-}%
+    }%
 }
 \makeatother
 \makeatletter
 \AtBeginEnvironment{align*}{%
-\setcounter{tikzmarkalign}{0}%
-\newcommand*\noeq{\hphantom{={}}}%
-\newcommand*\eq{
+    \setcounter{tikzmarkalign}{0}%
+    \newcommand*\noeq{\hphantom{={}}}%
+    \newcommand*\eq{
     \ifnum\value{tikzmarkalign}=0
-    \mathrel{\tikz[/eqlines/picture]\node[/eqlines/node]{$=$};}
+        \mathrel{\tikz[/eqlines/picture]\node[/eqlines/node]{$=$};}
     \else
-    \mathrel{
+        \mathrel{
         \begin{tikzpicture}[/eqlines/picture]
-        \node[/eqlines/node] (tma\thetikzmarkalign) {$=$};
-        \unless\ifmeasuring@
+            \node[/eqlines/node] (tma\thetikzmarkalign) {$=$};
+            \unless\ifmeasuring@
             \path[/eqlines/line, overlay] (tma\thetikzmarkalign)
                         -- (tma\pgfinteval{\thetikzmarkalign-1});
-        \fi
+            \fi
         \end{tikzpicture}
-    }
+        }
     \fi
     \stepcounter{tikzmarkalign}
-}%
+    }%
 }
 \makeatother
-% This command make a simple line to divide texts. The width is adaptable to the text width.
 \newcommand{\divider}{\setlength{\parindent}{0pt}\textcolor{myDColor!30}{\rule{\linewidth}{0.6pt}}\smallskip\setlength{\parindent}{1.0em}}
 % This command was made to create a box (which can be labeled) to write equations which are answers for a random problem
-\NewEnviron{answer}{
-\begin{equation}
+\NewEnviron{highlightbox}{
 \tcbhighmath[
         boxrule = 1pt,
         colframe = myLColor,
         colback = black!80,
-        sharp corners,
-        rounded corners = southeast,
-        rounded corners = northeast,
-        rounded corners = southwest,
-        rounded corners = northwest,
-        arc is angular,
+        rounded corners,
         arc = 3mm,
         coltext = white,
-    ]{\BODY}\end{equation}}
+    ]{\BODY}}
+\NewEnviron{highlightenv}[1][175mm]{
+    \begin{tcolorbox}[
+        boxrule = 1pt,
+        colframe = myLColor,
+        colback = black!80,
+        rounded corners,
+        arc = 3mm,
+        coltext = white,
+        width= #1
+    ]
+    \BODY
+    \end{tcolorbox}
+}
 % This renewcommand was created to change the arrow notation from vectors to the bold notation of them.
 \renewcommand\vec{\boldsymbol}
 % This command was created to make comments inside the text using the a more beautifull " ".
@@ -498,18 +531,75 @@ node/.style={
 % The below commands is to maintain the font to the symbol mathbb{1} different and more beauty
 \DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 \newcommand*{\boldone}{\mathbbold{1}}
-\newcommand{\modulo}{\text{ \textbf{mod} }}
-\newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
-% DEFINE YOUR NEW COMMANDS FROM HERE:
+%---------------------------------------------------------------------------
+%	CUSTOM COMMANDS
+%---------------------------------------------------------------------------
+\newcommand{\assignment}[2]{\due{(#1)} \cbox{#2}}
+\newcommand{\cbox}[1]{\CheckBox[name=#1, width=0.75\baselineskip, height=0.75\baselineskip]{}}
+\newcommand{\due}[1]{\textcolor{red}{#1}}
 \newcommand{\horizontalline}[2]{
-    \par % Ensure that we are in vertical mode
-    \vskip#1em % Space above the line
-    \noindent\rule{\textwidth}{0.5pt} % The line itself
-    \par % Go back to vertical mode
-    \vskip#2em % Space below the line
-    \noindent % Ensures next paragraph does not indent
+    \par
+    \vskip#1em
+    \noindent\rule{\textwidth}{0.5pt}
+    \par
+    \vskip#2em
+    \noindent
 }
+\newcommand{\lecture}[3]{\link{#1}{#2}{ $\approx$ #3 \textbf{min}.}}
+\newcommand{\link}[2]{\href{#1}{#2}}
+\newcommand{\modulo}{\text{ \textbf{mod} }}
+\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
 \newcommand{\qed}{$\square$}
+\newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
+\newcommand{\testimonial}[1]{
+    \horizontalline{0}{0}
+    \begin{center}
+        \Large{\textbf{I have neither given nor received unauthorized assistance.}}
+        \horizontalline{0}{0.5}
+        \large{\textbf{\authorName}}
+        \horizontalline{0}{0}
+    \end{center}
+    \noindent The original assignment for this problem can be found \pdflink{\AssDir #1}{here}.
+}
+%---------------------------------------------------------------------------
+%	CUSTOM ENVIRONMENTS
+%---------------------------------------------------------------------------
+% Cheat sheet
+\newenvironment{cheatsheet}[1]{
+    \clearpage
+    \twocolumn
+    \subsection*{#1}
+}
+{\onecolumn \clearpage}
+% Code
+\lstnewenvironment{code}[1][]
+{
+    \lstset{style=stackoverflow, language=#1}
+}
+{}
+% Exam notes
+\newenvironment{examnotes}[1]{
+    \clearpage
+    \subsection*{#1}
+}
+{\clearpage}
+% Notes
+\newenvironment{notes}[1]
+{
+    \subsection*{#1}
+    \horizontalline{0}{1}
+}
+{
+    \horizontalline{1}{0}
+}
+% Problem
+\newenvironment{problem}[1]{
+    \clearpage
+    \section{#1}
+    \horizontalline{0}{-1}
+}
+{}
+% Statement
 \newenvironment{statement}[1]{
     \subsection*{#1}
     \begin{mdframed}[
@@ -522,14 +612,9 @@ node/.style={
         leftmargin=0pt,
         innerleftmargin=15pt,
         innerrightmargin=15pt]
-    }
+}
 {\end{mdframed}}
-\newenvironment{problem}[1]{
-    \clearpage
-    \section{#1}
-    \horizontalline{0}{-1}
-    }
-{}
+% Summary
 \newenvironment{summary}[1]
 {
     \clearpage
