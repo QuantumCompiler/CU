@@ -1,18 +1,28 @@
 %---------------------------------------------------------------------------
-%	FORMAT AND CLASS
+%	DOCUMENT VARIABLES
 %---------------------------------------------------------------------------
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{solutionclass}[]
-\LoadClass[a4paper, twoside, 11pt]{book}
 \newcommand{\authorName}{Taylor Larrechea}
 \newcommand{\classCode}{CSPB 2824}
 \newcommand{\className}{Discrete Structures}
 \newcommand{\documentName}{Class Notes}
 \newcommand{\universityName}{University Of Colorado}
 %---------------------------------------------------------------------------
+%	LOCAL DIRECTORIES
+%---------------------------------------------------------------------------
+\newcommand{\AssDir}{./Assignments/}
+\newcommand{\ExamsDir}{./Exams/}
+\newcommand{\LectureNotesDir}{./Lecture Notes/}
+\newcommand{\QuizDir}{./Quizzes/}
+%---------------------------------------------------------------------------
+%	FORMAT AND CLASS
+%---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{solutionclass}[]
+\LoadClass[a4paper, twoside, 10pt]{book}
+%---------------------------------------------------------------------------
 %	LANGUAGE AND ENCODING
 %---------------------------------------------------------------------------
-\RequirePackage[english]{babel} % Allows to use multiple languages in the document
+\RequirePackage[portuguese, english]{babel} % Allows to use multiple languages in the document
 \RequirePackage[utf8]{inputenc} % Defines the input encoding
 \RequirePackage[T1]{fontenc} % Defines the font encoding
 %---------------------------------------------------------------------------
@@ -33,21 +43,45 @@
 \RequirePackage{amsmath} % for mathematical symbols
 \RequirePackage{amssymb} % for mathematical symbols
 \RequirePackage{mathtools} % for mathematical typesetting
-\RequirePackage{physics} % for mathematical physics
 \RequirePackage{stmaryrd} % for mathematical symbols
 \RequirePackage{tensor} % for tensors
 \RequirePackage{calc} % for mathematical calculations
+\RequirePackage{listings} % for code listing
+\RequirePackage{cancel} % 
+\renewcommand{\theequation}{\arabic{equation}}
+%---------------------------------------------------------------------------
+%	CODE ANNOTATIONS
+%---------------------------------------------------------------------------
+\lstdefinestyle{stackoverflow}{
+    backgroundcolor=\color[rgb]{0.95, 0.95, 0.95},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color[rgb]{0.0, 0.5, 0.0},
+    frame=single,
+    keepspaces=true,
+    keywordstyle=\color[rgb]{0.0, 0.0, 1.0},
+    numbers=left,
+    numbersep=-5pt,
+    numberstyle=\tiny\color[rgb]{0.5, 0.5, 0.5},
+    rulecolor=\color[rgb]{0.0, 0.0, 0.0},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    stringstyle=\color[rgb]{1.0, 0.0, 0.0},
+    tabsize=4,
+}
 %---------------------------------------------------------------------------
 %	FIGURES, TIKZ AND BOXES
 %---------------------------------------------------------------------------
-\RequirePackage{xcolor} % for color support
 \RequirePackage{graphicx} % for including images
 \RequirePackage{float} % provides H option for figures and tables
+\RequirePackage{xcolor} % for color support
 \RequirePackage{tikz} % for creating graphics and diagrams
 \RequirePackage{tikz-3dplot} % for 3D graphics in TikZ
 \RequirePackage{pgfplots} % for creating plots and diagrams
-\RequirePackage{listings}
-\RequirePackage[most]{tcolorbox} % for creating colored boxes and frames
+\RequirePackage[most,breakable]{tcolorbox} % for creating colored boxes and frames
 %---------------------------------------------------------------------------
 %	PAGE AND TEXT STYLES
 %---------------------------------------------------------------------------
@@ -60,6 +94,7 @@
                 menucolor = LinkColor,
                 linktocpage = true,
                 bookmarks = true,
+                pdfnewwindow = true,
                 pdfusetitle]{hyperref} % Hyperlinks
 \RequirePackage[top = 2cm,
                 bottom = 2cm,
@@ -78,8 +113,9 @@
 \RequirePackage{nameref} % Cross-referencing by name
 \RequirePackage{changepage} % Change page dimensions
 \RequirePackage{background} % Background image
-\RequirePackage{pdfpages} % Embed a pdf page
 \RequirePackage{hyperref} % Hyperref package
+\RequirePackage{pdfpages} % Embed a pdf page
+\RequirePackage{mdframed} % Boxes
 \RequirePackage{attachfile2} % Add pdf as a link to this pdf
 %---------------------------------------------------------------------------
 %	HEADER AND FOOTER
@@ -120,6 +156,7 @@
     3d, % Create three-dimensional TikZ diagrams.
 }
 \pgfplotsset{compat=1.18} % Sets the compatibility level for the pgfplots package to version 1.18, ensuring consistent compilation of plots and diagrams in the document.
+
 \tikzset{>=stealth} % Arrow style for all tikZ environment.
 %---------------------------------------------------------------------------
 %	COLOR SETTINGS
@@ -362,13 +399,13 @@
 %	NEW ENVIRONMENTS AND NEW COMMANDS
 %---------------------------------------------------------------------------
 % This environment was made to produce a box which maintain the width and height of the text inside it.
-\newtcolorbox{Highlight}[1][]{%
+\newtcolorbox{highlight}[1][]{%
     enhanced,
     skin first=enhanced,
     skin middle=enhanced,
     skin last=enhanced,
-    before upper={\parindent15pt},
     breakable,
+    before upper={\parindent15pt},
     boxrule = 0pt,
     frame hidden,
     borderline west = {4pt}{0pt}{myDColor},
@@ -472,21 +509,28 @@
 \makeatother
 \newcommand{\divider}{\setlength{\parindent}{0pt}\textcolor{myDColor!30}{\rule{\linewidth}{0.6pt}}\smallskip\setlength{\parindent}{1.0em}}
 % This command was made to create a box (which can be labeled) to write equations which are answers for a random problem
-\NewEnviron{answer}{
-\begin{equation}
+\NewEnviron{highlightbox}{
 \tcbhighmath[
         boxrule = 1pt,
         colframe = myLColor,
         colback = black!80,
-        sharp corners,
-        rounded corners = southeast,
-        rounded corners = northeast,
-        rounded corners = southwest,
-        rounded corners = northwest,
-        arc is angular,
+        rounded corners,
         arc = 3mm,
         coltext = white,
-    ]{\BODY}\end{equation}}
+    ]{\BODY}}
+\NewEnviron{highlightenv}[1][175mm]{
+    \begin{tcolorbox}[
+        boxrule = 1pt,
+        colframe = myLColor,
+        colback = black!80,
+        rounded corners,
+        arc = 3mm,
+        coltext = white,
+        width= #1
+    ]
+    \BODY
+    \end{tcolorbox}
+}
 % This renewcommand was created to change the arrow notation from vectors to the bold notation of them.
 \renewcommand\vec{\boldsymbol}
 % This command was created to make comments inside the text using the a more beautifull " ".
@@ -497,35 +541,91 @@
 %---------------------------------------------------------------------------
 %	CUSTOM COMMANDS
 %---------------------------------------------------------------------------
-\newcommand{\horizontalline}[2]{\vspace{#1em} \noindent \rule{\textwidth}{0.5pt}\par \vspace{#2em}}
+\newcommand{\assignment}[2]{\due{(#1)} \cbox{#2}}
 \newcommand{\cbox}[1]{\CheckBox[name=#1, width=0.75\baselineskip, height=0.75\baselineskip]{}}
 \newcommand{\due}[1]{\textcolor{red}{#1}}
-\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
-\newtcolorbox{mynotesbox}{
-    breakable,
-    boxrule=0pt,
-    boxsep=0pt,
-    colback=white, 
-    colframe=white, 
-    opacityback=0,
-    opacityframe=0,
-    sharp corners,
-    arc=0pt,
-    leftrule=0pt,
-    rightrule=0pt,
-    bottomrule=0pt,
-    toprule=0pt,
-    left=10pt,
-    right=10pt,
-    before upper={\setlength{\parskip}{0pt}\setlength{\parindent}{1em}},
+\newcommand{\horizontalline}[2]{
+    \par
+    \vskip#1em
+    \noindent\rule{\textwidth}{0.5pt}
+    \par
+    \vskip#2em
+    \noindent
 }
+\newcommand{\lecture}[3]{\link{#1}{#2}{ $\approx$ #3 \textbf{min}.}}
+\newcommand{\link}[2]{\href{#1}{#2}}
+\newcommand{\modulo}{\text{ \textbf{mod} }}
+\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
+\newcommand{\qed}{$\square$}
+\newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
+\newcommand{\testimonial}[1]{
+    \horizontalline{0}{0}
+    \begin{center}
+        \Large{\textbf{I have neither given nor received unauthorized assistance.}}
+        \horizontalline{0}{0.5}
+        \large{\textbf{\authorName}}
+        \horizontalline{0}{0}
+    \end{center}
+    \noindent The original assignment for this problem can be found \pdflink{\AssDir #1}{here}.
+}
+%---------------------------------------------------------------------------
+%	CUSTOM ENVIRONMENTS
+%---------------------------------------------------------------------------
+% Cheat sheet
+\newenvironment{cheatsheet}[1]{
+    \clearpage
+    \twocolumn
+    \subsection*{#1}
+}
+{\onecolumn \clearpage}
+% Code
+\lstnewenvironment{code}[1][]
+{
+    \lstset{style=stackoverflow, language=#1}
+}
+{}
+% Exam notes
+\newenvironment{examnotes}[1]{
+    \clearpage
+    \subsection*{#1}
+}
+{\clearpage}
+% Notes
 \newenvironment{notes}[1]
 {
     \subsection*{#1}
-    \horizontalline{-1}{-1}
-    \begin{mynotesbox}
-    }
-{
-    \end{mynotesbox}
-    \horizontalline{-1}{0}
+    \horizontalline{0}{1}
 }
+{
+    \horizontalline{1}{0}
+}
+% Problem
+\newenvironment{problem}[1]{
+    \clearpage
+    \section{#1}
+    \horizontalline{0}{-1}
+}
+{}
+% Statement
+\newenvironment{statement}[1]{
+    \subsection*{#1}
+    \begin{mdframed}[
+        linewidth=1pt,
+        linecolor=black,
+        topline=true,
+        bottomline=true,
+        rightline=true,
+        leftline=true,
+        leftmargin=0pt,
+        innerleftmargin=15pt,
+        innerrightmargin=15pt]
+}
+{\end{mdframed}}
+% Summary
+\newenvironment{summary}[1]
+{
+    \clearpage
+    \subsection*{#1}
+    \horizontalline{0}{-1}
+    }
+{}

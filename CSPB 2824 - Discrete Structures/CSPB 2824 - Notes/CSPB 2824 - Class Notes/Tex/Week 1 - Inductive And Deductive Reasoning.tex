@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 1: (8/28 - 9/3)}
 
-\section{Inductive And Deductive Reasoning}
+\newcommand{\ChapTitle}{Inductive And Deductive Reasoning}
+\newcommand{\SectionTitle}{Inductive And Deductive Reasoning}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -34,21 +37,21 @@ The lectures for this week and their links can be found below:
 \noindent Below is a list of lecture notes for this week:
 
 \begin{itemize}
-    \item \pdflink{./Notes/Conditionals And Biconditionals Lecture Notes.pdf}{Conditionals And Biconditionals}
-    \item \pdflink{./Notes/Conjuctions And Disjunctions Lecture Notes.pdf}{Conjunctions And Disjunctions}
-    \item \href{https://www.stumblingrobot.com/2015/06/29/prove-consequences-of-the-field-axioms/}{Field Axiom Proofs}
+    \item \pdflink{\LectureNotesDir Conditionals And Biconditionals Lecture Notes.pdf}{Conditionals And Biconditionals Lecture Notes}
+    \item \pdflink{\LectureNotesDir Conjuctions And Disjunctions Lecture Notes.pdf}{Conjunctions And Disjunctions Lecture Notes}
+    \item \href{https://www.stumblingrobot.com/2015/06/29/prove-consequences-of-the-field-axioms/}{Field Axiom Proofs Lecture Notes}
 \end{itemize}
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/Logic And Reasoning Mastery Workbook.pdf}{Logic And Reasoning.} \due{(9/5/23)} \cbox{assignment-week1}
+The assignment for this week is \pdflink{\AssDir Assignment 1 - Logic And Reasoning.pdf}{Assignment 1 - Logic And Reasoning} \due{(9/5/23)} \cbox{assignment-week1}
 
 \subsection{Quiz}
 
 The quiz's for this week can be found below:
 
 \begin{itemize}
-    \item \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51560}{Logic And Reasoning} \due{(9/5/23)} \cbox{quiz-week1}
+    \item \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51560}{Logic And Reasoning} \textbullet \pdflink{\QuizDir Quiz 1 - Logic And Reasoning.pdf}{Quiz 1 - Logic And Reasoning} \due{(9/5/23)} \cbox{quiz-week1}
     \item \href{https://www.dictionary.com/games/quizzes/is-it-inductive-or-deductive-a-reasoning-challenge}{Inductive Vs. Deductive Reasoning} \due{(OPTIONAL)} \cbox{opquiz1-week1}
     \item \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51556}{Algebra Reading Quiz} \due{(OPTIONAL)} \cbox{opquiz2-week1}
 \end{itemize}
@@ -75,7 +78,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
     In logic, a conjunction represents a statement that is true only if both of the individual statements being combined are true. This mirrors the way we use "and" in everyday language. If both parts of a 
     conjunction are true, then the entire conjunction is true; otherwise, it's false.
 
-    \begin{Highlight}[Conjunction Examples]
+    \begin{highlight}[Conjunction Examples]
         Let's consider two propositions:
 
         \begin{itemize}
@@ -91,7 +94,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
 
         In this case, the compound statement "It is sunny today and I will go for a picnic" is true only if both P and Q are true. If it's indeed sunny today (P is true) and you do plan to go for a picnic 
         (Q is true), then the entire statement "It is sunny today and I will go for a picnic" is true.
-    \end{Highlight}
+    \end{highlight}
 
     Conjunctions are particularly important in logic because they allow us to express complex conditions and relationships between different propositions. They're a fundamental tool for constructing logical 
     statements that accurately reflect real-world situations or logical arguments.
@@ -103,7 +106,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
 
     In logic, a disjunction is true if at least one of the individual statements being combined is true. This corresponds to the way we use "or" in everyday language to present options or alternatives.
 
-    \begin{Highlight}[Disjunction Example]
+    \begin{highlight}[Disjunction Example]
         Let's consider two propositions:
 
         \begin{itemize}
@@ -121,7 +124,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
 
         For example, if it's indeed raining today (P is true), then the entire statement "It is raining today or I will stay indoors" is true, even if you end up going outdoors. Similarly, if you plan to stay 
         indoors (Q is true), the statement is also true, even if it's not raining.
-    \end{Highlight}
+    \end{highlight}
 
     Disjunctions are crucial in logic because they help us express scenarios where multiple possibilities exist, and at least one of them needs to be true for the entire statement to be true. They enable us to 
     model various conditions and decision-making processes in a structured and logical manner.
@@ -132,7 +135,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
     leads to or implies the truth of the other proposition, known as the consequent or conclusion. The primary conditional operator is "if...then," and conditional statements are crucial for modeling cause-and-effect 
     relationships and logical implications.
 
-    \begin{Highlight}[Conditional Statement Example]
+    \begin{highlight}[Conditional Statement Example]
         Let's consider two propositions:
 
         \begin{itemize}
@@ -150,7 +153,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
         that you will indeed get a good grade (Q is true).
 
         However, the conditional statement does not specify what happens if you don't study (P is false). It only asserts that if you do study, there's an implication for the outcome of your grade.
-    \end{Highlight}
+    \end{highlight}
 
     Conditional statements play a pivotal role in logical reasoning, mathematics, and computer science. They're used to define rules, express relationships between variables, and create logical structures. Additionally, 
     they're central to constructing logical proofs and arguments. Understanding conditional statements is fundamental for accurately representing cause-and-effect connections and making reasoned conclusions.
@@ -160,7 +163,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
     Biconditionals, also known as "if and only if" statements, are another important concept in logic. They express a relationship between two propositions where both propositions are connected in such a way that if one is 
     true, the other must also be true, and if one is false, the other must also be false. Biconditionals capture a sense of mutual exclusivity and equivalence between the two propositions.
 
-    \begin{Highlight}[Biconditional Statement Example]
+    \begin{highlight}[Biconditional Statement Example]
         Let's consider two propositions:
 
         \begin{itemize}
@@ -178,7 +181,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
         is indeed chocolate (P is true), then you will enjoy the dessert (Q is true). Similarly, if the cake is not chocolate (P is false), you won't enjoy the dessert (Q is false).
 
         Conversely, if you enjoy the dessert (Q is true), the statement asserts that the cake must be chocolate (P is true), and if you don't enjoy the dessert (Q is false), the cake must not be chocolate (P is false).
-    \end{Highlight}
+    \end{highlight}
 
     Biconditionals are used to define equivalence between propositions, indicating that they are both true or both false simultaneously. They're useful for expressing situations where two conditions are inextricably linked and 
     must hold together. In mathematics, they're used for defining properties that hold true in both directions. Understanding biconditionals is important for accurately representing scenarios where two propositions are 
@@ -189,7 +192,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
     The converse of a conditional statement swaps the positions of the antecedent (premise) and the consequent (conclusion) of the original statement. In other words, if you have a statement "If P, then Q," the converse would 
     be "If Q, then P."
 
-    \begin{Highlight}[Converse Statement Example]
+    \begin{highlight}[Converse Statement Example]
         The following is an example of a converse statement.
 
         \begin{itemize}
@@ -198,14 +201,14 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
         \end{itemize}
 
         It's important to note that the converse might not always be logically equivalent to the original statement. In some cases, it could be true, while in others, it might not hold true.
-    \end{Highlight}
+    \end{highlight}
 
     \subsubsection*{Contrapositive Statement}
 
     The contrapositive of a conditional statement involves both negating (changing from true to false, or vice versa) and swapping the positions of the antecedent and consequent. In essence, it's the combination of the converse 
     and the negation of each proposition.
 
-    \begin{Highlight}[Contrapositive Statement Example]
+    \begin{highlight}[Contrapositive Statement Example]
         The following is an example of a contrapositive statement.
 
         \begin{itemize}
@@ -214,13 +217,13 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
         \end{itemize}
 
         The contrapositive is always logically equivalent to the original statement. If the original statement is true, its contrapositive is also true, and if the original statement is false, its contrapositive is false.
-    \end{Highlight}
+    \end{highlight}
 
     \subsubsection*{Inverse Statement}
 
     The inverse of a conditional statement involves negating both the antecedent and the consequent of the original statement.
 
-    \begin{Highlight}[Inverse Statement Example]
+    \begin{highlight}[Inverse Statement Example]
         The following is an example of an inverse statement.
 
         \begin{itemize}
@@ -229,7 +232,7 @@ The first section that we are covering this week is \textbf{Section 1.1 - Propos
         \end{itemize}
 
         Like the converse, the inverse might not always be logically equivalent to the original statement. In some cases, it could be true, while in others, it might not hold true.
-    \end{Highlight}
+    \end{highlight}
 
     Understanding these related statements is valuable for analyzing the different ways that logical relationships can be manipulated and transformed. They are often used in mathematical proofs, reasoning, and decision-making 
     processes to explore the implications of conditional statements from different angles.

@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 11: (11/6 - 11/12)}
 
-\section{Combinatorics And Binomial}
+\renewcommand{\ChapTitle}{Combinatorics And Binomial}
+\renewcommand{\SectionTitle}{Combinatorics And Binomial}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -47,20 +50,13 @@ The lectures for this week and their links can be found below:
     \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51811}{Further Properties Of Binomial Coefficients} $\approx$ 7 min.
 \end{itemize}
 
-% \noindent Below is a list of lecture notes for this week:
-
-% \begin{itemize}
-%     \item \pdflink{./Notes/Sequences Lecture Notes.pdf}{Sequences}
-%     \item \pdflink{./Notes/Induction Lecture Notes.pdf}{Induction}
-% \end{itemize}
-
 \subsection{Assignments}
 
-The assignment for this week is \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51814}{Counting/Binomial MW} \due{(11/13/23)} \cbox{assignment-week11}
+The assignment for this week is \pdflink{\AssDir Assignment 9 - Counting And Binomials.pdf}{Assignment 9 - Counting And Binomials} \due{(11/13/23)} \cbox{assignment-week11}
 
 \subsection{Quiz}
 
-The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51813}{Counting Quiz} \due{(11/13/23)} \cbox{quiz-week11}
+The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51813}{Counting Quiz} \textbullet \pdflink{\QuizDir Quiz 10 - Counting.pdf}{Quiz 10 - Counting} \due{(11/13/23)} \cbox{quiz-week11}
 
 \subsection{Chapter Summary}
 
@@ -145,23 +141,23 @@ The next section that we will cover this week is \textbf{Section 6.3 - Permutati
     The section provides a comprehensive discussion on permutations and combinations, fundamental concepts in combinatorics that deal with the arrangement and selection of objects. The section begins 
     by defining permutations and demonstrating how to calculate them using the product rule. \vspace*{1em}
     
-    \begin{Highlight}[Permutations]
+    \begin{highlight}[Permutations]
         Permutations are introduced as ordered arrangements of objects, with specific notation $ P(n, r) $ denoting the number of permutations of $ r $ objects from a set of $ n $ distinct 
         objects. The formula for permutations is derived as follows:
         \begin{equation*}
             P(n, r) = n(n - 1)(n - 2) \cdots (n - r + 1)
         \end{equation*}
         This formula is proven using the product rule, which states that the number of ways to perform a sequence of tasks is the product of the number of ways to perform each individual task.
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Combinations]
+    \begin{highlight}[Combinations]
         Combinations, unlike permutations, are defined as selections where order does not matter. The notation $ C(n, r) $, or $ \binom{n}{r} $, represents the number of ways to choose $ r $ 
         objects from a set of $ n $ distinct objects without considering the order. The formula for combinations is given by:
         \begin{equation*}
             C(n, r) = \frac{n!}{r!(n - r)!}
         \end{equation*}
         This is explained by dividing the number of $ r $-permutations by the $ r! $ ways to order the $ r $ objects, eliminating the consideration of sequence.
-    \end{Highlight}
+    \end{highlight}
     
     \subsubsection*{Key Theorems and Corollaries}
     Important results discussed in the section include:
@@ -190,7 +186,7 @@ The last section that we will cover this week is \textbf{Section 6.4 - Binomial 
     The section covers the fundamental concepts of binomial coefficients and various identities associated with them. Binomial coefficients, denoted by $\binom{n}{r}$, are the coefficients in the 
     expansion of powers of binomial expressions such as $(a + b)^n$. \vspace*{1em}
     
-    \begin{Highlight}[The Binomial Theorem]
+    \begin{highlight}[The Binomial Theorem]
         The Binomial Theorem is introduced as a way to express the expansion of powers of binomial expressions. It states that for any nonnegative integer $ n $ and any variables $ x $ and $ y $, 
         the expansion is given by:
         
@@ -199,9 +195,9 @@ The last section that we will cover this week is \textbf{Section 6.4 - Binomial 
         \end{equation*}
         
         This theorem is proved using a combinatorial argument, which demonstrates the relationship between algebraic expansion and combinatorial counting.
-    \end{Highlight}
+    \end{highlight}
     
-    \begin{Highlight}[Identities Involving Binomial Coefficients]
+    \begin{highlight}[Identities Involving Binomial Coefficients]
         Several identities involving binomial coefficients are presented, including Pascal's Identity, which relates the coefficients in the context of Pascal's Triangle:
         
         \begin{equation*}
@@ -212,7 +208,7 @@ The last section that we will cover this week is \textbf{Section 6.4 - Binomial 
         \begin{equation*}
             \binom{m+n}{r} = \sum_{k=0}^{r} \binom{m}{r-k}\binom{n}{k}
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
     
     \subsubsection*{Applications and Examples}
     Applications and examples provided in the section include using the Binomial Theorem for expanding algebraic expressions and calculating specific coefficients, demonstrating the practical utility 

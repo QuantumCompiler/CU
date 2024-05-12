@@ -1,10 +1,11 @@
 \clearpage
-\chapter{Week 3: (9/11 - 9/17)}
 
-\section{Proof Techniques}
+\renewcommand{\ChapTitle}{Proof Techniques}
+\renewcommand{\SectionTitle}{Proof Techniques}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
-
-\subsection{Assigned Reading}
 
 The reading assignments for this week can be found below:
 
@@ -30,18 +31,18 @@ The lectures for this week and their links can be found below:
 \noindent Below is a list of lecture notes for this week:
 
 \begin{itemize}
-    \item \pdflink{./Notes/Algebra And Log Rule Review Lecture Notes.pdf}{Algebra And Log Rule Review}
-    \item \pdflink{./Notes/Proof Tutorial Lecture Notes.pdf}{Proof Tutorial}
-    \item \pdflink{./Notes/Rosen Proofs Lecture Notes.pdf}{Rosen Proofs}
+    \item \pdflink{\LectureNotesDir Algebra And Log Rule Review Lecture Notes.pdf}{Algebra And Log Rule Review Lecture Notes}
+    \item \pdflink{\LectureNotesDir Proof Tutorial Lecture Notes.pdf}{Proof Tutorial Lecture Notes}
+    \item \pdflink{\LectureNotesDir Rosen Proofs Lecture Notes.pdf}{Rosen Proofs Lecture Notes}
 \end{itemize}
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/Proof Techniques Mastery Workbook.pdf}{Proof Techniques Mastery Workbook} \due{(9/18/23)} \cbox{assignment-week3}
+The assignment for this week is \pdflink{\AssDir Assignment 2 - Propositional Logic.pdf}{Assignment 2 - Propositional Logic} \due{(9/18/23)} \cbox{assignment-week3}
 
 \subsection{Quiz}
 
-The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51597}{Proof Techniques} \due{(9/18/23)} \cbox{quiz-week3}
+The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51597}{Proof Techniques} \textbullet \pdflink{\QuizDir Quiz 3 - Proof techniques.pdf}{Quiz 3 - Proof techniques} \due{(9/18/23)} \cbox{quiz-week3}
 
 \subsection{Chapter Summary}
 
@@ -67,7 +68,7 @@ The first section that we are covering this week is \textbf{Section 1.7 - Introd
     In essence, direct proofs provide a straightforward and convincing way to demonstrate the validity of mathematical statements, making them an essential tool in mathematical reasoning and problem-solving. 
     They form the foundation of mathematical proofs and are widely used across various branches of mathematics, from algebra and calculus to geometry and number theory. \vspace*{1em}
 
-    \begin{Highlight}[Direct Proofs Example]
+    \begin{highlight}[Direct Proofs Example]
         \textbf{Theorem:} If \(n\) is an even integer, then \(n^2\) is also an even integer. \vspace*{1em}
 
         \horizontalline{0}{0}
@@ -82,7 +83,7 @@ The first section that we are covering this week is \textbf{Section 1.7 - Introd
         
         Since \(k\) is an integer, \(4k^2\) is also an integer. Therefore, \(n^2\) can be expressed as \(n^2 = 2(2k^2)\), where \(2k^2\) is an integer. This means that \(n^2\) is divisible by 2, making it an 
         even integer. Thus, we have shown that if \(n\) is an even integer, then \(n^2\) is also an even integer, which concludes our proof.
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Proof By Contraposition}
 
@@ -105,7 +106,7 @@ The first section that we are covering this week is \textbf{Section 1.7 - Introd
     Proof by contraposition is particularly useful when direct proof seems challenging or when it simplifies the argument. It is a valuable tool in mathematical proofs, logic, and various areas of science and 
     engineering. By proving the contrapositive, you establish the validity of conditional statements efficiently and logically.
     
-    \begin{Highlight}[Proof by Contraposition Example]
+    \begin{highlight}[Proof by Contraposition Example]
         \textbf{Theorem:} If $n$ is an even integer, then $n^2$ is also an even integer.
         
         \horizontalline{0}{0}
@@ -142,7 +143,7 @@ The first section that we are covering this week is \textbf{Section 1.7 - Introd
         \horizontalline{0}{0}
 
         As a result, by contraposition, we have established the original statement: If $n$ is an even integer, then $n^2$ is also an even integer.
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Proof By Contradiction}
 
@@ -157,7 +158,7 @@ The first section that we are covering this week is \textbf{Section 1.7 - Introd
     Proofs by contradiction are valuable in mathematics and logic because they provide a systematic way to establish the truth of a proposition when direct or other proof methods are challenging or 
     not readily available. They are particularly useful in proving the existence of mathematical objects or properties and are a fundamental tool in various areas of mathematics and computer science.
 
-    \begin{Highlight}[Proof by Contradiction Example]
+    \begin{highlight}[Proof by Contradiction Example]
         \textbf{Theorem:} There is no largest prime number. \vspace*{1em}
     
         \horizontalline{0}{0}
@@ -174,7 +175,7 @@ The first section that we are covering this week is \textbf{Section 1.7 - Introd
         \horizontalline{0}{0}
     
         In both cases, we arrive at a contradiction. Therefore, our initial assumption that there exists a largest prime number (\(p\)) must be false. Hence, there is no largest prime number.
-    \end{Highlight}    
+    \end{highlight}    
 \end{notes}
 
 The last section that we are covering this week is \textbf{Section 1.8 - Proof Methods And Strategy}.
@@ -205,7 +206,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
     airtight, they can be time-consuming and labor-intensive, making them less practical for large or complex problem spaces. Mathematicians often choose more efficient proof techniques when possible, 
     such as direct proofs or proof by contradiction.
     
-    \begin{Highlight}[Exhaustive Proof Example]
+    \begin{highlight}[Exhaustive Proof Example]
         \textbf{Theorem:} For any positive integer \(n\), if \(n\) is divisible by 2 and 3, then \(n\) is divisible by 6. 
     
         \horizontalline{0}{0}
@@ -235,7 +236,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
     
         We have systematically examined all positive integers that are divisible by 2 and 3, and in each case, we found that they are also divisible by 6. Therefore, by exhausting all possibilities, 
         we have proven that for any positive integer \(n\) divisible by 2 and 3, \(n\) is indeed divisible by 6.
-    \end{Highlight}
+    \end{highlight}
     
     \subsection*{Proof By Cases}
 
@@ -244,7 +245,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
     situations. This method provides a structured approach for tackling intricate problems, ensuring that every possible scenario is thoroughly analyzed and contributing to the overall rigor of mathematical 
     proofs.
 
-    \begin{Highlight}[Proof by Cases Example]
+    \begin{highlight}[Proof by Cases Example]
         \textbf{Theorem:} For any integer \(n\), if \(n\) is even, then \(n^2\) is also even.
     
         \horizontalline{0}{0}
@@ -262,7 +263,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
         \horizontalline{0}{0}
     
         In both cases, we've shown that if \(n\) is even or odd, \(n^2\) is either even or odd, respectively. This exhaustively proves that for any integer \(n\), if \(n\) is even, then \(n^2\) is also even.
-    \end{Highlight}
+    \end{highlight}
 
     \subsection*{Leveraging Proof By Cases}
 
@@ -271,7 +272,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
     cases is particularly valuable when one overarching method cannot address all potential situations, making it an essential tool for mathematicians seeking to establish the validity of their arguments across 
     diverse scenarios and conditions.
 
-    \begin{Highlight}[Proof by Cases Example]
+    \begin{highlight}[Proof by Cases Example]
         \textbf{Theorem:} For any integer \(n\), \(n^2\) is either even or odd.
     
         \horizontalline{0}{0}
@@ -293,7 +294,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
         \horizontalline{0}{0}
     
         In both cases, we have shown that \(n^2\) is either even or odd, concluding our proof by cases.
-    \end{Highlight}
+    \end{highlight}
     
     \subsection*{Without Loss Off Generality}
 
@@ -314,7 +315,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
     structures, or objects in abstract spaces. They help mathematicians and researchers affirm the reality of mathematical concepts and provide assurance that specific mathematical entities are not mere theoretical constructs 
     but tangible components of mathematical reality.
 
-    \begin{Highlight}[Existence Proof]
+    \begin{highlight}[Existence Proof]
         \textbf{Theorem:} There exists at least one prime number with a last digit of 7. \vspace*{1em}
     
         \horizontalline{0}{0}
@@ -335,7 +336,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
     
         This contradicts the fundamental theorem of arithmetic, which states that every natural number greater than 1 can be uniquely expressed as a product of prime numbers. Therefore, there must be at least one prime 
         number with a last digit of 7. This completes the proof.
-    \end{Highlight}
+    \end{highlight}
     
     \subsection*{Uniqueness Proofs}
 
@@ -349,7 +350,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
     Uniqueness proofs are widely utilized across various mathematical disciplines, including algebra, calculus, number theory, and more. They play a crucial role in validating the existence of unique solutions or objects, 
     strengthening the foundations of mathematical reasoning and problem-solving.
 
-    \begin{Highlight}[Uniqueness Proof Example]
+    \begin{highlight}[Uniqueness Proof Example]
         \textbf{Theorem:} For any positive real number \(a\), there exists a unique positive real number \(x\) such that \(x^2 = a\).
     
         \horizontalline{0}{0}
@@ -368,7 +369,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
         \horizontalline{0}{0}
         
         This uniqueness proof demonstrates that for any positive real number \(a\), there exists a unique positive real number \(x\) such that \(x^2 = a\).
-    \end{Highlight}
+    \end{highlight}
     
     \subsection*{Looking For Counterexamples}
 
@@ -381,7 +382,7 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
     In practice, mathematicians often rely on counterexamples to challenge conjectures, test the robustness of theorems, and explore the boundaries of mathematical concepts. By disproving a statement through counterexamples, 
     mathematicians gain valuable insights into the nature of mathematical truths and refine their understanding of various mathematical principles.
 
-    \begin{Highlight}[Counterexample Example]
+    \begin{highlight}[Counterexample Example]
         \textbf{Claim:} For all positive integers \(n\), \(n^2 + n\) is always prime.
     
         \horizontalline{0}{0}
@@ -393,6 +394,6 @@ The last section that we are covering this week is \textbf{Section 1.8 - Proof M
         \horizontalline{0}{0}
     
         Therefore, the claim is false, and we have successfully used a counterexample to demonstrate its invalidity.
-    \end{Highlight}
+    \end{highlight}
     
 \end{notes}

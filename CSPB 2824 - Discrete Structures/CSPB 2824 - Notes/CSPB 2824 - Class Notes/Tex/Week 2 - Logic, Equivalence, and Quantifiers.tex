@@ -1,7 +1,10 @@
 \clearpage
-\chapter{Week 2: (9/4 - 9/10)}
 
-\section{Logic, Equivalence, And Quantifiers}
+\renewcommand{\ChapTitle}{Logic, Equivalence, And Quantifiers}
+\renewcommand{\SectionTitle}{Logic, Equivalence, And Quantifiers}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
 \horizontalline{0}{0}
 
 \subsection{Assigned Reading}
@@ -30,18 +33,18 @@ The lectures for this week and their links can be found below:
 \noindent Below is a list of lecture notes for this week:
 
 \begin{itemize}
-    \item \pdflink{./Notes/Propositional Equivalence Lecture Notes.pdf}{Propositional Equivalence}
-    \item \pdflink{./Notes/Predicates And Quantifiers Lecture Notes.pdf}{Predicates And Quantifiers}
-    \item \pdflink{./Notes/Nested Quantifiers Lecture Notes.pdf}{Nested Quantifiers}
+    \item \pdflink{\LectureNotesDir Propositional Equivalence Lecture Notes.pdf}{Propositional Equivalence Lecture Notes}
+    \item \pdflink{\LectureNotesDir Predicates And Quantifiers Lecture Notes.pdf}{Predicates And Quantifiers Lecture Notes}
+    \item \pdflink{\LectureNotesDir Nested Quantifiers Lecture Notes.pdf}{Nested Quantifiers Lecture Notes}
 \end{itemize}
 
 \subsection{Assignments}
 
-The assignment for this week is \pdflink{./Assignments/Propositional Logic Mastery Workbook.pdf}{Propositional Logic Mastery Workbook.} \due{(9/11/23)} \cbox{assignment-week2}
+The assignment for this week is \pdflink{\AssDir Assignment 2 - Propositional Logic.pdf}{Assignment 2 - Propositional Logic} \due{(9/11/23)} \cbox{assignment-week2}
 
 \subsection{Quiz}
 
-The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51574}{Predicates And Quantifiers.} \due{(9/11/23)} \cbox{quiz-week2}
+The quiz's for this week can be found at \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=51574}{Predicates And Quantifiers} \textbullet \pdflink{\QuizDir Quiz 2 - Predicates and Quantifiers.pdf}{Quiz 2 - Predicates and Quantifiers} \due{(9/11/23)} \cbox{quiz-week2}
 
 \subsection{Chapter Summary}
 
@@ -59,44 +62,44 @@ The first section that we are covering this week is \textbf{Section 1.3 - Propos
 
     Some common examples of propositional equivalences include:
 
-    \begin{Highlight}[Double Negation]
+    \begin{highlight}[Double Negation]
         The negation of a negation is equivalent to the original proposition.
         \begin{equation*}
             \neg(\neg p) \equiv p
         \end{equation*}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[De Morgan's Laws]
+    \begin{highlight}[De Morgan's Laws]
         These laws describe how to negate conjunctions and disjunctions.
         \begin{align*}
             \neg (p \wedge q) & \equiv \neg p \vee \neg q \\
             \neg (p \wedge q) & \equiv \neg p \wedge \neg q
         \end{align*}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Commutative Laws]
+    \begin{highlight}[Commutative Laws]
         The order of propositions does not affect the outcome of conjunctions and disjunctions.
         \begin{align*}
             p \wedge q & \equiv q \wedge p \\
             p \vee q & \equiv q \vee p
         \end{align*}1
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Associative Laws]
+    \begin{highlight}[Associative Laws]
         The grouping of propositions within conjunctions and disjunctions does not change their truth value.
         \begin{align*}
             (p \wedge q) \wedge r & \equiv p \wedge (q \wedge r) \\
             (p \vee q) \vee r & \equiv p \vee (q \vee r)
         \end{align*}
-    \end{Highlight}
+    \end{highlight}
 
-    \begin{Highlight}[Distributive Laws]
+    \begin{highlight}[Distributive Laws]
         These laws describe how conjunctions and disjunctions distribute over each other.
         \begin{align*}
             p \wedge (q \vee r) & \equiv (p \wedge q) \vee (p \wedge r) \\
             p \vee (q \wedge r) & \equiv (p \vee q) \wedge (p \vee r)
         \end{align*}
-    \end{Highlight}
+    \end{highlight}
 
     Propositional equivalences provide a powerful toolkit for transforming logical expressions and simplifying complex propositions. They play a crucial role in constructing formal proofs, enhancing 
     problem-solving abilities, and ensuring the validity of logical arguments in various disciplines, including computer science, mathematics, philosophy, and linguistics.
@@ -111,7 +114,7 @@ The first section that we are covering this week is \textbf{Section 1.3 - Propos
     various fields such as mathematics, computer science, philosophy, and linguistics. These equivalences enable us to navigate the intricacies of complex logical systems by breaking down propositions 
     into simpler forms that retain their original truth values.
 
-    \begin{Highlight}[Logical Equivalences Example]
+    \begin{highlight}[Logical Equivalences Example]
         For example, consider the logical equivalence known as the \textbf{Double Negation Law}:
 
         \begin{equation*}
@@ -129,7 +132,7 @@ The first section that we are covering this week is \textbf{Section 1.3 - Propos
         \horizontalline{0}{0}
         This logical equivalence can be useful in various contexts. For instance, it helps clarify that a proposition and its double negation express the same information. This understanding is essential 
         for formalizing arguments, clarifying statements, and simplifying logical expressions to reveal their underlying structure.
-    \end{Highlight}
+    \end{highlight}
 
     In summary, logical equivalences are foundational principles that allow us to manipulate and simplify logical statements while maintaining their truth values. They play a crucial role in various disciplines, 
     enabling us to reason rigorously, prove the validity of arguments, and navigate the complexities of logical systems.
@@ -223,7 +226,7 @@ The first section that we are covering this week is \textbf{Section 1.3 - Propos
     truth tables, Boolean algebra, and sophisticated SAT solvers that efficiently explore the vast solution space. Understanding and analyzing propositional satisfiability not only provide insights into logical reasoning but 
     also offer practical solutions to real-world problems by enabling the automation of complex decision-making processes.
 
-    \begin{Highlight}[Propositional Satisfiability Example]
+    \begin{highlight}[Propositional Satisfiability Example]
         Consider the propositional formula: \(p \land (q \lor \neg r)\) \vspace*{1em}
 
         We want to determine whether there exists an assignment of truth values to the propositions \(p\), \(q\), and \(r\) that makes the entire formula true.
@@ -244,7 +247,7 @@ The first section that we are covering this week is \textbf{Section 1.3 - Propos
         From the examples above, we can see that there are assignments of truth values that make the formula true and assignments that make it false. Since there exists at least one assignment that satisfies the formula, it is satisfiable.
     
         This example illustrates how the concept of propositional satisfiability involves finding truth value assignments that make a propositional formula true and how such assignments impact the overall truth value of the formula.
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The next section that we are covering this week is \textbf{Section 1.4 - Predicates \& Quantifiers}.
@@ -282,7 +285,7 @@ The next section that we are covering this week is \textbf{Section 1.4 - Predica
     Predicates play a pivotal role in constructing logical statements and formulating mathematical propositions. They provide a means to express conditions, make assertions, and define sets based on specific properties. Through quantifiers 
     like universal ($\forall$) and existential ($\exists$), predicates allow us to quantify the scope of truth for statements involving variables, enabling us to reason about collections of elements in a precise and systematic manner.
     
-    \begin{Highlight}[Predicate Examples]
+    \begin{highlight}[Predicate Examples]
         Below are some examples of predicates.
 
         \horizontalline{0}{0}
@@ -299,7 +302,7 @@ The next section that we are covering this week is \textbf{Section 1.4 - Predica
             \item \(Y(x, y) =\) "\(x\) and \(y\) are co-prime." - This two-variable predicate is true when \(x\) and \(y\) have no common factors other than 1, and false otherwise.
         \end{enumerate}
         \horizontalline{0}{0}
-    \end{Highlight}
+    \end{highlight}
 
     \subsubsection*{Quantifiers}
 
@@ -316,7 +319,7 @@ The next section that we are covering this week is \textbf{Section 1.4 - Predica
     and formalize assertions in a precise and structured manner. By combining quantifiers with predicates, we can create powerful expressions that capture the nuances of complex logical and mathematical statements, paving the way for rigorous analysis, 
     proof, and exploration of various concepts.
 
-    \begin{Highlight}[Quantifier Examples]
+    \begin{highlight}[Quantifier Examples]
         Below are some examples of quantifiers.
 
         \horizontalline{0}{0}
@@ -336,7 +339,7 @@ The next section that we are covering this week is \textbf{Section 1.4 - Predica
         \horizontalline{0}{0}
         These examples showcase how quantifiers are used to make statements about either all elements or at least one element in a given domain. The universal quantifier \(\forall\) asserts a property for every element in a set, while the existential 
         quantifier \(\exists\) asserts the existence of an element with a certain property in a set.
-    \end{Highlight}
+    \end{highlight}
 
     Here is a table that encapsulates the truth values of quantifiers.
 
@@ -491,7 +494,7 @@ The next section that we are covering this week is \textbf{Section 1.5 - Nested 
     The order of quantifiers is crucial in precise mathematical reasoning, as it can affect the validity and interpretation of mathematical statements. It allows mathematicians, logicians, and computer scientists to convey complex relationships and conditions 
     accurately. Understanding how the order of quantifiers influences the meaning of statements is essential when working with predicate logic and formal reasoning.
     
-    \begin{Highlight}[Order of Quantifiers Example]
+    \begin{highlight}[Order of Quantifiers Example]
         Consider the following example that illustrates the importance of the order of quantifiers in mathematical statements:
     
         \horizontalline{0}{0}
@@ -512,7 +515,7 @@ The next section that we are covering this week is \textbf{Section 1.5 - Nested 
     
         The order of quantifiers changes the interpretation of the statement. In the first case, it means that for every choice of \(x\), you can find a suitable \(y\), while in the second case, it means there exists a specific \(x\) that works for all \(y\). 
         This example demonstrates how the order of quantifiers influences the meaning of mathematical statements and highlights the importance of correctly interpreting them in various contexts.
-    \end{Highlight}
+    \end{highlight}
     
     In mathematical logic, the use of quantifiers allows us to make statements about elements in a given domain. Quantifiers come in different forms, including universal (\(\forall\)) and existential (\(\exists\)) quantifiers. This table illustrates the various 
     quantifications involving two variables and provides an understanding of when these statements hold true and when they are false.
@@ -543,7 +546,7 @@ The next section that we are covering this week is \textbf{Section 1.5 - Nested 
     Overall, negating nested quantifiers is a fundamental skill in mathematical logic and formal reasoning, enabling mathematicians and logicians to reason about complex statements involving multiple levels of quantification and draw precise conclusions about 
     mathematical structures and systems.
 
-    \begin{Highlight}[Negation of Nested Quantifiers Example]
+    \begin{highlight}[Negation of Nested Quantifiers Example]
         Consider the following example illustrating the negation of nested quantifiers:
     
         \horizontalline{0}{0}
@@ -561,7 +564,7 @@ The next section that we are covering this week is \textbf{Section 1.5 - Nested 
             \end{itemize}
         \end{enumerate}
         \horizontalline{0}{0}
-    \end{Highlight}
+    \end{highlight}
 \end{notes}
 
 The last section that we are covering this week is \textbf{Section 1.6 - Rules of Inference}.
