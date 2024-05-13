@@ -14,6 +14,8 @@
 \newcommand{\ExamNotesDir}{./Exam Notes/}
 \newcommand{\LecNoteDir}{./Lecture Notes/}
 \newcommand{\QuizDir}{./Quizzes/}
+\newcommand{\ReadingMatDir}{./Reading Material/}
+\newcommand{\Textbook}{\pdflink{./Textbook/Computer Systems A Programmer's Perspective (Third Edition) - Randal E. Bryant, David R. O'Hallaron.pdf}{Computer Systems A Programmer's Perspective (Third Edition)}}
 %---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
@@ -124,7 +126,7 @@
 \pagestyle{fancy}
 \fancyhead[L]{\footnotesize{\authorName}}
 \fancyfoot[L]{\footnotesize{\classCode}}
-\fancyhead[C]{\footnotesize{\className}}
+\fancyhead[C]{\footnotesize{\hyperlink{Home}{\className}}}
 \fancyhead[R]{\footnotesize{\universityName}}
 \fancyfoot[R]{\footnotesize{\documentName}}
 %---------------------------------------------------------------------------
