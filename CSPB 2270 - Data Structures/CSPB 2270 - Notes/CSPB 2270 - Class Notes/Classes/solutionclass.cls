@@ -13,6 +13,7 @@
 \newcommand{\ExamDir}{./Exams/}
 \newcommand{\InterviewDir}{./Interview Notes/}
 \newcommand{\LectureNotesDir}{./Lecture Notes/}
+\newcommand{\ReadingMatDir}{./Reading Material/}
 %---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
