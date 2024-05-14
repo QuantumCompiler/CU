@@ -12,6 +12,9 @@
 \newcommand{\AssDir}{./Assignments/}
 \newcommand{\ExamNotesDir}{./Exam Notes/}
 \newcommand{\QuizDir}{./Quizzes/}
+\newcommand{\ReadMatDir}{./Reading Material/}
+\newcommand{\VMLS}{\pdflink{./Textbook/Introduction To Applied Linear Algebra (1st Edition) - Stephen Boyd And Lieven Vandenberghe.pdf}{Introduction To Applied Linear Algebra, Vectors, Matrices, And Least Squares}}
+\newcommand{\PyCap}{\pdflink{./Textbook/Introduction to Applied Linear Algebra, Vectors, Matrices, And Least Squares (1st Edition) - Jessica Leung And Dmytro Matsypura.pdf}{Introduction to Applied Linear Algebra, Vectors, Matrices, And Least Squares - Python Companion}}
 %---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
@@ -122,7 +125,7 @@
 \pagestyle{fancy}
 \fancyhead[L]{\footnotesize{\authorName}}
 \fancyfoot[L]{\footnotesize{\classCode}}
-\fancyhead[C]{\footnotesize{\className}}
+\fancyhead[C]{\footnotesize{\hyperlink{Home}{\className}}}
 \fancyhead[R]{\footnotesize{\universityName}}
 \fancyfoot[R]{\footnotesize{\documentName}}
 %---------------------------------------------------------------------------
