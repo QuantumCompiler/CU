@@ -13,6 +13,8 @@
 \newcommand{\ExamsDir}{./Exams/}
 \newcommand{\LectureNotesDir}{./Lecture Notes/}
 \newcommand{\QuizDir}{./Quizzes/}
+\newcommand{\ReadMatDir}{./Reading Material/}
+\newcommand{\Textbook}{\pdflink{./Textbook/Discrete Mathematics And Its Applications (7th Edition) - Kenneth Rosen.pdf}{Discrete Mathematics And Its Applications}}
 %---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
@@ -123,7 +125,7 @@
 \pagestyle{fancy}
 \fancyhead[L]{\footnotesize{\authorName}}
 \fancyfoot[L]{\footnotesize{\classCode}}
-\fancyhead[C]{\footnotesize{\className}}
+\fancyhead[C]{\footnotesize{\hyperlink{Home}{\className}}}
 \fancyhead[R]{\footnotesize{\universityName}}
 \fancyfoot[R]{\footnotesize{\documentName}}
 %---------------------------------------------------------------------------
