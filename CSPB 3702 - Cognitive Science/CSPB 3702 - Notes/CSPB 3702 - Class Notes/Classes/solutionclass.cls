@@ -123,7 +123,7 @@
 \pagestyle{fancy}
 \fancyhead[L]{\footnotesize{\authorName}}
 \fancyfoot[L]{\footnotesize{\classCode}}
-\fancyhead[C]{\footnotesize{\className}}
+\fancyhead[C]{\footnotesize{\hyperlink{Home}{\className}}}
 \fancyhead[R]{\footnotesize{\universityName}}
 \fancyfoot[R]{\footnotesize{\documentName}}
 %---------------------------------------------------------------------------
