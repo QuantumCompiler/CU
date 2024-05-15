@@ -14,6 +14,8 @@
 \newcommand{\ExamsDir}{./Exams/}
 \newcommand{\LecNoteDir}{./Lecture Notes/}
 \newcommand{\QuizDir}{./Quizzes/}
+\newcommand{\ReadMatDir}{./Reading Material/}
+\newcommand{\Textbook}{\pdflink{./Textbook/Introduction to Algorithms (Third Edition) - Cormen, Thomas H. Leiserson, Charles E. Rivest, Ronald L. Stein.pdf}{Introduction to Algorithms}}
 %---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
@@ -124,7 +126,7 @@
 \pagestyle{fancy}
 \fancyhead[L]{\footnotesize{\authorName}}
 \fancyfoot[L]{\footnotesize{\classCode}}
-\fancyhead[C]{\footnotesize{\className}}
+\fancyhead[C]{\footnotesize{\hyperlink{Home}{\className}}}
 \fancyhead[R]{\footnotesize{\universityName}}
 \fancyfoot[R]{\footnotesize{\documentName}}
 %---------------------------------------------------------------------------
