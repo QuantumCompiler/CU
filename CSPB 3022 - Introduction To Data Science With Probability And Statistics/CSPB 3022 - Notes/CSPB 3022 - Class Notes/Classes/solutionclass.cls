@@ -14,6 +14,8 @@
 \newcommand{\ExamNotesDir}{./Exam Notes/}
 \newcommand{\LecNoteDir}{./Lecture Notes/}
 \newcommand{\QuizDir}{./Quizzes/}
+\newcommand{\LearnDSBook}{\pdflink{./Textbook/Learning Data Science Data Wrangling, Exploration, Visualization, and Modeling with Python (First Edition) - Sam Lau, Joseph Gonzalez, Deborah Nolanpdf.pdf}{Learning Data Science Data Wrangling, Exploration, Visualization, and Modeling with Python}}
+\newcommand{\PyDSBook}{\pdflink{./Textbook/Python for Data Analysis Data Wrangling with pandas, NumPy, and Jupyter (Third Edition) - Wes McKinney.pdf}{Python for Data Analysis Data Wrangling with pandas, NumPy, and Jupyter}}
 %---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
@@ -124,7 +126,7 @@
 \pagestyle{fancy}
 \fancyhead[L]{\footnotesize{\authorName}}
 \fancyfoot[L]{\footnotesize{\classCode}}
-\fancyhead[C]{\footnotesize{\className}}
+\fancyhead[C]{\footnotesize{\hyperlink{Home}{\className}}}
 \fancyhead[R]{\footnotesize{\universityName}}
 \fancyfoot[R]{\footnotesize{\documentName}}
 %---------------------------------------------------------------------------
