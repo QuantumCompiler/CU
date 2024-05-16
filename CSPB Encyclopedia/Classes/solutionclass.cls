@@ -34,6 +34,7 @@
 \newcommand{\CSPBAlgoDir}{./Courses/CSPB 3104 - Algorithms/}
 \newcommand{\CSPBLADir}{./Courses/CSPB 2820 - Linear Algebra With Computer Science Applications/}
 \newcommand{\CSPBDataSciDir}{./Courses/CSPB 3022 - Introduction To Data Science With Probability And Statistics/}
+\newcommand{\CSPBCogSciDir}{./Courses/CSPB 3702 - Cognitive Science/}
 %---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
