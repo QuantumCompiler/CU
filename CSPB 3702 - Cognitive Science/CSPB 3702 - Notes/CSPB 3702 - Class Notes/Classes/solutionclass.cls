@@ -77,7 +77,7 @@
 %---------------------------------------------------------------------------
 \RequirePackage{graphicx} % for including images
 \RequirePackage{float} % provides H option for figures and tables
-\RequirePackage{xcolor} % for color support
+\RequirePackage[table]{xcolor} % for color support
 \RequirePackage{tikz} % for creating graphics and diagrams
 \RequirePackage{tikz-3dplot} % for 3D graphics in TikZ
 \RequirePackage{pgfplots} % for creating plots and diagrams
@@ -96,8 +96,8 @@
                 bookmarks = true,
                 pdfnewwindow = true,
                 pdfusetitle]{hyperref} % Hyperlinks
-\RequirePackage[top = 2cm,
-                bottom = 2cm,
+\RequirePackage[top = 1.5cm,
+                bottom = 1.5cm,
                 left = 1.75cm,
                 right = 1.75cm,
                 ]{geometry} % Page margins
@@ -126,6 +126,11 @@
 \fancyhead[C]{\footnotesize{\hyperlink{Home}{\className}}}
 \fancyhead[R]{\footnotesize{\universityName}}
 \fancyfoot[R]{\footnotesize{\documentName}}
+\setlength{\headheight}{10pt}
+\setlength{\headsep}{20pt}
+\fancypagestyle{plain}{
+    \pagestyle{fancy}
+}
 %---------------------------------------------------------------------------
 %	BACKGROUND
 %---------------------------------------------------------------------------
@@ -172,6 +177,7 @@
 %---------------------------------------------------------------------------
 % This command is designed to customize the styling of the \chaper{} command to create a box with the chapter number along with a mini summary containing the page where each exercise and its solution are located.
 \newcommand{\chapterNumberAndMinitoc}{%
+\vspace*{2.5em}
 \begin{tikzpicture}
     \node[
         minimum height = 1cm,
@@ -185,13 +191,14 @@
         \color{white}
         \begin{minipage}{\textwidth}
             \centering
-            \textbf{Sections}
+            \hypertarget{Home}{\textbf{Sections}}
             \begin{multicols}{2}
                 \printcontents[sections]{}{1}{}{}
             \end{multicols}
         \end{minipage}
     };
 \end{tikzpicture}%
+\clearpage
 }
 \titleformat{\chapter}[display]
 {\normalfont\bfseries\color{myDColor}}
