@@ -1,0 +1,74 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{\CSPBCompSys}
+\renewcommand{\SectionTitle}{CSPB 2400}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Course Overview}
+
+The overview of this course can be seen below.
+
+\course{\hypertarget{CSPB:2400}{\CSPBCompSys} \hspace*{1pt} - Prerequisites: \hyperlink{CSPB:2270}{CSPB 2270} - Credits: 4}{
+    \vspace*{-1.5em}
+    \begin{highlight}[\CSPBCompSys]
+        \subsubsection*{Brief Description of Course Content} Covers how programs are represented and executed by modern computers, including low level machine representations of programs and data, an 
+        understanding of how computer components and the memory hierarchy influence performance. Topics include data and program representations, computer organization effect on performance and 
+        mechanisms used for program isolation and memory management. \vspace*{1em}
+        
+        \subsubsection*{Specific Outcomes of Instruction}
+
+        \begin{itemize}
+            \item Explain and perform common logical operations (and, or, negation, conversion) on binary variables and binary vectors and identify and apply common boolean algebraic laws such as DeMorgan’s laws, idempotence, etc.
+            \item An ability to translate between integer binary and decimal data, detect and identify the outcome of operations due to limited data representations (e.g. overflow), distinguish between the data representations and ranges for signed and unsigned data types.
+            \item Translate IEEE floating point representation to and from binary and real numbers and identify the limitations of fixed-precision floating point representation.
+            \item An ability to related compiler-generated assembly programs to the corresponding higher level language structures with sufficient ability to enable debugging high level programs. Given a machine language representation of a program compiled in a higher level language, students should be identify and describe the operation of conditional statements, loops, function calls, switch statements.
+            \item The ability to explain how higher level language functions are implemented using the stack of an underlying machine, including how local variables are allocated, trace the execution due to recursion and identify and trace the effect of buffer-overflow of the stack.
+            \item An ability to explain how high level program structures can be restructured to facilitate optimization for pipelined architectures and cache memory hierarchies.
+            \item An ability to explain how computer memory is organized and represented both to the programmer and to the computer architecture by the operating system through the use of virtual memory mapping.
+            \item An understanding of how to use asynchronous signals, concurrent programs and the programming issues that arise with such programs, such as race conditions.
+            \item Identify and construct processes on a common computer platform, identify and perform basic synchronization between processes and understand the costs and benefits of using processes.
+            \item An ability to explain how global memory, function-local and dynamic memory allocation is performed and the performance benefits of each form of memory allocation.
+            \item An ability to explain how programming errors may affect program correctness, including errors in function calls, memory allocation, integer and floating point data representations.
+            \item An ability to measure program performance and use that measured information to determine how to improve program performance.
+            \item An ability to use a machine-level debugger and inspect the memory and register state of programs.
+        \end{itemize}
+        
+        \subsubsection*{Brief List of Topics to be Covered}
+
+        \begin{itemize}
+            \item Vectors
+            \item Linear functions
+            \item Number representation in computers
+            \item Program representation
+            \item Computer security: stack overflows and code injection
+            \item Computer organization and its impact on computer performance
+            \item Memory hierarchy and its impact on computer performance and security
+            \item Cache organization
+            \item Processes, exceptions and signals
+            \item Virtual and dynamic memory management
+            \item Linking and loading programs
+        \end{itemize}
+        
+        \subsubsection*{Mathematical Concepts Used}
+
+        \begin{itemize}
+            \item Boolean Logic
+            \item Binary
+        \end{itemize}
+    \end{highlight}
+}
+
+\subsection{Course Notes}
+
+The notes for this course can be found below: \coursedoc{\pdflink{\CSPBCompSysDir CSPB 2400 - Computer Systems Course Notes.pdf}{CSPB 2400 - Computer Systems Course Notes}}
+
+\subsection{Course Syllabus}
+
+The syllabus for this course can be found below: \coursedoc{\pdflink{\CSPBCompSysSyllabusDir CSPB 2400 - Computer Systems Syllabus.pdf}{CSPB 2400 - Computer Systems Syllabus}}
+
+\subsection{Course Textbook}
+
+The textbook for this course can be found below: \coursedoc{\pdflink{\CSPBCompSysTextbookDir Computer Systems A Programmer's Perspective (Third Edition) - Randal E. Bryant, David R. O'Hallaron.pdf}{Computer Systems A Programmer's Perspective (Third Edition) - Randal E. Bryant, David R. O'Hallaron}}
