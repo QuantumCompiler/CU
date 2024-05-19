@@ -6,7 +6,6 @@
 \newcommand{\classCode}{Course Code}
 \newcommand{\className}{Course Name}
 \newcommand{\documentName}{Assignment Name}
-\newcommand{\documentNumber}{Assignment Number}
 \newcommand{\universityName}{University Of Colorado}
 %---------------------------------------------------------------------------
 %	LOCAL DIRECTORIES
