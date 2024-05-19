@@ -179,9 +179,7 @@
         \begin{minipage}{\textwidth}
             \centering
             \hypertarget{Home}{\textbf{Sections}}
-            \begin{multicols}{2}
-                \printcontents[sections]{}{1}{}{}
-            \end{multicols}
+            \printcontents[sections]{}{1}{}{}
         \end{minipage}
     };
 \end{tikzpicture}%
