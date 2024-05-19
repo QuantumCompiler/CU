@@ -1,18 +1,4 @@
-%---------------------------------------------------------------------------
-%	DOCUMENT VARIABLES
-%---------------------------------------------------------------------------
-\input{Classes/Core.cls}
-\newcommand{\authorName}{Student Name}
-\newcommand{\classCode}{Course Code}
-\newcommand{\className}{Course Name}
-\newcommand{\documentName}{Class Notes}
-\newcommand{\universityName}{University Of Colorado}
-%---------------------------------------------------------------------------
-%	LOCAL DIRECTORIES
-%---------------------------------------------------------------------------
-\newcommand{\AssDir}{./Assignments/}
-\newcommand{\LecNoteDir}{./Lecture Notes/}
-\newcommand{\QuizDir}{./Quizzes/}
+\input{Classes/GoldenCore.cls}
 %---------------------------------------------------------------------------
 %	CUSTOM COMMANDS
 %---------------------------------------------------------------------------

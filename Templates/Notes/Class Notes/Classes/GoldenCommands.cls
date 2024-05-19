@@ -1,15 +1,4 @@
-%---------------------------------------------------------------------------
-%	DOCUMENT VARIABLES
-%---------------------------------------------------------------------------
-\input{Classes/Core.cls}
-\newcommand{\authorName}{Student Name}
-\newcommand{\classCode}{Course Code}
-\newcommand{\className}{Course Name}
-\newcommand{\documentName}{Document Name}
-\newcommand{\universityName}{University Of Colorado}
-%---------------------------------------------------------------------------
-%	LOCAL DIRECTORIES
-%---------------------------------------------------------------------------
+\input{Classes/GoldenCore.cls}
 %---------------------------------------------------------------------------
 %	CUSTOM COMMANDS
 %---------------------------------------------------------------------------
