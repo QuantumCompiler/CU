@@ -1,12 +1,4 @@
 %---------------------------------------------------------------------------
-%	DOCUMENT VARIABLES
-%---------------------------------------------------------------------------
-\newcommand{\authorName}{Taylor Larrechea}
-\newcommand{\classCode}{CSPB 2820}
-\newcommand{\className}{Linear Algebra With Computer Science Applications}
-\newcommand{\documentName}{Study Guide 3 - Norm And Distance}
-\newcommand{\universityName}{University Of Colorado}
-%---------------------------------------------------------------------------
 %	FORMAT AND CLASS
 %---------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
@@ -15,7 +7,7 @@
 %---------------------------------------------------------------------------
 %	LANGUAGE AND ENCODING
 %---------------------------------------------------------------------------
-\RequirePackage[portuguese, english]{babel} % Allows to use multiple languages in the document
+\RequirePackage[english]{babel} % Allows to use multiple languages in the document
 \RequirePackage[utf8]{inputenc} % Defines the input encoding
 \RequirePackage[T1]{fontenc} % Defines the font encoding
 %---------------------------------------------------------------------------
@@ -70,7 +62,7 @@
 %---------------------------------------------------------------------------
 \RequirePackage{graphicx} % for including images
 \RequirePackage{float} % provides H option for figures and tables
-\RequirePackage{xcolor} % for color support
+\RequirePackage[table]{xcolor} % for color support
 \RequirePackage{tikz} % for creating graphics and diagrams
 \RequirePackage{tikz-3dplot} % for 3D graphics in TikZ
 \RequirePackage{pgfplots} % for creating plots and diagrams
@@ -89,8 +81,8 @@
                 bookmarks = true,
                 pdfnewwindow = true,
                 pdfusetitle]{hyperref} % Hyperlinks
-\RequirePackage[top = 2cm,
-                bottom = 2cm,
+\RequirePackage[top = 1.5cm,
+                bottom = 1.5cm,
                 left = 1.75cm,
                 right = 1.75cm,
                 ]{geometry} % Page margins
@@ -116,9 +108,15 @@
 \pagestyle{fancy}
 \fancyhead[L]{\footnotesize{\authorName}}
 \fancyfoot[L]{\footnotesize{\classCode}}
-\fancyhead[C]{\footnotesize{\className}}
+\fancyhead[C]{\footnotesize{\hyperlink{Home}{\className}}}
+\fancyfoot[C]{\footnotesize{\thepage}}
 \fancyhead[R]{\footnotesize{\universityName}}
 \fancyfoot[R]{\footnotesize{\documentName}}
+\setlength{\headheight}{10pt}
+\setlength{\headsep}{20pt}
+\fancypagestyle{plain}{
+    \pagestyle{fancy}
+}
 %---------------------------------------------------------------------------
 %	BACKGROUND
 %---------------------------------------------------------------------------
@@ -149,7 +147,6 @@
     3d, % Create three-dimensional TikZ diagrams.
 }
 \pgfplotsset{compat=1.18} % Sets the compatibility level for the pgfplots package to version 1.18, ensuring consistent compilation of plots and diagrams in the document.
-
 \tikzset{>=stealth} % Arrow style for all tikZ environment.
 %---------------------------------------------------------------------------
 %	COLOR SETTINGS
@@ -163,28 +160,18 @@
 %---------------------------------------------------------------------------
 %	CHAPTER AND SECTION SETTINGS
 %---------------------------------------------------------------------------
-% This command is designed to customize the styling of the \chaper{} command to create a box with the chapter number along with a mini summary containing the page where each exercise and its solution are located.
-\newcommand{\chapterNumberAndMinitoc}{%
-\begin{tikzpicture}
-    \node[
-        minimum height = 1cm,
-        inner sep = 2.5mm,
-        text width = 0.97*\textwidth,
-        align = left,
-        fill = myDColor,
-        anchor = north, % Changed from "east" to "north" to anchor by the top
-    ] {
-        \footnotesize
-        \color{white}
-        \begin{minipage}{\textwidth}
-            \centering
-            \textbf{Sections}
-            \begin{multicols}{2}
-                \printcontents[sections]{}{1}{}{}
-            \end{multicols}
-        \end{minipage}
-    };
-\end{tikzpicture}%
+\addto\captionsenglish{\renewcommand{\contentsname}{\className \hspace*{1pt} - \documentName}}
+\newcommand{\TOC}{
+    \pretitle
+    {\classCode}
+    {\normalsize{\className}}
+    {\normalsize{\documentName}}
+    {\universityName}
+    \hypertarget{Home}{
+        \vspace*{3em}
+        \tableofcontents
+        \clearpage
+    }
 }
 \titleformat{\chapter}[display]
 {\normalfont\bfseries\color{myDColor}}
@@ -212,7 +199,7 @@
     \def\temp{%
         \titleformat{\chapter}[display]
         {\normalfont\bfseries\color{myDColor}}
-        {\filleft\chapterNumberAndMinitoc}{0.5em}
+        {}{2em}
         {\titlerule[2.5pt]\titlerule\vspace{4pt}\LARGE\textsc}
         \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
     }
@@ -221,10 +208,10 @@
     % For subsequent chapters, use a standard chapter title with no ToC
     \def\temp{%
         \titleformat{\chapter}[display]
-        {\normalfont\bfseries}
-        {}{-8em}
-        {\titlerule[2.5pt]\titlerule\vspace{2pt}\LARGE\textsc}
-        \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+        {\normalfont\bfseries\color{myDColor}}
+        {}{2em}
+        {\titlerule[2.5pt]\titlerule\vspace{4pt}\LARGE\textsc}
+        \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
     }
     \fi
     \temp % Apply the chosen title format
@@ -263,7 +250,7 @@
 \renewcommand{\section}[1]{%                        
     \oldsection*{#1}                                
     \phantomsection                                
-    \addcontentsline{toc}{section}{#1}              
+    \addcontentsline{toc}{section}{#1}      
 }                                                    
 \titlecontents{section}
 [0em]
@@ -531,94 +518,3 @@
 % The below commands is to maintain the font to the symbol mathbb{1} different and more beauty
 \DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 \newcommand*{\boldone}{\mathbbold{1}}
-%---------------------------------------------------------------------------
-%	CUSTOM COMMANDS
-%---------------------------------------------------------------------------
-\newcommand{\assignment}[2]{\due{(#1)} \cbox{#2}}
-\newcommand{\cbox}[1]{\CheckBox[name=#1, width=0.75\baselineskip, height=0.75\baselineskip]{}}
-\newcommand{\due}[1]{\textcolor{red}{#1}}
-\newcommand{\horizontalline}[2]{
-    \par
-    \vskip#1em
-    \noindent\rule{\textwidth}{0.5pt}
-    \par
-    \vskip#2em
-    \noindent
-}
-\newcommand{\lecture}[3]{\link{#1}{#2}{ $\approx$ #3 \textbf{min}.}}
-\newcommand{\link}[2]{\href{#1}{#2}}
-\newcommand{\modulo}{\text{ \textbf{mod} }}
-\newcommand{\pdflink}[2]{\href{run:#1}{#2}}
-\newcommand{\qed}{$\square$}
-\newcommand{\rem}[1]{\text{ \textbf{remainder }} \underbar{#1}}
-\newcommand{\testimonial}[1]{
-    \horizontalline{0}{0}
-    \begin{center}
-        \Large{\textbf{I have neither given nor received unauthorized assistance.}}
-        \horizontalline{0}{0.5}
-        \large{\textbf{\authorName}}
-        \horizontalline{0}{0}
-    \end{center}
-    \noindent The original assignment for this problem can be found \pdflink{\AssDir #1}{here}.
-}
-%---------------------------------------------------------------------------
-%	CUSTOM ENVIRONMENTS
-%---------------------------------------------------------------------------
-% Cheat sheet
-\newenvironment{cheatsheet}[1]{
-    \clearpage
-    \twocolumn
-    \subsection*{#1}
-}
-{\onecolumn \clearpage}
-% Code
-\lstnewenvironment{code}[1][]
-{
-    \lstset{style=stackoverflow, language=#1}
-}
-{}
-% Exam notes
-\newenvironment{examnotes}[1]{
-    \clearpage
-    \subsection*{#1}
-}
-{\clearpage}
-% Notes
-\newenvironment{notes}[1]
-{
-    \subsection*{#1}
-    \horizontalline{0}{1}
-}
-{
-    \horizontalline{1}{0}
-}
-% Problem
-\newenvironment{problem}[1]{
-    \clearpage
-    \section{#1}
-    \horizontalline{0}{-1}
-}
-{}
-% Statement
-\newenvironment{statement}[1]{
-    \subsection*{#1}
-    \begin{mdframed}[
-        linewidth=1pt,
-        linecolor=black,
-        topline=true,
-        bottomline=true,
-        rightline=true,
-        leftline=true,
-        leftmargin=0pt,
-        innerleftmargin=15pt,
-        innerrightmargin=15pt]
-}
-{\end{mdframed}}
-% Summary
-\newenvironment{summary}[1]
-{
-    \clearpage
-    \subsection*{#1}
-    \horizontalline{0}{-1}
-    }
-{}
