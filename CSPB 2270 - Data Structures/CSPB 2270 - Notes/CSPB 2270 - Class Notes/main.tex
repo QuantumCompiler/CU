@@ -1,29 +1,13 @@
 %---------------------------------------------------------------------------
 %	Document Class
 %---------------------------------------------------------------------------
-\documentclass{Classes/solutionclass} 
+\documentclass{Classes/Main} 
 %---------------------------------------------------------------------------
 %	Begin Document
 %---------------------------------------------------------------------------
 \begin{document}
-% ------------------------- Front Page Info
-\pretitle
-{\classCode}
-{\normalsize{\className}}
-{\normalsize{\documentName}}
-{\universityName}
-%---------------------------------------------------------------------------
-%	Sections
-%---------------------------------------------------------------------------
-% ------------------------- Sections Table
-\makeatletter
-    \startcontents[sections]
-    \thispagestyle{fancy}
-\makeatother
-\vspace{-2em}
-%---------------------------------------------------------------------------
-%	Introduction / Individual Sections
-%---------------------------------------------------------------------------
+% ------------------------- Table Of Contents
+\input{Tex Files/Table Of Contents.tex}
 % ------------------------- Week 1
 \input{Tex Files/Week 1 - C++ Review - Debugging - Unit Testing.tex}
 % ------------------------- Week 2
