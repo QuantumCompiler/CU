@@ -1,29 +1,12 @@
 %---------------------------------------------------------------------------
 %	Document Class
 %---------------------------------------------------------------------------
-\documentclass{Classes/solutionclass} 
+\documentclass{Classes/GoldenMain} 
 %---------------------------------------------------------------------------
 %	Begin Document
 %---------------------------------------------------------------------------
 \begin{document}
-% ------------------------- Front Page Info
-\pretitle
-{\classCode}
-{\normalsize{\className}}
-{\normalsize{\documentName}}
-{\universityName}
-%---------------------------------------------------------------------------
-%	Sections
-%---------------------------------------------------------------------------
-% ------------------------- Sections Table
-\makeatletter
-    \startcontents[sections]
-    \thispagestyle{fancy}
-\makeatother
-\vspace{-2em}
-%---------------------------------------------------------------------------
-%	Introduction / Individual Sections
-%---------------------------------------------------------------------------
+\TOC
 \batchmode
 % ------------------------- Week 1 - Data Science Lifecycle, Python And Pandas
 \input{Tex/Week 1 - Data Science Lifecycle, Python And Pandas.tex}
@@ -57,5 +40,5 @@
 \input{Tex/Week 15 - Final Project.tex}
 \end{document}
 %---------------------------------------------------------------------------
-%	
+%	End Document
 %---------------------------------------------------------------------------
