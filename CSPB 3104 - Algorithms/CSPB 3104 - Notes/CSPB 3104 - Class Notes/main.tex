@@ -1,29 +1,12 @@
 %---------------------------------------------------------------------------
 %	Document Class
 %---------------------------------------------------------------------------
-\documentclass{Classes/solutionclass} 
+\documentclass{Classes/GoldenMain} 
 %---------------------------------------------------------------------------
 %	Begin Document
 %---------------------------------------------------------------------------
 \begin{document}
-% ------------------------- Front Page Info
-\pretitle
-{\classCode}
-{\normalsize{\className}}
-{\normalsize{\documentName}}
-{\universityName}
-%---------------------------------------------------------------------------
-%	Sections
-%---------------------------------------------------------------------------
-% ------------------------- Sections Table
-\makeatletter
-    \startcontents[sections]
-    \thispagestyle{fancy}
-\makeatother
-\vspace{-2em}
-%---------------------------------------------------------------------------
-%	Introduction / Individual Sections
-%---------------------------------------------------------------------------
+\TOC
 \batchmode
 % ------------------------- Week 1 - Introduction To Algorithms
 \input{Tex/Week 1 - Introduction To Algorithms.tex}
@@ -59,5 +42,5 @@
 \input{Tex/Week 16 - Final Exam.tex}
 \end{document}
 %---------------------------------------------------------------------------
-%	
+%	End Documents
 %---------------------------------------------------------------------------
