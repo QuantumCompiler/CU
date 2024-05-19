@@ -7,7 +7,7 @@
 %---------------------------------------------------------------------------
 %	LANGUAGE AND ENCODING
 %---------------------------------------------------------------------------
-\RequirePackage[portuguese, english]{babel} % Allows to use multiple languages in the document
+\RequirePackage[english]{babel} % Allows to use multiple languages in the document
 \RequirePackage[utf8]{inputenc} % Defines the input encoding
 \RequirePackage[T1]{fontenc} % Defines the font encoding
 %---------------------------------------------------------------------------
@@ -115,9 +115,7 @@
 \setlength{\headheight}{10pt}
 \setlength{\headsep}{20pt}
 \fancypagestyle{plain}{
-    \fancyhf{}
-    \renewcommand{\headrulewidth}{0pt}
-    \fancyfoot[C]{\footnotesize{\thepage}}
+    \pagestyle{fancy}
 }
 %---------------------------------------------------------------------------
 %	BACKGROUND
@@ -162,28 +160,18 @@
 %---------------------------------------------------------------------------
 %	CHAPTER AND SECTION SETTINGS
 %---------------------------------------------------------------------------
-% This command is designed to customize the styling of the \chaper{} command to create a box with the chapter number along with a mini summary containing the page where each exercise and its solution are located.
-\newcommand{\chapterNumberAndMinitoc}{%
-\vspace*{2.5em}
-\begin{tikzpicture}
-    \node[
-        minimum height = 1cm,
-        inner sep = 2.5mm,
-        text width = 0.97*\textwidth,
-        align = left,
-        fill = myDColor,
-        anchor = north, % Changed from "east" to "north" to anchor by the top
-    ] {
-        \footnotesize
-        \color{white}
-        \begin{minipage}{\textwidth}
-            \centering
-            \hypertarget{Home}{\className \hspace*{1pt} \documentName}
-            \printcontents[sections]{}{1}{}{}
-        \end{minipage}
-    };
-\end{tikzpicture}%
-\clearpage
+\addto\captionsenglish{\renewcommand{\contentsname}{\className \hspace*{1pt} - \documentName}}
+\newcommand{\TOC}{
+    \pretitle
+    {\classCode}
+    {\normalsize{\className}}
+    {\normalsize{\documentName}}
+    {\universityName}
+    \hypertarget{Home}{
+        \vspace*{3em}
+        \tableofcontents
+        \clearpage
+    }
 }
 \titleformat{\chapter}[display]
 {\normalfont\bfseries\color{myDColor}}
@@ -211,7 +199,7 @@
     \def\temp{%
         \titleformat{\chapter}[display]
         {\normalfont\bfseries\color{myDColor}}
-        {\filleft\chapterNumberAndMinitoc}{0.5em}
+        {}{2em}
         {\titlerule[2.5pt]\titlerule\vspace{4pt}\LARGE\textsc}
         \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
     }
@@ -220,10 +208,10 @@
     % For subsequent chapters, use a standard chapter title with no ToC
     \def\temp{%
         \titleformat{\chapter}[display]
-        {\normalfont\bfseries}
-        {}{-8em}
-        {\titlerule[2.5pt]\titlerule\vspace{2pt}\LARGE\textsc}
-        \titlespacing*{\chapter}{0pt}{50pt}{40pt}
+        {\normalfont\bfseries\color{myDColor}}
+        {}{2em}
+        {\titlerule[2.5pt]\titlerule\vspace{4pt}\LARGE\textsc}
+        \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
     }
     \fi
     \temp % Apply the chosen title format
