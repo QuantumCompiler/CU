@@ -1,30 +1,13 @@
 %---------------------------------------------------------------------------
 %	Document Class
 %---------------------------------------------------------------------------
-\documentclass{Classes/solutionclass} 
+\documentclass{Classes/Main} 
 %---------------------------------------------------------------------------
 %	Begin Document
 %---------------------------------------------------------------------------
 \begin{document}
+\TOC
 \batchmode
-% ------------------------- Front Page Info
-\pretitle
-{\classCode}
-{\normalsize{\className}}
-{\normalsize{\documentName}}
-{\authorName}
-%---------------------------------------------------------------------------
-%	Sections
-%---------------------------------------------------------------------------
-% ------------------------- Sections Table
-\makeatletter
-    \startcontents[sections]
-    \thispagestyle{fancy}
-\makeatother
-\vspace{-2em}
-%---------------------------------------------------------------------------
-%	Introduction / Individual Sections
-%---------------------------------------------------------------------------
 % ------------------------- Exam Notes
 \input{Tex/Exam Notes.tex}
 \end{document}
