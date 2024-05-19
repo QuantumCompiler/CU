@@ -1,29 +1,12 @@
 %---------------------------------------------------------------------------
 %	Document Class
 %---------------------------------------------------------------------------
-\documentclass{Classes/solutionclass} 
+\documentclass{Classes/GoldenMain} 
 %---------------------------------------------------------------------------
 %	Begin Document
 %---------------------------------------------------------------------------
 \begin{document}
-% ------------------------- Front Page Info
-\pretitle
-{\classCode}
-{\normalsize{\className}}
-{\normalsize{\documentName}}
-{\authorName}
-%---------------------------------------------------------------------------
-%	Sections
-%---------------------------------------------------------------------------
-% ------------------------- Sections Table
-\makeatletter
-    \startcontents[sections]
-    \thispagestyle{fancy}
-\makeatother
-\vspace{-2em}
-%---------------------------------------------------------------------------
-%	Introduction / Individual Sections
-%---------------------------------------------------------------------------
+\TOC
 \batchmode
 % ------------------------- Week 1 - Mind & Machine Module 1A
 \input{Tex/Week 1 - Mind And Machine.tex}
@@ -59,5 +42,5 @@
 \input{Tex/Week 16 - Mini Project 5.tex}
 \end{document}
 %---------------------------------------------------------------------------
-%	
+%	End Document
 %---------------------------------------------------------------------------
