@@ -44,7 +44,7 @@
     \pdflink{\CSPBDataStructSyllabusDir CSPB 2270 - Data Structures Syllabus.pdf}{CSPB 2270 - Data Structures Syllabus}
 }
 \newcommand{\CSPBDataStructTextbook}{
-    \pdflink{\CSPBDataStructTextbookDir CSPB 2270 - Data Structures Zybooks.pdf}{CSPB 2270 - Data Structures Zybooks}
+    \pdflink{\CSPBDataStructTextbookDir CSPB 2270 - Data Structures Zybooks.pdf}{Data Structures Zybooks}
 }
 % CSPB 2400
 \newcommand{\CSPBCompSysDir}{./Courses/CSPB 2400 - Computer Systems/}
@@ -67,7 +67,7 @@
     \pdflink{\CSPBLADir CSPB 2820 - Linear Algebra With Computer Science Applications Course Notes.pdf}{CSPB 2820 - Linear Algebra With Computer Science Applications Course Notes}
 }
 \newcommand{\CSPBLASyllabus}{
-    \pdflink{\CSPBLASyllabusDir CSPB 2280 - Linear Algebra With Computer Science Applications Syllabus.pdf}{CSPB 2280 - Linear Algebra With Computer Science Applications Syllabus}
+    \pdflink{\CSPBLASyllabusDir CSPB 2820 - Linear Algebra With Computer Science Applications Syllabus.pdf}{CSPB 2820 - Linear Algebra With Computer Science Applications Syllabus}
 }
 \newcommand{\CSPBLAVMLSTextbook}{
     \pdflink{\CSPBLATextbookDir Introduction To Applied Linear Algebra (1st Edition) - Stephen Boyd And Lieven Vandenberghe.pdf}{Introduction To Applied Linear Algebra (1st Edition)}
@@ -76,7 +76,7 @@
     \pdflink{\CSPBLATextbookDir Introduction To Applied Linear Algebra Solutions Manual (1st Edition) - Stephen Boyd And Lieven Vandenberghe.pdf}{Introduction To Applied Linear Algebra Solutions Manual (1st Edition)}
 }
 \newcommand{\CSPBLAVMLSPyComp}{
-    \pdflink{\CSPBLATextbookDir Introduction to Applied Linear Algebra, Vectors, Matrices, And Least Squares (1st Edition) - Jessica Leung And Dmytro Matsypura.pdf}{Introduction to Applied Linear Algebra, Vectors, Matrices, And Least Squares (1st Edition)}
+    \pdflink{\CSPBLATextbookDir Introduction to Applied Linear Algebra, Vectors, Matrices, And Least Squares (1st Edition) - Jessica Leung And Dmytro Matsypura.pdf}{Introduction To Applied Linear Algebra, Vectors, Matrices, And Least Squares (1st Edition)}
 }
 % CSPB 2824
 \newcommand{\CSPBDiscreteDir}{./Courses/CSPB 2824 - Discrete Structures/}
@@ -105,7 +105,7 @@
     \pdflink{\CSPBDataSciTextbookDir Learning Data Science Data Wrangling, Exploration, Visualization, and Modeling with Python (First Edition) - Sam Lau, Joseph Gonzalez, Deborah Nolanpdf.pdf}{Learning Data Science Data Wrangling, Exploration, Visualization, and Modeling with Python (First Edition)}
 }
 \newcommand{\CSPBDataSciPyForDSTextbook}{
-    \pdflink{\CSPBDataSciTextbookDir Python for Data Analysis Data Wrangling with pandas, NumPy, and Jupyter (Third Edition) - Wes McKinney.pdf}{Python for Data Analysis Data Wrangling with pandas, NumPy, and Jupyter (Third Edition)}
+    \pdflink{\CSPBDataSciTextbookDir Python for Data Analysis Data Wrangling with pandas, NumPy, and Jupyter (Third Edition) - Wes McKinney.pdf}{Python For Data Analysis Data Wrangling With Pandas, NumPy, and Jupyter (Third Edition)}
 }
 % CSPB 3104
 \newcommand{\CSPBAlgoDir}{./Courses/CSPB 3104 - Algorithms/}
@@ -118,10 +118,10 @@
     \pdflink{\CSPBAlgoSyllabusDir CSPB 3104 - Algorithms Syllabus.pdf}{CSPB 3104 - Algorithms Syllabus}
 }
 \newcommand{\CSPBAlgoGrokkingTextbook}{
-    \pdflink{\CSPBAlgoTextbookDir Grokking Algorithms An Illustrated Guide for Programmers and Other Curious People (First Edition) - Aditya Bhargava.pdf}{Grokking Algorithms An Illustrated Guide for Programmers and Other Curious People (First Edition)}
+    \pdflink{\CSPBAlgoTextbookDir Grokking Algorithms An Illustrated Guide for Programmers and Other Curious People (First Edition) - Aditya Bhargava.pdf}{Grokking Algorithms An Illustrated Guide For Programmers And Other Curious People (First Edition)}
 }
 \newcommand{\CSPBAlgoIntroTextbook}{
-    \pdflink{\CSPBAlgoTextbookDir Introduction to Algorithms (Third Edition) - Cormen, Thomas H. Leiserson, Charles E. Rivest, Ronald L. Stein.pdf}{Introduction to Algorithms (Third Edition)}
+    \pdflink{\CSPBAlgoTextbookDir Introduction to Algorithms (Third Edition) - Cormen, Thomas H. Leiserson, Charles E. Rivest, Ronald L. Stein.pdf}{Introduction To Algorithms (Third Edition)}
 }
 % CSPB 3155
 \newcommand{\CSPBPPLDir}{./Courses/CSPB 3155 - Principles Of Programming Languages/}
@@ -244,8 +244,13 @@
         \end{highlightbox}
     \end{center}
 }
+% Doc link
+\newcommand{\doclink}[2]{
+    \hyperlink{#1}{\textcolor{black}{\textbf{#2}}}
+}
 % Cell coloring
 \renewcommand{\arraystretch}{1.25}
+\newcommand{\blackcell}{\cellcolor{black}}
 \newcommand{\cyancell}{\cellcolor{cyan!25}}
 \newcommand{\graycell}{\cellcolor{gray!25}}
 \newcommand{\greencell}{\cellcolor{green!25}}
