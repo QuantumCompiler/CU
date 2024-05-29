@@ -1,0 +1,402 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Shortest Path Algorithms}
+\renewcommand{\SectionTitle}{Shortest Path Algorithms}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is from, \Textbook:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir Chapter 24.1 - The Bellman-Ford Algorithm.pdf}{Chapter 24.1 - The Bellman-Ford Algorithm}
+    \item \pdflink{\ReadMatDir Chapter 24.2 - Single-Source Shortest Paths In Directed Acyclic Graphs.pdf}{Chapter 24.2 - Single-Source Shortest Paths In Directed Acyclic Graphs}
+    \item \pdflink{\ReadMatDir Chapter 24.3 - Dijkstra's Algorithm.pdf}{Chapter 24.3 - Dijkstra's Algorithm}
+    \item \pdflink{\ReadMatDir Chapter 24.4 - Difference Constrains And Shortest Paths.pdf}{Chapter 24.4 - Difference Constrains And Shortest Paths}
+    \item \pdflink{\ReadMatDir Chapter 24.5 - Proofs Of Shortest-Paths Properties.pdf}{Chapter 24.5 - Proofs Of Shortest-Paths Properties}
+    \item \pdflink{\ReadMatDir Chapter 25.1 - Shortest Paths And Matrix Multiplication.pdf}{Chapter 25.1 - Shortest Paths And Matrix Multiplication}
+    \item \pdflink{\ReadMatDir Chapter 25.2 - The Floyd-Warshall Algorithm.pdf}{Chapter 25.2 - The Floyd-Warshall Algorithm}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=7iU1viY-Dj8}{Shortest Path Problems: Introduction}{30}
+    \item \lecture{https://www.youtube.com/watch?v=ZOzniR6RMec}{Bellman Ford Algorithm}{19}
+    \item \lecture{https://www.youtube.com/watch?v=hmMbLjXfH9g}{Bellman Ford: Example And Analysis}{27}
+    \item \lecture{https://www.youtube.com/watch?v=lGjQWX32I74}{Shortest Path Over DAGs}{12}
+    \item \lecture{https://www.youtube.com/watch?v=RhxHdwEmpxI}{Dijkstra's Algorithm}{20}
+    \item \lecture{https://www.youtube.com/watch?v=Fv4HiTMtZV0}{Dijkstra's Algorithm Analysis}{12}
+    \item \lecture{https://www.youtube.com/watch?v=haUYkbSKDLk}{All Pairs Shortest Path}{35}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203104%20-%20Algorithms/CSPB%203104%20-%20Assignments/CSPB%203104%20-%20Problem%20Sets/CSPB%203104%20-%20Problem%20Set%209%20-%20Shortest%20Path%20Algorithms}{Problem Set 9 - Shortest Path Algorithms}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203104%20-%20Algorithms/CSPB%203104%20-%20Assignments/CSPB%203104%20-%20Programming%20Assignments/CSPB%203104%20-%20Programming%20Assignment%203%20-%20Shortest%20Path}{Programming Assignment 3 - Shortest Path}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 10.pdf}{Quiz 10}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 24: Single-Source Shortest Path Algorithms}. The first section that is being covered from this chapter this week is \textbf{Section 24.1: The Bellman-Ford Algorithm}.
+
+\begin{notes}{Section 24.1: The Bellman-Ford Algorithm}
+    \subsection*{The Bellman-Ford Algorithm}
+
+    The Bellman-Ford algorithm is a graph search algorithm that calculates the shortest paths from a single source vertex to all other vertices in a weighted graph. It is capable of handling graphs 
+    with negative weight edges, unlike Dijkstra's algorithm, which only works with graphs that have non-negative edge weights. The Bellman-Ford algorithm can also detect negative cycles in a graph. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    
+    \begin{itemize}
+        \item The algorithm initializes the distance to the source vertex to 0 and all other vertices to infinity.
+        \item It relaxes all the edges in the graph for $(V - 1)$ iterations, where $V$ is the number of vertices. Relaxation means updating the distance to a vertex if a shorter path is found.
+        \item After $(V - 1)$ iterations, it checks for negative weight cycles by trying to relax the edges once more. If a shorter path is found, a negative cycle exists.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    
+    The Bellman-Ford algorithm can be summarized in the following steps:
+    \begin{enumerate}
+        \item Initialize distances from the source to all vertices as infinite and distance to the source itself as 0.
+        \item For each vertex, apply relaxation for all the edges.
+        \item Repeat step 2 for $(V - 1)$ times.
+        \item Check for negative-weight cycles by performing step 2 one more time. If a distance is updated, then report that a negative cycle exists.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item The Bellman-Ford algorithm is used in network routing protocols, such as the Distance Vector Routing Protocol.
+        \item It is beneficial for calculating shortest paths in graphs with negative edges or for detecting negative cycles.
+        \item The algorithm is also useful in financial applications to detect arbitrage opportunities.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: The Bellman-Ford Algorithm]
+    
+    Below is a Python implementation of the Bellman-Ford algorithm.
+    
+    \begin{code}[Python]
+    def bellman_ford(graph, source):
+        distance = {vertex: float('infinity') for vertex in graph}
+        predecessor = {vertex: None for vertex in graph}
+        distance[source] = 0
+    
+        for _ in range(len(graph) - 1):
+            for vertex in graph:
+                for neighbour, weight in graph[vertex].items():
+                    if distance[vertex] + weight < distance[neighbour]:
+                        distance[neighbour] = distance[vertex] + weight
+                        predecessor[neighbour] = vertex
+    
+        # Check for negative weight cycles
+        for vertex in graph:
+            for neighbour, weight in graph[vertex].items():
+                if distance[vertex] + weight < distance[neighbour]:
+                    print("Graph contains a negative-weight cycle")
+                    return None
+    
+        return distance, predecessor
+    \end{code}
+    This function calculates the shortest paths from a single source to all other vertices and detects negative weight cycles if any exist.
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered from this chapter this week is \textbf{Section 24.2: Single-Source Shortest Paths In Directed Acyclic Graphs}.
+
+\begin{notes}{Section 24.2: Single-Source Shortest Paths In Directed Acyclic Graphs}
+    \subsection*{Single-Source Shortest Paths in Directed Acyclic Graphs (DAGs)}
+
+    Finding single-source shortest paths in Directed Acyclic Graphs (DAGs) involves calculating the shortest path from a given source vertex to all other vertices in a DAG. Since DAGs do not contain 
+    cycles, they allow for more efficient shortest path algorithms compared to general graphs. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    
+    \begin{itemize}
+        \item The algorithm exploits the DAG property that allows for topological sorting of its vertices.
+        \item It starts by performing a topological sort of the graph to order the vertices linearly.
+        \item The vertices are then processed in topological order, and for each vertex, the distances to its adjacent vertices are updated (relaxed) if a shorter path is found.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    
+    The algorithm can be summarized in the following steps:
+    \begin{enumerate}
+        \item Perform a topological sort of the DAG.
+        \item Initialize distances from the source to all vertices as infinite, and the distance to the source itself as 0.
+        \item Process each vertex in the topologically sorted order. For each vertex, update the distances to its adjacent vertices.
+        \item After all vertices are processed, the distance array contains the shortest distances from the source vertex to all other vertices.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item This approach is used in scheduling problems where tasks depend on prior tasks (dependencies can be represented as a DAG).
+        \item It is also useful in calculating shortest paths in networks that inherently do not contain cycles, such as dependency graphs in software projects.
+        \item Finding shortest paths in DAGs can aid in optimization problems in various fields, including bioinformatics and compiler optimization.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Single-Source Shortest Paths in DAGs]
+    
+    Below is a Python example demonstrating how to find single-source shortest paths in DAGs.
+    
+    \begin{code}[Python]
+    def shortest_path_dag(graph, source):
+        top_order = topological_sort(graph)
+        distance = {vertex: float('infinity') for vertex in graph}
+        distance[source] = 0
+    
+        for vertex in top_order:
+            for neighbour, weight in graph[vertex]:
+                if distance[vertex] + weight < distance[neighbour]:
+                    distance[neighbour] = distance[vertex] + weight
+    
+        return distance
+    
+    def topological_sort(graph):
+        visited = set()
+        stack = []
+    
+        def dfs(vertex):
+            visited.add(vertex)
+            for neighbour, _ in graph[vertex]:
+                if neighbour not in visited:
+                    dfs(neighbour)
+            stack.insert(0, vertex)
+    
+        for vertex in graph:
+            if vertex not in visited:
+                dfs(vertex)
+    
+        return stack
+    \end{code}
+    This function demonstrates calculating the shortest paths from a single source in a DAG by utilizing a topological sort followed by linear relaxation of edges.
+    \end{highlight}    
+\end{notes}
+
+The last section that is being covered in this chapter this week is \textbf{Section 24.3: Dijkstra's Algorithm}.
+
+\begin{notes}{Section 24.3: Dijkstra's Algorithm}
+    \subsection*{Dijkstra's Algorithm}
+
+    Dijkstra's Algorithm is a popular method for finding the shortest paths from a single source vertex to all other vertices in a graph with non-negative edge weights. It is known for its efficiency 
+    in computing shortest paths on graphs without negative weight edges. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    
+    \begin{itemize}
+        \item The algorithm maintains a set of vertices whose shortest distance from the source is already determined and a set of vertices whose shortest distance is not yet determined.
+        \item Initially, the distance to the source vertex is set to 0 and to infinity for all other vertices.
+        \item At each step, the vertex with the minimum distance from the set of undetermined vertices is selected, its distance is finalized, and the distances to its adjacent vertices are updated.
+        \item The process repeats until the shortest distances to all vertices are determined.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    
+    The steps for Dijkstra's algorithm are as follows:
+    \begin{enumerate}
+        \item Initialize distances: Set the distance to the source vertex to 0 and all other vertices to infinity.
+        \item While there are vertices with undetermined shortest distances:
+            \begin{enumerate}
+                \item Select the vertex with the minimum distance (let's call it the current vertex).
+                \item Update the distances to the adjacent vertices of the current vertex.
+                \item Finalize the distance of the current vertex.
+            \end{enumerate}
+        \item The algorithm terminates when the shortest distances to all vertices are determined.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item Dijkstra's Algorithm is widely used in network routing protocols to find the shortest path between nodes in a network.
+        \item It is applied in geographical mapping to find the shortest path between geographical locations.
+        \item This algorithm also finds its use in various fields such as telecommunications, transport, and game development for pathfinding and shortest path calculations.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Dijkstra's Algorithm]
+    
+    Below is a Python implementation of Dijkstra's Algorithm.
+    
+    \begin{code}[Python]
+    import heapq
+    
+    def dijkstra(graph, start):
+        distances = {vertex: float('infinity') for vertex in graph}
+        distances[start] = 0
+        priority_queue = [(0, start)]
+    
+        while priority_queue:
+            current_distance, current_vertex = heapq.heappop(priority_queue)
+    
+            if current_distance > distances[current_vertex]:
+                continue
+    
+            for neighbour, weight in graph[current_vertex].items():
+                distance = current_distance + weight
+    
+                if distance < distances[neighbour]:
+                    distances[neighbour] = distance
+                    heapq.heappush(priority_queue, (distance, neighbour))
+    
+        return distances
+    \end{code}
+    This function calculates the shortest paths from a single source to all other vertices in a graph using Dijkstra's Algorithm, employing a priority queue to efficiently select the next vertex to process.
+    \end{highlight}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 24.4: Difference Constraints And Shortest Paths}.
+
+\begin{notes}{Section 24.4: Difference Constraints And Shortest Paths}
+    \subsection*{Difference Constraints And Shortest Paths}
+
+    Difference constraints are a form of constraints used in optimization problems that can be expressed as inequalities involving differences between variables. These constraints can be efficiently 
+    solved using shortest path algorithms in a graph, particularly by transforming the constraints into a graph and applying a shortest path algorithm such as Bellman-Ford, due to its ability to 
+    handle negative weights. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    
+    \begin{itemize}
+        \item The system of difference constraints is represented as a directed graph where each variable is a vertex.
+        \item An inequality of the form $x_j - x_i \leq b_k$ translates to an edge from vertex $i$ to vertex $j$ with weight $b_k$.
+        \item A source vertex is added, connected to all other vertices with edges of weight 0, to facilitate finding shortest paths from this source to all vertices.
+        \item The Bellman-Ford algorithm is then applied to find the shortest paths, which effectively solves the system of difference constraints.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    
+    To solve a system of difference constraints, follow these steps:
+    \begin{enumerate}
+        \item Construct a directed graph based on the given constraints, adding a source vertex connected to all other vertices with zero-weight edges.
+        \item Apply the Bellman-Ford algorithm using the source vertex as the start. If the algorithm detects a negative cycle, the constraints are inconsistent.
+        \item If there are no negative cycles, the shortest path distances from the source to each vertex represent the solution to the system of constraints.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item Difference constraints are widely used in scheduling problems where tasks have constraints relative to each other.
+        \item They are also applied in circuit layout design, resource allocation, and various types of optimization problems where relationships between variables can be represented as inequalities.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Solving Difference Constraints]
+    
+    While a direct Python example for solving a generic system of difference constraints is too specific to the system in question, the approach involves:
+    \begin{enumerate}
+        \item Modeling the constraints as a graph.
+        \item Applying the Bellman-Ford algorithm to find shortest paths.
+    \end{enumerate}
+    This process finds feasible solutions to the difference constraints if they exist, based on the transformation of constraints into a shortest path problem.
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 25: All-Pairs Shortest Paths}. The first section that is being covered from this chapter this week is \textbf{Section 25.1: Shortest Paths And Matrix Multiplication}.
+
+\begin{notes}{Section 25.1: Shortest Paths And Matrix Multiplication}
+    \subsection*{Shortest Paths And Matrix Multiplication}
+
+    The concept of finding all-pairs shortest paths through matrix multiplication leverages the algebraic structure of matrices to efficiently compute the shortest paths between all pairs of vertices 
+    in a graph. This approach is particularly powerful for dense graphs and is based on the idea that the weight of the shortest path between two vertices can be computed through a series of matrix 
+    multiplications. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    
+    \begin{itemize}
+        \item The graph is represented as a weight matrix $W$, where $W_{ij}$ is the weight of the edge from vertex $i$ to vertex $j$. If there is no edge between $i$ and $j$, $W_{ij}$ is set to $\infty$, 
+        except $W_{ii}=0$ for all $i$.
+        \item The algorithm iteratively computes matrix $D^{(k)}$, where $D^{(k)}_{ij}$ represents the shortest path from vertex $i$ to vertex $j$ using only vertices $\{1, 2, ..., k\}$ as intermediate 
+        vertices in the path.
+        \item Initially, $D^{(0)} = W$. Then, for each $k$ from 1 to $n$, $D^{(k)}$ is computed based on $D^{(k-1)}$ by considering whether a path through vertex $k$ is shorter than the previously known paths.
+        \item The final matrix $D^{(n)}$ contains the lengths of the shortest paths between all pairs of vertices.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    
+    To compute all-pairs shortest paths using matrix multiplication, follow these steps:
+    \begin{enumerate}
+        \item Initialize $D^{(0)} = W$.
+        \item For $k = 1$ to $n$ (where $n$ is the number of vertices):
+            \begin{enumerate}
+                \item Compute $D^{(k)}$ from $D^{(k-1)}$ where $D^{(k)}_{ij} = \min(D^{(k-1)}_{ij}, D^{(k-1)}_{ik} + D^{(k-1)}_{kj})$.
+            \end{enumerate}
+        \item After completing the iterations, $D^{(n)}$ contains the shortest path distances between all pairs of vertices.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item This method is valuable in network analysis, graph theory research, and operations research, especially in dense graphs where direct computation of paths is computationally intensive.
+        \item It is also applied in computational geometry, for example, in finding the shortest path within geometric figures represented as graphs.
+    \end{itemize}    
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 25.2: The Floyd-Warshall Algorithm}.
+
+\begin{notes}{Section 25.2: The Floyd-Warshall Algorithm}
+    \subsection*{The Floyd-Warshall Algorithm}
+
+    The Floyd-Warshall algorithm is a dynamic programming technique for finding the shortest paths between all pairs of vertices in a weighted graph. This algorithm can handle graphs with positive 
+    or negative edge weights but cannot handle graphs with negative cycles. It is particularly well-suited for dense graphs or graphs where we need to find shortest paths between all pairs of 
+    vertices. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    
+    \begin{itemize}
+        \item The algorithm iteratively improves the estimate of the shortest path between all pairs of vertices through a series of intermediate vertices.
+        \item It initializes the shortest paths as direct paths between all pairs or infinity if no direct path exists.
+        \item For each vertex $k$, the algorithm updates the shortest path $d[i][j]$ between each pair of vertices $(i, j)$ considering $k$ as an intermediate vertex. This update checks if 
+        $d[i][k] + d[k][j] < d[i][j]$ and updates $d[i][j]$ accordingly.
+        \item After considering all vertices as intermediate points, the matrix $d$ contains the lengths of the shortest paths between all pairs of vertices.
+    \end{itemize}
+    
+    \subsubsection*{Steps:}
+    
+    The steps for the Floyd-Warshall algorithm are as follows:
+    \begin{enumerate}
+        \item Initialize the shortest path estimates using the adjacency matrix of the graph, where the weight of the edge $(i, j)$ is used as the initial distance from $i$ to $j$, and it's set to 
+        $\infty$ if there is no direct edge between $i$ and $j$.
+        \item For each vertex $k$, attempt to update the shortest path $d[i][j]$ for all pairs of vertices $(i, j)$ by checking if a path through $k$ is shorter.
+        \item Repeat step 2 for every vertex $k$ in the graph.
+        \item After completing the iterations, the matrix contains the shortest distances between all pairs.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item The Floyd-Warshall algorithm is widely used in network routing to find the shortest path in a network.
+        \item It's also utilized in algorithms that require knowing the shortest distances between all pairs of vertices upfront, such as in some clustering and network analysis algorithms.
+        \item This approach can serve in geographic information systems (GIS) to find the shortest paths across a network of roads or pathways.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: The Floyd-Warshall Algorithm]
+    
+    Below is a Python implementation of the Floyd-Warshall algorithm.
+    
+    \begin{code}[Python]
+    def floyd_warshall(weights):
+        n = len(weights)
+        for k in range(n):
+            for i in range(n):
+                for j in range(n):
+                    weights[i][j] = min(weights[i][j], weights[i][k] + weights[k][j])
+        return weights
+    \end{code}
+    This function calculates the shortest paths between all pairs of vertices in a weighted graph using the Floyd-Warshall algorithm, represented as a matrix of edge weights.
+    \end{highlight}    
+\end{notes}

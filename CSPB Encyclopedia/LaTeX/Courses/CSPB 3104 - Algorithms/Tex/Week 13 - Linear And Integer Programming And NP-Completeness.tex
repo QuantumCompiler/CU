@@ -1,0 +1,498 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Linear/Integer Programming And NP-Completeness}
+\renewcommand{\SectionTitle}{Linear/Integer Programming And NP-Completeness}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is from, \Textbook:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir Chapter 29.1 - Standard And Slack Forms.pdf}{Chapter 29.1 - Standard And Slack Forms}
+    \item \pdflink{\ReadMatDir Chapter 29.2 - Formulating Problems As Linear Programs.pdf}{Chapter 29.2 - Formulating Problems As Linear Programs}
+    \item \pdflink{\ReadMatDir Chapter 29.3 - The Simplex Algorithm.pdf}{Chapter 29.3 - The Simplex Algorithm}
+    \item \pdflink{\ReadMatDir Chapter 34.1 - Polynomial Time.pdf}{Chapter 34.1 - Polynomial Time}
+    \item \pdflink{\ReadMatDir Chapter 34.2 - Polynomial-Time Verification.pdf}{Chapter 34.2 - Polynomial-Time Verification}
+    \item \pdflink{\ReadMatDir Chapter 34.3 - NP-Completeness And Reducibility.pdf}{Chapter 34.3 - NP-Completeness And Reducibility}
+    \item \pdflink{\ReadMatDir Chapter 34.4 - NP-Completeness Proofs.pdf}{Chapter 34.4 - NP-Completeness Proofs}
+    \item \pdflink{\ReadMatDir Chapter 34.5 - NP-Completeness Problems.pdf}{Chapter 34.5 - NP-Completeness Problems}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=nKUEfTANSrc}{Linear Programming: Introduction}{13}
+    \item \lecture{https://www.youtube.com/watch?v=Zn5xxdjd7vU}{Linear Programming: Visualizing Solutions}{12}
+    \item \lecture{https://www.youtube.com/watch?v=6lpKCkFs-XE}{Linear Programming: Overview Of Algorithms}{13}
+    \item \lecture{https://www.youtube.com/watch?v=pxTZ-w4MiGs}{Linear Vs. Integer Programming}{12}
+    \item \lecture{https://www.youtube.com/watch?v=nDTqUHwIZVk}{Decision Problems, Languages And Decidability}{36}
+    \item \lecture{https://www.youtube.com/watch?v=vZYEgK0gbmE}{Reductions And NP Completeness}{37}
+    \item \lecture{https://www.youtube.com/watch?v=eCBvv7YWQ_0}{Nondeterministic Polynomial Time (NP)}{29}
+    \item \lecture{https://www.youtube.com/watch?v=uGAEeYwCGIw}{Some NP Complete Problems}{25}
+    \item \lecture{https://www.youtube.com/watch?v=wA-uZZNYnN8}{Polynomial Time Algorithms}{29}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203104%20-%20Algorithms/CSPB%203104%20-%20Assignments/CSPB%203104%20-%20Problem%20Sets/CSPB%203104%20-%20Problem%20Set%2010%20-%20Linear%20And%20Integer%20Programming%20And%20NP-Completeness}{Problem Set 10 - Linear/Integer Programming And NP-Completeness}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 11.pdf}{Quiz 11}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 29: Linear Programming}.
+
+\begin{notes}{Chapter 29: Linear Programming}
+    \subsection*{Linear Programming (LP)}
+
+    Linear Programming (LP) is a mathematical method for determining a way to achieve the best outcome (such as maximum profit or lowest cost) in a given mathematical model and is represented by 
+    linear relationships. It is one of the simplest ways to perform optimization. LP is used in various fields such as business, economics, and engineering to maximize or minimize resource allocation. \vspace*{1em}
+    
+    \subsubsection*{Definition and Basics:}
+    
+    Linear programming involves:
+    \begin{itemize}
+        \item A linear function to be maximized or minimized, commonly known as the objective function.
+        \item System constraints represented by linear inequalities or equations.
+        \item Non-negativity restrictions where the decision variables must be greater than or equal to zero.
+    \end{itemize}
+    
+    \subsubsection*{Mathematical Formulation:}
+    
+    The general form of a linear programming problem is given by:
+    \begin{itemize}
+        \item Objective Function: Maximize (or Minimize) $z = c_1x_1 + c_2x_2 + \ldots + c_nx_n$
+        \item Subject to the constraints:
+        \begin{align*}
+        a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n & \leq b_1 \\
+        a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n & \leq b_2 \\
+        \vdots \\
+        a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n & \leq b_m \\
+        \end{align*}
+        \item And non-negativity constraints:
+        \begin{align*}
+        x_1, x_2, \ldots, x_n \geq 0
+        \end{align*}
+    \end{itemize}
+    
+    \subsubsection*{Common Algorithms:}
+    
+    Several algorithms can solve LP problems, including:
+    \begin{enumerate}
+        \item The Simplex Method: This is the most widely used method for solving linear programming problems efficiently. It iterates through feasible solutions at the vertices of the feasible region until the best value is found.
+        \item Interior-Point Methods: These are more modern algorithms that approach the solution from within the feasible region and can be faster than the Simplex method for large problems.
+    \end{enumerate}
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item LP is used in manufacturing to determine the maximum production levels for multiple products with different profit contributions and resource requirements.
+        \item In transportation, it helps in finding the most efficient dispatching of trucks, planes, or ships that minimizes costs or maximizes efficiency.
+        \item It is also used in finance and budgeting to optimize investment portfolios or advertising media mixes.
+    \end{itemize}    
+\end{notes}
+
+The first section that is covered from this chapter this week is \textbf{Section 29.1: Standard And Slack Forms}.
+
+\begin{notes}{Section 29.1: Standard And Slack Forms}
+    \subsection*{Standard and Slack Forms}
+
+    Standard and Slack Forms are two ways of representing linear programming problems that facilitate the application of algorithms like the Simplex Method for finding optimal solutions. These forms 
+    convert all constraints into equalities, allowing the use of linear algebra techniques in the solution process. \vspace*{1em}
+    
+    \subsubsection*{Standard Form:}
+    
+    The standard form of a linear programming problem is where all the constraints are expressed as equalities, and all variables are non-negative. Here is how a linear programming problem is represented in standard form:
+    
+    \begin{itemize}
+        \item Objective Function: Maximize (or Minimize) $z = c_1x_1 + c_2x_2 + \ldots + c_nx_n$
+        \item Subject to the constraints:
+        \begin{align*}
+        a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n &= b_1 \\
+        a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n &= b_2 \\
+        \vdots \\
+        a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n &= b_m \\
+        \end{align*}
+        \item And non-negativity constraints:
+        \begin{align*}
+        x_1, x_2, \ldots, x_n \geq 0
+        \end{align*}
+    \end{itemize}
+    
+    \subsubsection*{Slack Form:}
+    
+    Slack form is a variation of the standard form used primarily within the Simplex Method. In slack form, slack variables are added to convert inequalities into equalities. This allows the algorithm 
+    to work within a consistent framework of variable dimensions.
+    
+    \begin{itemize}
+        \item From the general inequality constraints $Ax \leq b$, we add a slack variable $s_i$ to each inequality to convert it into an equality:
+        \begin{align*}
+        a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n + s_1 &= b_1, \quad s_1 \geq 0\\
+        a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n + s_2 &= b_2, \quad s_2 \geq 0\\
+        \vdots \\
+        a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n + s_m &= b_m, \quad s_m \geq 0\\
+        \end{align*}
+        \item These slack variables $s_1, s_2, \ldots, s_m$ are added to ensure that the constraints form a feasible solution space.
+    \end{itemize}
+    
+    \subsubsection*{Conversion from Standard to Slack Form:}
+    
+    Conversion involves the addition of slack variables to inequalities to turn them into equalities. For instance, if a constraint is $x_1 + 2x_2 \leq 10$, it is rewritten as $x_1 + 2x_2 + s = 10$ 
+    with $s \geq 0$ being the slack variable.
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item Both forms are crucial in computational solutions of linear programs. Standard form provides a unified way to write linear programs, which simplifies theoretical analysis.
+        \item Slack form is particularly useful in the implementation of the Simplex algorithm, which requires all program constraints to be in equality form with non-negative variables.
+    \end{itemize}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 29.2: Formulating Problems As Linear Programs}.
+
+\begin{notes}{Section 29.2: Formulating Problems As Linear Programs}
+    \subsection*{Formulating Problems As Linear Programs}
+
+    Formulating problems as Linear Programs (LPs) involves translating a real-world scenario or decision-making process into a mathematical model that meets the structure required for linear programming. 
+    This process includes identifying variables, constraints, and an objective function that are all linear. \vspace*{1em}
+    
+    \subsubsection*{Steps to Formulate a Linear Program:}
+    
+    The process of formulating a linear programming problem typically involves the following steps:
+    
+    \begin{enumerate}
+        \item \textbf{Define the variables:} Clearly define the decision variables that represent the quantities to be determined.
+        \item \textbf{Formulate the objective function:} Establish a linear objective function to maximize or minimize. This function usually represents cost, profit, or some other metric to optimize.
+        \item \textbf{Establish the constraints:} Set up constraints based on the limitations or requirements of the problem. These constraints must also be linear equations or inequalities.
+        \item \textbf{Ensure non-negativity:} Include non-negativity constraints for all variables, meaning that all decision variables should be greater than or equal to zero.
+    \end{enumerate}
+
+    \begin{highlight}[Company Production Problem]
+        Consider a company that manufactures two types of products using two different resources. The goal is to maximize profit given the resource constraints.
+        
+        \begin{itemize}
+            \item Variables:
+            \begin{align*}
+            x_1 &= \text{Number of units of Product 1} \\
+            x_2 &= \text{Number of units of Product 2}
+            \end{align*}
+            \item Objective Function:
+            \begin{align*}
+            \text{Maximize } z = 20x_1 + 30x_2
+            \end{align*}
+            This represents maximizing the total profit, where Product 1 contributes \$20 per unit, and Product 2 contributes \$30 per unit.
+            \item Constraints:
+            \begin{align*}
+            3x_1 + 2x_2 &\leq 18 \quad \text{(Resource 1)} \\
+            2x_1 + 4x_2 &\leq 16 \quad \text{(Resource 2)} \\
+            x_1, x_2 &\geq 0
+            \end{align*}
+            These constraints ensure that the use of Resource 1 and Resource 2 does not exceed the available amounts.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Considerations:}
+    
+    \begin{itemize}
+        \item It is crucial to ensure that all relationships (objective and constraints) are linear. This is what defines an LP and allows the use of linear programming techniques.
+        \item Variables must accurately represent all dimensions of the problem to avoid oversimplification or inaccurate modeling.
+        \item The choice between maximizing or minimizing the objective function should reflect the ultimate goal of the problem-solving scenario.
+    \end{itemize}
+    
+    \subsubsection*{Applications:}
+    
+    Linear programming can be applied to a wide range of problems, including:
+    \begin{itemize}
+        \item Resource allocation tasks, such as budgeting and logistics.
+        \item Scheduling problems, including workforce and manufacturing schedules.
+        \item Blending problems, where components must be combined in optimal proportions (e.g., in food production or chemical manufacturing).
+    \end{itemize}    
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 29.3: The Simplex Algorithm}.
+
+\begin{notes}{Section 29.3: The Simplex Algorithm}
+    \subsection*{The Simplex Algorithm}
+
+    The Simplex Algorithm is a popular method for solving linear programming problems that uses an iterative process to move from one vertex of the feasible region to an adjacent vertex with a 
+    non-decreasing value of the objective function, eventually reaching the optimal solution. \vspace*{1em}
+    
+    \subsubsection*{Algorithm Overview:}
+    
+    The Simplex Algorithm, developed by George Dantzig in 1947, is a cornerstone in the field of operational research for solving optimization problems in linear programming.
+    
+    \begin{itemize}
+        \item The algorithm involves iterations with two main operations: pivot operations that move to a better adjacent feasible solution, and checking for optimality.
+        \item It requires the linear programming problem to be in standard form and typically uses the slack form during the computation.
+    \end{itemize}
+    
+    \subsubsection*{Steps of the Simplex Algorithm:}
+    
+    The key steps in the Simplex Algorithm are as follows:
+    \begin{enumerate}
+        \item \textbf{Initialization:} Convert the LP problem into slack form and identify a basic feasible solution (BFS).
+        \item \textbf{Checking for Optimality:} Determine if the current BFS is optimal by checking if there are any negative coefficients in the objective function row. If not, the current solution 
+        is optimal; otherwise, proceed to the next step.
+        \item \textbf{Pivot Operation:} Select a non-basic variable to enter the basis and a basic variable to leave the basis, based on the objective to increase (or decrease) the value of the 
+        objective function. This step is often done using the pivot rule, such as the smallest coefficient rule or the largest increase rule.
+        \item \textbf{Update Basis:} Perform row operations to update the tableau to reflect the new basis. This involves Gaussian elimination to make the entering variable a basic variable.
+        \item \textbf{Iteration:} Repeat the checking and pivot operations until the optimal solution is found.
+    \end{enumerate}
+    
+    \subsubsection*{Computational Considerations:}
+    
+    \begin{itemize}
+        \item The efficiency of the Simplex Algorithm can significantly vary based on the choice of pivoting rule; however, in practice, it performs very efficiently on most problems.
+        \item While the worst-case computational time can be exponential, this is rare, and the Simplex Algorithm is polynomial on average for random problems.
+    \end{itemize}
+    
+    \subsubsection*{Applications:}
+    
+    \begin{itemize}
+        \item The Simplex Algorithm is extensively used in industries for optimizing resources, maximizing profits, minimizing costs, and improving operational efficiency.
+        \item It is applicable in various sectors including manufacturing, transportation, finance, and any area where resource allocation is involved under constraints.
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Simplex Algorithm]
+    
+    Below is a conceptual outline of implementing the Simplex Algorithm in Python.
+    
+    \begin{code}[Python]
+    def simplex_algorithm(A, b, c):
+        # A is the matrix of coefficients, b is the right-hand side vector,
+        # c is the coefficients of the objective function
+        tableau = initialize_tableau(A, b, c)
+        while not is_optimal(tableau):
+            pivot_column = select_pivot_column(tableau)
+            pivot_row = select_pivot_row(tableau, pivot_column)
+            pivot(tableau, pivot_row, pivot_column)
+            update_tableau(tableau, pivot_row, pivot_column)
+        return get_solution(tableau)
+    \end{code}
+    This code skeleton outlines the main steps of the Simplex Algorithm, focusing on setup, iteration, and solution extraction phases, and it needs detailed functions to handle each specific step.
+    \end{highlight}    
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 34: NP-Completeness}.
+
+\begin{notes}{Chapter 34: NP-Completeness}
+    \subsection*{NP-Completeness}
+
+    NP-Completeness is a fundamental concept in theoretical computer science that helps classify computational problems according to their inherent difficulty. This concept is crucial in understanding 
+    the limits of what problems can be efficiently solved using algorithms. \vspace*{1em}
+    
+    \subsubsection*{Introduction to Complexity Classes:}
+    
+    NP-Completeness deals with the complexity classes NP, P, and NP-complete. Here are the basic definitions:
+    
+    \begin{itemize}
+        \item \textbf{P (Polynomial Time):} This class includes those problems that can be solved in polynomial time, i.e., the amount of time required to find a solution can be expressed as a polynomial 
+        function of the size of the input data.
+        \item \textbf{NP (Nondeterministic Polynomial Time):} This class consists of those problems for which a given solution can be verified in polynomial time. Note that while all problems in P are 
+        also in NP, whether all NP problems are in P is an unresolved question known as the P vs NP problem.
+        \item \textbf{NP-Complete:} This is a subset of NP that are amongst the hardest problems in NP. A problem is NP-Complete if every problem in NP can be reduced to it in polynomial time.
+    \end{itemize}
+    
+    \subsubsection*{Understanding Reductions:}
+    
+    Reductions are a way to show that a problem $X$ is at least as hard as a problem $Y$. If $Y$ can be "reduced" to $X$ (written as $Y \leq_p X$), and $X$ can be solved in polynomial time, then $Y$ 
+    can also be solved in polynomial time.
+    
+    \begin{itemize}
+        \item A common type of reduction used in proving NP-Completeness is the polynomial-time reduction.
+        \item To prove a problem is NP-Complete, one must show it is in NP, and that every problem in NP can be reduced to this problem in polynomial time.
+    \end{itemize}
+    
+    \subsubsection*{Significant Theorems and Concepts:}
+    
+    \begin{itemize}
+        \item \textbf{Cook-Levin Theorem:} This theorem states that the Boolean satisfiability problem (SAT) is NP-Complete, making it the first known NP-Complete problem.
+        \item \textbf{NP-Hard:} Problems that are at least as hard as the hardest problems in NP but are not necessarily in NP themselves. These problems do not need to have a polynomial-time solution verification.
+    \end{itemize}
+    
+    \subsubsection*{Practical Implications and Applications:}
+    
+    Understanding NP-Completeness has practical implications in various fields:
+    
+    \begin{itemize}
+        \item It helps in determining the boundaries of feasible computational solutions, guiding researchers and practitioners in whether to look for exact, approximate, or heuristic solutions.
+        \item In areas like cryptography, scheduling, and network design, knowing whether a problem is NP-Complete can influence the approach to problem-solving (e.g., using approximate algorithms instead of exact ones).
+    \end{itemize}
+    
+    \subsubsection*{Example Problems:}
+    
+    Some classical NP-Complete problems include:
+    \begin{itemize}
+        \item Traveling Salesman Problem (TSP)
+        \item Graph Coloring
+        \item Knapsack Problem
+        \item Hamiltonian Cycle Problem
+    \end{itemize}
+    
+    These problems are widely studied not only for their theoretical importance but also for their real-world applications in optimizing tasks, resource allocation, and planning under constraints.    
+\end{notes}
+
+The first section that is being covered from this chapter this week is \textbf{Section 34.1: Polynomial Time}.
+
+\begin{notes}{Section 34.1: Polynomial Time}
+    \subsection*{Polynomial Time}
+
+    Polynomial time is a term used in computational complexity theory to describe the class of problems known as "P" or "Polynomial Time Problems." These are problems that can be solved by an algorithm 
+    whose running time grows polynomially with the size of the input. \vspace*{1em}
+    
+    \subsubsection*{Definition and Characteristics:}
+    
+    \begin{itemize}
+        \item A problem is said to be in polynomial time if there exists an algorithm that solves the problem and the execution time of the algorithm is a polynomial function of the size of the input 
+        for the algorithm.
+        \item Formally, a problem is in class P if it can be solved in time $\mathcal{O}(n^k)$ for some non-negative integer $k$, where $n$ is the size of the input.
+    \end{itemize}
+    
+    \subsubsection*{Examples of Polynomial Time Algorithms:}
+    
+    Examples of problems that can be solved in polynomial time include:
+    \begin{itemize}
+        \item Determining if a number is prime (can be done in $\mathcal{O}(n^6)$ time using the AKS primality test).
+        \item Finding the greatest common divisor (GCD) of two numbers using the Euclidean algorithm.
+        \item Sorting a list of numbers using Merge Sort or Quick Sort.
+    \end{itemize}
+    
+    \subsubsection*{Importance of Polynomial Time:}
+    
+    \begin{itemize}
+        \item Polynomial time algorithms are considered efficient and feasible for practical use because their running times grow at a manageable rate as the size of the input increases.
+        \item The class P is central in the field of complexity theory, particularly in the study of NP-completeness. The famous "P vs NP" problem asks whether every problem whose solution can be 
+        verified in polynomial time can also be solved in polynomial time.
+    \end{itemize}
+    
+    \subsubsection*{Conceptual Understanding:}
+    
+    \begin{itemize}
+        \item The notion of polynomial time relates to worst-case running time—it considers the maximum time needed to solve the problem across all possible inputs of a particular size.
+        \item This contrasts with "exponential time," where the running time grows exponentially with the input size, which is typically not feasible for large inputs.
+    \end{itemize}
+    
+    \subsubsection*{Theoretical Implications:}
+    
+    \begin{itemize}
+        \item Polynomial time serves as a benchmark for algorithm efficiency. Algorithms not bounded by polynomial time are usually impractical for large inputs due to their high computational demands.
+        \item Understanding which problems can be solved in polynomial time helps in classifying computational problems and guides researchers in developing more efficient algorithms.
+    \end{itemize}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 34.2: Polynomial-Time Verification}.
+
+\begin{notes}{Section 34.2: Polynomial-Time Verification}
+    \subsection*{Polynomial-Time Verification}
+
+    Polynomial-Time Verification is a crucial concept in computational complexity theory that pertains to the class of problems known as NP, or "Nondeterministic Polynomial Time." This class includes 
+    problems for which a given solution can be verified quickly (in polynomial time), even if finding the solution might be slow. \vspace*{1em}
+    
+    \subsubsection*{Definition and Fundamentals:}
+    
+    \begin{itemize}
+        \item A problem is in NP (Nondeterministic Polynomial Time) if given a "certificate" or a proposed solution, the correctness of the certificate can be verified in polynomial time with respect 
+        to the size of the input.
+        \item This does not necessarily mean that a solution can be found in polynomial time, only that if a potential solution is provided, its validity can be confirmed or denied quickly.
+    \end{itemize}
+
+    \begin{highlight}[Examples of Polynomial-Time Verification]
+        Common scenarios where solutions can be verified in polynomial time include:
+        \begin{itemize}
+            \item \textbf{Boolean Satisfiability Problem (SAT):} Given a Boolean formula and a truth assignment for its variables, verifying whether this assignment satisfies the formula can be done 
+            in linear time, which is polynomial.
+            \item \textbf{Graph Coloring:} Checking if a given coloring of a graph (where colors are assigned to vertices) is valid (no adjacent vertices share the same color) can also be completed 
+            in polynomial time.
+            \item \textbf{Hamiltonian Path Problem:} Given a path in a graph, verifying whether it is a Hamiltonian path (visits every vertex exactly once) can be achieved in polynomial time.
+        \end{itemize}
+    \end{highlight}
+    
+    
+    \subsubsection*{Importance of Polynomial-Time Verification:}
+    
+    \begin{itemize}
+        \item This property is what defines the complexity class NP. It is significant because it includes many important problems for which no polynomial-time solving algorithm is known, but whose 
+        solutions can be verified quickly.
+        \item It helps in understanding computational feasibility when direct solving is impractical or unknown.
+    \end{itemize}
+    
+    \subsubsection*{Role in NP-Completeness:}
+    
+    \begin{itemize}
+        \item To prove that a problem is NP-Complete, it must first be shown that it belongs to NP. This is done by demonstrating that any proposed solution can be verified in polynomial time.
+        \item After establishing that a problem is in NP, it must be shown that it is as hard as any problem in NP, usually by a polynomial-time reduction from another NP-Complete problem.
+    \end{itemize}
+    
+    \subsubsection*{Theoretical and Practical Implications:}
+    
+    \begin{itemize}
+        \item Polynomial-time verification allows researchers to use heuristic and approximation algorithms to find potential solutions to complex problems and then verify their correctness efficiently.
+        \item In practical applications, especially in fields like cryptography and network security, being able to verify a solution quickly is often more critical than being able to find one efficiently.
+    \end{itemize}    
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 34.3: NP-Completeness And Reducibility}.
+
+\begin{notes}{Section 34.3: NP-Completeness And Reducibility}
+    \subsection*{NP-Completeness and Reducibility}
+
+    NP-Completeness and Reducibility are central concepts in computational complexity theory that provide a framework for classifying and understanding the difficulty of various computational problems. 
+    These concepts are crucial for proving whether problems in NP can be considered as hard as the hardest problems in NP, known as NP-complete problems. \vspace*{1em}
+    
+    \subsubsection*{Defining NP-Completeness:}
+    
+    \begin{itemize}
+        \item A problem is defined as NP-complete if it is both in NP and as hard as any problem in NP. This means that any problem in NP can be reduced to this problem in polynomial time.
+        \item The first problem proven to be NP-complete was the Boolean satisfiability problem (SAT), via the Cook-Levin theorem.
+    \end{itemize}
+    
+    \subsubsection*{Understanding Reducibility:}
+    
+    Reducibility is a method used to compare the difficulty of computational problems. A problem $P$ is reducible to a problem $Q$ (denoted as $P \leq_p Q$) if an instance of $P$ can be transformed 
+    into an instance of $Q$ in polynomial time.
+    
+    \begin{itemize}
+        \item \textbf{Polynomial-Time Reduction:} If problem $A$ can be reduced to problem $B$ in polynomial time and $B$ can be solved in polynomial time, then $A$ can also be solved in polynomial time.
+        \item This type of reduction is used to prove NP-completeness by showing that a known NP-complete problem can be reduced to the problem in question in polynomial time.
+    \end{itemize}
+    
+    \subsubsection*{Steps to Prove NP-Completeness:}
+    
+    To prove that a problem is NP-complete, follow these steps:
+    \begin{enumerate}
+        \item Show that the problem is in NP. This involves demonstrating that a given solution can be verified in polynomial time.
+        \item Choose a known NP-complete problem and reduce it to the problem in question, ensuring that the reduction process itself runs in polynomial time.
+        \item Demonstrate that this reduction is correct and preserves the problem structure, implying that solving the reduced problem would solve the original NP-complete problem.
+    \end{enumerate}
+    
+    \subsubsection*{Significance of Reducibility:}
+    
+    \begin{itemize}
+        \item Reducibility is important because it helps classify problems based on their computational complexity. By using reductions, complexity theorists can create a hierarchy of problems based on their difficulty.
+        \item It also assists in identifying whether new problems are NP-complete, helping computer scientists understand whether these problems are likely to have polynomial-time solutions or not.
+    \end{itemize}
+    
+    \subsubsection*{Applications and Implications:}
+    
+    \begin{itemize}
+        \item Understanding NP-completeness and reducibility is vital for fields such as cryptography, algorithm design, and artificial intelligence, where decision-making processes depend heavily on problem complexity.
+        \item In practice, knowing that a problem is NP-complete may lead to the focus on heuristic or approximation algorithms rather than exact solutions, especially in real-world applications where 
+        solutions need to be found within reasonable time constraints.
+    \end{itemize}    
+\end{notes}

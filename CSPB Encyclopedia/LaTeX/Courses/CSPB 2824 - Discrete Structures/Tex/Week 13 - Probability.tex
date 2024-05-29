@@ -1,0 +1,181 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Probability}
+\renewcommand{\SectionTitle}{Probability}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week is from, \Textbook:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir Chapter 7.1 - An Introduction To Discrete Probability.pdf}{Chapter 7.1 - An Introduction To Discrete Probability}
+    \item \pdflink{\ReadMatDir Chapter 7.2 - Probability Theory.pdf}{Chapter 7.2 - Probability Theory}
+    \item \pdflink{\ReadMatDir Chapter 7.3 - Bayes' Theorem.pdf}{Chapter 7.3 - Bayes' Theorem}
+    \item \pdflink{\ReadMatDir Chapter 7.4 - Expected Value And Variance.pdf}{Chapter 7.4 - Expected Value And Variance}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{two} Piazza posts this week.
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51840}{Intro To Discrete Probability} $\approx$ 32 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51841}{Probability Theory 2} $\approx$ 22 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51842}{Conditional Probability And Independence} $\approx$ 44 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51843}{Bayes' Theorem And The LTP} $\approx$ 41 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51844}{Bayesian Spam Filters} $\approx$ 20 min.
+\end{itemize}
+
+\noindent Below is a list of lecture notes for this week:
+
+\begin{itemize}
+    \item \pdflink{\LectureNotesDir Bayes Lecture Notes.pdf}{Bayes Lecture Notes}
+    \item \pdflink{\LectureNotesDir Introduction To Discrete Probability Lecture Notes.pdf}{Introduction To Discrete Probability Lecture Notes}
+    \item \pdflink{\LectureNotesDir Introduction To Probability Theory Lecture Notes.pdf}{Introduction To Probability Theory Lecture Notes}
+    \item \pdflink{\LectureNotesDir Conditional Probability And Independence Lecture Notes.pdf}{Conditional Probability And Independence Lecture Notes}
+    \item \pdflink{\LectureNotesDir Bayes' Theorem And The Law Of Total Probability Lecture Notes.pdf}{Bayes' Theorem And The Law Of Total Probability Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \pdflink{\AssDir Assignment 10 - Probability.pdf}{Assignment 10 - Probability}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz's for this week can be found at:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 12 - Probability.pdf}{Quiz 12 - Probability}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first section that we are covering this week is \textbf{Section 7.1 - An Introduction To Discrete Probability}.
+
+\begin{notes}{Section 7.1 - An Introduction To Discrete Probability}
+    \subsubsection*{Overview}
+
+    This section introduces the basic concepts of discrete probability. \vspace*{1em}
+
+    \subsubsection*{Key Concepts}
+
+    \begin{itemize}
+        \item \textbf{Probability Definition}: Probability is defined for experiments with a finite number of equally likely outcomes. The probability of an event $E$ is given by the formula:
+            \begin{equation*}
+            p(E) = \frac{|E|}{|S|}
+            \end{equation*}
+        where $|E|$ represents the number of outcomes in event $E$ and $|S|$ is the total number of outcomes in the sample space.
+        \item \textbf{Probability Range}: The probability of any event is a value between 0 and 1, inclusive.
+        \item \textbf{Illustrative Examples and Theorems}: The section includes various examples and theorems to illustrate probability calculations. Classic problems like drawing cards and rolling 
+        dice are used to demonstrate these concepts.
+        \item \textbf{Monty Hall Problem}: A famous problem in probability, demonstrating counterintuitive results in probability theory, is discussed to elucidate the concepts.
+    \end{itemize}
+\end{notes}
+
+The next section that we will cover this week is \textbf{Section 7.2 - Probability Theory}.
+
+\begin{notes}{Section 7.2 - Probability Theory}
+    \subsubsection*{Overview}
+    Probability theory is a branch of mathematics concerned with analyzing random events. The probabilities of different outcomes are calculated to understand the likelihood of various events occurring. \vspace*{1em}
+
+    \subsubsection*{Basic Probability Assignment}
+    \begin{itemize}
+        \item The formula $p(E) = \frac{|E|}{|S|}$ is used to calculate the probability of an event $E$ occurring within a finite sample space $S$. This formula assumes each outcome is 
+        equally likely.
+        \item Probabilities are always between 0 and 1, inclusive, where 0 indicates impossibility and 1 indicates certainty.
+    \end{itemize}
+
+    \subsubsection*{Conditional Probability and Independence}
+    \begin{itemize}
+        \item Conditional probability is used when the probability of an event depends on another event. The formula $p(E | F) = \frac{p(E \cap F)}{p(F)}$ quantifies this dependence.
+        \item Two events are independent if the occurrence of one does not affect the probability of the other. This is mathematically expressed as $p(E \cap F) = p(E)p(F)$.
+    \end{itemize}
+
+    \subsubsection*{Random Variables}
+    \begin{itemize}
+        \item A random variable translates outcomes of random processes into numerical values, facilitating probability calculations.
+        \item The distribution of a random variable describes the probabilities of its different possible values.
+    \end{itemize}
+
+    \subsubsection*{Bernoulli Trials and Binomial Distribution}
+    \begin{itemize}
+        \item Bernoulli trials are experiments with two possible outcomes, typically "success" and "failure". The binomial distribution calculates the probability of a fixed number of successes in 
+        a set number of these trials.
+    \end{itemize}
+
+    \subsubsection*{Monte Carlo Algorithms}
+    \begin{itemize}
+        \item Monte Carlo algorithms use random sampling to obtain numerical results, often used in scenarios where deterministic methods are impractical.
+    \end{itemize}
+
+    \subsubsection*{The Probabilistic Method}
+    \begin{itemize}
+        \item This method uses probability to prove the existence of certain structures or properties when direct construction is difficult. It's a powerful tool in combinatorics and theoretical 
+        computer science.
+    \end{itemize}
+\end{notes}
+
+The next section that we will cover this week is \textbf{Section 7.3 - Bayes' Theorem}.
+
+\begin{notes}{Section 7.3 - Bayes' Theorem}
+    \subsubsection*{Overview}
+    Bayes' Theorem is a crucial result in probability theory and is used for calculating the likelihood of an event based on prior knowledge of conditions that might be related to the event. \vspace*{1em}
+
+    \subsubsection*{Introduction to Bayes' Theorem}
+    \begin{itemize}
+        \item The theorem is named after Thomas Bayes and allows for the revision of predictions or hypotheses based on new evidence.
+        \item It is widely used in various fields like medicine, law, and machine learning for decision making under uncertainty.
+    \end{itemize}
+
+    \subsubsection*{The Mathematical Formulation}
+    \begin{itemize}
+        \item The theorem mathematically expresses how a subjective degree of belief should rationally change to account for evidence: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$.
+        \item Here, $P(A|B)$ is the probability of event A given that B is true, $P(B|A)$ is the probability of event B given that A is true, $P(A)$ is the independent probability of A, and $P(B)$ 
+        is the independent probability of B.
+    \end{itemize}
+
+    \subsubsection*{Applications of Bayes' Theorem}
+    \begin{itemize}
+        \item The theorem is used in various real-world applications, such as medical diagnosis, where it helps in determining the probability of a disease given a specific test result.
+        \item Another application is in the field of spam filtering in emails, where it helps to determine the probability of an email being spam based on its content.
+    \end{itemize}
+
+    \subsubsection*{Generalized Bayes' Theorem}
+    \begin{itemize}
+        \item The generalized form of Bayes' Theorem can handle situations with multiple events and is used in more complex scenarios.
+        \item This generalization allows the incorporation of multiple pieces of evidence to refine the probability estimates of an event.
+    \end{itemize}
+\end{notes}
+
+The last section that we will cover this week is \textbf{Section 7.4 - Expected Value And Variance}.
+
+\begin{notes}{Section 7.4 - Expected Value And Variance}
+    \subsubsection*{Overview}
+    This section delves into the concepts of expected value and variance, which are pivotal in understanding the behavior of random variables in probability and statistics. \vspace*{1em}
+
+    \subsubsection*{Expected Value}
+    \begin{itemize}
+        \item The expected value, often denoted as $E(X)$, represents the average or mean value of outcomes for a random variable $X$. 
+        \item It is calculated as the sum of all possible values of $X$, each weighted by its probability of occurrence.
+        \item The concept is crucial in various applications, including decision-making and risk assessment.
+    \end{itemize}
+
+    \subsubsection*{Variance}
+    \begin{itemize}
+        \item Variance measures the spread or dispersion of the random variable's values around the expected value. 
+        \item Denoted as $V(X)$ or $\sigma^2$, it is the average of the squared differences from the mean.
+        \item A high variance indicates a wide spread of values, whereas a low variance suggests a tight clustering around the mean.
+    \end{itemize}
+\end{notes}

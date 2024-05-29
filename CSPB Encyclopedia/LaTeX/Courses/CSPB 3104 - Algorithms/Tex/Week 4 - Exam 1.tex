@@ -1,0 +1,272 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Exam 1}
+\renewcommand{\SectionTitle}{Exam 1}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is from, \Textbook:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir Chapter 8.1 - Lower Bounds For Sorting.pdf}{Chapter 8.1 - Lower Bounds For Sorting}
+    \item \pdflink{\ReadMatDir Chapter 9.1 - Minimum And Maximum.pdf}{Chapter 9.1 - Minimum And Maximum}
+    \item \pdflink{\ReadMatDir Chapter 9.2 - Selection In Expected Linear Time.pdf}{Chapter 9.2 - Selection In Expected Linear Time}
+    \item \pdflink{\ReadMatDir Chapter 9.3 - Selection In Worst-Case Linear Time.pdf}{Chapter 9.3 - Selection In Worst-Case Linear Time}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=xGGkwculh9E}{Quickselect Algorithm}{18}
+    \item \lecture{https://www.youtube.com/watch?v=dR1eRITT8B8}{Deterministic Partitioning: Median of Medians Trick}{27}
+    \item \lecture{https://www.youtube.com/watch?v=jDmbbcKX-Jk}{Linear Time Sorting Algorithms}{19}
+    \item \lecture{https://www.youtube.com/watch?v=IcjCgIoksDU}{Binary Search Trees: Introduction}{22}
+    \item \lecture{https://www.youtube.com/watch?v=RBdxdUARISg}{Binary Search Tree: Operations}{31}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203104%20-%20Algorithms/CSPB%203104%20-%20Assignments/CSPB%203104%20-%20Problem%20Sets/CSPB%203104%20-%20Problem%20Set%204%20-%20Quick%20Select%20And%20Binary%20Search%20Trees}{Problem Set 4 - Quick Select And Binary Search Trees}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 4.pdf}{Quiz 4}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNotesDir Spot Exam 1 Notes.pdf}{Spot Exam 1 Notes}
+    \item \pdflink{\ExamsDir Spot Exam 1.pdf}{Spot Exam 1}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being discussed this week is \textbf{Chapter 8: Sorting in Linear Time}. The first section that we are going to cover from this chapter this week is \textbf{Section 8.1: Lower Bounds For Sorting}.
+
+\begin{notes}{Section 8.1: Lower Bounds For Sorting}
+    \subsubsection*{Lower Bounds for Sorting}
+
+    The concept of lower bounds for sorting is fundamental in understanding the efficiency of comparison-based sorting algorithms. It establishes a theoretical minimum for the number of comparisons 
+    needed to sort a list of elements, providing a benchmark for evaluating sorting algorithm performances.
+    
+    \begin{itemize}
+        \item \textbf{Comparison-based Sorting Algorithms}
+        \begin{itemize}
+            \item These algorithms sort elements by comparing them. Examples include QuickSort, MergeSort, and HeapSort.
+            \item The efficiency of these algorithms is often measured by the number of comparisons they make.
+        \end{itemize}
+        
+        \item \textbf{Decision Tree Model}
+        \begin{itemize}
+            \item The decision tree is a conceptual tool used to represent the comparisons made by a sorting algorithm for a given number of elements.
+            \item Each node represents a comparison between two elements, and each path from the root to a leaf represents a possible sequence of comparisons needed to sort the elements.
+        \end{itemize}
+        
+        \item \textbf{Lower Bound on Comparisons}
+        \begin{itemize}
+            \item In the decision tree model, the depth of the tree (the longest path from the root to a leaf) represents the worst-case number of comparisons.
+            \item For a list of $n$ distinct elements, there are $n!$ (factorial of $n$) possible permutations, each corresponding to a unique leaf in the decision tree.
+            \item The lower bound for any comparison-based sorting algorithm is $\Omega(n \log n)$ comparisons in the worst case. This is derived from the fact that the height of a balanced binary 
+            tree with $n!$ leaves is $\log_2(n!)$, which is asymptotically equivalent to $n \log n$.
+        \end{itemize}
+    \end{itemize}
+    
+    This theoretical limit is crucial because it implies that no comparison-based sorting algorithm can be faster than $\Omega(n \log n)$ in the worst case. Thus, algorithms achieving this bound, such 
+    as MergeSort and HeapSort, are considered asymptotically optimal among comparison-based sorts.    
+\end{notes}
+
+The last section that will be covered from this week is \textbf{Section 8.2: Counting Sort}.
+
+\begin{notes}{Section 8.2: Counting Sort}
+    \subsubsection*{Counting Sort}
+
+    Counting Sort is a non-comparison-based sorting algorithm that sorts the elements of an array by counting the number of occurrences of each unique element. Its efficiency comes from directly 
+    determining the position of each element in the output sequence, making it particularly effective for sorting integers or other items where the range of potential values is known and not too large.
+    
+    \begin{itemize}
+        \item \textbf{Algorithm Overview}
+        \begin{itemize}
+            \item Counting Sort works by creating an auxiliary array that counts the occurrences of each element in the input.
+            \item The counts are then used to determine the positions of each element in the sorted array.
+        \end{itemize}
+        
+        \item \textbf{Steps of Counting Sort}
+        \begin{itemize}
+            \item Count each element in the input array and store the count in an auxiliary array.
+            \item Accumulate the counts to get the starting index of each element.
+            \item Place the elements in the output array based on their starting indexes and update the counts.
+        \end{itemize}
+        
+        \item \textbf{Time Complexity}
+        \begin{itemize}
+            \item The time complexity of Counting Sort is $O(n + k)$, where $n$ is the number of elements in the input array and $k$ is the range of the input.
+            \item This makes Counting Sort very efficient when $k$ is not significantly larger than $n$.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Counting Sort]
+        The following Python code demonstrates the implementation of the Counting Sort algorithm, showcasing its efficiency in sorting integers.
+    \begin{code}[Python]
+    def counting_sort(arr):
+        max_element = int(max(arr))
+        min_element = int(min(arr))
+        range_of_elements = max_element - min_element + 1
+        # Create count array to store the count of individual elements
+        count_array = [0] * range_of_elements
+        output_array = [0] * len(arr)
+    
+        # Store the count of each number
+        for i in range(0, len(arr)):
+            count_array[arr[i]-min_element] += 1
+    
+        # Change count_array so that count_array[i] now contains actual
+        # position of this element in output array
+        for i in range(1, len(count_array)):
+            count_array[i] += count_array[i-1]
+    
+        # Build the output character array
+        for i in range(len(arr)-1, -1, -1):
+            output_array[count_array[arr[i] - min_element] - 1] = arr[i]
+            count_array[arr[i] - min_element] -= 1
+    
+        # Copy the output array to arr, so that arr now
+        # contains sorted characters
+        for i in range(0, len(arr)):
+            arr[i] = output_array[i]
+    
+        return arr
+    \end{code}
+        This implementation of Counting Sort demonstrates its non-comparative approach by using counting and index calculations to sort the array efficiently, especially useful for sorting integers 
+        within a known range.
+    \end{highlight}      
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 9: Medians And Order Statistics}. The first section that is being covered from this chapter for this week is \textbf{Section 9.1: Minimum And Maximum}.
+
+\begin{notes}{Section 9.1: Minimum And Maximum}
+    \subsubsection*{Minimum and Maximum}
+
+    The problem of finding the minimum and maximum elements in an array is a fundamental task in computer science, often serving as a precursor to more complex operations like sorting or searching. 
+    Efficiently determining the minimum and maximum values can be done through various algorithms, with the goal of minimizing the number of comparisons required.
+    
+    \begin{itemize}
+        \item \textbf{Linear Search Approach}
+        \begin{itemize}
+            \item The simplest method involves iterating through the array, comparing each element to keep track of the current minimum and maximum values found so far.
+            \item This approach requires $2(n-1)$ comparisons in the worst case, where $n$ is the number of elements in the array.
+        \end{itemize}
+        
+        \item \textbf{Pairwise Comparison}
+        \begin{itemize}
+            \item A more efficient method involves comparing elements in pairs, reducing the total number of comparisons.
+            \item This method can find both the minimum and maximum with approximately $\frac{3n}{2}$ comparisons, significantly fewer than the linear search approach for large arrays.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Finding Minimum and Maximum]
+        The following Python code snippets demonstrate the implementation of both the linear search approach and the pairwise comparison method to find the minimum and maximum values in an array.
+    \begin{code}[Python]
+    # Linear Search Approach
+    def find_min_max_linear(arr):
+        if not arr:
+            return None, None
+        min_val = max_val = arr[0]
+        for val in arr[1:]:
+            if val < min_val:
+                min_val = val
+            elif val > max_val:
+                max_val = val
+        return min_val, max_val
+    
+    # Pairwise Comparison Approach
+    def find_min_max_pairwise(arr):
+        if not arr:
+            return None, None
+        if len(arr) % 2 == 0:
+            min_val = min(arr[0], arr[1])
+            max_val = max(arr[0], arr[1])
+            start = 2
+        else:
+            min_val = max_val = arr[0]
+            start = 1
+        for i in range(start, len(arr), 2):
+            local_min = min(arr[i], arr[i + 1])
+            local_max = max(arr[i], arr[i + 1])
+            min_val = min(min_val, local_min)
+            max_val = max(max_val, local_max)
+        return min_val, max_val
+    \end{code}
+        These implementations illustrate different strategies for finding the minimum and maximum values, showcasing the trade-offs in terms of complexity and number of comparisons.
+    \end{highlight}    
+\end{notes}
+
+The last section that will be covered from this chapter this week is \textbf{Section 9.2: Selection In Expected Linear Time}.
+
+\begin{notes}{Section 9.2: Selection In Expected Linear Time}
+    \subsubsection*{Selection in Expected Linear Time}
+
+    The task of selecting the $i^{th}$ smallest element from an unsorted array can be efficiently solved using the Randomized-Select algorithm. This algorithm employs a randomized partitioning 
+    strategy, similar to that used in the randomized version of Quicksort, to ensure that its expected time complexity remains linear, or $O(n)$, despite the worst-case scenario potentially being quadratic.
+    
+    \begin{itemize}
+        \item \textbf{Algorithm Overview}
+        \begin{itemize}
+            \item Randomized-Select utilizes the divide-and-conquer strategy by randomly partitioning the array around a pivot. It then recursively processes one of the partitions, based on the position 
+            of the pivot relative to the $i^{th}$ smallest element's desired position.
+            \item The randomization aspect ensures that the algorithm, on average, splits the array into relatively equal parts, thereby maintaining linear time complexity on average.
+        \end{itemize}
+        
+        \item \textbf{Expected Time Complexity}
+        \begin{itemize}
+            \item The expected time complexity of Randomized-Select is $O(n)$, where $n$ is the number of elements in the array. This efficiency is attributed to the random selection of the pivot, which, on average, leads to balanced partitions.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Randomized-Select]
+        The following Python code demonstrates the implementation of the Randomized-Select algorithm, showcasing its recursive nature and the randomized partitioning technique.
+    \begin{code}[Python]
+    import random
+    
+    def randomized_partition(arr, low, high):
+        pivot_index = random.randint(low, high)
+        arr[pivot_index], arr[high] = arr[high], arr[pivot_index]  # Swap pivot with the end element
+        pivot = arr[high]
+        i = low - 1
+        for j in range(low, high):
+            if arr[j] <= pivot:
+                i += 1
+                arr[i], arr[j] = arr[j], arr[i]
+        arr[i+1], arr[high] = arr[high], arr[i+1]
+        return i + 1
+    
+    def randomized_select(arr, low, high, i):
+        if low == high:
+            return arr[low]
+        pivot_index = randomized_partition(arr, low, high)
+        k = pivot_index - low + 1  # Number of elements on the left
+        if i == k:  # The pivot value is the answer
+            return arr[pivot_index]
+        elif i < k:
+            return randomized_select(arr, low, pivot_index - 1, i)
+        else:
+            return randomized_select(arr, pivot_index + 1, high, i - k)
+    \end{code}
+        This implementation of Randomized-Select effectively demonstrates how a randomized pivot selection can be used to select the $i^{th}$ smallest element in an unsorted array in expected linear time.
+    \end{highlight}      
+\end{notes}

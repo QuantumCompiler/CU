@@ -1,0 +1,118 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Compression}
+
+\chapter{\ChapTitle}
+\section{\ChapTitle}
+\horizontalline{0}{0}
+
+\subsection{Activities}
+
+The following are the activities that are planned for Week 10 of this course.
+
+\begin{itemize}
+    \item Complete your Assessments of peer Project Proposals
+    \item Read zyBooks Chapter 15 and do activities (due next Monday)
+    \item Watch lecture videos
+    \item Homework on Huffman (due next Tuesday)
+\end{itemize}
+
+\subsection{Lectures}
+
+Here are the lectures that can be found for this week:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46028}{Encoding \& Decoding (Codecs)}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46029}{Lossless Text Compression}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46030}{Huffman Trees}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=46031}{Huffman Encode \& Decode}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LectureNotesDir Codec Lecture Notes.pdf}{Codec Lecture Notes}
+\end{itemize}
+
+\subsection{Programming Assignment}
+
+The programming assignment for Week 10 is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%202270%20-%20Data%20Structures/CSPB%202270%20-%20Programming%20Assignments/CSPB%202270%20-%20Assignment%208%20-%20Huffman%20Table}{Programming Assignment 8 - Huffman}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter of this week is \pdflink{\ReadingMatDir Ch. 15 Compression.pdf}{Chapter 15: Compression}.
+
+\begin{notes}{Section 15.1 - Compression}
+    \subsubsection{Compression}
+
+    Compression in computer science refers to the process of reducing the size of data files or streams without significant loss of information. It aims to optimize storage space and transmission bandwidth 
+    by eliminating redundant or irrelevant data. Compression algorithms leverage various techniques such as removing data duplication, representing data in a more efficient manner, or encoding patterns to 
+    achieve higher compression ratios. By effectively compressing data, computer systems can store and transmit information more efficiently, resulting in reduced storage requirements, faster transmission 
+    speeds, and improved overall performance.
+    
+    \subsubsection{Dictionary Compression}
+    
+    Dictionary-based compression is a data compression technique that involves building and utilizing a dictionary to achieve efficient compression. The dictionary is essentially a collection of frequently 
+    occurring patterns or sequences in the input data. During compression, the algorithm replaces these patterns with shorter codes or references, thus reducing the overall size of the data. This approach 
+    is particularly effective when there are repetitive patterns or long sequences of repeated data in the input. Dictionary-based compression algorithms, such as LZ77 and LZ78, have been widely used in 
+    various applications, including file compression formats like ZIP and gzip, as well as network protocols to optimize data transmission.
+    
+    \subsubsection{Lossless Compression}
+    
+    Lossless compression refers to a data compression technique that allows for the complete reconstruction of the original data from the compressed version without any loss of information. Unlike lossy 
+    compression, which sacrifices some data quality for higher compression ratios, lossless compression algorithms aim to reduce the size of data files or streams while preserving every single bit of the 
+    original content. These algorithms leverage various techniques, such as dictionary-based methods, entropy encoding, and run-length encoding, to eliminate redundancy and compress the data efficiently. 
+    Lossless compression is crucial in applications where data integrity is paramount, such as archiving, data storage, and transmission of critical information, as it ensures that the original data can 
+    be fully recovered without any loss or corruption.
+    
+    \subsubsection{Lossy Compression}
+    
+    Lossy compression is a data compression technique that sacrifices some amount of data quality in order to achieve higher compression ratios. Unlike lossless compression, lossy compression permanently 
+    discards certain information deemed less perceptually significant or redundant. This approach is commonly used in multimedia applications, such as image, audio, and video compression, where small 
+    losses in quality may be acceptable to achieve significant reductions in file sizes. Lossy compression algorithms employ various methods, such as quantization, transformation, and perceptual coding, 
+    to discard or approximate less critical data while preserving perceptual fidelity. While lossy compression may result in a slight degradation of the reconstructed data compared to the original, it 
+    offers considerable benefits in terms of reduced storage requirements and efficient transmission of multimedia content.
+    
+    \subsubsection{JPEG Compression}
+    
+    JPEG (Joint Photographic Experts Group) compression is a widely used lossy compression technique specifically designed for compressing digital images. It is based on the principles of human visual 
+    perception and aims to minimize the file size of images while maintaining an acceptable level of visual quality. JPEG compression achieves this by applying a combination of techniques, including color 
+    subsampling, discrete cosine transform (DCT), quantization, and Huffman coding. The color subsampling reduces the resolution of the color information, while the DCT converts image data into a frequency 
+    domain representation. Quantization discards less visually important details, and Huffman coding efficiently encodes the transformed data. The resulting compressed JPEG image can significantly reduce 
+    file sizes while preserving a visually satisfactory representation, making it suitable for efficient storage and transmission of digital images in various applications.
+    
+    \subsubsection{Video Compression}
+    
+    Video compression is a process of reducing the size of digital video files while maintaining an acceptable level of visual quality. It involves applying various compression techniques to exploit 
+    redundancies and eliminate unnecessary information in the video data. Video compression algorithms typically utilize both temporal and spatial redundancies present in consecutive frames and within each 
+    frame, respectively. These algorithms may include methods such as motion estimation, motion compensation, transform coding (e.g., discrete cosine transform), quantization, and entropy coding. By efficiently 
+    compressing video data, video compression enables efficient storage, transmission, and streaming of videos over limited bandwidth networks while minimizing storage requirements without significant 
+    perceptible loss in quality. Popular video compression standards include MPEG (Moving Picture Experts Group) formats like MPEG-2, MPEG-4, and H.264/AVC.
+\end{notes}
+
+\begin{notes}{Section 15.2 - Data Compression}
+    \subsubsection{Overview}
+
+    Data compression is the process of reducing the size of data files or streams to optimize storage space and transmission bandwidth. It involves various techniques that eliminate redundancy, exploit patterns, 
+    and encode data in a more efficient manner. There are two main types of data compression: lossless and lossy compression. Lossless compression aims to reduce file size without any loss of information, while 
+    lossy compression sacrifices some data quality to achieve higher compression ratios. Compression algorithms can be applied to various types of data, including text, images, audio, and video, offering benefits 
+    such as reduced storage requirements, faster transmission speeds, and improved overall efficiency of data handling in computer systems and communication networks.
+    
+    \subsubsection{Humman Coding}
+    
+    Huffman coding is a widely used algorithm for lossless data compression that assigns variable-length codes to symbols based on their frequency of occurrence in the input data. It exploits the principle of 
+    assigning shorter codes to more frequently occurring symbols, resulting in efficient compression. The algorithm constructs a binary tree, known as the Huffman tree, by iteratively combining the least frequent 
+    symbols until all symbols are incorporated into the tree. The resulting codes are then derived from the paths traversed in the tree, with shorter codes assigned to symbols closer to the root. Huffman coding is 
+    widely utilized in various compression formats, such as ZIP, JPEG, and MP3, to achieve effective compression while preserving the original data without any loss.
+    
+    \subsubsection{Decompressing Huffman Coded Data}
+    
+    Decompressing Huffman-coded data involves the reverse process of the Huffman coding algorithm. It takes the compressed data, along with the Huffman tree or codebook used for encoding, and reconstructs the 
+    original uncompressed data. Starting from the compressed bitstream, the algorithm traverses the Huffman tree, bit by bit, decoding each code into its corresponding symbol. By following the path in the tree based 
+    on the encountered bits, the algorithm recreates the original sequence of symbols. This process continues until the entire compressed data has been decoded and the uncompressed data is fully reconstructed. 
+    Decompressing Huffman-coded data allows for the recovery of the original information, enabling the restoration of the data to its original form after compression.
+\end{notes}

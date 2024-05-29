@@ -1,0 +1,235 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Combinatorics And Binomial}
+\renewcommand{\SectionTitle}{Combinatorics And Binomial}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week is from, \Textbook:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir Chapter 6.1 - The Basics Of Counting.pdf}{Chapter 6.1 - The Basics Of Counting}
+    \item \pdflink{\ReadMatDir Chapter 6.2 - The Pigeonhole Principle.pdf}{Chapter 6.2 - The Pigeonhole Principle}
+    \item \pdflink{\ReadMatDir Chapter 6.3 - Permutations And Combinations.pdf}{Chapter 6.3 - Permutations And Combinations}
+    \item \pdflink{\ReadMatDir Chapter 6.4 - Binomial Coefficients And Identities.pdf}{Chapter 6.4 - Binomial Coefficients And Identities}
+    \item \pdflink{\ReadMatDir Chapter 6.5 - Generalized Permutations And Combinations.pdf}{Chapter 6.5 - Generalized Permutations And Combinations}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{two} Piazza posts this week.
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51784}{Product Rule} $\approx$ 10 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51785}{Product Rule Examples} $\approx$ 14 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51786}{Sum Rule} $\approx$ 7 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51787}{Sum + Product Rule Examples} $\approx$ 14 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51788}{Inclusion-Exclusion Principle} $\approx$ 6 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51789}{Division Rule} $\approx$ 16 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51791}{Pigeon Hole Principle} $\approx$ 11 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51792}{Generalized PHP} $\approx$ 7 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51794}{Permutations And Combinations: An Introduction} $\approx$ 14 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51795}{Counting Permutations} $\approx$ 10 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51796}{Counting Combinations} $\approx$ 13 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51797}{Permutations Of Repeated Objects} $\approx$ 11 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51799}{Binomial Theorem} $\approx$ 6 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51800}{Pascal's Triangle} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51801}{Sum Of Binomial Coefficients} $\approx$ 6 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51803}{Proofs Using Pigeon-Hole Principle} $\approx$ 7 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51804}{Slick Proofs Using Pigeon Hole Principle} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51805}{Ramsey's Theorem} $\approx$ 11 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51806}{Proof Of Binomial Theorem} $\approx$ 8 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51807}{Counting Solutions To Sum Of Variables - Part 1} $\approx$ 6 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51808}{Counting With Sum Of Variables - Part 2} $\approx$ 3 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51809}{Counting With Repetitions} $\approx$ 8 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51810}{Counting With Repetitions : Unordered} $\approx$ 11 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51811}{Further Properties Of Binomial Coefficients} $\approx$ 7 min.
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \pdflink{\AssDir Assignment 9 - Counting And Binomials.pdf}{Assignment 9 - Counting And Binomials}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz's for this week can be found at:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 10 - Counting.pdf}{Quiz 10 - Counting}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first section that we are covering this week is \textbf{Section 6.1 - The Basics Of Counting}.
+
+\begin{notes}{Section 6.1 - The Basics Of Counting}
+    \subsubsection*{Overview}
+
+    This section introduces the fundamental principles of counting which are essential in discrete mathematics and computer science for analyzing algorithms, computing probabilities, and solving 
+    enumeration problems. The chapter is divided into various subtopics, each explaining different counting techniques and their applications. \vspace*{1em}
+    
+    \subsubsection*{Basic Counting Principles}
+    The section starts with the basic counting principles:
+    \begin{itemize}
+        \item The \textit{product rule} explains that if a task can be divided into a sequence of two subtasks that are independent, the total number of ways to perform this task is the product of 
+        the number of ways to perform each subtask.
+        \item The \textit{sum rule} applies to situations where a task can be performed by one of two mutually exclusive methods.
+        \item The \textit{subtraction rule} or inclusion-exclusion principle corrects for overcounting when two or more ways to do a task overlap.
+        \item The \textit{division rule} states that if a task can be done in $ n $ ways, and there are $ d $ indistinguishable ways to do it, then there are $ n/d $ distinct ways to do the task.
+    \end{itemize}
+    
+    \subsubsection*{Applications and Examples}
+    Numerous examples illustrate the application of these rules, such as assigning offices to employees, creating license plates, counting functions from one set to another, and constructing variable 
+    names in programming languages.
+    
+    \subsubsection*{More Complex Counting Problems}
+    The chapter also delves into more complex counting problems that require a combination of the above rules, such as:
+    \begin{itemize}
+        \item Counting the number of different passwords that meet specific criteria.
+        \item Determining the number of possible IPv4 addresses.
+        \item Avoiding overcounting when sets have elements in common.
+    \end{itemize}
+    
+    \subsubsection*{Key Takeaways}
+    \begin{itemize}
+        \item The principles of counting are essential for solving a wide range of problems in discrete mathematics and computer science.
+        \item The product rule, sum rule, subtraction rule, and division rule are the foundational techniques for enumerative combinatorics.
+        \item Examples and applications provided in the section highlight the practical significance of these counting principles.
+    \end{itemize}
+\end{notes}
+
+The next section that we will be covering this week is \textbf{Section 6.2 - The Pigeonhole Principle}.
+
+\begin{notes}{Section 6.2 - The Pigeonhole Principle}
+    \subsubsection*{Overview}
+
+    The section discusses the Pigeonhole Principle and its generalized version, which are fundamental concepts in combinatorics. The basic Pigeonhole Principle is introduced with the classic example 
+    of pigeons and pigeonholes: If $k+1$ objects are placed into $k$ boxes, then at least one box contains two or more objects.
+    
+    This principle is formalized in \textbf{Theorem 1: The Pigeonhole Principle}, which states: If $k$ is a positive integer and $k+1$ or more objects are placed into $k$ boxes, then there is at least 
+    one box containing two or more of the objects.
+    
+    The section provides several illustrative examples, demonstrating the principle's application in various scenarios, such as proving that among any group of 367 people, there must be at least two 
+    with the same birthday, due to there being only 366 possible birthdays. \vspace*{1em}
+    
+    \subsubsection*{The Generalized Pigeonhole Principle}
+    The Generalized Pigeonhole Principle allows us to determine a minimum threshold that guarantees a certain distribution of objects across containers: If $N$ objects are placed into $k$ boxes, then 
+    there is at least one box containing at least $\left\lceil \frac{N}{k} \right\rceil$ objects.
+    
+    This principle is encapsulated in \textbf{Theorem 2: The Generalized Pigeonhole Principle}. Examples provided in the section apply this theorem to practical problems, such as determining the 
+    minimum number of students required in a class to guarantee that at least a certain number receive the same grade. \vspace*{1em}
+    
+    \subsubsection*{Applications and Elegant Examples}
+    The section also explores elegant applications of the Pigeonhole Principle, such as proving the existence of a subsequence within a sequence of real numbers: \textbf{Theorem 3:} Every sequence 
+    of $n^2 + 1$ distinct real numbers contains a subsequence of length $n + 1$ that is either strictly increasing or strictly decreasing.
+    
+    Furthermore, the section touches on Ramsey theory and the existence of certain structures within a graph, as illustrated by the problem of friends and enemies at a party. \vspace*{1em}
+    
+    \subsubsection*{Key Takeaways}
+    \begin{itemize}
+        \item The Pigeonhole Principle is a simple yet powerful tool in proving the existence of certain properties in sets and distributions.
+        \item The generalized version extends the principle to scenarios where objects outnumber containers by larger multiples.
+        \item These principles find practical applications in various fields, such as data transmission, coding theory, and graph theory.
+    \end{itemize}
+\end{notes}
+
+The next section that we will cover this week is \textbf{Section 6.3 - Permutations And Combinations}.
+
+\begin{notes}{Section 6.3 - Permutations And Combinations}
+    \subsubsection*{Overview}
+
+    The section provides a comprehensive discussion on permutations and combinations, fundamental concepts in combinatorics that deal with the arrangement and selection of objects. The section begins 
+    by defining permutations and demonstrating how to calculate them using the product rule. \vspace*{1em}
+    
+    \begin{highlight}[Permutations]
+        Permutations are introduced as ordered arrangements of objects, with specific notation $ P(n, r) $ denoting the number of permutations of $ r $ objects from a set of $ n $ distinct 
+        objects. The formula for permutations is derived as follows:
+        \begin{equation*}
+            P(n, r) = n(n - 1)(n - 2) \cdots (n - r + 1)
+        \end{equation*}
+        This formula is proven using the product rule, which states that the number of ways to perform a sequence of tasks is the product of the number of ways to perform each individual task.
+    \end{highlight}
+
+    \begin{highlight}[Combinations]
+        Combinations, unlike permutations, are defined as selections where order does not matter. The notation $ C(n, r) $, or $ \binom{n}{r} $, represents the number of ways to choose $ r $ 
+        objects from a set of $ n $ distinct objects without considering the order. The formula for combinations is given by:
+        \begin{equation*}
+            C(n, r) = \frac{n!}{r!(n - r)!}
+        \end{equation*}
+        This is explained by dividing the number of $ r $-permutations by the $ r! $ ways to order the $ r $ objects, eliminating the consideration of sequence.
+    \end{highlight}
+    
+    \subsubsection*{Key Theorems and Corollaries}
+    Important results discussed in the section include:
+    \begin{itemize}
+        \item \textbf{Theorem 1} establishes the formula for the number of permutations.
+        \item \textbf{Theorem 2} presents the formula for combinations, also known as the binomial coefficient.
+        \item \textbf{Corollary 2} indicates the symmetry in combinations: $ C(n, r) = C(n, n - r) $.
+    \end{itemize}
+    
+    \subsubsection*{Applications}
+    Several applications of permutations and combinations are provided through examples, demonstrating the utility of these concepts in solving practical problems involving arrangement and selection.
+    
+    \subsubsection*{Key Takeaways}
+    \begin{itemize}
+        \item Permutations and combinations are crucial for counting the number of possible arrangements or selections in a set.
+        \item The difference between permutations and combinations lies in whether the order of selection is important.
+        \item These concepts have significant applications in probability, statistics, and various fields where combinatorial optimization is required.
+    \end{itemize}
+\end{notes}
+
+The last section that we will cover this week is \textbf{Section 6.4 - Binomial Coefficients and Identities}.
+
+\begin{notes}{Section 6.4 - Binomial Coefficients and Identities}
+    \subsubsection*{Overview}
+
+    The section covers the fundamental concepts of binomial coefficients and various identities associated with them. Binomial coefficients, denoted by $\binom{n}{r}$, are the coefficients in the 
+    expansion of powers of binomial expressions such as $(a + b)^n$. \vspace*{1em}
+    
+    \begin{highlight}[The Binomial Theorem]
+        The Binomial Theorem is introduced as a way to express the expansion of powers of binomial expressions. It states that for any nonnegative integer $ n $ and any variables $ x $ and $ y $, 
+        the expansion is given by:
+        
+        \begin{equation*}
+            (x + y)^n = \sum_{j=0}^{n} \binom{n}{j} x^{n-j} y^j
+        \end{equation*}
+        
+        This theorem is proved using a combinatorial argument, which demonstrates the relationship between algebraic expansion and combinatorial counting.
+    \end{highlight}
+    
+    \begin{highlight}[Identities Involving Binomial Coefficients]
+        Several identities involving binomial coefficients are presented, including Pascal's Identity, which relates the coefficients in the context of Pascal's Triangle:
+        
+        \begin{equation*}
+            \binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}
+        \end{equation*}
+        
+        Other identities include Vandermonde's Identity, which provides a combinatorial method for calculating certain sums of binomial coefficients:
+        \begin{equation*}
+            \binom{m+n}{r} = \sum_{k=0}^{r} \binom{m}{r-k}\binom{n}{k}
+        \end{equation*}
+    \end{highlight}
+    
+    \subsubsection*{Applications and Examples}
+    Applications and examples provided in the section include using the Binomial Theorem for expanding algebraic expressions and calculating specific coefficients, demonstrating the practical utility 
+    of these mathematical tools.
+    
+    \subsection*{Key Takeaways}
+    \begin{itemize}
+        \item Binomial coefficients play a critical role in combinatorics, probability, and algebra.
+        \item The Binomial Theorem and associated identities offer a systematic way to work with polynomials and combinatorial quantities.
+        \item These concepts provide a deep understanding of the structural properties of binomial expressions and their coefficients.
+    \end{itemize}    
+\end{notes}

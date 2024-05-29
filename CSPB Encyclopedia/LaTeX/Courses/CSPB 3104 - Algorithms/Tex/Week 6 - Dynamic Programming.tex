@@ -1,0 +1,331 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Dynamic Programming}
+\renewcommand{\SectionTitle}{Dynamic Programming}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is from, \Textbook:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir Chapter 15.1 - Rod Cutting.pdf}{Chapter 15.1 - Rod Cutting}
+    \item \pdflink{\ReadMatDir Chapter 15.2 - Matrix-Chain Multiplication.pdf}{Chapter 15.2 - Matrix-Chain Multiplication}
+    \item \pdflink{\ReadMatDir Chapter 15.3 - Elements Of Dynamic Programming.pdf}{Chapter 15.3 - Elements Of Dynamic Programming}
+    \item \pdflink{\ReadMatDir Chapter 15.4 - Longest Common Subsequence.pdf}{Chapter 15.4 - Longest Common Subsequence}
+    \item \pdflink{\ReadMatDir Chapter 15.5 - Optimal Binary Search Trees.pdf}{Chapter 15.5 - Optimal Binary Search Trees}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=JiaVGtMWENE}{Rod Cutting Problem - First Steps}{31}
+    \item \lecture{https://www.youtube.com/watch?v=ncI7_ytzw3Y}{Rod Cutting Problem: Memoization And Solution Recovery}{24}
+    \item \lecture{https://www.youtube.com/watch?v=5Y0WnXkE9dE}{Dynamic Programming: Coin Changing Problem}{12}
+    \item \lecture{https://www.youtube.com/watch?v=ZXiAzZ6jnSY}{Knapsack Problem}{29}
+    \item \lecture{https://www.youtube.com/watch?v=gsVzzpVA9CA}{Failure of Optimal Substructure}{10}
+    \item \lecture{https://www.youtube.com/watch?v=9Fpp_JpDIHo}{Longest Common Subsequence Problem}{25}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203104%20-%20Algorithms/CSPB%203104%20-%20Assignments/CSPB%203104%20-%20Problem%20Sets/CSPB%203104%20-%20Problem%20Set%206%20-%20Dynamic%20Programming}{Problem Set 6 - Dynamic Programming}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 6.pdf}{Quiz 6}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 15: Dynamic Programming}. The first section that is being covered this week is \textbf{Section 15.1: Rod Cutting}.
+
+\begin{notes}{Section 15.1: Rod Cutting}
+    \subsubsection*{Rod Cutting}
+
+    The Rod Cutting problem is a classic example of dynamic programming, where the goal is to maximize profit from cutting a rod into smaller lengths and selling the pieces based on a given price table. 
+    This problem exemplifies the technique of solving complex problems by breaking them down into simpler subproblems, solving each subproblem just once, and storing their solutions - often in an array 
+    or hashtable - to avoid the computational cost of solving the same subproblem multiple times.
+    
+    \begin{itemize}
+        \item \textbf{Problem Statement}
+        \begin{itemize}
+            \item Given a rod of length $n$ and a table of prices $p_i$ for $i = 1, 2, ..., n$, where $p_i$ is the price of a rod of length $i$, determine the maximum revenue $r_n$ obtainable by cutting 
+            up the rod and selling the pieces.
+        \end{itemize}
+        
+        \item \textbf{Approach}
+        \begin{itemize}
+            \item The problem can be approached recursively, considering the revenue gained by making the first cut at different lengths $k$, and recursively solving the problem for a rod of length $n-k$.
+            \item To avoid the exponential time complexity due to the recursive structure of the problem, dynamic programming techniques are employed. These include:
+                \begin{enumerate}
+                    \item \textbf{Top-Down with Memoization}: Where the algorithm solves the problem by recursively breaking it down into smaller subproblems, caching the result of each subproblem to 
+                    ensure that each subproblem is solved only once.
+                    \item \textbf{Bottom-Up Approach}: Where the algorithm iteratively solves all subproblems from the smallest to the largest, using the solutions of smaller problems to solve larger ones.
+                \end{enumerate}
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The naive recursive solution has a runtime complexity of $O(2^n)$, which is significantly reduced to $O(n^2)$ with the use of dynamic programming, either top-down with memoization or bottom-up.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Rod Cutting using Dynamic Programming]
+        This Python code snippet demonstrates the bottom-up dynamic programming approach to solve the Rod Cutting problem.
+    \begin{code}[Python]
+    def rod_cutting(prices, n):
+        # Initialize revenue array
+        revenue = [0] * (n + 1)
+        
+        for j in range(1, n + 1):
+            max_rev = float('-inf')
+            for i in range(1, j + 1):
+                max_rev = max(max_rev, prices[i] + revenue[j - i])
+            revenue[j] = max_rev
+        
+        return revenue[n]
+    \end{code}
+        In this implementation, `prices` is a dictionary where the keys are the lengths of the rod pieces and the values are the corresponding prices. The function `rod\_cutting` calculates the maximum 
+        revenue that can be obtained for a rod of length `n` using the bottom-up dynamic programming approach.
+    \end{highlight}    
+\end{notes}
+
+The next section that is being covered from this chapter is \textbf{Section 15.2: Matrix-Chain Multiplication}.
+
+\begin{notes}{Section 15.2: Matrix-Chain Multiplication}
+    \subsubsection*{Matrix-Chain Multiplication}
+
+    Matrix-Chain Multiplication is a classic optimization problem addressed by dynamic programming. It seeks to find the most efficient way to multiply a sequence of matrices. The challenge lies in the 
+    fact that matrix multiplication is associative, meaning the order in which the multiplications are performed can significantly affect the total number of scalar operations required, without changing 
+    the product. The goal is to determine the optimal parenthesization of the matrix product that minimizes the number of scalar multiplications.
+    
+    \begin{itemize}
+        \item \textbf{Problem Statement}
+        \begin{itemize}
+            \item Given a chain $\langle A_1, A_2, ..., A_n \rangle$ of $n$ matrices, where for $i = 1, 2, ..., n$, matrix $A_i$ has dimension $p_{i-1} \times p_i$, fully parenthesize the product 
+            $A_1A_2...A_n$ in a way that minimizes the number of scalar multiplications.
+        \end{itemize}
+        
+        \item \textbf{Dynamic Programming Approach}
+        \begin{itemize}
+            \item The solution involves a bottom-up approach that constructs a table $m[i,j]$ for the minimum number of scalar multiplications needed to compute the matrix $A_iA_{i+1}...A_j$, for 
+            $1 \leq i, j \leq n$. The optimal solution to the entire problem is then found in $m[1,n]$.
+            \item The algorithm also maintains a table $s[i,j]$ to record the index $k$ at which the optimal split of the product sequence occurs, facilitating the construction of the optimal parenthesization.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The time complexity of the dynamic programming solution for the Matrix-Chain Multiplication problem is $O(n^3)$, where $n$ is the number of matrices in the chain. The space complexity 
+            for storing the $m$ and $s$ tables is $O(n^2)$.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Matrix-Chain Multiplication]
+        The following Python code demonstrates the dynamic programming solution to the Matrix-Chain Multiplication problem.
+    \begin{code}[Python]
+    def matrix_chain_order(p):
+        n = len(p) - 1
+        m = [[0 for _ in range(n)] for _ in range(n)]
+        s = [[0 for _ in range(n)] for _ in range(n)]
+    
+        for length in range(2, n + 1):
+            for i in range(n - length + 1):
+                j = i + length - 1
+                m[i][j] = float('inf')
+                for k in range(i, j):
+                    q = m[i][k] + m[k + 1][j] + p[i] * p[k + 1] * p[j + 1]
+                    if q < m[i][j]:
+                        m[i][j] = q
+                        s[i][j] = k
+        return m, s
+    
+    def print_optimal_parens(s, i, j):
+        if i == j:
+            print(f"A{i+1}", end="")
+        else:
+            print("(", end="")
+            print_optimal_parens(s, i, s[i][j])
+            print_optimal_parens(s, s[i][j] + 1, j)
+            print(")", end="")
+    \end{code}
+        This implementation calculates the minimum number of scalar multiplications needed to multiply a chain of matrices and prints the optimal way to parenthesize the product. The `matrix\_chain\_order` 
+        function builds the $m$ and $s$ tables, and the `print\_optimal\_parens` function prints the optimal parenthesization.
+    \end{highlight}      
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.3: Elements Of Dynamic Programming}.
+
+\begin{notes}{Section 15.3: Elements Of Dynamic Programming}
+    \subsubsection*{Elements of Dynamic Programming}
+
+    Dynamic Programming (DP) is a method for solving complex problems by breaking them down into simpler subproblems. It is particularly useful for problems exhibiting the properties of overlapping 
+    subproblems and optimal substructure. Understanding the key elements of dynamic programming is crucial for effectively applying it to a wide range of problems.
+    
+    \begin{itemize}
+        \item \textbf{Overlapping Subproblems}
+        \begin{itemize}
+            \item This property indicates that the space of subproblems is small, meaning that the same subproblems are solved repeatedly during the computation. Dynamic programming exploits this by 
+            solving each subproblem only once and storing its solution in a table, thereby avoiding the work of recomputing the answer every time the subproblem is encountered.
+        \end{itemize}
+        
+        \item \textbf{Optimal Substructure}
+        \begin{itemize}
+            \item A problem exhibits optimal substructure if an optimal solution to the problem contains within it optimal solutions to the subproblems. This property allows a problem to be solved by 
+            combining the solutions of its subproblems. Dynamic programming algorithms typically build up solutions to larger and larger subproblems using the solutions to smaller subproblems.
+        \end{itemize}
+        
+        \item \textbf{Memoization vs. Tabulation}
+        \begin{itemize}
+            \item \textbf{Memoization} (Top-Down Approach): This technique involves writing the recursive algorithm and using a table to store the results (memo) of subproblems to avoid recomputing 
+            them. The algorithm is typically expressed in a natural manner but modified to save the results of intermediate subproblems.
+            \item \textbf{Tabulation} (Bottom-Up Approach): This technique involves filling up a DP table by solving subproblems in a specific order, ensuring that all subproblems needed to solve a 
+            problem are solved first. This approach iteratively builds up the solution to larger problems based on the solutions to smaller problems.
+        \end{itemize}
+        
+        \item \textbf{Constructing Solutions}
+        \begin{itemize}
+            \item Beyond calculating the optimal value that a dynamic programming solution seeks, many problems also require constructing the solution itself. This typically involves additional 
+            bookkeeping to trace back the decisions that led to the optimal value, often through a separate table or by augmenting the table used to calculate the optimal values.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The time complexity of a dynamic programming algorithm is typically determined by the number of subproblems multiplied by the time taken to solve each subproblem. Since each subproblem 
+            is solved only once and stored for future reference, dynamic programming can significantly reduce the time complexity from exponential to polynomial in many cases.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Applying Dynamic Programming]
+        Successfully applying dynamic programming involves identifying that the problem has overlapping subproblems and optimal substructure, choosing between memoization and tabulation based on the 
+        problem and personal preference, and carefully defining the structure of the table(s) used for storing the solutions of subproblems. Understanding these elements is fundamental to designing 
+        efficient dynamic programming solutions.
+    \end{highlight}    
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.4: Longest Common Subsequence}.
+
+\begin{notes}{Section 15.4: Longest Common Subsequence}
+    \subsubsection*{Longest Common Subsequence}
+
+    The Longest Common Subsequence (LCS) problem is a classic example in the field of dynamic programming and computer science, focusing on finding the longest subsequence present in two sequences 
+    (not necessarily contiguous) in the same order. This problem is fundamental in the domains of bioinformatics, text processing, and diff tools, among others.
+    
+    \begin{itemize}
+        \item \textbf{Problem Statement}
+        \begin{itemize}
+            \item Given two sequences $X = \{x_1, x_2, ..., x_m\}$ and $Y = \{y_1, y_2, ..., y_n\}$, find the length of their longest common subsequence, which is the longest sequence that can be 
+            derived from both $X$ and $Y$ by deleting some items without changing the order of the remaining elements.
+        \end{itemize}
+        
+        \item \textbf{Dynamic Programming Formulation}
+        \begin{itemize}
+            \item The problem can be solved by considering smaller instances of the problem, namely finding the LCS of prefixes of $X$ and $Y$. Let $c[i, j]$ be the length of the LCS of $X_i$ and 
+            $Y_j$, where $X_i$ and $Y_j$ are the first $i$ and $j$ elements of $X$ and $Y$, respectively.
+            \item The solution is built up using the following recurrence:
+            \begin{equation*}
+                c[i, j] = 
+                \begin{cases} 
+                0 & \text{if } i = 0 \text{ or } j = 0 \\
+                c[i-1, j-1] + 1 & \text{if } i, j > 0 \text{ and } x_i = y_j \\
+                \max(c[i, j-1], c[i-1, j]) & \text{if } i, j > 0 \text{ and } x_i \neq y_j
+                \end{cases}
+            \end{equation*}
+            \item This approach ensures that each subproblem is solved only once, with the solution being stored in a table from which the solution to the problem can be constructed.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The runtime complexity of solving the LCS problem using dynamic programming is $O(mn)$, where $m$ and $n$ are the lengths of the two sequences. This complexity arises from filling 
+            out a table of size $m \times n$ based on the recurrence relation.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Longest Common Subsequence]
+        This Python code snippet demonstrates the dynamic programming solution to the LCS problem.
+    \begin{code}[Python]
+    def lcs(X, Y):
+        m, n = len(X), len(Y)
+        c = [[0] * (n+1) for _ in range(m+1)]
+        for i in range(1, m+1):
+            for j in range(1, n+1):
+                if X[i-1] == Y[j-1]:
+                    c[i][j] = c[i-1][j-1] + 1
+                else:
+                    c[i][j] = max(c[i][j-1], c[i-1][j])
+        return c[m][n]
+    \end{code}
+        The `lcs` function computes the length of the longest common subsequence between two strings `X` and `Y`, illustrating the application of dynamic programming to efficiently solve this problem.
+    \end{highlight}      
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.5: Optimal Binary Search Trees}.
+
+\begin{notes}{Section 15.5: Optimal Binary Search Trees}
+    \subsubsection*{Optimal Binary Search Trees}
+
+    Optimal Binary Search Trees (BSTs) are a specialized form of binary search trees that are structured to minimize the cost of searching for a set of keys. The cost is typically measured in terms of 
+    the number of comparisons needed to find a key in the tree. The concept of optimality here relates to the minimization of the expected search cost, given a set of keys with known probabilities of access.
+    
+    \begin{itemize}
+        \item \textbf{Problem Statement}
+        \begin{itemize}
+            \item Given a set of $n$ keys with their probabilities of being searched for, construct a binary search tree that has the minimum expected search cost. The search cost of a key is proportional 
+            to the depth of the key in the tree.
+        \end{itemize}
+        
+        \item \textbf{Dynamic Programming Approach}
+        \begin{itemize}
+            \item The solution to constructing an optimal BST involves a dynamic programming approach that examines all possible trees and selects the one with the lowest cost. This includes not only 
+            the given keys but also the probabilities of searching for values between these keys (often treated as "dummy keys" representing searches for values not in the set).
+            \item The algorithm calculates the cost of each subtree and uses these costs to construct the optimal solution for larger trees. It maintains a table $e[i,j]$ for the cost of the optimal 
+            BST for keys $k_i$ through $k_j$, and a table $root[i,j]$ to store the root of the optimal subtree for $k_i$ through $k_j$.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The time complexity of constructing an optimal BST using dynamic programming is $O(n^3)$, where $n$ is the number of keys. This complexity arises from the need to examine each possible 
+            subtree for each interval of keys.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Optimal Binary Search Trees]
+        The following Python code snippet provides an implementation of the dynamic programming approach to construct optimal binary search trees.
+    \begin{code}[Python]
+    def optimal_bst(keys, p, q, n):
+        e = [[0 for j in range(n + 1)] for i in range(n + 2)]
+        w = [[0 for j in range(n + 1)] for i in range(n + 2)]
+        root = [[0 for j in range(n + 1)] for i in range(n + 1)]
+    
+        for i in range(1, n + 2):
+            e[i][i - 1] = q[i - 1]
+            w[i][i - 1] = q[i - 1]
+    
+        for l in range(1, n + 1):
+            for i in range(1, n - l + 2):
+                j = i + l - 1
+                e[i][j] = float('inf')
+                w[i][j] = w[i][j - 1] + p[j] + q[j]
+                for r in range(i, j + 1):
+                    t = e[i][r - 1] + e[r + 1][j] + w[i][j]
+                    if t < e[i][j]:
+                        e[i][j] = t
+                        root[i][j] = r
+        return e, root
+    \end{code}
+        This implementation calculates the cost and structure of the optimal BST for a given set of keys and their search probabilities. The `optimal\_bst` function computes the cost $e$ and the root 
+        table, which can be used to construct the tree itself.
+    \end{highlight}    
+\end{notes}

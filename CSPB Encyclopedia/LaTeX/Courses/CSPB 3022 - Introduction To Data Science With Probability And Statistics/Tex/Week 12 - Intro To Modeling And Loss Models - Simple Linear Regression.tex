@@ -1,0 +1,98 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Intro To Modeling And Loss Models: Simple Linear Regression}
+\renewcommand{\SectionTitle}{Intro To Modeling And Loss Models: Simple Linear Regression}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Optional Reading}
+
+The optional reading for this week is from \LearnDSBook \hspace*{1pt} and \PyDSBook.
+
+\subsection{Piazza}
+
+Must post / respond to two Piazza posts.
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76485/mod_resource/content/1/CSCI3022_002_CASEE240_11_8_2023\%20\%281\%29.mp4}{Intro To Modeling And Loss Models}{54}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76486/mod_resource/content/1/Lecture27.mp4}{Simple Linear Regression}{23}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76487/mod_resource/content/1/CSCI3022_002_CASEE240_11_13_2023.mp4}{SLR Inference}{54}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76488/mod_resource/content/1/lecture29.mp4}{sklearn And Linear Regression}{21}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76489/mod_resource/content/1/notebook11_video.mp4}{Simple And Multiple Linear Regression Walkthrough}{40}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Introduction To Modeling Lecture Notes.pdf}{Introduction To Modeling Lecture Notes}
+    \item \pdflink{\LecNoteDir Simple Linear Regression Lecture Notes.pdf}{Simple Linear Regression Lecture Notes}
+    \item \pdflink{\LecNoteDir Inference With Simple Linear Regression Lecture Notes.pdf}{Inference With Simple Linear Regression Lecture Notes}
+    \item \pdflink{\LecNoteDir Sklearn And Multiple Linear Regression Lecture Notes.pdf}{Sklearn And Multiple Linear Regression Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203022%20-%20Introduction%20To%20Data%20Science%20With%20Probability%20And%20Statistics/CSPB%203022%20-%20Assignments/CSPB%203022%20-%20Assignment%2010%20-%20Intro%20To%20Modeling%20And%20Loss%20Models%20-%20Simple%20Linear%20Regression}{Assignment 10 - Intro To Modeling And Loss Models: Simple Linear Regression}
+\end{itemize}
+
+\subsection{Concept Summary}
+
+The concept that is being covered this week is \textbf{Intro To Modeling And Loss Models: Simple Linear Regression}.
+
+\begin{notes}{Intro To Modeling And Loss Models: Simple Linear Regression}
+    \subsection*{Overview}
+
+    Modeling is a fundamental aspect of statistical analysis and predictive analytics, allowing researchers and analysts to understand and predict behaviors based on observed data. Simple Linear 
+    Regression is one of the most basic forms of statistical modeling techniques used to predict an outcome variable (dependent variable) based on one predictor variable (independent variable). It 
+    provides a clear and straightforward way to quantify the relationship between two variables and is extensively used in economics, finance, natural sciences, and social sciences. \vspace*{1em}
+    
+    \subsubsection*{Principles of Simple Linear Regression}
+    
+    Simple Linear Regression aims to model the relationship between two variables by fitting a linear equation to observed data. The steps in building a regression model include:
+    \begin{itemize}
+        \item \textbf{Model Formulation}: Determine the dependent variable and the independent variable. The model takes the form $Y = \beta_0 + \beta_1X + \epsilon$, where $Y$ is the dependent 
+        variable, $X$ is the independent variable, $\beta_0$ is the y-intercept, $\beta_1$ is the slope of the line, and $\epsilon$ is the error term.
+        \item \textbf{Parameter Estimation}: Use statistical methods, typically the method of least squares, to estimate the parameters $\beta_0$ and $\beta_1$ that minimize the sum of the squared 
+        difference between the observed values and the values predicted by the model.
+    \end{itemize}
+    
+    \subsubsection*{Assumptions of Simple Linear Regression}
+    
+    For the model to provide reliable predictions, several key assumptions must be satisfied:
+    \begin{itemize}
+        \item \textbf{Linearity}: The relationship between the independent and dependent variable must be linear.
+        \item \textbf{Independence}: Observations must be independent of each other.
+        \item \textbf{Homoscedasticity}: The variance of residual terms (differences between observed and predicted values) should be constant.
+        \item \textbf{Normality}: The residuals of the model should be normally distributed.
+    \end{itemize}
+    
+    \subsubsection*{Loss Models in Simple Linear Regression}
+    
+    In the context of regression, the concept of 'loss' refers to the penalty for a bad prediction, which in this case is quantified as the error between the observed values and the values predicted by the model:
+    \begin{itemize}
+        \item \textbf{Squared Loss Function}: Simple Linear Regression typically uses the squared loss function (also known as least squares), where the loss is calculated as the square of the difference 
+        between the predicted and actual values. This method emphasizes larger errors more significantly than smaller ones, which can be particularly useful in finding a line of best fit that minimizes these errors.
+    \end{itemize}
+    
+    \subsubsection*{Evaluating Model Performance}
+    
+    The performance of a simple linear regression model can be evaluated using several metrics:
+    \begin{itemize}
+        \item \textbf{Coefficient of Determination ($R^2$)}: Measures the proportion of the variance in the dependent variable that is predictable from the independent variable.
+        \item \textbf{Residual Standard Error}: Measures the average amount that the response will deviate from the true regression line.
+    \end{itemize}
+    
+    \subsubsection*{Summary}
+    
+    Simple Linear Regression is a powerful tool for predictive modeling, providing valuable insights into linear relationships between variables. Understanding its principles, assumptions, and methods 
+    for evaluating its performance is crucial for effectively applying this technique in practical scenarios, ensuring that predictions are both accurate and reliable.    
+\end{notes}

@@ -1,0 +1,536 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Linear Functions}
+\renewcommand{\SectionTitle}{Linear Functions}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week are from, \VMLS \hspace*{1pt} and \PyCap:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir VMLS Chapter 2.1 - Linear Functions.pdf}{VMLS Chapter 2.1 - Linear Functions}
+    \item \pdflink{\ReadMatDir VMLS Chapter 2.2 - Taylor Approximations.pdf}{VMLS Chapter 2.2 - Taylor Approximations}
+    \item \pdflink{\ReadMatDir VMLS Chapter 2.3 - Regression Model.pdf}{VMLS Chapter 2.3 - Regression Model}
+    \item \pdflink{\ReadMatDir Python Companion Chapter 2.1 - Linear Functions.pdf}{Python Companion Chapter 2.1 - Linear Functions}
+    \item \pdflink{\ReadMatDir Python Companion Chapter 2.2 - Taylor Approximation.pdf}{Python Companion Chapter 2.2 - Taylor Approximation}
+    \item \pdflink{\ReadMatDir Python Companion Chapter 2.3 - Regression Model.pdf}{Python Companion Chapter 2.3 - Regression Model}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{four} Piazza posts this week.
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50678}{Linear Functions} $\approx$ 28 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50679}{Affine Functions} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50680}{Taylor Approximations} $\approx$ 16 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50681}{Regression Models} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50682}{Random Exercise} $\approx$ 13 min.
+    \item \href{https://www.youtube.com/watch?v=eX1hvWxmJVE}{Taylor Series Overview} $\approx$ 12 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=50684}{Calculus Refresher} $\approx$ 21 min.
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \pdflink{\AssDir Assignment 2 - Linear Functions.pdf}{Assignment 2 - Linear Functions}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 2 - Linear Functions.pdf}{Quiz 2 - Linear Functions}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that we will review this week is \textbf{VMLS Chapter 2 - Linear Functions.} The first section that we will examine this week is \textbf{VMLS Section 2.1 - Linear Functions.}
+
+\begin{notes}{VMLS Section 2.1 - Linear Functions}
+    \subsubsection*{Overview}
+
+    In the context of linear algebra, a linear function, also known as a linear transformation or linear map, is a fundamental concept that describes a specific type of mathematical relationship between 
+    vector spaces. Linear functions play a central role in linear algebra, as they provide a way to describe how vectors and vector spaces are transformed or mapped to other vectors and vector spaces while 
+    preserving certain properties.
+    
+    \begin{enumerate}
+        \item \textbf{Definition of a Linear Function:} A linear function \(T\) is a mapping or transformation from one vector space \(V\) to another vector space \(W\) that satisfies two key properties:
+        \begin{enumerate}
+            \item \textbf{Additivity:} For any vectors \(\mathbf{u}\) and \(\mathbf{v}\) in \(V\), \(T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})\). This means that the function preserves vector 
+            addition; the sum of the images of vectors is equal to the image of their sum.
+            \item \textbf{Homogeneity:} For any vector \(\mathbf{u}\) in \(V\) and any scalar \(c\), \(T(c\mathbf{u}) = cT(\mathbf{u})\). This property indicates that the function preserves scalar multiplication; 
+            scaling a vector and then applying the function is equivalent to applying the function first and then scaling the result.
+        \end{enumerate}
+        
+        \item \textbf{Examples of Linear Functions:} Linear functions are prevalent in various fields, including physics, engineering, and computer science. Here are a few common examples:
+        \begin{itemize}
+            \item \textbf{Matrix Transformations:} In linear algebra, many transformations can be represented as matrix-vector products. These transformations include rotations, scaling, and shearing.
+            \item \textbf{Linear Operators:} In quantum mechanics and functional analysis, linear operators are used to model physical systems and mathematical functions. These operators are often represented 
+            by matrices or differential equations.
+            \item \textbf{Linear Regression:} In statistics and machine learning, linear regression models describe relationships between variables using linear functions. The coefficients in the model represent 
+            the linear transformation.
+        \end{itemize}
+        
+        \item \textbf{Preservation of Linearity:} Linear functions are defined by their preservation of linearity, meaning that the properties of additivity and homogeneity hold true. This ensures that linear 
+        combinations of vectors in the domain map to linear combinations of vectors in the codomain. Consequently, linear functions are well-behaved and predictable.
+        
+        \item \textbf{Representation and Matrix Form:} Many linear functions can be represented by matrices. The transformation of a vector \(\mathbf{v}\) by a linear function \(T\) can be expressed as \(T(\mathbf{v}) 
+        = A\mathbf{v}\), where \(A\) is the transformation matrix. This representation simplifies computations and allows for the efficient application of linear transformations to large datasets.
+        
+        \item \textbf{Fundamental Concept in Linear Algebra:} Linear functions are a foundational concept in linear algebra. They are studied extensively because they provide insights into the structure and 
+        properties of vector spaces, and they are essential for solving systems of linear equations, understanding eigenvalues and eigenvectors, and more.
+    \end{enumerate}
+    
+    In summary, linear functions are mathematical mappings that maintain certain algebraic properties, specifically additivity and homogeneity. They are critical in linear algebra for understanding transformations, 
+    solving equations, and modeling various phenomena in mathematics, science, and engineering.
+
+    \subsubsection*{Superposition and Linearity}
+
+    In the realm of linear algebra, the fundamental principles of superposition and linearity are crucial for comprehending the behavior of mathematical functions. Consider the inner product function denoted as \(f\). 
+    This function is distinguished by a specific characteristic known as superposition.
+    
+    Superposition, as articulated in the context of this inner product function, signifies that the function \(f\) adheres to the following property for all \(n\)-vectors \(x\) and \(y\) and all scalars \(a\) and \(b\):
+    
+    \begin{equation*}
+        f(ax + by) = af(x) + bf(y)
+    \end{equation*}
+    
+    Put differently, when the inner product function is applied to a linear combination of two vectors (\(ax + by\)), it is tantamount to applying the function individually to each vector (\(f(x)\) and \(f(y)\)) and 
+    subsequently merging the outcomes linearly with the scalars \(a\) and \(b\).
+    
+    This superposition property is intimately related to the concept of linearity. A function that fulfills the superposition property is denominated as "linear." Thus, in this specific context, the inner product with 
+    a fixed vector is acknowledged as a linear function because it complies with the superposition property.
+    
+    In essence, linearity and superposition constitute foundational concepts in linear algebra, empowering us to elucidate and scrutinize mathematical functions that display predictable behavior when dealing with 
+    combinations of vectors and scalars. Profound comprehension of linearity is indispensable in diverse mathematical and scientific domains, as it simplifies the analysis of intricate systems and transformations.
+
+    \subsubsection*{Homogeneity \& Additivity}
+
+    The superposition equality is often deconstructed into two distinct properties, one involving scalar-vector product and the other involving vector addition in the argument. A function \(f : \mathbb{R}^n 
+    \rightarrow \mathbb{R}\) is considered linear if it satisfies the following two fundamental properties:
+    
+    \begin{enumerate}
+        \item \textbf{Homogeneity Property:} For any \(n\)-vector \(\mathbf{x}\) and any scalar \(\alpha\), the function \(f\) obeys the homogeneity property, expressed as:
+        \[f(\alpha\mathbf{x}) = \alpha f(\mathbf{x})\]
+        This property signifies that scaling the vector argument is equivalent to scaling the function's value. In essence, it emphasizes the consistent behavior of the function under scalar-vector multiplication.
+        
+        \item \textbf{Additivity Property:} For any \(n\)-vectors \(\mathbf{x}\) and \(\mathbf{y}\), the function \(f\) adheres to the additivity property, articulated as:
+        \[f(\mathbf{x} + \mathbf{y}) = f(\mathbf{x}) + f(\mathbf{y})\]
+        This property underscores that adding vector arguments yields the same result as adding the function values for each vector individually. It underscores the consistent behavior of the function under vector addition.
+    \end{enumerate}
+    
+    Together, the homogeneity and additivity properties collectively define the concept of linearity. A function is deemed linear when it satisfies both of these properties simultaneously. Linearity is a fundamental 
+    concept with broad applications in various mathematical and scientific disciplines, particularly in linear algebra. It simplifies the analysis of linear transformations and systems, making it indispensable in fields 
+    such as physics, engineering, economics, and computer science.
+
+    \begin{highlight}[Linearity Example]
+        Consider a linear transformation \(T\) that maps vectors from \(\mathbb{R}^2\) to \(\mathbb{R}\) defined as follows:
+        
+        \begin{equation*}
+            T\left(\begin{bmatrix} x \\ y \end{bmatrix}\right) = 2x - 3y
+        \end{equation*}
+        We will demonstrate how this transformation exhibits linearity by verifying the homogeneity and additivity properties.
+        
+        \horizontalline{0}{0}
+        \begin{enumerate}
+            \item \textbf{Homogeneity Property:}
+            
+            We'll show that \(T\) satisfies the homogeneity property. For any scalar \(\alpha\) and vector \(\mathbf{v} = \begin{bmatrix} x \\ y \end{bmatrix}\), we have:
+            
+            \[
+            T(\alpha\mathbf{v}) = T\left(\alpha\begin{bmatrix} x \\ y \end{bmatrix}\right) = T\left(\begin{bmatrix} \alpha x \\ \alpha y \end{bmatrix}\right) = 2(\alpha x) - 3(\alpha y) = \alpha(2x - 3y) = \alpha T(\mathbf{v})
+            \]
+            
+            This confirms the homogeneity property, demonstrating that scaling the input vector by \(\alpha\) results in scaling the output by the same factor.
+            
+            \item \textbf{Additivity Property:}
+            
+            Next, we'll show that \(T\) satisfies the additivity property. For any vectors \(\mathbf{u} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix}\) and \(\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\), we have:
+            
+            \[
+            T(\mathbf{u} + \mathbf{v}) = T\left(\begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \end{bmatrix}\right) = 2(u_1 + v_1) - 3(u_2 + v_2) = (2u_1 - 3u_2) + (2v_1 - 3v_2) = T(\mathbf{u}) + T(\mathbf{v})
+            \]
+            
+            This confirms the additivity property, demonstrating that the transformation of the sum of vectors is equal to the sum of the transformations of each vector individually.
+        \end{enumerate}
+        \horizontalline{0}{0}
+        Therefore, the transformation \(T\) is linear, as it satisfies both the homogeneity and additivity properties, making it a valid example of linearity.
+    \end{highlight}
+
+    \subsubsection*{Inner Product Representation of a Linear Function}
+    
+    The inner product representation of a linear function is a fundamental concept in linear algebra, establishing a relationship between linear functions and inner products. It reveals that linear functions can be expressed 
+    as the inner product of their argument with a fixed vector, and conversely, if a function is linear, it can be represented in this form.
+    
+    \subsubsection*{Linearity and Inner Product}
+    
+    The initial observation establishes that a function \(f(x)\) defined as the inner product of its argument with a fixed vector is linear. Mathematically, if \(f(x)\) can be expressed as \(f(x) = a^T x\), where \(a\) is a 
+    fixed vector, then \(f(x)\) is a linear function.
+    
+    \subsubsection*{The Converse}
+    
+    The converse statement is equally significant, stating that if a function is linear, it can be represented as the inner product of its argument with a fixed vector. This implies the existence of an \(n\)-vector \(a\) such 
+    that \(f(x) = a^T x\) holds for all \(n\)-vectors \(x\).
+    
+    \subsubsection*{Deriving the Inner Product Representation}
+    
+    To understand the derivation of this representation, we begin by expressing an arbitrary \(n\)-vector \(x\) as a linear combination of basis vectors: \(x = x_1e_1 + x_2e_2 + \ldots + x_ne_n\). Here, \(e_1, e_2, \ldots, e_n\) 
+    represent the basis vectors, and \(x_1, x_2, \ldots, x_n\) are the coefficients.
+    
+    Given that \(f\) is linear, we apply multi-term superposition, demonstrating that \(f(x)\) is the linear combination of \(f(e_1), f(e_2), \ldots, f(e_n)\), weighted by the coefficients \(x_1, x_2, \ldots, x_n\).
+    
+    The resulting formula \(f(x) = x_1f(e_1) + x_2f(e_2) + \ldots + x_nf(e_n)\) represents the inner product representation of \(f\), with \(a\) being the vector \((f(e_1), f(e_2), \ldots, f(e_n))\).
+    
+    In essence, this inner product representation illustrates how a linear function \(f(x)\) can be expressed as a weighted sum of the inner products between the argument vector \(x\) and a set of basis vectors, where the weights 
+    are determined by the function's behavior on each basis vector.
+    
+    This concept holds significant value in linear algebra and various mathematical applications, providing a deeper understanding of the interplay between linear functions and inner products.
+
+    \begin{highlight}[Inner Product Representation Example]
+        Let's illustrate the concept of the inner product representation of a linear function with an example.
+        
+        \horizontalline{0}{0}
+        
+        Consider a scalar-valued function \(f\) defined on \(\mathbb{R}^2\) as follows:
+        
+        \[
+        f(\mathbf{x}) = 3x_1 - 2x_2
+        \]
+        
+        We will demonstrate that \(f\) is a linear function and derive its inner product representation.
+        
+        \vspace*{1em} \textbf{Verification of Linearity:} \vspace*{1em}
+        
+        To verify the linearity of \(f\), we need to check whether it satisfies the properties of linearity: homogeneity and additivity.
+        
+        \begin{enumerate}
+            \item \textbf{Homogeneity Property:}
+            
+            Let's consider the homogeneity property. For any scalar \(\alpha\) and vector \(\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\), we have:
+            
+            \[
+            f(\alpha\mathbf{x}) = 3(\alpha x_1) - 2(\alpha x_2) = \alpha(3x_1 - 2x_2) = \alpha f(\mathbf{x})
+            \]
+            
+            This confirms that \(f\) satisfies the homogeneity property.
+            
+            \item \textbf{Additivity Property:}
+            
+            Now, let's examine the additivity property. For any vectors \(\mathbf{u} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix}\) and \(\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\), we have:
+            
+            \[
+            f(\mathbf{u} + \mathbf{v}) = 3(u_1 + v_1) - 2(u_2 + v_2) = (3u_1 - 2u_2) + (3v_1 - 2v_2) = f(\mathbf{u}) + f(\mathbf{v})
+            \]
+            
+            This confirms that \(f\) satisfies the additivity property.
+        \end{enumerate}
+        
+        \vspace*{1em} \textbf{Inner Product Representation:} \vspace*{1em}
+        
+        Now that we've established that \(f\) is a linear function, we can derive its inner product representation. We do this by expressing \(\mathbf{x}\) in terms of basis vectors:
+        
+        \[
+        \mathbf{x} = x_1\mathbf{e}_1 + x_2\mathbf{e}_2
+        \]
+        
+        Where \(\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\) and \(\mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\) are the standard basis vectors for \(\mathbb{R}^2\).
+        
+        Now, we can calculate \(f\) in terms of these basis vectors:
+        
+        \[
+        f(\mathbf{x}) = 3x_1\mathbf{e}_1 - 2x_2\mathbf{e}_2
+        \]
+        
+        The coefficients of the basis vectors in this expression, \(\mathbf{a} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}\), represent the inner product representation of \(f\).
+        
+        Therefore, we have successfully derived the inner product representation of the linear function \(f\) as:
+        
+        \[
+        f(\mathbf{x}) = \mathbf{a}^T \mathbf{x} = \begin{bmatrix} 3 & -2 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+        \]
+
+        \horizontalline{0}{0}
+        
+        This representation allows us to express \(f\) as the inner product of its argument \(\mathbf{x}\) with the fixed vector \(\mathbf{a}\), which simplifies computations and provides insights into the function's behavior.
+        
+        In this example, we've demonstrated how a linear function can be represented using the inner product of its argument with a fixed vector.
+    \end{highlight}
+    
+    \subsubsection*{Affine Functions}
+    
+    Affine functions play an essential role in numerous areas of mathematics and its applications, such as optimization, computer graphics, and machine learning. They provide an extension of linear functions while maintaining several 
+    beneficial properties. Here's an elaboration on the topic:
+    
+    \subsubsection*{Definition}
+    An affine function can be considered a "shifted" linear function. In a more formal sense, a function \( f: \mathbb{R}^n \rightarrow \mathbb{R} \) is affine if it can be written in the form:
+    \[ f(\mathbf{x}) = \mathbf{a}^T \mathbf{x} + b \]
+    where \( \mathbf{a} \) is an \( n \)-dimensional vector, and \( b \) is a scalar. The term \( b \) is sometimes referred to as the "offset" because it represents a shift from the origin.
+    
+    \subsubsection*{Superposition}
+    One of the significant properties of linear functions is the superposition principle, which allows us to linearly combine multiple instances of the function. However, the superposition property for affine functions comes with a 
+    caveat. For the function to remain affine, the coefficients used in the linear combination must sum to one. This is referred to as the "restricted superposition property."
+    
+    \subsubsection*{Intuitive Understanding}
+    Imagine a linear function as a straight line going through the origin of a graph. When we talk about affine functions, they are also straight lines but don't necessarily pass through the origin. The offset \( b \) in the affine 
+    function determines how far and in which direction the line is shifted from the origin.
+    
+    \subsubsection*{Practical Implications}
+    The restricted superposition property of affine functions gives us a powerful tool to identify non-affine functions. If we can find vectors \( \mathbf{x}, \mathbf{y} \) and scalars \( \alpha, \beta \) such that \( \alpha + \beta 
+    = 1 \) and \( f(\alpha \mathbf{x} + \beta \mathbf{y}) \neq \alpha f(\mathbf{x}) + \beta f(\mathbf{y}) \), then the function \( f \) is not affine. This property acts as a litmus test.
+    
+    For instance, the maximum function, which returns the largest value among its arguments, doesn't hold the superposition property when \( n > 1 \). This non-conformance can be explicitly illustrated using specific coefficients and 
+    vectors.
+    
+    \begin{highlight}[Affine Function Example]
+        Let's delve deeper into the concept of affine functions with an example. \vspace*{1em}
+
+        \horizontalline{0}{0}
+        
+        Consider the following function \( f: \mathbb{R}^2 \rightarrow \mathbb{R} \):
+        
+        \[
+        f(\mathbf{x}) = 2x_1 - 3x_2 + 1
+        \]
+        
+        In this example, \( \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \) represents a two-dimensional vector. The function \( f \) is defined as an affine function because it follows the form:
+        
+        \[
+        f(\mathbf{x}) = \mathbf{a}^T \mathbf{x} + b
+        \]
+        
+        where \( \mathbf{a} = \begin{bmatrix} 2 \\ -3 \end{bmatrix} \) is an \( n \)-dimensional vector, and \( b = 1 \) is a scalar. The vector \( \mathbf{a} \) represents the coefficients of the linear part of the function, and 
+        \( b \) is the offset.
+        
+        This function is an example of an affine function because it combines a linear transformation of the input vector \( \mathbf{x} \) with an offset \( b \). It can be visualized as a plane in three-dimensional space, with the 
+        coefficients of \( \mathbf{a} \) determining the plane's orientation and the offset \( b \) determining its position along the vertical axis.
+        
+        \vspace*{1em} \textbf{Verification of Affine Property:} \vspace*{1em}
+        
+        To verify that \( f \) is an affine function, we need to check if it satisfies the properties of an affine function: linearity and the offset.
+        
+        \begin{enumerate}
+            \item \textbf{Linearity Property:}
+            
+            Let's consider the linearity property. For any scalar \(\alpha\) and vectors \(\mathbf{x}\) and \(\mathbf{y}\), we have:
+            
+            \[
+            f(\alpha\mathbf{x} + (1-\alpha)\mathbf{y}) = 2(\alpha x_1 + (1-\alpha)y_1) - 3(\alpha x_2 + (1-\alpha)y_2) + 1
+            \]
+            
+            \[
+            = \alpha(2x_1 - 3x_2 + 1) + (1-\alpha)(2y_1 - 3y_2 + 1) = \alpha f(\mathbf{x}) + (1-\alpha) f(\mathbf{y})
+            \]
+            
+            This confirms that \( f \) satisfies the linearity property.
+            
+            \item \textbf{Offset Property:}
+            
+            The offset property is satisfied since \( b = 1 \) is present in the function definition as an additive constant.
+        \end{enumerate}
+        \horizontalline{0}{0}
+    \end{highlight}
+\end{notes}
+
+The next section that we will examine this week is \textbf{VMLS Section 2.2 - Taylor Approximations.}
+
+\begin{notes}{VMLS Section 2.2 - Taylor Approximations}
+    \subsubsection*{Overview}
+
+    A Taylor approximation, often referred to as a Taylor series or Taylor expansion, is a mathematical technique used to approximate complex functions with simpler polynomial functions. It's named after the British mathematician 
+    Brook Taylor. The core idea behind a Taylor approximation is to represent a function as an infinite series of polynomial terms centered around a specific point. This approximation is particularly useful when dealing with functions 
+    that are difficult to work with directly.
+    
+    The general form of a Taylor series for a function \(f(x)\) centered at a point \(a\) is:
+    
+    \[f(x) \approx f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \ldots\]
+
+    The general form of this equation is 
+
+    \begin{equation*}
+        \sum^{\infty}_{n=0} \frac{f^{(n)}(a)}{n!}(x-a)^{n}.
+    \end{equation*}
+    
+    Here's a breakdown of the key components:
+    
+    \begin{enumerate}
+        \item \(f(a)\): The value of the function at the center point \(a\). This represents the constant term in the approximation.
+        
+        \item \(f'(a)\): The first derivative of the function at the point \(a\). This term accounts for the linear behavior of the function around \(a\).
+        
+        \item \(\frac{f''(a)}{2!}(x-a)^2\): The second derivative of the function at \(a\) divided by \(2!\) (which is 2). This term captures the quadratic behavior of the function.
+        
+        \item \(\frac{f'''(a)}{3!}(x-a)^3\): The third derivative of the function at \(a\) divided by \(3!\) (which is 6). This term accounts for cubic behavior, and the pattern continues for higher-order derivatives.
+    \end{enumerate}
+    
+    The more terms you include in the Taylor series, the closer the approximation gets to the actual function. In practice, the series is often truncated to a finite number of terms to simplify calculations. The accuracy of the 
+    approximation depends on how many terms are included and how close the approximation point \(a\) is to the point of interest.
+    
+    Taylor approximations are widely used in various fields of mathematics, physics, engineering, and computer science to simplify complex functions, solve differential equations, and make numerical calculations more manageable. They 
+    serve as a powerful tool for understanding the behavior of functions near specific points.
+
+    \subsubsection*{Linear Algebra Taylor Approximation}
+
+    The first-order Taylor approximation, denoted as $\hat{f}(x)$, proves to be a highly accurate estimate of the function $f(x)$ under the condition that the individual components $x_i$ are in close proximity to their corresponding reference 
+    points $z_i$. This approximation is sometimes expressed with a secondary vector argument, $\hat{f}(x; z)$, indicating the central point of approximation, denoted as $z$. The primary component of the Taylor approximation remains constant, 
+    equaling the value of the function at the point of reference, i.e., $f(z)$. The remaining terms contribute to the approximate alteration in the function's value, stemming from perturbations in the components of $x$ concerning $z$. Interestingly, 
+    $\hat{f}$ exhibits an affine relationship with $x$, despite being referred to as a linear approximation near $z$—a distinction driven by its general affine nature. A concise representation employs inner product notation:
+
+    \[
+    \hat{f}(x) = f(z) + \nabla f(z)^T (x - z)
+    \]
+    
+    Here, $\nabla f(z)$ represents the gradient of $f$ at point $z$, expressed as an $n$-vector:
+    
+    \[
+    \nabla f(z) = \begin{bmatrix}
+        \frac{\partial f}{\partial x_1}(z) \\
+        \vdots \\
+        \frac{\partial f}{\partial x_n}(z)
+    \end{bmatrix}
+    \]
+    
+    This approximation permits an organized construction of an affine estimate for a function $f : \mathbb{R}^n \to \mathbb{R}$, particularly in proximity to a designated point $z$, given a descriptive formula or equation for $f$ that possesses 
+    differentiability. This methodology is exemplified by a straightforward instance for $n = 1$. Over a comprehensive scale along the $x$-axis, the Taylor approximation $\hat{f}$ may exhibit discrepancies from the actual function $f$. Nevertheless, 
+    within the vicinity of $z$, the Taylor approximation consistently proves to be an excellent approximation.
+    
+    \begin{highlight}[First-Order Taylor Approximation Example]
+        Let's illustrate the concept of a first-order Taylor approximation in the context of linear algebra.
+        
+        \horizontalline{0}{0}
+        
+        Consider a real-valued function \(f\) that operates on vectors in \(\mathbb{R}^3\) as follows:
+        
+        \[f(\mathbf{x}) = 2x_1 - x_2 + 3x_3\]
+        
+        We want to find the first-order Taylor approximation of \(f\) near a specific point \(\mathbf{z} = \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}\).
+        
+        \textbf{Verification of Linearity:} \vspace*{1em}
+        
+        To verify if \(f\) is linear, we need to check whether it satisfies the properties of linearity: homogeneity and additivity.
+        
+        \begin{enumerate}
+            \item \textbf{Homogeneity Property:}
+            
+            Let's consider the homogeneity property. For any scalar \(\alpha\) and vector \(\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}\), we have:
+            
+            \[f(\alpha\mathbf{x}) = 2(\alpha x_1) - (\alpha x_2) + 3(\alpha x_3) = \alpha(2x_1 - x_2 + 3x_3) = \alpha f(\mathbf{x})\]
+            
+            This confirms that \(f\) satisfies the homogeneity property.
+            
+            \item \textbf{Additivity Property:}
+            
+            Now, let's examine the additivity property. For any vectors \(\mathbf{u} = \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}\) and \(\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}\), we have:
+            
+            \[f(\mathbf{u} + \mathbf{v}) = 2(u_1 + v_1) - (u_2 + v_2) + 3(u_3 + v_3) = (2u_1 - u_2 + 3u_3) + (2v_1 - v_2 + 3v_3) = f(\mathbf{u}) + f(\mathbf{v})\]
+            
+            This confirms that \(f\) satisfies the additivity property.
+        \end{enumerate}
+        
+        \textbf{First-Order Taylor Approximation:} \vspace*{1em}
+        
+        Now that we've established that \(f\) is a linear function, we can derive its first-order Taylor approximation near the point \(\mathbf{z}\).
+        
+        The first-order Taylor approximation can be expressed as:
+        
+        \[\hat{f}(\mathbf{x}) = f(\mathbf{z}) + \nabla f(\mathbf{z})^T (\mathbf{x} - \mathbf{z})\]
+        
+        Where \(\nabla f(\mathbf{z})\) represents the gradient of \(f\) at point \(\mathbf{z}\). In this case:
+        
+        \[\nabla f(\mathbf{z}) = \begin{bmatrix} 2 \\ -1 \\ 3 \end{bmatrix}\]
+        
+        Now, we can express the first-order Taylor approximation \(\hat{f}(\mathbf{x})\) as:
+        
+        \[\hat{f}(\mathbf{x}) = 2 - (\mathbf{x} - \mathbf{z})^T \begin{bmatrix} 2 \\ -1 \\ 3 \end{bmatrix}\]
+        
+        This representation allows us to approximate the function \(f\) near the point \(\mathbf{z}\) using a linear function.
+
+        \horizontalline{0}{0}
+        
+        In this example, we've demonstrated how to find the first-order Taylor approximation of a linear function \(f\) near a specific point \(\mathbf{z}\) in \(\mathbb{R}^3\).
+    \end{highlight}
+\end{notes}
+
+The last section that we will examine this week is \textbf{VMLS Section 2.3 - Regression Model.}
+
+\begin{notes}{VMLS Section 2.3 - Regression Model}
+    \subsection*{Overview}
+
+    A regression model is a fundamental statistical tool used to analyze relationships between variables. It is primarily employed in predictive modeling, where the goal is to understand and predict the behavior of a dependent variable based on 
+    one or more independent variables. Regression analysis helps uncover patterns, associations, and dependencies within data, making it a cornerstone in various fields, including economics, finance, biology, and social sciences.
+    
+    The core idea of a regression model is to establish a mathematical equation that describes the relationship between variables. Typically, it is used to predict a continuous outcome variable (also known as the dependent variable) based on one 
+    or more predictor variables (independent variables). This predictive equation can then be utilized to estimate the value of the dependent variable given specific values of the independent variables.
+    
+    \subsection*{Key Components and Concepts}
+    
+    \begin{enumerate}
+        \item \textbf{Dependent Variable (Y)}: This is the variable we aim to predict or explain. It represents the outcome or response of interest and is often denoted as "Y" in the regression equation.
+        
+        \item \textbf{Independent Variables (X)}: Also known as predictor variables or features, these are variables that are believed to have an influence on the dependent variable. The regression model attempts to quantify this relationship. 
+        Multiple independent variables can be used in multivariate regression.
+        
+        \item \textbf{Regression Equation}: The core of the model, this equation mathematically expresses how the independent variables are related to the dependent variable. The equation has coefficients (slopes) associated with each independent 
+        variable, representing the strength and direction of their impact.
+        
+        \item \textbf{Residuals}: Residuals are the differences between the observed values of the dependent variable and the values predicted by the regression equation. Analyzing residuals helps assess the goodness-of-fit of the model.
+        
+        \item \textbf{Types of Regression Models}: There are various types of regression models, each suited to different data scenarios. Common types include linear regression, logistic regression, polynomial regression, ridge regression, and 
+        lasso regression, among others.
+        
+        \item \textbf{Assumptions}: Regression models rely on several assumptions, such as linearity (the relationship between variables is linear), independence of errors (residuals are not correlated), and homoscedasticity (constant variance of residuals).
+        
+        \item \textbf{Model Evaluation}: Techniques like R-squared (coefficient of determination), Mean Squared Error (MSE), and hypothesis testing are employed to evaluate the performance and significance of regression models.
+        
+        \item \textbf{Overfitting and Underfitting}: Striking a balance between model complexity and predictive accuracy is crucial. Overfitting (when the model is too complex) and underfitting (when the model is too simplistic) are common challenges 
+        in regression modeling.
+        
+        \item \textbf{Applications}: Regression models find applications in diverse fields, including predicting stock prices, analyzing the impact of marketing campaigns on sales, understanding the relationship between age and health, and much more.
+    \end{enumerate}
+    
+    In summary, regression models are a versatile and essential tool for analyzing and modeling relationships between variables. They provide a framework for making predictions, drawing insights, and making informed decisions based on data. However, the choice 
+    of the appropriate regression model and careful validation are critical to ensure meaningful and accurate results.
+
+    \subsubsection*{Simplified Regression Model Notation}
+
+    The concept presented here relates to simplifying the notation used in regression models by leveraging vector stacking. In typical linear regression models, you have a set of weights (coefficients) denoted as \( \beta \) and an intercept term \( \alpha \). 
+    These parameters define the linear relationship between the features (\( x \)) and the predicted variable (\( y \)).
+    
+    To streamline this notation and make it more convenient, vector stacking is employed. Instead of representing the weights and intercept separately, they are combined into a single parameter vector \( \tilde{\beta} \). Additionally, a new feature vector 
+    \( \tilde{x} \) is created. This vector includes all the original features (\( x \)) and one additional feature (\( \tilde{x}_1 \)) that always has the value one. This extra feature essentially represents the constant term (intercept) in the regression model.
+    
+    Mathematically, we define the parameter vector \( \tilde{\beta} \) as \( \tilde{\beta} = (\alpha; \beta) \), where \( \alpha \) is the intercept, and \( \beta \) represents the weights for the original features. Consequently, the regression model, which 
+    initially looked like:
+    
+    \[
+    \hat{y} = \alpha + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_nx_n
+    \]
+    
+    can be expressed more succinctly in inner product form as:
+    
+    \[
+    \hat{y} = \tilde{x}^T \tilde{\beta}
+    \]
+    
+    To simplify the notation further, we can often omit the tildes and write it simply as:
+    
+    \[
+    \hat{y} = x^T \beta
+    \]
+    
+    with the understanding that the first feature in \( x \) is always equal to one, representing the constant term. While this extra feature doesn't provide any informative value, it aids in simplifying the notation when working with regression models.
+    
+    In essence, this technique allows for a more compact and manageable representation of regression models, making them easier to work with, especially in mathematical formulations and computations.    
+    
+\end{notes}

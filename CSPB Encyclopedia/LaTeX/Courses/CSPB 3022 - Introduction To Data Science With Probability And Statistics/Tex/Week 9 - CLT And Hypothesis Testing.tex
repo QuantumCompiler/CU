@@ -1,0 +1,97 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{CLT And Hypothesis Testing}
+\renewcommand{\SectionTitle}{CLT And Hypothesis Testing}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Optional Reading}
+
+The optional reading for this week is from \LearnDSBook \hspace*{1pt} and \PyDSBook.
+
+\subsection{Piazza}
+
+Must post / respond to two Piazza posts.
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76436/mod_resource/content/2/CSCI3022_002_CASEE240_10_23_2023.mp4}{Hypothesis Testing}{54}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76437/mod_resource/content/1/lab08_zoom.mp4}{Testing Hypothesis And The Central Limit Theorem Walkthrough}{63}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76438/mod_resource/content/2/CSCI3022_002_CASEE240_10_25_2023.mp4}{A/B Testing}{54}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76439/mod_resource/content/1/lab9_zoom.mp4}{A/B Testing Walkthrough}{33}
+    \item \lecture{https://applied.cs.colorado.edu/course/view.php?id=261&section=10}{Errors In Hypothesis Testing}{54}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Hypothesis Testing Lecture Notes.pdf}{Hypothesis Testing Lecture Notes}
+    \item \pdflink{\LecNoteDir AB Testing, Randomized Control Tests And Causality Lecture Notes.pdf}{AB Testing, Randomized Control Tests And Causality Lecture Notes}
+    \item \pdflink{\LecNoteDir Errors in Hypothesis Testing, PHacking Lecture Notes.pdf}{Errors in Hypothesis Testing, PHacking Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203022%20-%20Introduction%20To%20Data%20Science%20With%20Probability%20And%20Statistics/CSPB%203022%20-%20Assignments/CSPB%203022%20-%20Assignment%208%20-%20CLT%20And%20Hypothesis%20Testing}{Assignment 8 - CLT And Hypothesis Testing}
+\end{itemize}
+
+\subsection{Concept Summary}
+
+The concept that is being covered this week is \textbf{CLT And Hypothesis Testing}.
+
+\begin{notes}{CLT And Hypothesis Testing}
+    \subsection*{Overview}
+
+    The Central Limit Theorem (CLT) and Hypothesis Testing are foundational concepts in statistics, crucial for making inferences about populations from sample data. The CLT provides the theoretical 
+    backbone for understanding how sample means behave, especially with large sample sizes, while hypothesis testing is a methodological framework used to make decisions and test claims about 
+    population parameters based on sample statistics. Understanding both concepts allows statisticians to perform reliable and robust statistical analyses. \vspace*{1em}
+    
+    \subsubsection*{Central Limit Theorem}
+    
+    The Central Limit Theorem is a fundamental principle in probability theory that explains why the normal distribution arises so commonly and why it is generally applicable in statistical methodologies:
+    \begin{itemize}
+        \item \textbf{Statement of CLT}: It states that the distribution of the sample means will approximate a normal distribution, regardless of the shape of the population distribution, as long as 
+        the sample size is sufficiently large (usually n > 30).
+        \item \textbf{Implications}: This theorem allows for the simplification of analysis in many statistical applications because it justifies the use of the normal probability model in the sampling 
+        distribution of the mean. This is particularly useful for inferential statistics where exact distributions are unknown.
+    \end{itemize}
+    
+    \subsubsection*{Hypothesis Testing}
+    
+    Hypothesis Testing is a systematic method used to evaluate assumptions (hypotheses) about a parameter in a given population:
+    \begin{itemize}
+        \item \textbf{Steps in Hypothesis Testing}: 
+            \begin{enumerate}
+                \item Formulation of Null (H0) and Alternative (H1) Hypotheses: The null hypothesis typically represents a theory that there is no effect or no difference, and the alternative is what 
+                the researcher aims to prove.
+                \item Selection of a Significance Level $(\alpha)$: Commonly set at 0.05, this is the threshold for deciding whether to reject the null hypothesis.
+                \item Calculation of Test Statistic: Based on the sample data, calculate a statistic that is appropriate for the test (e.g., t-statistic for a t-test).
+                \item Determination of the P-value or Critical Value: Compare the calculated statistic to a critical value derived from an appropriate distribution.
+                \item Decision: Reject or fail to reject the null hypothesis based on the comparison between the P-value and the significance level.
+            \end{enumerate}
+        \item \textbf{Types of Errors}: Understanding Type I (false positive) and Type II (false negative) errors is critical in hypothesis testing. These errors reflect the probabilities of incorrectly 
+        rejecting a true null hypothesis or failing to reject a false null hypothesis, respectively.
+    \end{itemize}
+    
+    \subsubsection*{Combining CLT and Hypothesis Testing}
+    
+    Integrating the Central Limit Theorem with Hypothesis Testing provides a powerful approach to statistical inference:
+    \begin{itemize}
+        \item By assuming the normal distribution of the sample mean, as justified by the CLT, statisticians can apply hypothesis testing even when the population standard deviation is unknown, using 
+        the sample standard deviation as an estimate.
+        \item This integration simplifies the calculation of test statistics under the normality assumption, enhancing the accuracy and reliability of hypothesis tests.
+    \end{itemize}
+    
+    \subsubsection*{Summary}
+    
+    The Central Limit Theorem and Hypothesis Testing are indispensable tools in the field of statistics, enabling practitioners to make precise inferences about population parameters from sample data. 
+    These concepts are not only theoretical but also immensely practical, forming the basis for data analysis across scientific research, business analytics, and many other domains.    
+\end{notes}

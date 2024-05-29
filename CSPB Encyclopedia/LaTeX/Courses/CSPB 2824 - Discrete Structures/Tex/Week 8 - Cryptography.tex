@@ -1,0 +1,341 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Cryptography}
+\renewcommand{\SectionTitle}{Cryptography}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignments for this week is from, \Textbook:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir Chapter 4.3 - Primes And Greatest Common Divisors.pdf}{Chapter 4.3 - Primes And Greatest Common Divisors}
+    \item \pdflink{\ReadMatDir Chapter 4.4 - Solving Congruences.pdf}{Chapter 4.4 - Solving Congruences}
+    \item \pdflink{\ReadMatDir Chapter 4.6 - Cryptography.pdf}{Chapter 4.6 - Cryptography}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post / respond to at least \textbf{two} Piazza posts this week.
+
+\subsection{Lectures}
+
+The lectures for this week and their links can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51716}{Bezout Theorem} $\approx$ 10 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51717}{Proof of Bezout Theorem} $\approx$ 16 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51718}{Relatively Prime Numbers} $\approx$ 4 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51719}{Properties of Relatively Prime Numbers} $\approx$ 8 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51720}{Prime Vs. Relatively Prime} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51722}{Extended Euclid's Algorithm} $\approx$ 13 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51723}{Modular Inverse} $\approx$ 10 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51724}{Modular Congruences} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51725}{Simultaneous Congruences} $\approx$ 11 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51726}{Two Simultaneous Congruences And Chinese Remainder Theorem (Part I)} $\approx$ 8 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51727}{Two Simultaneous Congruences And Chinese Remainder Theorem (Part II)} $\approx$ 9 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51728}{Chinese Remainder Theorem (Multiple Congruences)} $\approx$ 8 min.
+    \item \href{https://github.com/sriram0339/notebooks/blob/master/chinese-remainder-theorem.ipynb}{IPython Notebook For Chinese Remainder Theorem}
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51730}{Proof of Fermat's Little Theorem} $\approx$ 14 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51731}{Fermat Little Theorem} $\approx$ 4 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51732}{Intro to Cryptography} $\approx$ 18 min.
+    \item \href{https://applied.cs.colorado.edu/mod/hvp/view.php?id=51733}{Public Key Encryption and RSA} $\approx$ 35 min.
+\end{itemize}
+
+\noindent Below is a list of lecture notes for this week:
+
+\begin{itemize}
+    \item \pdflink{\LectureNotesDir Public Key Encryption And RSA Lecture Notes.pdf}{Public Key Encryption And RSA Lecture Notes}
+    \item \pdflink{\LectureNotesDir Intro To Cryptography Lecture Notes.pdf}{Intro To Cryptography Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \pdflink{\AssDir Assignment 7 - Cryptography.pdf}{Assignment 7 - Cryptography}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz's for this week can be found at:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 7 - Cryptography.pdf}{Quiz 7 - Cryptography}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first section that we are covering this week is \textbf{Section 4.3 - Primes And Greatest Common Divisors}.
+
+\begin{notes}{Section 4.3 - Primes And Greatest Common Divisors}
+    \subsubsection*{Prime Numbers}
+    Prime numbers are fundamental in number theory, known for their unique properties. They are the building blocks of integers, as every positive integer greater than 1 can be expressed uniquely as a 
+    product of prime factors. This property is known as the Fundamental Theorem of Arithmetic.
+
+    Prime numbers have been a subject of fascination for mathematicians for centuries. They are extensively studied, and open problems like the distribution of prime numbers, the Twin Prime Conjecture, 
+    and the Riemann Hypothesis are closely related to primes.
+
+    In computer science, prime numbers find applications in various algorithms, such as those for hashing, searching, and cryptography. For example, hashing functions often rely on prime numbers to 
+    distribute data uniformly.
+
+    \subsubsection*{Greatest Common Divisor (GCD)}
+    The GCD is a fundamental concept that extends beyond just two numbers. It can be used to find the GCD of multiple integers, which is particularly important in number theory and cryptography.
+
+    The Extended Euclidean Algorithm is a powerful tool for finding the GCD and Bézout coefficients (integers s and t) that satisfy the equation ax + by = GCD(a, b). This algorithm plays a crucial 
+    role in solving Diophantine equations, which have applications in cryptography and coding theory.
+
+    Modular arithmetic, a branch of number theory, heavily relies on GCD calculations. It helps solve problems involving remainders and congruences and is used in computer science for tasks like data 
+    validation and error detection.
+
+    Primes and GCD are foundational concepts with wide-reaching applications in mathematics, computer science, cryptography, and data integrity. Their study continues to inspire mathematicians and 
+    computer scientists alike, contributing to advancements in algorithms, encryption, and number theory. Understanding these concepts is essential for solving complex problems in these domains and 
+    ensuring the security and reliability of digital systems.
+
+    \subsection*{Euclidean Algorithm}
+
+    The Euclidean Algorithm is a fundamental concept in number theory and mathematics, known for its simplicity and utility in finding the greatest common divisor (GCD) of two integers. Named after 
+    the ancient Greek mathematician Euclid, this algorithm has been used for over two millennia and remains a cornerstone of modern mathematics. The primary goal of the Euclidean Algorithm is to 
+    efficiently determine the largest positive integer that divides two given integers without leaving a remainder.
+    
+    \subsection*{Algorithm Overview}
+    
+    The Euclidean Algorithm operates on the principle of repeated subtraction. Given two positive integers, $a$ (the larger number) and $b$ (the smaller number), it repeatedly subtracts $b$ from $a$ 
+    until $a$ becomes smaller than $b$. At this point, the algorithm swaps the values of $a$ and $b$, ensuring that $a$ is always the larger number. The process continues until $b$ becomes zero. The 
+    value of $a$ at this stage represents the GCD of the original two integers.
+    
+    Mathematically, the steps of the Euclidean Algorithm can be summarized as follows:
+    \begin{enumerate}
+        \item Start with two positive integers, $a$ and $b$.
+        \item Divide $a$ by $b$ and find the remainder, denoted as $r$.
+        \item Replace $a$ with $b$ and $b$ with $r$.
+        \item Repeat steps 2 and 3 until $b$ becomes zero.
+        \item The value of $a$ at this point is the GCD of the original two integers.
+    \end{enumerate}
+    
+    \subsection*{Key Properties and Applications}
+    
+    The Euclidean Algorithm possesses several key properties and applications:
+
+    \begin{enumerate}
+        \item \textbf{Efficiency:} The algorithm's efficiency is one of its most notable features. It operates in a time complexity that is proportional to the number of bits required to represent the 
+        numbers $a$ and $b$. This makes it highly efficient even for large integers.
+        \item \textbf{GCD Computation:} The primary purpose of the Euclidean Algorithm is to calculate the GCD of two integers. It is invaluable in simplifying fractions and solving Diophantine equations 
+        (equations with integer solutions), both of which have widespread applications in various fields, including number theory, cryptography, and computer science.
+        \item \textbf{Extended Euclidean Algorithm:} The Extended Euclidean Algorithm is an extension of the basic algorithm that not only calculates the GCD but also finds the Bézout coefficients, 
+        integers $s$ and $t$, such that $as + bt = \text{GCD}(a, b)$. This extended version plays a crucial role in solving linear Diophantine equations and has applications in cryptography and coding theory.
+        \item \textbf{Modular Arithmetic:} The Euclidean Algorithm is frequently employed in modular arithmetic, where it is used to find modular inverses and solve congruences. It is a foundational 
+        tool in the field of number theory and has applications in cryptography, error detection, and data validation.
+    \end{enumerate}
+    
+    The Euclidean Algorithm is a timeless mathematical tool that continues to find applications in various domains, including number theory, computer science, and cryptography. Its elegance and 
+    efficiency make it an essential component of algorithms used in digital systems, ensuring the secure and efficient functioning of modern technology. Whether simplifying fractions, solving Diophantine 
+    equations, or securing digital communications, the Euclidean Algorithm remains a cornerstone of mathematical problem-solving. Understanding its principles and applications is essential for anyone working 
+    with numbers and computation.
+
+    \subsubsection*{Bézout Coefficients: Understanding the Fundamental Relationship in Number Theory}
+
+    In the realm of number theory, Bézout coefficients hold a pivotal role as they provide a profound understanding of the greatest common divisor (GCD) of two integers. Named after the French 
+    mathematician Étienne Bézout, these coefficients offer insights into the linear combination of two integers that results in their GCD. This concept has diverse applications, from solving Diophantine 
+    equations to cryptography and modular arithmetic, making it a cornerstone in mathematics.
+
+    \subsubsection*{The Basics of Bézout Coefficients}
+
+    At its core, Bézout's identity states that for any two integers, \(a\) and \(b\), there exist integers \(s\) and \(t\) such that \(as + bt = \text{GCD}(a, b)\). In other words, Bézout coefficients 
+    \(s\) and \(t\) represent the linear combination of \(a\) and \(b\) that yields their GCD. This fundamental relationship is the basis for the Extended Euclidean Algorithm, a powerful tool for 
+    calculating GCDs and finding modular inverses.
+
+    \subsubsection*{Applications in Number Theory}
+
+    \begin{enumerate}
+        \item \textbf{Diophantine Equations}: Diophantine equations are equations with integer solutions, and they arise in various mathematical contexts. Bézout coefficients play a crucial role in 
+        solving linear Diophantine equations of the form \(ax + by = c\), where \(a\), \(b\), and \(c\) are integers. These coefficients provide a systematic method for finding solutions to such equations.
+        \item \textbf{Modular Arithmetic}: In modular arithmetic, Bézout coefficients are used to find modular inverses. For a given integer \(a\) and modulus \(m\), the modular inverse \(a^{-1}\) exists 
+        if and only if \(\text{GCD}(a, m) = 1\). Bézout coefficients \(s\) and \(t\) allow us to express this modular inverse as \(a^{-1} \equiv s \mod m\).
+        \item \textbf{Cryptography}: Bézout coefficients have applications in cryptographic algorithms, especially in RSA encryption. They are used to compute the private key from the public key, 
+        ensuring secure communication and data protection.
+    \end{enumerate}
+
+    Bézout coefficients are a fundamental concept in number theory with far-reaching implications in mathematics and its applications. They enable us to understand the underlying structure of GCDs, 
+    solve Diophantine equations, work with modular arithmetic, and strengthen the foundations of cryptography. The elegance and versatility of Bézout's identity continue to influence various fields, 
+    making it a topic of enduring importance in mathematics.
+\end{notes}
+
+The next section that we are covering this week is \textbf{Section 4.4 - Solving Congruences}.
+
+\begin{notes}{Section 4.4 - Solving Congruences}
+    \subsubsection*{Overview}
+
+    Modular arithmetic, a branch of number theory, deals with the fascinating world of congruences—equations that express the concept of numbers having the same remainder when divided by a fixed integer, 
+    known as the modulus. Solving congruences involves finding solutions that satisfy these modular equations, and it has applications in various fields, from cryptography to algebraic structures.
+
+    \subsubsection*{The Essence of Congruences}
+
+    At the core of solving congruences is the notion of congruence relation, denoted as \(a \equiv b \mod m\), which signifies that integers \(a\) and \(b\) leave the same remainder when divided by 
+    \(m\). This relation divides the integers into congruence classes, paving the way for understanding patterns and solving modular equations.
+
+    \subsubsection*{Methods for Solving Congruences}
+
+    \begin{enumerate}
+        \item \textbf{Direct Computation}: For simple congruences, direct computation involves exploring possible values within the congruence class to identify the solutions. This method is practical 
+        for small moduli and linear equations.
+        \item \textbf{Modular Arithmetic Rules}: Leveraging modular arithmetic rules, such as addition, subtraction, multiplication, and exponentiation, simplifies solving more complex congruences. 
+        These rules allow for step-by-step manipulation to arrive at solutions.
+        \item \textbf{Chinese Remainder Theorem (CRT)}: The CRT is a powerful tool for solving systems of simultaneous congruences. It breaks down a complex modular problem into simpler subproblems, 
+        which can be solved individually, and then combines their solutions to obtain the final solution.
+        \item \textbf{Extended Euclidean Algorithm}: When working with modular inverses, the Extended Euclidean Algorithm plays a vital role. It helps find the multiplicative inverse of an integer 
+        modulo \(m\), enabling the solution of congruences involving division.
+    \end{enumerate}
+
+    \subsubsection*{Applications in Mathematics and Beyond}
+
+    Solving congruences has broad applications in mathematics and beyond:
+
+    \begin{itemize}
+        \item \textbf{Cryptography}: In modern cryptography, congruences are employed to secure communications and data encryption. Algorithms like RSA rely on the difficulty of factoring large 
+        composite numbers, which involves solving congruences.
+        \item \textbf{Algebraic Structures}: Congruences are used to explore algebraic structures, particularly in the study of rings, fields, and group theory. They provide insights into the 
+        properties and behaviors of mathematical objects.
+        \item \textbf{Number Theory}: Congruences are deeply intertwined with number theory, facilitating the exploration of properties related to prime numbers, divisibility, and modular arithmetic.
+    \end{itemize}
+
+    Solving congruences is a fundamental and versatile skill in mathematics, offering a structured approach to handling modular equations. From number theory to cryptography and algebraic structures, 
+    the ability to decipher congruences plays a crucial role in understanding mathematical concepts and solving real-world problems.
+
+    \subsubsection*{Fermat's Little Theorem}
+
+    Fermat's Little Theorem is a captivating result in number theory, named after the French mathematician Pierre de Fermat, who first stated it in the 17th century. This theorem offers profound 
+    insights into the behavior of remainders when raising integers to a power, and it has significant applications in various mathematical and computational domains.
+    
+    \subsubsection*{The Essence of Fermat's Little Theorem}
+    
+    The theorem is expressed as follows: For any prime number \(p\) and an integer \(a\) not divisible by \(p\), \(a^{p-1}\) is congruent to \(1\) modulo \(p\), represented as \(a^{p-1} \equiv 1 \mod p\). 
+    In simpler terms, when you raise an integer \(a\) to the power \(p-1\), and then divide the result by the prime \(p\), the remainder is always \(1\).
+    
+    \subsubsection*{Illustrating the Power of Primality}
+    
+    Fermat's Little Theorem shines a spotlight on the concept of primality. It helps identify prime numbers, as they are the only integers for which the theorem holds true. When applied to a 
+    composite number, the result can be anything other than \(1\), making it a handy tool for testing primality.
+    
+    \subsubsection*{Applications in Number Theory and Cryptography}
+
+    \begin{enumerate}
+        \item \textbf{Primality Testing}: Fermat's Little Theorem serves as a basis for primality tests, including the Fermat primality test. By verifying whether the theorem holds for a given 
+        number, one can assess its primality with high confidence.
+        \item \textbf{RSA Encryption}: In the field of cryptography, the theorem plays a pivotal role in the RSA encryption algorithm. It forms the foundation for generating secure public and 
+        private keys, ensuring the confidentiality of data in modern secure communications.
+        \item \textbf{Group Theory}: The theorem has deep connections to group theory, where it reveals the properties of groups formed by elements and powers in modular arithmetic.
+    \end{enumerate}
+    
+    \subsubsection*{Generalizations and Extensions}
+    
+    Fermat's Little Theorem has several generalizations and extensions, including Euler's Totient Theorem and Carmichael's Theorem, which provide further insights into modular arithmetic and prime-powered 
+    behavior.
+    
+    Fermat's Little Theorem stands as a testament to the elegance and power of number theory. Its simple yet profound statement continues to impact various branches of mathematics and serves as a 
+    cornerstone in the development of secure cryptographic systems.
+\end{notes}
+
+The next section that we are covering this week is \textbf{Section 4.6 - Cryptography}.
+
+\begin{notes}{Section 4.6 - Cryptography}
+    \subsubsection*{Overview}
+
+    Cryptography is the science and practice of encoding and decoding information to protect its confidentiality, integrity, and authenticity. It plays a pivotal role in ensuring the security and 
+    privacy of digital communications, transactions, and data storage in the modern information age.
+    
+    \subsubsection*{The Pillars of Cryptography}
+
+    \begin{enumerate}
+        \item \textbf{Confidentiality}: Cryptography ensures that unauthorized individuals cannot access or understand sensitive information. Encryption is a fundamental technique used to transform 
+        plaintext into ciphertext, which can only be deciphered by those with the appropriate decryption key.
+        \item \textbf{Integrity}: Cryptographic mechanisms are employed to detect any unauthorized modifications or tampering of data during transmission or storage. Hash functions and digital 
+        signatures are examples of tools used to verify data integrity.
+        \item \textbf{Authentication}: Cryptography provides methods for verifying the identities of individuals, devices, or entities in a digital interaction. Public key infrastructure (PKI) and 
+        digital certificates are commonly used to establish trust in online transactions.
+    \end{enumerate}
+    
+    \subsubsection*{Key Concepts in Cryptography}
+
+    \begin{enumerate}
+        \item \textbf{Symmetric and Asymmetric Cryptography}: Cryptographic algorithms are categorized as either symmetric (using a single key for both encryption and decryption) or asymmetric 
+        (utilizing a pair of public and private keys). Symmetric cryptography is efficient for data encryption, while asymmetric cryptography is essential for secure key exchange and digital signatures.
+        \item \textbf{Cryptanalysis}: This is the art of breaking cryptographic systems, often through mathematical analysis and computational techniques. Cryptanalysts aim to discover vulnerabilities 
+        and weaknesses in encryption algorithms.
+        \item \textbf{Cryptographic Protocols}: These are standardized procedures and rules for secure communication. Protocols like SSL/TLS (for secure web browsing) and IPsec (for secure network 
+        communication) are widely used to protect data during transmission.
+        \item \textbf{Quantum Cryptography}: With the advent of quantum computing, the field of cryptography faces new challenges. Quantum cryptography harnesses the principles of quantum mechanics 
+        to create theoretically unbreakable encryption schemes.
+    \end{enumerate}
+    
+    \subsubsection*{Applications of Cryptography}
+
+    \begin{enumerate}
+        \item \textbf{Secure Communication}: Cryptography safeguards email, instant messaging, voice calls, and other digital communications from eavesdropping and interception.
+        \item \textbf{E-commerce and Online Banking}: It underpins secure online transactions, enabling consumers to shop online and perform banking operations with confidence.
+        \item \textbf{Government and Military Use}: Cryptography is crucial for protecting classified information, national security, and military communications.
+        \item \textbf{Data Protection}: Cryptographic techniques are applied to secure sensitive data in databases, cloud storage, and backups.
+        \item \textbf{Blockchain Technology}: Cryptography is central to blockchain, ensuring the integrity and immutability of data in decentralized ledgers like Bitcoin.
+    \end{enumerate}
+    
+    \subsubsection*{Challenges and Evolving Landscape}
+    
+    Cryptography is a dynamic field that continually adapts to emerging threats and technologies. Quantum computing, the rise of cyberattacks, and the need for privacy-preserving algorithms are among 
+    the ongoing challenges in the world of cryptography.
+    
+    Cryptography is the guardian of digital trust, enabling secure and private interactions in an interconnected world. Its innovations and advancements are instrumental in safeguarding sensitive 
+    information and shaping the future of cybersecurity.
+
+    \subsubsection*{RSA}
+
+    RSA, named after its inventors Ron Rivest, Adi Shamir, and Leonard Adleman, is a widely used asymmetric encryption algorithm that plays a crucial role in securing digital communications, 
+    data protection, and authentication.
+    
+    \subsubsection*{Key Concepts in RSA}
+
+    \begin{enumerate}
+        \item \textbf{Asymmetric Cryptography}: RSA uses a pair of keys—a public key for encryption and a private key for decryption. The security of RSA relies on the mathematical difficulty of 
+        factoring large composite numbers.
+        \item \textbf{Key Generation}: To set up RSA encryption, a user generates a public-private key pair. The public key is shared with anyone, while the private key is kept confidential.
+    \end{enumerate}
+    
+    \subsubsection*{RSA Encryption Process}
+
+    \begin{enumerate}
+        \item \textbf{Key Exchange}: In a typical scenario, Alice wants to send an encrypted message to Bob. Bob shares his public key (containing the modulus n and encryption exponent e) 
+        with Alice.
+        \item \textbf{Message Encryption}: Alice takes Bob's public key and uses it to encrypt her plaintext message M. She raises M to the power of e modulo n, resulting in ciphertext C: 
+        \[C \equiv M^e \ (\text{mod} \ n)\]
+        \item \textbf{Sending Ciphertext}: Alice sends the ciphertext C to Bob.
+    \end{enumerate}
+    
+    \subsubsection*{RSA Decryption Process}
+
+    \begin{enumerate}
+        \item \textbf{Message Retrieval}: Bob receives the ciphertext C.
+        \item \textbf{Decryption}: Using his private key (containing the modulus n and decryption exponent d), Bob decrypts C to obtain the original message M: \[M \equiv C^d \ (\text{mod} \ n)\]
+        \item \textbf{Message Verification}: Bob now has access to the plaintext message M.
+    \end{enumerate}
+    
+    \subsubsection*{Security and Applications}
+    
+    RSA's security is based on the difficulty of factoring the product of two large prime numbers. As such, it is considered highly secure when key lengths are sufficiently large. RSA is widely used 
+    in secure email, online banking, digital signatures, and secure communication protocols like SSL/TLS.
+    
+    \subsubsection*{Key Management}
+    
+    Key management is a crucial aspect of RSA. Key pairs must be generated securely, and private keys must be safeguarded to prevent unauthorized access. Periodic key rotation and secure key storage 
+    practices are essential.
+    
+    \subsubsection*{Quantum Computing and RSA}
+    
+    The advent of quantum computing poses a potential threat to RSA. Quantum computers may efficiently factor large numbers, rendering RSA encryption insecure. Post-quantum cryptography research is 
+    actively exploring alternative encryption algorithms to withstand quantum attacks.
+    
+    RSA encryption and decryption provide a robust framework for secure communication and data protection in the digital world. Understanding the principles behind RSA is essential for implementing 
+    secure information exchange and safeguarding sensitive data.
+\end{notes}

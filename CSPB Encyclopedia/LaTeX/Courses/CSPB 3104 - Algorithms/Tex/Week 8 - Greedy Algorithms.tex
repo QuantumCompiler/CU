@@ -1,0 +1,254 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Greedy Algorithms}
+\renewcommand{\SectionTitle}{Greedy Algorithms}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading assignment for this week is from, \Textbook:
+
+\begin{itemize}
+    \item \pdflink{\ReadMatDir Chapter 16.1 - An Activity-Selection Problem.pdf}{Chapter 16.1 - An Activity-Selection Problem}
+    \item \pdflink{\ReadMatDir Chapter 16.2 - Elements Of The Greedy Strategy.pdf}{Chapter 16.2 - Elements Of The Greedy Strategy}
+    \item \pdflink{\ReadMatDir Chapter 16.3 - Huffman Codes.pdf}{Chapter 16.3 - Huffman Codes}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=m4Djq7R9AGc}{Introduction To Greed Algorithms}{20}
+    \item \lecture{https://www.youtube.com/watch?v=Cg00mkKY2Cg}{Greedy Interval Scheduling}{23}
+    \item \lecture{https://www.youtube.com/watch?v=zzow9UDbTfY}{Lossless Data Compression: PrefixCodes}{30}
+    \item \lecture{https://www.youtube.com/watch?v=sIAnqZOgrpE}{Huffman Codes}{28}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203104%20-%20Algorithms/CSPB%203104%20-%20Assignments/CSPB%203104%20-%20Programming%20Assignments/CSPB%203104%20-%20Programming%20Assignment%202%20-%20Tries}{Programming Assignment 2 - Tries}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 7.pdf}{Quiz 7}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 16: Greedy Algorithms}. The first section that is being covered from this chapter this week is \textbf{Section 16.1: An Activity-Selection Problem}.
+
+\begin{notes}{Section 16.1: An Activity-Selection Problem}
+    \subsubsection*{An Activity-Selection Problem}
+
+    The activity-selection problem is a classic example illustrating the power of greedy algorithms. The problem involves selecting the maximum number of activities that don't overlap from a set of 
+    activities, each with a start time and an end time. The goal is to make the optimal selection such that the maximum number of activities can be attended.
+    
+    \begin{itemize}
+        \item \textbf{Problem Statement}
+        \begin{itemize}
+            \item Given $n$ activities with their start times $s_i$ and finish times $f_i$ for each activity $i$, select the maximum number of activities that do not overlap. An activity $i$ is said 
+            to overlap with activity $j$ if their time intervals $s_i, f_i$ and $s_j, f_j$ intersect.
+        \end{itemize}
+        
+        \item \textbf{Greedy-Choice Property}
+        \begin{itemize}
+            \item The greedy choice is to always select the activity that finishes first. This choice is made because selecting an activity that finishes earlier leaves as much room as possible for 
+            the remaining activities.
+        \end{itemize}
+        
+        \item \textbf{Greedy Algorithm Strategy}
+        \begin{itemize}
+            \item Sort all activities by their finishing times.
+            \item Select the first activity in the sorted list and mark it as the current activity.
+            \item For each remaining activity in the list, if the start time of this activity is greater than or equal to the finish time of the current activity, select this activity and update the 
+            current activity to this one.
+        \end{itemize}
+        
+        \item \textbf{Runtime Complexity}
+        \begin{itemize}
+            \item The runtime complexity of the activity-selection problem using a greedy algorithm mainly depends on the sorting algorithm used. Assuming a sorting algorithm with $O(n \log n)$ complexity, 
+            the overall complexity of the activity-selection algorithm is $O(n \log n)$ due to the initial sorting step. The selection process itself is $O(n)$, as it requires a single pass through 
+            the sorted list of activities.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Activity Selection Problem]
+        This Python code snippet demonstrates the greedy algorithm solution to the activity-selection problem.
+    \begin{code}[Python]
+    def activity_selection(start_times, finish_times):
+        activities = sorted(zip(start_times, finish_times), key=lambda x: x[1])
+        n = len(activities)
+        selected = [activities[0]]  # Select the first activity
+        for i in range(1, n):
+            if activities[i][0] >= selected[-1][1]:  # If this activity doesn't overlap with the last selected
+                selected.append(activities[i])  # Select it
+        return selected
+    \end{code}
+        The `activity\_selection` function takes the start and finish times of the activities, sorts them by their finish times, and iteratively selects the maximum number of non-overlapping activities. 
+        This implementation highlights the effectiveness and simplicity of the greedy approach for solving the activity-selection problem.
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 16.2: Elements of The Greedy Strategy}.
+
+\begin{notes}{Section 16.2: Elements of The Greedy Strategy}
+    \subsubsection*{Elements of The Greedy Strategy with a Python Example}
+
+    The Greedy Strategy is a method for solving optimization problems by building a solution piece by piece, choosing the next piece with the most immediate benefit. Below, we detail the elements of 
+    the Greedy Strategy and illustrate them with a Python example for the problem of making change.
+    
+    \begin{itemize}
+        \item \textbf{Candidate Set}
+        \begin{itemize}
+            \item The set of coins available to make change. For the making change problem, this set includes all denominations of coins available.
+        \end{itemize}    
+        \item \textbf{Selection Function}
+        \begin{itemize}
+            \item Chooses the largest denomination of coin that does not exceed the remaining amount of change to be given. This choice maximizes the immediate reduction in remaining change.
+        \end{itemize}
+        \item \textbf{Feasibility Function}
+        \begin{itemize}
+            \item Ensures the selected coin does not exceed the amount of change remaining. This function maintains the constraint of not giving too much change.
+        \end{itemize}
+        \item \textbf{Objective Function}
+        \begin{itemize}
+            \item Minimizes the number of coins given as change. The algorithm aims to reduce the total count of coins.
+        \end{itemize}
+        \item \textbf{Solution Function}
+        \begin{itemize}
+            \item Determines if the total amount of change has been given. The algorithm terminates when the remaining change to be given is zero.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Sample Python Code for Making Change]
+        This Python code snippet demonstrates the greedy algorithm solution to the making change problem.
+    
+    \begin{code}[Python]
+    def make_change(amount, denominations):
+        denominations.sort(reverse=True)  # Sort denominations in descending order
+        result = []
+        for coin in denominations:
+            while amount >= coin:
+                amount -= coin
+                result.append(coin)
+        return result
+    \end{code}
+    
+        The `make\_change` function takes an amount and a list of coin denominations, then iteratively selects the largest denomination that does not exceed the remaining amount. This implementation 
+        showcases the Greedy Strategy elements at work in solving the making change problem.
+    \end{highlight}
+    
+    Each element of the Greedy Strategy plays a critical role in the operation of the algorithm, guiding the selection of coins in a way that aims to minimize the total number of coins given, thereby 
+    achieving an efficient solution to the making change problem.    
+\end{notes}
+
+The last section that will be covered from this chapter this week is \textbf{Section 16.3: Huffman Codes}.
+
+\begin{notes}{Section 16.3: Huffman Codes}
+    \subsubsection*{Huffman Codes}
+
+    Huffman codes are a type of prefix coding used for lossless data compression. They assign variable-length codes to input characters, with shorter codes assigned to more frequent characters, thereby 
+    achieving compression. 
+    
+    A Huffman tree is a binary tree used to encode characters. It is constructed based on the frequency of characters in the input data. Characters with higher frequencies are assigned shorter codes, 
+    while those with lower frequencies are assigned longer codes. The Huffman tree is built in a bottom-up manner, starting with individual characters as leaves and combining them to form higher nodes 
+    until the entire tree is formed. \vspace*{1em}
+    
+    \subsubsection*{Building A Huffman Tree}
+
+    \begin{itemize}
+        \item Create a leaf node for each unique character in the input data, with the frequency of occurrence as the weight of the node.
+        \item Place all leaf nodes in a priority queue, ordered by their frequencies.
+        \item While there is more than one node in the priority queue:
+        \begin{itemize}
+            \item Remove the two nodes with the lowest frequencies from the queue.
+            \item Create a new internal node with these two nodes as children. The frequency of the new node is the sum of the frequencies of its children.
+            \item Insert the new node back into the priority queue.
+        \end{itemize}
+        \item The remaining node in the priority queue is the root of the Huffman tree.
+    \end{itemize}
+    
+    \subsubsection*{Decoding A Huffman Tree}
+    \begin{itemize}
+        \item Start at the root of the Huffman tree.
+        \item For each bit in the encoded data:
+        \begin{itemize}
+            \item If the bit is 0, move to the left child of the current node.
+            \item If the bit is 1, move to the right child of the current node.
+            \item If a leaf node is reached, output the corresponding character and return to the root of the tree.
+        \end{itemize}
+    \end{itemize}
+    
+    \begin{highlight}[Python Example: Huffman Coding]
+        Below is an example how to use huffman coding in Python.
+    \begin{code}[Python]
+    from heapq import heappop, heappush, heapify
+    from collections import defaultdict
+    
+    class Node:
+        def __init__(self, char, freq):
+            self.char = char
+            self.freq = freq
+            self.left = None
+            self.right = None
+    
+    def build_huffman_tree(text):
+        freq_map = defaultdict(int)
+        for char in text:
+            freq_map[char] += 1
+    
+        priority_queue = [Node(char, freq) for char, freq in freq_map.items()]
+        heapify(priority_queue)
+    
+        while len(priority_queue) > 1:
+            left = heappop(priority_queue)
+            right = heappop(priority_queue)
+            internal_node = Node(None, left.freq + right.freq)
+            internal_node.left = left
+            internal_node.right = right
+            heappush(priority_queue, internal_node)
+    
+        return priority_queue[0]
+    
+    def encode_huffman(root, code_dict, current_code=""):
+        if root is not None:
+            if root.char is not None:
+                code_dict[root.char] = current_code
+            encode_huffman(root.left, code_dict, current_code + "0")
+            encode_huffman(root.right, code_dict, current_code + "1")
+    
+    def huffman_encode(text):
+        root = build_huffman_tree(text)
+        code_dict = {}
+        encode_huffman(root, code_dict)
+        encoded_text = ''.join(code_dict[char] for char in text)
+        return encoded_text, root
+    
+    def huffman_decode(encoded_text, root):
+        decoded_text = ""
+        current_node = root
+        for bit in encoded_text:
+            if bit == "0":
+                current_node = current_node.left
+            else:
+                current_node = current_node.right
+            if current_node.char is not None:
+                decoded_text += current_node.char
+                current_node = root
+        return decoded_text
+    \end{code}
+    
+    This Python code demonstrates the construction of a Huffman tree from input text, encoding of the text using Huffman coding, and decoding of the encoded text back to its original form.
+    \end{highlight}    
+\end{notes}

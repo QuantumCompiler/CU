@@ -1,0 +1,106 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Multiple Linear Regression And Feature Engineering}
+\renewcommand{\SectionTitle}{Multiple Linear Regression And Feature Engineering}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Optional Reading}
+
+The optional reading for this week is from \LearnDSBook \hspace*{1pt} and \PyDSBook.
+
+\subsection{Piazza}
+
+Must post / respond to two Piazza posts.
+
+\subsection{Lectures}
+
+The lecture videos for this week are:
+
+\begin{itemize}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76505/mod_resource/content/1/multiple_linear_regression.mp4}{Multiple Linear Regression}{33}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76506/mod_resource/content/1/CSCI3022_002_CASEE240_12_1_2023.mp4}{Feature Engineering}{54}
+    \item \lecture{https://applied.cs.colorado.edu/pluginfile.php/76507/mod_resource/content/1/CSCI3022_002_CASEE240_12_4_2023.mp4}{Cross Validation}{54}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Sklearn And Multiple Linear Regression Lecture Notes.pdf}{Sklearn And Multiple Linear Regression Lecture Notes}
+    \item \pdflink{\LecNoteDir Feature Engineering Lecture Notes.pdf}{Feature Engineering Lecture Notes}
+    \item \pdflink{\LecNoteDir Cross Validation Lecture Notes.pdf}{Cross Validation Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \href{https://github.com/QuantumCompiler/CU/tree/main/CSPB%203022%20-%20Introduction%20To%20Data%20Science%20With%20Probability%20And%20Statistics/CSPB%203022%20-%20Final%20Project/CSPB%203022%20-%20Final%20Project%20Part%201}{Final Project Part 1}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quizzes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 9 - Linear Regression.pdf}{Quiz 9 - Linear Regression}
+\end{itemize}
+
+\subsection{Concept Summary}
+
+The concept that is being covered this week is \textbf{Multiple Linear Regression And Feature Engineering}.
+
+\begin{notes}{Multiple Linear Regression And Feature Engineering}
+    \subsection*{Overview}
+
+    Multiple Linear Regression (MLR) extends the concepts of simple linear regression to include more than one independent variable. This technique is used to model the relationship between a dependent 
+    variable and multiple predictors, providing a more comprehensive understanding of factors affecting the outcome. Feature Engineering is a critical process in machine learning that involves creating 
+    new input features from existing variables to improve model accuracy. MLR and feature engineering together form a powerful toolkit for predictive modeling across various fields such as economics, 
+    health sciences, and machine learning. \vspace*{1em}
+    
+    \subsubsection*{Multiple Linear Regression}
+    
+    Formulation of Multiple Linear Regression:
+    \begin{itemize}
+        \item \textbf{Model Equation}: MLR models the relationship between several independent variables and a dependent variable by fitting a linear equation to observed data. The equation is 
+        $Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \dots + \beta_nX_n + \epsilon$, where:
+            \begin{itemize}
+                \item $Y$ is the dependent variable.
+                \item $X_1, X_2, \dots, X_n$ are the independent variables.
+                \item $\beta_0, \beta_1, \dots, \beta_n$ are the coefficients that represent the weights of the respective independent variables.
+                \item $\epsilon$ is the error term, capturing all other factors that influence $Y$ but are not included in the model.
+            \end{itemize}
+        \item \textbf{Parameter Estimation}: Typically, the coefficients are estimated using the least squares criterion, which aims to minimize the sum of the squared residuals (the differences 
+        between observed and predicted values).
+    \end{itemize}
+    
+    \subsubsection*{Assumptions of Multiple Linear Regression}
+    
+    Multiple Linear Regression relies on several key assumptions to ensure reliable predictions:
+    \begin{itemize}
+        \item \textbf{Multicollinearity}: The model assumes little or no multicollinearity among the independent variables. High multicollinearity can undermine the statistical significance of the independent variables.
+        \item \textbf{Linearity and Additivity}: The relationship between the dependent and independent variables should be linear. The effect of changes in an independent variable $X$ on the dependent variable $Y$ is constant.
+        \item \textbf{Independence of Residuals}: Residuals should be independent of each other, which implies that the residuals are spread randomly and do not follow any pattern.
+        \item \textbf{Homoscedasticity}: The residuals should have constant variance at every level of the independent variable.
+        \item \textbf{Normal Distribution of Residuals}: For inference purposes, the residuals should be normally distributed.
+    \end{itemize}
+    
+    \subsubsection*{Feature Engineering in Multiple Linear Regression}
+    
+    Enhancing Model Performance with Feature Engineering:
+    \begin{itemize}
+        \item \textbf{Creating Interaction Terms}: To capture the effect of interactions between variables that may affect the dependent variable.
+        \item \textbf{Polynomial Features}: Including non-linear relationships by adding squared or higher-order terms of the predictors.
+        \item \textbf{Transformation of Variables}: Applying transformations such as logarithmic, square root, or inverse to achieve linearity or reduce skewness in the data.
+        \item \textbf{Handling Categorical Variables}: Using techniques like one-hot encoding to convert categorical variables into a format that can be provided to ML models.
+    \end{itemize}
+    
+    \subsubsection*{Summary}
+    
+    Multiple Linear Regression, complemented by strategic feature engineering, significantly enhances the ability to understand complex relationships within data. These methodologies are indispensable 
+    in scenarios where the impact of multiple variables on an outcome needs to be assessed simultaneously, providing clarity and precision in predictive analytics. Through careful consideration of 
+    model assumptions and judicious feature selection and transformation, practitioners can build robust models that effectively capture the dynamics of real-world phenomena.    
+\end{notes}
