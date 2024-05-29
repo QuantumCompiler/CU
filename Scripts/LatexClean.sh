@@ -7,5 +7,4 @@ find . -type f -name '*.out' -exec rm {} +
 find . -type f -name '*.ptc' -exec rm {} +
 find . -type f -name '*.toc' -exec rm {} +
 
-echo
 echo "LaTeX excess deleted successfully from all directories."
