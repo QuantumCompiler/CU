@@ -1,0 +1,1643 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Regular Expressions And Scripting}
+\renewcommand{\SectionTitle}{Regular Expressions And Scripting}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \textbf{The Linux Command Line - Chapter 7 - Seeing The World As The Shell Sees It}
+    \item \textbf{The Linux Command Line - Chapter 9 - Permissions}
+    \item \textbf{The Linux Command Line - Chapter 13 - Customizing The Prompt}
+    \item \textbf{The Linux Command Line - Chapter 19 - Regular Expressions}
+    \item \textbf{The Linux Command Line - Chapter 24 - Writing Your First Script}
+    \item \textbf{The Linux Command Line - Chapter 26 - Top Down Design}
+    \item \textbf{The Linux Command Line - Chapter 27 - Flow Control - Branching With if}
+    \item \textbf{The Linux Command Line - Chapter 32 - Positional Parameters}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=AMLstF8azVo}{Definition Of Regular Expressions}{25}
+    \item \lecture{https://www.youtube.com/watch?v=fRKhF354G7g}{Development And Evaluation Of Regular Expressions}{12}
+    \item \lecture{https://www.youtube.com/watch?v=dLJgzwbue0E}{Bash Scripting Using The Shell}{20}
+    \item \lecture{https://www.youtube.com/watch?v=ejpvf8D-6vs}{Python Scripting}{21}
+    \item \lecture{https://www.youtube.com/watch?v=wbK-SWYUSjk}{Lab 2 Introduction}{40}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \href{https://alf.nu/RegexGolf?world=regex&level=r00}{Regex Golf}
+    \item \href{https://devhints.io/bash}{Bash Scripting Cheatsheet}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-1-and-2-QuantumCompiler}{Lab 2 - Using Command Line Interface}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 2 - Regular Expressions And Scripting.pdf}{Quiz 2 - Regular Expressions And Scripting}
+\end{itemize}
+
+\subsection{Project}
+
+The assignment(s) for the project this week is:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Introduction To The Team Project - Guidelines.pdf}{Introduction To The Team Project - Guidelines}
+    \item \href{https://applied.cs.colorado.edu/mod/assign/view.php?id=61277}{Project Milestone 1: Project Proposal}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is covered this week is \textbf{Chapter 7: Seeing The World As The Shell Sees It}.
+
+\begin{notes}{Chapter 7: Seeing The World As The Shell Sees It}
+    \subsection*{Overview}
+
+    This chapter explores how the shell processes commands by performing expansions before execution. We will cover various types of expansions including pathname, tilde, arithmetic, brace, 
+    parameter, and command substitution. Understanding these expansions is crucial for effective use of the shell.
+    
+    \subsubsection*{Expansion}
+    
+    Expansion refers to the shell's process of substituting text in a command before execution. For example, the \texttt{echo} command prints its arguments to standard output, but special characters 
+    like \texttt{*} can be expanded to match filenames.
+    
+    \begin{highlight}[Expansion]
+    
+    Expansions transform simple text into more complex expressions before the shell executes commands.
+    
+    \begin{itemize}
+        \item The \texttt{echo} command can display text or expanded results.
+        \item The \texttt{*} wildcard is expanded to match filenames in the current directory.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Pathname Expansion}
+    
+    Pathname expansion, also known as globbing, uses wildcards to match filenames. Characters like \texttt{*}, \texttt{?}, and \texttt{[]} create patterns that match multiple files or directories.
+    
+    \begin{highlight}[Pathname Expansion]
+    
+    Wildcards expand to match filenames and directories.
+    
+    \begin{itemize}
+        \item \texttt{D*} matches all filenames starting with "D".
+        \item \texttt{*s} matches all filenames ending with "s".
+        \item Patterns can include character classes like \texttt{[[:upper:]]*} to match uppercase filenames.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Tilde Expansion}
+    
+    The tilde \texttt{\~} expands to the home directory of the current user or another specified user.
+    
+    \begin{highlight}[Tilde Expansion]
+    
+    The tilde character expands to the user's home directory.
+    
+    \begin{itemize}
+        \item \texttt{\~} expands to the current user's home directory.
+        \item \texttt{\~foo} expands to the home directory of user "foo".
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Arithmetic Expansion}
+    
+    Arithmetic expansion allows the shell to perform calculations within commands using the syntax \texttt{\$((expression))}.
+    
+    \begin{highlight}[Arithmetic Expansion]
+    
+    Perform calculations within commands using arithmetic expansion.
+    
+    \begin{itemize}
+        \item \texttt{\$((2 + 2))} evaluates to 4.
+        \item Supports operations like addition (\texttt{+}), subtraction (\texttt{-}), multiplication (\texttt{*}), division (\texttt{/}), modulo (\texttt{\%}), and exponentiation (\texttt{**}).
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Brace Expansion}
+    
+    Brace expansion generates multiple text strings from a pattern containing braces \texttt{\{\}}, which can include comma-separated lists or ranges of characters or integers.
+    
+    \begin{highlight}[Brace Expansion]
+    
+    Create multiple text strings from a single pattern.
+    
+    \begin{itemize}
+        \item \texttt{Front-\{A,B,C\}-Back} expands to \texttt{Front-A-Back}, \texttt{Front-B-Back}, \texttt{Front-C-Back}.
+        \item \texttt{\{1..5\}} expands to \texttt{1 2 3 4 5}.
+        \item Patterns can be nested for more complex expansions.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Parameter Expansion}
+    
+    Parameter expansion retrieves and manipulates the values of variables using the syntax \texttt{\$\{parameter\}}.
+    
+    \begin{highlight}[Parameter Expansion]
+    
+    Retrieve and manipulate variable values.
+    
+    \begin{itemize}
+        \item \texttt{\$USER} expands to the current user's name.
+        \item \texttt{\$HOME} expands to the current user's home directory.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Command Substitution}
+    
+    Command substitution captures the output of a command and uses it as an argument in another command, using \texttt{\$(command)} or backticks \texttt{\`command\`}.
+    
+    \begin{highlight}[Command Substitution]
+    
+    Use the output of one command as an argument in another.
+    
+    \begin{itemize}
+        \item \texttt{echo \$(ls)} prints the output of the \texttt{ls} command.
+        \item Backticks (\texttt{\`command\`}) can also be used for command substitution.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsection*{Quoting}
+    
+    Quoting controls how the shell interprets special characters. Double quotes \texttt{"} suppress most expansions except for parameter, arithmetic, and command substitution. Single quotes \texttt{'} 
+    suppress all expansions. The backslash \texttt{\textbackslash} escapes a single character.
+    
+    \begin{highlight}[Quoting]
+    
+    Control the shell's interpretation of special characters.
+    
+    \begin{itemize}
+        \item Double quotes (\texttt{"}) suppress most expansions.
+        \item Single quotes (\texttt{'}) suppress all expansions.
+        \item The backslash (\texttt{\textbackslash}) escapes individual characters.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Escaping Characters}
+    
+    The backslash \texttt{\textbackslash} is used to escape a single character, preventing its special meaning.
+    
+    \begin{highlight}[Escaping Characters]
+    
+    Escape individual characters to prevent their special meaning.
+    
+    \begin{itemize}
+        \item \texttt{echo "The balance for user \$USER is: \$5.00"} prints \texttt{The balance for user \$USER is: \$5.00}.
+        \item Use double backslashes (\texttt{\textbackslash{}\textbackslash{}}) to include a literal backslash.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsection*{Summary of Key Concepts}
+    
+    The chapter covers essential shell features such as expansions and quoting, which are fundamental for efficient command-line usage and script writing.
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Understand how the shell interprets and expands commands.
+    
+    \begin{itemize}
+        \item \textbf{Expansion}: Transforms simple text into more complex expressions.
+        \item \textbf{Pathname Expansion}: Uses wildcards to match filenames.
+        \item \textbf{Tilde Expansion}: Expands to the user's home directory.
+        \item \textbf{Arithmetic Expansion}: Performs calculations within commands.
+        \item \textbf{Brace Expansion}: Generates multiple text strings from a pattern.
+        \item \textbf{Parameter Expansion}: Retrieves and manipulates variable values.
+        \item \textbf{Command Substitution}: Uses the output of one command in another.
+        \item \textbf{Quoting}: Controls how the shell interprets special characters.
+    \end{itemize}
+    
+    These concepts are crucial for mastering the shell and utilizing its full potential.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 9: Permissions}.
+
+\begin{notes}{Chapter 9: Permissions}
+    \subsection*{Overview}
+
+    This chapter explores the Unix-like permission system in Linux, which supports multiuser and multitasking environments. It introduces key commands for managing permissions, ownership, and user 
+    identity, providing a foundation for understanding system security and access control.
+    
+    \subsubsection*{Owners, Group Members, and Everybody Else}
+    
+    In Unix-like systems, each file and directory has an owner and a group. Permissions are assigned to three categories: the owner, the group, and others (everyone else). The \texttt{id} command 
+    can be used to display user identity information.
+    
+    \begin{highlight}[Owners, Group Members, and Everybody Else]
+    
+    The Unix permission model assigns permissions to the owner, group, and others.
+    
+    \begin{itemize}
+        \item \texttt{id} command displays user identity, including user ID (uid), group ID (gid), and group memberships.
+        \item Files and directories have an owner and a group, controlling access through permissions.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Reading, Writing, and Executing}
+    
+    Permissions are categorized into read (r), write (w), and execute (x) for files and directories. The \texttt{ls -l} command reveals these permissions in the file attributes.
+    
+    \begin{highlight}[Reading, Writing, and Executing]
+    
+    Permissions control the ability to read, write, and execute files and directories.
+    
+    \begin{itemize}
+        \item Read (r): Allows reading the contents of a file or listing a directory.
+        \item Write (w): Allows modifying a file or altering the contents of a directory.
+        \item Execute (x): Allows running a file as a program or entering a directory.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{chmod - Change File Mode}
+    
+    The \texttt{chmod} command is used to change the mode (permissions) of a file or directory. It supports octal and symbolic representations for specifying permissions.
+    
+    \begin{highlight}[chmod - Change File Mode]
+    
+    Change file or directory permissions using \texttt{chmod}.
+    
+    \begin{itemize}
+        \item Octal notation: Uses numbers (e.g., \texttt{chmod 600 file.txt}) to set permissions.
+        \item Symbolic notation: Uses characters (e.g., \texttt{chmod u+x file.txt}) to modify specific permissions.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{umask - Set Default Permissions}
+    
+    The \texttt{umask} command sets the default permissions for newly created files and directories by defining a mask that removes permissions.
+    
+    \begin{highlight}[umask - Set Default Permissions]
+    
+    Control default permissions for new files and directories using \texttt{umask}.
+    
+    \begin{itemize}
+        \item \texttt{umask 0002}: Sets the mask to remove write permissions for others.
+        \item Default umask values vary, commonly \texttt{0022} or \texttt{0002}.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Changing Identities}
+    
+    The \texttt{su} and \texttt{sudo} commands allow users to assume the identity of another user, typically the superuser, to perform administrative tasks.
+    
+    \begin{highlight}[Changing Identities]
+    
+    Assume another user's identity to perform tasks requiring different permissions.
+    
+    \begin{itemize}
+        \item \texttt{su}: Start a new shell as another user, typically the superuser.
+        \item \texttt{sudo}: Execute a command as another user, with permissions configured in \texttt{/etc/sudoers}.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{chown - Change File Owner and Group}
+    
+    The \texttt{chown} command changes the owner and group of a file or directory. Superuser privileges are required to use this command.
+    
+    \begin{highlight}[chown - Change File Owner and Group]
+    
+    Change the ownership of files and directories using \texttt{chown}.
+    
+    \begin{itemize}
+        \item \texttt{chown user:group file.txt}: Changes the owner to \texttt{user} and the group to \texttt{group}.
+        \item Useful for managing access to shared files and directories.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{chgrp - Change Group Ownership}
+    
+    The \texttt{chgrp} command changes the group ownership of a file or directory. It is similar to \texttt{chown}, but specifically for groups.
+    
+    \begin{highlight}[chgrp - Change Group Ownership]
+    
+    Change the group ownership of files and directories using \texttt{chgrp}.
+    
+    \begin{itemize}
+        \item \texttt{chgrp group file.txt}: Changes the group ownership to \texttt{group}.
+        \item Simplifies management of group permissions.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{passwd - Change a User's Password}
+    
+    The \texttt{passwd} command changes a user's password. Superusers can change passwords for other users.
+    
+    \begin{highlight}[passwd - Change a User's Password]
+    
+    Change user passwords using \texttt{passwd}.
+    
+    \begin{itemize}
+        \item \texttt{passwd}: Changes the current user's password.
+        \item \texttt{passwd user}: Changes the password for \texttt{user} (requires superuser privileges).
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    This chapter covers essential commands and concepts for managing permissions and ownership in Unix-like systems.
+    
+    \begin{itemize}
+        \item \textbf{Owners, Group Members, and Everybody Else}: Understand user and group-based permissions.
+        \item \textbf{Reading, Writing, and Executing}: Learn the significance of read, write, and execute permissions.
+        \item \textbf{chmod}: Change file and directory permissions.
+        \item \textbf{umask}: Set default permissions for new files and directories.
+        \item \textbf{Changing Identities}: Use \texttt{su} and \texttt{sudo} for administrative tasks.
+        \item \textbf{chown}: Change file and directory ownership.
+        \item \textbf{chgrp}: Change group ownership of files and directories.
+        \item \textbf{passwd}: Change user passwords.
+    \end{itemize}
+    
+    These tools and concepts are fundamental for effective system administration and security management in Unix-like environments.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 13: Customizing The Prompt}.
+
+\begin{notes}{Chapter 13: Customizing The Prompt}
+    \subsection*{Overview}
+
+    This chapter explores customizing the shell prompt in Linux, revealing some of the inner workings of the shell and the terminal emulator program. By learning how to control the prompt, users can 
+    enhance their command-line experience.
+    
+    \subsubsection*{Anatomy of a Prompt}
+    
+    The default shell prompt is defined by the environment variable \texttt{PS1}. This variable contains special backslash-escaped characters that represent various pieces of information.
+    
+    \begin{highlight}[Anatomy of a Prompt]
+    
+    The shell prompt is configured using the \texttt{PS1} variable.
+    
+    \begin{itemize}
+        \item \texttt{PS1} contains special characters, like \texttt{\$}, \texttt{\u}, and \texttt{\h}, which represent the current user, hostname, and more.
+        \item Example: \texttt{[me@linuxbox ~]\$} is defined by \texttt{[\u@\h \W]\$}.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Trying Some Alternative Prompt Designs}
+    
+    Users can experiment with different prompt designs by modifying the \texttt{PS1} variable.
+    
+    \begin{highlight}[Alternative Prompt Designs]
+    
+    Change the prompt by modifying \texttt{PS1}.
+    
+    \begin{itemize}
+        \item \texttt{PS1="\$ "} sets a minimal prompt.
+        \item \texttt{PS1="\A \h \$ "} includes the time and hostname.
+        \item \texttt{PS1="<\u@\h \W>\$ "} mimics the default prompt with angle brackets.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Adding Color}
+    
+    ANSI escape codes can be used to add color to the shell prompt.
+    
+    \begin{highlight}[Adding Color]
+    
+    Use ANSI escape codes to color the prompt.
+    
+    \begin{itemize}
+        \item \texttt{\textbackslash{}033[0;31m} sets text color to red.
+        \item \texttt{\textbackslash{}033[0m} resets text color to default.
+        \item Example: \texttt{PS1="\textbackslash{}[\textbackslash{}033[0;31m\textbackslash{}]<\u@\h \W>\$\textbackslash{}[\textbackslash{}033[0m\textbackslash{}] "}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Moving the Cursor}
+    
+    Escape codes can also control cursor position, enabling more complex prompt designs.
+    
+    \begin{highlight}[Moving the Cursor]
+    
+    Position the cursor using escape codes.
+    
+    \begin{itemize}
+        \item \texttt{\textbackslash{}033[l;cH} moves the cursor to line \texttt{l} and column \texttt{c}.
+        \item \texttt{\textbackslash{}033[2J} clears the screen.
+        \item Example: \texttt{PS1="\textbackslash{}[\textbackslash{}033[s\textbackslash{}033[0;0H\textbackslash{}033[0;41m\textbackslash{}033[K\textbackslash{}033[1;33m\t\textbackslash{}033[0m\textbackslash{}033[u\textbackslash{}]<\u@\h \W>\$ "}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Saving the Prompt}
+    
+    To make the prompt permanent, add the configuration to the \texttt{.bashrc} file.
+    
+    \begin{highlight}[Saving the Prompt]
+    
+    Persist the prompt configuration by adding it to \texttt{.bashrc}.
+    
+    \begin{itemize}
+        \item Add the \texttt{PS1} assignment to \texttt{.bashrc}.
+        \item Example: \texttt{PS1="\textbackslash{}[\textbackslash{}033[s\textbackslash{}033[0;0H\textbackslash{}033[0;41m\textbackslash{}033[K\textbackslash{}033[1;33m\t\textbackslash{}033[0m\textbackslash{}033[u\textbackslash{}]<\u@\h \W>\$ "}
+        \item \texttt{export PS1}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    This chapter covers how to customize the shell prompt for a more personalized and informative command-line experience.
+    
+    \begin{itemize}
+        \item \textbf{Anatomy of a Prompt}: Understand the components of the \texttt{PS1} variable.
+        \item \textbf{Alternative Prompt Designs}: Experiment with different prompt styles.
+        \item \textbf{Adding Color}: Use ANSI escape codes to add colors to the prompt.
+        \item \textbf{Moving the Cursor}: Control cursor positioning with escape codes.
+        \item \textbf{Saving the Prompt}: Make prompt changes permanent by updating \texttt{.bashrc}.
+    \end{itemize}
+    
+    Customizing the prompt enhances the usability and aesthetics of the command-line interface.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 19: Regular Expressions}.
+
+\begin{notes}{Chapter 19: Regular Expressions}
+    \subsection*{Overview}
+
+    This chapter delves into regular expressions, a powerful text manipulation technology essential for sophisticated uses of various command-line tools in Unix-like systems. Regular expressions are 
+    symbolic notations used to identify patterns in text, similar to shell wildcards but more advanced.
+    
+    \subsubsection*{What are Regular Expressions?}
+    
+    Regular expressions (regex) are sequences of characters defining search patterns. They are supported by many command-line tools and programming languages for text manipulation.
+    
+    \begin{highlight}[What are Regular Expressions?]
+    
+    Regular expressions identify patterns in text.
+    
+    \begin{itemize}
+        \item Regex can match literal text and complex patterns.
+        \item Supported by command-line tools like \texttt{grep} and many programming languages.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{grep}
+    
+    The \texttt{grep} command searches text files for lines matching a specified regex and prints the matching lines.
+    
+    \begin{highlight}[grep]
+    
+    \texttt{grep} uses regular expressions to search text files.
+    
+    \begin{itemize}
+        \item \texttt{grep [options] regex [file...]} syntax.
+        \item Options include \texttt{-i} (ignore case), \texttt{-v} (invert match), \texttt{-c} (count matches), and \texttt{-n} (show line numbers).
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Metacharacters and Literals}
+    
+    Regex consists of literals (ordinary characters) and metacharacters (special characters with specific meanings).
+    
+    \begin{highlight}[Metacharacters and Literals]
+    
+    Metacharacters and literals form the basis of regex patterns.
+    
+    \begin{itemize}
+        \item Metacharacters: \texttt{\^}, \texttt{\$}, \texttt{.}, \texttt{[ ]}, \texttt{\{ \}}, \texttt{-}, \texttt{?}, \texttt{*}, \texttt{+}, \texttt{( )}, \texttt{|}, \texttt{\textbackslash}.
+        \item Literals match themselves, while metacharacters have special functions.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{The Any Character}
+    
+    The dot (\texttt{.}) metacharacter matches any single character.
+    
+    \begin{highlight}[The Any Character]
+    
+    The dot (\texttt{.}) matches any single character.
+    
+    \begin{itemize}
+        \item Example: \texttt{grep -h '.zip' dirlist*.txt} matches any character followed by "zip".
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Anchors}
+    
+    Anchors like \texttt{\^} and \texttt{\$} match the start and end of a line, respectively.
+    
+    \begin{highlight}[Anchors]
+    
+    Use anchors to match positions within a line.
+    
+    \begin{itemize}
+        \item \texttt{\^}: Matches the start of a line.
+        \item \texttt{\$}: Matches the end of a line.
+        \item Example: \texttt{grep -h '\^zip' dirlist*.txt} matches lines starting with "zip".
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Bracket Expressions and Character Classes}
+    
+    Bracket expressions match any single character from a set. Character classes provide predefined sets of characters.
+    
+    \begin{highlight}[Bracket Expressions and Character Classes]
+    
+    Bracket expressions and character classes match specific sets of characters.
+    
+    \begin{itemize}
+        \item Example: \texttt{grep -h '[bg]zip' dirlist*.txt} matches "bzip" or "gzip".
+        \item POSIX character classes: \texttt{[:alnum:]}, \texttt{[:alpha:]}, \texttt{[:digit:]}, etc.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Negation}
+    
+    Negation in bracket expressions is specified by placing a caret (\texttt{\^}) at the beginning.
+    
+    \begin{highlight}[Negation]
+    
+    Negate a set of characters using \texttt{\^} in a bracket expression.
+    
+    \begin{itemize}
+        \item Example: \texttt{grep -h '[\^bg]zip' dirlist*.txt} matches "zip" preceded by any character except "b" or "g".
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Traditional Character Ranges}
+    
+    Character ranges can be specified within brackets to match characters in a specific range.
+    
+    \begin{highlight}[Traditional Character Ranges]
+    
+    Specify ranges of characters within brackets.
+    
+    \begin{itemize}
+        \item Example: \texttt{grep -h '\^[A-Z]' dirlist*.txt} matches lines starting with an uppercase letter.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{POSIX Character Classes}
+    
+    POSIX character classes provide predefined sets of characters, useful for matching ranges like alphanumeric characters.
+    
+    \begin{highlight}[POSIX Character Classes]
+    
+    POSIX character classes match predefined sets of characters.
+    
+    \begin{itemize}
+        \item Examples: \texttt{[:alnum:]}, \texttt{[:alpha:]}, \texttt{[:digit:]}, \texttt{[:upper:]}, \texttt{[:lower:]}.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{POSIX Basic vs. Extended Regular Expressions}
+    
+    POSIX defines two types of regex: Basic (BRE) and Extended (ERE). ERE includes additional metacharacters.
+    
+    \begin{highlight}[POSIX Basic vs. Extended Regular Expressions]
+    
+    Basic and extended regex have different sets of metacharacters.
+    
+    \begin{itemize}
+        \item BRE metacharacters: \texttt{\^}, \texttt{\$}, \texttt{.}, \texttt{[ ]}, \texttt{*}.
+        \item ERE adds: \texttt{( )}, \texttt{\{ \}}, \texttt{?}, \texttt{+}, \texttt{|}.
+        \item Use \texttt{grep -E} or \texttt{egrep} for ERE.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Alternation}
+    
+    Alternation, signified by the vertical bar (\texttt{|}), allows matching from multiple expressions.
+    
+    \begin{highlight}[Alternation]
+    
+    Use the vertical bar (\texttt{|}) to match multiple patterns.
+    
+    \begin{itemize}
+        \item Example: \texttt{grep -E 'AAA|BBB'} matches lines containing "AAA" or "BBB".
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Quantifiers}
+    
+    Quantifiers specify the number of times an element is matched.
+    
+    \begin{highlight}[Quantifiers]
+    
+    Quantifiers control the number of matches.
+    
+    \begin{itemize}
+        \item \texttt{?}: Matches zero or one time.
+        \item \texttt{*}: Matches zero or more times.
+        \item \texttt{+}: Matches one or more times.
+        \item \texttt{\{n\}}: Matches exactly \texttt{n} times.
+        \item \texttt{\{n,m\}}: Matches between \texttt{n} and \texttt{m} times.
+        \item Example: \texttt{[0-9]\{3\}} matches exactly three digits.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsection*{Summary of Key Concepts}
+    
+    Regular expressions provide powerful tools for text manipulation and pattern matching, essential for efficient command-line usage.
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Key concepts of regular expressions:
+    
+    \begin{itemize}
+        \item \textbf{What are Regular Expressions?}: Patterns to identify text.
+        \item \textbf{grep}: Command to search text using regex.
+        \item \textbf{Metacharacters and Literals}: Building blocks of regex.
+        \item \textbf{The Any Character}: Dot (\texttt{.}) matches any character.
+        \item \textbf{Anchors}: \texttt{\^} and \texttt{\$} match start and end of lines.
+        \item \textbf{Bracket Expressions and Character Classes}: Match sets of characters.
+        \item \textbf{Negation}: Exclude characters in a set.
+        \item \textbf{Traditional Character Ranges}: Specify character ranges.
+        \item \textbf{POSIX Character Classes}: Predefined character sets.
+        \item \textbf{POSIX Basic vs. Extended Regular Expressions}: Different sets of metacharacters.
+        \item \textbf{Alternation}: Match from multiple patterns.
+        \item \textbf{Quantifiers}: Control the number of matches.
+    \end{itemize}
+    
+    Understanding regular expressions enhances text manipulation capabilities on the command line.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 24: Writing Your First Script}.
+
+\begin{notes}{Chapter 24: Writing Your First Script}
+    \subsection*{Overview}
+
+    This chapter introduces shell scripting in Linux, allowing users to automate complex sequences of tasks. By writing shell scripts, we can make the shell perform repetitive tasks efficiently.
+    
+    \subsubsection*{What are Shell Scripts?}
+    
+    A shell script is a file containing a series of commands. The shell reads this file and executes the commands as if they were entered directly on the command line.
+    
+    \begin{highlight}[What are Shell Scripts?]
+    
+    Shell scripts automate the execution of a series of commands.
+    
+    \begin{itemize}
+        \item Shell scripts are text files containing shell commands.
+        \item They enable the automation of tasks by grouping commands together.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{How to Write a Shell Script}
+    
+    To create and run a shell script, follow these steps: write the script, make it executable, and place it in a directory included in the PATH.
+    
+    \begin{highlight}[How to Write a Shell Script]
+    
+    Steps to create and run a shell script:
+    
+    \begin{itemize}
+        \item \textbf{Write a script}: Use a text editor to create a script file.
+        \item \textbf{Make the script executable}: Change the file permissions to allow execution.
+        \item \textbf{Put the script in the PATH}: Place the script in a directory included in the PATH.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Script File Format}
+    
+    The basic format of a script includes the shebang line, comments, and commands. For example, a "Hello World" script:
+    
+    \begin{highlight}[Script File Format]
+    
+    Basic elements of a shell script:
+    
+    \begin{itemize}
+        \item Shebang line: \texttt{\#!/bin/bash} indicates the script interpreter.
+        \item Comments: Lines starting with \texttt{\#} are ignored by the shell.
+        \item Commands: The actual commands to be executed.
+        \item Example script:
+    \end{itemize}
+    
+    \begin{code}[Shell]
+    #!/bin/bash
+    # This is our first script.
+    echo 'Hello World!'
+    \end{code}
+    
+    \end{highlight}
+    
+    \subsubsection*{Executable Permissions}
+    
+    Scripts need executable permissions to run. Use the \texttt{chmod} command to set these permissions.
+    
+    \begin{highlight}[Executable Permissions]
+    
+    Set the script to be executable using \texttt{chmod}.
+    
+    \begin{itemize}
+        \item Example: \texttt{chmod 755 hello\_world}
+        \item \texttt{755} for scripts everyone can execute; \texttt{700} for scripts only the owner can execute.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Script File Location}
+    
+    Place scripts in a directory included in the PATH to execute them without specifying the path. Common locations include \texttt{~/bin} for personal scripts and \texttt{/usr/local/bin} for system-wide scripts.
+    
+    \begin{highlight}[Script File Location]
+    
+    Ensure the script is in a directory included in the PATH.
+    
+    \begin{itemize}
+        \item \texttt{~/bin} for personal scripts.
+        \item \texttt{/usr/local/bin} for system-wide scripts.
+        \item Add \texttt{~/bin} to the PATH if not already included:
+    \end{itemize}
+    
+    \begin{code}[Shell]
+    export PATH=~/bin:"$PATH"
+    \end{code}
+    
+    \end{highlight}
+    
+    \subsubsection*{More Formatting Tricks}
+    
+    Formatting techniques like long option names, indentation, and line continuation enhance the readability and maintainability of scripts.
+    
+    \begin{highlight}[More Formatting Tricks]
+    
+    Improve script readability and maintainability.
+    
+    \begin{itemize}
+        \item \textbf{Long option names}: Use for clarity.
+        \item \textbf{Indentation and line continuation}: Use backslashes for line continuation and indent for readability.
+        \item Example:
+    \end{itemize}
+    
+    \begin{code}[Shell]
+    find playground \
+        \( \
+        -type f \
+        -not -perm 0600 \
+        -exec chmod 0600 '{}' ';' \
+        \) \
+        -or \
+        \( \
+        -type d \
+        -not -perm 0700 \
+        -exec chmod 0700 '{}' ';' \
+        \)
+    \end{code}
+    
+    \end{highlight}
+    
+    \subsubsection*{Configuring vim for Script Writing}
+    
+    The \texttt{vim} text editor can be configured to assist in script writing with syntax highlighting, auto-indentation, and other features.
+    
+    \begin{highlight}[Configuring vim for Script Writing]
+    
+    Configure \texttt{vim} for better script writing experience.
+    
+    \begin{itemize}
+        \item \texttt{:syntax on}: Enables syntax highlighting.
+        \item \texttt{:set hlsearch}: Highlights search results.
+        \item \texttt{:set tabstop=4}: Sets tab width to 4 spaces.
+        \item \texttt{:set autoindent}: Enables automatic indentation.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Key concepts for writing and executing shell scripts:
+    
+    \begin{itemize}
+        \item \textbf{What are Shell Scripts?}: Automate tasks with scripts.
+        \item \textbf{How to Write a Shell Script}: Write, make executable, and place in PATH.
+        \item \textbf{Script File Format}: Use shebang, comments, and commands.
+        \item \textbf{Executable Permissions}: Set executable permissions.
+        \item \textbf{Script File Location}: Place scripts in PATH directories.
+        \item \textbf{More Formatting Tricks}: Enhance readability with formatting.
+        \item \textbf{Configuring vim for Script Writing}: Use \texttt{vim} settings for better scripting.
+    \end{itemize}
+    
+    These techniques ensure that scripts are effective, readable, and maintainable.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 26: Top Down Design}.
+
+\begin{notes}{Chapter 26: Top Down Design}
+    \subsection*{Overview}
+
+    This chapter introduces top-down design, a method of breaking down large, complex tasks into smaller, manageable ones. This approach is particularly useful for shell programming, enabling the 
+    creation of maintainable and understandable scripts.
+    
+    \subsubsection*{Top-Down Design}
+    
+    Top-down design involves identifying the top-level steps of a task and developing increasingly detailed steps for each. This method helps in organizing complex processes into simpler, executable tasks.
+    
+    \begin{highlight}[Top-Down Design]
+    
+    Top-down design breaks large tasks into smaller, detailed steps.
+    
+    \begin{itemize}
+        \item Example: Describing a process like going to the market can be broken down into steps such as driving to the market, parking the car, and purchasing food.
+        \item Each step can be further detailed to ensure clarity and completeness.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Shell Functions}
+    
+    Shell functions are "mini-scripts" within a script, acting as autonomous programs. They help in organizing code and reusing common tasks.
+    
+    \begin{highlight}[Shell Functions]
+    
+    Shell functions encapsulate a series of commands to perform specific tasks.
+    
+    \begin{itemize}
+        \item Defined using the syntax:
+    \begin{code}[Shell]
+    function_name() {
+        commands
+    }
+    \end{code}
+        \item Functions can be called within the script to execute the encapsulated commands.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implementing Shell Functions}
+    
+    Implementing shell functions in a script involves defining the function and calling it within the main program. This helps in structuring the script logically.
+    
+    \begin{highlight}[Implementing Shell Functions]
+    
+    Define and use shell functions to organize script logic.
+    
+    \begin{itemize}
+        \item Example script:
+    \begin{code}[Shell]
+    #!/bin/bash
+    
+    report_uptime() {
+        echo "Function report_uptime executed."
+    }
+    
+    report_disk_space() {
+        echo "Function report_disk_space executed."
+    }
+    
+    report_home_space() {
+        echo "Function report_home_space executed."
+    }
+    
+    report_uptime
+    report_disk_space
+    report_home_space
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Local Variables}
+    
+    Local variables are defined within functions and only accessible within the scope of those functions. This prevents conflicts with global variables.
+    
+    \begin{highlight}[Local Variables]
+    
+    Use local variables to avoid conflicts and ensure function independence.
+    
+    \begin{itemize}
+        \item Example:
+    \begin{code}[Shell]
+    #!/bin/bash
+    
+    foo=0  # Global variable
+    
+    function1() {
+        local foo=1  # Local variable
+        echo "function1: foo = $foo"
+    }
+    
+    function2() {
+        local foo=2  # Local variable
+        echo "function2: foo = $foo"
+    }
+    
+    echo "global: foo = $foo"
+    function1
+    echo "global: foo = $foo"
+    function2
+    echo "global: foo = $foo"
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Keeping Scripts Running}
+    
+    To ensure scripts remain functional during development, it is useful to frequently test and keep them in a runnable state. This helps in identifying issues early.
+    
+    \begin{highlight}[Keeping Scripts Running]
+    
+    Regular testing and maintaining runnable scripts help in early error detection.
+    
+    \begin{itemize}
+        \item Use stubs (minimal function definitions) to verify script logic.
+        \item Example:
+    \begin{code}[Shell]
+    report_uptime() {
+        echo "Function report_uptime executed."
+    }
+    
+    report_disk_space() {
+        echo "Function report_disk_space executed."
+    }
+    
+    report_home_space() {
+        echo "Function report_home_space executed."
+    }
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Fleshing Out Functions}
+    
+    With the function framework in place, we can add the actual commands to each function to perform the desired tasks.
+    
+    \begin{highlight}[Fleshing Out Functions]
+    
+    Add the actual commands to each function to complete the tasks.
+    
+    \begin{itemize}
+        \item Example: The function to report system uptime.
+    \begin{code}[Shell]
+    report_uptime() {
+        cat <<- _EOF_
+            <h2>System Uptime</h2>
+            <pre>$(uptime)</pre>
+        _EOF_
+    }
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsection*{Summary of Key Concepts}
+    
+    Top-down design and shell functions are crucial for writing organized, maintainable scripts. They enable the breakdown of complex tasks and promote code reuse.
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Key concepts of top-down design and shell functions:
+    
+    \begin{itemize}
+        \item \textbf{Top-Down Design}: Break down tasks into manageable steps.
+        \item \textbf{Shell Functions}: Encapsulate commands for reuse and organization.
+        \item \textbf{Local Variables}: Use within functions to avoid conflicts.
+        \item \textbf{Keeping Scripts Running}: Regular testing and maintaining runnable states.
+        \item \textbf{Fleshing Out Functions}: Complete functions with actual commands.
+    \end{itemize}
+    
+    These practices ensure that scripts are effective, readable, and maintainable.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 27: Flow Control - Branching With if}.
+
+\begin{notes}{Chapter 27: Flow Control - Branching With if}
+    \subsection*{Overview}
+
+    This chapter introduces flow control in shell scripting, focusing on the `if` statement. Flow control allows scripts to make decisions and execute different commands based on conditions. This 
+    enables scripts to adapt to different situations, such as varying user privileges.
+    
+    \subsubsection*{if Statement}
+    
+    The `if` statement allows branching based on the success or failure of commands. It evaluates a condition and executes commands based on whether the condition is true or false.
+    
+    \begin{highlight}[if Statement]
+    
+    The `if` statement evaluates conditions to control the flow of the script.
+    
+    \begin{itemize}
+        \item Syntax:
+    \begin{code}[Shell]
+    if commands; then
+        commands
+    [elif commands; then
+        commands...]
+    [else
+        commands]
+    fi
+    \end{code}
+        \item Executes the commands in the `then` block if the condition is true; otherwise, it executes the commands in the `else` block.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Exit Status}
+    
+    Commands return an exit status upon completion. An exit status of 0 indicates success, while any other value indicates failure. The special variable `\$ ?' holds the exit status of the last executed command.
+    
+    \begin{highlight}[Exit Status]
+    
+    Commands return an exit status to indicate success or failure.
+    
+    \begin{itemize}
+        \item Exit status 0: Success.
+        \item Exit status non-zero: Failure.
+        \item Example:
+    \begin{code}[Shell]
+    ls -d /usr/bin
+    echo $?
+    # Output: 0
+    
+    ls -d /bin/usr
+    echo $?
+    # Output: 2
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{test Command}
+    
+    The `test` command performs various checks and comparisons. It can be used with the `if` statement to evaluate conditions.
+    
+    \begin{highlight}[test Command]
+    
+    Use the `test` command to perform checks and comparisons.
+    
+    \begin{itemize}
+        \item Two forms:
+    \begin{code}[Shell]
+    test expression
+    [ expression ]
+    \end{code}
+        \item Returns an exit status of 0 if the expression is true, and 1 if the expression is false.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File Expressions}
+    
+    File expressions in the `test` command evaluate the status of files.
+    
+    \begin{highlight}[File Expressions]
+    
+    Evaluate file status using `test` expressions.
+    
+    \begin{itemize}
+        \item Examples:
+        \begin{itemize}
+            \item `-e file`: File exists.
+            \item `-f file`: File is a regular file.
+            \item `-d file`: File is a directory.
+        \end{itemize}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{String Expressions}
+    
+    String expressions compare and evaluate strings.
+    
+    \begin{highlight}[String Expressions]
+    
+    Evaluate string values and comparisons.
+    
+    \begin{itemize}
+        \item Examples:
+        \begin{itemize}
+            \item `-z string`: String is empty.
+            \item `string1 = string2`: Strings are equal.
+            \item `string1 != string2`: Strings are not equal.
+        \end{itemize}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Integer Expressions}
+    
+    Integer expressions compare integer values.
+    
+    \begin{highlight}[Integer Expressions]
+    
+    Compare integer values using `test`.
+    
+    \begin{itemize}
+        \item Examples:
+        \begin{itemize}
+            \item `integer1 -eq integer2`: Integers are equal.
+            \item `integer1 -ne integer2`: Integers are not equal.
+            \item `integer1 -lt integer2`: Integer1 is less than integer2.
+        \end{itemize}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Combining Expressions}
+    
+    Expressions can be combined using logical operators to create more complex conditions.
+    
+    \begin{highlight}[Combining Expressions]
+    
+    Combine expressions using logical operators.
+    
+    \begin{itemize}
+        \item Logical operators:
+        \begin{itemize}
+            \item `-a` (AND)
+            \item `-o` (OR)
+            \item `!` (NOT)
+        \end{itemize}
+        \item Example:
+    \begin{code}[Shell]
+    if [ "$INT" -ge 1 -a "$INT" -le 100 ]; then
+        echo "$INT is within range."
+    else
+        echo "$INT is out of range."
+    fi
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Modern Alternatives to test}
+    
+    The `[[ ... ]]` syntax offers an enhanced replacement for `test`, supporting additional features such as regex matching and improved readability.
+    
+    \begin{highlight}[Modern Alternatives to test]
+    
+    Use `[[ ... ]]` for enhanced functionality.
+    
+    \begin{itemize}
+        \item Syntax:
+    \begin{code}[Shell]
+    [[ expression ]]
+    \end{code}
+        \item Supports regex matching:
+    \begin{code}[Shell]
+    [[ string =~ regex ]]
+    \end{code}
+        \item Example:
+    \begin{code}[Shell]
+    if [[ "$INT" =~ ^-?[0-9]+$ ]]; then
+        echo "$INT is a valid integer."
+    fi
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Arithmetic Evaluation with (( ... ))}
+    
+    The `(( ... ))` syntax performs arithmetic evaluations and returns a success status for non-zero results.
+    
+    \begin{highlight}[Arithmetic Evaluation with (( ... ))]
+    
+    Perform arithmetic evaluations using `(( ... ))`.
+    
+    \begin{itemize}
+        \item Syntax:
+    \begin{code}[Shell]
+    (( expression ))
+    \end{code}
+        \item Example:
+    \begin{code}[Shell]
+    if (( INT < 0 )); then
+        echo "INT is negative."
+    fi
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Control Operators}
+    
+    Control operators `&&` and `||` provide additional methods for branching by executing commands based on the success or failure of preceding commands.
+    
+    \begin{highlight}[Control Operators]
+    
+    Use control operators for branching.
+    
+    \begin{itemize}
+        \item `command1 && command2`: Executes `command2` if `command1` is successful.
+        \item `command1 || command2`: Executes `command2` if `command1` fails.
+        \item Example:
+    \begin{code}[Shell]
+    mkdir temp && cd temp
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Key concepts for flow control using the `if` statement:
+    
+    \begin{itemize}
+        \item \textbf{if Statement}: Evaluate conditions to control script flow.
+        \item \textbf{Exit Status}: Determine success or failure of commands.
+        \item \textbf{test Command}: Perform checks and comparisons.
+        \item \textbf{File Expressions}: Evaluate file status.
+        \item \textbf{String Expressions}: Evaluate string values.
+        \item \textbf{Integer Expressions}: Compare integer values.
+        \item \textbf{Combining Expressions}: Create complex conditions with logical operators.
+        \item \textbf{Modern Alternatives to test}: Use `[[ ... ]]` for enhanced functionality.
+        \item \textbf{Arithmetic Evaluation with (( ... ))}: Perform arithmetic evaluations.
+        \item \textbf{Control Operators}: Use `&&` and `||` for branching.
+    \end{itemize}
+    
+    Understanding these concepts allows for more dynamic and adaptable scripts.
+    
+    \end{highlight}
+\end{notes}
+
+The last chapter that is covered this week is \textbf{Chapter 32: Positional Parameters}.
+
+\begin{notes}{Chapter 32: Positional Parameters}
+    \subsection*{Overview}
+
+    This chapter explores positional parameters in shell scripting, which allow scripts to accept and process command-line options and arguments. This feature enables scripts to become more flexible and interactive.
+    
+    \subsubsection*{Accessing the Command Line}
+    
+    The shell provides a set of variables called positional parameters that contain the individual words on the command line. These variables are named \texttt{0} through \texttt{9}.
+    
+    \begin{highlight}[Accessing the Command Line]
+    
+    Positional parameters store command-line arguments.
+    
+    \begin{itemize}
+        \item \texttt{\$0} contains the name of the script.
+        \item \texttt{\$1, \$2, ..., \$9} contain the first, second, ..., ninth arguments.
+        \item Example script:
+    \begin{code}[Shell]
+    #!/bin/bash
+    # posit-param: script to view command line parameters
+    echo "
+    \$0 = $0
+    \$1 = $1
+    \$2 = $2
+    \$3 = $3
+    \$4 = $4
+    \$5 = $5
+    \$6 = $6
+    \$7 = $7
+    \$8 = $8
+    \$9 = $9
+    "
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Determining the Number of Arguments}
+    
+    The special variable \texttt{\$#} contains the number of arguments provided on the command line.
+    
+    \begin{highlight}[Determining the Number of Arguments]
+    
+    Use \texttt{\$#} to determine the number of command-line arguments.
+    
+    \begin{itemize}
+        \item Example:
+    \begin{code}[Shell]
+    #!/bin/bash
+    # posit-param: script to view command line parameters
+    echo "
+    Number of arguments: $#
+    \$0 = $0
+    \$1 = $1
+    \$2 = $2
+    \$3 = $3
+    \$4 = $4
+    \$5 = $5
+    \$6 = $6
+    \$7 = $7
+    \$8 = $8
+    \$9 = $9
+    "
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{shift – Getting Access to Many Arguments}
+    
+    The \texttt{shift} command shifts positional parameters to the left, allowing access to arguments beyond the ninth.
+    
+    \begin{highlight}[shift – Getting Access to Many Arguments]
+    
+    Use \texttt{shift} to access more than nine command-line arguments.
+    
+    \begin{itemize}
+        \item Example script:
+    \begin{code}[Shell]
+    #!/bin/bash
+    # posit-param2: script to display all arguments
+    count=1
+    while [[ $# -gt 0 ]]; do
+        echo "Argument $count = $1"
+        count=$((count + 1))
+        shift
+    done
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Simple Applications}
+    
+    Positional parameters can be used to create useful applications without needing \texttt{shift}.
+    
+    \begin{highlight}[Simple Applications]
+    
+    Create simple applications using positional parameters.
+    
+    \begin{itemize}
+        \item Example script:
+    \begin{code}[Shell]
+    #!/bin/bash
+    # file-info: simple file information program
+    PROGNAME="$(basename "$0")"
+    if [[ -e "$1" ]]; then
+        echo -e "\nFile Type:"
+        file "$1"
+        echo -e "\nFile Status:"
+        stat "$1"
+    else
+        echo "$PROGNAME: usage: $PROGNAME file" >&2
+        exit 1
+    fi
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Using Positional Parameters with Shell Functions}
+    
+    Positional parameters can be passed to shell functions in the same way as scripts.
+    
+    \begin{highlight}[Using Positional Parameters with Shell Functions]
+    
+    Pass arguments to shell functions using positional parameters.
+    
+    \begin{itemize}
+        \item Example function:
+    \begin{code}[Shell]
+    file_info () {
+        if [[ -e "$1" ]]; then
+            echo -e "\nFile Type:"
+            file "$1"
+            echo -e "\nFile Status:"
+            stat "$1"
+        else
+            echo "$FUNCNAME: usage: $FUNCNAME file" >&2
+            return 1
+        fi
+    }
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Handling Positional Parameters en Masse}
+    
+    The special parameters \texttt{\$*} and \texttt{\$@} expand into all positional parameters, but they differ in behavior when quoted.
+    
+    \begin{highlight}[Handling Positional Parameters en Masse]
+    
+    Use \texttt{\$*} and \texttt{\$@} to handle all positional parameters.
+    
+    \begin{itemize}
+        \item \texttt{\$*}: Expands into all positional parameters as a single word.
+        \item \texttt{\$@}: Expands each positional parameter into a separate word.
+        \item Example script:
+    \begin{code}[Shell]
+    #!/bin/bash
+    # posit-params3: script to demonstrate $* and $@
+    print_params () {
+        echo "\$1 = $1"
+        echo "\$2 = $2"
+        echo "\$3 = $3"
+        echo "\$4 = $4"
+    }
+    pass_params () {
+        echo -e "\n\$* :";   print_params $*
+        echo -e "\n\"$*\" :"; print_params "$*"
+        echo -e "\n\$@ :";   print_params $@
+        echo -e "\n\"$@\" :"; print_params "$@"
+    }
+    pass_params "word" "words with spaces"
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{A More Complete Application}
+    
+    An example of a more complex application using positional parameters to handle command-line options.
+    
+    \begin{highlight}[A More Complete Application]
+    
+    Implement a script with command-line options using positional parameters.
+    
+    \begin{itemize}
+        \item Example script:
+    \begin{code}[Shell]
+    #!/bin/bash
+    # sys_info_page: program to output a system information page
+    
+    PROGNAME="$(basename "$0")"
+    TITLE="System Information Report For $HOSTNAME"
+    CURRENT_TIME="$(date +"%x %r %Z")"
+    TIMESTAMP="Generated $CURRENT_TIME, by $USER"
+    
+    report_uptime () {
+        cat <<- _EOF_
+        <h2>System Uptime</h2>
+        <pre>$(uptime)</pre>
+        _EOF_
+        return
+    }
+    
+    report_disk_space () {
+        cat <<- _EOF_
+        <h2>Disk Space Utilization</h2>
+        <pre>$(df -h)</pre>
+        _EOF_
+        return
+    }
+    
+    report_home_space () {
+        if [[ "$(id -u)" -eq 0 ]]; then
+            cat <<- _EOF_
+            <h2>Home Space Utilization (All Users)</h2>
+            <pre>$(du -sh /home/*)</pre>
+            _EOF_
+        else
+            cat <<- _EOF_
+            <h2>Home Space Utilization ($USER)</h2>
+            <pre>$(du -sh "$HOME")</pre>
+            _EOF_
+        fi
+        return
+    }
+    
+    usage () {
+        echo "$PROGNAME: usage: $PROGNAME [-f file | -i]"
+        return
+    }
+    
+    write_html_page () {
+        cat <<- _EOF_
+        <html>
+        <head>
+        <title>$TITLE</title>
+        </head>
+        <body>
+        <h1>$TITLE</h1>
+        <p>$TIMESTAMP</p>
+        $(report_uptime)
+        $(report_disk_space)
+        $(report_home_space)
+        </body>
+        </html>
+        _EOF_
+        return
+    }
+    
+    # process command line options
+    interactive=
+    filename=
+    
+    while [[ -n "$1" ]]; do
+        case "$1" in
+        -f | --file) shift
+            filename="$1"
+            ;;
+        -i | --interactive) interactive=1
+            ;;
+        -h | --help) usage
+            exit
+            ;;
+        *) usage >&2
+            exit 1
+            ;;
+        esac
+        shift
+    done
+    
+    # interactive mode
+    if [[ -n "$interactive" ]]; then
+        while true; do
+            read -p "Enter name of output file: " filename
+            if [[ -e "$filename" ]]; then
+                read -p "'$filename' exists. Overwrite? [y/n/q] > "
+                case "$REPLY" in
+                Y|y) break
+                    ;;
+                Q|q) echo "Program terminated."
+                    exit
+                    ;;
+                *) continue
+                    ;;
+                esac
+            elif [[ -z "$filename" ]]; then
+                continue
+            else
+                break
+            fi
+        done
+    fi
+    
+    # output html page
+    if [[ -n "$filename" ]]; then
+        if touch "$filename" && [[ -f "$filename" ]]; then
+            write_html_page > "$filename"
+        else
+            echo "$PROGNAME: Cannot write file '$filename'" >&2
+            exit 1
+        fi
+    else
+        write_html_page
+    fi
+    \end{code}
+    \end{itemize}
+    
+    \end{highlight}
+
+    \begin{highlight}[Summary of Key Concepts]
+
+        Key concepts for using positional parameters in shell scripts:
+        
+        \begin{itemize}
+            \item \textbf{Accessing the Command Line}: Use positional parameters to access command-line arguments.
+            \item \textbf{Determining the Number of Arguments}: Use \texttt{\$#} to count arguments.
+            \item \textbf{shift}: Access arguments beyond the ninth using \texttt{shift}.
+            \item \textbf{Simple Applications}: Create useful scripts with positional parameters.
+            \item \textbf{Using Positional Parameters with Shell Functions}: Pass arguments to shell functions.
+            \item \textbf{Handling Positional Parameters en Masse}: Use \texttt{\$*} and \texttt{\$@} to handle all arguments.
+            \item \textbf{A More Complete Application}: Implement a script with command-line options.
+        \end{itemize}
+        
+        Understanding positional parameters enhances script flexibility and interactivity.
+        
+    \end{highlight}
+\end{notes}

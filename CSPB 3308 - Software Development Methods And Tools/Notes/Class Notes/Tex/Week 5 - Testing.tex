@@ -1,0 +1,155 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Testing}
+\renewcommand{\SectionTitle}{Testing}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \textbf{Engineering Software As A Service - Chapter 8 - Software Testing - Test-Driven Development}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=tIrcxwLqzjQ}{Introduction To Unit Testing In Python}{51}
+    \item \lecture{https://www.youtube.com/watch?v=h_TkFMiuSOE}{Introduction To Lab 5}{28}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-5-QuantumCompiler}{Lab 5 - Automated Unit Test}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The reading for this week is from \textbf{Engineering Software As A Service}. The chapter that is being covered this week is \textbf{Chapter 8: Software Testing - Test-Driven Development}.
+
+\begin{notes}{Chapter 8: Software Testing - Test-Driven Development}
+    \subsection*{Overview}
+
+    This chapter explores Test-Driven Development (TDD) in the context of software testing. It introduces the principles of TDD, the process of writing tests before code, and the benefits of this 
+    methodology. By the end of this chapter, you will understand how to apply TDD to create robust, maintainable, and well-documented software.
+    
+    \subsubsection*{Background: A RESTful API and a Ruby Gem}
+    
+    A RESTful API, such as TMDb, allows for self-contained HTTP requests to interact with external services. The TMDb gem simplifies the use of this API by constructing the necessary URIs and handling responses.
+    
+    \begin{highlight}[Background: A RESTful API and a Ruby Gem]
+    
+        Using the TMDb gem to interact with the TMDb API for movie information.
+        
+        \begin{itemize}
+            \item Construct RESTful URIs with the API key.
+            \item Use the TMDb gem to handle API requests and responses.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{FIRST, TDD, and Red-Green-Refactor}
+    
+    The FIRST principles (Fast, Independent, Repeatable, Self-checking, Timely) guide good test creation. TDD involves writing a failing test first, then writing code to pass the test, and finally refactoring the code.
+    
+    \begin{highlight}[FIRST, TDD, and Red-Green-Refactor]
+    
+        TDD ensures code quality and maintainability through iterative testing and refactoring.
+        
+        \begin{itemize}
+            \item \textbf{Fast}: Quick tests avoid disrupting workflow.
+            \item \textbf{Independent}: Tests should not depend on each other.
+            \item \textbf{Repeatable}: Consistent results regardless of external factors.
+            \item \textbf{Self-checking}: Tests automatically verify results.
+            \item \textbf{Timely}: Write tests concurrently with code development.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Seams and Doubles}
+    
+    Seams allow altering program behavior without changing source code. Doubles, such as mocks and stubs, help isolate tests by mimicking the behavior of real objects.
+    
+    \begin{highlight}[Seams and Doubles]
+    
+        Use seams and doubles to isolate the code under test.
+        
+        \begin{itemize}
+            \item Seams change program behavior during tests without altering the source code.
+            \item Doubles (mocks and stubs) simulate interactions with other objects.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Expectations, Mocks, Stubs, Setup}
+    
+    RSpec allows setting expectations for method calls and return values, using mocks and stubs to isolate test behavior.
+    
+    \begin{highlight}[Expectations, Mocks, Stubs, Setup]
+    
+        Set expectations for method interactions and use mocks/stubs to control test behavior.
+        
+        \begin{itemize}
+            \item \textbf{Mocks}: Verify method calls.
+            \item \textbf{Stubs}: Control method return values.
+            \item Use \texttt{before} blocks for common test setup.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Fixtures and Factories}
+    
+    Fixtures provide a fixed state for tests, while factories create objects dynamically, reducing interdependencies between tests.
+    
+    \begin{highlight}[Fixtures and Factories]
+    
+        Use fixtures for predefined states and factories for dynamic object creation.
+        
+        \begin{itemize}
+            \item \textbf{Fixtures}: Load predefined objects for testing.
+            \item \textbf{Factories}: Create objects with specific attributes as needed.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implicit Requirements and Stubbing the Internet}
+    
+    Testing external services requires handling implicit requirements and stubbing out service calls to ensure tests are fast and reliable.
+    
+    \begin{highlight}[Implicit Requirements and Stubbing the Internet]
+    
+        Handle implicit requirements and stub external service calls for reliable testing.
+        
+        \begin{itemize}
+            \item Identify and test implicit requirements.
+            \item Use stubs to simulate external service responses.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from Chapter 8 on Test-Driven Development:
+        
+        \begin{itemize}
+            \item \textbf{RESTful API and Ruby Gem}: Simplify API interactions.
+            \item \textbf{FIRST Principles}: Guide good test creation.
+            \item \textbf{TDD and Red-Green-Refactor}: Iterative testing and refactoring.
+            \item \textbf{Seams and Doubles}: Isolate code for testing.
+            \item \textbf{Expectations, Mocks, Stubs, Setup}: Control and verify test behavior.
+            \item \textbf{Fixtures and Factories}: Manage test objects and dependencies.
+            \item \textbf{Implicit Requirements and Stubbing}: Ensure fast, reliable tests for external services.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}

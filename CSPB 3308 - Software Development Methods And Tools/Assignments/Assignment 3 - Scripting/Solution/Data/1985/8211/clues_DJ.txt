@@ -1,0 +1,104 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">The only U.S. state not on the North American mainland</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Hawaii</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">Mexico's Popocatepetl &amp; Ixtacihuatl, for example</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">volcanoes</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Famous 1897 gold rush took place in the Klondike in this territory</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Yukon Territory</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">This British dependency in the Atlantic forms the most northerly group of coral islands in the world</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;">(Barbara: What are the Sandwich Islands?)<br /><br /><em class="correct_response">Bermuda</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Direction you'd be traveling when going through the Panama Canal from the Pacific to the Atlantic side</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(Carole: What is an eastward direction?)<br />(Alex: No, I'm sorry, that is wrong. Believe it or not, you'd be traveling in a [*] direction because the Panama Canal is almost north-south. We caught you on that one. If you had checked the map recently, you told me on our last program that you looked up all those world capitals. If you had studied Central America a little closer, you'd have been in good shape.)<br /><br /><em class="correct_response">northwesterly</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">The opposite of an introvert</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">an extrovert</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">Frequent treatment before tranquilizers, patients got jolts from its volts</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">the shock treatment</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Term for what occurs when a 6-year-old boy fights for the attention given his little sister</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">sibling rivalry</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Meaning "of split mind", its forms are simple, acute, catatonic, hebephrenic &amp; paranoid</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">a schizophrenic</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Freud's term for the sexual drive</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Barbara: What is id?)<br /><br /><em class="correct_response">the libido</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">You give him your car when you arrive, then pay him to get it back when you leave</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">a parking valet</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Not an after-dinner drink, it's what the little bowl of water served with a lemon slice is for</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">a finger bowl (rinsing your fingers)</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">He's also called the captain</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Carole: Who is the maître d'?)<br /><br /><em class="correct_response">the head waiter</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">A dish served "Veronique" is garnished with this fruit</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;">(Barbara: What is apricot?)<br />...<br />(Alex: It's garnished with [*].  [*].  White seedless [*].)<br /><br /><em class="correct_response">grapes</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">In English, this means "a cutlet in the manner of Vienna"</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">a Wiener schnitzel</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Aquatic vocation of Jesus' disciples James, John, Peter &amp; Andrew</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">fishermen</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">St. Paul's original name</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;">(Jeanne: What is...?)<br /><br /><em class="correct_response">Saul (of Tarsus)</em><br /><br /><table width="100%"><tr><td class="right">Carole</td><td class="wrong">Jeanne</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Jesus' disciple who envisioned the apocalypse</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">John</em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Jesus said you always have them with you</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">the poor</em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Pilate let him take Jesus' body after the crucifixion</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;">(Alex: Less than a minute to go in the round.)<br /><br /><em class="correct_response">Joseph of Arimathea</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">The word "library" comes from the Latin "liber", which means this</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">book</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Stagecoach robber Charles Bolton always left one of these signed "Black Bart, the Po8"</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;">(Barbara: What is a handkerchief?)<br />...<br />(Alex: As a matter of fact, I have one of those poems. "I've labored long and hard for bread, / For honor and for riches, / But on my corns too long you've tread. / You fine-haired sons of<span class="nobreak">--</span>" Well, that's what<span class="nobreak">--</span>that's what Charles Bolton used to leave, and that may be one of the reasons he decided to become a bank robber.)<br /><br /><em class="correct_response">a poem</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">Sam Bass was a Texas cowboy who stole from the rich &amp; gave to the poor until captured by these lawmen</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Texas Rangers</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">He never killed anyone or even fired his famous weapon in anger, &amp; supposedly nicknamed the FBI "G-men"</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;">(Carole: Who's John Dillinger?)<br />(Barbara: Who is Babyface Nelson?)<br />...<br />(Alex: The important part of the clue here was "fired his famous weapon." We were referring to [*].)<br /><br /><em class="correct_response">Machine Gun Kelly</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">Alfred Noyes wrote a famous poem about this kind of robber</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">a highwayman</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">Hampered by orders not to use Mexican railroads, this U.S. general failed to capture Pancho Villa</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Barbara: Who was General Grant?)<br />(Carole: Who was Zachary Taylor?)<br />[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Black Jack Pershing</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

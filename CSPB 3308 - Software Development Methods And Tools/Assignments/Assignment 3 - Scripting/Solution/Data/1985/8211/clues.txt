@@ -1,0 +1,100 @@
+    <td id="clue_DJ_1_1" class="clue_text">The only U.S. state not on the North American mainland</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Hawaii</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">Mexico's Popocatepetl &amp; Ixtacihuatl, for example</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">volcanoes</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Famous 1897 gold rush took place in the Klondike in this territory</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Yukon Territory</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">This British dependency in the Atlantic forms the most northerly group of coral islands in the world</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;">(Barbara: What are the Sandwich Islands?)<br /><br /><em class="correct_response">Bermuda</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Direction you'd be traveling when going through the Panama Canal from the Pacific to the Atlantic side</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(Carole: What is an eastward direction?)<br />(Alex: No, I'm sorry, that is wrong. Believe it or not, you'd be traveling in a [*] direction because the Panama Canal is almost north-south. We caught you on that one. If you had checked the map recently, you told me on our last program that you looked up all those world capitals. If you had studied Central America a little closer, you'd have been in good shape.)<br /><br /><em class="correct_response">northwesterly</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">The opposite of an introvert</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">an extrovert</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">Frequent treatment before tranquilizers, patients got jolts from its volts</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">the shock treatment</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Term for what occurs when a 6-year-old boy fights for the attention given his little sister</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">sibling rivalry</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Meaning "of split mind", its forms are simple, acute, catatonic, hebephrenic &amp; paranoid</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">a schizophrenic</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Freud's term for the sexual drive</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Barbara: What is id?)<br /><br /><em class="correct_response">the libido</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">You give him your car when you arrive, then pay him to get it back when you leave</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">a parking valet</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Not an after-dinner drink, it's what the little bowl of water served with a lemon slice is for</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">a finger bowl (rinsing your fingers)</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">He's also called the captain</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Carole: Who is the maître d'?)<br /><br /><em class="correct_response">the head waiter</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">A dish served "Veronique" is garnished with this fruit</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;">(Barbara: What is apricot?)<br />...<br />(Alex: It's garnished with [*].  [*].  White seedless [*].)<br /><br /><em class="correct_response">grapes</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">In English, this means "a cutlet in the manner of Vienna"</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">a Wiener schnitzel</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Aquatic vocation of Jesus' disciples James, John, Peter &amp; Andrew</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">fishermen</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">St. Paul's original name</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;">(Jeanne: What is...?)<br /><br /><em class="correct_response">Saul (of Tarsus)</em><br /><br /><table width="100%"><tr><td class="right">Carole</td><td class="wrong">Jeanne</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Jesus' disciple who envisioned the apocalypse</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">John</em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Jesus said you always have them with you</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">the poor</em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Pilate let him take Jesus' body after the crucifixion</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;">(Alex: Less than a minute to go in the round.)<br /><br /><em class="correct_response">Joseph of Arimathea</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">The word "library" comes from the Latin "liber", which means this</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">book</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Stagecoach robber Charles Bolton always left one of these signed "Black Bart, the Po8"</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;">(Barbara: What is a handkerchief?)<br />...<br />(Alex: As a matter of fact, I have one of those poems. "I've labored long and hard for bread, / For honor and for riches, / But on my corns too long you've tread. / You fine-haired sons of<span class="nobreak">--</span>" Well, that's what<span class="nobreak">--</span>that's what Charles Bolton used to leave, and that may be one of the reasons he decided to become a bank robber.)<br /><br /><em class="correct_response">a poem</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">Sam Bass was a Texas cowboy who stole from the rich &amp; gave to the poor until captured by these lawmen</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Texas Rangers</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">He never killed anyone or even fired his famous weapon in anger, &amp; supposedly nicknamed the FBI "G-men"</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;">(Carole: Who's John Dillinger?)<br />(Barbara: Who is Babyface Nelson?)<br />...<br />(Alex: The important part of the clue here was "fired his famous weapon." We were referring to [*].)<br /><br /><em class="correct_response">Machine Gun Kelly</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">Alfred Noyes wrote a famous poem about this kind of robber</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">a highwayman</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">Hampered by orders not to use Mexican railroads, this U.S. general failed to capture Pancho Villa</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Barbara: Who was General Grant?)<br />(Carole: Who was Zachary Taylor?)<br />[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Black Jack Pershing</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Barbara</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">Last Democratic president to serve 2 complete terms, no more, no less</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="right">Jeanne</td><td rowspan="2" valign="top">Who is Wilson?</td></tr><tr><td>$1,499</td></tr><tr><td class="right">Carole</td><td rowspan="2" valign="top">Who was Woodrow Wilson?</td></tr><tr><td>$200</td></tr></table><em class="correct_response">Woodrow Wilson</em></td>
+    <td id="clue_J_1_1" class="clue_text">Columbia introduced this revolutionary record in '48, allowing us to hear 23 minutes instead of 4</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">an LP (33 1/3)</em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">This right-wing group was named for the 1st victim of the "Cold War", killed in China in 1945</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">the John Birch Society</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Dennis Stein replaced Mexican lawyer Victor Luna as her choice for an 8th marriage</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Elizabeth Taylor</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Humbert Humbert loved this Nabokov nymphet</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Lolita</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">To spice up romance, you, too, can now dress &amp; smell like these leading lovers on "Dynasty"</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;">(Carole: Who are Linda Evans and Joan Collins?)<br />...<br />(Alex: John Forsythe and Linda Evans.)<br /><br /><em class="correct_response">Crystal & Blake Harrington</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Black cats with a white stripe accidentally painted on their backs are pursued by this cartoon Romeo</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Pepe Le Pew</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">In her radio "Romance", she set out to prove that just because a woman was over 35, life was not over</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Helen Trent</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">Type of test in which you might be asked to select A,B,C, or none of the above</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">a multiple choice test</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">They used to say if this animal died during the test, you were pregnant</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">a rabbit</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">What "S.A.T." stands for</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Scholastic Aptitude Test</em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">On radio they ask you to turn down your audio while they perform <a href="https://www.j-archive.com/media/1985-05-13_J_18.mp3">this</a> test:</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;">(Barbara: What is this is just a test, this is not an actual emergency?)<br />(Alex: You have to be a little more specific.)<br />(Barbara: What is an air raid test?)<br /><br /><em class="correct_response">the emergency broadcast system test</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Real name Diane Hall, she was Woody's co-star in "Annie Hall"</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Diane Keaton</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Though Bogie really didn't say it in "Casablanca", Woody wrote a play &amp; film with it as title</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Play It Again, Sam</i></em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Two of the five Woody Allen films with one-word titles</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">(2 of) <i>Manhattan</i>, <i>Bananas</i>, <i>Sleeper</i>, <i>Interiors</i>, & <i>Zelig</i></em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">The second Mrs. Woody Allen, she was the one &amp; only "Mary Hartman, Mary Hartman"</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Louise Lasser</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">"I don't want to achieve immortality through my work, I want to achieve it through not..." doing this</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;">(Jeanne: What is working?)<br /><br /><em class="correct_response">dying</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td><td class="wrong">Jeanne</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">A baby tailor might throw a perfect one</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Jeanne: What is a ball?)<br /><br /><em class="correct_response">a fit</em><br /><br /><table width="100%"><tr><td class="wrong">Jeanne</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">Follows drag &amp; hair, precedes work &amp; worth</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;">(Carole: Out. What is out?)<br />(Jeanne: What is cut?)<br /><br /><em class="correct_response">net</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Jeanne</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">From 1951 through 1983, this Montreal hockey team had 32 consecutive winning seasons</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Montreal Canadiens</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Game you're playing when you're playing "roundball"</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">basketball</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">Along with L.A., the only other city represented by 2 NFL teams</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Alex: And we've got less than a minute to go in the round.)<br /><br /><em class="correct_response">New York</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Baltimore racetrack that's home of the   Preakness Stakes</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Pimlico</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">1984 P.G.A. winner who was hit by lightning in '75</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Alex: Man who should be familiar to you ladies from Texas, [*]. [*].)<br /><br /><em class="correct_response">Lee Trevino</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

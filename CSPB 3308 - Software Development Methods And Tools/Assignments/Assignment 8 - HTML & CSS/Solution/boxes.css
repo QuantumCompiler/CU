@@ -1,0 +1,87 @@
+/* Change the background color of the body */
+body {
+    background-color: rgb(43, 30, 30);
+}
+/* Remove the underline of links */
+a {
+    text-decoration: none;
+}
+/* Align the h1 tag in the center of its parent */
+h1 {
+    text-align: center;
+}
+/* Align the h3 tag in the center of its parent */
+h3 {
+    text-align: center;
+}
+/* Place images in the center of its parent */
+img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+/* Styles for the menu in the top left of the screen, background color, width, etc. */
+div#menu {
+    background-color: aqua;
+    width: 20%;
+    margin-left: 1%;
+    margin-top: 1%;
+    border: 2px solid purple;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/* Change the style of the menu items, add border and animation when hovered */
+div#menuitem {
+    margin: 5px;
+    padding: 10px;
+    border: 4px solid rgb(255, 255, 255);
+    /* animation: changeColor 3s infinite; */
+}
+/* Align the text for the p tag in the center of the menu item */
+div#menuitem p {
+    text-align: center;
+}
+/* Make the links in the menu bold */
+div#menuitem a {
+    font-weight: bold;
+}
+/* Styles for the information section, background color, width, border and radius, etc. */
+div#information {
+    background-color: aqua;
+    width: 75%;
+    border: 2px sold black;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    border: 2px solid purple;
+    border-radius: 10px;
+}
+/* The individual sections for the information section, border, and changing the background of the section. */
+div#informationSection {
+    border: 2px sold purple;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    display: block;
+    animation: changeColor 3s infinite;
+}
+/* Animation for the information section hover */
+div#informationSection:hover {
+    background-color: var(--random-color);
+}
+/* The root for the random colors, set to red */
+:root {
+    --random-color: rgba(255, 0, 0, 0.75);
+}
+/* changeColor colors, 1/6 probability for the Rubik's cube colors */
+@keyframes changeColor {
+    0% { --random-color: rgba(255, 0, 0, 0.75); }
+    16.67% { --random-color: rgba(255, 166, 0, 0.75); }
+    33.33% { --random-color: white; }
+    50% { --random-color: rgba(255, 255, 0, 0.75); }
+    66.67% { --random-color: rgba(0, 128, 0, 0.75); }
+    83.33% { --random-color: rgba(0, 0, 255, 0.75); }
+    100% { --random-color: rgba(255, 0, 0, 0.75); }
+}

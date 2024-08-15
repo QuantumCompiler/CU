@@ -1,0 +1,1050 @@
+\clearpage
+
+\newcommand{\ChapTitle}{Life In The Shell}
+\newcommand{\SectionTitle}{Life In The Shell}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \textbf{The Linux Command Line - Chapter 1 - What Is The Shell?}
+    \item \textbf{The Linux Command Line - Chapter 2 - Navigation}
+    \item \textbf{The Linux Command Line - Chapter 3 - Exploring The System}
+    \item \textbf{The Linux Command Line - Chapter 4 - Manipulating Files And Directories}
+    \item \textbf{The Linux Command Line - Chapter 5 - Working With Commands}
+    \item \textbf{The Linux Command Line - Chapter 6 - Redirection}
+    \item \textbf{The Linux Command Line - Chapter 11 - The Environment}
+    \item \textbf{The Linux Command Line - Chapter 12 - A Gentle Introduction To vi}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=ly6i9bAy0pc}{Overview Of Course By Dr. Knox}{10}
+    \item \lecture{https://www.youtube.com/watch?v=D5mSR8yVqZg}{Introduction To Software Development}{16}
+    \item \lecture{https://www.youtube.com/watch?v=CvInTCiYBnM}{Introduction To Linux}{13}
+    \item \lecture{https://www.youtube.com/watch?v=VMhACoPQ7LY}{The Bash Shell}{17}
+    \item \lecture{https://www.youtube.com/watch?v=H20rdYxnMPM}{Vim Terminal Editor}{13}
+    \item \lecture{https://www.youtube.com/watch?v=y37_xyJth44}{How To Learn New Tools}{17}
+    \item \lecture{https://www.youtube.com/watch?v=7_x86HeoglQ&t=162s}{Setting Up GitHub Classroom}{28}
+    \item \lecture{https://www.youtube.com/watch?v=hu81oFq0nA8}{Why We Use GitHub Classroom}{8}
+    \item \lecture{https://www.youtube.com/watch?v=b0Ystl84XYY}{Example Of Accepting An Assignment}{7}
+    \item \lecture{https://www.youtube.com/watch?v=X-ktxH8I0_s}{Lab 1 Introduction}{20}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \href{https://explainshell.com/}{Explain Shell Tool}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-1-and-2-QuantumCompiler}{Lab 1 - Using Command Line Interface}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 1A - TLCL Chapters 1 - 4.pdf}{Quiz 1A - TLCL Chapters 1 - 4}
+    \item \pdflink{\QuizDir Quiz 1B - TLCL Chapters 5, 6, 11.pdf}{Quiz 1B - TLCL Chapters 5, 6, 11}
+\end{itemize}
+
+\subsection{Project}
+
+The assignment(s) for the project this week is:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/feedback/view.php?id=61251}{Availability And Skills Assessment}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is covered this week is \textbf{Chapter 1: What Is The Shell?}.
+
+\begin{notes}{Chapter 1: What Is the Shell?}
+    \subsubsection*{Overview}
+
+    This chapter introduces the shell, a program that takes keyboard commands and passes them to the operating system to execute. The most commonly used shell in Linux is \texttt{bash}, which stands 
+    for "Bourne Again SHell," an enhanced version of the original Unix shell \texttt{sh} created by Steve Bourne.
+
+    \subsubsection*{Terminal Emulators}
+
+    In graphical user interfaces (GUI), a terminal emulator is needed to interact with the shell. Common terminal emulators include \texttt{konsole} for KDE and \texttt{gnome-terminal} for GNOME. 
+    These emulators provide access to the shell and may have different features and preferences.
+
+    \subsubsection*{Making Your First Keystrokes}
+
+    Upon launching a terminal emulator, a shell prompt appears, typically displaying the format \texttt{username@machinename:directory\$}. This prompt indicates the shell is ready to accept input. 
+    If the prompt ends with a \texttt{\#} instead of a \texttt{\$}, it signifies superuser (root) privileges.
+
+    To test the shell, users can type gibberish which results in an error message indicating the command was not found. The shell also supports command history, allowing users to recall previous 
+    commands using the up-arrow and down-arrow keys.
+
+    \subsubsection*{Cursor Movement}
+
+    The left and right-arrow keys allow users to move the cursor within the command line for easy editing. 
+
+    \subsubsection*{A Few Words About Mice and Focus}
+
+    The terminal emulator supports mouse interactions, such as copying and pasting text using the middle mouse button. Traditional X Window System behavior allows "focus follows mouse," where the 
+    window under the mouse pointer receives input focus.
+
+    \subsubsection*{Try Some Simple Commands}
+
+    Simple commands include:
+
+    \begin{highlight}[Simple Commands]
+    \begin{itemize}
+        \item \texttt{date}: Displays the current date and time.
+        \item \texttt{cal}: Displays a calendar of the current month.
+        \item \texttt{df}: Shows disk space usage.
+        \item \texttt{free}: Displays memory usage.
+    \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Ending a Terminal Session}
+
+    To end a terminal session, users can close the terminal emulator window, enter the \texttt{exit} command, or press \texttt{Ctrl-d}.
+
+    \subsubsection*{The Console Behind the Curtain}
+
+    Linux systems support virtual terminals, accessible via \texttt{Ctrl-Alt-F1} through \texttt{Ctrl-Alt-F6}. Each provides a login prompt and can be switched using \texttt{Alt-F1} to 
+    \texttt{Alt-F6}, with \texttt{Alt-F7} typically returning to the graphical desktop.
+
+    \subsubsection*{Summing Up}
+
+    This chapter introduces the basics of the Linux shell and terminal usage, covering command input, simple commands, and session management. The next chapter will explore more commands and 
+    navigation within the Linux file system.
+
+    \subsubsection*{Further Reading}
+
+    \begin{itemize}
+        \item \href{http://en.wikipedia.org/wiki/Steve_Bourne}{Steve Bourne} - Father of the Bourne Shell.
+        \item \href{https://en.wikipedia.org/wiki/Brian_Fox_(computer_programmer)}{Brian Fox} - Original author of \texttt{bash}.
+        \item \href{http://en.wikipedia.org/wiki/Shell_(computing)}{Shell (computing)} - Concept of shells in computing.
+    \end{itemize}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 2: Navigation}.
+
+\begin{notes}{Chapter 2: Navigation}
+    \subsubsection*{Overview}
+
+    This chapter focuses on navigating the file system in a Linux environment. It introduces essential commands for directory navigation, including \texttt{pwd} (print working directory), 
+    \texttt{cd} (change directory), and \texttt{ls} (list directory contents).
+
+    \subsubsection*{Understanding the File System Tree}
+
+    Linux organizes its files in a hierarchical directory structure, similar to a tree. The root directory is the starting point, and it contains files and subdirectories. Unlike Windows, which 
+    has separate file system trees for each storage device, Linux maintains a single file system tree regardless of the number of attached drives or storage devices.
+
+    \subsubsection*{The Current Working Directory}
+
+    The current working directory is the directory in which a user is currently located. To display it, the \texttt{pwd} command is used.
+
+    \begin{highlight}[Example: Print Working Directory]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ pwd
+    /home/me
+    \end{code}
+    \end{highlight}
+
+    When a terminal session starts, the current working directory is set to the user's home directory.
+
+    \subsubsection*{Listing the Contents of a Directory}
+
+    The \texttt{ls} command lists the files and directories in the current working directory. It can also list the contents of any specified directory.
+
+    \begin{highlight}[Example: List Directory Contents]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ ls
+    Desktop  Documents  Music  Pictures  Public  Templates  Videos
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Changing the Current Working Directory}
+
+    To change the working directory, the \texttt{cd} command is used followed by the pathname of the desired directory. Pathnames can be absolute or relative.
+
+    \paragraph*{Absolute Pathnames}
+
+    An absolute pathname starts from the root directory and follows the tree structure.
+
+    \begin{highlight}[Example: Absolute Pathname]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ cd /usr/bin
+    [me@linuxbox bin]$ pwd
+    /usr/bin
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{Relative Pathnames}
+
+    A relative pathname starts from the current working directory and uses special notations \texttt{.} (current directory) and \texttt{..} (parent directory).
+
+    \begin{highlight}[Example: Relative Pathname]
+    \begin{code}[Pseudo]
+    [me@linuxbox bin]$ cd ..
+    [me@linuxbox usr]$ pwd
+    /usr
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Some Helpful Shortcuts}
+
+    The \texttt{cd} command has several shortcuts:
+    \begin{itemize}
+        \item \texttt{cd} - Changes to the home directory.
+        \item \texttt{cd -} - Changes to the previous working directory.
+        \item \texttt{cd \textasciitilde user\_name} - Changes to the home directory of \texttt{user\_name}.
+    \end{itemize}
+
+    \subsubsection*{Important Facts About Filenames}
+
+    Filenames in Linux have several key characteristics:
+    \begin{itemize}
+        \item Filenames starting with a period are hidden.
+        \item Filenames are case-sensitive.
+        \item Linux does not rely on file extensions to determine file types.
+        \item Limit punctuation in filenames to periods, dashes, and underscores. Avoid spaces.
+    \end{itemize}
+
+    \subsubsection*{Summing Up}
+
+    This chapter covered the basics of navigating the Linux file system using commands like \texttt{pwd}, \texttt{cd}, and \texttt{ls}. Understanding absolute and relative pathnames, as well as useful 
+    shortcuts, helps in efficiently managing directories. The next chapter will build on this knowledge to explore a modern Linux system.
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 3: Exploring the System}.
+
+\begin{notes}{Chapter 3: Exploring the System}
+    \subsubsection*{Overview}
+
+    This chapter provides a guided tour of a Linux system, introducing additional commands to explore and understand the file system. The key commands covered include \texttt{ls} (list directory contents), 
+    \texttt{file} (determine file type), and \texttt{less} (view file contents).
+
+    \subsubsection*{Having More Fun with \texttt{ls}}
+
+    The \texttt{ls} command is versatile and essential for viewing directory contents and file attributes. It can be used with various options to enhance its output:
+    \begin{itemize}
+        \item \texttt{ls -l} for long format
+        \item \texttt{ls -lt} to sort by modification time
+        \item \texttt{ls -lt --reverse} to reverse the sort order
+    \end{itemize}
+
+    \begin{highlight}[Common \texttt{ls} Options]
+    \begin{itemize}
+        \item \texttt{-a}, \texttt{--all}: List all files, including hidden files.
+        \item \texttt{-A}, \texttt{--almost-all}: List all files except \texttt{.} and \texttt{..}.
+        \item \texttt{-d}, \texttt{--directory}: List directory details instead of contents.
+        \item \texttt{-F}, \texttt{--classify}: Append indicator characters to file names.
+        \item \texttt{-h}, \texttt{--human-readable}: Display file sizes in human-readable format.
+        \item \texttt{-l}: Display results in long format.
+        \item \texttt{-r}, \texttt{--reverse}: Display results in reverse order.
+        \item \texttt{-S}: Sort results by file size.
+        \item \texttt{-t}: Sort by modification time.
+    \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Determining a File's Type with \texttt{file}}
+
+    The \texttt{file} command is used to identify the type of a file. It examines the file and provides a brief description of its contents.
+
+    \begin{highlight}[Example: Using \texttt{file}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ file picture.jpg
+    picture.jpg: JPEG image data, JFIF standard 1.01
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Viewing File Contents with \texttt{less}}
+
+    The \texttt{less} command allows viewing the contents of text files in a scrollable manner. It is useful for examining configuration files and scripts.
+
+    \begin{highlight}[Common \texttt{less} Commands]
+    \begin{itemize}
+        \item \texttt{Page Up} or \texttt{b}: Scroll back one page.
+        \item \texttt{Page Down} or \texttt{space}: Scroll forward one page.
+        \item \texttt{Up arrow}: Scroll up one line.
+        \item \texttt{Down arrow}: Scroll down one line.
+        \item \texttt{G}: Move to the end of the text file.
+        \item \texttt{1G} or \texttt{g}: Move to the beginning of the text file.
+        \item \texttt{/characters}: Search forward for characters.
+        \item \texttt{n}: Search for the next occurrence of the previous search.
+        \item \texttt{h}: Display help screen.
+        \item \texttt{q}: Quit \texttt{less}.
+    \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Taking a Guided Tour}
+
+    The file system layout on a Linux system adheres to the Linux Filesystem Hierarchy Standard. Key directories and their contents include:
+
+    \begin{highlight}[Key Directories]
+    \begin{itemize}
+        \item \texttt{/}: The root directory.
+        \item \texttt{/bin}: Essential system binaries.
+        \item \texttt{/boot}: Contains the Linux kernel and boot loader.
+        \item \texttt{/dev}: Contains device nodes.
+        \item \texttt{/etc}: System-wide configuration files.
+        \item \texttt{/home}: User home directories.
+        \item \texttt{/lib}: Shared libraries for core system programs.
+        \item \texttt{/media}: Mount points for removable media.
+        \item \texttt{/mnt}: Mount points for manually mounted devices.
+        \item \texttt{/opt}: Optional software.
+        \item \texttt{/proc}: Virtual file system for kernel information.
+        \item \texttt{/root}: Home directory for the root account.
+        \item \texttt{/sbin}: System binaries for superuser.
+        \item \texttt{/tmp}: Temporary files.
+        \item \texttt{/usr}: Programs and support files for users.
+        \item \texttt{/var}: Variable data like logs and databases.
+    \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Symbolic Links}
+
+    Symbolic links (symlinks) are special files that point to other files. They are useful for version management and easier access to frequently used files.
+
+    \subsubsection*{Hard Links}
+
+    Hard links are another type of link that allow multiple filenames to refer to the same file data.
+
+    \subsubsection*{Summing Up}
+
+    This chapter explored the Linux file system, providing insight into its structure and the tools available to navigate and understand it. Key takeaways include the use of \texttt{ls}, \texttt{file}, 
+    and \texttt{less} commands, as well as an overview of important directories and links.
+
+    \subsubsection*{Further Reading}
+
+    \begin{itemize}
+        \item \href{http://www.pathname.com/fhs/}{Linux Filesystem Hierarchy Standard}
+        \item \href{http://en.wikipedia.org/wiki/Unix_directory_structure}{Unix directory structure}
+        \item \href{http://en.wikipedia.org/wiki/ASCII}{ASCII text format}
+    \end{itemize}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 4: Manipulating Files and Directories}.
+
+\begin{notes}{Chapter 4: Manipulating Files and Directories}
+    \subsubsection*{Overview}
+
+    This chapter introduces five fundamental commands for manipulating files and directories in Linux: \texttt{cp} (copy), \texttt{mv} (move/rename), \texttt{mkdir} (create directories), \texttt{rm} (remove), 
+    and \texttt{ln} (create links). These commands provide powerful and flexible ways to manage files and directories, often more effectively than using a graphical file manager.
+
+    \subsubsection*{Wildcards}
+
+    Wildcards, also known as globbing, allow users to specify groups of filenames based on patterns. Common wildcards include:
+    \begin{itemize}
+        \item \texttt{*}: Matches any characters
+        \item \texttt{?}: Matches any single character
+        \item \texttt{[characters]}: Matches any character in the set
+        \item \texttt{[!characters]}: Matches any character not in the set
+        \item \texttt{[[:class:]]}: Matches any character in the specified class (e.g., \texttt{[:alnum:]}, \texttt{[:alpha:]}, \texttt{[:digit:]}, \texttt{[:lower:]}, \texttt{[:upper:]})
+    \end{itemize}
+
+    \subsubsection*{\texttt{mkdir} - Create Directories}
+
+    The \texttt{mkdir} command creates directories. Multiple directories can be created simultaneously by listing them as arguments.
+
+    \begin{highlight}[Example: Create Directories]
+    \begin{code}[Pseudo]
+    mkdir dir1 dir2 dir3
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{\texttt{cp} - Copy Files and Directories}
+
+    The \texttt{cp} command copies files or directories. It can be used in two ways:
+    \begin{itemize}
+        \item \texttt{cp item1 item2}: Copies \texttt{item1} to \texttt{item2}.
+        \item \texttt{cp item... directory}: Copies multiple items into a directory.
+    \end{itemize}
+
+    \begin{highlight}[Common \texttt{cp} Options]
+    \begin{itemize}
+        \item \texttt{-a}, \texttt{--archive}: Copy files and directories with all attributes.
+        \item \texttt{-i}, \texttt{--interactive}: Prompt before overwriting files.
+        \item \texttt{-r}, \texttt{--recursive}: Recursively copy directories.
+        \item \texttt{-u}, \texttt{--update}: Copy only newer or non-existing files.
+        \item \texttt{-v}, \texttt{--verbose}: Display informative messages during copy.
+    \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{\texttt{mv} - Move and Rename Files}
+
+    The \texttt{mv} command moves or renames files and directories. Usage is similar to \texttt{cp}:
+    \begin{itemize}
+        \item \texttt{mv item1 item2}: Moves/renames \texttt{item1} to \texttt{item2}.
+        \item \texttt{mv item... directory}: Moves multiple items into a directory.
+    \end{itemize}
+
+    \begin{highlight}[Common \texttt{mv} Options]
+    \begin{itemize}
+        \item \texttt{-i}, \texttt{--interactive}: Prompt before overwriting files.
+        \item \texttt{-u}, \texttt{--update}: Move only newer or non-existing files.
+        \item \texttt{-v}, \texttt{--verbose}: Display informative messages during move.
+    \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{\texttt{rm} - Remove Files and Directories}
+
+    The \texttt{rm} command deletes files and directories.
+
+    \begin{highlight}[Common \texttt{rm} Options]
+    \begin{itemize}
+        \item \texttt{-i}, \texttt{--interactive}: Prompt before deleting files.
+        \item \texttt{-r}, \texttt{--recursive}: Recursively delete directories.
+        \item \texttt{-f}, \texttt{--force}: Ignore nonexistent files and do not prompt.
+        \item \texttt{-v}, \texttt{--verbose}: Display informative messages during deletion.
+    \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{\texttt{ln} - Create Links}
+
+    The \texttt{ln} command creates hard or symbolic links.
+
+    \paragraph*{Hard Links}
+
+    Hard links reference the same data as the original file. Limitations include:
+    \begin{itemize}
+        \item Cannot reference files outside their file system.
+        \item Cannot reference directories.
+    \end{itemize}
+
+    \begin{highlight}[Example: Create Hard Link]
+    \begin{code}[Pseudo]
+    ln file link
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{Symbolic Links}
+
+    Symbolic links contain a text pointer to the target file or directory, overcoming the limitations of hard links.
+
+    \begin{highlight}[Example: Create Symbolic Link]
+    \begin{code}[Pseudo]
+    ln -s item link
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Let's Build a Playground}
+
+    To practice file manipulation, a safe directory (playground) can be created in the home directory. Commands to create and manipulate files and directories in the playground include:
+    \begin{itemize}
+        \item \texttt{mkdir playground}
+        \item \texttt{cp /etc/passwd playground/}
+        \item \texttt{mv playground/passwd playground/fun}
+        \item \texttt{ln playground/fun playground/fun-hard}
+        \item \texttt{ln -s playground/fun playground/fun-sym}
+        \item \texttt{rm playground/fun}
+    \end{itemize}
+
+    \subsubsection*{Summing Up}
+
+    This chapter covered essential commands for file and directory manipulation, including creating, copying, moving, renaming, linking, and deleting files and directories. Practicing these commands 
+    in a safe environment helps in mastering them for effective use.
+
+    \subsubsection*{Further Reading}
+
+    \begin{itemize}
+        \item \href{http://en.wikipedia.org/wiki/Symbolic_link}{Discussion of symbolic links}
+    \end{itemize}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 5: Working with Commands}.
+
+\begin{notes}{Chapter 5: Working with Commands}
+    \subsubsection*{Overview}
+
+    This chapter demystifies various commands, options, and arguments used in Linux. It introduces the following commands to help understand and create commands:
+    \begin{itemize}
+        \item \texttt{type} - Indicate how a command name is interpreted
+        \item \texttt{which} - Display which executable program will be executed
+        \item \texttt{help} - Get help for shell builtins
+        \item \texttt{man} - Display a command's manual page
+        \item \texttt{apropos} - Display a list of appropriate commands
+        \item \texttt{info} - Display a command's info entry
+        \item \texttt{whatis} - Display one-line manual page descriptions
+        \item \texttt{alias} - Create an alias for a command
+    \end{itemize}
+
+    \subsubsection*{What Exactly Are Commands?}
+
+    A command can be one of four types:
+    \begin{itemize}
+        \item An executable program (e.g., compiled binaries or scripts)
+        \item A command built into the shell (e.g., \texttt{cd})
+        \item A shell function (miniature shell scripts in the environment)
+        \item An alias (user-defined commands built from other commands)
+    \end{itemize}
+
+    \subsubsection*{Identifying Commands}
+
+    \paragraph*{\texttt{type} - Display a Command's Type}
+
+    The \texttt{type} command reveals the kind of command the shell will execute.
+    \begin{highlight}[Example: \texttt{type}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ type type
+    type is a shell builtin
+
+    [me@linuxbox ~]$ type ls
+    ls is aliased to `ls --color=tty'
+
+    [me@linuxbox ~]$ type cp
+    cp is /bin/cp
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{\texttt{which} - Display an Executable's Location}
+
+    The \texttt{which} command shows the location of an executable program.
+    \begin{highlight}[Example: \texttt{which}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ which ls
+    /bin/ls
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Getting a Command's Documentation}
+
+    \paragraph*{\texttt{help} - Get Help for Shell Builtins}
+
+    The \texttt{help} command provides information about shell builtins.
+    \begin{highlight}[Example: \texttt{help}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ help cd
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{\texttt{--help} - Display Usage Information}
+
+    Many executables support the \texttt{--help} option to display usage information.
+    \begin{highlight}[Example: \texttt{--help}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ mkdir --help
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{\texttt{man} - Display a Program's Manual Page}
+
+    The \texttt{man} command displays a program's manual page.
+    \begin{highlight}[Example: \texttt{man}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ man ls
+    \end{code}
+    \end{highlight}
+
+    Man pages are organized into sections:
+    \begin{itemize}
+        \item 1: User commands
+        \item 2: Programming interfaces for kernel system calls
+        \item 3: Programming interfaces to the C library
+        \item 4: Special files (e.g., device nodes, drivers)
+        \item 5: File formats
+        \item 6: Games and amusements
+        \item 7: Miscellaneous
+        \item 8: System administration commands
+    \end{itemize}
+
+    \paragraph*{\texttt{apropos} - Display Appropriate Commands}
+
+    The \texttt{apropos} command searches man pages based on a search term.
+    \begin{highlight}[Example: \texttt{apropos}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ apropos partition
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{\texttt{whatis} - Display One-line Manual Page Descriptions}
+
+    The \texttt{whatis} command displays a brief description of a command.
+    \begin{highlight}[Example: \texttt{whatis}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ whatis ls
+    ls (1)  - list directory contents
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{\texttt{info} - Display a Program's Info Entry}
+
+    The \texttt{info} command displays a program's info page, an alternative to man pages provided by the GNU Project.
+
+    \begin{highlight}[Example: \texttt{info}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ info coreutils
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{README and Other Program Documentation Files}
+
+    Many software packages have documentation in the \texttt{/usr/share/doc} directory. These can often be viewed with \texttt{less} or a web browser.
+
+    \subsubsection*{Creating Our Own Commands with \texttt{alias}}
+
+    The \texttt{alias} command allows users to create their own commands.
+
+    \begin{highlight}[Example: \texttt{alias}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ alias foo='cd /usr; ls; cd -'
+    \end{code}
+    \end{highlight}
+
+    To remove an alias, use the \texttt{unalias} command.
+
+    \begin{highlight}[Example: \texttt{unalias}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ unalias foo
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Summing Up}
+
+    This chapter covered various commands for identifying, using, and documenting other commands, as well as creating custom commands with \texttt{alias}. Practicing these commands will enhance 
+    understanding and efficiency in using the Linux command line.
+
+    \subsubsection*{Further Reading}
+
+    \begin{itemize}
+        \item \href{http://www.gnu.org/software/bash/manual/bashref.html}{Bash Reference Manual}
+        \item \href{http://mywiki.wooledge.org/BashFAQ}{Bash FAQ}
+        \item \href{http://www.gnu.org/manual/manual.html}{GNU Project Documentation}
+        \item \href{http://en.wikipedia.org/wiki/Man_page}{Wikipedia: Man Page}
+    \end{itemize}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter 6: Redirection}
+
+\begin{notes}{Chapter 6: Redirection}
+    \subsubsection*{Overview}
+
+    This chapter introduces I/O redirection, a powerful feature of the command line that allows the redirection of input and output of commands to and from files, as well as connecting multiple commands 
+    into pipelines. The key commands covered include \texttt{cat}, \texttt{sort}, \texttt{uniq}, \texttt{grep}, \texttt{wc}, \texttt{head}, \texttt{tail}, and \texttt{tee}.
+
+    \subsubsection*{Standard Input, Output, and Error}
+
+    Unix programs often produce two types of output: program results (standard output or \texttt{stdout}) and status/error messages (standard error or \texttt{stderr}). By default, both are displayed 
+    on the screen, and input is taken from the keyboard (standard input or \texttt{stdin}).
+
+    \subsubsection*{Redirecting Standard Output}
+
+    Standard output can be redirected to a file using the \texttt{>} operator.
+    \begin{highlight}[Example: Redirecting Standard Output]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ ls -l /usr/bin > ls-output.txt
+    \end{code}
+    \end{highlight}
+
+    To append output to a file instead of overwriting, use the \texttt{>>} operator.
+    \begin{highlight}[Example: Appending Output]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ ls -l /usr/bin >> ls-output.txt
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Redirecting Standard Error}
+
+    Standard error can be redirected using the file descriptor \texttt{2}.
+    \begin{highlight}[Example: Redirecting Standard Error]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ ls -l /bin/usr 2> ls-error.txt
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Redirecting Both Standard Output and Standard Error}
+
+    Both outputs can be redirected to a single file.
+    \begin{highlight}[Example: Redirecting Both Outputs]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ ls -l /bin/usr > ls-output.txt 2>&1
+    \end{code}
+    \end{highlight}
+
+    Modern \texttt{bash} allows a more concise way.
+    \begin{highlight}[Example: Concise Redirection]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ ls -l /bin/usr &> ls-output.txt
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Suppressing Output}
+
+    Unwanted output can be redirected to \texttt{/dev/null}.
+    \begin{highlight}[Example: Suppressing Error Messages]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ ls -l /bin/usr 2> /dev/null
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Redirecting Standard Input}
+
+    Commands can take input from a file instead of the keyboard using the \texttt{<} operator.
+    \begin{highlight}[Example: Redirecting Standard Input]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ cat < lazy_dog.txt
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Pipelines}
+
+    Pipelines use the \texttt{|} operator to send the output of one command as input to another.
+    \begin{highlight}[Example: Pipeline]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ ls -l /usr/bin | less
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Filters}
+
+    Filters process data in a pipeline. Examples include \texttt{sort}, \texttt{uniq}, \texttt{wc}, \texttt{grep}, \texttt{head}, \texttt{tail}, and \texttt{tee}.
+    \begin{highlight}[Examples: Filters]
+    \begin{itemize}
+        \item \texttt{sort}: Sorts lines of text.
+        \item \texttt{uniq}: Removes duplicate lines.
+        \item \texttt{wc}: Counts lines, words, and bytes.
+        \item \texttt{grep}: Finds lines matching a pattern.
+        \item \texttt{head}: Outputs the first part of a file.
+        \item \texttt{tail}: Outputs the last part of a file.
+        \item \texttt{tee}: Reads from stdin and writes to stdout and files.
+    \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Summing Up}
+
+    This chapter covered the basics of I/O redirection and introduced commands to manipulate input and output effectively. Understanding these concepts is crucial for efficient command line usage.
+
+    \subsubsection*{Further Reading}
+
+    \begin{itemize}
+        \item \href{http://www.gnu.org/software/bash/manual/bashref.html}{Bash Reference Manual}
+        \item \href{http://en.wikipedia.org/wiki/Dev/null}{Wikipedia: /dev/null}
+    \end{itemize}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{}
+
+\begin{notes}{Chapter 11: The Environment}
+    \subsubsection*{Overview}
+
+    This chapter explores the shell environment, which stores information used by programs to determine system configuration. We will learn how to customize our shell experience using environment 
+    variables, shell variables, and configuration scripts. Key commands include \texttt{printenv}, \texttt{set}, \texttt{export}, and \texttt{alias}.
+
+    \subsubsection*{What is Stored in the Environment?}
+
+    The environment consists of:
+    \begin{itemize}
+        \item \textbf{Environment variables}: Used by programs to adjust their behavior.
+        \item \textbf{Shell variables}: Data specific to the shell session.
+        \item \textbf{Aliases and shell functions}: Custom commands and functions.
+    \end{itemize}
+
+    \subsubsection*{Examining the Environment}
+
+    \paragraph*{\texttt{printenv} - Print Environment Variables}
+
+    The \texttt{printenv} command displays environment variables.
+    \begin{highlight}[Example: \texttt{printenv}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ printenv | less
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{\texttt{set} - Display Shell and Environment Variables}
+
+    The \texttt{set} command shows both shell and environment variables.
+    \begin{highlight}[Example: \texttt{set}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ set | less
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{\texttt{echo} - Display Variable Contents}
+
+    The \texttt{echo} command can be used to view the contents of a variable.
+    \begin{highlight}[Example: \texttt{echo}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ echo \$HOME
+    /home/me
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{\texttt{alias} - Display Aliases}
+
+    The \texttt{alias} command shows all defined aliases.
+    \begin{highlight}[Example: \texttt{alias}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ alias
+    alias l.='ls -d .* --color=tty'
+    alias ll='ls -l --color=tty'
+    alias ls='ls --color=tty'
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Some Interesting Variables}
+
+    Common environment variables include:
+    \begin{itemize}
+        \item \texttt{DISPLAY}: Name of the display in graphical environments.
+        \item \texttt{EDITOR}: Preferred text editor.
+        \item \texttt{SHELL}: User's default shell program.
+        \item \texttt{HOME}: Path to the home directory.
+        \item \texttt{LANG}: Character set and collation order.
+        \item \texttt{OLDPWD}: Previous working directory.
+        \item \texttt{PAGER}: Program used for paging output.
+        \item \texttt{PATH}: Directories to search for executable programs.
+        \item \texttt{PS1}: Prompt string definition.
+        \item \texttt{PWD}: Current working directory.
+        \item \texttt{TERM}: Terminal type.
+        \item \texttt{TZ}: Time zone.
+        \item \texttt{USER}: Username.
+    \end{itemize}
+
+    \subsubsection*{How is the Environment Established?}
+
+    The shell reads startup files to establish the environment. The sequence depends on whether the shell session is a login or non-login session.
+
+    \paragraph*{Login Shell Sessions}
+
+    Login shells read the following files in order:
+    \begin{itemize}
+        \item \texttt{/etc/profile}
+        \item \texttt{\~{}/.bash\_profile}
+        \item \texttt{\~{}/.bash\_login}
+        \item \texttt{\~{}/.profile}
+    \end{itemize}
+
+    \paragraph*{Non-Login Shell Sessions}
+
+    Non-login shells read the following files:
+    \begin{itemize}
+        \item \texttt{/etc/bash.bashrc}
+        \item \texttt{\~{}/.bashrc}
+    \end{itemize}
+
+    \subsubsection*{Modifying the Environment}
+
+    Modifications to the environment can be made by editing the appropriate startup files. Changes to \texttt{PATH} or additional environment variables should be placed in \texttt{.bash\_profile}. 
+    Other customizations should be placed in \texttt{.bashrc}.
+
+    \paragraph*{Using a Text Editor}
+
+    Text editors like \texttt{nano}, \texttt{vi}, and \texttt{gedit} can be used to edit startup files. It is recommended to create a backup before making changes.
+
+    \begin{highlight}[Example: Editing \texttt{.bashrc}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ cp .bashrc .bashrc.bak
+    [me@linuxbox ~]$ nano .bashrc
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Example Modifications}
+
+    Adding the following lines to \texttt{.bashrc} can customize the environment:
+    \begin{highlight}[Example: Modifications]
+    \begin{code}[Pseudo]
+    # Change umask to make directory sharing easier
+    umask 0002
+
+    # Ignore duplicates in command history and increase history size to 1000 lines
+    export HISTCONTROL=ignoredups
+    export HISTSIZE=1000
+
+    # Add some helpful aliases
+    alias l.='ls -d .* --color=auto'
+    alias ll='ls -l --color=auto'
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Activating Changes}
+
+    Changes can be activated by restarting the terminal session or by sourcing the \texttt{.bashrc} file.
+    \begin{highlight}[Example: Sourcing \texttt{.bashrc}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ source \~{}/.bashrc
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Summing Up}
+
+    This chapter covered the basics of the shell environment and how to customize it using environment variables, shell variables, and aliases. It also introduced editing configuration files using text editors.
+
+    \subsubsection*{Further Reading}
+
+    \begin{itemize}
+        \item \href{http://www.gnu.org/software/bash/manual/bashref.html}{Bash Reference Manual: INVOCATION section}
+    \end{itemize}
+\end{notes}
+
+The last chapter that is going to be covered this week is \textbf{}
+
+\begin{notes}{Chapter 12: A Gentle Introduction to vi}
+    \subsubsection*{Overview}
+
+    This chapter introduces the \texttt{vi} text editor, a core program in the Unix tradition known for its efficiency and minimalism. Learning \texttt{vi} is essential due to its ubiquity, speed, 
+    and compliance with POSIX standards. This chapter covers basic usage and commands to help users become familiar with \texttt{vi}.
+
+    \subsubsection*{Why We Should Learn \texttt{vi}}
+
+    \begin{itemize}
+        \item \texttt{vi} is almost always available, making it crucial for systems without a graphical interface or with a broken X configuration.
+        \item \texttt{vi} is lightweight and fast, designed for speed and efficiency without needing to leave the keyboard.
+        \item Mastery of \texttt{vi} demonstrates proficiency and confidence in using Unix-based systems.
+    \end{itemize}
+
+    \subsubsection*{Starting and Stopping \texttt{vi}}
+
+    To start \texttt{vi}, enter:
+    \begin{highlight}[Example: Starting \texttt{vi}]
+    \begin{code}[Pseudo]
+    [me@linuxbox ~]$ vi
+    \end{code}
+    \end{highlight}
+
+    To exit \texttt{vi}, use:
+    \begin{highlight}[Example: Exiting \texttt{vi}]
+    \begin{code}[Pseudo]
+    :q
+    \end{code}
+    \end{highlight}
+
+    If changes are unsaved, force quit with:
+    \begin{highlight}[Example: Forcing Quit]
+    \begin{code}[Pseudo]
+    :q!
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Editing Modes}
+
+    \texttt{vi} operates in different modes. Command mode is the default, where most keys are commands. To enter insert mode, press:
+    \begin{highlight}[Example: Insert Mode]
+    \begin{code}[Pseudo]
+    i
+    \end{code}
+    \end{highlight}
+
+    Press \texttt{Esc} to return to command mode.
+
+    \subsubsection*{Saving Work}
+
+    To save changes, use:
+    \begin{highlight}[Example: Saving Work]
+    \begin{code}[Pseudo]
+    :w
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Basic Editing}
+
+    \paragraph*{Moving the Cursor}
+
+    Movement commands include:
+    \begin{itemize}
+        \item \texttt{l} or right arrow: Right one character.
+        \item \texttt{h} or left arrow: Left one character.
+        \item \texttt{j} or down arrow: Down one line.
+        \item \texttt{k} or up arrow: Up one line.
+        \item \texttt{0} (zero): To the beginning of the current line.
+        \item \texttt{\$}: To the end of the current line.
+        \item \texttt{w}: To the beginning of the next word.
+        \item \texttt{b}: To the beginning of the previous word.
+        \item \texttt{Ctrl-f} or Page Down: Down one page.
+        \item \texttt{Ctrl-b} or Page Up: Up one page.
+        \item \texttt{numberG}: To line number.
+        \item \texttt{G}: To the last line of the file.
+    \end{itemize}
+
+    \paragraph*{Inserting and Appending Text}
+
+    \begin{itemize}
+        \item \texttt{i}: Insert before the cursor.
+        \item \texttt{a}: Append after the cursor.
+        \item \texttt{A}: Append at the end of the line.
+        \item \texttt{o}: Open a new line below the current line.
+        \item \texttt{O}: Open a new line above the current line.
+    \end{itemize}
+
+    \paragraph*{Deleting Text}
+
+    \begin{itemize}
+        \item \texttt{x}: Delete the character under the cursor.
+        \item \texttt{dd}: Delete the current line.
+        \item \texttt{d\$}: Delete to the end of the line.
+        \item \texttt{d0}: Delete to the beginning of the line.
+    \end{itemize}
+
+    \paragraph*{Copying and Pasting Text}
+
+    \begin{itemize}
+        \item \texttt{yy}: Yank (copy) the current line.
+        \item \texttt{p}: Paste after the cursor.
+        \item \texttt{P}: Paste before the cursor.
+    \end{itemize}
+
+    \subsubsection*{Search-and-Replace}
+
+    \paragraph*{Searching}
+
+    Use \texttt{/} followed by the search term to search the file. Repeat search with \texttt{n}.
+
+    \begin{highlight}[Example: Search]
+    \begin{code}[Pseudo]
+    /search_term
+    \end{code}
+    \end{highlight}
+
+    \paragraph*{Replacing}
+
+    Use \texttt{:s} for search and replace. For example, to replace "foo" with "bar" globally:
+    \begin{highlight}[Example: Search-and-Replace]
+    \begin{code}[Pseudo]
+    :%s/foo/bar/g
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Editing Multiple Files}
+
+    Open multiple files by listing them in the command:
+    \begin{highlight}[Example: Multiple Files]
+    \begin{code}[Pseudo]
+    vi file1 file2
+    \end{code}
+    \end{highlight}
+
+    Switch between files with:
+    \begin{highlight}[Example: Switch Files]
+    \begin{code}[Pseudo]
+    :bn
+    :bp
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Summing Up}
+
+    This chapter covered the basics of \texttt{vi}, including starting, stopping, editing modes, basic commands, search-and-replace, and working with multiple files. Mastering \texttt{vi} requires 
+    practice, but it offers powerful capabilities for efficient text editing.
+
+    \subsubsection*{Further Reading}
+
+    \begin{itemize}
+        \item \href{http://linuxcommand.org/lc3_adv_vimvigor.php}{Vim, with Vigor}
+        \item \href{http://en.wikibooks.org/wiki/Vi}{Learning The vi Editor - Wikibook}
+        \item \href{ftp://ftp.vim.org/pub/vim/doc/book/vimbook-OPL.pdf}{The Vim Book}
+        \item \href{http://en.wikipedia.org/wiki/Bill_Joy}{Bill Joy - Wikipedia}
+        \item \href{http://en.wikipedia.org/wiki/Bram_Moolenaar}{Bram Moolenaar - Wikipedia}
+    \end{itemize}
+\end{notes}

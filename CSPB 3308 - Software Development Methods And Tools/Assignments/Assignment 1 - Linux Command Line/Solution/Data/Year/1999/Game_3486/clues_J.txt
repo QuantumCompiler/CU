@@ -1,0 +1,120 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">For most of the 15th century this Indian empire ruled over what's now Mexico</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;">(B: Who is Montezuma?)<br /><br /><em class="correct_response">Aztec Empire</em><br /><br /><table width="100%"><tr><td class="wrong">Brian</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">No one really knows what this French girl, who saved Orleans, looked like; maybe like Leelee Sobieski or Milla Jovovich</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Joan of Arc</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">In 71 B.C. Spartacus led a slave revolt against this empire</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Roman Empire</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Queen Victoria's prime minister 2nd Viscount Melbourne had a city in this country named for him in 1837</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Australia</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">Catherine of Aragon, a daughter of Ferdinand &amp; Isabella, married this British king</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Henry VIII</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">In <span style="font-weight: bold; color: #000000; background-color: #FFFF66;">1999</span> 17-month-old Jessy Kraus was rescued from one of these "watering holes" in his backyard</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Well</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">In 1998 10-year-old Hikaru Nakamura became the USA's youngest master in this game</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Chess</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">Violinist Sarah Chang's audition for Zubin Mehta at age 8 got her a gig with this NYC orchestra</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">NYC Philharmonic</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">At age 14, physics whiz Chris Hirata joined the rocket scientists when he enrolled at this Pasadena college</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(B: What is the California Institute of Technology?)<br /><br /><em class="correct_response">Caltech</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">In 1991 12-year-old Fu Mingxia won the platform event at the world championships of this sport</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Diving</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">By law, it's the fourth Thursday in November</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Thanksgiving</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">The first Monday in September, it honors working people in the U.S. &amp; Canada</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Labor Day</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">The luck of the Irish might tell you this is the date St. Patrick's Day is celebrated</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">March 17</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Make a date with your sweetie for February 14, this loving day</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Valentine's Day</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">On November 11, we honor these</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">Veterans</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">You can hit the nail on this <span class="nobreak">--</span> it's on the top of the shank</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Head</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">The husk, silks, kernels &amp; cob make up this</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Corn</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Its parts include the lintel, sill, sash &amp; panes</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Window</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">They have a ring handle, bow handle, pivot &amp; blades &amp; you shouldn't run with them in your hand</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Scissors</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">An aglet is found at the end of this item that holds your sneaker together</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Shoelace</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">By population, it's the largest city of the state seen here<br />(California)</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Los Angeles</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">An abundance of flowers gave this state its name when the Spanish arrived in 1513</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Florida</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">He's the current governor of the state seen here<br />(Texas)</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">George W. Bush</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">The name of this "Silver State" comes from the Spanish for "snow-covered"</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Nevada</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">This state has 8 national parks totalling over 50 million acres</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Alaska</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">It's toymaker Bandai's "loveable egg", a virtual pet</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Tamagotchi</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Billy Blanks is the man behind this fitness system that includes elements of tae kwon do</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Tae Bo</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">Chip the Cat, born January 26, 1996, is one of these Ty stuffed animals</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Beanie Babies</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Who can resist watching this MTV show whose combatants have included The 3 Tenors vs. The 3 Stooges?</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Celebrity Deathmatch</i></em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">Despite his brief screen time in "The Empire Strikes Back" &amp; "Return of the Jedi", this bounty hunter has a cult following</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Boba Fett</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>

@@ -1,0 +1,120 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">In December 1776 Washington crossed this river to safety, then recrossed it to attack</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Delaware River</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">Three Island Crossing on the Snake River, was a pivotal point on this pioneer trail</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;">(S: What is the Santa Fe Trail?)<br /><br /><em class="correct_response">Oregon Trail</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td><td class="right">Todd</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">In 335 B.C., at about 21, he crossed the Danube to get at the Getae</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Alexander the Great</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">Fatally shot near the Rappahannock, this general's last words asked to "cross over the river"</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Stonewall Jackson</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Crossing the Sabarmati River was part of this leader's 1930 protest march to the sea</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(less than a minute to go...)<br /><br /><em class="correct_response">Mahatma Gandhi</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Dr. Evil, who's plotting world domination but can't get along with his son Scott Evil</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Mike Myers</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">Factory owner Oskar Schindler</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Liam Neeson</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Struggling Notting Hill bookstore owner William Thacker</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Hugh Grant</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Viola De Lesseps, who pretended to be Thomas Kent to play Romeo, but played Juliet instead</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Gwyneth Paltrow</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Game show contestant Charles Van Doren</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Ralph Fiennes</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Sophocles' first play about this Theban king marked the summit of formal Greek drama</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;">(S: Who was Orestes?)<br /><br /><em class="correct_response">Oedipus</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">This O'Neill play about former Pullman porter Brutus Jones was based on a real event in Haitian history</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">"The Emperor Jones"</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">One of the first African adventure stories, this 1885 novel chronicled the search for legendary diamond mines</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">"King Solomon's Mines"</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">A pair of comic adventurers become the godlike leaders of an Afghan tribe in this Kipling story</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;">(S: What is "The Once and Future King?")<br /><br /><em class="correct_response">"The Man Who Would Be King"</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">Spenser reworked Elizabethan court chivalry along allegorical lines in this epic poem</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>The Faerie Queene</i></em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">In July King Phumiphon of Thailand joined this king of swing in a jam session</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;">(S: Who is Louis Armstrong?)<br /><br /><em class="correct_response">Benny Goodman</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td><td class="right">Todd</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">(<a href="http://www.j-archive.com/media/1999-12-03_DJ_12.jpg" target="_blank">Hi, I'm Jeff Greenfield.</a>)  In 1960 Arthur Schlesinger, Jr. wrote of these 2 candidates, "Does it make any difference?"</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">John F. Kennedy & Richard Nixon</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Wealthy playboy Tommy Manville made news in January when he did this for the 13th time</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Got married</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">This hockey team won its fifth Stanley Cup in a row</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">(S: Who were the Maple Leafs?)<br /><br /><em class="correct_response">Montreal Canadiens</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">In a Moscow trial, he pleaded guilty to having flown an intelligence mission over the Soviet Union</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Francis Gary Powers</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">TV character Theodore Cleaver</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">The Beaver</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">Cookie magnate Wally Amos</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">"Famous" Amos</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">TV heartthrob Coy Luther Perry III</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Luke Perry</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">Big screen Bond girl Maud Solveig Wikstrom</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Maud Adams</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">Baseball's Cornelius Alexander McGillicuddy</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Connie Mack</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Its hosts were Richard Dawson &amp; Ray Combs; now it's <span class="nobreak">--</span> survey says <span class="nobreak">--</span> Louie Anderson</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Family Feud</i></em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">They were listed in a January 6, 1941 speech by FDR</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Four Freedoms</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Deposits like petroleum or coal that were formed from living matter</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Fossil fuels</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">He was a Supreme Court justice from 1939 to 1962</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Felix Frankfurter</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">He won the 13 1/2-inch Oscar for his "8 1/2"</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Liz: Who is Fellini?)<br />...<br />(Alex: Since the category is "F.F.", you had to include both the first and the last names.)<br /><br /><em class="correct_response">Federico Fellini</em><br /><br /><table width="100%"><tr><td class="right">Todd</td><td class="wrong">Liz</td></tr></table></td>

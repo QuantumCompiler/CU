@@ -1,0 +1,809 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{HTML And CSS}
+\renewcommand{\SectionTitle}{HTML And CSS}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \href{https://developer.mozilla.org/en-US/docs/Learn}{Mozilla Web Developer Tutorials}
+    \item \href{https://medium.com/coderbyte/a-guide-to-becoming-a-full-stack-developer-in-2017-5c3c08a1600c}{Full Stack Development}
+    \item \href{https://www.tutorialspoint.com/html/index.htm}{HTML Tutorial}
+    \item \href{https://www.w3schools.com/css/default.asp}{CSS Tutorial}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=wC5HlM0gmdM}{HTML Introduction}{16}
+    \item \lecture{https://www.youtube.com/watch?v=ookRdvsCG_I}{Wireframes And Layout}{12}
+    \item \lecture{https://www.youtube.com/watch?v=0b5gNWlV6To}{CSS Introduction}{12}
+    \item \lecture{https://www.youtube.com/watch?v=hwcraEz_LI4}{Web Forms}{12}
+    \item \lecture{https://www.youtube.com/watch?v=OvC6kdxkIIU}{Look And Feel For HTML-CSS Menu Page For Lab}{2}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir CSS Lecture Notes.pdf}{CSS Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-8-QuantumCompiler}{Assignment 8 - HTML \& CSS}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 5 - HTML And CSS.pdf}{Quiz 5 - HTML And CSS}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNotesDir Exam 1 Notes.pdf}{Exam 1 Notes}
+    \item \pdflink{\ExamNotesDir Exam 1.pdf}{Exam 1}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first topic that is being covered this week is \textbf{HTML}.
+
+\begin{notes}{HTML}
+    \subsection*{Overview}
+
+    HTML (HyperText Markup Language) is the standard markup language used to create web pages. It provides the structure of a web page, allowing developers to define headings, paragraphs, links, images, 
+    and other elements. HTML is a foundational technology, alongside CSS and JavaScript, that is used to build modern web applications.
+    
+    \subsubsection*{Basic HTML Elements}
+    
+    HTML elements are the building blocks of web pages. Each element is defined by tags, which can contain attributes to provide additional information.
+    
+    \begin{highlight}[Basic HTML Elements]
+    
+        HTML elements structure web content and provide semantic meaning.
+        
+        \begin{itemize}
+            \item \textbf{Paragraphs and Headings}: Used to define blocks of text.
+    \begin{code}[HTML]
+    <p>This is a paragraph.</p>
+    <h1>This is a heading</h1>
+    \end{code}
+            \item \textbf{Links}: Used to create hyperlinks to other pages or resources.
+    \begin{code}[HTML]
+    <a href="https://www.example.com">Visit Example</a>
+    \end{code}
+            \item \textbf{Images}: Used to embed images in a web page.
+    \begin{code}[HTML]
+    <img src="image.jpg" alt="Description of image">
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{HTML Document Structure}
+    
+    An HTML document has a standard structure that includes a doctype declaration, a head section, and a body section.
+    
+    \begin{highlight}[HTML Document Structure]
+    
+        The structure of an HTML document includes metadata and content.
+        
+        \begin{itemize}
+            \item \textbf{Doctype Declaration}: Defines the document type and version of HTML.
+    \begin{code}[HTML]
+    <!DOCTYPE html>
+    \end{code}
+            \item \textbf{Head Section}: Contains metadata, title, and links to stylesheets or scripts.
+    \begin{code}[HTML]
+    <head>
+        <title>My Web Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    \end{code}
+            \item \textbf{Body Section}: Contains the content of the web page.
+    \begin{code}[HTML]
+    <body>
+        <h1>Welcome to my website</h1>
+        <p>This is a sample web page.</p>
+    </body>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{HTML Attributes}
+    
+    Attributes provide additional information about HTML elements, such as classes, IDs, or styles.
+    
+    \begin{highlight}[HTML Attributes]
+    
+        Attributes add metadata to HTML elements and affect their behavior or presentation.
+        
+        \begin{itemize}
+            \item \textbf{Class Attribute}: Used to assign one or more class names for CSS styling.
+    \begin{code}[HTML]
+    <p class="intro">This is an introductory paragraph.</p>
+    \end{code}
+            \item \textbf{ID Attribute}: Provides a unique identifier for an element.
+    \begin{code}[HTML]
+    <div id="main-content">Main content here</div>
+    \end{code}
+            \item \textbf{Style Attribute}: Allows inline CSS styling.
+    \begin{code}[HTML]
+    <p style="color: red;">This text is red.</p>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{HTML Forms}
+    
+    HTML forms are used to collect user input and submit it to a server for processing.
+    
+    \begin{highlight}[HTML Forms]
+    
+        Forms allow for user interaction and data submission.
+        
+        \begin{itemize}
+            \item \textbf{Form Element}: Encloses form controls and specifies the action URL.
+    \begin{code}[HTML]
+    <form action="/submit-form" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Submit">
+    </form>
+    \end{code}
+            \item \textbf{Input Elements}: Various types of inputs for user data.
+    \begin{code}[HTML]
+    <input type="text" name="username" placeholder="Enter your name">
+    <input type="password" name="password" placeholder="Enter your password">
+    <input type="email" name="email" placeholder="Enter your email">
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Multimedia in HTML}
+    
+    HTML supports embedding multimedia content such as images, audio, and video.
+    
+    \begin{highlight}[Multimedia in HTML]
+    
+        Embed multimedia elements to enhance web pages.
+        
+        \begin{itemize}
+            \item \textbf{Image Element}: Embeds an image file.
+    \begin{code}[HTML]
+    <img src="image.jpg" alt="An example image">
+    \end{code}
+            \item \textbf{Audio Element}: Embeds audio content.
+    \begin{code}[HTML]
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    \end{code}
+            \item \textbf{Video Element}: Embeds video content.
+    \begin{code}[HTML]
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{HTML Tables}
+    
+    HTML tables are used to display tabular data in a structured format.
+    
+    \begin{highlight}[HTML Tables]
+    
+        Tables organize data into rows and columns for easy readability.
+        
+        \begin{itemize}
+            \item \textbf{Table Element}: Defines the table structure.
+    \begin{code}[HTML]
+    <table>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+        </tr>
+    </table>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Best Practices}
+    
+    Following best practices in HTML ensures that web pages are accessible, maintainable, and performant.
+    
+    \begin{highlight}[Best Practices]
+    
+        Adhering to best practices improves the quality and usability of web pages.
+        
+        \begin{itemize}
+            \item Use semantic HTML to improve accessibility and SEO.
+            \item Keep the HTML structure clean and well-organized.
+            \item Use external CSS and JavaScript files to separate content and presentation.
+            \item Validate HTML code to ensure compatibility across different browsers.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from HTML overview:
+        
+        \begin{itemize}
+            \item \textbf{Basic Elements}: Fundamental HTML tags for structuring content.
+            \item \textbf{Document Structure}: Standard layout of an HTML document.
+            \item \textbf{Attributes}: Metadata added to elements to modify behavior or presentation.
+            \item \textbf{Forms}: Collecting and submitting user input.
+            \item \textbf{Multimedia}: Embedding images, audio, and video in web pages.
+            \item \textbf{Tables}: Organizing data into rows and columns.
+            \item \textbf{Best Practices}: Writing clean, accessible, and maintainable HTML code.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{CSS}.
+
+\begin{notes}{CSS}
+    \subsection*{Overview}
+
+    CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML or XML. It enables the separation of document content from document presentation, including layout, colors, and fonts. CSS is essential for creating visually engaging web pages and enhancing the user experience.
+    
+    \subsubsection*{Basic CSS Syntax and Selectors}
+    
+    CSS is a rule-based language where rules specify how HTML elements are styled. Each rule consists of a selector and a declaration block.
+    
+    \begin{highlight}[Basic CSS Syntax and Selectors]
+    
+        CSS rules define how HTML elements should be styled.
+        
+        \begin{itemize}
+            \item \textbf{Selectors}: Determine which HTML elements the styles apply to.
+            \begin{itemize}
+                \item \textbf{Element Selector}: Targets all instances of an element.
+    \begin{code}[CSS]
+    p {
+        color: red;
+    }
+    \end{code}
+                \item \textbf{Class Selector}: Targets elements with a specific class attribute.
+    \begin{code}[CSS]
+    .intro {
+        font-size: 16px;
+    }
+    \end{code}
+                \item \textbf{ID Selector}: Targets a unique element with a specific ID.
+    \begin{code}[CSS]
+    #main-title {
+        text-align: center;
+    }
+    \end{code}
+            \end{itemize}
+            \item \textbf{Declaration Block}: Contains one or more declarations separated by semicolons.
+            \begin{itemize}
+                \item \textbf{Property and Value}: Each declaration includes a CSS property and a value.
+    \begin{code}[CSS]
+    p {
+        color: red;
+        font-size: 14px;
+    }
+    \end{code}
+            \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{CSS Box Model}
+    
+    The CSS box model is a fundamental concept that defines the rectangular boxes generated for elements in the document tree and governs their dimensions and spacing.
+    
+    \begin{highlight}[CSS Box Model]
+    
+        The box model includes the element’s content, padding, border, and margin.
+        
+        \begin{itemize}
+            \item \textbf{Content}: The actual content of the element.
+            \item \textbf{Padding}: Space between the content and the border.
+    \begin{code}[CSS]
+    .box {
+        padding: 20px;
+    }
+    \end{code}
+            \item \textbf{Border}: Surrounds the padding (if any) and content.
+    \begin{code}[CSS]
+    .box {
+        border: 1px solid black;
+    }
+    \end{code}
+            \item \textbf{Margin}: Space outside the border.
+    \begin{code}[CSS]
+    .box {
+        margin: 10px;
+    }
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{CSS Layout Techniques}
+    
+    CSS provides several layout techniques to control the positioning and alignment of elements on a web page, such as Flexbox, Grid, and positioning properties.
+    
+    \begin{highlight}[CSS Layout Techniques]
+    
+        Effective layout techniques improve the structure and usability of web pages.
+        
+        \begin{itemize}
+            \item \textbf{Flexbox}: A one-dimensional layout method for arranging items in rows or columns.
+    \begin{code}[CSS]
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    \end{code}
+            \item \textbf{Grid}: A two-dimensional layout system for complex layouts.
+    \begin{code}[CSS]
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    \end{code}
+            \item \textbf{Positioning}: Controls the position of elements using properties like \texttt{static}, \texttt{relative}, \texttt{absolute}, and \texttt{fixed}.
+    \begin{code}[CSS]
+    .relative {
+        position: relative;
+        top: 10px;
+        left: 20px;
+    }
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Styling Text and Fonts}
+    
+    CSS allows for extensive control over text and font properties to enhance the readability and aesthetics of web content.
+    
+    \begin{highlight}[Styling Text and Fonts]
+    
+        Text and font styling improve the readability and visual appeal of web content.
+        
+        \begin{itemize}
+            \item \textbf{Font Family}: Specifies the font of an element.
+    \begin{code}[CSS]
+    p {
+        font-family: Arial, sans-serif;
+    }
+    \end{code}
+            \item \textbf{Font Size}: Sets the size of the font.
+            \begin{code}[CSS]
+            h1 {
+                font-size: 2em;
+            }
+    \end{code}
+    \item \textbf{Text Alignment}: Aligns text horizontally.
+    \begin{code}[CSS]
+    .center-text {
+        text-align: center;
+    }
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{CSS Animations and Transitions}
+    
+    CSS animations and transitions allow for creating dynamic effects and animations, enhancing user interaction.
+    
+    \begin{highlight}[CSS Animations and Transitions]
+    
+        Use CSS to add dynamic and interactive elements to web pages.
+        
+        \begin{itemize}
+            \item \textbf{Transitions}: Smoothly change a property value over time.
+    \begin{code}[CSS]
+    .button {
+        transition: background-color 0.3s;
+    }
+    .button:hover {
+        background-color: blue;
+    }
+    \end{code}
+            \item \textbf{Animations}: Define keyframes for more complex animations.
+    \begin{code}[CSS]
+    @keyframes example {
+        from {background-color: red;}
+        to {background-color: yellow;}
+    }
+    .animated {
+        animation: example 5s infinite;
+    }
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Responsive Design with Media Queries}
+    
+    Media queries are used to create responsive web designs that adapt to different screen sizes and devices.
+    
+    \begin{highlight}[Responsive Design with Media Queries]
+    
+        Media queries allow web pages to adapt to various screen sizes.
+        
+        \begin{itemize}
+            \item \textbf{Media Query Example}: Apply different styles based on screen width.
+    \begin{code}[CSS]
+    @media (max-width: 600px) {
+        .container {
+            flex-direction: column;
+        }
+    }
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from CSS overview:
+        
+        \begin{itemize}
+            \item \textbf{Basic Syntax and Selectors}: Define how HTML elements are styled.
+            \item \textbf{Box Model}: Manage element dimensions and spacing.
+            \item \textbf{Layout Techniques}: Arrange elements using Flexbox, Grid, and positioning.
+            \item \textbf{Text and Fonts}: Style text for better readability and aesthetics.
+            \item \textbf{Animations and Transitions}: Create dynamic and interactive web elements.
+            \item \textbf{Responsive Design}: Ensure web pages adapt to different devices using media queries.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Mozilla Web Developer}.
+
+\begin{notes}{Mozilla Web Developer}
+    \subsection*{Overview}
+
+    The MDN Web Docs, formerly known as Mozilla Developer Network, is a comprehensive resource for web developers, providing documentation, tutorials, and guides on HTML, CSS, JavaScript, and various 
+    web APIs. It serves as a valuable tool for both beginners and experienced developers to learn and enhance their web development skills.
+    
+    \subsubsection*{Getting Started with Web Development}
+    
+    MDN Web Docs offers a structured approach to learning web development, starting with the basics of HTML and CSS, and progressing to more advanced topics such as JavaScript and server-side programming.
+    
+    \begin{highlight}[Getting Started with Web Development]
+    
+        MDN Web Docs provides a step-by-step learning path for beginners, helping them build a strong foundation in web development.
+        
+        \begin{itemize}
+            \item \textbf{HTML and CSS}: Learn the basics of structuring web content with HTML and styling it with CSS.
+    \begin{code}[HTML]
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>My First Web Page</title>
+        </head>
+        <body>
+            <h1>Hello, world!</h1>
+            <p>This is my first web page.</p>
+        </body>
+    </html>
+    \end{code}
+            \item \textbf{JavaScript}: Understand the fundamentals of JavaScript to add interactivity to web pages.
+    \begin{code}[JavaScript]
+    document.getElementById("demo").innerHTML = "Hello, JavaScript!";
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Core Topics Covered}
+    
+    MDN Web Docs covers a wide range of core topics essential for web development.
+    
+    \begin{highlight}[Core Topics Covered]
+    
+        The core topics include detailed guides and references on HTML, CSS, and JavaScript, as well as best practices for web development.
+        
+        \begin{itemize}
+            \item \textbf{HTML}: Learn about HTML elements, attributes, and best practices for structuring web content.
+            \item \textbf{CSS}: Explore CSS properties, selectors, and techniques for styling web pages.
+            \item \textbf{JavaScript}: Dive into JavaScript syntax, functions, and events to create dynamic web applications.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advanced Topics and Tools}
+    
+    For those looking to deepen their knowledge, MDN Web Docs provides resources on advanced web development topics and tools.
+    
+    \begin{highlight}[Advanced Topics and Tools]
+    
+        Advanced topics and tools help developers create sophisticated and efficient web applications.
+        
+        \begin{itemize}
+            \item \textbf{Web APIs}: Learn about various Web APIs for handling multimedia, geolocation, and more.
+            \item \textbf{Performance Optimization}: Techniques to improve the performance and responsiveness of web applications.
+            \item \textbf{Progressive Web Apps (PWAs)}: Build web applications that provide a native app-like experience.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Practical Applications}
+    
+    MDN Web Docs is not just about theory; it includes practical examples and tutorials to apply what you've learned.
+    
+    \begin{highlight}[Practical Applications]
+    
+        Practical tutorials and examples enable developers to apply their knowledge in real-world scenarios.
+        
+        \begin{itemize}
+            \item \textbf{Building a Simple Web Page}: Start with a basic HTML structure and progressively enhance it with CSS and JavaScript.
+    \begin{code}[HTML]
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Simple Web Page</title>
+            <style>
+                body { font-family: Arial, sans-serif; }
+                h1 { color: blue; }
+            </style>
+        </head>
+        <body>
+            <h1>Welcome to My Website</h1>
+            <p>This is a simple web page.</p>
+        </body>
+    </html>
+    \end{code}
+            \item \textbf{Creating a To-Do List App}: Use HTML, CSS, and JavaScript to create an interactive to-do list application.
+    \begin{code}[HTML]
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>To-Do List</title>
+            <style>
+                ul { list-style-type: none; padding: 0; }
+                li { margin: 5px 0; }
+            </style>
+        </head>
+        <body>
+            <h1>To-Do List</h1>
+            <input type="text" id="taskInput" placeholder="New task...">
+            <button onclick="addTask()">Add</button>
+            <ul id="taskList"></ul>
+
+            <script>
+                function addTask() {
+                    var taskInput = document.getElementById('taskInput');
+                    var taskList = document.getElementById('taskList');
+                    var newTask = document.createElement('li');
+                    newTask.textContent = taskInput.value;
+                    taskList.appendChild(newTask);
+                    taskInput.value = '';
+                }
+            </script>
+        </body>
+    </html>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Best Practices}
+    
+    MDN Web Docs emphasizes best practices in web development to ensure code quality, performance, and accessibility.
+    
+    \begin{highlight}[Best Practices]
+    
+        Following best practices helps create high-quality, performant, and accessible web applications.
+        
+        \begin{itemize}
+            \item Use semantic HTML to improve accessibility and SEO.
+            \item Optimize CSS for performance and maintainability.
+            \item Write clean and efficient JavaScript code.
+            \item Implement responsive design to ensure compatibility across devices.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from MDN Web Docs for utilizing web development resources:
+        
+        \begin{itemize}
+            \item \textbf{Getting Started}: Fundamental skills in HTML, CSS, and JavaScript for beginners.
+            \item \textbf{Core Topics}: Detailed guides on essential web technologies.
+            \item \textbf{Advanced Topics}: In-depth resources on Web APIs, performance optimization, and PWAs.
+            \item \textbf{Practical Applications}: Tutorials and examples for real-world projects.
+            \item \textbf{Best Practices}: Guidelines for writing high-quality, efficient, and accessible code.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}
+
+The last topic that is being covered this week is \textbf{Full Stack Development}.
+
+\begin{notes}{Full Stack Development}
+    \subsection*{Overview}
+
+    Full Stack Development refers to the practice of developing both the front-end (client-side) and back-end (server-side) portions of a web application. Full stack developers possess a broad skill 
+    set that allows them to manage and develop all parts of a software application, from the user interface to the database and server infrastructure. This comprehensive approach to development ensures 
+    a seamless and cohesive user experience while maintaining robust server-side operations.
+    
+    \subsubsection*{Front-End Development}
+    
+    The front-end, or client-side, is where users interact with the application. Full stack developers use various technologies to build engaging and responsive user interfaces.
+    
+    \begin{highlight}[Front-End Development]
+    
+        Full stack developers utilize HTML, CSS, and JavaScript to create the client-facing part of web applications.
+        
+        \begin{itemize}
+            \item \textbf{HTML (Hypertext Markup Language)}: Structures the content on the web page.
+    \begin{code}[HTML]
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>My Web Page</title>
+        </head>
+        <body>
+            <h1>Welcome to my website</h1>
+            <p>This is an example of HTML.</p>
+        </body>
+    </html>
+    \end{code}
+            \item \textbf{CSS (Cascading Style Sheets)}: Styles the HTML content to make it visually appealing.
+    \begin{code}[CSS]
+    body {
+        font-family: Arial, sans-serif;
+    }
+    h1 {
+        color: blue;
+    }
+    \end{code}
+            \item \textbf{JavaScript}: Adds interactivity and dynamic behavior to web pages.
+    \begin{code}[JavaScript]
+    document.getElementById("demo").innerHTML = "Hello, JavaScript!";
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Back-End Development}
+    
+    The back-end, or server-side, handles the application logic, database interactions, user authentication, and server configuration.
+    
+    \begin{highlight}[Back-End Development]
+    
+        Full stack developers use server-side languages and frameworks to build the backbone of web applications.
+        
+        \begin{itemize}
+            \item \textbf{Server-Side Languages}: Commonly used languages include Python, Java, PHP, and Node.js.
+            \begin{itemize}
+                \item \textbf{Python Example}:
+    \begin{code}[Python]
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route('/')
+    def home():
+        return "Hello, Flask!"
+    
+    if __name__ == '__main__':
+        app.run(debug=True)
+    \end{code}
+            \end{itemize}
+            \item \textbf{Database Management}: Managing and interacting with databases using SQL or NoSQL databases like MySQL, PostgreSQL, or MongoDB.
+            \begin{itemize}
+                \item \textbf{SQL Example}:
+    \begin{code}[SQL]
+    CREATE TABLE users (
+        id INT PRIMARY KEY,
+        name VARCHAR(100),
+        email VARCHAR(100)
+    );
+
+    INSERT INTO users (id, name, email)
+    VALUES (1, 'John Doe', 'john@example.com');
+    \end{code}
+            \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Full Stack Development Frameworks}
+    
+    Frameworks simplify the development process by providing reusable components and tools for both front-end and back-end development.
+    
+    \begin{highlight}[Full Stack Development Frameworks]
+    
+        Popular frameworks provide integrated tools to streamline full stack development.
+        
+        \begin{itemize}
+            \item \textbf{Ruby on Rails}: A full-stack framework that uses Ruby for building both the front-end and back-end.
+            \item \textbf{Django}: A high-level Python framework that encourages rapid development and clean design.
+            \item \textbf{Spring Boot}: A Java framework for building production-ready applications quickly.
+            \item \textbf{Laravel}: A PHP framework known for its elegant syntax and robust set of tools.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Popular Stacks in Full Stack Development}
+    
+    A stack is a set of technologies used together to build a full application. Each stack includes an operating system, web server, database, and programming language.
+    
+    \begin{highlight}[Popular Stacks in Full Stack Development]
+    
+        Different technology stacks are used for various application requirements and developer preferences.
+        
+        \begin{itemize}
+            \item \textbf{LAMP Stack}: Linux, Apache, MySQL, PHP
+            \item \textbf{MEAN Stack}: MongoDB, Express.js, Angular, Node.js
+            \item \textbf{MERN Stack}: MongoDB, Express.js, React, Node.js
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Best Practices}
+    
+    Following best practices in full stack development ensures code quality, maintainability, and performance.
+    
+    \begin{highlight}[Best Practices]
+    
+        Adhering to best practices helps create efficient and scalable web applications.
+        
+        \begin{itemize}
+            \item Use version control systems like Git for code management.
+            \item Write clean, modular, and reusable code.
+            \item Implement automated testing to ensure code reliability.
+            \item Optimize for performance and scalability.
+            \item Maintain thorough documentation for all parts of the application.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from Full Stack Development:
+        
+        \begin{itemize}
+            \item \textbf{Front-End Development}: Building user interfaces with HTML, CSS, and JavaScript.
+            \item \textbf{Back-End Development}: Handling server-side logic, database interactions, and application workflows.
+            \item \textbf{Frameworks}: Utilizing frameworks like Ruby on Rails, Django, Spring Boot, and Laravel to streamline development.
+            \item \textbf{Technology Stacks}: Choosing the right stack (e.g., LAMP, MEAN, MERN) based on project needs.
+            \item \textbf{Best Practices}: Ensuring code quality, performance, and maintainability through established best practices.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}

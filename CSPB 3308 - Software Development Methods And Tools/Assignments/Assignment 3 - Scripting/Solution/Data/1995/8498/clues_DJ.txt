@@ -1,0 +1,120 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">This largest planet is also the fastest-spinning</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Jupiter</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">This planet has 2 "hot poles" that can reach 800° F.</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mercury</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Radar maps of this planet, from the Magellan probe, show a tortured volcanic surface</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Venus</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">Charon does not orbit this planet; they both orbit a point between them</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;">(Joanne: What is Saturn?)<br /><br /><em class="correct_response">Pluto</em><br /><br /><table width="100%"><tr><td class="right">Paul</td><td class="wrong">Joanne</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Atmospheric methane makes this planet discovered in 1846 look blue</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(Paul: What's Uranus?)<br />(Joanne: What is Pluto?)<br />...<br />(Alex: We have less than a minute to go.)<br /><br /><em class="correct_response">Neptune</em><br /><br /><table width="100%"><tr><td class="wrong">Paul</td><td class="wrong">Joanne</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">In 1993 this New York school's Press celebrated its 100th anniversary &amp; the 5th edition of its encyclopedia</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Columbia</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">Founded in 1865, this Ithaca university is the newest member of the Ivy League</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Cornell</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">This Baltimore university maintains a campus for international studies in Bologna, Italy</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Johns Hopkins</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">In 1795 this school at Chapel Hill became the first state university to open</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">the University of North Carolina</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Opened in 1697, the oldest building on this U.S. campus is named for Sir Christopher Wren</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Paul: What is Harvard?)<br /><br /><em class="correct_response">the College of William & Mary</em><br /><br /><table width="100%"><tr><td class="wrong">Paul</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">In 1979 it was the site of the worst nuclear accident in the history of the U.S.</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Three Mile Island</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">In 1917 James Montgomery Flagg designed a famous recruitment poster depicting this U.S. symbol</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Uncle Sam</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">In 1958 this company produced its one millionth electric typewriter</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Paul: What is Remington?)<br /><br /><em class="correct_response">IBM</em><br /><br /><table width="100%"><tr><td class="right">Pete</td><td class="wrong">Paul</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">His 11th child, Rory Elizabeth Katherine, was born December 12, 1968, 6 months after his death</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Robert Kennedy</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">In 1925 this explorer who claimed to have reached the North Pole was imprisoned for mail fraud</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Pete: Who is Peary?)<br /><br /><em class="correct_response">Frederick Cook</em><br /><br /><table width="100%"><tr><td class="wrong">Pete</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">It's the flavor of the ice cream known as glace au cafe</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">coffee</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">These cloves are an essential ingredient in beurre de Provence</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">garlic</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Used as a garnish, oeufs files are these, poached to make them form long threads</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">eggs</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Fontainebleau, a soft, cow's-milk type of this dairy product, is often served with sugar for dessert</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">cheese</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Escoffier's veloute aux grenouilles is a buttery soup made with 15 or 20 of these amphibian parts</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">frogs' legs</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">This European capital's Brandenburg Gate was completed in 1791</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Berlin</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">1 of the 10 largest cities in the world is this one in South Korea's Han Basin</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Seoul</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">Hamilton, the largest city on this Atlantic island, is located at the head of great sound</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Bermuda</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">This peninsula juts southward between Algeciras Bay &amp; the open Mediterranean</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Gibraltar</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">This capital of the country of Georgia was formerly called Tiflis, its name in Russian</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Tbilisi</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">She thought she'd ruined her novel "The Hollow" by putting in Poirot, so she cut him out of the play</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Agatha Christie</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">Ann Radcliffe was famous for novels in this "architectural" genre, such as "The Mysteries of Udolpho"</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Gothic novels</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Dorothy Parker wrote some of the lyrics for this Leonard Bernstein musical based on a Voltaire novel</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Candide</i></em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">This creator of Hans Brinker was the daughter of scientist &amp; inventor James Jay Mapes</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Mary Mapes Dodge</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">She dedicated "La Force de l'Age", the 2nd volume of her autobiography, to Jean-Paul Sartre</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Simone de Beauvoir</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>

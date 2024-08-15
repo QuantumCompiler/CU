@@ -1,0 +1,25 @@
+
+How many lines in the data file?    1000 ./DATA_SETS/regex_data4.txt
+
+How many lines start with Capital Letter?    800
+
+How many lines end with a Number?    363
+
+How many lines do not start with a vowel?   874
+
+How many 12 letter (alphabet only) lines?    52
+
+How many phone numbers are in the dataset (format: _ _ _-_ _ _-_ _ _ _)?    161
+    when allowing for '(xxx)xxx-xxxx'    :  200
+    when only checking for 'xxx-xxxx'    :  200
+
+How many 303 phone numbers?   11
+  when only allowing for '303-xxx-xxxx'    :   8
+
+How many begin with a vowel and end with a number?    28
+
+How many email addresses are from geocities? (Eg: end with\'geocities.com\')?    29
+
+How many email addresses are in ‘first.last’ name format and involve someone 
+who’s first name starts with a letter in the first half of the alphabet?      209
+

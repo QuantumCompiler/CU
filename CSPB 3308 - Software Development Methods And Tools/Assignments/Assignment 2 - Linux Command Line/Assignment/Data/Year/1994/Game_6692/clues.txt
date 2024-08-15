@@ -1,0 +1,122 @@
+    <td id="clue_DJ_1_1" class="clue_text">At 25 he captured a $25,000 prize for being the first person to fly the Atlantic solo</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Lindbergh</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">In one year, 1882, he received 75 patents on his inventions</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Edison</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Survey says from 1929-1931 this famous pollster was head of the journalism dept. at Drake University</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">(George) Gallup</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">To generations of dancers, this late Russian-born choreographer was known as "Mr. B."</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">George Ballanchine</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">He was teaching at the University of Chicago when he was awarded the 1976 Nobel Prize in Economics</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">(Milton) Friedman</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">The Lambeth, Westminster &amp; Waterloo Bridges all span this river</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Thames</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">Collier's Weekly helped raise money to buy this president's Kentucky birthplace in 1905-06</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Lincoln</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">A Vietnam War exhibit is one of the highlights at his presidential library in   Austin, Texas</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;">(Kristin: Who is Johnson?)<br />(Alex: Be more specific.)<br /><br /><em class="correct_response">Lyndon Baines Johnson</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Fort Frederica on St. Simons Island in this state was built by James Oglethorpe in the 1730s</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Georgia</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">The 1,815-foot CN Tower in this Canadian city is the world's tallest self-supporting structure</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Toronto</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">The Stadtpark in Vienna features a statue of this "Waltz King" with violin in hand</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">(Johann) Strauss</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Having sold the rights, he wasn't recognized as the composer of "Swanee River" until after his death</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">(Stephen) Foster</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Beethoven called this oratorio composer "the greatest composer that ever lived"</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Handel</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">The inspiration for many of this Norwegian's songs was his cousin Nina Hagerup, whom he married in 1867</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">(Edvard) Grieg</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">After composing "Peter and the Wolf", he wrote "Cantata for the 20th Anniversary of the October Revolution"</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Kristin: Who is Tchaikovsky?)<br /><br /><em class="correct_response">Prokofiev</em><br /><br /><table width="100%"><tr><td class="wrong">Kristin</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">1963's Gray v. Sanders established the concept of "one man, one" this in reapportionment</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">vote</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">Ware v. Hylton in 1796, held that these international agreements supersede state laws</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">treaties</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">In Dartmouth College v. Woodward, the court kept this state from taking over the college</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;">(Benoy: What is Vermont?)<br /><br /><em class="correct_response">New Hampshire</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td><td class="wrong">Benoy</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">As a result of this man's suit against Arizona, police must read arrestees their right</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">(Ernesto) Miranda</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Dennis v. U.S. upheld the convictions of 11 leaders of this party under the Smith Act</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">the Communist Party</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">The first use of this name for the heroine of "The Three Bears" occurred around 1904</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Goldilocks</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">In this 1726 satire, high heels &amp; low heels in Lilliput represent the Tories &amp; the Whigs</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Gulliver's Travels</i></em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">"Anne of Avonlea" was the first sequel to this 1908 book about a red-haired orphan girl</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Anne of Green Gables</i></em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">In 1942 this "Dr. Dolittle" author wrote an anti-war poem for adults titled "Victory for the Slain"</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">(Hugh) Lofting</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">In this Mary Rodgers story, a 13-year-old girl wakes up to find that she has become her own mother</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Freaky Friday</i></em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">While it's been on coins since the Civil War, it wasn't made the national motto until 1956</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">In God We Trust</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">This outer space "breeze" interacts with the Earth's atmosphere to create the auroras</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">the solar wind</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">The 3 gifts associated with Epiphany</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">gold, frankincense and myrrh</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">His watercolor paintings were put on 1994 British stamps to celebrate his investiture's 25th anniversary</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">the Prince of Wales (Prince Charles)</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">We bet you knew U Nu was this country's first premier</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Burma</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">Although blind, he killed 3,000 at a religious festival</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="right">Benoy</td><td rowspan="2" valign="top">Who is Samson?</td></tr><tr><td>$4,200</td></tr><tr><td class="wrong">Shawn</td><td rowspan="2" valign="top">Who was Jacob</td></tr><tr><td>$2,500</td></tr><tr><td class="right">Kristin</td><td rowspan="2" valign="top">Who is [a letter or two scribbled out] Sampson</td></tr><tr><td>$1,000</td></tr></table><em class="correct_response">Samson</em></td>
+    <td id="clue_J_1_1" class="clue_text">This city on Ohio's Scioto River was laid out in 1812</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Columbus</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">Until 1900 Newport &amp; this city were co-capitals of Rhode Island</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Providence</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">The art center in this Iowa capital was designed in the 1940s by Eliel Saarinen</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Des Moines</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Battle Abbey in this city is the headquarters of the Virginia Historical Society</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;">(Benoy: What is... Raleigh?)<br /><br /><em class="correct_response">Richmond</em><br /><br /><table width="100%"><tr><td class="wrong">Benoy</td><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">It's the northernmost state capital in the Rocky Mountains</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;">(Benoy: What is Boise?)<br /><br /><em class="correct_response">Helena (Montana)</em><br /><br /><table width="100%"><tr><td class="wrong">Benoy</td><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">It's affectionately known as Nessie</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Loch Ness Monster</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">It's the name native Tibetans have given to the Abominaible Snowman</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Yeti</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">The simurgh, like the roc, was a giant one of these</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;">(Shawn: What is a dragon?)<br /><br /><em class="correct_response">a giant bird</em><br /><br /><table width="100%"><tr><td class="wrong">Shawn</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">A manticore has a human head, the body of a lion &amp; the tail of this zodiac arachnid</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">a scorpion</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">This monster that lived under a fig tree across from Scylla swallowed &amp; threw up the sea waters 3 times a day</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Charybdis</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">"You can't judge a book by its binding", nor by this</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">its cover</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">It's long been said, "If you want peace, you must prepare" for this</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">war</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">An African proverb says, "Leave a log in the water as long as you like, it will never be" this reptile</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">a crocodile</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Completes the proverb "The spirit is willing, but..."</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">the flesh is weak</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">"No rose without a thorn" &amp; "no garden without" these</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Kristin: What are slugs?)<br />[Laughter]<br /><br /><em class="correct_response">weeds</em><br /><br /><table width="100%"><tr><td class="wrong">Kristin</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">On August 23 a manslaughter charge was filed against the cabbie who killed this "Gone with the Wind" author</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">(Margaret) Mitchell</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Mohammed Reza Pahlavi, shah of this country, was wounded when a reporter fired 5 shots at him</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Iran</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">In this country's first election, David Ben-Gurion's Mapai Party won a large plurality</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Israel</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">April 14 the war crimes tribunal in this German city passed sentence on 19 criminals</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Nuremberg</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">In his January 5 state of the union message, he called for a "Fair Deal"</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Truman</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">It's the device with one pointed leg &amp; a pencil on the other, used to draw circles</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Kristin: What is a protractor?)<br /><br /><em class="correct_response">a compass</em><br /><br /><table width="100%"><tr><td class="wrong">Kristin</td><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">Name for the chord or line that goes through the center</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">the diameter</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">An arc that covers 25% of the circumference measures this many degrees</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">90</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">This part of a circle shares its name with a bone in the arm</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">the radius</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">Fraction used as a common estimate for pi</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">22/7</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">The Royal<br />Standard, <br />the Jolly Roger, <br />the Stars<br />and Stripes</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">flags</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Art, <br />wax, <br />natural history</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">types of museums</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">Sudd,<br />Dismal,<br />Okefenokee</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">swamps</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Sheep,<br />blessings,<br />calories</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">things you count</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">Scottish,<br />Skye, <br />sealyham</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Kristin: What are islands?)<br /><br /><em class="correct_response">different kinds of dogs (terriers)</em><br /><br /><table width="100%"><tr><td class="wrong">Kristin</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

@@ -1,0 +1,122 @@
+    <td id="clue_DJ_1_1" class="clue_text">This largest planet is also the fastest-spinning</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Jupiter</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">This planet has 2 "hot poles" that can reach 800° F.</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mercury</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Radar maps of this planet, from the Magellan probe, show a tortured volcanic surface</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Venus</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">Charon does not orbit this planet; they both orbit a point between them</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;">(Joanne: What is Saturn?)<br /><br /><em class="correct_response">Pluto</em><br /><br /><table width="100%"><tr><td class="right">Paul</td><td class="wrong">Joanne</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Atmospheric methane makes this planet discovered in 1846 look blue</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(Paul: What's Uranus?)<br />(Joanne: What is Pluto?)<br />...<br />(Alex: We have less than a minute to go.)<br /><br /><em class="correct_response">Neptune</em><br /><br /><table width="100%"><tr><td class="wrong">Paul</td><td class="wrong">Joanne</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">In 1993 this New York school's Press celebrated its 100th anniversary &amp; the 5th edition of its encyclopedia</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Columbia</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">Founded in 1865, this Ithaca university is the newest member of the Ivy League</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Cornell</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">This Baltimore university maintains a campus for international studies in Bologna, Italy</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Johns Hopkins</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">In 1795 this school at Chapel Hill became the first state university to open</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">the University of North Carolina</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Opened in 1697, the oldest building on this U.S. campus is named for Sir Christopher Wren</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Paul: What is Harvard?)<br /><br /><em class="correct_response">the College of William & Mary</em><br /><br /><table width="100%"><tr><td class="wrong">Paul</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">In 1979 it was the site of the worst nuclear accident in the history of the U.S.</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Three Mile Island</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">In 1917 James Montgomery Flagg designed a famous recruitment poster depicting this U.S. symbol</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Uncle Sam</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">In 1958 this company produced its one millionth electric typewriter</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Paul: What is Remington?)<br /><br /><em class="correct_response">IBM</em><br /><br /><table width="100%"><tr><td class="right">Pete</td><td class="wrong">Paul</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">His 11th child, Rory Elizabeth Katherine, was born December 12, 1968, 6 months after his death</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Robert Kennedy</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">In 1925 this explorer who claimed to have reached the North Pole was imprisoned for mail fraud</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Pete: Who is Peary?)<br /><br /><em class="correct_response">Frederick Cook</em><br /><br /><table width="100%"><tr><td class="wrong">Pete</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">It's the flavor of the ice cream known as glace au cafe</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">coffee</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">These cloves are an essential ingredient in beurre de Provence</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">garlic</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Used as a garnish, oeufs files are these, poached to make them form long threads</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">eggs</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Fontainebleau, a soft, cow's-milk type of this dairy product, is often served with sugar for dessert</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">cheese</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Escoffier's veloute aux grenouilles is a buttery soup made with 15 or 20 of these amphibian parts</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">frogs' legs</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">This European capital's Brandenburg Gate was completed in 1791</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Berlin</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">1 of the 10 largest cities in the world is this one in South Korea's Han Basin</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Seoul</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">Hamilton, the largest city on this Atlantic island, is located at the head of great sound</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Bermuda</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">This peninsula juts southward between Algeciras Bay &amp; the open Mediterranean</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Gibraltar</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">This capital of the country of Georgia was formerly called Tiflis, its name in Russian</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Tbilisi</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">She thought she'd ruined her novel "The Hollow" by putting in Poirot, so she cut him out of the play</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Agatha Christie</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">Ann Radcliffe was famous for novels in this "architectural" genre, such as "The Mysteries of Udolpho"</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Gothic novels</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Dorothy Parker wrote some of the lyrics for this Leonard Bernstein musical based on a Voltaire novel</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Candide</i></em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">This creator of Hans Brinker was the daughter of scientist &amp; inventor James Jay Mapes</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Mary Mapes Dodge</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">She dedicated "La Force de l'Age", the 2nd volume of her autobiography, to Jean-Paul Sartre</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Simone de Beauvoir</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">This 1994 film is based on Mark Handley's play "Idioglossia"</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;">(Alex: If you speak a language and you mispronounce the words so badly that it appears you are speaking an entirely different language, you have have idioglossia.)<br />...<br />(Alex: [To Paul] The film that starred Jodie Foster.)<table><tr><td class="wrong">Joanne</td><td rowspan="2" valign="top">What is ?</td></tr><tr><td>$1,799</td></tr><tr><td class="right">Paul</td><td rowspan="2" valign="top">What is Nell?</td></tr><tr><td>$5,600</td></tr><tr><td class="wrong">Pete</td><td rowspan="2" valign="top">What is Belle Epoque</td></tr><tr><td>$101</td></tr></table><em class="correct_response"><i>Nell</i></em></td>
+    <td id="clue_J_1_1" class="clue_text">The common vampire type of this animal only weighs about 1 ounce</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">bat</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">The name of this single-humped camel is derived from Greek for "running"</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">a dromedary</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">The Pink Fairy is the smallest species of this armored mammal; it's only 5 inches long</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">an armadillo</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Meerkats, which are native to this continent, often stand upright to look for attacking birds</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Africa</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">The aptly named racerunner, a type of this reptile, has been clocked at 18 miles per hour</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">a lizard</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">In business the levels of this usually form a pyramid &amp; are divided into top, middle &amp; supervisory</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">management</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">The DJIA is the Dow Jones Industrial Average &amp; this is the DJUA</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Dow Jones Utility Average</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">Among balance sheet terms, accountants know that credit is abbreviated CR &amp; this is DR</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">a debit</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">One of these laser devices "reads" a universal product code</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(Joanne: What is a light pen?)<br />(Pete: What is a bar code reader?)<br /><br /><em class="correct_response">a scanner</em><br /><br /><table width="100%"><tr><td class="wrong">Pete</td><td class="wrong">Joanne</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">This 2-word term refers to fabrics &amp; clothing as opposed to groceries or hardware</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">dry goods</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">"By the time I get to" this city "she'll be risin'. She'll find the note I left hangin' on her door"</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Phoenix</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">After the Mamas &amp; the Papas, she had solo hits with "Dream A Little Dream of Me" &amp; "It's Getting Better"</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mama Cass</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">In 1974 this married couple duetted on "Mockingbird"</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">James Taylor & Carly Simon</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Isaac Hayes' music for this 1971 film was awarded 3 Grammys</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Shaft</i></em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">This group's hit "Nights in White Satin" appeared on the album "Days of Future Passed"</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">The Moody Blues</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">The Suez Canal has no locks because the Gulf of Suez &amp; this sea to the north are about the same level</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Mediterranean</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Boats going to Rome can go up the Fiumicino, an artificial waterway in this river's delta</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Tiber</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Completed in 1825, it connected the Great Lakes to the Eastern Seaboard</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Erie Canal</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">You'll find the islands of Qeshm &amp; Larak in this strait separating Iran &amp; the Arabian Peninsula</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">the Strait of Hormuz</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">This system extends over 2,500 miles down the Atlantic coast &amp; around the Gulf of Mexico</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;">(Joanne: What is the Intercoastal Waterway?)<br />(Alex: Say it again.)<br />(Joanne: The Intercoastal Waterway?)<br /><br /><em class="correct_response">the Intracoastal Waterway</em><br /><br /><table width="100%"><tr><td class="right">Pete</td><td class="wrong">Joanne</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">In the Grimm Brothers' version of the fairy tale, the slipper she lost was Golden</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Cinderella</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">The patriarch of this aerialist family died in 1978 while attempting a walk between hotels in Puerto Rico</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Wallendas</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">The 5 rings on the Olympic flag represent these</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;">(Joanne: What are the five original sports?)<br />(Paul: Uh, what are 5, uh, Greek city-states?)<br /><br /><em class="correct_response">the five continents from which the athletes have appeared</em><br /><br /><table width="100%"><tr><td class="wrong">Paul</td><td class="wrong">Joanne</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">Operated by the government, it's Germany's principal airline</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Lufthansa</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">On a compass this floral emblem associated with French royalty is a symbol for north</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">the fleur-de-lis</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Found in churches &amp; many homes, it's an image of Jesus on the cross</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">a crucifix</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">It's the 4-letter term for the highest point of a mountain</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">apex</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">It's the key ingredient in making rubber</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">latex</em><br /><br /><table width="100%"><tr><td class="right">Joanne</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">It's the river in which Achilles' mother dipped him to make him invulnerable</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">the Styx</em><br /><br /><table width="100%"><tr><td class="right">Paul</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">It's the small tailbone at the very end of the spine</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">the coccyx</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>

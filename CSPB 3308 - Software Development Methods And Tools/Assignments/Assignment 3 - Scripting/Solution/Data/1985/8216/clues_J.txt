@@ -1,0 +1,100 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">Professor Harold Hill said it spelled "trouble" for River City</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">pool</em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">"M·A·S·H·'s" Radar who made his name as the "Good Man, Charlie Brown"</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;">[ERRATUM: <i>M*A*S*H</i>'s title has historically been rendered with asterisks, not interpuncts, and one does not occur after the final H.]<br />(Alex: We've got less than a minute to go in this round.)<br /><br /><em class="correct_response">Gary Burghoff</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Gum is often flavored with this minty herb, probably named for its sharp leaves</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;">(Stephanie: What is evergreen?)<br /><br /><em class="correct_response">spearmint</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Stephanie</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">The white root of this herb makes a pungent relish, usually served with roast beef</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;">(Rick: What is...?)<br /><br /><em class="correct_response">horseradish</em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">From French for "nail" because of its shape, they spike oranges for pomanders &amp; ham for Easter</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">cloves</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">To cover a couch</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">upholster</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">It could hold water or dear, departed Uncle Max</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">an urn</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">In '58, '59 &amp; '71, quarterback who led the Colts to world championships</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Johnny Unitas</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">A theater's "leading" man... in the aisles</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">an usher</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">Its charter's preamble begins "We the peoples..."</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Rick: Who is Uganda?)<br /><br /><em class="correct_response">the United Nations</em><br /><br /><table width="100%"><tr><td class="wrong">Rick</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Perhaps the only cop who ever asked a crook "Who loves ya, baby?"</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Kojak</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Its lead character introduced himself with, "My name's Friday; I'm a cop"</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Dragnet</i></em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Series William Shatner has starred in since he came down to Earth</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;">(Rick: Who is... I don't know.)<br /><br /><em class="correct_response"><i>T.J. Hooker</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">Comic question asked of officers Toody &amp; Muldoon</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Car 54, Where Are You?</i></em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">This show only gained popularity in re-release after Burt Reynolds became a star</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Dan August</i></em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">The tiny malleus, incus &amp; stapes bones of the ear are better known as these</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Stephanie: What are the ear canal?)<br /><br /><em class="correct_response">the stirrup, anvil, and hammer (the three bones of the inner ear)</em><br /><br /><table width="100%"><tr><td class="wrong">Stephanie</td><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">The olfactory nerve controls this sense</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;">(Rick: What is the eyes, or sight?)<br /><br /><em class="correct_response">the sense of smell</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">Formal name for the voice box</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">the larynx</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">When food goes down the wrong pipe, it should have gone down this one</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;">(Stephanie: [No response])<br /><br /><em class="correct_response">the esophagus</em><br /><br /><table width="100%"><tr><td class="wrong">Stephanie</td><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">Mad's Alfred E. Neuman might be a good candidate for otoplasty, which is this</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">reducing your ears</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Both names for father that fit this category</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Dad & Pop</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">You give this for "tat" to make things even Steven</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">tit</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">It was to her he said, "Madam, I'm Adam"</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Rick: Who is Queen Elizabeth?)<br /><br /><em class="correct_response">Eve</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Logically completes classical palindrome: "A man, a plan, a canal,..."</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;">(Rick: I don't know.)<br /><br /><em class="correct_response">Panama</em><br /><br /><table width="100%"><tr><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">A child king; doubled, it's a way to express disapproval</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Tut</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>

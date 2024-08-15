@@ -1,0 +1,120 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">Joseph Smith moved this church's headquarters to Kirtland, Ohio in 1831</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Mormon Church</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">This form of Buddhism originated in China, where it's known as Ch'an</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Zen</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">This Jewish New Year celebration marks the beginning of the ten days of penitence</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Rosh Hashanah</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">The Dome of the Rock covers the rock from which he is believed to have ascended into heaven</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Muhammad</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Guru Nanak &amp; his nine successors are revered as the ten gurus of this religion</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(James: What's Hinduism?)<br /><br /><em class="correct_response">Sikhism</em><br /><br /><table width="100%"><tr><td class="wrong">James</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Like the Matterhorn, Monte Rosa straddles the border between Italy &amp; this country</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Switzerland</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">In 1964 the Canadian government renamed Mount East Hubbard in memory of this American</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">John F. Kennedy</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Ernest Hemingway described it as "wide as all the world, great, high, and unbelievably white in the sun"</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Kilimanjaro</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">It's the official name of Mount Godwin Austen</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(James: What is, uh, Everest?)<br /><br /><em class="correct_response">K2</em><br /><br /><table width="100%"><tr><td class="wrong">James</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">When it erupted in 1991, this volcano in the Philippines had been dormant for about 600 years</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Pinatubo</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">In the 1600s drinking tankards were often made of this tusk material</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;">(Alex: We have about a minute to go.)<br /><br /><em class="correct_response">ivory</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">The cloth of St. Gereon is thought to be the oldest occidental one of these wall hangings</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">a tapestry</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">In the 1750s Battersea Enamelware was made at York House in the Battersea district of this city</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">London</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">Highly prized for carving, the "mutton fat" type of this gemstone is uniformly white, not green</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">jade</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">Dutch traders returning to Europe from Java introduced this dyeing process that uses wax</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">batik</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">In 1798 George Washington got this former Treasury Sec'y the job of Army Inspector General</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Alexander Hamilton</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">From the color of his habit, this French cardinal &amp; statesman was known as l'Eminence Rouge</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">(Cardinal) Richelieu</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">This medicine man &amp; leader of the Sioux was also known by the Native name Tatanka Yotanka</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Sitting Bull</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">He announced his first two laws of planetary motion in 1609 &amp; his third in 1619</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">(Anna: Who is Newton?)<br /><br /><em class="correct_response">(Johannes) Kepler</em><br /><br /><table width="100%"><tr><td class="right">Ed</td><td class="wrong">Anna</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Hadrian's predecessor, a column in Rome commemorates his victories</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Trajan</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">Vachel Lindsay wrote of this famous American, "sorrow for Anne Rutledge burned in his face"</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Lincoln</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">A woman in a spangled mourning dress inspired this lord's lines "She walks in beauty, like the night"</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Byron</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">John Greenleaf Whittier wrote, "Blessings on thee, little man, barefoot boy, with cheek of" this</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">of tan</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">He composed his "Ode to a Nightingale" under a plum tree on a morning in May</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Keats</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">Tennyson had a thousand copies of this poem printed for "the brave soldiers at Sebastopol"</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">"The Charge of the Light Brigade"</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">The origins of this word for a severe food shortage go back to fames, a Latin word for hunger</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">famine</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">The name of this ever-popular beverage may be traced back to the Amoy dialect of Chinese</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">tea</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">This gemstone's name comes from a Sinhalese word for carnelian, toramalli</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">tourmaline</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">This name for an open pavilion found in parks is derived from a Persian word for palace, kushk</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">a kiosk</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">The name of this catlike mammal comes from zabad, an Arabic word for perfume made from its musky secretions</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">civet (the civet cat)</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

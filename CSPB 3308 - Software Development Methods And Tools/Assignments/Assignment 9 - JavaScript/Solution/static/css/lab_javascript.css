@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #352f2f5a;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#userinput {
+    background-color: aqua;
+    text-align: center;
+}
+
+#result {
+    background-color: bisque;
+    color: black;
+    width: 200px;
+    text-align: center;
+}
+
+#level {
+    background-color: bisque;
+    color: red;
+    width: 40px;
+    text-align: center;
+}
+
+#goal {
+    background-color: bisque;
+    color: green;
+    text-align: center;
+}

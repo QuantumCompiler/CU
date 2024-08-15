@@ -1,0 +1,4 @@
+<div onmouseover="toggle('clue_FJ', 'clue_FJ_r', 'clue_FJ_stuck')" onmouseout="toggle('clue_FJ_r', 'clue_FJ', 'clue_FJ_stuck')" onclick="togglestick('clue_FJ_stuck')">
+    <td id="clue_FJ" class="clue_text">One of only two countries in South America not bordering Brazil</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="wrong">Stephanie</td><td rowspan="2" valign="top">What is Colombia?</td></tr><tr><td>$300</td></tr><tr><td class="right">Rick</td><td rowspan="2" valign="top">What is Chili</td></tr><tr><td>$1,200</td></tr><tr><td class="right">Guy</td><td rowspan="2" valign="top">What is Chile?</td></tr><tr><td>$3,400</td></tr></table><em class="correct_response">(1 of) Chile & Ecuador</em></td>
+<var id="clue_FJ_stuck"></var>

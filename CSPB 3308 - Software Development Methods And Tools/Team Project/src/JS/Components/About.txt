@@ -1,0 +1,3 @@
+Recipe Genie was created with the goal of avoiding food waste and encouraging variety in one’s diet. The user inputs raw ingredients and receives recipe options featuring those ingredients, allowing the user to guide the program with their specific ingredients.  This would be useful to anyone who has ever opened their fridge and noticed they have some food, like yogurt or spinach, about to expire that they have no idea how to combine them. Recipe genie provides the user with a tasty variety of options. 
+This app came to fruition as a school project, whose goal was to give us experience working with a team to develop software. It provided us with experience using methods and tools for frontend, backend, database, and collaboration. 
+

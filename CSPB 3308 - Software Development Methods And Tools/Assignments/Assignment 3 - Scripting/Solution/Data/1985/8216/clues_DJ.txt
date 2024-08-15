@@ -1,0 +1,104 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">Maxwell Anderson's "Anne of the Thousand Days" is about this wife of Henry VIII</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Anne Boleyn</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">Tennessee Williams is the idol of this author who wrote "Who's Afraid of Virginia Woolf?"</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;">(Stephanie: [No response])<br />[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Edward Albee</em><br /><br /><table width="100%"><tr><td class="wrong">Stephanie</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">For past 20 yrs, this conqueror of Everest has been camping equipment advisor for Sears</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;">(Rick: Who is... Ted Williams?)<br />...<br />(Alex: Ted Williams, I don't think, ever climbed Mount Everest. He could probably have hit a baseball that high, but that's about it.)<br /><br /><em class="correct_response">Sir Edmund Hillary</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">This company's president, Victor Kiam, asks, "What have you got to lose except your whiskers?"</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;">(Stephanie: What is Schick?)<br /><br /><em class="correct_response">Remington</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Stephanie</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Metromedia, Inc. now owns this celebrated non-league basketball team</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Harlem Globetrotters</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Designed as a hunting cap by William Coke in 1850, new ads in England are revitalizing its sales</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Guy: What is a deerstalker?)<br /><br /><em class="correct_response">a bowler hat (derby)</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">The poorest country in the W. Hemisphere, it makes 90% of the world's baseballs</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Haiti</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">10,000 American and Filipino prisoners died in "death march" on this Philippine peninsula</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;">(Rick: What is the In Peninsula?)<br /><br /><em class="correct_response">the Bataan Peninsula</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Jack Oakie played Benzino Napaloni, ruler of Bacteria, in this Charlie Chaplin film</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>The Great Dictator</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Ship which took the most casualties in the attack on Pearl Harbor</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">the USS <i>Arizona</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">Based on a German sailor's experiences, <a href="https://www.j-archive.com/media/1985-05-15_DJ_05.mp3">this</a> film showed WWII "from the other side":</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Das Boot</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">World's tallest full-figure statue, "Motherland" commemorates this key Soviet victory</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">the Battle of Stalingrad</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">He said he's "not going to worry about the deficit; it's big enough to worry about itself"</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Ronald Reagan</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">"If you don't say anything, you won't be called on to repeat it", he said "silently"</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;">(Rick: Who is Harry Truman?)<br /><br /><em class="correct_response">Calvin Coolidge</em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">He said to Churchill, "it is fun to be in the same decade as you"</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">FDR</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">According to Harry Truman, it's what you should do if you can't convince them</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">confuse them</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">In 1787, he wrote "A little rebellion now &amp; then is a good thing"</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;">(Guy: Who is George Washington?)<br /><br /><em class="correct_response">Thomas Jefferson</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">The Trojans</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Southern Cal</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">The Razorbacks</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">the University of Arkansas</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">The Boilermakers</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Purdue</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">The Hoyas</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Georgetown</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">The Hawkeyes</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;">(Guy: Who are Iowa State?)<br /><br /><em class="correct_response">University of Iowa</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Rick</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Armless, backless sofa named for the Turkish empire</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;">(Rick: I have no idea.)<br />...<br />(Alex: Less than a minute to go in the round.)<br /><br /><em class="correct_response">an Ottoman</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">Confection of jellylike cubes covered with powdered sugar</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Turkish delight</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">1964 M. Mercouri/ M. Schell film about theft of a dagger from famed Turkish museum</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Topkapi</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">Mustafa Kemal, founder of Turkish republic, changed his name to this</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Kemal Ataturk</em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td></tr></table></td>

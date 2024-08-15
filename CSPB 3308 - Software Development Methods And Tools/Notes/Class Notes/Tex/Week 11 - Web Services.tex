@@ -1,0 +1,246 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Web Services}
+\renewcommand{\SectionTitle}{Web Services}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Cloud Computing Introduction.pdf}{Cloud Computing Introduction}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=_GmW3MLf7O0}{Web API And Protocols}{24}
+    \item \lecture{https://www.youtube.com/watch?v=U7Asq7U24mU}{JSON And XML}{18}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-11-QuantumCompiler}{Assignment 11 - REST Weather Map}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first topic that is being covered this week is \textbf{Web API And Protocols}.
+
+\begin{notes}{Web API And Protocols}
+    \subsection*{Overview}
+
+    Web APIs (Application Programming Interfaces) are a set of defined protocols and tools that allow different software applications to communicate over the internet. They provide a way for developers 
+    to interact with web services and integrate various functionalities into their applications. Web APIs are integral to modern web development, enabling the connection and interaction of disparate 
+    systems and services.
+    
+    \subsubsection*{Types of APIs and Protocols}
+    
+    APIs can be categorized based on their architecture and the protocols they use. The most common types include REST, SOAP, GraphQL, and WebSocket.
+    
+    \begin{highlight}[Types of APIs and Protocols]
+    
+        Different API protocols offer various advantages and are suitable for different use cases.
+        
+        \begin{itemize}
+            \item \textbf{REST (Representational State Transfer)}: REST APIs use standard HTTP methods (GET, POST, PUT, DELETE) and are widely used for their simplicity and scalability. They allow 
+            clients to interact with resources via URIs and standard HTTP status codes.
+    \begin{code}[Example]
+    GET /users/123
+    \end{code}
+            \item \textbf{SOAP (Simple Object Access Protocol)}: SOAP is a protocol that uses XML to encode its messages and is often used in enterprise environments. It supports a wide range of 
+            transport protocols, including HTTP and SMTP.
+    \begin{code}[SOAP Example]
+    <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+        <SOAP-ENV:Header/>
+        <SOAP-ENV:Body>
+            <GetUser>
+                <UserID>123</UserID>
+            </GetUser>
+        </SOAP-ENV:Body>
+    </SOAP-ENV:Envelope>
+    \end{code}
+            \item \textbf{GraphQL}: A query language for APIs, GraphQL allows clients to request only the data they need, reducing the number of requests required. It uses a single endpoint for all operations.
+    \begin{code}[Example]
+    {
+        user(id: "123") {
+        name
+        email
+        }
+    }
+    \end{code}
+    \item \textbf{WebSocket}: This protocol provides full-duplex communication channels over a single TCP connection, enabling real-time interaction between a client and a server.
+    \begin{code}[JavaScript]
+    const socket = new WebSocket("wss://example.com/socket");
+    socket.onmessage = function(event) {
+        console.log("Received data: " + event.data);
+    };
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Benefits of Web APIs}
+    
+    Web APIs offer several key benefits, including ease of integration, enhanced functionality, and support for a wide range of devices and platforms.
+    
+    \begin{highlight}[Benefits of Web APIs]
+    
+        Web APIs provide numerous advantages that enhance application development and user experience.
+        
+        \begin{itemize}
+            \item \textbf{Integration}: APIs enable the integration of new applications with existing systems, facilitating faster development and deployment of new features.
+            \item \textbf{Innovation}: By leveraging APIs, businesses can quickly adapt to new technologies and trends, fostering innovation without needing to overhaul entire systems.
+            \item \textbf{Scalability}: APIs can support a wide range of devices and platforms, making it easier to scale applications across different environments.
+            \item \textbf{Ease of Maintenance}: Using APIs allows for modular code, where individual components can be updated or replaced without affecting the entire system.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Common Use Cases of Web APIs}
+    
+    APIs are used in a variety of applications, from integrating third-party services to enhancing user experiences with interactive features.
+    
+    \begin{highlight}[Common Use Cases of Web APIs]
+    
+        Web APIs support a broad range of applications across different domains.
+        
+        \begin{itemize}
+            \item \textbf{Integrating with Third-Party Services}: Examples include payment processing, social media integration, and map services.
+            \item \textbf{Enhancing User Interaction}: APIs enable features like real-time notifications, live data feeds, and user authentication.
+            \item \textbf{Data Exchange and Automation}: APIs facilitate the automated transfer of data between systems, reducing manual work and improving efficiency.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Security and API Management}
+    
+    Security is a critical aspect of API management, ensuring that data is protected and access is controlled.
+    
+    \begin{highlight}[Security and API Management]
+    
+        Proper API security and management are essential for protecting data and ensuring reliable service.
+        
+        \begin{itemize}
+            \item \textbf{Authentication and Authorization}: Use of tokens and API keys to verify the identity of users and restrict access to certain resources.
+            \item \textbf{Monitoring and Logging}: Tracking API usage and performance to detect and respond to potential issues.
+            \item \textbf{Rate Limiting}: Implementing limits on the number of API requests to prevent abuse and ensure fair usage.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from Web APIs and Protocols:
+        
+        \begin{itemize}
+            \item \textbf{Types of APIs and Protocols}: REST, SOAP, GraphQL, and WebSocket, each with unique characteristics and use cases.
+            \item \textbf{Benefits of APIs}: Including integration, innovation, scalability, and ease of maintenance.
+            \item \textbf{Common Use Cases}: Integration with third-party services, enhancing user interaction, and data automation.
+            \item \textbf{Security}: Critical measures like authentication, monitoring, and rate limiting.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}
+
+The last topic that is being covered this week is \textbf{JSON And XML}.
+
+\begin{notes}{JSON And XML}
+    \subsection*{Overview}
+
+    JSON (JavaScript Object Notation) and XML (eXtensible Markup Language) are two popular data interchange formats used in web development and other applications. Both are text-based and designed to 
+    facilitate data exchange between systems. However, they have different structures and use cases, making them suitable for various scenarios depending on the requirements.
+    
+    \subsubsection*{JSON}
+    
+    JSON is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is based on a subset of the JavaScript programming language 
+    and is language-independent.
+    
+    \begin{highlight}[JSON]
+    
+        JSON structures data in a collection of name/value pairs and arrays, making it an ideal format for transmitting data between a server and a web application.
+        
+        \begin{itemize}
+            \item \textbf{Data Structures}: JSON supports simple data structures such as objects (name/value pairs) and arrays.
+    \begin{code}[JSON]
+    {
+        "name": "John Doe",
+        "age": 30,
+        "isStudent": false,
+        "courses": ["Math", "Science", "History"]
+    }
+    \end{code}
+            \item \textbf{Human Readability}: JSON's structure is easy to understand and write, which simplifies debugging and development.
+            \item \textbf{Compatibility}: JSON is compatible with most programming languages, making it versatile for various applications.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{XML}
+    
+    XML is a markup language that defines rules for encoding documents in a format that is both human-readable and machine-readable. It is more verbose than JSON but provides greater flexibility through 
+    its use of custom tags.
+    
+    \begin{highlight}[XML]
+    
+        XML is designed to store and transport data, emphasizing the self-descriptive nature of the data and the flexibility of defining custom tags.
+        
+        \begin{itemize}
+            \item \textbf{Structure}: XML documents are structured with a root element, child elements, attributes, and text content.
+    \begin{code}[XML]
+    <person>
+        <name>John Doe</name>
+        <age>30</age>
+        <isStudent>false</isStudent>
+        <courses>
+            <course>Math</course>
+            <course>Science</course>
+            <course>History</course>
+        </courses>
+    </person>
+    \end{code}
+            \item \textbf{Extensibility}: XML allows the definition of custom tags, making it highly extensible and suitable for complex data structures.
+            \item \textbf{Use Cases}: XML is widely used in systems where data needs to be validated against a schema (XSD) or when the data interchange requires rich data descriptions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comparison and Use Cases}
+    
+    Both JSON and XML are widely used for data interchange, but they have distinct advantages and are suited for different scenarios.
+    
+    \begin{highlight}[Comparison and Use Cases]
+    
+        When choosing between JSON and XML, consider the specific requirements of your project, including data complexity, readability, and interoperability needs.
+        
+        \begin{itemize}
+            \item \textbf{JSON Advantages}: Simplicity, ease of use, faster parsing, and native support in JavaScript.
+            \item \textbf{XML Advantages}: Extensive support for complex data structures, schema validation, and data transformation capabilities (XSLT).
+            \item \textbf{Typical Use Cases}: JSON is commonly used in web APIs and data transmission in web applications, while XML is often used in document storage, configuration files, and data 
+            interchange in enterprise applications.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from JSON and XML overview:
+        
+        \begin{itemize}
+            \item \textbf{JSON}: Lightweight, easy to read/write, ideal for data interchange in web applications.
+            \item \textbf{XML}: Flexible, supports complex data structures, used in applications requiring rich data descriptions and validation.
+            \item \textbf{Comparison}: JSON is simpler and more efficient for most web applications, while XML offers more extensive capabilities for document-based data.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}

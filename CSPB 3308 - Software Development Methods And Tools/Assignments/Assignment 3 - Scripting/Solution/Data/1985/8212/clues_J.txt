@@ -1,0 +1,112 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+    <td id="clue_J_1_1" class="clue_text">It's a masculine "the" in Spanish, or a ride to work in Chicago</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">El</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">It was taken in the film "The Taking of Pelham One Two Three"</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">a New York subway train</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Though in '85 it missed the Rose Parade, director Dick Schneider said few would notice loss of its camera position</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;">(Jack: [No response])<br />...<br />(Alex: Broken tail fin grounded it for the first time in 30 years.)<br /><br /><em class="correct_response">the Goodyear Blimp</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">A fore-and-aft rigged vessel having 2 or more masts, or a large vessel for beer</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;">(Carole: Oh. What is a...)(Jack: What is a tankard?)<br /><br /><em class="correct_response">a schooner</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Jack</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">DeWitt Clinton's "big ditch" of 1817, it created the first big demand for cement in the U.S.</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">the Erie Canal</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Doctors in San Diego warn this dancing can cause back bruises, sprains &amp; hair loss</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">break dancing</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Pajama-clad publisher who seldom has sex with a woman over 24 &amp; wants more respect from the media</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Hugh Hefner</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">An American Council of Life Insurance survey says you are most likely to be fired on this day</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;">(Jack: What is your birthday?)<br />(Guy: What is a Monday?)<br /><br /><em class="correct_response">a Friday</em><br /><br /><table width="100%"><tr><td class="right">Carole</td><td class="wrong">Guy</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Traveling show created in 1936 by Oscar Johnson &amp; Edward &amp; Roy Shipstad</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(Jack: What is a circus?)<br />[The end-of-round signal sounds.]<br /><br /><em class="correct_response">(Shipstad & Johnson's) Ice Follies</em><br /><br /><table width="100%"><tr><td class="wrong">Jack</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">Tee-hee, titter, cackle, chortle, chuckle and giggle</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;">(Jack: What are different forms of [*]?)<br /><br /><em class="correct_response">laughter</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">You bet Michigan &amp; New York have it &amp; California just legalized its own</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">a lottery</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">Process in stores like Penney's where goods are held by seller until completely paid for</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">layaway</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">A mediocre performance, or a dull diamond</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;">(Guy: What is a lack of lustre?)<br /><br /><em class="correct_response">lacklustre</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">These words are "able to be read" because they are this</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Alex: We've got less than a minute to go in the round.)<br /><br /><em class="correct_response">legible</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Between 1859 &amp; 1872, Mexican bandits stole 145,298 of them from 2 Texas ranches</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">cattle</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">When Kit Carson halted this Indian tribe's raidings, they returned to rug weaving &amp; blanket making</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Navajo</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Sioux leader told by authorities in 1876 to "cease marauding &amp; settle down"</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Sitting Bull</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">The Old Spanish Trail led settlers from Santa Fe to this California town</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Los Angeles</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">It's what Sutter built his mill to make</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">lumber</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">The word repeated 3 times following "She Loves You"</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Carole: [Singing] What's [*], [*], [*]?)<br /><br /><em class="correct_response">yeah</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">English version of the German hit "Komm, Gib Mir Deine Hand"</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;">(Jack: What is "Let Me Hold Your"... [*]?)<br /><br /><em class="correct_response">"I Want To Hold Your Hand"</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">An album cover photograph taken at 10 A.M. Aug, 8, 1969 made this street's crosswalk world famous</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Abbey Road</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">Born in a small brick row house July 7, 1940 in Liverpool, he's the oldest  Beatle</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;">(Jack: Who is John Lennon?)<br /><br /><em class="correct_response">Ringo Starr (Richard Starkey)</em><br /><br /><table width="100%"><tr><td class="right">Carole</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">Type of apple in the Apple Records logo</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">a Granny Smith</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">It can produce as many as 500 million eggs a year, as well as a few pearls</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">an oyster</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Egg weight classes such as jumbo &amp; extra large are based on the total weight of this many eggs</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">a dozen</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">He was a hard-boiled detective in "Harper" &amp; a hard-boiled egg eater in "Cool Hand Luke"</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Paul Newman</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">This country produces about 20% of the world's eggs &amp; the good plates to eat them from</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">China</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>

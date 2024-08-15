@@ -1,0 +1,66 @@
+{
+  "name": "recipe-genie",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/roboto": "^5.0.13",
+    "@mui/icons-material": "^5.15.20",
+    "@mui/material": "^5.15.20",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.2",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "history": "^5.3.0",
+    "node-fetch": "^3.3.2",
+    "process": "^0.11.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-native-flex-layout": "^0.1.5",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "5.0.1",
+    "sqlite3": "^5.1.7",
+    "styled-components": "^6.1.11",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "concurrently \"yarn server\" \"yarn client\"",
+    "server": "node NodeJS/index.js",
+    "client": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "@testing-library/dom": "^10.3.1",
+    "babel-jest": "^29.7.0",
+    "concurrently": "^8.2.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4"
+  }
+}

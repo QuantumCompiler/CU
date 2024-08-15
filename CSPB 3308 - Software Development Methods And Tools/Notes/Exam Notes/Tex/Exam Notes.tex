@@ -1,0 +1,2079 @@
+\begin{examnotes}{Exam 1}
+    \subsection*{Basic Navigation and File Management}
+    
+    Key topics include understanding the current working directory, changing directories, creating directories, listing files, and symbolic links.
+    
+    \subsubsection*{Current Working Directory (cwd)}
+    
+    The current working directory is the directory you are presently working in. Knowing your cwd is fundamental for file management and navigation in Linux.
+    
+    \begin{highlight}[Current Working Directory]
+        The command `pwd' (print working directory) displays the current working directory path.
+        
+        \begin{itemize}
+            \item \textbf{Usage}: Simply type `pwd' and press Enter.
+            \item \textbf{Example}: If you are in `/CSPB/Courses/CSPB-1300/Materials', `pwd' will return `/CSPB/Courses/CSPB-1300/Materials'.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Changing Directories}
+    
+    Changing directories allows you to navigate through the file system.
+    
+    \begin{highlight}[Changing Directories]
+        The command `cd' is used to change the current working directory.
+        
+        \begin{itemize}
+            \item \textbf{Usage}: `cd [directory]'
+            \item \textbf{Relative Path}: `cd ../../CS-2270/Instructors' moves you up two directories and then into `CS-2270/Instructors'.
+            \item \textbf{Special Characters}:
+                \begin{itemize}
+                    \item `.' (dot): current directory
+                    \item `..' (double dot): parent directory
+                    \item `\~' (tilde): home directory
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Creating Directories}
+    
+    Creating directories is essential for organizing files.
+    
+    \begin{highlight}[Creating Directories]
+        The command `mkdir' is used to create new directories.
+        
+        \begin{itemize}
+            \item \textbf{Usage}: `mkdir [directory\_name]'
+            \item \textbf{Example}: `mkdir cs3308' creates a directory named `cs3308' in the current working directory.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Listing Files}
+    
+    Listing files helps you view the contents of directories.
+    
+    \begin{highlight}[Listing Files]
+        The `ls' command is used to list files and directories.
+        
+        \begin{itemize}
+            \item \textbf{Basic Usage}: `ls'
+            \item \textbf{Long Format}: `ls -l' displays detailed information.
+            \item \textbf{Including Hidden Files}: `ls -a'
+            \item \textbf{Sorted by Time}: `ls -t'
+            \item \textbf{Sorted by Size}: `ls -lS'
+            \item \textbf{Hidden Files}: Files starting with a dot (e.g., `.secret\_file') are hidden.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Symbolic Links}
+    
+    Symbolic links are references to other files or directories.
+    
+    \begin{highlight}[Symbolic Links]
+        The command `ln -s' creates symbolic links.
+        
+        \begin{itemize}
+            \item \textbf{Usage}: `ln -s [target] [link\_name]'
+            \item \textbf{Example}: `ln -s /path/to/file symlink\_name' creates a symbolic link `symlink\_name' pointing to `/path/to/file'.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Advanced File Management and Environment Handling}
+    
+    Key topics include renaming and removing directories, environment variables, redirection, piping, aliases, permissions, and command types.
+    
+    \subsubsection*{Renaming and Removing Directories}
+    
+    Efficiently managing directories involves renaming and removing them when necessary.
+    
+    \begin{highlight}[Renaming and Removing Directories]
+        Use `mv' to rename and `rm -r' to remove directories.
+        
+        \begin{itemize}
+            \item \textbf{Renaming}: `mv wrong\_name correct\_name' renames `wrong\_name' to `correct\_name'.
+            \item \textbf{Removing}: `rm -r bigData' removes the directory `bigData' and all its contents.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Environment Variables}
+    
+    Environment variables store information about the system configuration and user environment.
+    
+    \begin{highlight}[Environment Variables]
+        Environment variables are crucial for configuring the behavior of processes and the shell.
+        
+        \begin{itemize}
+            \item \textbf{Accessing Variables}: Use `\$VARIABLE\_NAME' to access the value of an environment variable.
+            \item \textbf{Common Variables}:
+                \begin{itemize}
+                    \item `PATH': Directories to search for executable files.
+                    \item `HOME': The current user's home directory.
+                    \item `USER': The current user's username.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Redirection and Piping}
+    
+    Redirecting output and piping commands are fundamental for effective command-line operations.
+    
+    \begin{highlight}[Redirection and Piping]
+        Redirection changes where the input/output of commands are sent, and piping sends output from one command as input to another.
+        
+        \begin{itemize}
+            \item \textbf{Redirect Output}: `command > file' writes the output to `file'.
+            \item \textbf{Redirect Errors}: `command 2> err.txt' captures errors.
+            \item \textbf{Pipe Commands}: `command1 | command2' uses the output of `command1' as input for `command2'.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Aliases}
+    
+    Aliases create shortcuts for commands, making complex or frequently used commands simpler to execute.
+    
+    \begin{highlight}[Aliases]
+        The `alias' command defines custom shortcuts for commands.
+        
+        \begin{itemize}
+            \item \textbf{Creating Aliases}: `alias name='command''
+            \item \textbf{Example}: `alias ll='ls -l'' creates an alias `ll' for `ls -l'.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Permissions}
+    
+    File and directory permissions control access and actions that users can perform.
+    
+    \begin{highlight}[Permissions]
+        Permissions determine the actions that can be performed on files and directories.
+        
+        \begin{itemize}
+            \item \textbf{Types}: read (r), write (w), execute (x)
+            \item \textbf{Changing Permissions}: `chmod [permissions] [file]'
+            \item \textbf{Example}: `chmod 755 myfile' sets read, write, and execute permissions for the owner, and read and execute for others.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Common Commands}
+    
+    Commonly used commands facilitate routine tasks like copying, moving, and removing files.
+    
+    \begin{highlight}[Common Commands]
+        Basic commands for managing files and directories.
+        
+        \begin{itemize}
+            \item \textbf{Copy Files}: `cp source destination'
+            \item \textbf{Move Files}: `mv source destination'
+            \item \textbf{Remove Files}: `rm file'
+            \item \textbf{Create Links}: `ln -s target link\_name'
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Capturing Errors and Using Pipes}
+    
+    Managing command outputs and errors effectively enhances script and command reliability.
+    
+    \begin{highlight}[Capturing Errors and Using Pipes]
+        Handling errors and chaining commands are essential skills.
+        
+        \begin{itemize}
+            \item \textbf{Error Redirection}: `command 2> err.txt' captures command errors in `err.txt'.
+            \item \textbf{Piping Commands}: `command1 | command2' sends `command1' output to `command2' input.
+            \item \textbf{Example}: `ls -l | wc -l' lists files and counts lines.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Basics of Regular Expressions}
+
+    Regular expressions are powerful tools used for pattern matching and text manipulation. Key concepts include special characters, character classes, and repetition operators.
+
+    \subsubsection*{Special Characters in Regular Expressions}
+
+    Special characters have unique meanings and are used to define specific patterns.
+
+    \begin{highlight}[Special Characters]
+        Understanding special characters is essential for effective pattern matching.
+        
+        \begin{itemize}
+            \item \textbf{\^{}}: Represents the beginning of a line.
+            \item \textbf{\$}: Represents the end of a line.
+            \item \textbf{.}: Matches any single character.
+            \item \textbf{+}: Matches one or more occurrences of the previous character.
+        \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Character Classes}
+
+    Character classes allow for the matching of specific sets of characters.
+
+    \begin{highlight}[Character Classes]
+        Character classes simplify pattern definitions by grouping characters.
+        
+        \begin{itemize}
+            \item \textbf{[:alnum:]}: Matches any alphanumeric character.
+            \item \textbf{[:alpha:]}: Matches any alphabetic character.
+            \item \textbf{[:digit:]}: Matches any numeral.
+            \item \textbf{[:lower:]}: Matches any lowercase letter.
+            \item \textbf{[:upper:]}: Matches any uppercase letter.
+            \item \textbf{[:blank:]}: Includes the space and tab characters.
+            \item \textbf{[:punct:]}: Matches punctuation characters.
+            \item \textbf{[:space:]}: Matches whitespace characters including space, tab, and newline.
+        \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Common Patterns}
+
+    Common patterns are used to match typical text formats.
+
+    \begin{highlight}[Common Patterns]
+        Some regular expressions are commonly used for matching standard text formats.
+        
+        \begin{itemize}
+            \item \textbf{Valid Username}: \^{}[a-z0-9\_-]{3,16}\$ matches usernames with 3 to 16 characters, including lowercase letters, numbers, underscores, and hyphens.
+            \item \textbf{Email Address}: \^{}[A-Z0-9.\_\%+\-]+\@[A-Z0-9.\-]+.[A-Z]{2,}\$ matches a standard email format.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Introduction to Scripting}
+
+    Scripting involves writing small programs to automate tasks. Key concepts include using commands, handling variables, and controlling flow.
+
+    \subsubsection*{Basic Commands}
+
+    Common commands are used to perform essential operations in scripts.
+
+    \begin{highlight}[Basic Commands]
+        Basic commands facilitate the execution of common tasks in scripts.
+        
+        \begin{itemize}
+            \item \textbf{echo}: Used to print text to the output.
+            \item \textbf{history}: Displays the list of previously executed commands.
+            \item \textbf{chmod}: Changes the permissions of a file.
+        \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Permissions}
+
+    File permissions determine the actions that can be performed on files.
+
+    \begin{highlight}[Permissions]
+        Permissions are crucial for security and proper file handling.
+        
+        \begin{itemize}
+            \item \textbf{r}: Read permission.
+            \item \textbf{w}: Write permission.
+            \item \textbf{x}: Execute permission.
+            \item \textbf{Changing Permissions}: Use `chmod [permissions] [file]' to modify permissions.
+            \item \textbf{Example}: `chmod 755 myfile' sets read, write, and execute permissions for the owner, and read and execute for others.
+        \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Conditional Statements}
+
+    Conditional statements control the flow of execution based on conditions.
+
+    \begin{highlight}[Conditional Statements]
+        IF statements and their required keywords manage decision-making in scripts.
+        
+        \begin{itemize}
+            \item \textbf{Required Keywords}: 
+                \begin{itemize}
+                    \item `if': Begins the conditional statement.
+                    \item `then': Follows the condition.
+                    \item `else': Provides an alternative if the condition is false.
+                    \item `fi': Ends the conditional statement.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Positional Parameters}
+
+    Positional parameters allow scripts to accept input arguments.
+
+    \begin{highlight}[Positional Parameters]
+        Positional parameters enable dynamic input handling in scripts.
+        
+        \begin{itemize}
+            \item \textbf{\$1, \$2, etc.}: Represent the first, second, and subsequent arguments passed to the script.
+            \item \textbf{Example}: In a script `myscript', the command `myscript first second' assigns `first' to `\$1' and `second' to `\$2'.
+            \item \textbf{Output Example}: The script `cd ..; echo \$2 \$1' will output `second first'.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and commands necessary for understanding regular expressions and scripting in Linux.
+        
+        \begin{itemize}
+            \item \textbf{Regular Expressions}:
+                \begin{itemize}
+                    \item Special characters such as \^{} (beginning of a line), \$ (end of a line), . (any single character), and + (one or more occurrences of the previous character) are used for pattern matching.
+                    \item Character classes like `[:alnum:]' (alphanumeric characters), `[:alpha:]' (alphabetic characters), `[:digit:]' (numerals), `[:lower:]' (lowercase letters), `[:upper:]' 
+                    (uppercase letters), `[:blank:]' (space and tab characters), `[:punct:]' (punctuation characters), and `[:space:]' (whitespace characters) simplify pattern definitions.
+                    \item Common patterns for matching typical text formats such as `\^{}[a-z0-9\_-]{3,16}\$' for valid usernames and `\^{}[A-Z0-9.\_\%+\-]+\@[A-Z0-9.\-]+.[A-Z]{2,}\$' for email addresses.
+                \end{itemize}
+            \item \textbf{Scripting Basics}:
+                \begin{itemize}
+                    \item Basic commands like `echo' (print text to output), `history' (display previously executed commands), and `chmod' (change file permissions) are essential for script operations.
+                    \item File permissions (`r' for read, `w' for write, `x' for execute) control access to files and can be modified using `chmod [permissions] [file]'.
+                    \item Conditional statements in scripts use keywords such as `if', `then', `else', and `fi' to manage decision-making processes.
+                    \item Positional parameters (`\$1', `\$2', etc.) allow scripts to handle input arguments dynamically. For example, in a script `myscript', the command `myscript first second' assigns `first' to `\$1' and `second' to `\$2'.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Roles in Agile/Scrum Teams}
+    
+    Agile/Scrum teams have specific roles, each with distinct responsibilities that contribute to the efficiency and effectiveness of the development process.
+    
+    \subsubsection*{Product Owner}
+    
+    The Product Owner prioritizes the feature backlog and ensures the team is working on the most valuable features.
+    
+    \begin{highlight}[Product Owner]
+        Responsibilities of the Product Owner include:
+        
+        \begin{itemize}
+            \item Prioritizing the feature backlog.
+            \item Ensuring the team understands the project goals and requirements.
+            \item Maximizing the value of the product through effective backlog management.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Sprint Team}
+    
+    The Sprint Team is a self-organizing group of developers responsible for building features.
+    
+    \begin{highlight}[Sprint Team]
+        Characteristics of the Sprint Team include:
+        
+        \begin{itemize}
+            \item Self-organizing and cross-functional.
+            \item Committed to delivering potentially shippable product increments.
+            \item Collaborates closely to meet sprint goals.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Scrum Master}
+    
+    The Scrum Master acts as a coach to the team, ensuring adherence to Scrum practices.
+    
+    \begin{highlight}[Scrum Master]
+        Responsibilities of the Scrum Master include:
+        
+        \begin{itemize}
+            \item Facilitating Scrum ceremonies (daily stand-ups, sprint planning, reviews, and retrospectives).
+            \item Removing impediments that hinder the team's progress.
+            \item Ensuring the team follows Scrum processes and practices.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Agile Manifesto Principles}
+    
+    The Agile Manifesto outlines key principles that prioritize individuals, interactions, working software, and customer collaboration over processes and tools.
+    
+    \begin{highlight}[Agile Manifesto Principles]
+        Key principles from the Agile Manifesto include:
+        
+        \begin{itemize}
+            \item \textbf{Individuals and interactions over processes and tools.}
+            \item \textbf{Working software over comprehensive documentation.}
+            \item \textbf{Customer collaboration over contract negotiation.}
+            \item \textbf{Responding to change over following a plan.}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Daily Scrum Meetings}
+    
+    Daily scrums are short, time-boxed meetings where team members discuss their progress and obstacles.
+    
+    \begin{highlight}[Daily Scrum Meetings]
+        Daily scrums should:
+        
+        \begin{itemize}
+            \item Be limited to 15 minutes.
+            \item Include updates on what was completed, plans until the next scrum, and any obstacles.
+            \item Facilitate communication and quick resolution of issues.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Sprint Duration}
+    
+    Sprints are fixed time periods during which specific work has to be completed and made ready for review.
+    
+    \begin{highlight}[Sprint Duration]
+        Common characteristics of sprints include:
+        
+        \begin{itemize}
+            \item Duration typically ranges from 1 to 4 weeks.
+            \item Each sprint should produce fully functional features.
+            \item Sprints provide regular opportunities for reassessment and adaptation.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Agile Metrics and Tools}
+    
+    Agile teams use various charts and metrics to track progress and performance.
+    
+    \subsubsection*{Burn Down Chart}
+    
+    A Burn Down chart shows the amount of work remaining in a sprint or release.
+    
+    \begin{highlight}[Burn Down Chart]
+        Characteristics of a Burn Down chart include:
+        
+        \begin{itemize}
+            \item Tracks the progress of work to be completed.
+            \item Helps in predicting when the work will be completed.
+            \item Represents the percent (or number) of features not yet implemented.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Burn Up Chart}
+    
+    A Burn Up chart shows the amount of work completed.
+    
+    \begin{highlight}[Burn Up Chart]
+        Characteristics of a Burn Up chart include:
+        
+        \begin{itemize}
+            \item Tracks the progress of work completed.
+            \item Helps in visualizing scope changes and completed work over time.
+            \item Represents the percent (or number) of features implemented.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Pair Programming}
+    
+    Pair programming involves two developers working together on the same code.
+    
+    \begin{highlight}[Pair Programming]
+        Benefits and practices of pair programming include:
+        
+        \begin{itemize}
+            \item \textbf{Switching Roles}: Developers should switch roles every half-hour to maximize engagement and learning.
+            \item \textbf{Cost Effectiveness}: Despite increased development time, defect counts are lowered, reducing overall development costs.
+            \item \textbf{Collaboration}: Enhances code quality and knowledge sharing among team members.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Waterfall Model}
+    
+    The waterfall model is a traditional software development approach.
+    
+    \begin{highlight}[Waterfall Model]
+        Characteristics of the waterfall model include:
+        
+        \begin{itemize}
+            \item Sequential design process.
+            \item Suitable when requirements are well-defined and stable.
+            \item Less flexible in accommodating changes compared to Agile methodologies.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for Agile development.
+        
+        \begin{itemize}
+            \item \textbf{Agile/Scrum Roles}:
+                \begin{itemize}
+                    \item \textbf{Product Owner}: Prioritizes the feature backlog.
+                    \item \textbf{Sprint Team}: Self-organizing group of developers building features.
+                    \item \textbf{Scrum Master}: Ensures adherence to Scrum practices and removes impediments.
+                \end{itemize}
+            \item \textbf{Agile Principles}:
+                \begin{itemize}
+                    \item Individuals and interactions over processes and tools.
+                    \item Working software over comprehensive documentation.
+                \end{itemize}
+            \item \textbf{Agile Practices}:
+                \begin{itemize}
+                    \item Daily scrums limited to 15 minutes.
+                    \item Sprints typically lasting 1-4 weeks.
+                \end{itemize}
+            \item \textbf{Agile Metrics}:
+                \begin{itemize}
+                    \item Burn Down Chart: Tracks work remaining.
+                    \item Burn Up Chart: Tracks work completed.
+                \end{itemize}
+            \item \textbf{Pair Programming}:
+                \begin{itemize}
+                    \item Switching roles every half-hour.
+                    \item Lowering defect counts to reduce development costs.
+                \end{itemize}
+            \item \textbf{Waterfall Model}:
+                \begin{itemize}
+                    \item Sequential process suitable for well-defined requirements.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Git Commands and Their Functions}
+    
+    Understanding Git commands is crucial for efficient version control and collaboration.
+    
+    \subsubsection*{Basic Git Commands}
+    
+    These commands are fundamental for initializing, managing, and navigating repositories.
+    
+    \begin{highlight}[Basic Git Commands]
+        Essential Git commands and their functions include:
+        
+        \begin{itemize}
+            \item \textbf{git init}: Creates an empty local repository.
+            \item \textbf{git add}: Stages a file under Git tracking, making it ready for a commit.
+            \item \textbf{git commit}: Copies a staged file into the local Git repository.
+            \item \textbf{git checkout}: Moves the HEAD pointer to a different branch, making that branch active.
+            \item \textbf{git diff}: Compares two versions of a Git-managed file.
+            \item \textbf{git log}: Shows a record of recent commits.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Cloning and Connecting Repositories}
+    
+    Cloning creates a local copy of a remote repository, and understanding Git's distributed nature is important.
+    
+    \begin{highlight}[Cloning and Connecting Repositories]
+        Key points about cloning and connecting repositories include:
+        
+        \begin{itemize}
+            \item \textbf{git clone}: Creates a working directory and makes a local copy of the repository.
+            \item Git does not need to connect to a server to commit changes; commits are made to the local repository and pushed to a remote server.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Commits and Tracking Changes}
+    
+    Git uses hashes to uniquely identify commits, ensuring integrity and traceability.
+    
+    \begin{highlight}[Commits and Tracking Changes]
+        Important aspects of commits and tracking include:
+        
+        \begin{itemize}
+            \item \textbf{Unique Identification}: Each commit is uniquely identified by a hash.
+            \item \textbf{Manual Tracking}: After initializing a repository with "git init", files must be manually added to be tracked.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Branching and Merging}
+    
+    Branching allows isolation of work, and merging integrates changes back into the main codebase.
+    
+    \begin{highlight}[Branching and Merging]
+        Benefits and uses of branching include:
+        
+        \begin{itemize}
+            \item \textbf{Isolation of Work}: Branches allow changes without affecting the main codebase, facilitating experimentation and new feature development.
+            \item \textbf{Collaboration}: Branches can be shared with others, who can then make changes and submit them back via pull requests.
+            \item \textbf{Release Management}: Different branches manage various codebase versions, like development and release branches.
+            \item \textbf{Bug Fixes}: Separate branches for fixing bugs that can be merged back without disrupting ongoing development.
+            \item \textbf{Feature Development}: Develop new features in isolation and merge them back after completion and testing.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Pulling and Updating}
+    
+    Pulling updates the local repository with changes from the remote repository.
+    
+    \begin{highlight}[Pulling and Updating]
+        Key points about pulling and updating include:
+        
+        \begin{itemize}
+            \item \textbf{git pull}: Downloads changes from the remote repository into the local working copy.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for version control using Git.
+        
+        \begin{itemize}
+            \item \textbf{Git Commands}:
+                \begin{itemize}
+                    \item "git init", "git add", "git commit", "git checkout", "git diff", "git log".
+                    \item "git clone" for creating a local copy of a remote repository.
+                    \item "git pull" for updating the local repository with remote changes.
+                \end{itemize}
+            \item \textbf{Commits and Tracking}:
+                \begin{itemize}
+                    \item Commits are uniquely identified by hashes.
+                    \item Files must be manually added to be tracked after initializing a repository.
+                \end{itemize}
+            \item \textbf{Branching and Merging}:
+                \begin{itemize}
+                    \item Branches isolate work, facilitate collaboration, manage releases, and develop features independently.
+                    \item Bug fixes and feature developments can be handled in separate branches and merged back into the main branch.
+                \end{itemize}
+            \item \textbf{Cloning and Pulling}:
+                \begin{itemize}
+                    \item "git clone" creates a working directory and copies the repository locally.
+                    \item "git pull" updates the local repository with changes from the remote repository.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Introduction To Software Testing}
+    
+    Software testing is the process of evaluating and verifying that a software application or system meets the specified requirements. The primary goals of testing are to identify defects, ensure 
+    quality, and validate that the software performs as expected.
+    
+    \begin{highlight}[Introduction to Software Testing]
+        Key points about software testing include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: The process of evaluating and verifying that a software application or system meets the specified requirements.
+            \item \textbf{Goals}: Identifying defects, ensuring quality, validating performance.
+            \item \textbf{Types of Testing}:
+                \begin{itemize}
+                    \item Manual Testing: Performed by humans, involves checking software functionality without automated tools.
+                    \item Automated Testing: Uses scripts and tools to perform tests, increases efficiency and coverage.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Unit Testing}
+    
+    Unit testing involves testing individual components or functions of a software application in isolation. The primary goal is to ensure that each unit of the software performs as expected.
+    
+    \begin{highlight}[Unit Testing]
+        Key points about unit testing include:
+        
+        \begin{itemize}
+            \item \textbf{Scope}: Focuses on individual components or functions.
+            \item \textbf{Tools}: Common tools include JUnit for Java, PyTest for Python.
+            \item \textbf{Benefits}:
+                \begin{itemize}
+                    \item Early defect identification.
+                    \item Simplifies debugging and maintenance.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Integration Testing}
+    
+    Integration testing involves testing the interactions between different components or modules of a software application. The goal is to identify issues that occur when units are combined.
+    
+    \begin{highlight}[Integration Testing]
+        Key points about integration testing include:
+        
+        \begin{itemize}
+            \item \textbf{Scope}: Focuses on interactions between components.
+            \item \textbf{Types}:
+                \begin{itemize}
+                    \item Top-down Integration: Testing from top to bottom.
+                    \item Bottom-up Integration: Testing from bottom to top.
+                    \item Sandwich Testing: Combination of both top-down and bottom-up.
+                \end{itemize}
+            \item \textbf{Benefits}:
+                \begin{itemize}
+                    \item Detects interface issues.
+                    \item Ensures components work together as intended.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{System Testing}
+    
+    System testing involves testing the complete and integrated software system to verify that it meets the specified requirements. It is performed in an environment that closely resembles the production environment.
+    
+    \begin{highlight}[System Testing]
+        Key points about system testing include:
+        
+        \begin{itemize}
+            \item \textbf{Scope}: Focuses on the entire system.
+            \item \textbf{Types}:
+                \begin{itemize}
+                    \item Functional Testing: Verifies software functions as expected.
+                    \item Non-functional Testing: Checks performance, usability, security, etc.
+                \end{itemize}
+            \item \textbf{Benefits}:
+                \begin{itemize}
+                    \item Validates the complete system.
+                    \item Ensures the system meets requirements and specifications.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Acceptance Testing}
+    
+    Acceptance testing is the final level of testing performed to determine whether the software is ready for release. It verifies that the software meets the business requirements and is acceptable to the end-users.
+    
+    \begin{highlight}[Acceptance Testing]
+        Key points about acceptance testing include:
+        
+        \begin{itemize}
+            \item \textbf{Scope}: Focuses on business requirements and user needs.
+            \item \textbf{Types}:
+                \begin{itemize}
+                    \item User Acceptance Testing (UAT): Conducted by end-users.
+                    \item Business Acceptance Testing (BAT): Ensures software meets business goals.
+                \end{itemize}
+            \item \textbf{Benefits}:
+                \begin{itemize}
+                    \item Ensures software is ready for production.
+                    \item Validates software against business requirements.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Test-Driven Development (TDD)}
+    
+    Test-Driven Development is a software development approach in which tests are written before writing the actual code. It emphasizes writing small, incremental tests for each functionality.
+    
+    \begin{highlight}[Test-Driven Development (TDD)]
+        Key points about TDD include:
+        
+        \begin{itemize}
+            \item \textbf{Process}:
+                \begin{itemize}
+                    \item Write a test for a new functionality.
+                    \item Write code to pass the test.
+                    \item Refactor the code while ensuring the test still passes.
+                \end{itemize}
+            \item \textbf{Benefits}:
+                \begin{itemize}
+                    \item Ensures code quality.
+                    \item Reduces the likelihood of defects.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Behavior-Driven Development (BDD)}
+    
+    Behavior-Driven Development extends TDD by writing tests in a more human-readable format. It emphasizes collaboration between developers, testers, and business stakeholders.
+    
+    \begin{highlight}[Behavior-Driven Development (BDD)]
+        Key points about BDD include:
+        
+        \begin{itemize}
+            \item \textbf{Process}:
+                \begin{itemize}
+                    \item Write a scenario in a language like Gherkin.
+                    \item Implement steps to satisfy the scenario.
+                    \item Ensure tests pass for the defined behavior.
+                \end{itemize}
+            \item \textbf{Benefits}:
+                \begin{itemize}
+                    \item Enhances communication among stakeholders.
+                    \item Aligns development with business requirements.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for effective software testing.
+        
+        \begin{itemize}
+            \item \textbf{Types of Testing}:
+                \begin{itemize}
+                    \item Unit Testing: Tests individual components or functions.
+                    \item Integration Testing: Tests interactions between components.
+                    \item System Testing: Tests the complete and integrated system.
+                    \item Acceptance Testing: Final level of testing to verify readiness for release.
+                \end{itemize}
+            \item \textbf{Testing Strategies}:
+                \begin{itemize}
+                    \item Test-Driven Development (TDD): Writing tests before code to ensure quality.
+                    \item Behavior-Driven Development (BDD): Writing human-readable tests to enhance collaboration.
+                \end{itemize}
+            \item \textbf{Benefits of Testing}:
+                \begin{itemize}
+                    \item Early identification of defects.
+                    \item Improved code quality and maintainability.
+                    \item Ensures software meets requirements and performs as expected.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Introduction to Flask}
+    
+    Flask is a micro web framework written in Python. It is lightweight and modular, making it easy to scale up to complex applications. Flask is known for its simplicity and flexibility.
+    
+    \begin{highlight}[Introduction to Flask]
+        Key points about Flask include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: Flask is a micro web framework for Python.
+            \item \textbf{Characteristics}:
+                \begin{itemize}
+                    \item Lightweight and modular.
+                    \item Simple and flexible.
+                    \item Suitable for both small and large applications.
+                \end{itemize}
+            \item \textbf{Philosophy}: Flask is designed to be simple and extensible.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Installation and Setup}
+    
+    Installing and setting up Flask is straightforward and involves using pip, Python's package installer.
+    
+    \begin{highlight}[Installation and Setup]
+        Steps to install and set up Flask include:
+        
+        \begin{itemize}
+            \item \textbf{Install Flask}:
+                \begin{itemize}
+                    \item Run 'pip install Flask'.
+                \end{itemize}
+            \item \textbf{Create a Flask App}:
+                \begin{itemize}
+                    \item Create a Python file (e.g., 'app.py').
+                    \item Import Flask and create an instance of the Flask class.
+                    \item Define routes and their corresponding request handler functions.
+                    \item Run the application using 'app.run()'.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Routes and Views}
+    
+    Routes map URLs to functions in your Flask application, and views are the functions that handle the requests.
+    
+    \begin{highlight}[Routes and Views]
+        Key points about routes and views include:
+        
+        \begin{itemize}
+            \item \textbf{Routes}:
+                \begin{itemize}
+                    \item Defined using the '\@app.route' decorator.
+                    \item Map URLs to Python functions.
+                \end{itemize}
+            \item \textbf{Views}:
+                \begin{itemize}
+                    \item Functions that return responses for the routes.
+                    \item Can return HTML, JSON, or other types of responses.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Templates}
+    
+    Flask uses the Jinja2 template engine to render HTML templates. Templates allow you to separate the presentation logic from the business logic.
+    
+    \begin{highlight}[Templates]
+        Key points about templates include:
+        
+        \begin{itemize}
+            \item \textbf{Jinja2 Template Engine}:
+                \begin{itemize}
+                    \item Used to render HTML templates.
+                    \item Supports template inheritance and reusable components.
+                \end{itemize}
+            \item \textbf{Rendering Templates}:
+                \begin{itemize}
+                    \item Use 'render\_template' function to render templates.
+                    \item Pass variables to templates to dynamically generate content.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Forms and Input Handling}
+    
+    Flask provides tools for handling form data and user input, making it easy to process and validate input from users.
+    
+    \begin{highlight}[Forms and Input Handling]
+        Key points about forms and input handling include:
+        
+        \begin{itemize}
+            \item \textbf{Handling Form Data}:
+                \begin{itemize}
+                    \item Use 'request.form' to access form data.
+                    \item Use 'request.args' to access query parameters.
+                \end{itemize}
+            \item \textbf{Validation}:
+                \begin{itemize}
+                    \item Use libraries like WTForms for form validation.
+                    \item Validate input to ensure data integrity and security.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Database Integration}
+    
+    Flask can integrate with databases using SQLAlchemy or other ORM libraries to manage database operations.
+    
+    \begin{highlight}[Database Integration]
+        Key points about database integration include:
+        
+        \begin{itemize}
+            \item \textbf{SQLAlchemy}:
+                \begin{itemize}
+                    \item A popular ORM library for Flask.
+                    \item Simplifies database operations and management.
+                \end{itemize}
+            \item \textbf{Setup}:
+                \begin{itemize}
+                    \item Install SQLAlchemy with 'pip install Flask-SQLAlchemy'.
+                    \item Configure the database URI and initialize the SQLAlchemy instance.
+                \end{itemize}
+            \item \textbf{Models}:
+                \begin{itemize}
+                    \item Define models as Python classes.
+                    \item Use models to create, read, update, and delete database records.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Blueprints}
+    
+    Blueprints allow you to organize your Flask application into modular components, promoting better code organization and reusability.
+    
+    \begin{highlight}[Blueprints]
+        Key points about blueprints include:
+        
+        \begin{itemize}
+            \item \textbf{Purpose}:
+                \begin{itemize}
+                    \item Organize the application into modules.
+                    \item Enable code reuse and better organization.
+                \end{itemize}
+            \item \textbf{Creating a Blueprint}:
+                \begin{itemize}
+                    \item Create a Blueprint instance.
+                    \item Define routes and views within the blueprint.
+                    \item Register the blueprint with the main application instance.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{RESTful APIs}
+    
+    Flask can be used to build RESTful APIs, allowing for the creation of web services that follow REST principles.
+    
+    \begin{highlight}[RESTful APIs]
+        Key points about RESTful APIs include:
+        
+        \begin{itemize}
+            \item \textbf{REST Principles}:
+                \begin{itemize}
+                    \item Use standard HTTP methods (GET, POST, PUT, DELETE).
+                    \item Use URIs to identify resources.
+                    \item Stateless communication.
+                \end{itemize}
+            \item \textbf{Creating an API}:
+                \begin{itemize}
+                    \item Define API routes using '\@app.route'.
+                    \item Return JSON responses using 'jsonify'.
+                    \item Handle different HTTP methods within route functions.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for developing applications using the Flask framework.
+        
+        \begin{itemize}
+            \item \textbf{Basic Concepts}:
+                \begin{itemize}
+                    \item Flask setup and installation.
+                    \item Defining routes and views.
+                    \item Using templates for rendering HTML.
+                    \item Handling forms and input validation.
+                \end{itemize}
+            \item \textbf{Advanced Concepts}:
+                \begin{itemize}
+                    \item Integrating databases with SQLAlchemy.
+                    \item Organizing code with blueprints.
+                    \item Building RESTful APIs.
+                \end{itemize}
+            \item \textbf{Benefits of Flask}:
+                \begin{itemize}
+                    \item Lightweight and flexible.
+                    \item Easy to learn and use.
+                    \item Scalable for both small and large applications.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 2}
+    \subsection*{Introduction to SQL}
+    
+    SQL (Structured Query Language) is a standard language for managing and manipulating relational databases. It is used to perform tasks such as querying data, updating records, and managing database structures.
+    
+    \begin{highlight}[Introduction to SQL]
+        Key points about SQL include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: SQL is a standard language for managing relational databases.
+            \item \textbf{Purpose}:
+                \begin{itemize}
+                    \item Querying data.
+                    \item Inserting, updating, and deleting records.
+                    \item Managing database schema.
+                \end{itemize}
+            \item \textbf{Components}:
+                \begin{itemize}
+                    \item DDL (Data Definition Language): Defines database schema.
+                    \item DML (Data Manipulation Language): Manipulates data.
+                    \item DCL (Data Control Language): Controls access to data.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Data Definition Language (DDL)}
+    
+    DDL commands are used to define and manage database schema, including creating, altering, and deleting tables.
+    
+    \begin{highlight}[Data Definition Language (DDL)]
+        Key DDL commands include:
+        
+        \begin{itemize}
+            \item \textbf{CREATE}:
+                \begin{itemize}
+                    \item 'CREATE TABLE table\_name (column1 datatype, column2 datatype, ...)': Creates a new table.
+                \end{itemize}
+            \item \textbf{ALTER}:
+                \begin{itemize}
+                    \item 'ALTER TABLE table\_name ADD column\_name datatype': Adds a new column to an existing table.
+                    \item 'ALTER TABLE table\_name DROP COLUMN column\_name': Removes a column from a table.
+                \end{itemize}
+            \item \textbf{DROP}:
+                \begin{itemize}
+                    \item 'DROP TABLE table\_name': Deletes a table.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Data Manipulation Language (DML)}
+    
+    DML commands are used to retrieve and manipulate data within existing database tables.
+    
+    \begin{highlight}[Data Manipulation Language (DML)]
+        Key DML commands include:
+        
+        \begin{itemize}
+            \item \textbf{SELECT}:
+                \begin{itemize}
+                    \item 'SELECT column1, column2 FROM table\_name': Retrieves specific columns from a table.
+                    \item 'SELECT * FROM table\_name': Retrieves all columns from a table.
+                \end{itemize}
+            \item \textbf{INSERT}:
+                \begin{itemize}
+                    \item 'INSERT INTO table\_name (column1, column2, ...) VALUES (value1, value2, ...)': Inserts new records into a table.
+                \end{itemize}
+            \item \textbf{UPDATE}:
+                \begin{itemize}
+                    \item 'UPDATE table\_name SET column1 = value1, column2 = value2, ... WHERE condition': Updates existing records in a table.
+                \end{itemize}
+            \item \textbf{DELETE}:
+                \begin{itemize}
+                    \item 'DELETE FROM table\_name WHERE condition': Deletes records from a table.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Data Query Language (DQL)}
+    
+    DQL is primarily focused on querying the database to retrieve data based on specific criteria.
+    
+    \begin{highlight}[Data Query Language (DQL)]
+        Key DQL commands include:
+        
+        \begin{itemize}
+            \item \textbf{SELECT}:
+                \begin{itemize}
+                    \item 'SELECT column1, column2 FROM table\_name WHERE condition': Retrieves specific columns that meet a condition.
+                    \item 'SELECT * FROM table\_name WHERE condition': Retrieves all columns that meet a condition.
+                    \item 'SELECT column1, COUNT(*) FROM table\_name GROUP BY column1': Groups the result set by one or more columns.
+                    \item 'SELECT column1, column2 FROM table\_name ORDER BY column1 DESC': Orders the result set by one or more columns.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Data Control Language (DCL)}
+    
+    DCL commands are used to control access to data in the database, including granting and revoking permissions.
+    
+    \begin{highlight}[Data Control Language (DCL)]
+        Key DCL commands include:
+        
+        \begin{itemize}
+            \item \textbf{GRANT}:
+                \begin{itemize}
+                    \item 'GRANT SELECT, INSERT ON table\_name TO user\_name': Grants specific permissions to a user.
+                \end{itemize}
+            \item \textbf{REVOKE}:
+                \begin{itemize}
+                    \item 'REVOKE SELECT, INSERT ON table\_name FROM user\_name': Revokes specific permissions from a user.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Joins}
+    
+    Joins are used to combine rows from two or more tables based on a related column between them.
+    
+    \begin{highlight}[Joins]
+        Key types of joins include:
+        
+        \begin{itemize}
+            \item \textbf{INNER JOIN}:
+                \begin{itemize}
+                    \item 'SELECT columns FROM table1 INNER JOIN table2 ON table1.column = table2.column': Returns records that have matching values in both tables.
+                \end{itemize}
+            \item \textbf{LEFT JOIN}:
+                \begin{itemize}
+                    \item 'SELECT columns FROM table1 LEFT JOIN table2 ON table1.column = table2.column': Returns all records from the left table, and the matched records from the right table.
+                \end{itemize}
+            \item \textbf{RIGHT JOIN}:
+                \begin{itemize}
+                    \item 'SELECT columns FROM table1 RIGHT JOIN table2 ON table1.column = table2.column': Returns all records from the right table, and the matched records from the left table.
+                \end{itemize}
+            \item \textbf{FULL JOIN}:
+                \begin{itemize}
+                    \item 'SELECT columns FROM table1 FULL JOIN table2 ON table1.column = table2.column': Returns all records when there is a match in either left or right table.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Indexes}
+    
+    Indexes are used to speed up the retrieval of rows by using a pointer.
+    
+    \begin{highlight}[Indexes]
+        Key points about indexes include:
+        
+        \begin{itemize}
+            \item \textbf{CREATE INDEX}:
+                \begin{itemize}
+                    \item 'CREATE INDEX index\_name ON table\_name (column1, column2, ...)': Creates an index on a table.
+                \end{itemize}
+            \item \textbf{DROP INDEX}:
+                \begin{itemize}
+                    \item 'DROP INDEX index\_name ON table\_name': Deletes an index from a table.
+                \end{itemize}
+            \item \textbf{Types of Indexes}:
+                \begin{itemize}
+                    \item Unique Index: Ensures all values in a column are unique.
+                    \item Composite Index: An index on multiple columns.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Transactions}
+    
+    Transactions are used to ensure the integrity of the database and to handle operations that must be executed as a single unit of work.
+    
+    \begin{highlight}[Transactions]
+        Key points about transactions include:
+        
+        \begin{itemize}
+            \item \textbf{BEGIN TRANSACTION}:
+                \begin{itemize}
+                    \item 'BEGIN TRANSACTION': Starts a new transaction.
+                \end{itemize}
+            \item \textbf{COMMIT}:
+                \begin{itemize}
+                    \item 'COMMIT': Saves the transaction changes to the database.
+                \end{itemize}
+            \item \textbf{ROLLBACK}:
+                \begin{itemize}
+                    \item 'ROLLBACK': Reverts the transaction changes.
+                \end{itemize}
+            \item \textbf{ACID Properties}:
+                \begin{itemize}
+                    \item Atomicity: Ensures that all operations within the transaction are completed.
+                    \item Consistency: Ensures the database remains in a consistent state.
+                    \item Isolation: Ensures transactions are isolated from each other.
+                    \item Durability: Ensures the result of a transaction is permanently saved in the database.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for using SQL effectively.
+        
+        \begin{itemize}
+            \item \textbf{SQL Commands}:
+                \begin{itemize}
+                        \item Data Definition Language (DDL): 'CREATE', 'ALTER', 'DROP'.
+                        \item Data Manipulation Language (DML): 'SELECT',
+                        \item Data Control Language (DCL): GRANT, REVOKE.
+                        \item Data Query Language (DQL): SELECT with conditions, grouping, and ordering.
+                    \end{itemize}
+                        \item \textbf{Joins}:
+                    \begin{itemize}
+                        \item INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN.
+                    \end{itemize}
+                        \item \textbf{Indexes}:
+                    \begin{itemize}
+                        \item Create and drop indexes to optimize queries.
+                        \item Types: Unique Index, Composite Index.
+                    \end{itemize}
+                        \item \textbf{Transactions}:
+                    \begin{itemize}
+                        \item BEGIN TRANSACTION, COMMIT, ROLLBACK.
+                        \item ACID properties to ensure reliable transaction processing.
+                    \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Introduction to HTML}
+
+    HTML (HyperText Markup Language) is the standard language for creating web pages. It describes the structure of a web page using elements represented by tags.
+    
+    \begin{highlight}[Introduction to HTML]
+        Key points about HTML include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: HTML is the standard language for creating web pages.
+            \item \textbf{Purpose}:
+                \begin{itemize}
+                    \item Describes the structure of web pages.
+                    \item Uses elements (tags) to denote different parts of a web page.
+                \end{itemize}
+            \item \textbf{Basic Structure}:
+                \begin{itemize}
+                    \item "<!DOCTYPE html>": Defines the document type.
+                    \item "<html>": The root element of an HTML page.
+                    \item "<head>": Contains meta-information about the document.
+                    \item "<title>": Sets the title of the document.
+                    \item "<body>": Contains the content of the document.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{HTML Elements}
+    
+    HTML elements are the building blocks of HTML pages. Each element consists of a start tag, content, and an end tag.
+    
+    \begin{highlight}[HTML Elements]
+        Key HTML elements include:
+        
+        \begin{itemize}
+            \item \textbf{Headings}:
+                \begin{itemize}
+                    \item "<h1>" to "<h6>": Defines headings, "<h1>" being the highest (largest) and "<h6>" the lowest (smallest) level.
+                \end{itemize}
+            \item \textbf{Paragraph}:
+                \begin{itemize}
+                    \item "<p>": Defines a paragraph.
+                \end{itemize}
+            \item \textbf{Links}:
+                \begin{itemize}
+                    \item "<a href="URL">": Defines a hyperlink.
+                \end{itemize}
+            \item \textbf{Images}:
+                \begin{itemize}
+                    \item "<img src="URL" alt="description">": Embeds an image.
+                \end{itemize}
+            \item \textbf{Lists}:
+                \begin{itemize}
+                    \item "<ul>": Defines an unordered list.
+                    \item "<ol>": Defines an ordered list.
+                    \item "<li>": Defines a list item.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{HTML Attributes}
+    
+    HTML attributes provide additional information about elements. They are always included in the opening tag and usually come in name/value pairs.
+    
+    \begin{highlight}[HTML Attributes]
+        Key HTML attributes include:
+        
+        \begin{itemize}
+            \item \textbf{href}:
+                \begin{itemize}
+                    \item Used in "<a>" to specify the URL of the link.
+                \end{itemize}
+            \item \textbf{src}:
+                \begin{itemize}
+                    \item Used in "<img>" to specify the source of the image.
+                \end{itemize}
+            \item \textbf{alt}:
+                \begin{itemize}
+                    \item Used in "<img>" to provide alternative text if the image cannot be displayed.
+                \end{itemize}
+            \item \textbf{style}:
+                \begin{itemize}
+                    \item Used to apply inline CSS to an element.
+                \end{itemize}
+            \item \textbf{class}:
+                \begin{itemize}
+                    \item Used to define a class for an element.
+                \end{itemize}
+            \item \textbf{id}:
+                \begin{itemize}
+                    \item Used to define a unique identifier for an element.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Introduction to CSS}
+    
+    CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML. CSS describes how HTML elements should be displayed.
+    
+    \begin{highlight}[Introduction to CSS]
+        Key points about CSS include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: CSS is a style sheet language used for describing the presentation of documents.
+            \item \textbf{Purpose}:
+                \begin{itemize}
+                    \item Controls the layout of multiple web pages all at once.
+                    \item Separates content from presentation.
+                \end{itemize}
+            \item \textbf{Basic Syntax}:
+                \begin{itemize}
+                    \item A CSS rule consists of a selector and a declaration block.
+                    \item "selector { property: value; }"
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{CSS Selectors}
+    
+    Selectors are used to select the HTML elements you want to style.
+    
+    \begin{highlight}[CSS Selectors]
+        Key CSS selectors include:
+        
+        \begin{itemize}
+            \item \textbf{Element Selector}:
+                \begin{itemize}
+                    \item Selects HTML elements based on the element name.
+                    \item Example: "p { color: red; }"
+                \end{itemize}
+            \item \textbf{Class Selector}:
+                \begin{itemize}
+                    \item Selects elements with a specific class attribute.
+                    \item Example: ".className { color: blue; }"
+                \end{itemize}
+            \item \textbf{ID Selector}:
+                \begin{itemize}
+                    \item Selects an element with a specific id attribute.
+                    \item Example: "#idName { color: green; }"
+                \end{itemize}
+            \item \textbf{Universal Selector}:
+                \begin{itemize}
+                    \item Selects all elements in the document.
+                    \item Example: "* { color: black; }"
+                \end{itemize}
+            \item \textbf{Attribute Selector}:
+                \begin{itemize}
+                    \item Selects elements based on an attribute or attribute value.
+                    \item Example: "[type="text"] { color: yellow; }"
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{CSS Box Model}
+    
+    The CSS box model is a box that wraps around every HTML element. It consists of margins, borders, padding, and the actual content.
+    
+    \begin{highlight}[CSS Box Model]
+        Key points about the CSS box model include:
+        
+        \begin{itemize}
+            \item \textbf{Content}:
+                \begin{itemize}
+                    \item The actual content of the box, where text and images appear.
+                \end{itemize}
+            \item \textbf{Padding}:
+                \begin{itemize}
+                    \item Clears an area around the content. Padding is transparent.
+                \end{itemize}
+            \item \textbf{Border}:
+                \begin{itemize}
+                    \item A border that goes around the padding and content.
+                \end{itemize}
+            \item \textbf{Margin}:
+                \begin{itemize}
+                    \item Clears an area outside the border. Margin is transparent.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{CSS Positioning}
+    
+    CSS positioning properties allow you to position elements in a web page.
+    
+    \begin{highlight}[CSS Positioning]
+        Key points about CSS positioning include:
+        
+        \begin{itemize}
+            \item \textbf{Static}:
+                \begin{itemize}
+                    \item Default positioning. Elements are positioned according to the normal flow of the document.
+                \end{itemize}
+            \item \textbf{Relative}:
+                \begin{itemize}
+                    \item Positioned relative to its normal position.
+                    \item Example: "position: relative; top: 10px;"
+                \end{itemize}
+            \item \textbf{Absolute}:
+                \begin{itemize}
+                    \item Positioned relative to the nearest positioned ancestor.
+                    \item Example: "position: absolute; top: 20px;"
+                \end{itemize}
+            \item \textbf{Fixed}:
+                \begin{itemize}
+                    \item Positioned relative to the browser window.
+                    \item Example: "position: fixed; top: 30px;"
+                \end{itemize}
+            \item \textbf{Sticky}:
+                \begin{itemize}
+                    \item Switches between relative and fixed, depending on the scroll position.
+                    \item Example: "position: sticky; top: 0;"
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Responsive Web Design}
+    
+    Responsive web design ensures that web pages render well on a variety of devices and window or screen sizes.
+    
+    \begin{highlight}[Responsive Web Design]
+        Key points about responsive web design include:
+        
+        \begin{itemize}
+            \item \textbf{Viewport}:
+                \begin{itemize}
+                    \item Use the "<meta>" tag to set the viewport.
+                    \item Example: "<meta name="viewport" content="width=device-width,initial-scale=1.0”>
+                \end{itemize} 
+            \item \textbf{Media Queries}: 
+            \begin{itemize} 
+                \item Apply different styles for different devices or screen sizes. 
+                \item Example:@media (max-width: 600px) { … }
+            \end{itemize} 
+            \item \textbf{Flexible Layouts}: 
+            \begin{itemize} 
+                \item Use relative units like percentages for widths. 
+                \item Example:width: 50\%;
+            \end{itemize} 
+            \item \textbf{Flexible Images}: 
+            \begin{itemize} 
+                \item Use max-width to ensure images scale correctly. 
+                \item Example:img { max-width: 100\%; height: auto; }"
+            \end{itemize} 
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for using HTML and CSS effectively.
+        \begin{itemize}
+            \item \textbf{HTML Elements and Attributes}:
+                \begin{itemize}
+                    \item Basic structure of an HTML document.
+                    \item Common elements: headings, paragraphs, links, images, lists.
+                    \item Important attributes: href, src, alt, style, class, id.
+                \end{itemize}
+            \item \textbf{CSS Basics}:
+                \begin{itemize}
+                    \item Selectors: element, class, ID, universal, attribute.
+                    \item Box model: content, padding, border, margin.
+                    \item Positioning: static, relative, absolute, fixed, sticky.
+                \end{itemize}
+            \item \textbf{Responsive Web Design}:
+                \begin{itemize}
+                    \item Viewport settings and media queries.
+                    \item Flexible layouts and images.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Introduction to JavaScript}
+
+    JavaScript is a high-level, dynamic, and interpreted programming language commonly used to create interactive effects within web browsers.
+    
+    \begin{highlight}[Introduction to JavaScript]
+        Key points about JavaScript include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: JavaScript is a high-level, dynamic, and interpreted programming language.
+            \item \textbf{Purpose}:
+                \begin{itemize}
+                    \item Adds interactivity to web pages.
+                    \item Manipulates the Document Object Model (DOM).
+                    \item Can be used on the client-side and server-side (Node.js).
+                \end{itemize}
+            \item \textbf{Basic Syntax}:
+                \begin{itemize}
+                    \item Variables are declared using "var", "let", or "const".
+                    \item Functions are defined using the "function" keyword.
+                    \item JavaScript code is usually placed inside "<script>" tags or in external ".js" files.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Variables and Data Types}
+    
+    JavaScript supports various data types and variable declarations, providing flexibility in how data is stored and manipulated.
+    
+    \begin{highlight}[Variables and Data Types]
+        Key points about variables and data types include:
+        
+        \begin{itemize}
+            \item \textbf{Variable Declaration}:
+                \begin{itemize}
+                    \item "var": Function-scoped variable.
+                    \item "let": Block-scoped variable.
+                    \item "const": Block-scoped constant, cannot be reassigned.
+                \end{itemize}
+            \item \textbf{Data Types}:
+                \begin{itemize}
+                    \item \textbf{Primitive Types}:
+                        \begin{itemize}
+                            \item Number, String, Boolean, Null, Undefined, Symbol (ES6).
+                        \end{itemize}
+                    \item \textbf{Reference Types}:
+                        \begin{itemize}
+                            \item Objects, Arrays, Functions.
+                        \end{itemize}
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Functions}
+    
+    Functions are fundamental in JavaScript, allowing code to be reusable, modular, and organized.
+    
+    \begin{highlight}[Functions]
+        Key points about functions include:
+        
+        \begin{itemize}
+            \item \textbf{Function Declaration}:
+                \begin{itemize}
+                    \item "function functionName(parameters) { /* code */ }": Defines a named function.
+                \end{itemize}
+            \item \textbf{Function Expression}:
+                \begin{itemize}
+                    \item "const myFunction = function(parameters) { /* code */ };": Defines an anonymous function assigned to a variable.
+                \end{itemize}
+            \item \textbf{Arrow Functions} (ES6):
+                \begin{itemize}
+                    \item "const myFunction = (parameters) => { /* code */ };": A shorter syntax for function expressions.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{DOM Manipulation}
+    
+    JavaScript interacts with HTML and CSS to dynamically update the content and style of web pages through DOM manipulation.
+    
+    \begin{highlight}[DOM Manipulation]
+        Key points about DOM manipulation include:
+        
+        \begin{itemize}
+            \item \textbf{Selecting Elements}:
+                \begin{itemize}
+                    \item "document.getElementById("id")": Selects an element by ID.
+                    \item "document.querySelector("selector")": Selects the first element that matches a CSS selector.
+                \end{itemize}
+            \item \textbf{Changing Content}:
+                \begin{itemize}
+                    \item "element.textContent = "New Content"": Changes the text content of an element.
+                    \item "element.innerHTML = "<p>New HTML</p>"": Changes the HTML content of an element.
+                \end{itemize}
+            \item \textbf{Changing Styles}:
+                \begin{itemize}
+                    \item "element.style.property = "value"": Changes the inline style of an element.
+                \end{itemize}
+            \item \textbf{Event Handling}:
+                \begin{itemize}
+                    \item "element.addEventListener("event", function)": Attaches an event handler to an element.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Control Structures}
+    
+    Control structures in JavaScript manage the flow of code execution based on conditions and loops.
+    
+    \begin{highlight}[Control Structures]
+        Key points about control structures include:
+        
+        \begin{itemize}
+            \item \textbf{Conditional Statements}:
+                \begin{itemize}
+                    \item "if (condition) { /* code */ }": Executes code if the condition is true.
+                    \item "if (condition) { /* code */ } else { /* code */ }": Executes code based on the condition being true or false.
+                    \item "switch(expression) { case value: /* code */ break; }": Multi-way branch statement.
+                \end{itemize}
+            \item \textbf{Loops}:
+                \begin{itemize}
+                    \item "for (initialization; condition; increment) { /* code */ }": Standard loop structure.
+                    \item "while (condition) { /* code */ }": Executes code while the condition is true.
+                    \item "do { /* code */ } while (condition)": Executes code at least once before checking the condition.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Error Handling}
+    
+    JavaScript provides mechanisms for handling runtime errors to ensure robust code.
+    
+    \begin{highlight}[Error Handling]
+        Key points about error handling include:
+        
+        \begin{itemize}
+            \item \textbf{try...catch}:
+                \begin{itemize}
+                    \item "try { /* code */ } catch (error) { /* error handling code */ }": Catches exceptions and handles errors.
+                \end{itemize}
+            \item \textbf{finally}:
+                \begin{itemize}
+                    \item "finally { /* code */ }": Executes code after try and catch, regardless of the outcome.
+                \end{itemize}
+            \item \textbf{throw}:
+                \begin{itemize}
+                    \item "throw new Error("message")": Manually throws an error.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for using JavaScript effectively.
+        
+        \begin{itemize}
+            \item \textbf{JavaScript Basics}:
+                \begin{itemize}
+                    \item Syntax, variables ("var", "let", "const"), and data types (primitive and reference).
+                \end{itemize}
+            \item \textbf{Functions and Control Structures}:
+                \begin{itemize}
+                    \item Function declarations, expressions, arrow functions.
+                    \item Control structures: if, switch, for, while, do...while.
+                \end{itemize}
+            \item \textbf{DOM Manipulation and Event Handling}:
+                \begin{itemize}
+                    \item Selecting elements, changing content and styles, handling events.
+                \end{itemize}
+            \item \textbf{Error Handling}:
+                \begin{itemize}
+                    \item try...catch, finally, and throw for robust error management.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Introduction to Cloud Computing}
+
+    Cloud Computing is the delivery of computing services over the internet ("the cloud"), enabling faster innovation, flexible resources, and economies of scale. It allows users to access and store 
+    data and programs over the internet instead of on local hard drives or servers.
+    
+    \begin{highlight}[Introduction to Cloud Computing]
+        Key points about Cloud Computing include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: Delivery of computing services over the internet.
+            \item \textbf{Purpose}:
+                \begin{itemize}
+                    \item Provides on-demand access to computing resources.
+                    \item Offers scalability, flexibility, and cost efficiency.
+                    \item Eliminates the need for owning and maintaining physical hardware.
+                \end{itemize}
+            \item \textbf{Service Models}:
+                \begin{itemize}
+                    \item \textbf{IaaS (Infrastructure as a Service)}: Provides virtualized computing resources over the internet.
+                    \item \textbf{PaaS (Platform as a Service)}: Offers hardware and software tools over the internet, primarily for application development.
+                    \item \textbf{SaaS (Software as a Service)}: Delivers software applications over the internet, on a subscription basis.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Deployment Models}
+    
+    Cloud computing deployment models define the type of access to the cloud, i.e., how the cloud is located.
+    
+    \begin{highlight}[Deployment Models]
+        Key cloud deployment models include:
+        
+        \begin{itemize}
+            \item \textbf{Public Cloud}:
+                \begin{itemize}
+                    \item Owned and operated by third-party cloud service providers.
+                    \item Provides resources and services to multiple organizations and users.
+                \end{itemize}
+            \item \textbf{Private Cloud}:
+                \begin{itemize}
+                    \item Exclusive cloud environment for a single organization.
+                    \item Provides greater control over resources and security.
+                \end{itemize}
+            \item \textbf{Hybrid Cloud}:
+                \begin{itemize}
+                    \item Combines public and private clouds, allowing data and applications to be shared between them.
+                    \item Offers flexibility and optimized infrastructure.
+                \end{itemize}
+            \item \textbf{Community Cloud}:
+                \begin{itemize}
+                    \item Shared cloud infrastructure among several organizations with common concerns.
+                    \item Managed internally or by a third-party.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Benefits of Cloud Computing}
+    
+    Cloud Computing offers numerous advantages for businesses and individuals.
+    
+    \begin{highlight}[Benefits of Cloud Computing]
+        Key benefits include:
+        
+        \begin{itemize}
+            \item \textbf{Cost Efficiency}:
+                \begin{itemize}
+                    \item Reduces the capital expense of buying hardware and software.
+                    \item Pay-as-you-go pricing model allows for only paying for the resources used.
+                \end{itemize}
+            \item \textbf{Scalability and Flexibility}:
+                \begin{itemize}
+                    \item Easily scales up or down to accommodate changing needs.
+                    \item Provides flexibility in deploying resources where and when needed.
+                \end{itemize}
+            \item \textbf{Accessibility and Collaboration}:
+                \begin{itemize}
+                    \item Access resources from anywhere with an internet connection.
+                    \item Facilitates collaboration and data sharing across different locations.
+                \end{itemize}
+            \item \textbf{Disaster Recovery and Business Continuity}:
+                \begin{itemize}
+                    \item Provides backup and recovery solutions, ensuring data is safe and secure.
+                    \item Minimizes downtime and ensures business continuity.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Security in Cloud Computing}
+    
+    Security is a critical concern in cloud computing, involving measures to protect data, applications, and infrastructure.
+    
+    \begin{highlight}[Security in Cloud Computing]
+        Key security considerations include:
+        
+        \begin{itemize}
+            \item \textbf{Data Security}:
+                \begin{itemize}
+                    \item Encryption of data in transit and at rest.
+                    \item Regular data backups and secure data storage.
+                \end{itemize}
+            \item \textbf{Identity and Access Management (IAM)}:
+                \begin{itemize}
+                    \item Manages user identities and their access to resources.
+                    \item Multi-factor authentication enhances security.
+                \end{itemize}
+            \item \textbf{Compliance and Legal Issues}:
+                \begin{itemize}
+                    \item Ensures compliance with legal and regulatory requirements.
+                    \item Protects data privacy and prevents unauthorized access.
+                \end{itemize}
+            \item \textbf{Monitoring and Incident Response}:
+                \begin{itemize}
+                    \item Continuous monitoring for suspicious activities.
+                    \item Established procedures for responding to security incidents.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for understanding and utilizing Cloud Computing.
+        
+        \begin{itemize}
+            \item \textbf{Cloud Computing Basics}:
+                \begin{itemize}
+                    \item Definition, purpose, and service models (IaaS, PaaS, SaaS).
+                \end{itemize}
+            \item \textbf{Deployment Models}:
+                \begin{itemize}
+                    \item Public, Private, Hybrid, and Community Clouds.
+                \end{itemize}
+            \item \textbf{Benefits}:
+                \begin{itemize}
+                    \item Cost efficiency, scalability, accessibility, and disaster recovery.
+                \end{itemize}
+            \item \textbf{Security Considerations}:
+                \begin{itemize}
+                    \item Data security, IAM, compliance, and incident response.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Introduction to Web API and Protocols}
+
+    Web APIs (Application Programming Interfaces) enable communication between different software systems, allowing them to share data and functionality. They use various protocols to define the rules for this communication.
+    
+    \begin{highlight}[Introduction to Web API and Protocols]
+        Key points about Web APIs and Protocols include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: Web APIs are interfaces that allow different software systems to communicate over the web.
+            \item \textbf{Purpose}:
+                \begin{itemize}
+                    \item Facilitate data exchange and functionality sharing between systems.
+                    \item Enable integration of services and applications.
+                \end{itemize}
+            \item \textbf{Common Protocols}:
+                \begin{itemize}
+                    \item \textbf{HTTP/HTTPS}: The foundational protocol for the web, used for requesting and delivering resources.
+                    \item \textbf{REST (Representational State Transfer)}: An architectural style that uses standard HTTP methods and resources represented by URLs.
+                    \item \textbf{SOAP (Simple Object Access Protocol)}: A protocol for exchanging structured information in web services using XML.
+                    \item \textbf{GraphQL}: A query language for APIs that allows clients to request specific data, minimizing the amount of data transferred.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{RESTful APIs}
+    
+    RESTful APIs are APIs that adhere to the principles of REST, leveraging HTTP methods and status codes for communication.
+    
+    \begin{highlight}[RESTful APIs]
+        Key concepts of RESTful APIs include:
+        
+        \begin{itemize}
+            \item \textbf{HTTP Methods}:
+                \begin{itemize}
+                    \item \textbf{GET}: Retrieves data from the server.
+                    \item \textbf{POST}: Sends new data to the server.
+                    \item \textbf{PUT}: Updates existing data on the server.
+                    \item \textbf{DELETE}: Removes data from the server.
+                \end{itemize}
+            \item \textbf{Resources and URLs}:
+                \begin{itemize}
+                    \item Resources are identified by URLs.
+                    \item Each resource can be accessed or manipulated using HTTP methods.
+                \end{itemize}
+            \item \textbf{Statelessness}:
+                \begin{itemize}
+                    \item Each request from a client to server must contain all the information the server needs to fulfill that request.
+                \end{itemize}
+            \item \textbf{Responses and Status Codes}:
+                \begin{itemize}
+                    \item HTTP status codes indicate the result of a request (e.g., 200 OK, 404 Not Found, 500 Internal Server Error).
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{SOAP APIs}
+    
+    SOAP APIs use the SOAP protocol for communication, which involves XML-based messaging and strict standards.
+    
+    \begin{highlight}[SOAP APIs]
+        Key concepts of SOAP APIs include:
+        
+        \begin{itemize}
+            \item \textbf{XML Messaging}:
+                \begin{itemize}
+                    \item SOAP messages are encoded in XML.
+                \end{itemize}
+            \item \textbf{WSDL (Web Services Description Language)}:
+                \begin{itemize}
+                    \item A format for describing the network services as a set of endpoints operating on messages.
+                \end{itemize}
+            \item \textbf{Transport Protocols}:
+                \begin{itemize}
+                    \item Can operate over a variety of lower-level protocols, including HTTP, SMTP, and more.
+                \end{itemize}
+            \item \textbf{Security and Reliability}:
+                \begin{itemize}
+                    \item Supports features like WS-Security for secure messaging.
+                    \item Reliable messaging ensures that messages are delivered once and only once.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{JSON and XML}
+    
+    JSON (JavaScript Object Notation) and XML (eXtensible Markup Language) are popular formats for structuring data exchanged between systems.
+    
+    \begin{highlight}[JSON and XML]
+        Key points about JSON and XML include:
+        
+        \begin{itemize}
+            \item \textbf{JSON}:
+                \begin{itemize}
+                    \item A lightweight data interchange format, easy for humans to read and write, and easy for machines to parse and generate.
+                    \item Uses key-value pairs, arrays, and a limited set of data types (strings, numbers, booleans, null, arrays, objects).
+                    \item Example:
+                    \begin{verbatim}
+                    {
+                        "name": "John Doe",
+                        "age": 30,
+                        "isStudent": false,
+                        "courses": ["Math", "Science"]
+                    }
+                    \end{verbatim}
+                \end{itemize}
+            \item \textbf{XML}:
+                \begin{itemize}
+                    \item A markup language that defines rules for encoding documents in a format that is both human-readable and machine-readable.
+                    \item Uses a tree structure with elements and attributes.
+                    \item More verbose than JSON but supports a broader range of data types and structures.
+                    \item Example:
+                    \begin{verbatim}
+                    <person>
+                        <name>John Doe</name>
+                        <age>30</age>
+                        <isStudent>false</isStudent>
+                        <courses>
+                            <course>Math</course>
+                            <course>Science</course>
+                        </courses>
+                    </person>
+                    \end{verbatim}
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for understanding Web APIs, protocols, JSON, and XML.
+        
+        \begin{itemize}
+            \item \textbf{Web API Basics}:
+                \begin{itemize}
+                    \item Definitions, purposes, and common protocols (HTTP/HTTPS, REST, SOAP, GraphQL).
+                \end{itemize}
+            \item \textbf{RESTful and SOAP APIs}:
+                \begin{itemize}
+                    \item REST: HTTP methods, statelessness, resources, and status codes.
+                    \item SOAP: XML messaging, WSDL, transport protocols, and security.
+                \end{itemize}
+            \item \textbf{Data Formats}:
+                \begin{itemize}
+                    \item JSON: Lightweight, key-value pairs, easy to parse.
+                    \item XML: Markup language, elements and attributes, human and machine-readable.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Introduction to Documentation}
+
+    Documentation is an essential part of software development, providing a detailed description of the system, its components, and how to use and maintain it. Good documentation ensures that the 
+    system is understood by developers, users, and stakeholders.
+    
+    \begin{highlight}[Introduction to Documentation]
+        Key points about Documentation include:
+        
+        \begin{itemize}
+            \item \textbf{Definition}: Documentation provides detailed information about a system's architecture, functionality, and usage.
+            \item \textbf{Purpose}:
+                \begin{itemize}
+                    \item Ensures that the software can be understood, maintained, and used effectively.
+                    \item Facilitates communication among developers, users, and stakeholders.
+                    \item Serves as a reference guide for future development and troubleshooting.
+                \end{itemize}
+            \item \textbf{Types of Documentation}:
+                \begin{itemize}
+                    \item \textbf{User Documentation}: Guides users on how to use the software.
+                    \item \textbf{Developer Documentation}: Provides technical details necessary for understanding and maintaining the code.
+                    \item \textbf{API Documentation}: Explains how to use an API, including available endpoints, parameters, and response formats.
+                    \item \textbf{Technical Documentation}: Includes system architecture, design decisions, and technology stack information.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{User Documentation}
+    
+    User documentation is created to help end-users understand how to operate the software and make the best use of its features.
+    
+    \begin{highlight}[User Documentation]
+        Key points about user documentation include:
+        
+        \begin{itemize}
+            \item \textbf{Types of User Documentation}:
+                \begin{itemize}
+                    \item \textbf{User Manuals}: Provide step-by-step instructions on using the software.
+                    \item \textbf{Installation Guides}: Explain how to install and configure the software.
+                    \item \textbf{FAQs}: Address common questions and issues users might encounter.
+                \end{itemize}
+            \item \textbf{Best Practices}:
+                \begin{itemize}
+                    \item Use clear and concise language.
+                    \item Include screenshots and examples to illustrate steps.
+                    \item Organize content logically and use a table of contents for easy navigation.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Developer Documentation}
+    
+    Developer documentation provides technical details necessary for understanding, maintaining, and extending the software codebase.
+    
+    \begin{highlight}[Developer Documentation]
+        Key points about developer documentation include:
+        
+        \begin{itemize}
+            \item \textbf{Types of Developer Documentation}:
+                \begin{itemize}
+                    \item \textbf{Code Comments}: Inline explanations within the code to clarify its functionality.
+                    \item \textbf{Architecture Diagrams}: Visual representations of the system's structure.
+                    \item \textbf{Setup Guides}: Instructions for setting up the development environment.
+                    \item \textbf{Contribution Guidelines}: Provide rules and best practices for contributing to the codebase.
+                \end{itemize}
+            \item \textbf{Best Practices}:
+                \begin{itemize}
+                    \item Keep documentation up-to-date with code changes.
+                    \item Write documentation as code is developed to avoid gaps.
+                    \item Use version control to track changes in documentation.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{API Documentation}
+    
+    API documentation explains how to use an API, providing details about available endpoints, parameters, request methods, and response formats.
+    
+    \begin{highlight}[API Documentation]
+        Key points about API documentation include:
+        
+        \begin{itemize}
+            \item \textbf{Contents of API Documentation}:
+                \begin{itemize}
+                    \item \textbf{Endpoints}: Descriptions of the available API endpoints and their URLs.
+                    \item \textbf{Request Methods}: HTTP methods (GET, POST, PUT, DELETE) supported by each endpoint.
+                    \item \textbf{Parameters}: Required and optional parameters for API requests.
+                    \item \textbf{Response Formats}: Details of the data returned by the API, including status codes and error messages.
+                    \item \textbf{Authentication}: Information on how to authenticate API requests.
+                \end{itemize}
+            \item \textbf{Best Practices}:
+                \begin{itemize}
+                    \item Provide example requests and responses for each endpoint.
+                    \item Clearly document any limitations or rate limits.
+                    \item Use tools like Swagger or Postman for interactive documentation.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Technical Documentation}
+    
+    Technical documentation covers the architecture, design decisions, and technology stack of the system, serving as a guide for future maintenance and development.
+    
+    \begin{highlight}[Technical Documentation]
+        Key points about technical documentation include:
+        
+        \begin{itemize}
+            \item \textbf{Contents of Technical Documentation}:
+                \begin{itemize}
+                    \item \textbf{System Architecture}: Overview of the system's components and their interactions.
+                    \item \textbf{Design Decisions}: Rationale behind key design choices.
+                    \item \textbf{Technology Stack}: Description of the technologies and frameworks used.
+                    \item \textbf{Data Models}: Diagrams and descriptions of the system's data structures.
+                    \item \textbf{Deployment Guides}: Instructions for deploying the software in different environments.
+                \end{itemize}
+            \item \textbf{Best Practices}:
+                \begin{itemize}
+                    \item Maintain accuracy and clarity in documentation.
+                    \item Update documentation regularly to reflect changes in the system.
+                    \item Use diagrams and visual aids to enhance understanding.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section encapsulates the main ideas and practices essential for creating and maintaining effective documentation.
+        
+        \begin{itemize}
+            \item \textbf{Types of Documentation}:
+                \begin{itemize}
+                    \item User, Developer, API, and Technical Documentation.
+                \end{itemize}
+            \item \textbf{Best Practices for Documentation}:
+                \begin{itemize}
+                    \item Clarity, conciseness, and up-to-date information.
+                    \item Use of visual aids and examples to enhance understanding.
+                    \item Regular updates to match system changes and version control.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}

@@ -1,0 +1,4 @@
+<div onmouseover="toggle('clue_FJ', 'clue_FJ_r', 'clue_FJ_stuck')" onmouseout="toggle('clue_FJ_r', 'clue_FJ', 'clue_FJ_stuck')" onclick="togglestick('clue_FJ_stuck')">
+    <td id="clue_FJ" class="clue_text">Only "M·A·S·H" regular to really serve in Korea, he also served in "AfterMASH"</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;">[ERRATUM: M*A*S*H is rendered with asterisks, not interpuncts.]<table><tr><td class="wrong">Guy</td><td rowspan="2" valign="top">Who is Harry Morgan</td></tr><tr><td>$2,200</td></tr><tr><td class="wrong">Mary</td><td rowspan="2" valign="top">Who is Alan Alda?</td></tr><tr><td>$1,600</td></tr><tr><td class="right">Bob</td><td rowspan="2" valign="top">Who is Jamie Farr</td></tr><tr><td>$4,400</td></tr></table><em class="correct_response">Jamie Farr</em></td>
+<var id="clue_FJ_stuck"></var>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - CSPB 3308 Lab 6</title>
+    <style>
+        nav a {
+            color: #41d6c0;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav style="text-align: center;">
+        <a href="{{ url_for('index') }}">Index</a>
+        <a href="{{ url_for('hello') }}">Hello</a>
+        <a href="{{ url_for('project') }}">Projects</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <br>
+        <a href="{{ url_for('user', username='tala4156') }}">User</a>
+        <a href="{{ url_for('post', post_id='1') }}">Post</a>
+        <a href="{{ url_for('subpath', subpath='a_sub_path') }}">Subpath</a>
+        <br>
+        <a href="{{ url_for('static_text') }}">Static Text</a>
+        <a href="{{ url_for('static_html') }}">Static HTML</a>
+        <a href="{{ url_for('dynamic_list') }}">Dynamic List</a>
+        <br>
+        <a href="{{ url_for('login') }}">Log In Form</a>
+        <form action="{{ url_for('login') }}" method="post" style="display:inline;">
+            <button type="submit">Log In</button>
+        </form>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

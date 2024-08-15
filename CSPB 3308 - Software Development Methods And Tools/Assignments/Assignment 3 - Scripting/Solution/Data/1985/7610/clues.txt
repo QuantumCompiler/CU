@@ -1,0 +1,102 @@
+    <td id="clue_DJ_1_1" class="clue_text">In 622, he was driven out of Mecca &amp; fled to Medina</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;">(Larry: Who was Buddha?)<br /><br /><em class="correct_response">Muhammad</em><br /><br /><table width="100%"><tr><td class="right">Bob</td><td class="wrong">Larry</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">John Milton was member of Puritan govt. which ruled England under leadership of this man</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;">(Larry: Who is King John?)<br /><br /><em class="correct_response">Oliver Cromwell</em><br /><br /><table width="100%"><tr><td class="right">Bob</td><td class="wrong">Larry</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Country besides Israel that was part of Britain's Palestine mandate</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;">(Bob: What is Lebanon?)<br /><br /><em class="correct_response">Jordan</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">Nickname of Prince Henry of Portugal who sponsored over 50 exploratory voyages but didn't go on any</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Prince Henry the Navigator</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">To start a new industry, 6th c. missionaries smuggled mulberry seeds &amp; these eggs out of China</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">the silk industry (silkworm eggs)</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Actor who turned down '73 Oscar to protest treatment of Indians</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Marlon Brando</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">19th C. Plains Ind. Ghost Dance religion promised disappearance of Whites &amp; return of these animals</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">buffalo (or bison)</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Their name is said to derive from rubbing their moccasins in ashes</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Blackfeet</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">State whose name comes from 2 Choctaw words meaning "red people"</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Bob: What is Alabama?)<br /><br /><em class="correct_response">Oklahoma</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">When the pilgrims got to America, they met this English-speaking Indian who had lived in England</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Bob: Who was Sasquatch?)<br />(Larry: Who was Sequoyah?)<br /><br /><em class="correct_response">Squanto</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="wrong">Larry</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Captain Ahab died harpooning him</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Moby Dick</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Elwood P. Dowd's bosom bunny</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;">(Larry: Who was Bugs Bunny?)<br /><br /><em class="correct_response">Harvey</em><br /><br /><table width="100%"><tr><td class="right">Bob</td><td class="wrong">Larry</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Mark Twain's foreman from Bridgeport, played on screen by Will Rogers &amp; Bing Crosby</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Sandra: Who is... uh...)<br />(Bob: Who was uh, uh, Yankee<span class="nobreak">--</span>American Yankee in, uh<span class="nobreak">--</span>[*]?)<br /><br /><em class="correct_response">Connecticut Yankee in King Arthur's Court</em><br /><br /><table width="100%"><tr><td class="right">Bob</td><td class="wrong">Sandra</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">He ran away from home the day he was born because he heard his parents talking about his future as a man</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;">(Larry: Who was Pip?)<br /><br /><em class="correct_response">Peter Pan</em><br /><br /><table width="100%"><tr><td class="wrong">Larry</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">The twins Louis &amp; Lucien de Franchi were the title characters of this Dumas tale</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Bob: Who is <i>The Man in the Iron Mask</i>?)<br /><br /><em class="correct_response"><i>The Corsican Brothers</i></em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Milan is noted for this thick vegetable soup</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">minestrone</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">In 1937 NBC formed a symphony orchestra for this great Italian conductor to direct</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Toscanini</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">These radical terrorists oppose all political parties, even the Communists</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;">(Bob: Who are the Red Guard?)<br /><br /><em class="correct_response">the Red Brigade</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Artisans of the Venetian islands of Murano are famed for working with this substance</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">(Bob: What is plaster?)<br /><br /><em class="correct_response">glass</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">40% of Italy's people live in this river valley</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">the Po</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">His first phone call went "Mr. Watson, come here; I want you!"</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Alexander Graham Bell</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">In 1971, she became 1st woman tennis player to earn $100,000 in one year</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Billie Jean King</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">He starred as Starsky</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Paul Michael Glaser</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">To the Samoans, who called him "Tusitala", or teller of tales, he was a real "Island Treasure"</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Robert Louis Stevenson</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">Desperate to get this animal trainer, "Ringling" bought entire German circus for $2 million</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Larry: Ooh.)<br />(Bob: Who was Hans Gunter?)<br />...<br />(Alex: That was the idea of the category. First middle, and last names. Less than a minute to go in the round.)<br /><br /><em class="correct_response">Gunther Gebel-Williams</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="wrong">Larry</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">In 1553, she became 1st woman to be crowned Queen of England</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="wrong">Sandra</td><td rowspan="2" valign="top">Who was Elizabeth I?</td></tr><tr><td>$0</td></tr><tr><td class="wrong">Bob</td><td rowspan="2" valign="top">Who was Elizabeth I</td></tr><tr><td>$500</td></tr></table><em class="correct_response">Mary (Bloody Mary/Mary Tudor)</em></td>
+    <td id="clue_J_1_1" class="clue_text">Second in command to the captain</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;">(Bob: What is the [**]?)<br />[Bob was originally ruled incorrect, but the ruling was overturned before the start of Double Jeopardy!]<br /><br /><em class="correct_response">first mate (executive officer accepted)</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">From Old English for "steering oar" &amp; "ship's side", it's the right side of the ship</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;">(Bob: What is the port?)<br /><br /><em class="correct_response">starboard</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Ship in the <a href="https://www.j-archive.com/media/1985-05-17_J_04.mp3">following</a>:<br /><br /><i>"...he got drunk /<br />And broke in the Captain’s trunk /<br />The constable had to come and take him away..."</i></td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">the sloop <i>John B</i></em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Though the Confederates had the "Hunley", the "Holland", launched in 1898, was the 1st of this type in U.S. Navy</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">a submarine</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">Spain's "Invincible Armada" was made up of these vincible treasure ships</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">galleons</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">If Washington had left a tooth under his pillow, she might have left a wooden nickel</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">tooth fairy</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Another name for a fairy, or a Coca-Cola product with "Lymon"</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Sprite</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">It was she, not the prince, who really gave Cinderella the night to remember</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Fairy Godmother</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Wish the Blue Fairy granted Geppetto</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">that his wooden doll would become his son (that Pinocchio would become a real boy)</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">This Jeannie C. Riley hit sold 6 million records</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">"The Harper Valley P.T.A."</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">Expelled from a Bible school at age 15, this country-rock star is known as "The Killer"</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;">(Sandra: Who is my favorite, [*]?)<br /><br /><em class="correct_response">Jerry Lee Lewis</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">A Rhodes scholarship paid "For the Good Times" he had at Oxford</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Kris Kristofferson</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Though he's the son of Hank Snow, "The Singing Ranger", he's named after "The Singing Brakeman"</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;">(Sandra: Who is Hank Smith?)<br />(Bob: Who is Casey?)<br /><br /><em class="correct_response">Jimmie Rodgers</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="wrong">Sandra</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">According to Johnny Horton, "When it's springtime in Alaska" it's this temperature</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Sandra: What is 0?)<br /><br /><em class="correct_response">40 below</em><br /><br /><table width="100%"><tr><td class="wrong">Sandra</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">It makes M.A.D.D. members mad</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;">(Larry: What are alcoholics?)<br />(Alex: Be more specific.)<br />(Larry: Who are Mothers Against [*]?)<br /><br /><em class="correct_response">drunk drivers (drinking and driving)</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">St. Paul wrote to Timothy: "Drink no longer water but use a little" of this "for thy stomach's sake"</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">wine</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">A tall cocktail of rum, liqueur &amp; fruit juice, or a walking corpse</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;">(Alex: You feel like a walking corpse, by the way, after you drink a couple of these.)<br /><br /><em class="correct_response">a zombie</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">Eastern European country in which Tokay wine originated</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;">(Bob: What is Bulgaria?)<br />...<br />(Alex: Less than a minute to go in the round.)<br /><br /><em class="correct_response">Hungary</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">Nickname of British admiral Vernon who watered down sailors' liquor rations</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Grog</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">Fortunately, God must have had a 2nd copy of these lying around because Moses smashed the first</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Ten Commandments</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Precedes ray, rated, &amp; marks the spot</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">X</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">A piece of paper signed to represent a debt</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">IOU</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">1930 Peter Lorre film directed by Fritz Lang</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Larry: What is U-Boat?)<br /><br /><em class="correct_response"><i>M</i></em><br /><br /><table width="100%"><tr><td class="wrong">Larry</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">The 15th &amp; 16th letters, or a Mayberry youth</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">OP (Opie)</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">The only letter not present in the spellings of any of the fifty states</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Bob: What is X?)<br />(Sandra: What is...euh?)<br /><br /><em class="correct_response">Q</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Larry</td><td class="wrong">Sandra</td></tr></table></td>

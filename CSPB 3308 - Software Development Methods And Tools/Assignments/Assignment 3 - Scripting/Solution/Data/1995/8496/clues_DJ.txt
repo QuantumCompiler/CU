@@ -1,0 +1,112 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">This exploration partner of William Clark may have been murdered outside Hohenwald, Tennessee in 1809</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">(Meriwether) Lewis</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">In 1975 Congress posthumously restored this Confederate commander's U.S. citizenship</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Robert E. Lee</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">In 1795 this orator turned down an offer to become Chief Justice of the Supreme Court</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Patrick Henry</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">In the 1930s this aviator collaborated with Dr. Alexis Carrel to develop an artificial heart</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">(Charles) Lindbergh</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">He organized the Social Democratic Party of America in 1897 &amp; was its candidate for president in 1900</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">(Eugene) Debs</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">This Roman governor of Judea sentenced Jesus to die on the cross</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Pontius Pilate</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">It's the state religion of Qatar</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Islam</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">On March 14, 1644, this clergyman received a charter for Rhode Island</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">(Roger) Williams</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Deities in this native Chinese religion include the Jade Emperor &amp; the Empress of Heaven</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(June: What's Confucism?)<br /><br /><em class="correct_response">Taoism</em><br /><br /><table width="100%"><tr><td class="wrong">June</td><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">In Hinduism the many-armed goddess Kali is the wife of this god</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Shiva (the Destroyer)</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">The Emperor &amp; the Adelie are among species of this bird that breed in Antarctica</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">the penguin</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Gordon, Irish &amp; English are breeds of this type of dog</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Setters</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">This species of rattlesnake found in the southeastern U.S. is the heaviest of all poisonous snakes</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">the diamondback</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">This narrow-snouted crocodilian of Asia is in danger of extinction</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Ed: What is a caiman?)<br />(Pete: What is a gavilán?)<br />...<br />[The end-of-round signal sounds.]<br />(Alex: Gavilán, I believe, is Spanish for hawk.)<br /><br /><em class="correct_response">a gavial</em><br /><br /><table width="100%"><tr><td class="wrong">Ed</td><td class="wrong">Pete</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Jacques-Louis David went into exile after the fall of this emperor whom he'd served as court painter</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Napoleon Bonaparte</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">Manet's painting "Combat of the Kearsarge and the Alabama" depicts a naval battle of this American war</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Civil War</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">His 1886 painting "The Lighthouse at Honfleur" displays his famous pointillist technique</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">(Georges) Seurat</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">He painted the weeping willows at Giverny circa 1918</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">(Claude) Monet</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">This artist's 1910 still life "Violin and Pitcher" is a fine example of analytic cubism</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;">(Pete: Who is Picasso?)<br />...<br />(Alex: We have a minute to go, Ed.)<br /><br /><em class="correct_response">Georges Braque</em><br /><br /><table width="100%"><tr><td class="wrong">Pete</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">This state's section of the road from Centerville to Terre Haute was built in the 1830s</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Indiana</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">In 1822 Congress voted to put these on the road to finance repairs but Monroe vetoed the bill</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">toll booths</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">In helping conceive the project in 1806, this president saw it as a road stretching to the Mississippi</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Jefferson</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">The road began in the city of Cumberland in this state</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Maryland</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">After 591 miles, the road terminated in Vandalia, a former capital of this state</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Illinois</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">A person who possesses unusual powers of deduction is called this, after a certain Mr. Holmes</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">a Sherlock</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Narrow-minded people may be called these, after the tiny, petty people in "Gulliver's Travels"</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Lilliputians</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">In "Pilgrim's Progress", worldly pleasures are sold at this fair, later the title of an 1848 novel</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Vanity Fair</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">Cynical humor is called pantagruelism in honor of this Frenchman's novel "Gargantua and Pantagruel"</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Ed: Who is Voltaire?)<br /><br /><em class="correct_response">(François) Rabelais</em><br /><br /><table width="100%"><tr><td class="wrong">Ed</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

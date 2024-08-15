@@ -1,0 +1,112 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">Per Article II Luke Perry can become president in 2001, since he'll be this age</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">35</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">The president has the power to make these agreements, "provided two-thirds of the senators present concur"</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Treaties</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Article 3 may have soothed the Arnolds by saying this crime doesn't taint the offender's family</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;">(Judy: Who is Benedict Arnold?)<br />(Alex: You lost the sense of the clue there.)<br /><br /><em class="correct_response">treason</em><br /><br /><table width="100%"><tr><td class="wrong">Judy</td><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">The name of this tax regulated by the 24th Amendment doesn't refer to voting; it's a synonym for head</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Poll tax</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">The Constitution uses this 3-word Latin term for laws banning an action retroactively</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Ex post facto</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">The collaboration between this man &amp; W.K.L. Dickson led to the production of the kinetoscope in 1894</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Thomas Edison</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">It was discovered that these, which share their name with insect parts, improved radio reception</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Antennas</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Whitcomb Judson's "clasp locker" of 1893 was this fastener's forerunner</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Zipper</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">By 1897 this German had perfected his alternative to the Otto gasoline engine</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Alex: But I bet you can't give me his first name!)<br /><br /><em class="correct_response">Rudolf Diesel</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Edward Acheson failed when he tried to form these, but he did create carborundum</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Diamonds</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Elmo Lincoln was the 1st to play this film character as an adult; he was later played by Weissmuller</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Tarzan</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">A host of "Break the Bank", he's best known as the former singing host of the Miss America pageant</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;">(Alex: We've got about a minute left.)<br /><br /><em class="correct_response">Bert Parks</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">In 1945's "The Story Of G.I. Joe", Burgess Meredith played this war correspondent</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Ernie Pyle</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">In 1998 Liam Neeson portrayed this Victorian author's downfall in Broadway's "The Judas Kiss"</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Oscar Wilde</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">Singer Bill Withers &amp; this saxophonist had a hit with 1981's "Just The Two Of Us"</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">Grover Washington, Jr.</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">This Tibetan's resume includes:  1992 - Guest Editor, French Vogue; 1989 - Nobel Peace Prize</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Dalai Lama</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">For its Christmas 1993 issue, French Vogue tapped this South African leader to guest edit</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Nelson Mandela</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">The October 1996 issue of England's Prima was edited by this prime minister's wife, Cherie</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Tony Blair</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">In the 1940s Bobby "Blue" Bland &amp; B.B. King were in the Beale Streeters, a blues group in this city</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Memphis</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">This blues empress' "Down Hearted Blues" sold 780,000 copies, restoring the ailing Columbia Records</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;">(Judy: Who is Billie Holiday?)<br /><br /><em class="correct_response">Bessie Smith</em><br /><br /><table width="100%"><tr><td class="wrong">Judy</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">Sonny Terry played this instrument, also called the blues harp, in a whooping style</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;">(Alex: Quite often with <br />Brownie McGhee.)<br /><br /><em class="correct_response">Harmonica</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">McKinley Morganfield played in a creek as a child &amp; was given this nickname</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;">(J: I bet it was Muddy Waters; who is Muddy Waters?)<br />(Alex: Whoa-oh, good thing you remembered to phrase it in the form of a question!)<br /><br /><em class="correct_response">"Muddy Waters"</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">Said to have sold his soul to the Devil for his guitar skills, he recorded only 29 songs &amp; died at age 27</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Robert Johnson</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">"Touch"y golden guy<br />             (5)</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">King Midas</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">Quicksilver<br />messenger<br />           (7)</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mercury</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Hair today, snakes tomorrow<br />            (6)</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Medusa</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">Jason pulled the wool over her eyes<br />             (5)</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Medea</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">Helen's hubby<br />            (8)</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Menelaus</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>

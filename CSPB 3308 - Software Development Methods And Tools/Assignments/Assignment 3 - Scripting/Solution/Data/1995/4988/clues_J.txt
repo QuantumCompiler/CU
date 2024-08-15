@@ -1,0 +1,120 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">Popular food types of this mollusk include jacknife &amp; steamer</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">clam</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">The African species of this is the largest animal in the order Proboscidea</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">elephant</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">This animal native to China serves as the symbol of the World Wildlife Fund</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">giant panda</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">The family of Pongidae, or great apes, includes the bonobo, gorilla, orangutan &amp; this ape</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">chimpanzee</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">In the 1970s the long-haired Somali cat was recognized as a distinct breed, not a version of this one</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;">(Ed: What is a Persian?)<br /><br /><em class="correct_response">Abyssinian</em><br /><br /><table width="100%"><tr><td class="wrong">Ed</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Her father, John, was directing "The African Queen" when she was born in 1951</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Anjelica Huston</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Before breaking into show biz, this actress who played Rebecca on "Cheers" was an interior decorator</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;">(Mark: Who is Shelley Long?)<br /><br /><em class="correct_response">Kirstie Alley</em><br /><br /><table width="100%"><tr><td class="wrong">Mark</td><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">This handsome actor whom Leslie Caron fell for in "Gigi" appeared in the 1982 movie "Swamp Thing"</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Louis Jourdan</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">In 1991 these 2 British sisters starred in a TV remake of "Whatever Happened to Baby Jane?"</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(Ed: Who are the [*] sisters?)<br /><br /><em class="correct_response">(Vanessa & Lynn) Redgrave</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">In the 1930s he played the title roles of "Louis Pasteur", "Emile Zola" &amp; "Scarface"</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Paul Muni</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">When sliced crosswise, a carambola resembles a 5-pointed one of these</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">star</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">Feijoa fruit resembles this New Zealand product but has no fuzz</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">kiwi</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">Laver, a type of seaweed eaten in Ireland &amp; Wales, is called nori in this country</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Japan</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">In this Middle East country, the prickly pear is called sabra, like the country's native-born citizens</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Israel</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">This Chinese fruit, sometimes called a "nut" is related to the longan</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">litchi</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">In March 1837 Congress expanded the Supreme Court from 7 to this many judges</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">9</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Gen. Lewis Hershey presided over this U.S. draft agency 1941-1946 &amp; 1948-1970</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Selective Service</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">McKinley campaigned for president promising "a full" one of these</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">dinner pail</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">On a 1923 trip to Alaska, this president was presented with a moose-hide collar for his dog Laddie Boy</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Harding</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">In 1630 the village of Shawmut, Massachusetts changed its name to this</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Boston</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">Also called trotyl &amp; tolite, trinitrotoluene is best known by these initials</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">TNT</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">The first commercial use of this type of explosive was in a gas field in 1967; it yielded 26 kilotons</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">nuclear weapon</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">This was first prepared in 1846 by Ascanio Sobrero, who added glycerol to nitric &amp; sulfuric acids</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">nitroglycerine</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">Besides inventing dynamite, he perfected a detonator for it</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Alfred Nobel</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">C-4 &amp; A-3 are types of this moldable military explosive</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">plastic explosive</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Basilicata is a rural region in the ankle &amp; instep of this country's boot</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Italy</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">The Keeshond, which often lives on barges is considered the national dog of this low country</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Netherlands</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">Rousillonnais, a dialect of Catalan, is spoken in Rousillon in this country</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Mark: What is Spain?)<br /><br /><em class="correct_response">France</em><br /><br /><table width="100%"><tr><td class="wrong">Mark</td><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">You can see remains of a palace built by Vlad the Impaler in this Romanian capital</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;">(Jim: What is Budapest?)<br /><br /><em class="correct_response">Bucharest</em><br /><br /><table width="100%"><tr><td class="wrong">Jim</td><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">Jurmala is a popular seaside resort near this capital of Latvia</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Riga</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>

@@ -1,0 +1,120 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">Antonio Stradivari learned to make this instrument in the Amati family workshop in Cremona, Italy</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">the violin</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">9th c. Europeans, notably the Irish, added the pillar that runs parallel to this instrument's strings</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">the harp</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">This brass instrument used to give military signals has no valves</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">the bugle</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">The quinto is the highest-pitched type of this large, cylindrical Latin American drum</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">a conga drum</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">This instrument consists of a chanter, drones &amp; an air reservoir</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">the bagpipes</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">In 1993 Dave Wannstedt replaced Mike Ditka as this team's coach</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Chicago Bears</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">In Russia in 1994, she ran off with her third Goodwill Games heptathlon title</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Jackie Joyner-Kersee</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">It's the nickname of pro golfer Frank Zoeller</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Fuzzy</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">In 1920, after winning 20 of 21 races, this "Big Red" thoroughbred was retired</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Man O' War</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">L.A. Dodger Glenn Burke is credited with originating this congratulatory gesture in 1977</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">the high-five</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">About 75% of its people, including most of its Maoris, live on its North Island</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">New Zealand</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">A new museum in Yokohama traces the history of ramen, this food</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">noodles</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">In Serbo-Croatian the name of this Italian port is spelled T-R-S-T; maybe you should buy a vowel</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Trieste</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Residents of this Italian fashion city call its cathedral "The Factory", as building has gone on since 1386</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Milan</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">The chief tributary of this "colorful" river is the Vaal River</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(James: What's the Danube?)<br />...<br />(James: I was thinking blue.)<br /><br /><em class="correct_response">the Orange River</em><br /><br /><table width="100%"><tr><td class="wrong">James</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">The Hamlin variety of this fruit has more vitamin C by weight than the Valencia or navel</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">the orange</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">The fava type of this resembles the lima but many find it more flavorful</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">the bean</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Add vinegar or lemon juice when cooking this root vegetable to keep its beautiful crimson color</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">the beet</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">While growing, this vegetable looks like many small heads of cabbage on a tall, thick stalk</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Brussels sprouts</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">India grows more of this fruit that's used in chutney than any other</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">the mango</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">On accepting his Emmy for "Family Ties" in 1986, he said, "I feel four feet tall!"</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Michael Fox</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">In the summer of 1978, Andy Rooney began his weekly musings on this series</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>60 Minutes</i></em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">Buck is the Bundy family dog on this Fox series</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Married... with Children</i></em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">On Sept. 12, 1959 this hour-long NBC series became the first Western to be televised in color</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Bonanza</i></em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">In the 1974 "ABC Theatre" presentation of "The Missiles of October", this actor portrayed JFK</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">William Devane</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Pam peruses this before she goes on a trip</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">the map (from Pam)</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">If you want your boss to give you one, arise &amp; ask for it</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">a raise (from arise)</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">A successful ceramicist should never stop throwing these</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">pots (from stop)</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">It's how often Lydia reads the newspaper</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">daily (from Lydia)</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">Many women use this mascara applicator at dawn</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">the wand (from dawn)</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>

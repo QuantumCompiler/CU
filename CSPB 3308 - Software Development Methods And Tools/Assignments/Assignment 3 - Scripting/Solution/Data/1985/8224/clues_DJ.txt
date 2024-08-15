@@ -1,0 +1,112 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">When excited, this gas glows red, which means our Jeopardy! sign gets excited often</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;">(Alex: You're surrounded by it on this show.)<br /><br /><em class="correct_response">neon</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">From his NJ lab at the turn of the century, he advertised "inventions to order"</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Thomas Edison</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Renaissance anatomist Gabriello Fallopio discovered these human oviducts</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;">(Guy: What are the tear ducts?)<br />...<br />(Alex: A big difference.)<br /><br /><em class="correct_response">the fallopian tubes</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">Number of points where a tangent line touches a curve</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">1</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">The three main parts of the Earth are the lithosphere, the hydrosphere &amp; this</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">the atmosphere</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">The family we learn about in "First Lady from Plains"</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Carters</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">First child born to President or President-elect in office since 1893, he's recently studied in India</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;">(Guy: I can't think of it.)<br /><br /><em class="correct_response">John Kennedy, Jr. (JFK Jr.)</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">This couple is the grandson of one president &amp; the daughter of another</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">David & Julie Eisenhower</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Presidential daughter who's earned good reviews for her books, but once got bad reviews for her singing</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Bob: Who is Truman?)<br />(Alex: Be more specific.)<br /><br /><em class="correct_response">Margaret Truman</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Last name of John, an Ohio farmer who was son of one pres. &amp; father to another</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Guy: What is Adams?)<br /><br /><em class="correct_response">Harrison</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Appropriately, it was Poe's first writing form</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">poetry</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">American director famous for series of Poe films in the early '60s</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;">(Bob: Who is Hitchcock?)<br /><br /><em class="correct_response">Roger Corman</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Last name of twins Roderick &amp; Madeline, together they brought down the house</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Ushers</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">Double relation to Poe of Virginia Clemm</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">cousin & wife</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">Title referring to Prince Prospero's plague party</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Bob: What is "The Cask of Amontillado"?)<br /><br /><em class="correct_response">"The Masque of the Red Death"</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Colors associated with the 2 armies that opposed each other in Russian Civil War</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">red & white</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">Lenin took power promising to pull Russia out of this war</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">World War I</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Fed enough poison to kill a cow, then shot &amp; stabbed, Rasputin finally died of this</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;">(Alex: They shoved him through a hole in the ice.)<br /><br /><em class="correct_response">drowning</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Though they were only a small minority, the Communists took this name which means "majority"</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Bolshevik</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">John Reed's eyewitness account</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Ten Days That Shook the World</i></em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">From 1930-79, he led the Boston Pops</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Arthur Fiedler</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">Boston's largest ethnic group</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;">(Guy: What are [*]?)<br />(Alex: Let's say "Who are [*]?" They don't like to be referred to as "what".)<br /><br /><em class="correct_response">the Irish</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">Both Harvard &amp; M.I.T. are in this Boston suburb</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Cambridge</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">Term for east Indian or Boston elite</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;">(Bob: [No response])<br />[The end-of-round signal sounds.]<br /><br /><em class="correct_response">a Brahmin</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">William Frawley role on "I Love Lucy"</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Fred Mertz</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">"Yabba dabba doo"</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Fred Flintstone</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Noted for sexy lingerie by catalogue, they also operate 194 stores in 34 states</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;">(Alex: And we've got less than a minute to go in the round.)<br /><br /><em class="correct_response">Frederick's of Hollywood</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">Rock 'n' roll star who did <a href="https://www.j-archive.com/media/1985-05-16_DJ_27.mp3">this</a> version of a 1922 jazz hit:<br /><br /><i>"Well, way down yonder in New Orleans / In the land of the dreamy scenes / There's a Garden of Eden, / Ah, you know what I mean"</i></td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;">(Mary: I have no idea.)<br /><br /><em class="correct_response">Freddy Cannon</em><br /><br /><table width="100%"><tr><td class="wrong">Mary</td></tr></table></td>

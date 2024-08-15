@@ -1,0 +1,120 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">This city on Ohio's Scioto River was laid out in 1812</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Columbus</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">Until 1900 Newport &amp; this city were co-capitals of Rhode Island</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Providence</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">The art center in this Iowa capital was designed in the 1940s by Eliel Saarinen</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Des Moines</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Battle Abbey in this city is the headquarters of the Virginia Historical Society</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;">(Benoy: What is... Raleigh?)<br /><br /><em class="correct_response">Richmond</em><br /><br /><table width="100%"><tr><td class="wrong">Benoy</td><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">It's the northernmost state capital in the Rocky Mountains</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;">(Benoy: What is Boise?)<br /><br /><em class="correct_response">Helena (Montana)</em><br /><br /><table width="100%"><tr><td class="wrong">Benoy</td><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">It's affectionately known as Nessie</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Loch Ness Monster</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">It's the name native Tibetans have given to the Abominaible Snowman</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Yeti</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">The simurgh, like the roc, was a giant one of these</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;">(Shawn: What is a dragon?)<br /><br /><em class="correct_response">a giant bird</em><br /><br /><table width="100%"><tr><td class="wrong">Shawn</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">A manticore has a human head, the body of a lion &amp; the tail of this zodiac arachnid</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">a scorpion</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">This monster that lived under a fig tree across from Scylla swallowed &amp; threw up the sea waters 3 times a day</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Charybdis</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">"You can't judge a book by its binding", nor by this</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">its cover</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">It's long been said, "If you want peace, you must prepare" for this</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">war</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">An African proverb says, "Leave a log in the water as long as you like, it will never be" this reptile</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">a crocodile</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Completes the proverb "The spirit is willing, but..."</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">the flesh is weak</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">"No rose without a thorn" &amp; "no garden without" these</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Kristin: What are slugs?)<br />[Laughter]<br /><br /><em class="correct_response">weeds</em><br /><br /><table width="100%"><tr><td class="wrong">Kristin</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">On August 23 a manslaughter charge was filed against the cabbie who killed this "Gone with the Wind" author</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">(Margaret) Mitchell</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Mohammed Reza Pahlavi, shah of this country, was wounded when a reporter fired 5 shots at him</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Iran</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">In this country's first election, David Ben-Gurion's Mapai Party won a large plurality</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Israel</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">April 14 the war crimes tribunal in this German city passed sentence on 19 criminals</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Nuremberg</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">In his January 5 state of the union message, he called for a "Fair Deal"</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Truman</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">It's the device with one pointed leg &amp; a pencil on the other, used to draw circles</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Kristin: What is a protractor?)<br /><br /><em class="correct_response">a compass</em><br /><br /><table width="100%"><tr><td class="wrong">Kristin</td><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">Name for the chord or line that goes through the center</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">the diameter</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">An arc that covers 25% of the circumference measures this many degrees</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">90</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">This part of a circle shares its name with a bone in the arm</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">the radius</em><br /><br /><table width="100%"><tr><td class="right">Shawn</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">Fraction used as a common estimate for pi</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">22/7</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">The Royal<br />Standard, <br />the Jolly Roger, <br />the Stars<br />and Stripes</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">flags</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Art, <br />wax, <br />natural history</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">types of museums</em><br /><br /><table width="100%"><tr><td class="right">Benoy</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">Sudd,<br />Dismal,<br />Okefenokee</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">swamps</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Sheep,<br />blessings,<br />calories</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">things you count</em><br /><br /><table width="100%"><tr><td class="right">Kristin</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">Scottish,<br />Skye, <br />sealyham</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Kristin: What are islands?)<br /><br /><em class="correct_response">different kinds of dogs (terriers)</em><br /><br /><table width="100%"><tr><td class="wrong">Kristin</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

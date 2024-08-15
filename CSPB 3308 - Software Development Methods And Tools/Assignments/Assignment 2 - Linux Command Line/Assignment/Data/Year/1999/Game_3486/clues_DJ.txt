@@ -1,0 +1,120 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">Total number of stars on the U.S. flag in 1957</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;">(G: What is 50?)<br /><br /><em class="correct_response">48</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td><td class="wrong">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">It's the nation whose flag is seen here<br />(think maple leaf)</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Canada</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Israel's flag proudly bears this symbol</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Star of David</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">The flag seen here is used all over the world by this organization</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">United Nations</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">He's the current emperor of the nation whose flag is seen here<br />(Japan)</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(B: Who is Suharto?)<br /><br /><em class="correct_response">Akihito</em><br /><br /><table width="100%"><tr><td class="wrong">Brian</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Although this 16th president rarely went to school, he learned reading, writing &amp; some arithmetic</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Abraham Lincoln</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">This author of "Little Women" received much of her education from her father, Bronson</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Louisa May Alcott</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">This "Scarlet Letter" author injured his foot at age 9 &amp; missed about 2 years of school</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Nathaniel Hawthorne</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Known for his "Common Sense", this revolutionary left school at 13 after refusing to learn Latin</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Brian: Thank You, Mr. James!)<br /><br /><em class="correct_response">Thomas Paine</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Freed from slavery at age 9, this future educator worked in a coal mine while attending school</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Brian: Who is DuBois?)<br /><br /><em class="correct_response">Booker T. Washington</em><br /><br /><table width="100%"><tr><td class="wrong">Brian</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">In <span style="font-weight: bold; color: #000000; background-color: #FFFF66;">1999</span> Disney was in the swing of things with this tale of an orphan raised by apes</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Tarzan</i></em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">This magical nanny liked to travel light, with only an umbrella &amp; a carpetbag</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mary Poppins</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">See Spot, see lots of spots in this 1996 film with Glenn Close</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>101 Dalmatians</i></em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">She's the Indian princess in Neverland who's rescued by Peter Pan</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Tiger Lily</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">In "The Hunchback of Notre Dame", this "G.I. Jane" actress provided the voice of the gypsy Esmeralda</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">Demi Moore</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">It's what a Robin Hood hat has in it, or what Yankee Doodle stuck in his cap</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Feather</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">This knightwear became impractically heavy when it had to be bulletproof</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Armor</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">The unhappy boy seen here is wearing the suit named for this profession</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;">(Alex: Some kids didn't like wearing them; I know I didn't!)<br /><br /><em class="correct_response">Sailor's suit</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">These skirts with a rounded, bell-like shape were popular in Civil War times</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">(Alex: Tough to say &amp; tough to wear!)<br /><br /><em class="correct_response">Hoop skirts</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Beatniks stereotypically wore these tight-collared sweaters, often in black</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Turtlenecks</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">It's the product of the number of days in the week times itself</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">49 (7 X 7)</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">If 2x plus 4 equals 50, x equals this</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">23</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">The perimeter in inches of a square with 11-inch sides</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">44</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">It's the square root of the square root of 16</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">2</em><br /><br /><table width="100%"><tr><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">The number of years in a millennium divided by the number of years in a score</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;">(B: What is 40?)<br /><br /><em class="correct_response">50 (1000/20)</em><br /><br /><table width="100%"><tr><td class="wrong">Brian</td><td class="right">Gerrit</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">This nut is the fruit of the oak tree</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Acorn</em><br /><br /><table width="100%"><tr><td class="right">Brian</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">A book of maps, or an African mountain range you can find in it</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Atlas</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">It's a 9-letter term for your principal foe (we hope you don't have one)</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;">(G: What is an antagonist?)<br /><br /><em class="correct_response">Adversary</em><br /><br /><table width="100%"><tr><td class="wrong">Gerrit</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">It's the job of designing buildings, from schools to stadiums</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Architecture</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">It's the official language of Qatar &amp; Kuwait</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Arabic</em><br /><br /><table width="100%"><tr><td class="right">Marcia</td></tr></table></td>

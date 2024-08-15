@@ -1,0 +1,120 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">"Rip-Rip" is a comic opera about this sleepy head who killed time in the Catskills</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Rip Van Winkle</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">This "Messiah" composer set Dryden's poem "Ode For St. Cecilia's Day" to music</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">George F. Handel</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Franz Liszt's symphony based on this work includes the movements "Inferno" &amp; "Purgatorio"</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;">(Judy: What is Dante's <i>Inferno</i>?)<br />...<br />(Alex: It's one part; it's also known as <i>Dante's Symphony</i>.)<br /><br /><em class="correct_response"><i>The Divine Comedy</i></em><br /><br /><table width="100%"><tr><td class="wrong">Judy</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Bernard Naylor adapted her "Sonnets from the Portuguese" for voice &amp; string quartet</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Elizabeth Barrett Browning</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">This John Bunyan work inspired the one-act opera "The Shepherds of the Delectable Mountains"</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;">(Alex: We have about a minute left.)<br /><br /><em class="correct_response"><i>Pilgrim's Progress</i></em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">The product seen here began its zillion-dollar destiny when introduced by Wham-O in this decade (hula hoop)</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">1950s</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">It's the wacky, but useful product, in use here ("applause" to turn on the lamp)</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">The Clapper</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">If you're lonely, this animal might be perfect for you (ceramic cat that grows hair)</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Chia Pet</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Banned from use in some parades, it's the alliterative name of the wacky product in use here (sprayed out of a can)</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(Melizza: What is Super String?)<br /><br /><em class="correct_response">Silly String</em><br /><br /><table width="100%"><tr><td class="wrong">Melizza</td><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">Japanese term for the "egg" seen here</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Tamagotchi</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">Even though it's the world's second longest river, it still has the world's largest drainage basin</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;">(Miles: What is the Nile?)<br />(Alex: The Nile is the longest river.)<br /><br /><em class="correct_response">Amazon</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td><td class="wrong">Miles</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">The Aare, originating in the Bern canton, is a major river of this country</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Switzerland</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">Rising in the Black Forest, it's the second longest river in Europe</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;">(Melizza: What is the Rhine?)<br /><br /><em class="correct_response">Danube</em><br /><br /><table width="100%"><tr><td class="wrong">Melizza</td><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">You can take a high road or a low road to this, the largest lake in Scotland</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Loch Lomond</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">This lake in Manitoba, Ontario &amp; Minnesota is a remnant of an extinct glacial lake</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Miles: What is Lake Superior?)<br /><br /><em class="correct_response">Lake of the Woods</em><br /><br /><table width="100%"><tr><td class="right">Judy</td><td class="wrong">Miles</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">The standard form of this language developed from that spoken in Amsterdam &amp; nearby cities</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Dutch</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">The Finnish national anthem, "Our Land", is "Maame" in Finnish &amp; "Vart Land" in this other official language</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;">(Miles: What is Lapp?)<br /><br /><em class="correct_response">Swedish</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td><td class="wrong">Miles</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Among the many dialects of this language are Maine, Gallo &amp; Bourbonnais</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">French</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">This major language of the Canary Islands is spoken with what has been called a slight Andalusian accent</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Spanish</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">Of Latvian, Lithuanian, or Estonian, the language not closely related to the other 2</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;">(Miles: What is Lithuanian?)<br /><br /><em class="correct_response">Estonian</em><br /><br /><table width="100%"><tr><td class="right">Judy</td><td class="wrong">Miles</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">In 1988 Michael Crawford picked up a Tony for playing the masked title role in this musical</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Phantom of the Opera</i></em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">The title of this category comes from an oft-said phrase on this classic radio &amp; TV show</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>The Lone Ranger</i></em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">In film he's donned the Riddler's mask &amp; the title mask in "The Mask"</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Jim Carrey</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">The woman seen here fell for &amp; dueled with this masked man in a 1998 film (Catherine Zeta-Jones)</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Zorro</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">A newswire reported this singer, disguised as an Arab woman, shopping in a Munich toy store</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Michael Jackson</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Alicia Silverstone's 1995 breakthrough film</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">"Clueless"</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">"To draw" this is said to have originally referred to a non-winning lottery ticket</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">A blank</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">This phrase for a mind with no empirical knowledge is Latin for "scraped tablet"</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Tabula rasa</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Shakespeare wrote, "There is no darkness but" this; having it "of the law is no excuse"</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Ignorance</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">In the Iran-Contra affair, George Bush was "out of" this, like a Chicago suburbanite</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">The Loop</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>

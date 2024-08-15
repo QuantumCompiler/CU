@@ -1,0 +1,18 @@
+/* Jeopardy font: ITC Korinna */
+body {
+         font-family: Korinna, sans-serif;
+         background-color: #CCA349;
+     }
+
+/* Add a red background color to the text */
+p.RED_TEXT {
+  background-color: red;
+}
+/* Add a red background color to the text */
+p.GREEN_TEXT {
+  background-color: green;
+}
+/* Add a red background color to the text */
+p.BLUE_TEXT {
+  background-color: blue;
+}

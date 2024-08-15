@@ -1,0 +1,120 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">Finnish-born architect Eero Saarinen designed the U.S. embassy in this Norwegian capital</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Oslo</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">The origins of the pagoda are traced back to burial mounds &amp; Buddhist stupas in this large Asian country</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;">(Steven: What is China?)<br />(Tim: What is Mongolia?)<br /><br /><em class="correct_response">India</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td><td class="wrong">Tim</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">This Canton-born architect designed the Everson Museum of Art in Syracuse</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">I.M. Pei</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">James Renwick designed "The Castle", part of this museum complex, in Norman Romanesque style</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Smithsonian</em><br /><br /><table width="100%"><tr><td class="right">Tim</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">A style of architecture was named for this dynasty whose most notable ruler was Charlemagne</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Carolingian</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">He became a rear admiral more than 20 years after surviving the mutiny on the Bounty</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Bligh</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">He was an admiral of the Austrian navy before becoming emperor of Mexico</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Maximilian</em><br /><br /><table width="100%"><tr><td class="right">Tim</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Vice Admiral John M. Poindexter succeeded Robert McFarlane in this post in 1985</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">National Security Advisor</em><br /><br /><table width="100%"><tr><td class="right">Tim</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">He was promoted to rear admiral 9 days after his victory in the Battle of Manila Bay</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Dewey</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">In 1660 this future British king became Lord High Admiral under his brother Charles II</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">James II</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Like "Guillaume Tell", the opera "La Sonnambula" is set in this country</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Switzerland</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Popular in the 1920s &amp; 1930s, the xylorimba is a combination of these 2 musical instruments</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">xylophone & marimba</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">In 1934 he composed variations on "I Got Rhythm" for piano &amp; orchestra</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">George Gershwin</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">This <a href="http://www.j-archive.com/media/1995-06-16_DJ_25.mp3">hit</a> from the 1890s operetta "Robin Hood" later became popular at weddings: <i>instrumental only</i></td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;">(Steven: What is "The Wedding March?")<br /><br /><em class="correct_response">"Oh Promise Me"</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">"Die Meistersinger von Nurnberg" was this composer's only comic opera</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">Richard Wagner</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Like guilder in Dutch, zloty in Polish refers to this metal</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">gold</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">When Kazakhstan issued the tenge in 1993, 1 tenge was equal to 500 of this old currency</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">ruble</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">In 1993 the Czech Republic &amp; this country stopped using the same currency</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Slovakia</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">The currency of this Asian country, home to the world's wealthiest person, is the dollar</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Brunei</em><br /><br /><table width="100%"><tr><td class="right">Tim</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">One part of this island uses the pound; the other, the Turkish lira</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;">(Tim: What is Malta?)<br /><br /><em class="correct_response">Cyprus</em><br /><br /><table width="100%"><tr><td class="wrong">Tim</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">This orphaned daughter of Irish immigrants was just 20 when she became Helen Keller's teacher</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Anne Sullivan</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">Born in Iowa in 1861, this stage star renowned for her beauty was nicknamed "Airy, Fairy Lillian"</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;">(Steven: Who is Lillie Langtry?)<br />(Tim: Who is Lillian Gish?)<br /><br /><em class="correct_response">Lillian Russell</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td><td class="wrong">Tim</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">Margaret Court's sport</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">tennis</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">She's the Queen of the Netherlands Antilles as well as the Queen of the Netherlands</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;">(Steven: Who is Juliana?)<br /><br /><em class="correct_response">Beatrix</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td><td class="right">Tim</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">In 1970, while on tour with the Kirov Ballet, this Russian ballerina defected to the West</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Makarova</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Athos, Porthos, &amp; Aramis make up this famous trio</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Three Musketeers</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">This first James Bond novel is set at a French gambling resort</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Casino Royale</i></em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">This Pulitzer Prize-winning novel of 1947 told of the rise &amp; fall of Willie Stark</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>All the King's Men</i></em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">He subtitled his autobiographical novel "Look Homeward, Angel" "A Story of the Buried Life"</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Thomas Wolfe</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">This American's 1860 novel "The Marble Faun" was published in England under the title "Transformation"</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">(Nathaniel) Hawthorne</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>

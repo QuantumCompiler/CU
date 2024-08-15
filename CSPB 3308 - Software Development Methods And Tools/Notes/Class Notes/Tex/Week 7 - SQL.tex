@@ -1,0 +1,256 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{SQL}
+\renewcommand{\SectionTitle}{SQL}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Introduction To Structured Query Language.pdf}{Introduction To Structured Query Language}
+    \item \pdflink{\LecNoteDir NoSQL.pdf}{NoSQL}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=SIjukL9aeQI}{Overview Of Relational Databases}{27}
+    \item \lecture{https://www.youtube.com/watch?v=6xsiqsQGSmo}{Introduction To SQL}{33}
+    \item \lecture{https://www.youtube.com/watch?v=FbeuzHP6iBk}{Database SQL API}{16}
+    \item \lecture{https://www.youtube.com/watch?v=zrCLRC3Ci1c}{Introduction To SQL}{140}
+    \item \lecture{https://www.youtube.com/watch?v=gqvGhxojeRA}{Single Table Query}{17}
+    \item \lecture{https://www.youtube.com/watch?v=n_00XLZ3YMY}{Introduction To SQL}{13}
+    \item \lecture{https://www.youtube.com/watch?v=b3s_U9XPz6c}{Lab 7 - Test Driven Development}{13}
+    \item \lecture{https://www.youtube.com/watch?v=jlwJ3yjNvp8}{Lab 7 - Using Modules In Python}{17}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \link{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-7-QuantumCompiler}{Assignment 7 - SQL And Unit Testing}
+\end{itemize}
+
+\subsection{Project}
+
+The assignment(s) for the project this week is:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/assign/view.php?id=61379}{Project Milestone 4: Web Pages Design}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The topic that is being covered this week is \textbf{SQL}.
+
+\begin{notes}{SQL}
+    \subsection*{Overview}
+
+    SQL (Structured Query Language) is a powerful tool used for managing and manipulating relational databases. It enables users to perform a variety of operations such as creating databases, querying data, updating records, and controlling access to data. Understanding SQL is crucial for anyone working with databases, as it provides the foundation for database management and data analysis.
+    
+    \subsubsection*{Basic SQL Commands}
+    
+    SQL commands are the building blocks for interacting with databases. They allow users to create structures within the database, manipulate data, and retrieve information efficiently.
+    
+    \begin{highlight}[Basic SQL Commands]
+    
+        SQL commands enable the creation, modification, and retrieval of data within databases. These commands are essential for managing database systems effectively.
+        
+        \begin{itemize}
+            \item \textbf{Creating a Database}: This command initializes a new database, which serves as a container for tables and other database objects.
+    \begin{code}[SQL]
+    CREATE DATABASE my_database;
+    \end{code}
+            \item \textbf{Creating a Table}: Tables are the core structures within a database, consisting of rows and columns. This command defines the schema of a table, specifying the data types and constraints for each column.
+    \begin{code}[SQL]
+    CREATE TABLE employees (
+        id INT PRIMARY KEY,
+        name VARCHAR(100),
+        position VARCHAR(50),
+        salary DECIMAL(10, 2),
+        hire_date DATE
+    );
+    \end{code}
+            \item \textbf{Inserting Data}: This command adds new rows to a table. Each value corresponds to a column in the table.
+    \begin{code}[SQL]
+    INSERT INTO employees (id, name, position, salary, hire_date)
+    VALUES (1, 'Alice Smith', 'Developer', 75000.00, '2021-06-15');
+    \end{code}
+            \item \textbf{Querying Data}: SQL queries retrieve data from tables based on specified criteria. The \texttt{SELECT} statement is used to specify the columns to return and any conditions that must be met.
+    \begin{code}[SQL]
+    SELECT * FROM employees;
+    \end{code}
+            \item \textbf{Updating Data}: This command modifies existing data within a table. The \texttt{SET} clause specifies the new values, and the \texttt{WHERE} clause defines the conditions for the update.
+    \begin{code}[SQL]
+    UPDATE employees
+    SET salary = 80000.00
+    WHERE id = 1;
+    \end{code}
+            \item \textbf{Deleting Data}: This command removes rows from a table based on specified conditions.
+    \begin{code}[SQL]
+    DELETE FROM employees
+    WHERE id = 1;
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advanced SQL Concepts}
+    
+    As you become more proficient with SQL, you can utilize advanced features to perform complex data manipulations and analyses. These features include joins, aggregations, and subqueries, which enhance your ability to work with multiple tables and datasets.
+    
+    \begin{highlight}[Advanced SQL Concepts]
+    
+        Advanced SQL techniques allow for sophisticated data manipulation and analysis, enabling users to draw insights from their data efficiently.
+        
+        \begin{itemize}
+            \item \textbf{Joins}: Joins are used to combine rows from two or more tables based on related columns. This is essential when working with normalized databases where data is split across multiple tables.
+    \begin{code}[SQL]
+    SELECT e.name, d.department_name
+    FROM employees e
+    JOIN departments d ON e.department_id = d.id;
+    \end{code}
+            \item \textbf{Aggregations}: Aggregation functions compute a single result from a set of input values. Common functions include \texttt{AVG}, \texttt{COUNT}, \texttt{SUM}, \texttt{MIN}, and \texttt{MAX}.
+    \begin{code}[SQL]
+    SELECT AVG(salary) AS average_salary
+    FROM employees;
+    \end{code}
+            \item \textbf{Subqueries}: Subqueries are nested queries within a larger query. They allow you to perform operations in stages, using the result of one query as input to another.
+    \begin{code}[SQL]
+    SELECT name
+    FROM employees
+    WHERE salary > (SELECT AVG(salary) FROM employees);
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{SQL Data Types and Constraints}
+    
+    Data types define the nature of data that can be stored in a column, while constraints enforce rules on the data, ensuring integrity and validity.
+    
+    \begin{highlight}[SQL Data Types and Constraints]
+    
+        Understanding data types and constraints is crucial for defining robust database schemas that maintain data integrity.
+        
+        \begin{itemize}
+            \item \textbf{Data Types}: SQL provides various data types to store different kinds of data, such as numbers, strings, and dates.
+            \begin{itemize}
+                \item \textbf{INT}: Integer numbers.
+                \item \textbf{VARCHAR(n)}: Variable-length strings up to \texttt{n} characters.
+                \item \textbf{DECIMAL(p, s)}: Fixed-point numbers with precision \texttt{p} and scale \texttt{s}.
+                \item \textbf{DATE}: Date values.
+                \item \textbf{BOOLEAN}: True/False values.
+            \end{itemize}
+            \item \textbf{Constraints}: Constraints enforce rules on the data within columns, helping maintain data integrity and prevent errors.
+            \begin{itemize}
+                \item \textbf{PRIMARY KEY}: Uniquely identifies each row in a table.
+                \item \textbf{FOREIGN KEY}: Enforces referential integrity between tables.
+                \item \textbf{NOT NULL}: Ensures that a column cannot contain NULL values.
+                \item \textbf{UNIQUE}: Ensures all values in a column are distinct.
+                \item \textbf{CHECK}: Validates that values in a column meet a specified condition.
+            \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Transactions}
+    
+    Transactions group multiple SQL operations into a single unit of work, ensuring that all operations are completed successfully before changes are committed to the database. This maintains data integrity, especially in scenarios involving multiple, interdependent operations.
+    
+    \begin{highlight}[Transactions]
+    
+        Transactions ensure that a sequence of operations is completed successfully, maintaining data integrity and consistency.
+        
+        \begin{itemize}
+            \item \textbf{Transaction Example}: In this example, a salary update is applied to all employees in a specific department. The changes are only saved if all operations within the transaction complete successfully.
+    \begin{code}[SQL]
+    BEGIN;
+    UPDATE employees SET salary = salary * 1.10 WHERE department_id = 2;
+    COMMIT;
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Indexing}
+    
+    Indexes improve the speed of data retrieval operations by creating data structures that allow the database to find rows efficiently. They are particularly useful in queries involving large datasets.
+    
+    \begin{highlight}[Indexing]
+    
+        Indexes enhance query performance by allowing faster data retrieval, especially in large tables.
+        
+        \begin{itemize}
+            \item \textbf{Creating an Index}: This example creates an index on the \texttt{salary} column of the \texttt{employees} table, speeding up queries that filter or sort by salary.
+    \begin{code}[SQL]
+    CREATE INDEX idx_salary ON employees (salary);
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comprehensive Query Example}
+    
+    Combining various SQL concepts in a single query allows for powerful data analysis and retrieval, demonstrating the flexibility and capabilities of SQL.
+    
+    \begin{highlight}[Comprehensive Query Example]
+    
+        This query combines multiple SQL concepts, such as joins, subqueries, and aggregations, to retrieve detailed information from the database.
+        
+        \begin{itemize}
+            \item \textbf{Example}:
+    \begin{code}[SQL]
+    SELECT e.name, e.position, d.department_name, e.salary
+    FROM employees e
+    JOIN departments d ON e.department_id = d.id
+    WHERE e.salary > (SELECT AVG(salary) FROM employees)
+    ORDER BY e.salary DESC;
+    \end{code}
+            This query retrieves the names, positions, department names, and salaries of employees whose salaries are above the average, ordered by salary in descending order.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Best Practices}
+    
+    Adhering to best practices in SQL helps ensure efficient, secure, and maintainable database systems.
+    
+    \begin{highlight}[Best Practices]
+    
+        Following best practices in SQL development ensures code quality, efficiency, and maintainability.
+        
+        \begin{itemize}
+            \item Use meaningful and descriptive names for tables and columns.
+            \item Normalize your database to reduce redundancy and improve data integrity.
+            \item Use transactions to ensure that multiple operations succeed together.
+            \item Optimize queries with indexes to enhance performance.
+            \item Regularly back up your database to prevent data loss.
+        \end{itemize}
+    
+    \end{highlight}
+
+    \begin{highlight}[Summary of Key Concepts]
+
+        Key concepts from the overview of SQL:
+        
+        \begin{itemize}
+            \item \textbf{Basic Commands}: Core operations such as \texttt{CREATE}, \texttt{SELECT}, \texttt{INSERT}, \texttt{UPDATE}, and \texttt{DELETE} for managing data.
+            \item \textbf{Advanced Concepts}: Use of joins, aggregations, and subqueries to handle complex queries and data manipulations.
+            \item \textbf{Data Types and Constraints}: Different data types like \texttt{INT}, \texttt{VARCHAR}, and constraints such as \texttt{PRIMARY KEY}, \texttt{FOREIGN KEY}, and \texttt{NOT NULL} to enforce data integrity.
+            \item \textbf{Transactions}: Grouping multiple SQL operations to ensure atomicity and consistency.
+            \item \textbf{Indexing}: Enhancing query performance by creating indexes on frequently accessed columns.
+            \item \textbf{Best Practices}: Recommendations for meaningful naming conventions, database normalization, using transactions, optimizing queries, and regular backups.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}

@@ -1,0 +1,120 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">He gets right to the point, the ear point, in "I Am Spock"</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Leonard Nimoy</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">She tells of life before &amp; after Burt in "My Life in High Heels"</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Loni Anderson</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Her book is "After All", after all, her show's theme song ended "You're gonna make it after all"</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Mary Tyler Moore</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">"Palimpsest" is "A Memoir" by this "Burr" author</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Gore Vidal</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">"A Good Life: Newspapering and Other Adventures" is by this former Washington Post editor</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Ben Bradlee</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Croutons may be substituted for breadcrumbs in this traditional Thanksgiving side dish</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">stuffing</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Joy of Cooking suggests serving slices of this guacamole ingredient with chutney as an hors d'oeuvre</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">avocado</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">Sugar or molasses may be added to this salt &amp; water solution used in pickling</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">brine</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Craig Claiborne uses yellow tomatoes to make a "golden" type of this cold Spanish soup</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">gazpacho</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">Grated for flavoring, it's the thin outer layer of a citrus fruit, or a synonym for gusto</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">zest</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">This American bayou dweller can survive a wider range of temperatures than most other crocodilians</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">alligator</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">For the tuatara, these take 15 months to hatch</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">eggs</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">This largest monitor lizard carries bacteria in its mouth, sometimes making its bite fatal</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Komodo dragon</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">The king snake is this type of snake that kills by coiling around its prey &amp; squeezing</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">constrictor</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">Though called a "toad", this North American desert creature is actually a lizard &amp; subsists mainly on ants</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">horned toad</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">During the Depression in 1932, it exceeded 20%</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">unemployment</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">A magazine, or a French miss</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mademoiselle</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">It's the formal church procedure that declares a person a saint</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;">(Mary: What is sanctification?)<br />(Brock: What is beatification?)<br /><br /><em class="correct_response">canonization</em><br /><br /><table width="100%"><tr><td class="right">Steve</td><td class="wrong">Mary</td><td class="wrong">Brock</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">It's the type of dentist who specializes in treating diseases of the gum &amp; tissues</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">periodontist</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">A public street open at both ends, or any major boulevard</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">thoroughfare</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">Known as the "Say Hey Kid", he played 2,843 games in center field</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Willie Mays</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">This late Green Bay Packers coach has the highest winning percentage in NFL history <span class="nobreak">--</span>- .740</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Vince Lombardi</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">In the 1960s &amp; 1970s, she won 20 Wimbledon titles: 6 singles, 10 doubles &amp; 4 mixed doubles</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Billie Jean King</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">In 1986 at age 46, this "Golden Bear" became the oldest man to win the Masters golf tournament</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Jack Nicklaus</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">A 1951 playoff series homer by Bobby Thomson won the National League pennant for this team</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;">(Mary: Who are the Brooklyn Dodgers?)<br /><br /><em class="correct_response">New York Giants</em><br /><br /><table width="100%"><tr><td class="right">Steve</td><td class="wrong">Mary</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">The third stanza of "Deutschlandlied"</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;">(Mary: What is uber alles?)<br /><br /><em class="correct_response">Germany</em><br /><br /><table width="100%"><tr><td class="right">Steve</td><td class="wrong">Mary</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">"Wilhelmus van Nassouwe"</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;">(Alex: "William of Orange.")<br /><br /><em class="correct_response">the Netherlands</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">"Marcha Real"</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Brock: What is Italy?)<br /><br /><em class="correct_response">Spain</em><br /><br /><table width="100%"><tr><td class="right">Steve</td><td class="wrong">Brock</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">"La Brabanconne"</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;">(Brock: What is France?)<br /><br /><em class="correct_response">Belgium</em><br /><br /><table width="100%"><tr><td class="right">Mary</td><td class="wrong">Brock</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">"Land der Berge, Land am Strome"</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Steve: What is South Africa?)<br /><br /><em class="correct_response">Austria</em><br /><br /><table width="100%"><tr><td class="wrong">Steve</td><td class="right">Mary</td></tr></table></td>

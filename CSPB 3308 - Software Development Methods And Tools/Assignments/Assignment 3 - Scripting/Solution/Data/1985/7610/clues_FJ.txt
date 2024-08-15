@@ -1,0 +1,4 @@
+<div onmouseover="toggle('clue_FJ', 'clue_FJ_r', 'clue_FJ_stuck')" onmouseout="toggle('clue_FJ_r', 'clue_FJ', 'clue_FJ_stuck')" onclick="togglestick('clue_FJ_stuck')">
+    <td id="clue_FJ" class="clue_text">In 1553, she became 1st woman to be crowned Queen of England</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="wrong">Sandra</td><td rowspan="2" valign="top">Who was Elizabeth I?</td></tr><tr><td>$0</td></tr><tr><td class="wrong">Bob</td><td rowspan="2" valign="top">Who was Elizabeth I</td></tr><tr><td>$500</td></tr></table><em class="correct_response">Mary (Bloody Mary/Mary Tudor)</em></td>
+<var id="clue_FJ_stuck"></var>

@@ -1,0 +1,4 @@
+<div onmouseover="toggle('clue_FJ', 'clue_FJ_r', 'clue_FJ_stuck')" onmouseout="toggle('clue_FJ_r', 'clue_FJ', 'clue_FJ_stuck')" onclick="togglestick('clue_FJ_stuck')">
+    <td id="clue_FJ" class="clue_text">Although blind, he killed 3,000 at a religious festival</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="right">Benoy</td><td rowspan="2" valign="top">Who is Samson?</td></tr><tr><td>$4,200</td></tr><tr><td class="wrong">Shawn</td><td rowspan="2" valign="top">Who was Jacob</td></tr><tr><td>$2,500</td></tr><tr><td class="right">Kristin</td><td rowspan="2" valign="top">Who is [a letter or two scribbled out] Sampson</td></tr><tr><td>$1,000</td></tr></table><em class="correct_response">Samson</em></td>
+<var id="clue_FJ_stuck"></var>

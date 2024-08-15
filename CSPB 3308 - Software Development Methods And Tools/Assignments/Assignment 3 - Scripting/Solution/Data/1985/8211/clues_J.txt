@@ -1,0 +1,92 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">Columbia introduced this revolutionary record in '48, allowing us to hear 23 minutes instead of 4</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">an LP (33 1/3)</em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">This right-wing group was named for the 1st victim of the "Cold War", killed in China in 1945</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">the John Birch Society</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Dennis Stein replaced Mexican lawyer Victor Luna as her choice for an 8th marriage</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Elizabeth Taylor</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Humbert Humbert loved this Nabokov nymphet</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Lolita</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">To spice up romance, you, too, can now dress &amp; smell like these leading lovers on "Dynasty"</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;">(Carole: Who are Linda Evans and Joan Collins?)<br />...<br />(Alex: John Forsythe and Linda Evans.)<br /><br /><em class="correct_response">Crystal & Blake Harrington</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Black cats with a white stripe accidentally painted on their backs are pursued by this cartoon Romeo</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Pepe Le Pew</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">In her radio "Romance", she set out to prove that just because a woman was over 35, life was not over</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Helen Trent</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">Type of test in which you might be asked to select A,B,C, or none of the above</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">a multiple choice test</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">They used to say if this animal died during the test, you were pregnant</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">a rabbit</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">What "S.A.T." stands for</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Scholastic Aptitude Test</em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">On radio they ask you to turn down your audio while they perform <a href="https://www.j-archive.com/media/1985-05-13_J_18.mp3">this</a> test:</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;">(Barbara: What is this is just a test, this is not an actual emergency?)<br />(Alex: You have to be a little more specific.)<br />(Barbara: What is an air raid test?)<br /><br /><em class="correct_response">the emergency broadcast system test</em><br /><br /><table width="100%"><tr><td class="wrong">Barbara</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Real name Diane Hall, she was Woody's co-star in "Annie Hall"</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Diane Keaton</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Though Bogie really didn't say it in "Casablanca", Woody wrote a play &amp; film with it as title</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Play It Again, Sam</i></em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Two of the five Woody Allen films with one-word titles</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">(2 of) <i>Manhattan</i>, <i>Bananas</i>, <i>Sleeper</i>, <i>Interiors</i>, & <i>Zelig</i></em><br /><br /><table width="100%"><tr><td class="right">Jeanne</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">The second Mrs. Woody Allen, she was the one &amp; only "Mary Hartman, Mary Hartman"</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Louise Lasser</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">"I don't want to achieve immortality through my work, I want to achieve it through not..." doing this</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;">(Jeanne: What is working?)<br /><br /><em class="correct_response">dying</em><br /><br /><table width="100%"><tr><td class="right">Barbara</td><td class="wrong">Jeanne</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">A baby tailor might throw a perfect one</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Jeanne: What is a ball?)<br /><br /><em class="correct_response">a fit</em><br /><br /><table width="100%"><tr><td class="wrong">Jeanne</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">Follows drag &amp; hair, precedes work &amp; worth</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;">(Carole: Out. What is out?)<br />(Jeanne: What is cut?)<br /><br /><em class="correct_response">net</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Jeanne</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">From 1951 through 1983, this Montreal hockey team had 32 consecutive winning seasons</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Montreal Canadiens</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Game you're playing when you're playing "roundball"</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">basketball</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">Along with L.A., the only other city represented by 2 NFL teams</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Alex: And we've got less than a minute to go in the round.)<br /><br /><em class="correct_response">New York</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Baltimore racetrack that's home of the   Preakness Stakes</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Pimlico</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">1984 P.G.A. winner who was hit by lightning in '75</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Alex: Man who should be familiar to you ladies from Texas, [*]. [*].)<br /><br /><em class="correct_response">Lee Trevino</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

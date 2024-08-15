@@ -1,0 +1,114 @@
+    <td id="clue_DJ_1_1" class="clue_text">City Anna would have to go to today to visit the king of "Siam" at home</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Bangkok</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">English town named for a tree belonging to a man named "Cofa", it got a treat with Godiva's ride</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;">(Guy: [No response])<br /><br /><em class="correct_response">Coventry</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Brazilian city name which is Portuguese equivalent to Minnesota's capital</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">São Paulo</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">The administrative capital of South Africa, people marched to it in song</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Pretoria</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Russian port on the Black Sea, scene of an eleven-month siege in the Crimean War</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(Guy: What is Odessa?)<br /><br /><em class="correct_response">Sevastopol</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Unit measuring intensity of sound, named for inventor of the phone</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">decibel (or bel)</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">Number of beats in a <sup>6</sup><sub>/4</sub> measure</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">6</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Found by multiplying the diameter of a circle by 3.1415</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br />(Alex: I'm so sorry you didn't risk more on that one. After the fact, it's always so much easier.)<br /><br /><em class="correct_response">the circumference</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Sport where one might show off his giant slalom</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">skiing</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Minimum number of balls which must be thrown in the 10th frame in bowling</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">2</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Ballpark the 1984 World Series pennant is flying over</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Jack: What is Wrigley Field?)<br />...<br />(Alex: Yes, you're going to make the Chicago fans very happy, Jack, even with that piece of erroneous information.)<br /><br /><em class="correct_response">Tiger Stadium</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">This ABC series hosted by Curt Gowdy was recently canceled, ending its 20 year run</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>American Sportsman</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">The oldest of organized college sports, since 1841 Oxford &amp; Cambridge have contested yearly</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">rowing</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Richard III should have seen Monty Hall for this trade deal</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">a kingdom for a horse</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">While Juliet took a stab at killing herself, Romeo did this to end it all</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">taking poison</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Falstaff calls it "the better part of valour"</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">discretion</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Caesar calls him dangerous because he has "a lean and hungry look"</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">(Jack: Who is Mark Antony?)<br /><br /><em class="correct_response">Cassius</em><br /><br /><table width="100%"><tr><td class="right">Carole</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Shakespeare's shortest play, it's a humorous look at the mishaps of double trouble</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>The Comedy of Errors</i></em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">The umbilical cord is not cut until the doctor sees that these are inflated &amp; functioning</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">the lungs</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">In "The Rubaiyat", it "writes, and having writ, moves on"</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;">(Carole: What is he hand? The hand of time?)<br />(Jack: What is the moving hand?)<br /><br /><em class="correct_response">the moving finger</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Jack</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">It was "hanging down" in the <a href="https://www.j-archive.com/media/1985-05-14_DJ_03.mp3">following</a>:<br /><br /><i>"That wiggle in the walk / And giggle in the talk / Lord, makes the world go 'round / There ain't nothin' in the world / Like a big-eyed girl / That makes me act so funny / Make me spend my money / Make me feel real loose, like a long necked goose / Like a girl, oh baby, that's what I like"</i></td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;">[Jack lip-synched to the song.]<br />(Alex: Well, we know that you know the song, Jack, but can you give me the correct question? It was hanging down in the following.)<br />(Jack: [*].)<br />[Accepted without remark]<br /><br /><em class="correct_response">a ponytail</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">A knee tendon cut to cripple an animal, it's come to mean crippling for human efforts</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;">(Jack: [No response])<br /><br /><em class="correct_response">to hamstring</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">On TV he explored "The Body in Question"</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;">(Alex: We've got less than a minute to go in the round.)<br /><br /><em class="correct_response">Jonathan Miller</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Ohio senator whose "take off" for the presidency was aborted in early mission</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">John Glenn</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">American Vietnam vets settled out of court in their suit about exposure to this herbicide</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Agent Orange</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Soviet dissident who went on a hunger strike in May to get his wife medical treatment abroad</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Sakharov</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">CIA dir. linked in '84 to the stolen Carter briefing papers &amp; the mining of Nicaragua's harbor</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">William Casey</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">February 11, 1984 marked the 1st time a U.S. spacecraft had ever landed here</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Jack: Where is Edwards Air Force Base?)<br />...<br />(Alex: Normally, they land on the West Coast. This was the first time one landed on the East.)<br /><br /><em class="correct_response">Kennedy Space Center (Cape Canaveral)</em><br /><br /><table width="100%"><tr><td class="wrong">Jack</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">Sean Connery, Richard Todd &amp; Dick Gautier have all played this legendary fugitive hero</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="right">Jack</td><td rowspan="2" valign="top">Who is Robin Hood?</td></tr><tr><td>$1,400</td></tr><tr><td class="right">Carole</td><td rowspan="2" valign="top">Who is Robin Hood?</td></tr><tr><td>$4,600</td></tr><tr><td class="right">Guy</td><td rowspan="2" valign="top">Who is Robin Hood?</td></tr><tr><td>$3,000</td></tr></table><em class="correct_response">Robin Hood</em></td>
+    <td id="clue_J_1_1" class="clue_text">It's a masculine "the" in Spanish, or a ride to work in Chicago</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">El</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">It was taken in the film "The Taking of Pelham One Two Three"</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">a New York subway train</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Though in '85 it missed the Rose Parade, director Dick Schneider said few would notice loss of its camera position</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;">(Jack: [No response])<br />...<br />(Alex: Broken tail fin grounded it for the first time in 30 years.)<br /><br /><em class="correct_response">the Goodyear Blimp</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">A fore-and-aft rigged vessel having 2 or more masts, or a large vessel for beer</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;">(Carole: Oh. What is a...)(Jack: What is a tankard?)<br /><br /><em class="correct_response">a schooner</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Jack</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">DeWitt Clinton's "big ditch" of 1817, it created the first big demand for cement in the U.S.</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">the Erie Canal</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Doctors in San Diego warn this dancing can cause back bruises, sprains &amp; hair loss</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">break dancing</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Pajama-clad publisher who seldom has sex with a woman over 24 &amp; wants more respect from the media</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Hugh Hefner</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">An American Council of Life Insurance survey says you are most likely to be fired on this day</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;">(Jack: What is your birthday?)<br />(Guy: What is a Monday?)<br /><br /><em class="correct_response">a Friday</em><br /><br /><table width="100%"><tr><td class="right">Carole</td><td class="wrong">Guy</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Traveling show created in 1936 by Oscar Johnson &amp; Edward &amp; Roy Shipstad</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(Jack: What is a circus?)<br />[The end-of-round signal sounds.]<br /><br /><em class="correct_response">(Shipstad & Johnson's) Ice Follies</em><br /><br /><table width="100%"><tr><td class="wrong">Jack</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">Tee-hee, titter, cackle, chortle, chuckle and giggle</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;">(Jack: What are different forms of [*]?)<br /><br /><em class="correct_response">laughter</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">You bet Michigan &amp; New York have it &amp; California just legalized its own</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">a lottery</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">Process in stores like Penney's where goods are held by seller until completely paid for</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">layaway</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">A mediocre performance, or a dull diamond</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;">(Guy: What is a lack of lustre?)<br /><br /><em class="correct_response">lacklustre</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">These words are "able to be read" because they are this</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Alex: We've got less than a minute to go in the round.)<br /><br /><em class="correct_response">legible</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Between 1859 &amp; 1872, Mexican bandits stole 145,298 of them from 2 Texas ranches</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">cattle</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">When Kit Carson halted this Indian tribe's raidings, they returned to rug weaving &amp; blanket making</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Navajo</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Sioux leader told by authorities in 1876 to "cease marauding &amp; settle down"</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Sitting Bull</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">The Old Spanish Trail led settlers from Santa Fe to this California town</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Los Angeles</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">It's what Sutter built his mill to make</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">lumber</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">The word repeated 3 times following "She Loves You"</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Carole: [Singing] What's [*], [*], [*]?)<br /><br /><em class="correct_response">yeah</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">English version of the German hit "Komm, Gib Mir Deine Hand"</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;">(Jack: What is "Let Me Hold Your"... [*]?)<br /><br /><em class="correct_response">"I Want To Hold Your Hand"</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">An album cover photograph taken at 10 A.M. Aug, 8, 1969 made this street's crosswalk world famous</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Abbey Road</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">Born in a small brick row house July 7, 1940 in Liverpool, he's the oldest  Beatle</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;">(Jack: Who is John Lennon?)<br /><br /><em class="correct_response">Ringo Starr (Richard Starkey)</em><br /><br /><table width="100%"><tr><td class="right">Carole</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">Type of apple in the Apple Records logo</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">a Granny Smith</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">It can produce as many as 500 million eggs a year, as well as a few pearls</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">an oyster</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Egg weight classes such as jumbo &amp; extra large are based on the total weight of this many eggs</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">a dozen</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">He was a hard-boiled detective in "Harper" &amp; a hard-boiled egg eater in "Cool Hand Luke"</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Paul Newman</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">This country produces about 20% of the world's eggs &amp; the good plates to eat them from</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">China</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>

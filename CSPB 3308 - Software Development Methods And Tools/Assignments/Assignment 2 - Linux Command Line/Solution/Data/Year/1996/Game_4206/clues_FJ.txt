@@ -1,0 +1,4 @@
+<div onmouseover="toggle('clue_FJ', 'clue_FJ_r', 'clue_FJ_stuck')" onmouseout="toggle('clue_FJ_r', 'clue_FJ', 'clue_FJ_stuck')" onclick="togglestick('clue_FJ_stuck')">
+    <td id="clue_FJ" class="clue_text">His "Young Corn" painting is featured on a 1996 stamp celebrating the 150th anniversary of Iowa's statehood</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;">(Alex: If you didn't select an American artist, you're in deep trouble!)<table><tr><td class="right">Brock</td><td rowspan="2" valign="top">Who was Grant Wood?</td></tr><tr><td>$7,400</td></tr><tr><td class="right">Steve</td><td rowspan="2" valign="top">Who is Grant Wood?</td></tr><tr><td>$7,900</td></tr><tr><td class="right">Mary</td><td rowspan="2" valign="top">Who is WOOD?</td></tr><tr><td>$7,901</td></tr></table><em class="correct_response">Grant Wood</em></td>
+<var id="clue_FJ_stuck"></var>

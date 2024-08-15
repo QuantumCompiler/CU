@@ -1,0 +1,118 @@
+    <td id="clue_DJ_1_1" class="clue_text">Per Article II Luke Perry can become president in 2001, since he'll be this age</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">35</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">The president has the power to make these agreements, "provided two-thirds of the senators present concur"</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Treaties</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Article 3 may have soothed the Arnolds by saying this crime doesn't taint the offender's family</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;">(Judy: Who is Benedict Arnold?)<br />(Alex: You lost the sense of the clue there.)<br /><br /><em class="correct_response">treason</em><br /><br /><table width="100%"><tr><td class="wrong">Judy</td><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">The name of this tax regulated by the 24th Amendment doesn't refer to voting; it's a synonym for head</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Poll tax</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">The Constitution uses this 3-word Latin term for laws banning an action retroactively</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Ex post facto</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">The collaboration between this man &amp; W.K.L. Dickson led to the production of the kinetoscope in 1894</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Thomas Edison</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">It was discovered that these, which share their name with insect parts, improved radio reception</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Antennas</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Whitcomb Judson's "clasp locker" of 1893 was this fastener's forerunner</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Zipper</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">By 1897 this German had perfected his alternative to the Otto gasoline engine</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Alex: But I bet you can't give me his first name!)<br /><br /><em class="correct_response">Rudolf Diesel</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Edward Acheson failed when he tried to form these, but he did create carborundum</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Diamonds</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Elmo Lincoln was the 1st to play this film character as an adult; he was later played by Weissmuller</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Tarzan</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">A host of "Break the Bank", he's best known as the former singing host of the Miss America pageant</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;">(Alex: We've got about a minute left.)<br /><br /><em class="correct_response">Bert Parks</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">In 1945's "The Story Of G.I. Joe", Burgess Meredith played this war correspondent</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Ernie Pyle</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">In 1998 Liam Neeson portrayed this Victorian author's downfall in Broadway's "The Judas Kiss"</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Oscar Wilde</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">Singer Bill Withers &amp; this saxophonist had a hit with 1981's "Just The Two Of Us"</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">Grover Washington, Jr.</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">This Tibetan's resume includes:  1992 - Guest Editor, French Vogue; 1989 - Nobel Peace Prize</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Dalai Lama</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">For its Christmas 1993 issue, French Vogue tapped this South African leader to guest edit</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Nelson Mandela</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">The October 1996 issue of England's Prima was edited by this prime minister's wife, Cherie</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Tony Blair</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">In the 1940s Bobby "Blue" Bland &amp; B.B. King were in the Beale Streeters, a blues group in this city</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Memphis</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">This blues empress' "Down Hearted Blues" sold 780,000 copies, restoring the ailing Columbia Records</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;">(Judy: Who is Billie Holiday?)<br /><br /><em class="correct_response">Bessie Smith</em><br /><br /><table width="100%"><tr><td class="wrong">Judy</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">Sonny Terry played this instrument, also called the blues harp, in a whooping style</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;">(Alex: Quite often with <br />Brownie McGhee.)<br /><br /><em class="correct_response">Harmonica</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">McKinley Morganfield played in a creek as a child &amp; was given this nickname</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;">(J: I bet it was Muddy Waters; who is Muddy Waters?)<br />(Alex: Whoa-oh, good thing you remembered to phrase it in the form of a question!)<br /><br /><em class="correct_response">"Muddy Waters"</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">Said to have sold his soul to the Devil for his guitar skills, he recorded only 29 songs &amp; died at age 27</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Robert Johnson</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">"Touch"y golden guy<br />             (5)</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">King Midas</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">Quicksilver<br />messenger<br />           (7)</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mercury</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Hair today, snakes tomorrow<br />            (6)</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Medusa</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">Jason pulled the wool over her eyes<br />             (5)</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Medea</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">Helen's hubby<br />            (8)</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Menelaus</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">In <span style="font-weight: bold; color: #000000; background-color: #FFFF66;">1999</span> these related events will occur on Tuesday, February 16 &amp; Sunday, April 4</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;">(Alex: Lent begins on the following day, Ash Wednesday; that's why we couldn't accept yours, Miles.)<table><tr><td class="wrong">Judy</td><td rowspan="2" valign="top">What Presidents</td></tr><tr><td>$5,800</td></tr><tr><td class="wrong">Miles</td><td rowspan="2" valign="top">What are Lent & Easter</td></tr><tr><td>$7,000</td></tr><tr><td class="wrong">Melizza</td><td rowspan="2" valign="top">What is Easter & Ash</td></tr><tr><td>$7,101</td></tr></table><em class="correct_response">Mardi Gras & Easter</em></td>
+    <td id="clue_J_1_1" class="clue_text">"Rip-Rip" is a comic opera about this sleepy head who killed time in the Catskills</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Rip Van Winkle</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">This "Messiah" composer set Dryden's poem "Ode For St. Cecilia's Day" to music</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">George F. Handel</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Franz Liszt's symphony based on this work includes the movements "Inferno" &amp; "Purgatorio"</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;">(Judy: What is Dante's <i>Inferno</i>?)<br />...<br />(Alex: It's one part; it's also known as <i>Dante's Symphony</i>.)<br /><br /><em class="correct_response"><i>The Divine Comedy</i></em><br /><br /><table width="100%"><tr><td class="wrong">Judy</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Bernard Naylor adapted her "Sonnets from the Portuguese" for voice &amp; string quartet</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Elizabeth Barrett Browning</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">This John Bunyan work inspired the one-act opera "The Shepherds of the Delectable Mountains"</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;">(Alex: We have about a minute left.)<br /><br /><em class="correct_response"><i>Pilgrim's Progress</i></em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">The product seen here began its zillion-dollar destiny when introduced by Wham-O in this decade (hula hoop)</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">1950s</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">It's the wacky, but useful product, in use here ("applause" to turn on the lamp)</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">The Clapper</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">If you're lonely, this animal might be perfect for you (ceramic cat that grows hair)</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Chia Pet</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Banned from use in some parades, it's the alliterative name of the wacky product in use here (sprayed out of a can)</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(Melizza: What is Super String?)<br /><br /><em class="correct_response">Silly String</em><br /><br /><table width="100%"><tr><td class="wrong">Melizza</td><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">Japanese term for the "egg" seen here</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Tamagotchi</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">Even though it's the world's second longest river, it still has the world's largest drainage basin</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;">(Miles: What is the Nile?)<br />(Alex: The Nile is the longest river.)<br /><br /><em class="correct_response">Amazon</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td><td class="wrong">Miles</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">The Aare, originating in the Bern canton, is a major river of this country</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Switzerland</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">Rising in the Black Forest, it's the second longest river in Europe</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;">(Melizza: What is the Rhine?)<br /><br /><em class="correct_response">Danube</em><br /><br /><table width="100%"><tr><td class="wrong">Melizza</td><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">You can take a high road or a low road to this, the largest lake in Scotland</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Loch Lomond</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">This lake in Manitoba, Ontario &amp; Minnesota is a remnant of an extinct glacial lake</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Miles: What is Lake Superior?)<br /><br /><em class="correct_response">Lake of the Woods</em><br /><br /><table width="100%"><tr><td class="right">Judy</td><td class="wrong">Miles</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">The standard form of this language developed from that spoken in Amsterdam &amp; nearby cities</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Dutch</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">The Finnish national anthem, "Our Land", is "Maame" in Finnish &amp; "Vart Land" in this other official language</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;">(Miles: What is Lapp?)<br /><br /><em class="correct_response">Swedish</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td><td class="wrong">Miles</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Among the many dialects of this language are Maine, Gallo &amp; Bourbonnais</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">French</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">This major language of the Canary Islands is spoken with what has been called a slight Andalusian accent</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Spanish</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">Of Latvian, Lithuanian, or Estonian, the language not closely related to the other 2</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;">(Miles: What is Lithuanian?)<br /><br /><em class="correct_response">Estonian</em><br /><br /><table width="100%"><tr><td class="right">Judy</td><td class="wrong">Miles</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">In 1988 Michael Crawford picked up a Tony for playing the masked title role in this musical</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Phantom of the Opera</i></em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">The title of this category comes from an oft-said phrase on this classic radio &amp; TV show</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>The Lone Ranger</i></em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">In film he's donned the Riddler's mask &amp; the title mask in "The Mask"</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Jim Carrey</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">The woman seen here fell for &amp; dueled with this masked man in a 1998 film (Catherine Zeta-Jones)</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Zorro</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">A newswire reported this singer, disguised as an Arab woman, shopping in a Munich toy store</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Michael Jackson</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Alicia Silverstone's 1995 breakthrough film</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">"Clueless"</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">"To draw" this is said to have originally referred to a non-winning lottery ticket</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">A blank</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">This phrase for a mind with no empirical knowledge is Latin for "scraped tablet"</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Tabula rasa</em><br /><br /><table width="100%"><tr><td class="right">Miles</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Shakespeare wrote, "There is no darkness but" this; having it "of the law is no excuse"</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Ignorance</em><br /><br /><table width="100%"><tr><td class="right">Melizza</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">In the Iran-Contra affair, George Bush was "out of" this, like a Chicago suburbanite</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">The Loop</em><br /><br /><table width="100%"><tr><td class="right">Judy</td></tr></table></td>

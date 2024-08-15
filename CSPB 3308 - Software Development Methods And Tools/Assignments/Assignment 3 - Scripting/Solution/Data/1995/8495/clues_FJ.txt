@@ -1,0 +1,4 @@
+<div onmouseover="toggle('clue_FJ', 'clue_FJ_r', 'clue_FJ_stuck')" onmouseout="toggle('clue_FJ_r', 'clue_FJ', 'clue_FJ_stuck')" onclick="togglestick('clue_FJ_stuck')">
+    <td id="clue_FJ" class="clue_text">This national Patriotic Society was organized in 1890 by First Lady Caroline Scott Harrison</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="right">Anna</td><td rowspan="2" valign="top">What <del>was</del> is the Daughters of the American Revolution</td></tr><tr><td>$5,500</td></tr><tr><td class="right">James</td><td rowspan="2" valign="top">What is the D.A.R.</td></tr><tr><td>$6,800</td></tr><tr><td class="right">Ed</td><td rowspan="2" valign="top">What is the D.A.R.?</td></tr><tr><td>$4,401</td></tr></table><em class="correct_response">(The National Society of) the Daughters of the American Revolution</em></td>
+<var id="clue_FJ_stuck"></var>

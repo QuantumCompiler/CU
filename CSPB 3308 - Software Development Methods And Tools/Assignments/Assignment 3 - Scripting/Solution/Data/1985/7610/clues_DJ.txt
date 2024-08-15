@@ -1,0 +1,100 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_4', 'clue_DJ_2_4_r', 'clue_DJ_2_4_stuck')" onmouseout="toggle('clue_DJ_2_4_r', 'clue_DJ_2_4', 'clue_DJ_2_4_stuck')" onclick="togglestick('clue_DJ_2_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_5', 'clue_DJ_2_5_r', 'clue_DJ_2_5_stuck')" onmouseout="toggle('clue_DJ_2_5_r', 'clue_DJ_2_5', 'clue_DJ_2_5_stuck')" onclick="togglestick('clue_DJ_2_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">In 622, he was driven out of Mecca &amp; fled to Medina</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;">(Larry: Who was Buddha?)<br /><br /><em class="correct_response">Muhammad</em><br /><br /><table width="100%"><tr><td class="right">Bob</td><td class="wrong">Larry</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">John Milton was member of Puritan govt. which ruled England under leadership of this man</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;">(Larry: Who is King John?)<br /><br /><em class="correct_response">Oliver Cromwell</em><br /><br /><table width="100%"><tr><td class="right">Bob</td><td class="wrong">Larry</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Country besides Israel that was part of Britain's Palestine mandate</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;">(Bob: What is Lebanon?)<br /><br /><em class="correct_response">Jordan</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">Nickname of Prince Henry of Portugal who sponsored over 50 exploratory voyages but didn't go on any</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Prince Henry the Navigator</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">To start a new industry, 6th c. missionaries smuggled mulberry seeds &amp; these eggs out of China</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">the silk industry (silkworm eggs)</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Actor who turned down '73 Oscar to protest treatment of Indians</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Marlon Brando</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">19th C. Plains Ind. Ghost Dance religion promised disappearance of Whites &amp; return of these animals</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">buffalo (or bison)</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Their name is said to derive from rubbing their moccasins in ashes</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Blackfeet</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">State whose name comes from 2 Choctaw words meaning "red people"</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Bob: What is Alabama?)<br /><br /><em class="correct_response">Oklahoma</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">When the pilgrims got to America, they met this English-speaking Indian who had lived in England</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Bob: Who was Sasquatch?)<br />(Larry: Who was Sequoyah?)<br /><br /><em class="correct_response">Squanto</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="wrong">Larry</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Captain Ahab died harpooning him</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Moby Dick</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Elwood P. Dowd's bosom bunny</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;">(Larry: Who was Bugs Bunny?)<br /><br /><em class="correct_response">Harvey</em><br /><br /><table width="100%"><tr><td class="right">Bob</td><td class="wrong">Larry</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Mark Twain's foreman from Bridgeport, played on screen by Will Rogers &amp; Bing Crosby</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Sandra: Who is... uh...)<br />(Bob: Who was uh, uh, Yankee<span class="nobreak">--</span>American Yankee in, uh<span class="nobreak">--</span>[*]?)<br /><br /><em class="correct_response">Connecticut Yankee in King Arthur's Court</em><br /><br /><table width="100%"><tr><td class="right">Bob</td><td class="wrong">Sandra</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">He ran away from home the day he was born because he heard his parents talking about his future as a man</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;">(Larry: Who was Pip?)<br /><br /><em class="correct_response">Peter Pan</em><br /><br /><table width="100%"><tr><td class="wrong">Larry</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">The twins Louis &amp; Lucien de Franchi were the title characters of this Dumas tale</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Bob: Who is <i>The Man in the Iron Mask</i>?)<br /><br /><em class="correct_response"><i>The Corsican Brothers</i></em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Milan is noted for this thick vegetable soup</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">minestrone</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">In 1937 NBC formed a symphony orchestra for this great Italian conductor to direct</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Toscanini</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">These radical terrorists oppose all political parties, even the Communists</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;">(Bob: Who are the Red Guard?)<br /><br /><em class="correct_response">the Red Brigade</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Artisans of the Venetian islands of Murano are famed for working with this substance</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">(Bob: What is plaster?)<br /><br /><em class="correct_response">glass</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">40% of Italy's people live in this river valley</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">the Po</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">His first phone call went "Mr. Watson, come here; I want you!"</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Alexander Graham Bell</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">In 1971, she became 1st woman tennis player to earn $100,000 in one year</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Billie Jean King</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">He starred as Starsky</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Paul Michael Glaser</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">To the Samoans, who called him "Tusitala", or teller of tales, he was a real "Island Treasure"</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Robert Louis Stevenson</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">Desperate to get this animal trainer, "Ringling" bought entire German circus for $2 million</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Larry: Ooh.)<br />(Bob: Who was Hans Gunter?)<br />...<br />(Alex: That was the idea of the category. First middle, and last names. Less than a minute to go in the round.)<br /><br /><em class="correct_response">Gunther Gebel-Williams</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="wrong">Larry</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

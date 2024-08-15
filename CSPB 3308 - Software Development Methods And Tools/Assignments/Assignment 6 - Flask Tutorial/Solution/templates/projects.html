@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="text-align: center;">
+        <h1>{% block title %} Projects Page {% endblock %}</h1>
+        <div>
+            <p>Just for fun, lets add some links to the other pages.</p>
+            <ul>
+                <a href="{{ url_for('index') }}">Index</a>
+                <a href="{{ url_for('hello') }}">Hello</a>
+                <a href="{{ url_for('project') }}">Projects</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <br>
+                <a href="{{ url_for('user', username='tala4156') }}">User</a>
+                <a href="{{ url_for('post', post_id='1') }}">Post</a>
+                <a href="{{ url_for('subpath', subpath='a_sub_path') }}">Subpath</a>
+                <br>
+                <a href="{{ url_for('static_text') }}">Static Text</a>
+                <a href="{{ url_for('static_html') }}">Static HTML</a>
+                <a href="{{ url_for('dynamic_list') }}">Dynamic List</a>
+                <br>
+                <a href="{{ url_for('login') }}">Log In Form</a>
+                <form action="{{ url_for('login') }}" method="post" style="display:inline;">
+                    <button type="submit">Log In</button>
+                </form>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

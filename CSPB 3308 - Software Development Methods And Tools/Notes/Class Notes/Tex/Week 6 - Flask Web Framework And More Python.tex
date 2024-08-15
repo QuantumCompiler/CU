@@ -1,0 +1,206 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Flask Web Framework And More Python}
+\renewcommand{\SectionTitle}{Flask Web Framework And More Python}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \textbf{Engineering Software As A Service - Chapter 2 - The Architecture Of SaaS Applications}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=KxT5j0RPtnc}{Python Decorators}{8}
+    \item \lecture{https://www.youtube.com/watch?v=LryIlBhZxtU}{Python Virtual Environments}{10}
+    \item \lecture{https://www.youtube.com/watch?v=lZhxrjDp1Ek}{Flask Quickstart}{12}
+    \item \lecture{https://www.youtube.com/watch?v=MNQ6Rah-EZI}{Creating Tables In HTML}{10}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Routes Lecture Notes.pdf}{Routes Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-6-QuantumCompiler}{Assignment 6 - Flask Tutorial}
+\end{itemize}
+
+\subsection{Project}
+
+The assignment(s) for the project this week is:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/assign/view.php?id=61352}{Project Milestone 3: Weekly Status}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The reading for this week is from \textbf{Engineering Software As A Service}. The chapter that is being covered this week is \textbf{Chapter 2: The Architecture Of SaaS Applications}.
+
+\begin{notes}{Chapter 2: The Architecture Of SaaS Applications}
+    \subsection*{Overview}
+
+    This chapter discusses the architecture of SaaS (Software as a Service) applications, outlining various levels of detail from high-level client-server architecture to specific implementation patterns. 
+    Understanding these architectures helps in designing scalable and efficient SaaS applications.
+    
+    \subsubsection*{100,000 Feet: Client-Server Architecture}
+    
+    The client-server architecture is a fundamental pattern in SaaS applications, where clients request services and servers respond to these requests.
+    
+    \begin{highlight}[Client-Server Architecture]
+    
+        Clients and servers communicate over the network, with clients initiating requests and servers responding.
+        
+        \begin{itemize}
+            \item Clients, such as web browsers, request services.
+            \item Servers, such as WEBrick, respond to client requests.
+            \item Example: Firefox requests a page from WEBrick, which serves content from the RottenPotatoes app.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{50,000 Feet: Communication—HTTP and URIs}
+    
+    HTTP and URIs are the foundation of web communication, enabling resource identification and data exchange.
+    
+    \begin{highlight}[Communication—HTTP and URIs]
+    
+        HTTP (HyperText Transfer Protocol) and URIs (Uniform Resource Identifiers) facilitate client-server communication.
+        
+        \begin{itemize}
+            \item HTTP is a stateless protocol used for web communication.
+            \item URIs identify resources on the web.
+            \item Example: A browser uses an HTTP GET request to retrieve a web page via its URI.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{10,000 Feet: Representation—HTML and CSS}
+    
+    HTML and CSS define the structure and style of web content, respectively, providing a clear separation between content and presentation.
+    
+    \begin{highlight}[Representation—HTML and CSS]
+    
+        HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) structure and style web content.
+        
+        \begin{itemize}
+            \item HTML elements structure web pages.
+            \item CSS styles HTML elements.
+            \item Example: An HTML document with embedded CSS defines the layout and appearance of a web page.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{5,000 Feet: 3-Tier Architecture & Horizontal Scaling}
+    
+    The 3-tier architecture separates concerns into presentation, logic, and persistence tiers, enabling scalability.
+    
+    \begin{highlight}[3-Tier Architecture & Horizontal Scaling]
+    
+        The 3-tier architecture divides applications into presentation, logic, and persistence tiers.
+        
+        \begin{itemize}
+            \item Presentation tier handles user interfaces.
+            \item Logic tier processes application functionality.
+            \item Persistence tier manages data storage.
+            \item Horizontal scaling allows adding more servers to each tier as needed.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{1,000 Feet: Model-View-Controller Architecture}
+    
+    The MVC pattern separates applications into models, views, and controllers, each with distinct responsibilities.
+    
+    \begin{highlight}[Model-View-Controller Architecture]
+    
+        MVC (Model-View-Controller) pattern divides application logic, user interface, and user input handling.
+        
+        \begin{itemize}
+            \item Models manage data and business logic.
+            \item Views display data and user interfaces.
+            \item Controllers handle user input and interactions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{500 Feet: Active Record for Models}
+    
+    Active Record is a pattern used to map objects to database records, facilitating data persistence.
+    
+    \begin{highlight}[Active Record for Models]
+    
+        Active Record maps objects to database tables, enabling CRUD operations.
+        
+        \begin{itemize}
+            \item Models correspond to database tables.
+            \item CRUD operations: Create, Read, Update, Delete.
+            \item Example: A Movie model maps to a movies table in the database.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{500 Feet: Routes, Controllers, and REST}
+    
+    Routes map HTTP requests to controller actions, and RESTful principles ensure stateless and self-descriptive interactions.
+    
+    \begin{highlight}[Routes, Controllers, and REST]
+    
+        Routes map URIs and HTTP methods to controller actions; REST (Representational State Transfer) organizes resource interactions.
+        
+        \begin{itemize}
+            \item Routes define URL patterns and corresponding actions.
+            \item RESTful design ensures each request contains all necessary information.
+            \item Example: GET /movies maps to the index action in the Movies controller.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{500 Feet: Template Views}
+    
+    Template Views render dynamic content by combining static templates with dynamic data.
+    
+    \begin{highlight}[Template Views]
+    
+        Template Views generate dynamic content by integrating data into HTML templates.
+        
+        \begin{itemize}
+            \item Templates contain static HTML with placeholders for dynamic data.
+            \item Example: Haml template renders a list of movies dynamically.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from Chapter 2 on the architecture of SaaS applications:
+        
+        \begin{itemize}
+            \item \textbf{Client-Server Architecture}: Separates clients and servers for specialized roles.
+            \item \textbf{Communication—HTTP and URIs}: Facilitates web communication and resource identification.
+            \item \textbf{Representation—HTML and CSS}: Structures and styles web content.
+            \item \textbf{3-Tier Architecture & Horizontal Scaling}: Divides applications into scalable tiers.
+            \item \textbf{Model-View-Controller Architecture}: Separates data, presentation, and input handling.
+            \item \textbf{Active Record for Models}: Maps objects to database records for data persistence.
+            \item \textbf{Routes, Controllers, and REST}: Maps requests to actions and ensures stateless interactions.
+            \item \textbf{Template Views}: Generates dynamic content from static templates.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}

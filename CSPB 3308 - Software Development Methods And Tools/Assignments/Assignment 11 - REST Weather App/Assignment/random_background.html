@@ -1,0 +1,30 @@
+<!-- script to show US temp in colors -->
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Sample Color Changing Script </title>
+  <script>
+
+
+		// function will return a random color
+		//
+		// Each time the window is loaded (or refreshed) this script is run
+		//
+		window.onload = function() {
+			const setBGtoRandomColor = () => {
+			  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+			  document.body.style.backgroundColor = "#" + randomColor;
+			  color.innerHTML = "#" + randomColor;
+			}
+			// call the function to select a random color
+			setBGtoRandomColor();
+		}; 
+  </script>
+</head>
+<body>
+	<h2>Refresh to get another random color</h2>
+	<h5>This wont work in JupyterHub's redering of the page. <br>
+		You must use the right click on the file and select: <em>Open in New Browser Tab</em>
+</body>
+</html>

@@ -1,0 +1,234 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{JavaScript}
+\renewcommand{\SectionTitle}{JavaScript}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir JavaScript Tutorial Point.pdf}{JavaScript Tutorial Point}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=jANBreqEvXU}{Introduction To JavaScript}{16}
+    \item \lecture{https://www.youtube.com/watch?v=4-A_Y3rLLzA}{JavaScript Syntax And Practice}{14}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-9-QuantumCompiler}{Assignment 9 - JavaScript}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 6 - JavaScript.pdf}{Quiz 6 - JavaScript}
+\end{itemize}
+
+\subsection{Project}
+
+The assignment(s) for the project this week is:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/assign/view.php?id=61422}{Project Milestone 5: SQL Design}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The topic that is being covered this week is \textbf{JavaScript}.
+
+\begin{notes}{JavaScript}
+    \subsection*{Overview}
+
+    JavaScript is a versatile and powerful programming language commonly used in web development to create dynamic and interactive user experiences. It allows developers to implement complex features 
+    on web pages, such as real-time updates, interactive maps, animations, and much more. JavaScript is a core technology of the web, alongside HTML and CSS.
+    
+    \subsubsection*{Basic JavaScript Syntax and Functions}
+    
+    JavaScript syntax is influenced by Java and C, making it familiar to developers with experience in those languages. It supports various programming paradigms, including procedural, object-oriented, 
+    and functional programming.
+    
+    \begin{highlight}[Basic JavaScript Syntax and Functions]
+    
+        JavaScript syntax forms the foundation for writing scripts to control web page behavior.
+        
+        \begin{itemize}
+            \item \textbf{Variables}: Used to store data values.
+    \begin{code}[JavaScript]
+    let name = "Alice";
+    const pi = 3.14159;
+    \end{code}
+            \item \textbf{Functions}: Blocks of code designed to perform a particular task.
+    \begin{code}[JavaScript]
+    function greet() {
+        console.log("Hello, world!");
+    }
+    greet();
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{DOM Manipulation}
+    
+    The Document Object Model (DOM) is an API for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content.
+    
+    \begin{highlight}[DOM Manipulation]
+    
+        JavaScript interacts with the DOM to dynamically update web content.
+        
+        \begin{itemize}
+            \item \textbf{Selecting Elements}: Access elements in the DOM.
+    \begin{code}[JavaScript]
+    const element = document.getElementById("myElement");
+    \end{code}
+            \item \textbf{Changing Content}: Modify the content of elements.
+    \begin{code}[JavaScript]
+    element.textContent = "New content";
+    \end{code}
+            \item \textbf{Event Listeners}: Respond to user actions.
+    \begin{code}[JavaScript]
+    element.addEventListener("click", function() {
+        alert("Element clicked!");
+    });
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{JavaScript Objects and Prototypes}
+    
+    JavaScript is an object-oriented language. Objects are collections of related data and functionality, and prototypes allow for the inheritance of properties and methods.
+    
+    \begin{highlight}[JavaScript Objects and Prototypes]
+    
+        Objects and prototypes are key concepts for organizing and reusing code.
+        
+        \begin{itemize}
+            \item \textbf{Creating Objects}: Define objects using literal notation.
+    \begin{code}[JavaScript]
+    let person = {
+        name: "Alice",
+        age: 25,
+        greet: function() {
+            console.log("Hello, " + this.name);
+        }
+    };
+    person.greet();
+    \end{code}
+            \item \textbf{Prototypes}: Share properties and methods across instances.
+    \begin{code}[JavaScript]
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.greet = function() {
+        console.log("Hello, " + this.name);
+    };
+    let bob = new Person("Bob", 30);
+    bob.greet();
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Asynchronous JavaScript}
+    
+    Asynchronous programming is essential in JavaScript for handling operations that take time to complete, such as data fetching or file reading, without blocking the execution of other code.
+    
+    \begin{highlight}[Asynchronous JavaScript]
+    
+        Asynchronous techniques improve the responsiveness of web applications.
+        
+        \begin{itemize}
+            \item \textbf{Callbacks}: Functions passed as arguments to other functions.
+    \begin{code}[JavaScript]
+    function fetchData(callback) {
+        setTimeout(() => {
+            callback("Data received");
+        }, 1000);
+    }
+    fetchData(data => {
+        console.log(data);
+    });
+    \end{code}
+            \item \textbf{Promises}: Objects representing the eventual completion or failure of an asynchronous operation.
+    \begin{code}[JavaScript]
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data received");
+        }, 1000);
+    });
+    promise.then(data => {
+        console.log(data);
+    });
+    \end{code}
+            \item \textbf{Async/Await}: Syntactic sugar over promises for writing asynchronous code.
+    \begin{code}[JavaScript]
+    async function fetchData() {
+        let data = await new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("Data received");
+            }, 1000);
+        });
+        console.log(data);
+    }
+    fetchData();
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{JavaScript Modules}
+    
+    Modules allow you to break up your code into reusable pieces. They are essential for maintaining clean and manageable codebases.
+    
+    \begin{highlight}[JavaScript Modules]
+    
+        Use modules to organize and encapsulate code.
+        
+        \begin{itemize}
+            \item \textbf{Exporting and Importing}: Share functionality between files.
+    \begin{code}[JavaScript]
+    // In math.js
+    export function add(a, b) {
+        return a + b;
+    }
+    // In main.js
+    import { add } from './math.js';
+    console.log(add(2, 3));
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from JavaScript overview:
+        
+        \begin{itemize}
+            \item \textbf{Syntax and Functions}: Basic building blocks of JavaScript.
+            \item \textbf{DOM Manipulation}: Interacting with and modifying the document structure.
+            \item \textbf{Objects and Prototypes}: Organizing code and enabling inheritance.
+            \item \textbf{Asynchronous Programming}: Handling time-consuming tasks without blocking the main thread.
+            \item \textbf{Modules}: Structuring code into reusable components.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}

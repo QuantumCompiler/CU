@@ -1,0 +1,114 @@
+    <td id="clue_DJ_1_1" class="clue_text">When excited, this gas glows red, which means our Jeopardy! sign gets excited often</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;">(Alex: You're surrounded by it on this show.)<br /><br /><em class="correct_response">neon</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">From his NJ lab at the turn of the century, he advertised "inventions to order"</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Thomas Edison</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Renaissance anatomist Gabriello Fallopio discovered these human oviducts</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;">(Guy: What are the tear ducts?)<br />...<br />(Alex: A big difference.)<br /><br /><em class="correct_response">the fallopian tubes</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">Number of points where a tangent line touches a curve</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">1</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">The three main parts of the Earth are the lithosphere, the hydrosphere &amp; this</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">the atmosphere</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">The family we learn about in "First Lady from Plains"</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Carters</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">First child born to President or President-elect in office since 1893, he's recently studied in India</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;">(Guy: I can't think of it.)<br /><br /><em class="correct_response">John Kennedy, Jr. (JFK Jr.)</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">This couple is the grandson of one president &amp; the daughter of another</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">David & Julie Eisenhower</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Presidential daughter who's earned good reviews for her books, but once got bad reviews for her singing</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Bob: Who is Truman?)<br />(Alex: Be more specific.)<br /><br /><em class="correct_response">Margaret Truman</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Last name of John, an Ohio farmer who was son of one pres. &amp; father to another</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Guy: What is Adams?)<br /><br /><em class="correct_response">Harrison</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Appropriately, it was Poe's first writing form</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">poetry</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">American director famous for series of Poe films in the early '60s</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;">(Bob: Who is Hitchcock?)<br /><br /><em class="correct_response">Roger Corman</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Last name of twins Roderick &amp; Madeline, together they brought down the house</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Ushers</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">Double relation to Poe of Virginia Clemm</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">cousin & wife</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">Title referring to Prince Prospero's plague party</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Bob: What is "The Cask of Amontillado"?)<br /><br /><em class="correct_response">"The Masque of the Red Death"</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Colors associated with the 2 armies that opposed each other in Russian Civil War</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">red & white</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">Lenin took power promising to pull Russia out of this war</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">World War I</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Fed enough poison to kill a cow, then shot &amp; stabbed, Rasputin finally died of this</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;">(Alex: They shoved him through a hole in the ice.)<br /><br /><em class="correct_response">drowning</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Though they were only a small minority, the Communists took this name which means "majority"</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Bolshevik</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">John Reed's eyewitness account</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Ten Days That Shook the World</i></em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">From 1930-79, he led the Boston Pops</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Arthur Fiedler</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">Boston's largest ethnic group</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;">(Guy: What are [*]?)<br />(Alex: Let's say "Who are [*]?" They don't like to be referred to as "what".)<br /><br /><em class="correct_response">the Irish</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">Both Harvard &amp; M.I.T. are in this Boston suburb</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Cambridge</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">Term for east Indian or Boston elite</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;">(Bob: [No response])<br />[The end-of-round signal sounds.]<br /><br /><em class="correct_response">a Brahmin</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">William Frawley role on "I Love Lucy"</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Fred Mertz</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">"Yabba dabba doo"</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Fred Flintstone</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Noted for sexy lingerie by catalogue, they also operate 194 stores in 34 states</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;">(Alex: And we've got less than a minute to go in the round.)<br /><br /><em class="correct_response">Frederick's of Hollywood</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">Rock 'n' roll star who did <a href="https://www.j-archive.com/media/1985-05-16_DJ_27.mp3">this</a> version of a 1922 jazz hit:<br /><br /><i>"Well, way down yonder in New Orleans / In the land of the dreamy scenes / There's a Garden of Eden, / Ah, you know what I mean"</i></td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;">(Mary: I have no idea.)<br /><br /><em class="correct_response">Freddy Cannon</em><br /><br /><table width="100%"><tr><td class="wrong">Mary</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">Only "M·A·S·H" regular to really serve in Korea, he also served in "AfterMASH"</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;">[ERRATUM: M*A*S*H is rendered with asterisks, not interpuncts.]<table><tr><td class="wrong">Guy</td><td rowspan="2" valign="top">Who is Harry Morgan</td></tr><tr><td>$2,200</td></tr><tr><td class="wrong">Mary</td><td rowspan="2" valign="top">Who is Alan Alda?</td></tr><tr><td>$1,600</td></tr><tr><td class="right">Bob</td><td rowspan="2" valign="top">Who is Jamie Farr</td></tr><tr><td>$4,400</td></tr></table><em class="correct_response">Jamie Farr</em></td>
+    <td id="clue_J_1_1" class="clue_text">Bruno Richard Hauptmann was convicted &amp; executed for kidnap-murder of this man's son</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Charles Lindbergh</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">According to a U.S. Senate report, his regime in China killed 32-62 mil. people</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mao Tse-tung</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">"Arthur is president now," shouted Charles Guiteau as he shot this president</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Garfield</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Though Incas paid him largest ransom in history, this conquistador had their leader killed</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">(Francisco) Pizarro</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">Alternate name for the Mafia meaning "our thing"</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Cosa Nostra</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">In 1899, George F. Grant patented this to hold up your ball</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;">(Guy: What is a batting tee?)<br /><br /><em class="correct_response">a golf tee</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">The 2 positions in baseball which use different gloves from the other 7</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">the catcher and the first baseman</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">America's first organized sport, it can be "tracked" back to New Amsterdam in 1664</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;">(Guy: What is lacrosse?)<br />(Mary: What is bowling?)<br />(Alex: You didn't pay close enough attention to the clue when we said it could be tracked back. [*].)<br /><br /><em class="correct_response">horse racing</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="wrong">Mary</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">In 1905, this team sport produced 18 fatalities &amp; 159 serious injuries</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(Alex: Teddy Roosevelt threatened to ban the sport, as a matter of fact.)<br /><br /><em class="correct_response">football</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">Total number of face-off spots on an NHL rink</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;">(Bob: What is four, Alex?)<br />(Alex: Oh, I'm sorry. You remembered the four that are at the blue lines, but you forgot the five others. There's one in the center and the corners.)<br /><br /><em class="correct_response">9</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">It's the defining ingredient in vinaigrette dressing</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">vinegar</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">What the potage du jour is</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;">(Bob: What is the vegetable of the day?)<br /><br /><em class="correct_response">the soup of the day</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">"Foie gras" typically refers to a pate or terrine of this fowl organ</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">goose liver</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">A la the city of Nice, it's a salad of tomatoes, green beans, potatoes, ripe olives and anchovies</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">a salad niçoise</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">"Parmentier" refers to dishes prepared with this vegetable</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">potato</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Of "Men at Work", "Men Without Hats" &amp; "Men of La Mancha", group to not have a hit in the '80s</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Men of La Mancha</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">This Joan Jett hit from 1981 was parodied by Weird Al as "I love Rocky Road"</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">"I Love Rock 'N Roll"</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">His first of many hits in the '80s was "She's Out Of My Life"</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Michael Jackson</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">Part of speech which frequently ends in "ly"</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Alex: We've got less than a minute to go in the round.)<br /><br /><em class="correct_response">an adverb</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">Word which is the subject in the film title "The Subject Was Roses"</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">subject</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">20 years to life, or a series of words arranged as a meaningful unit</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">a sentence</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">This language has a larger vocabulary than any other</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">English</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">Celebrities and government officials complain when their quotes are "taken out of" this</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">context</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">When giving a purse or wallet as a gift, it is a custom to include this</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">money</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">On Dec. 13, 1984, Nancy Reagan broke a ritual started with Coolidge by doing this instead of Ron</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">to light the Christmas tree</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">For orthodox Jews, eating, work, washing, sex &amp; wearing leather are forbidden on this holy day</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Bob: What is the Sabbath or Saturday?)<br /><br /><em class="correct_response">Yom Kippur</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Primitive performance done before battle to whoop up courage as well as scare the enemy</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">a war dance</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">In a lounge show it's "instrumental" that this follows almost any joke or one-liner</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Bob: What is a drum roll?)<br />(Alex: Drum roll?)<br />(Bob: Or [*].)<br />(Alex: Oh, all right. We'll give it to you on a [*]. We were looking for [**], but the [*] or the [**] would have been accepted.)<br /><br /><em class="correct_response">cymbal clash (rimshot)</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>

@@ -1,0 +1,120 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">Southampton Island,<br />Prince Charles Island,<br />Baffin Island</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Canada</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">Abu Muharrik Dunes,<br />Al-Ajmah Mountains,<br />Sinai Peninsula</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;">(S: What is Israel?)<br />(T: What is Lebanon?)<br /><br /><em class="correct_response">Egypt</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td><td class="wrong">Todd</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Carinthia,<br />Tyrol,<br />Styria</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;">(T: What is Greece?)<br />(S: What is Libya?)<br /><br /><em class="correct_response">Austria</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td><td class="wrong">Todd</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Cheju,<br />South Kyongsang,<br />Kangwon</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;">(Liz: What is Korea?)<br />(Alex: Be more specific.)<br />(Liz: North Korea?)<br />...<br />(Alex: Less than a minute.)<br /><br /><em class="correct_response">South Korea</em><br /><br /><table width="100%"><tr><td class="right">Steven</td><td class="wrong">Liz</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">Punjab,<br />Baluchistan,<br />Sind</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;">(T: What is India?)<br /><br /><em class="correct_response">Pakistan</em><br /><br /><table width="100%"><tr><td class="wrong">Todd</td><td class="right">Liz</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Grenadans love to eat ice cream made from this main guacamole ingredient</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Avocado</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Puerto Ricans make mofongo by frying &amp; mashing these "cooking bananas"</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Plantains</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">In the Dominican Republic, la bandera ("the flag") is made with red beans, meat &amp; this white grain</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Rice</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">In Haiti, lambi is this big spiral-shelled sea snail (If I eat it, can I hear the ocean?)</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Conch</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">In Barbados, you'll go cuckoo for cou-coo, a mix of cornmeal &amp; this essential gumbo veggie</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">okra</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">In a popular cartoon series, he was Natasha's diminutive partner</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Boris Badenov</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">Boys greased this legendary figure's frying pan by skating across it with hams on the bottom of their feet</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Paul Bunyan</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">This character's "Da Plane!  Da Plane!" quickly became a TV catchphrase</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Tattoo</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Ted Cassidy played this towering butler for 2 seasons in the '60s</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Lurch</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">On "Taxi" Danny DeVito played this menacing dispatcher</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">Louie De Palma</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Handel wrote a 1743 oratorio about this Biblical guy who got a famous haircut</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Samson</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">A Haydn symphony bears the name of this British university that gave Haydn an honorary degree</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Oxford</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">In 1842 Mendelssohn completed his "Scottish Symphony" &amp; dedicated it to this queen</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;">(S: Who was Mary?)<br /><br /><em class="correct_response">Victoria</em><br /><br /><table width="100%"><tr><td class="wrong">Steven</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">This Russian turned some of the music he wrote for the ballet "Petrushka" into a suite</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Igor Stravinsky</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">Charles T. Griffes' tone poem "The Pleasure Dome of" this man is based on a Coleridge poem</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Kublai Khan</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">In 1930 this automaker co-wrote a book on Thomas Edison titled "Edison As I Know Him"</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Henry Ford</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">In 1816 Johann Nepomuk Maelzel patented this device used by musicians to keep correct tempo</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Metronome</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">In 1929 this wireless communications pioneer was made an Italian marquis</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Guglielmo Marconi</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">In 1807 he wrote, "The power of propelling boats by steam is now fully proved"</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Robert Fulton</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">The cabin of this inventor of the Cherokee syllabary is a national historic landmark in Oklahoma</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">Sequoyah</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">You won't sleep soundly with this in your coffee</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Caffeine</em><br /><br /><table width="100%"><tr><td class="right">Steven</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Area bared here:</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Midriff</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">Variety might report this, abbreviated "B.O.", as boffo</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Box office</em><br /><br /><table width="100%"><tr><td class="right">Liz</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">During threshing you separate the wheat from it</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Chaff</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">This Arizona city was named for an object created there in 1876 for a Fourth of July fair</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Flagstaff</em><br /><br /><table width="100%"><tr><td class="right">Todd</td></tr></table></td>

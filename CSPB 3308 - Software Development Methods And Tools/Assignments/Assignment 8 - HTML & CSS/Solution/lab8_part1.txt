@@ -1,0 +1,47 @@
+----- ----- Part 1 ----- -----
+
+What css rule did you use? - To change the color of the div, we used the background-color css rule. This can be done inline or in a css file.
+
+How would you write it in a css file so that only this div gets the new background color? - To achieve this, we would create a css file and use tag specific css rules. For example, we would use
+
+div#div1 {
+    background-color: #00ffff;
+}
+
+Or we could achieve the same result by using just the id and only using it in this div, this would look like:
+
+#div1 {
+    background-color: #00ffff;
+}
+
+These changes were added to boxes.css.
+
+What does changing the margin do? What does changing the padding do?
+
+- Adjusting the margin in CSS changes the space between the border of an element and the surrounding elements.
+- Adjusting the padding in CSS changes the space between the content of an element and the border of the element.
+
+----- ----- Part 2 ----- -----
+
+What happens if the margin is greater than 100px? - If the p tag has the margin adjusted past 100px, the p tag will start to spill out of the div box.
+
+What happens if the padding is greater than 100px? - If the p tag has the padding adjusted past 100px, the p tag will start to spill out of the div box as well.
+
+What is the difference between scroll and hidden? - The difference between scroll and hidden is that scroll will add a scrollbar to the div box if the content is too large to fit in the box, while hidden will hide the content that is too large to fit in the box.
+
+----- ----- Part 3 ----- -----
+
+What order are they in? These are now ordered left to right, with 1, 2, and 3 in that order placed in the top left of the screen.
+
+What if they all have the float: right attribute instead? - These are now placed in the top right of the screen, right to left in the order of 1, 2, and 3.
+
+Float left and clear right - If these attributes are added to the divs, along with the float right attribute, the divs will be placed in the top left of the screen. The divs will be placed in the order of 1, 2, and 3.
+
+However, if we only add these to the last two, the first div will be placed in the top right of the screen and the next two will be placed in a row below on the left side of the screen. The order of the divs
+will then be 2 and 3 for this row.
+
+----- ----- Part 4 ----- -----
+
+What changes? - The divs are now placed exactly in the top left of the screen with no room between the screen and the boxes.
+
+What does this tell you about the default margin value? - This tells us that the default margin value is not 0px, but rather a value greater than 0px.

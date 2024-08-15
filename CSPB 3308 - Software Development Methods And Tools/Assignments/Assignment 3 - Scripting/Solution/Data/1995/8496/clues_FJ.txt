@@ -1,0 +1,4 @@
+<div onmouseover="toggle('clue_FJ', 'clue_FJ_r', 'clue_FJ_stuck')" onmouseout="toggle('clue_FJ_r', 'clue_FJ', 'clue_FJ_stuck')" onclick="togglestick('clue_FJ_stuck')">
+    <td id="clue_FJ" class="clue_text">The word lapidate refers to this ancient form of punishment</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;">(Alex: Should be relatively easy, "lapidate" sounds like a semiprecious stone, lapis lazuli.)<table><tr><td class="right">June</td><td rowspan="2" valign="top">What is stoning?</td></tr><tr><td>$3,400</td></tr><tr><td class="right">Pete</td><td rowspan="2" valign="top">What is stoning</td></tr><tr><td>$3,001</td></tr><tr><td class="wrong">Ed</td><td rowspan="2" valign="top">What is flaying?</td></tr><tr><td>$1,101</td></tr></table><em class="correct_response">stoning</em></td>
+<var id="clue_FJ_stuck"></var>

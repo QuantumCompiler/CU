@@ -1,0 +1,4 @@
+<div onmouseover="toggle('clue_FJ', 'clue_FJ_r', 'clue_FJ_stuck')" onmouseout="toggle('clue_FJ_r', 'clue_FJ', 'clue_FJ_stuck')" onclick="togglestick('clue_FJ_stuck')">
+    <td id="clue_FJ" class="clue_text">He painted a "Crouching Marquesan Woman Seen from the Back" circa 1902</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="wrong">Mark</td><td rowspan="2" valign="top">Who is Picasso?</td></tr><tr><td>$2,500</td></tr><tr><td class="right">Jim</td><td rowspan="2" valign="top">Who was Gaugin</td></tr><tr><td>$8,300</td></tr><tr><td class="right">Ed</td><td rowspan="2" valign="top">Who was Gauguin?</td></tr><tr><td>$4,100</td></tr></table><em class="correct_response">Paul Gauguin</em></td>
+<var id="clue_FJ_stuck"></var>

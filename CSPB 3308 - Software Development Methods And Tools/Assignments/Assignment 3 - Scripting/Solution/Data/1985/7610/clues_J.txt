@@ -1,0 +1,100 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">Second in command to the captain</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;">(Bob: What is the [**]?)<br />[Bob was originally ruled incorrect, but the ruling was overturned before the start of Double Jeopardy!]<br /><br /><em class="correct_response">first mate (executive officer accepted)</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">From Old English for "steering oar" &amp; "ship's side", it's the right side of the ship</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;">(Bob: What is the port?)<br /><br /><em class="correct_response">starboard</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Ship in the <a href="https://www.j-archive.com/media/1985-05-17_J_04.mp3">following</a>:<br /><br /><i>"...he got drunk /<br />And broke in the Captain’s trunk /<br />The constable had to come and take him away..."</i></td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">the sloop <i>John B</i></em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Though the Confederates had the "Hunley", the "Holland", launched in 1898, was the 1st of this type in U.S. Navy</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">a submarine</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">Spain's "Invincible Armada" was made up of these vincible treasure ships</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">galleons</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">If Washington had left a tooth under his pillow, she might have left a wooden nickel</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">tooth fairy</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Another name for a fairy, or a Coca-Cola product with "Lymon"</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Sprite</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">It was she, not the prince, who really gave Cinderella the night to remember</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Fairy Godmother</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Wish the Blue Fairy granted Geppetto</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">that his wooden doll would become his son (that Pinocchio would become a real boy)</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">This Jeannie C. Riley hit sold 6 million records</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">"The Harper Valley P.T.A."</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">Expelled from a Bible school at age 15, this country-rock star is known as "The Killer"</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;">(Sandra: Who is my favorite, [*]?)<br /><br /><em class="correct_response">Jerry Lee Lewis</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">A Rhodes scholarship paid "For the Good Times" he had at Oxford</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Kris Kristofferson</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Though he's the son of Hank Snow, "The Singing Ranger", he's named after "The Singing Brakeman"</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;">(Sandra: Who is Hank Smith?)<br />(Bob: Who is Casey?)<br /><br /><em class="correct_response">Jimmie Rodgers</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="wrong">Sandra</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">According to Johnny Horton, "When it's springtime in Alaska" it's this temperature</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Sandra: What is 0?)<br /><br /><em class="correct_response">40 below</em><br /><br /><table width="100%"><tr><td class="wrong">Sandra</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">It makes M.A.D.D. members mad</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;">(Larry: What are alcoholics?)<br />(Alex: Be more specific.)<br />(Larry: Who are Mothers Against [*]?)<br /><br /><em class="correct_response">drunk drivers (drinking and driving)</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">St. Paul wrote to Timothy: "Drink no longer water but use a little" of this "for thy stomach's sake"</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">wine</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">A tall cocktail of rum, liqueur &amp; fruit juice, or a walking corpse</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;">(Alex: You feel like a walking corpse, by the way, after you drink a couple of these.)<br /><br /><em class="correct_response">a zombie</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">Eastern European country in which Tokay wine originated</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;">(Bob: What is Bulgaria?)<br />...<br />(Alex: Less than a minute to go in the round.)<br /><br /><em class="correct_response">Hungary</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">Nickname of British admiral Vernon who watered down sailors' liquor rations</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Grog</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">Fortunately, God must have had a 2nd copy of these lying around because Moses smashed the first</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Ten Commandments</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Precedes ray, rated, &amp; marks the spot</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">X</em><br /><br /><table width="100%"><tr><td class="right">Larry</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">A piece of paper signed to represent a debt</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">IOU</em><br /><br /><table width="100%"><tr><td class="right">Bob</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">1930 Peter Lorre film directed by Fritz Lang</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Larry: What is U-Boat?)<br /><br /><em class="correct_response"><i>M</i></em><br /><br /><table width="100%"><tr><td class="wrong">Larry</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">The 15th &amp; 16th letters, or a Mayberry youth</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">OP (Opie)</em><br /><br /><table width="100%"><tr><td class="right">Sandra</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">The only letter not present in the spellings of any of the fifty states</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Bob: What is X?)<br />(Sandra: What is...euh?)<br /><br /><em class="correct_response">Q</em><br /><br /><table width="100%"><tr><td class="wrong">Bob</td><td class="right">Larry</td><td class="wrong">Sandra</td></tr></table></td>

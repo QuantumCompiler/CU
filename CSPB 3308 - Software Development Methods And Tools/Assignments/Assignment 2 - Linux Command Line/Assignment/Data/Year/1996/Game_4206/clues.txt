@@ -1,0 +1,120 @@
+    <td id="clue_DJ_1_1" class="clue_text">From 1983 to 1986 she was the permanent guest host of the "Tonight Show"</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Joan Rivers</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">After watching her on "Good Morning America", you can exercise to her video "Workout America"</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Joan Lunden</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">"The Night They Drove Old Dixie Down" was her only hit to reach the Top 10</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Joan Baez</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">She appeared in "Addams Family Values" &amp; opposite her brother John in "Say Anything"</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Joan Cusack</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Laurence Olivier's widow, she was featured in the movies "Enchanted April", "Avalon" &amp; "Dennis the Menace"</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Joan Plowright</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Iran's richest oil deposits lie in the Khuzistan Plain just north of this gulf</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Persian Gulf</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">The island republic of the Comoros lies near Madagascar in this ocean</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Indian Ocean</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">At least 1500 islands make up this group in the St. Lawrence River</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Thousand Islands</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Most of Sri Lanka's shipping comes through this port</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Colombo</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">Vatnajokull Glacier in this country is bigger than all continental Europe's glaciers combined</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;">(Mary: What is Greenland?)<br /><br /><em class="correct_response">Iceland</em><br /><br /><table width="100%"><tr><td class="wrong">Mary</td><td class="right">Brock</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">He's the only U.S. president inaugurated in New York City</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">George Washington</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">This independent agency, the GSA, manages the U.S. government's equipment &amp; property</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">General Services Administration</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Of the 9 current members of the U.S. Supreme Court, this chief justice has served the longest, 24 years</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Mary: Who is William Rehmquist?)<br />[Initially ruled correct; reversed after clue 19 was completed.]<br /><br /><em class="correct_response">William Rehnquist</em><br /><br /><table width="100%"><tr><td class="wrong">Mary</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">This U.S. government agency administers the Fair Packaging &amp; Labeling Act, among others</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">FTC (Federal Trade Commission)</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">2 of 7 states with only 1 member in the House of Representatives</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;">(Alex: Alaska, Delaware, Montana, North Dakota &amp; South Dakota are the others....less than a minute to go!)<br /><br /><em class="correct_response">Wyoming & Vermont</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">This co-founder of the Chinese Communist Party worked as a library assistant at Beijing University</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Mao Tse-tung</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">7 U.S. counties are named for this steamboat pioneer</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">(Robert) Fulton</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">In January 1991, this First Lady broke her leg while sledding at Camp David</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Barbara Bush</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">This 1st Indian prime minister was born to a Kashmiri family of Brahmans, the most aristocratic caste</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Nehru</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">In 1817, with Laurent Clerc, he established what became the American School for the Deaf in Hartford</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">(Thomas) Gallaudet</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">Heating values of the bituminous type of this range from about 5,600 to 8,000 calories per gram</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">coal</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">This ore of aluminum was named for Les Baux, a place in southeast France</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;">[end-of-round signal sounds]<br /><br /><em class="correct_response">bauxite</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">The name of this hard igneous rock comes from Latin for "grain"</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">granite</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">Amethyst is an example of this mineral, nearly pure silicon dioxide</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">quartz</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">This Norwegian's play "Bygmester Solness", or "The Master Builder", was published in 1892</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Henrik Ibsen</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">This "Virginia Woolf" playwright's one-act "The Zoo Story" is set on a Central Park bench</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Edward Albee</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Jean-Louis Barrault directed the first production of this playwright's "Rhinoceros"</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Eugene Ionesco</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">The subject of his play "The Emperor Jones" was suggested to him by Haitian history</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Eugene O'Neill</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">This Pirandello play about a sextet of strange personages premiered in 1921</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Six Characters in Search of an Author</i></em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">His "Young Corn" painting is featured on a 1996 stamp celebrating the 150th anniversary of Iowa's statehood</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;">(Alex: If you didn't select an American artist, you're in deep trouble!)<table><tr><td class="right">Brock</td><td rowspan="2" valign="top">Who was Grant Wood?</td></tr><tr><td>$7,400</td></tr><tr><td class="right">Steve</td><td rowspan="2" valign="top">Who is Grant Wood?</td></tr><tr><td>$7,900</td></tr><tr><td class="right">Mary</td><td rowspan="2" valign="top">Who is WOOD?</td></tr><tr><td>$7,901</td></tr></table><em class="correct_response">Grant Wood</em></td>
+    <td id="clue_J_1_1" class="clue_text">He gets right to the point, the ear point, in "I Am Spock"</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Leonard Nimoy</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">She tells of life before &amp; after Burt in "My Life in High Heels"</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Loni Anderson</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Her book is "After All", after all, her show's theme song ended "You're gonna make it after all"</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Mary Tyler Moore</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">"Palimpsest" is "A Memoir" by this "Burr" author</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Gore Vidal</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">"A Good Life: Newspapering and Other Adventures" is by this former Washington Post editor</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Ben Bradlee</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Croutons may be substituted for breadcrumbs in this traditional Thanksgiving side dish</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">stuffing</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Joy of Cooking suggests serving slices of this guacamole ingredient with chutney as an hors d'oeuvre</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">avocado</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">Sugar or molasses may be added to this salt &amp; water solution used in pickling</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">brine</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">Craig Claiborne uses yellow tomatoes to make a "golden" type of this cold Spanish soup</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">gazpacho</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">Grated for flavoring, it's the thin outer layer of a citrus fruit, or a synonym for gusto</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">zest</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">This American bayou dweller can survive a wider range of temperatures than most other crocodilians</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">alligator</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">For the tuatara, these take 15 months to hatch</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">eggs</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">This largest monitor lizard carries bacteria in its mouth, sometimes making its bite fatal</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Komodo dragon</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">The king snake is this type of snake that kills by coiling around its prey &amp; squeezing</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">constrictor</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">Though called a "toad", this North American desert creature is actually a lizard &amp; subsists mainly on ants</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">horned toad</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">During the Depression in 1932, it exceeded 20%</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">unemployment</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">A magazine, or a French miss</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mademoiselle</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">It's the formal church procedure that declares a person a saint</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;">(Mary: What is sanctification?)<br />(Brock: What is beatification?)<br /><br /><em class="correct_response">canonization</em><br /><br /><table width="100%"><tr><td class="right">Steve</td><td class="wrong">Mary</td><td class="wrong">Brock</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">It's the type of dentist who specializes in treating diseases of the gum &amp; tissues</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">periodontist</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">A public street open at both ends, or any major boulevard</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">thoroughfare</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">Known as the "Say Hey Kid", he played 2,843 games in center field</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Willie Mays</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">This late Green Bay Packers coach has the highest winning percentage in NFL history <span class="nobreak">--</span>- .740</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Vince Lombardi</em><br /><br /><table width="100%"><tr><td class="right">Brock</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">In the 1960s &amp; 1970s, she won 20 Wimbledon titles: 6 singles, 10 doubles &amp; 4 mixed doubles</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Billie Jean King</em><br /><br /><table width="100%"><tr><td class="right">Steve</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">In 1986 at age 46, this "Golden Bear" became the oldest man to win the Masters golf tournament</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Jack Nicklaus</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">A 1951 playoff series homer by Bobby Thomson won the National League pennant for this team</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;">(Mary: Who are the Brooklyn Dodgers?)<br /><br /><em class="correct_response">New York Giants</em><br /><br /><table width="100%"><tr><td class="right">Steve</td><td class="wrong">Mary</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">The third stanza of "Deutschlandlied"</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;">(Mary: What is uber alles?)<br /><br /><em class="correct_response">Germany</em><br /><br /><table width="100%"><tr><td class="right">Steve</td><td class="wrong">Mary</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">"Wilhelmus van Nassouwe"</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;">(Alex: "William of Orange.")<br /><br /><em class="correct_response">the Netherlands</em><br /><br /><table width="100%"><tr><td class="right">Mary</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">"Marcha Real"</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Brock: What is Italy?)<br /><br /><em class="correct_response">Spain</em><br /><br /><table width="100%"><tr><td class="right">Steve</td><td class="wrong">Brock</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">"La Brabanconne"</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;">(Brock: What is France?)<br /><br /><em class="correct_response">Belgium</em><br /><br /><table width="100%"><tr><td class="right">Mary</td><td class="wrong">Brock</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">"Land der Berge, Land am Strome"</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">(Steve: What is South Africa?)<br /><br /><em class="correct_response">Austria</em><br /><br /><table width="100%"><tr><td class="wrong">Steve</td><td class="right">Mary</td></tr></table></td>

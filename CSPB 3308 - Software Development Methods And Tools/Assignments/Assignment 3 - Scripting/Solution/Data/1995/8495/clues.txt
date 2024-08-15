@@ -1,0 +1,122 @@
+    <td id="clue_DJ_1_1" class="clue_text">Joseph Smith moved this church's headquarters to Kirtland, Ohio in 1831</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Mormon Church</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">This form of Buddhism originated in China, where it's known as Ch'an</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Zen</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">This Jewish New Year celebration marks the beginning of the ten days of penitence</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Rosh Hashanah</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">The Dome of the Rock covers the rock from which he is believed to have ascended into heaven</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Muhammad</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Guru Nanak &amp; his nine successors are revered as the ten gurus of this religion</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(James: What's Hinduism?)<br /><br /><em class="correct_response">Sikhism</em><br /><br /><table width="100%"><tr><td class="wrong">James</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Like the Matterhorn, Monte Rosa straddles the border between Italy &amp; this country</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Switzerland</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">In 1964 the Canadian government renamed Mount East Hubbard in memory of this American</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">John F. Kennedy</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Ernest Hemingway described it as "wide as all the world, great, high, and unbelievably white in the sun"</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Kilimanjaro</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">It's the official name of Mount Godwin Austen</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(James: What is, uh, Everest?)<br /><br /><em class="correct_response">K2</em><br /><br /><table width="100%"><tr><td class="wrong">James</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">When it erupted in 1991, this volcano in the Philippines had been dormant for about 600 years</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Pinatubo</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">In the 1600s drinking tankards were often made of this tusk material</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;">(Alex: We have about a minute to go.)<br /><br /><em class="correct_response">ivory</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">The cloth of St. Gereon is thought to be the oldest occidental one of these wall hangings</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">a tapestry</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">In the 1750s Battersea Enamelware was made at York House in the Battersea district of this city</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">London</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">Highly prized for carving, the "mutton fat" type of this gemstone is uniformly white, not green</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">jade</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">Dutch traders returning to Europe from Java introduced this dyeing process that uses wax</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">batik</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">In 1798 George Washington got this former Treasury Sec'y the job of Army Inspector General</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Alexander Hamilton</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">From the color of his habit, this French cardinal &amp; statesman was known as l'Eminence Rouge</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">(Cardinal) Richelieu</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">This medicine man &amp; leader of the Sioux was also known by the Native name Tatanka Yotanka</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Sitting Bull</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">He announced his first two laws of planetary motion in 1609 &amp; his third in 1619</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">(Anna: Who is Newton?)<br /><br /><em class="correct_response">(Johannes) Kepler</em><br /><br /><table width="100%"><tr><td class="right">Ed</td><td class="wrong">Anna</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Hadrian's predecessor, a column in Rome commemorates his victories</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Trajan</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">Vachel Lindsay wrote of this famous American, "sorrow for Anne Rutledge burned in his face"</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Lincoln</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">A woman in a spangled mourning dress inspired this lord's lines "She walks in beauty, like the night"</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Byron</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">John Greenleaf Whittier wrote, "Blessings on thee, little man, barefoot boy, with cheek of" this</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">of tan</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">He composed his "Ode to a Nightingale" under a plum tree on a morning in May</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Keats</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">Tennyson had a thousand copies of this poem printed for "the brave soldiers at Sebastopol"</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">"The Charge of the Light Brigade"</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">The origins of this word for a severe food shortage go back to fames, a Latin word for hunger</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">famine</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">The name of this ever-popular beverage may be traced back to the Amoy dialect of Chinese</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">tea</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">This gemstone's name comes from a Sinhalese word for carnelian, toramalli</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">tourmaline</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">This name for an open pavilion found in parks is derived from a Persian word for palace, kushk</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">a kiosk</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">The name of this catlike mammal comes from zabad, an Arabic word for perfume made from its musky secretions</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">civet (the civet cat)</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">This national Patriotic Society was organized in 1890 by First Lady Caroline Scott Harrison</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="right">Anna</td><td rowspan="2" valign="top">What <del>was</del> is the Daughters of the American Revolution</td></tr><tr><td>$5,500</td></tr><tr><td class="right">James</td><td rowspan="2" valign="top">What is the D.A.R.</td></tr><tr><td>$6,800</td></tr><tr><td class="right">Ed</td><td rowspan="2" valign="top">What is the D.A.R.?</td></tr><tr><td>$4,401</td></tr></table><em class="correct_response">(The National Society of) the Daughters of the American Revolution</em></td>
+    <td id="clue_J_1_1" class="clue_text">Antonio Stradivari learned to make this instrument in the Amati family workshop in Cremona, Italy</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">the violin</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">9th c. Europeans, notably the Irish, added the pillar that runs parallel to this instrument's strings</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">the harp</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">This brass instrument used to give military signals has no valves</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">the bugle</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">The quinto is the highest-pitched type of this large, cylindrical Latin American drum</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">a conga drum</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">This instrument consists of a chanter, drones &amp; an air reservoir</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">the bagpipes</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">In 1993 Dave Wannstedt replaced Mike Ditka as this team's coach</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">the Chicago Bears</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">In Russia in 1994, she ran off with her third Goodwill Games heptathlon title</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Jackie Joyner-Kersee</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">It's the nickname of pro golfer Frank Zoeller</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Fuzzy</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">In 1920, after winning 20 of 21 races, this "Big Red" thoroughbred was retired</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Man O' War</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">L.A. Dodger Glenn Burke is credited with originating this congratulatory gesture in 1977</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">the high-five</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">About 75% of its people, including most of its Maoris, live on its North Island</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">New Zealand</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">A new museum in Yokohama traces the history of ramen, this food</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">noodles</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">In Serbo-Croatian the name of this Italian port is spelled T-R-S-T; maybe you should buy a vowel</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Trieste</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">Residents of this Italian fashion city call its cathedral "The Factory", as building has gone on since 1386</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Milan</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">The chief tributary of this "colorful" river is the Vaal River</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(James: What's the Danube?)<br />...<br />(James: I was thinking blue.)<br /><br /><em class="correct_response">the Orange River</em><br /><br /><table width="100%"><tr><td class="wrong">James</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">The Hamlin variety of this fruit has more vitamin C by weight than the Valencia or navel</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">the orange</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">The fava type of this resembles the lima but many find it more flavorful</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">the bean</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Add vinegar or lemon juice when cooking this root vegetable to keep its beautiful crimson color</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">the beet</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">While growing, this vegetable looks like many small heads of cabbage on a tall, thick stalk</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Brussels sprouts</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">India grows more of this fruit that's used in chutney than any other</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">the mango</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">On accepting his Emmy for "Family Ties" in 1986, he said, "I feel four feet tall!"</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Michael Fox</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">In the summer of 1978, Andy Rooney began his weekly musings on this series</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>60 Minutes</i></em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">Buck is the Bundy family dog on this Fox series</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Married... with Children</i></em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">On Sept. 12, 1959 this hour-long NBC series became the first Western to be televised in color</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Bonanza</i></em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">In the 1974 "ABC Theatre" presentation of "The Missiles of October", this actor portrayed JFK</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">William Devane</em><br /><br /><table width="100%"><tr><td class="right">James</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Pam peruses this before she goes on a trip</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">the map (from Pam)</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">If you want your boss to give you one, arise &amp; ask for it</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">a raise (from arise)</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">A successful ceramicist should never stop throwing these</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">pots (from stop)</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">It's how often Lydia reads the newspaper</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">daily (from Lydia)</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">Many women use this mascara applicator at dawn</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">the wand (from dawn)</em><br /><br /><table width="100%"><tr><td class="right">Anna</td></tr></table></td>

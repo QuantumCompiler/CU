@@ -1,0 +1,515 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Version Control}
+\renewcommand{\SectionTitle}{Version Control}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AgileBook, \EngSoftBook, \ProGitBook, and \LinuxBook.
+
+\begin{itemize}
+    \item \textbf{Pro Git - Chapter 1 - Getting Started}
+    \item \textbf{Pro Git - Chapter 2 - Git Basics}
+    \item \textbf{Pro Git - Chapter 3 - Git Branching}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=_bEpLtr1Tk0}{Overview Of Version Control}{13}
+    \item \lecture{https://www.youtube.com/watch?v=QT9YyBpcRxE}{Introduction To Git}{25}
+    \item \lecture{https://www.youtube.com/watch?v=fo0rL62m9Bg}{Git Merging And Branching}{21}
+    \item \lecture{https://www.youtube.com/watch?v=tc4ROCJYbm0&t=1s}{AT\&T Archives: The UNIX Operating System}{27}
+    \item \lecture{https://www.youtube.com/watch?v=NTfOnGZUZDk&t=1s}{Where GREP Came From - Computerphile}{10}
+    \item \lecture{https://www.youtube.com/watch?v=bKzonnwoR2I&t=2s}{UNIX Pipeline (Brian Kernighan) - Computerphile}{5}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3308-software-dev-summer-2024/lab-4-QuantumCompiler}{Lab 4 - Version Control}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 4 - Version Control.pdf}{Quiz 4 - Version Control}
+\end{itemize}
+
+\subsection{Project}
+
+The assignment(s) for the project this week is:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/assign/view.php?id=61318}{Project Milestone 2: Agile Meeting Recording}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 1: Getting Started}.
+
+\begin{notes}{Chapter 1: Getting Started}
+    \subsection*{Overview}
+
+    This chapter introduces Git, covering its history, setup, and essential concepts. Git is a distributed version control system that helps manage changes to files and coordinate work among multiple people.
+    
+    \subsubsection*{About Version Control}
+    
+    Version control systems (VCS) record changes to files over time, enabling you to recall specific versions later. This chapter discusses local, centralized, and distributed version control systems.
+    
+    \begin{highlight}[About Version Control]
+    
+        VCS records changes to files over time, allowing specific versions to be recalled.
+        
+        \begin{itemize}
+            \item \textbf{Local VCS}: Keeps changes in a simple database.
+            \item \textbf{Centralized VCS}: Uses a single server to store all changes and file versions.
+            \item \textbf{Distributed VCS}: Each client mirrors the entire repository.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{A Short History of Git}
+    
+    Git was created in 2005 by Linus Torvalds for the Linux kernel development, emphasizing speed, simple design, and support for non-linear development.
+    
+    \begin{highlight}[A Short History of Git]
+    
+        Git was developed in response to the limitations of previous systems, focusing on speed and non-linear development.
+        
+        \begin{itemize}
+            \item Developed by Linus Torvalds in 2005.
+            \item Inspired by the challenges faced with BitKeeper.
+            \item Key goals: Speed, simplicity, strong support for branching, and distributed development.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{What is Git?}
+    
+    Git is a distributed VCS that uses snapshots instead of differences, providing a more efficient way to manage changes.
+    
+    \begin{highlight}[What is Git?]
+    
+        Git uses snapshots to store data, making it efficient and reliable.
+        
+        \begin{itemize}
+            \item \textbf{Snapshots}: Git records the state of the project at each commit.
+            \item \textbf{Local operations}: Most Git operations are local, making them fast.
+            \item \textbf{Integrity}: Everything in Git is checksummed with a SHA-1 hash.
+            \item \textbf{Data addition}: Nearly all actions in Git add data to the repository.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{The Three States}
+    
+    Files in Git can be in one of three states: modified, staged, or committed. Understanding these states is crucial for using Git effectively.
+    
+    \begin{highlight}[The Three States]
+    
+        Git files can be modified, staged, or committed.
+        
+        \begin{itemize}
+            \item \textbf{Modified}: Changes have been made but not committed.
+            \item \textbf{Staged}: Marked to be included in the next commit.
+            \item \textbf{Committed}: Data is stored in the local database.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{The Command Line}
+    
+    Using Git on the command line provides access to all Git commands and is essential for mastering Git.
+    
+    \begin{highlight}[The Command Line]
+    
+        The command line provides full access to Git's functionality.
+        
+        \begin{itemize}
+            \item Essential for using all Git commands.
+            \item Examples include \texttt{git init}, \texttt{git add}, \texttt{git commit}.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Installing Git}
+    
+    Installing Git varies by operating system. The chapter covers installation on Linux, macOS, and Windows.
+    
+    \begin{highlight}[Installing Git]
+    
+        Install Git to start using it on your system.
+        
+        \begin{itemize}
+            \item \textbf{Linux}: Use package managers like \texttt{dnf} or \texttt{apt}.
+            \item \textbf{macOS}: Use Xcode Command Line Tools or a binary installer.
+            \item \textbf{Windows}: Download from the Git website or use the Chocolatey package manager.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{First-Time Git Setup}
+    
+    Configure Git with your personal information and preferred settings.
+    
+    \begin{highlight}[First-Time Git Setup]
+    
+        Set up Git with your user name, email, and default text editor.
+        
+        \begin{itemize}
+            \item Configure user identity:
+    \begin{code}[Bash]
+    \$ git config --global user.name "John Doe"
+    \$ git config --global user.email johndoe@example.com
+    \end{code}
+            \item Set default text editor:
+    \begin{code}[Bash]
+    \$ git config --global core.editor emacs
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from Chapter 1 on getting started with Git:
+        
+        \begin{itemize}
+            \item \textbf{Version Control Systems}: Manage changes to files over time.
+            \item \textbf{History of Git}: Developed for the Linux kernel with a focus on speed and efficiency.
+            \item \textbf{Snapshots}: Git uses snapshots to track project changes.
+            \item \textbf{Three States}: Modified, staged, and committed states for files.
+            \item \textbf{Command Line}: Provides full access to Git functionality.
+            \item \textbf{Installing Git}: Procedures for Linux, macOS, and Windows.
+            \item \textbf{First-Time Setup}: Configure user identity and settings.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 2: Git Basics}.
+
+\begin{notes}{Chapter 2: Git Basics}
+    \subsection*{Overview}
+
+    This chapter provides an introduction to Git basics, covering the fundamental commands and concepts necessary to start using Git effectively. By the end of this chapter, you will be able to configure and initialize a repository, track files, stage and commit changes, ignore files, undo mistakes, view project history, and interact with remote repositories.
+    
+    \subsubsection*{Getting a Git Repository}
+    
+    There are two main ways to obtain a Git repository: initializing a new repository in an existing directory or cloning an existing repository.
+    
+    \begin{highlight}[Getting a Git Repository]
+    
+        Initialize a new repository or clone an existing one.
+        
+        \begin{itemize}
+            \item \textbf{Initialize a repository}:
+    \begin{code}[Bash]
+    \$ cd /path/to/project
+    \$ git init
+    \end{code}
+            \item \textbf{Clone a repository}:
+    \begin{code}[Bash]
+    \$ git clone <url>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Recording Changes to the Repository}
+    
+    Changes to files are recorded in the repository through a cycle of modifying, staging, and committing files.
+    
+    \begin{highlight}[Recording Changes to the Repository]
+    
+        Track, stage, and commit changes to your files.
+        
+        \begin{itemize}
+            \item \textbf{Track new files}:
+    \begin{code}[Bash]
+    \$ git add <file>
+    \end{code}
+            \item \textbf{Stage modified files}:
+    \begin{code}[Bash]
+    \$ git add <file>
+    \end{code}
+            \item \textbf{Commit changes}:
+    \begin{code}[Bash]
+    \$ git commit -m "commit message"
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Viewing the Commit History}
+    
+    The commit history can be viewed to understand the changes made over time.
+    
+    \begin{highlight}[Viewing the Commit History]
+    
+        Use the \texttt{git log} command to view commit history.
+        
+        \begin{itemize}
+            \item \textbf{Basic log}:
+    \begin{code}[Bash]
+    \$ git log
+    \end{code}
+            \item \textbf{Detailed log with patch}:
+    \begin{code}[Bash]
+    \$ git log -p
+    \end{code}
+            \item \textbf{Short log format}:
+    \begin{code}[Bash]
+    \$ git log --oneline
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Undoing Things}
+    
+    Git provides several commands to undo changes at various stages.
+    
+    \begin{highlight}[Undoing Things]
+    
+        Undo changes using Git commands to revert, reset, and clean.
+        
+        \begin{itemize}
+            \item \textbf{Unstage a file}:
+    \begin{code}[Bash]
+    \$ git reset HEAD <file>
+    \end{code}
+            \item \textbf{Discard changes in a file}:
+    \begin{code}[Bash]
+    \$ git checkout -- <file>
+    \end{code}
+            \item \textbf{Amend a commit}:
+    \begin{code}[Bash]
+    \$ git commit --amend
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Working with Remotes}
+    
+    Remote repositories are essential for collaboration. You can fetch, pull, and push changes to and from remotes.
+    
+    \begin{highlight}[Working with Remotes]
+    
+        Interact with remote repositories for collaboration.
+        
+        \begin{itemize}
+            \item \textbf{Add a remote}:
+    \begin{code}[Bash]
+    \$ git remote add <name> <url>
+    \end{code}
+            \item \textbf{Fetch changes}:
+    \begin{code}[Bash]
+    \$ git fetch <remote>
+    \end{code}
+            \item \textbf{Push changes}:
+    \begin{code}[Bash]
+    \$ git push <remote> <branch>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from Chapter 2 on Git basics:
+        
+        \begin{itemize}
+            \item \textbf{Getting a Repository}: Initialize a new repository or clone an existing one.
+            \item \textbf{Recording Changes}: Track, stage, and commit changes to files.
+            \item \textbf{Viewing History}: Use git log to view the commit history.
+            \item \textbf{Undoing Changes}: Commands to unstage files, discard changes, and amend commits.
+            \item \textbf{Working with Remotes}: Add, fetch from, and push to remote repositories.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}
+
+The last chapter that is being covered this week is \textbf{Chapter 3: Git Branching}.
+
+\begin{notes}{Chapter 3: Git Branching}
+    \subsection*{Overview}
+
+    This chapter delves into Git branching, a core feature that distinguishes Git from other version control systems (VCS). Branching in Git is efficient and lightweight, facilitating multiple workflows 
+    and frequent branching and merging.
+    
+    \subsubsection*{Branches in a Nutshell}
+    
+    Branches in Git allow for divergent lines of development within the same project. This section explains how Git's branching model operates, focusing on its efficiency and ease of use.
+    
+    \begin{highlight}[Branches in a Nutshell]
+    
+        Git branches are lightweight and encourage frequent branching and merging.
+        
+        \begin{itemize}
+            \item Branches are pointers to commits.
+            \item The default branch is \texttt{master}.
+            \item Creating a branch:
+    \begin{code}[Bash]
+    \$ git branch <branchname>
+    \end{code}
+            \item Switching branches:
+    \begin{code}[Bash]
+    \$ git checkout <branchname>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Basic Branching and Merging}
+    
+    This section covers basic branching and merging operations, illustrating common workflows.
+    
+    \begin{highlight}[Basic Branching and Merging]
+    
+        Branching and merging allow for isolated development and integration of changes.
+        
+        \begin{itemize}
+            \item Create and switch to a new branch:
+    \begin{code}[Bash]
+    \$ git checkout -b <branchname>
+    \end{code}
+            \item Merge changes from one branch into another:
+    \begin{code}[Bash]
+    \$ git checkout master
+    \$ git merge <branchname>
+    \end{code}
+            \item Example workflow for a hotfix:
+    \begin{code}[Bash]
+    \$ git checkout master
+    \$ git checkout -b hotfix
+    # make changes
+    \$ git commit -a -m "Fix issue"
+    \$ git checkout master
+    \$ git merge hotfix
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Branch Management}
+    
+    Effective branch management involves creating, deleting, and listing branches, as well as understanding merged and unmerged branches.
+    
+    \begin{highlight}[Branch Management]
+    
+        Manage branches to keep the repository organized and up-to-date.
+        
+        \begin{itemize}
+            \item List branches:
+    \begin{code}[Bash]
+    \$ git branch
+    \end{code}
+            \item Delete a branch:
+    \begin{code}[Bash]
+    \$ git branch -d <branchname>
+    \end{code}
+            \item List merged branches:
+    \begin{code}[Bash]
+    \$ git branch --merged
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Branching Workflows}
+    
+    Different workflows suit various project needs, from simple feature branches to complex multi-branch strategies.
+    
+    \begin{highlight}[Branching Workflows]
+    
+        Choose a branching workflow that fits your project's complexity and size.
+        
+        \begin{itemize}
+            \item \textbf{Feature branches}: For developing new features.
+            \item \textbf{Long-running branches}: Maintain stable and development branches.
+            \item Example of creating and merging a feature branch:
+    \begin{code}[Bash]
+    \$ git checkout -b new-feature
+    # work on feature
+    \$ git commit -a -m "Add new feature"
+    \$ git checkout master
+    \$ git merge new-feature
+    \$ git branch -d new-feature
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Remote Branches}
+    
+    Working with remote branches involves fetching, pulling, and pushing changes to and from remote repositories.
+    
+    \begin{highlight}[Remote Branches]
+    
+        Remote branches track the state of branches in remote repositories.
+        
+        \begin{itemize}
+            \item Fetch updates from a remote:
+    \begin{code}[Bash]
+    \$ git fetch <remote>
+    \end{code}
+            \item Push a local branch to a remote:
+    \begin{code}[Bash]
+    \$ git push <remote> <branchname>
+    \end{code}
+            \item Track a remote branch:
+    \begin{code}[Bash]
+    \$ git checkout --track <remote>/<branchname>
+    \end{code}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Rebasing}
+    
+    Rebasing replays commits from one branch onto another, offering a cleaner project history compared to merging.
+    
+    \begin{highlight}[Rebasing]
+    
+        Rebase to create a linear commit history and simplify branch integration.
+        
+        \begin{itemize}
+            \item Basic rebase:
+    \begin{code}[Bash]
+    \$ git checkout <branchname>
+    \$ git rebase master
+    \end{code}
+            \item Avoid rebasing shared branches to prevent history conflicts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Key concepts from Chapter 3 on Git branching:
+        
+        \begin{itemize}
+            \item \textbf{Branches}: Lightweight pointers to commits.
+            \item \textbf{Branching and Merging}: Essential for isolated development and integration.
+            \item \textbf{Branch Management}: Tools for organizing and maintaining branches.
+            \item \textbf{Branching Workflows}: Tailor workflows to project needs.
+            \item \textbf{Remote Branches}: Track and manage branches in remote repositories.
+            \item \textbf{Rebasing}: Create a linear commit history and streamline integration.
+        \end{itemize}
+        
+    \end{highlight}
+\end{notes}

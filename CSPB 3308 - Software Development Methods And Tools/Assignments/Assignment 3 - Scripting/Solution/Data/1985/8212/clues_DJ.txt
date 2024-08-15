@@ -1,0 +1,112 @@
+            <td id="clue_DJ_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_DJ_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_DJ_1_1', 'clue_DJ_1_1_r', 'clue_DJ_1_1_stuck')" onmouseout="toggle('clue_DJ_1_1_r', 'clue_DJ_1_1', 'clue_DJ_1_1_stuck')" onclick="togglestick('clue_DJ_1_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_2', 'clue_DJ_1_2_r', 'clue_DJ_1_2_stuck')" onmouseout="toggle('clue_DJ_1_2_r', 'clue_DJ_1_2', 'clue_DJ_1_2_stuck')" onclick="togglestick('clue_DJ_1_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_3', 'clue_DJ_1_3_r', 'clue_DJ_1_3_stuck')" onmouseout="toggle('clue_DJ_1_3_r', 'clue_DJ_1_3', 'clue_DJ_1_3_stuck')" onclick="togglestick('clue_DJ_1_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_4', 'clue_DJ_1_4_r', 'clue_DJ_1_4_stuck')" onmouseout="toggle('clue_DJ_1_4_r', 'clue_DJ_1_4', 'clue_DJ_1_4_stuck')" onclick="togglestick('clue_DJ_1_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_1_5', 'clue_DJ_1_5_r', 'clue_DJ_1_5_stuck')" onmouseout="toggle('clue_DJ_1_5_r', 'clue_DJ_1_5', 'clue_DJ_1_5_stuck')" onclick="togglestick('clue_DJ_1_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_1', 'clue_DJ_2_1_r', 'clue_DJ_2_1_stuck')" onmouseout="toggle('clue_DJ_2_1_r', 'clue_DJ_2_1', 'clue_DJ_2_1_stuck')" onclick="togglestick('clue_DJ_2_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_2', 'clue_DJ_2_2_r', 'clue_DJ_2_2_stuck')" onmouseout="toggle('clue_DJ_2_2_r', 'clue_DJ_2_2', 'clue_DJ_2_2_stuck')" onclick="togglestick('clue_DJ_2_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_2_3', 'clue_DJ_2_3_r', 'clue_DJ_2_3_stuck')" onmouseout="toggle('clue_DJ_2_3_r', 'clue_DJ_2_3', 'clue_DJ_2_3_stuck')" onclick="togglestick('clue_DJ_2_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_1', 'clue_DJ_3_1_r', 'clue_DJ_3_1_stuck')" onmouseout="toggle('clue_DJ_3_1_r', 'clue_DJ_3_1', 'clue_DJ_3_1_stuck')" onclick="togglestick('clue_DJ_3_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_2', 'clue_DJ_3_2_r', 'clue_DJ_3_2_stuck')" onmouseout="toggle('clue_DJ_3_2_r', 'clue_DJ_3_2', 'clue_DJ_3_2_stuck')" onclick="togglestick('clue_DJ_3_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_3', 'clue_DJ_3_3_r', 'clue_DJ_3_3_stuck')" onmouseout="toggle('clue_DJ_3_3_r', 'clue_DJ_3_3', 'clue_DJ_3_3_stuck')" onclick="togglestick('clue_DJ_3_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_4', 'clue_DJ_3_4_r', 'clue_DJ_3_4_stuck')" onmouseout="toggle('clue_DJ_3_4_r', 'clue_DJ_3_4', 'clue_DJ_3_4_stuck')" onclick="togglestick('clue_DJ_3_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_3_5', 'clue_DJ_3_5_r', 'clue_DJ_3_5_stuck')" onmouseout="toggle('clue_DJ_3_5_r', 'clue_DJ_3_5', 'clue_DJ_3_5_stuck')" onclick="togglestick('clue_DJ_3_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_1', 'clue_DJ_4_1_r', 'clue_DJ_4_1_stuck')" onmouseout="toggle('clue_DJ_4_1_r', 'clue_DJ_4_1', 'clue_DJ_4_1_stuck')" onclick="togglestick('clue_DJ_4_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_2', 'clue_DJ_4_2_r', 'clue_DJ_4_2_stuck')" onmouseout="toggle('clue_DJ_4_2_r', 'clue_DJ_4_2', 'clue_DJ_4_2_stuck')" onclick="togglestick('clue_DJ_4_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_3', 'clue_DJ_4_3_r', 'clue_DJ_4_3_stuck')" onmouseout="toggle('clue_DJ_4_3_r', 'clue_DJ_4_3', 'clue_DJ_4_3_stuck')" onclick="togglestick('clue_DJ_4_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_4', 'clue_DJ_4_4_r', 'clue_DJ_4_4_stuck')" onmouseout="toggle('clue_DJ_4_4_r', 'clue_DJ_4_4', 'clue_DJ_4_4_stuck')" onclick="togglestick('clue_DJ_4_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_4_5', 'clue_DJ_4_5_r', 'clue_DJ_4_5_stuck')" onmouseout="toggle('clue_DJ_4_5_r', 'clue_DJ_4_5', 'clue_DJ_4_5_stuck')" onclick="togglestick('clue_DJ_4_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_1', 'clue_DJ_5_1_r', 'clue_DJ_5_1_stuck')" onmouseout="toggle('clue_DJ_5_1_r', 'clue_DJ_5_1', 'clue_DJ_5_1_stuck')" onclick="togglestick('clue_DJ_5_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_2', 'clue_DJ_5_2_r', 'clue_DJ_5_2_stuck')" onmouseout="toggle('clue_DJ_5_2_r', 'clue_DJ_5_2', 'clue_DJ_5_2_stuck')" onclick="togglestick('clue_DJ_5_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_3', 'clue_DJ_5_3_r', 'clue_DJ_5_3_stuck')" onmouseout="toggle('clue_DJ_5_3_r', 'clue_DJ_5_3', 'clue_DJ_5_3_stuck')" onclick="togglestick('clue_DJ_5_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_4', 'clue_DJ_5_4_r', 'clue_DJ_5_4_stuck')" onmouseout="toggle('clue_DJ_5_4_r', 'clue_DJ_5_4', 'clue_DJ_5_4_stuck')" onclick="togglestick('clue_DJ_5_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_5_5', 'clue_DJ_5_5_r', 'clue_DJ_5_5_stuck')" onmouseout="toggle('clue_DJ_5_5_r', 'clue_DJ_5_5', 'clue_DJ_5_5_stuck')" onclick="togglestick('clue_DJ_5_5_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_1', 'clue_DJ_6_1_r', 'clue_DJ_6_1_stuck')" onmouseout="toggle('clue_DJ_6_1_r', 'clue_DJ_6_1', 'clue_DJ_6_1_stuck')" onclick="togglestick('clue_DJ_6_1_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_2', 'clue_DJ_6_2_r', 'clue_DJ_6_2_stuck')" onmouseout="toggle('clue_DJ_6_2_r', 'clue_DJ_6_2', 'clue_DJ_6_2_stuck')" onclick="togglestick('clue_DJ_6_2_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_3', 'clue_DJ_6_3_r', 'clue_DJ_6_3_stuck')" onmouseout="toggle('clue_DJ_6_3_r', 'clue_DJ_6_3', 'clue_DJ_6_3_stuck')" onclick="togglestick('clue_DJ_6_3_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_4', 'clue_DJ_6_4_r', 'clue_DJ_6_4_stuck')" onmouseout="toggle('clue_DJ_6_4_r', 'clue_DJ_6_4', 'clue_DJ_6_4_stuck')" onclick="togglestick('clue_DJ_6_4_stuck')">
+      <div onmouseover="toggle('clue_DJ_6_5', 'clue_DJ_6_5_r', 'clue_DJ_6_5_stuck')" onmouseout="toggle('clue_DJ_6_5_r', 'clue_DJ_6_5', 'clue_DJ_6_5_stuck')" onclick="togglestick('clue_DJ_6_5_stuck')">
+    <td id="clue_DJ_1_1" class="clue_text">City Anna would have to go to today to visit the king of "Siam" at home</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Bangkok</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">English town named for a tree belonging to a man named "Cofa", it got a treat with Godiva's ride</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;">(Guy: [No response])<br /><br /><em class="correct_response">Coventry</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">Brazilian city name which is Portuguese equivalent to Minnesota's capital</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">São Paulo</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">The administrative capital of South Africa, people marched to it in song</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">Pretoria</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">Russian port on the Black Sea, scene of an eleven-month siege in the Crimean War</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;">(Guy: What is Odessa?)<br /><br /><em class="correct_response">Sevastopol</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">Unit measuring intensity of sound, named for inventor of the phone</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">decibel (or bel)</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">Number of beats in a <sup>6</sup><sub>/4</sub> measure</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">6</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Found by multiplying the diameter of a circle by 3.1415</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br />(Alex: I'm so sorry you didn't risk more on that one. After the fact, it's always so much easier.)<br /><br /><em class="correct_response">the circumference</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">Sport where one might show off his giant slalom</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">skiing</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Minimum number of balls which must be thrown in the 10th frame in bowling</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">2</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Ballpark the 1984 World Series pennant is flying over</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;">(Jack: What is Wrigley Field?)<br />...<br />(Alex: Yes, you're going to make the Chicago fans very happy, Jack, even with that piece of erroneous information.)<br /><br /><em class="correct_response">Tiger Stadium</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">This ABC series hosted by Curt Gowdy was recently canceled, ending its 20 year run</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>American Sportsman</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">The oldest of organized college sports, since 1841 Oxford &amp; Cambridge have contested yearly</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">rowing</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">Richard III should have seen Monty Hall for this trade deal</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">a kingdom for a horse</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">While Juliet took a stab at killing herself, Romeo did this to end it all</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">taking poison</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">Falstaff calls it "the better part of valour"</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">discretion</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">Caesar calls him dangerous because he has "a lean and hungry look"</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;">(Jack: Who is Mark Antony?)<br /><br /><em class="correct_response">Cassius</em><br /><br /><table width="100%"><tr><td class="right">Carole</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">Shakespeare's shortest play, it's a humorous look at the mishaps of double trouble</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>The Comedy of Errors</i></em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">The umbilical cord is not cut until the doctor sees that these are inflated &amp; functioning</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">the lungs</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">In "The Rubaiyat", it "writes, and having writ, moves on"</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;">(Carole: What is he hand? The hand of time?)<br />(Jack: What is the moving hand?)<br /><br /><em class="correct_response">the moving finger</em><br /><br /><table width="100%"><tr><td class="wrong">Carole</td><td class="wrong">Jack</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">It was "hanging down" in the <a href="https://www.j-archive.com/media/1985-05-14_DJ_03.mp3">following</a>:<br /><br /><i>"That wiggle in the walk / And giggle in the talk / Lord, makes the world go 'round / There ain't nothin' in the world / Like a big-eyed girl / That makes me act so funny / Make me spend my money / Make me feel real loose, like a long necked goose / Like a girl, oh baby, that's what I like"</i></td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;">[Jack lip-synched to the song.]<br />(Alex: Well, we know that you know the song, Jack, but can you give me the correct question? It was hanging down in the following.)<br />(Jack: [*].)<br />[Accepted without remark]<br /><br /><em class="correct_response">a ponytail</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">A knee tendon cut to cripple an animal, it's come to mean crippling for human efforts</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;">(Jack: [No response])<br /><br /><em class="correct_response">to hamstring</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Jack</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">On TV he explored "The Body in Question"</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;">(Alex: We've got less than a minute to go in the round.)<br /><br /><em class="correct_response">Jonathan Miller</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Ohio senator whose "take off" for the presidency was aborted in early mission</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">John Glenn</em><br /><br /><table width="100%"><tr><td class="right">Jack</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">American Vietnam vets settled out of court in their suit about exposure to this herbicide</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Agent Orange</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">Soviet dissident who went on a hunger strike in May to get his wife medical treatment abroad</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Sakharov</em><br /><br /><table width="100%"><tr><td class="right">Carole</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">CIA dir. linked in '84 to the stolen Carter briefing papers &amp; the mining of Nicaragua's harbor</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">William Casey</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">February 11, 1984 marked the 1st time a U.S. spacecraft had ever landed here</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Jack: Where is Edwards Air Force Base?)<br />...<br />(Alex: Normally, they land on the West Coast. This was the first time one landed on the East.)<br /><br /><em class="correct_response">Kennedy Space Center (Cape Canaveral)</em><br /><br /><table width="100%"><tr><td class="wrong">Jack</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

@@ -1,0 +1,122 @@
+    <td id="clue_DJ_1_1" class="clue_text">On Nov. 24, 1632 Baruch Spinoza was born to Jewish parents in this Dutch capital</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Amsterdam</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">At age 15 this future Queen of England married Prince William of Orange</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">Mary</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_1_3" class="clue_text">In 1668 Jacques Marquette founded a mission at Sault Sainte Marie, now in this state</td>
+    <td id="clue_DJ_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">Michigan</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_1_4" class="clue_text">This author of the "Pilgrim's Progress" was confined to Bedford County Jail from 1660 to 1672</td>
+    <td id="clue_DJ_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">(John) Bunyan</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_1_5" class="clue_text">In 1658 this builder of the Taj Mahal was deposed by his son Aurangzeb &amp; imprisoned</td>
+    <td id="clue_DJ_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Shah Jahan</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">In 1978 Newt Gingrich was first elected to the House from this state's 6th district</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Georgia</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">In 1979 this Arizona Republican published the book "With No Apologies"</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;"><em class="correct_response">Barry Goldwater</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">On June 7, 1966 he won the Calif. GOP gubernatorial primary over ex-San Francisco mayor George Christopher</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Ronald Reagan</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Only 3 current U.S. Senators are over 75: Strom Thurmond, Claiborne Pell &amp; this West Virginian</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Robert Byrd</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">This Texan was Majority Leader of the Senate from 1955 to 1961</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Lyndon Johnson</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">This, England's most important river, rises in 4 headstreams: the Isis, Churn, Coln &amp; Leach</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">Thames</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">The Han Jiang is one of the chief tributaries of this longest river in Asia</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">Yangtze</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">The Genesee River empties into this Great Lake near Rochester, N.Y.</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Ontario</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">Taddeo Gaddi designed the Ponte Vecchio over this river in Florence, Italy</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Arno</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">Mount Hermon, the highest peak in the Anti-Lebanon Mountain Range, is the source of this river</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">Jordan</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">The "outlaw" type of this music developed as a contrast to the traditional Nashville sound</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">country & western (country music)</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">Stravinsky wrote his 1962 opera "The Flood" for this medium</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">television</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">The vihuela, a guitar-shaped instrument from this country, was played during the Renaissance</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Spain</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">The "clavier-ubung" is an extensive 4-part collection of this composer's keyboard music</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">(Johann Sebastian) Bach</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">He's considered the inventor of the English Biblical oratorio; his first was "Esther", in 1732</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Handel</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">At the equator 1 degree of this is equivalent to 69.17 miles; at the pole, 0 miles</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">longitude</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">Number of teaspoons in a  tablespoon</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">3</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">This linear unit of 16 1/2 feet can also be called a pole</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">rod</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">The name of this weight system comes from a French term meaning "goods of weight"</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">avoirdupois</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">In ancient Greece this measurement was equal to 2 spans or 6 palms</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">cubit</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Of all his plays, "A Streetcar Named Desire" had the longest run on Broadway</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Tennessee Williams</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">"Come Blow Your Horn" was inspired by his &amp; his brother's experiences sharing a bachelor pad</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Neil Simon</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">His comedy "Blithe Spirit" was adapted as the musical "High Spirits"</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">Noel Coward</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">This "Cyrano de Bergerac" playwright wrote "La Princesse Lointaine" for Sarah Bernhardt</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Rostand</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_DJ_6_5" class="clue_text">Halvard Solness, a self-trained architect, is the central character of this Ibsen drama</td>
+    <td id="clue_DJ_6_5_r" class="clue_text" style="display:none;">(Mark: What is <i>A Doll's House</i>?)<br /><br /><em class="correct_response"><i>The Master Builder</i></em><br /><br /><table width="100%"><tr><td class="wrong">Mark</td><td class="right">Ed</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">He painted a "Crouching Marquesan Woman Seen from the Back" circa 1902</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="wrong">Mark</td><td rowspan="2" valign="top">Who is Picasso?</td></tr><tr><td>$2,500</td></tr><tr><td class="right">Jim</td><td rowspan="2" valign="top">Who was Gaugin</td></tr><tr><td>$8,300</td></tr><tr><td class="right">Ed</td><td rowspan="2" valign="top">Who was Gauguin?</td></tr><tr><td>$4,100</td></tr></table><em class="correct_response">Paul Gauguin</em></td>
+    <td id="clue_J_1_1" class="clue_text">Popular food types of this mollusk include jacknife &amp; steamer</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">clam</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">The African species of this is the largest animal in the order Proboscidea</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">elephant</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">This animal native to China serves as the symbol of the World Wildlife Fund</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">giant panda</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">The family of Pongidae, or great apes, includes the bonobo, gorilla, orangutan &amp; this ape</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">chimpanzee</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">In the 1970s the long-haired Somali cat was recognized as a distinct breed, not a version of this one</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;">(Ed: What is a Persian?)<br /><br /><em class="correct_response">Abyssinian</em><br /><br /><table width="100%"><tr><td class="wrong">Ed</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Her father, John, was directing "The African Queen" when she was born in 1951</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">Anjelica Huston</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">Before breaking into show biz, this actress who played Rebecca on "Cheers" was an interior decorator</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;">(Mark: Who is Shelley Long?)<br /><br /><em class="correct_response">Kirstie Alley</em><br /><br /><table width="100%"><tr><td class="wrong">Mark</td><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">This handsome actor whom Leslie Caron fell for in "Gigi" appeared in the 1982 movie "Swamp Thing"</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">Louis Jourdan</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">In 1991 these 2 British sisters starred in a TV remake of "Whatever Happened to Baby Jane?"</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;">(Ed: Who are the [*] sisters?)<br /><br /><em class="correct_response">(Vanessa & Lynn) Redgrave</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">In the 1930s he played the title roles of "Louis Pasteur", "Emile Zola" &amp; "Scarface"</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Paul Muni</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">When sliced crosswise, a carambola resembles a 5-pointed one of these</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">star</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">Feijoa fruit resembles this New Zealand product but has no fuzz</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">kiwi</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">Laver, a type of seaweed eaten in Ireland &amp; Wales, is called nori in this country</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Japan</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">In this Middle East country, the prickly pear is called sabra, like the country's native-born citizens</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">Israel</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">This Chinese fruit, sometimes called a "nut" is related to the longan</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">litchi</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">In March 1837 Congress expanded the Supreme Court from 7 to this many judges</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">9</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Gen. Lewis Hershey presided over this U.S. draft agency 1941-1946 &amp; 1948-1970</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Selective Service</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">McKinley campaigned for president promising "a full" one of these</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">dinner pail</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">On a 1923 trip to Alaska, this president was presented with a moose-hide collar for his dog Laddie Boy</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">Harding</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">In 1630 the village of Shawmut, Massachusetts changed its name to this</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response">Boston</em><br /><br /><table width="100%"><tr><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">Also called trotyl &amp; tolite, trinitrotoluene is best known by these initials</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">TNT</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">The first commercial use of this type of explosive was in a gas field in 1967; it yielded 26 kilotons</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">nuclear weapon</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">This was first prepared in 1846 by Ascanio Sobrero, who added glycerol to nitric &amp; sulfuric acids</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">nitroglycerine</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">Besides inventing dynamite, he perfected a detonator for it</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Alfred Nobel</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">C-4 &amp; A-3 are types of this moldable military explosive</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">plastic explosive</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Basilicata is a rural region in the ankle &amp; instep of this country's boot</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Italy</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">The Keeshond, which often lives on barges is considered the national dog of this low country</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Netherlands</em><br /><br /><table width="100%"><tr><td class="right">Jim</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">Rousillonnais, a dialect of Catalan, is spoken in Rousillon in this country</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Mark: What is Spain?)<br /><br /><em class="correct_response">France</em><br /><br /><table width="100%"><tr><td class="wrong">Mark</td><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">You can see remains of a palace built by Vlad the Impaler in this Romanian capital</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;">(Jim: What is Budapest?)<br /><br /><em class="correct_response">Bucharest</em><br /><br /><table width="100%"><tr><td class="wrong">Jim</td><td class="right">Mark</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">Jurmala is a popular seaside resort near this capital of Latvia</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Riga</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>

@@ -1,0 +1,120 @@
+            <td id="clue_J_1_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_1_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_2_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_3_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_4_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_5_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_1_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_2_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_3_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_4_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+            <td id="clue_J_6_5_stuck" class="clue_unstuck">&#160;&#160;&#160;</td>
+      <div onmouseover="toggle('clue_J_1_1', 'clue_J_1_1_r', 'clue_J_1_1_stuck')" onmouseout="toggle('clue_J_1_1_r', 'clue_J_1_1', 'clue_J_1_1_stuck')" onclick="togglestick('clue_J_1_1_stuck')">
+      <div onmouseover="toggle('clue_J_1_2', 'clue_J_1_2_r', 'clue_J_1_2_stuck')" onmouseout="toggle('clue_J_1_2_r', 'clue_J_1_2', 'clue_J_1_2_stuck')" onclick="togglestick('clue_J_1_2_stuck')">
+      <div onmouseover="toggle('clue_J_1_3', 'clue_J_1_3_r', 'clue_J_1_3_stuck')" onmouseout="toggle('clue_J_1_3_r', 'clue_J_1_3', 'clue_J_1_3_stuck')" onclick="togglestick('clue_J_1_3_stuck')">
+      <div onmouseover="toggle('clue_J_1_4', 'clue_J_1_4_r', 'clue_J_1_4_stuck')" onmouseout="toggle('clue_J_1_4_r', 'clue_J_1_4', 'clue_J_1_4_stuck')" onclick="togglestick('clue_J_1_4_stuck')">
+      <div onmouseover="toggle('clue_J_1_5', 'clue_J_1_5_r', 'clue_J_1_5_stuck')" onmouseout="toggle('clue_J_1_5_r', 'clue_J_1_5', 'clue_J_1_5_stuck')" onclick="togglestick('clue_J_1_5_stuck')">
+      <div onmouseover="toggle('clue_J_2_1', 'clue_J_2_1_r', 'clue_J_2_1_stuck')" onmouseout="toggle('clue_J_2_1_r', 'clue_J_2_1', 'clue_J_2_1_stuck')" onclick="togglestick('clue_J_2_1_stuck')">
+      <div onmouseover="toggle('clue_J_2_2', 'clue_J_2_2_r', 'clue_J_2_2_stuck')" onmouseout="toggle('clue_J_2_2_r', 'clue_J_2_2', 'clue_J_2_2_stuck')" onclick="togglestick('clue_J_2_2_stuck')">
+      <div onmouseover="toggle('clue_J_2_3', 'clue_J_2_3_r', 'clue_J_2_3_stuck')" onmouseout="toggle('clue_J_2_3_r', 'clue_J_2_3', 'clue_J_2_3_stuck')" onclick="togglestick('clue_J_2_3_stuck')">
+      <div onmouseover="toggle('clue_J_2_4', 'clue_J_2_4_r', 'clue_J_2_4_stuck')" onmouseout="toggle('clue_J_2_4_r', 'clue_J_2_4', 'clue_J_2_4_stuck')" onclick="togglestick('clue_J_2_4_stuck')">
+      <div onmouseover="toggle('clue_J_2_5', 'clue_J_2_5_r', 'clue_J_2_5_stuck')" onmouseout="toggle('clue_J_2_5_r', 'clue_J_2_5', 'clue_J_2_5_stuck')" onclick="togglestick('clue_J_2_5_stuck')">
+      <div onmouseover="toggle('clue_J_3_1', 'clue_J_3_1_r', 'clue_J_3_1_stuck')" onmouseout="toggle('clue_J_3_1_r', 'clue_J_3_1', 'clue_J_3_1_stuck')" onclick="togglestick('clue_J_3_1_stuck')">
+      <div onmouseover="toggle('clue_J_3_2', 'clue_J_3_2_r', 'clue_J_3_2_stuck')" onmouseout="toggle('clue_J_3_2_r', 'clue_J_3_2', 'clue_J_3_2_stuck')" onclick="togglestick('clue_J_3_2_stuck')">
+      <div onmouseover="toggle('clue_J_3_3', 'clue_J_3_3_r', 'clue_J_3_3_stuck')" onmouseout="toggle('clue_J_3_3_r', 'clue_J_3_3', 'clue_J_3_3_stuck')" onclick="togglestick('clue_J_3_3_stuck')">
+      <div onmouseover="toggle('clue_J_3_4', 'clue_J_3_4_r', 'clue_J_3_4_stuck')" onmouseout="toggle('clue_J_3_4_r', 'clue_J_3_4', 'clue_J_3_4_stuck')" onclick="togglestick('clue_J_3_4_stuck')">
+      <div onmouseover="toggle('clue_J_3_5', 'clue_J_3_5_r', 'clue_J_3_5_stuck')" onmouseout="toggle('clue_J_3_5_r', 'clue_J_3_5', 'clue_J_3_5_stuck')" onclick="togglestick('clue_J_3_5_stuck')">
+      <div onmouseover="toggle('clue_J_4_1', 'clue_J_4_1_r', 'clue_J_4_1_stuck')" onmouseout="toggle('clue_J_4_1_r', 'clue_J_4_1', 'clue_J_4_1_stuck')" onclick="togglestick('clue_J_4_1_stuck')">
+      <div onmouseover="toggle('clue_J_4_2', 'clue_J_4_2_r', 'clue_J_4_2_stuck')" onmouseout="toggle('clue_J_4_2_r', 'clue_J_4_2', 'clue_J_4_2_stuck')" onclick="togglestick('clue_J_4_2_stuck')">
+      <div onmouseover="toggle('clue_J_4_3', 'clue_J_4_3_r', 'clue_J_4_3_stuck')" onmouseout="toggle('clue_J_4_3_r', 'clue_J_4_3', 'clue_J_4_3_stuck')" onclick="togglestick('clue_J_4_3_stuck')">
+      <div onmouseover="toggle('clue_J_4_4', 'clue_J_4_4_r', 'clue_J_4_4_stuck')" onmouseout="toggle('clue_J_4_4_r', 'clue_J_4_4', 'clue_J_4_4_stuck')" onclick="togglestick('clue_J_4_4_stuck')">
+      <div onmouseover="toggle('clue_J_4_5', 'clue_J_4_5_r', 'clue_J_4_5_stuck')" onmouseout="toggle('clue_J_4_5_r', 'clue_J_4_5', 'clue_J_4_5_stuck')" onclick="togglestick('clue_J_4_5_stuck')">
+      <div onmouseover="toggle('clue_J_5_1', 'clue_J_5_1_r', 'clue_J_5_1_stuck')" onmouseout="toggle('clue_J_5_1_r', 'clue_J_5_1', 'clue_J_5_1_stuck')" onclick="togglestick('clue_J_5_1_stuck')">
+      <div onmouseover="toggle('clue_J_5_2', 'clue_J_5_2_r', 'clue_J_5_2_stuck')" onmouseout="toggle('clue_J_5_2_r', 'clue_J_5_2', 'clue_J_5_2_stuck')" onclick="togglestick('clue_J_5_2_stuck')">
+      <div onmouseover="toggle('clue_J_5_3', 'clue_J_5_3_r', 'clue_J_5_3_stuck')" onmouseout="toggle('clue_J_5_3_r', 'clue_J_5_3', 'clue_J_5_3_stuck')" onclick="togglestick('clue_J_5_3_stuck')">
+      <div onmouseover="toggle('clue_J_5_4', 'clue_J_5_4_r', 'clue_J_5_4_stuck')" onmouseout="toggle('clue_J_5_4_r', 'clue_J_5_4', 'clue_J_5_4_stuck')" onclick="togglestick('clue_J_5_4_stuck')">
+      <div onmouseover="toggle('clue_J_5_5', 'clue_J_5_5_r', 'clue_J_5_5_stuck')" onmouseout="toggle('clue_J_5_5_r', 'clue_J_5_5', 'clue_J_5_5_stuck')" onclick="togglestick('clue_J_5_5_stuck')">
+      <div onmouseover="toggle('clue_J_6_1', 'clue_J_6_1_r', 'clue_J_6_1_stuck')" onmouseout="toggle('clue_J_6_1_r', 'clue_J_6_1', 'clue_J_6_1_stuck')" onclick="togglestick('clue_J_6_1_stuck')">
+      <div onmouseover="toggle('clue_J_6_2', 'clue_J_6_2_r', 'clue_J_6_2_stuck')" onmouseout="toggle('clue_J_6_2_r', 'clue_J_6_2', 'clue_J_6_2_stuck')" onclick="togglestick('clue_J_6_2_stuck')">
+      <div onmouseover="toggle('clue_J_6_3', 'clue_J_6_3_r', 'clue_J_6_3_stuck')" onmouseout="toggle('clue_J_6_3_r', 'clue_J_6_3', 'clue_J_6_3_stuck')" onclick="togglestick('clue_J_6_3_stuck')">
+      <div onmouseover="toggle('clue_J_6_4', 'clue_J_6_4_r', 'clue_J_6_4_stuck')" onmouseout="toggle('clue_J_6_4_r', 'clue_J_6_4', 'clue_J_6_4_stuck')" onclick="togglestick('clue_J_6_4_stuck')">
+      <div onmouseover="toggle('clue_J_6_5', 'clue_J_6_5_r', 'clue_J_6_5_stuck')" onmouseout="toggle('clue_J_6_5_r', 'clue_J_6_5', 'clue_J_6_5_stuck')" onclick="togglestick('clue_J_6_5_stuck')">
+    <td id="clue_J_1_1" class="clue_text">This metal whose symbol is NI is slightly magnetic</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;">(June: What's nitrogen?)<br /><br /><em class="correct_response">nickel</em><br /><br /><table width="100%"><tr><td class="wrong">June</td><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">A rectifier converts alternating current into this current</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;"><em class="correct_response">direct current</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_1_3" class="clue_text">Foraminifera are microorganisms that move by pseudopods, or fake ones of these</td>
+    <td id="clue_J_1_3_r" class="clue_text" style="display:none;"><em class="correct_response">legs (feet)</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_1_4" class="clue_text">Molten rock above the Earth is called lava; below the Earth it's called this</td>
+    <td id="clue_J_1_4_r" class="clue_text" style="display:none;"><em class="correct_response">magma</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_1_5" class="clue_text">This "sailed" jellyfish that floats along the Gulf Stream is a colony of polyps &amp; medusae</td>
+    <td id="clue_J_1_5_r" class="clue_text" style="display:none;"><em class="correct_response">Portuguese man-of-war</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">"A kiss on the hand may be quite continental, but" these "are a girl's best friend"</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;"><em class="correct_response">diamonds</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">"One" was the tune that ended each of the 6,137 performances of this musical on Broadway</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>A Chorus Line</i></em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">"Sunrise, Sunset" was written by Sheldon Harnick &amp; Jerry Bock for this 1964 musical</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Fiddler on the Roof</i></em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_4" class="clue_text">"What Kind Of Fool Am I?" was written by Leslie Bricusse &amp; this performer</td>
+    <td id="clue_J_2_4_r" class="clue_text" style="display:none;"><em class="correct_response">Anthony Newley</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_2_5" class="clue_text">Rodgers &amp; Hart wrote "There's A Small Hotel" for this Billy Rose Circus musical, but it was cut</td>
+    <td id="clue_J_2_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Jumbo</i></em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">In 1969 it adopted a comprehensive code of professional responsibility for lawyers</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">the American Bar Association</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">This group of U.S. soldiers who have served in overseas conflicts was founded in 1913</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">the Veterans of Foreign Wars</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">In 1961 the Pope gave a new constitution to the Knights of this island nation, known for charitable work</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Malta</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">The headquarters for this children's sports organization is located in S. Williamsport, Pennsylvania</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">the Little League (Baseball)</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">Decision is the magazine of this man's evangelistic organization</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">Billy Graham</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Vineyard Sound separates this 20- by 10-mile island from Cape Cod</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Martha's Vineyard</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">This sound extends about 80 miles from Admiralty Inlet to Olympia, Washington</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response">Puget Sound</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">This sound provides the southern border of the region called New England</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">Long Island Sound</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">Viscount Melville Sound, part of the Northwest Passage, is an arm of this ocean</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">the Arctic Ocean</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">Valdez, Alaska is connected to this sound by an inlet called Valdez Arm</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;">(Ed: I do not know.)<br /><br /><em class="correct_response">Prince William Sound</em><br /><br /><table width="100%"><tr><td class="wrong">Ed</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">The seeds of this Thanksgiving pie gourd are a popular snack in Latin American countries</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">pumpkin</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">The true type of this Italian cheese is made from April to November in Parma, Bologna &amp; Mantua</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">Parmesan</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">A taco consists of a fried corn one of these filled with meat, vegetables, etc.</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">a tortilla</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">After processing, the sugar produced by this vegetable is difficult to tell from cane sugar</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">a beet</em><br /><br /><table width="100%"><tr><td class="right">Pete</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">The tawny type of this fortified wine does not improve after bottling; the vintage &amp; ruby types do</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">port</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Folks with foresight save their money for one of these times of need</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">a rainy day</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">Something that will happen regardless of the weather will take place "rain or" this</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">shine</em><br /><br /><table width="100%"><tr><td class="right">Ed</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">The British call this a brolly, a shortened &amp; altered form of its original name</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;"><em class="correct_response">an umbrella</em><br /><br /><table width="100%"><tr><td class="right">June</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Guinness says one of these phenomena appeared for over 3 hours in North Wales on August 14, 1979</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;">(Ed: What is an unidentified flying object?)<br /><br /><em class="correct_response">a rainbow</em><br /><br /><table width="100%"><tr><td class="wrong">Ed</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">In an 1841 poem, this poet wrote, "Into each life some rain must fall"</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;"><em class="correct_response">Henry Wadsworth Longfellow</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>

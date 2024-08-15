@@ -1,0 +1,104 @@
+    <td id="clue_DJ_1_1" class="clue_text">Maxwell Anderson's "Anne of the Thousand Days" is about this wife of Henry VIII</td>
+    <td id="clue_DJ_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">Anne Boleyn</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_1_2" class="clue_text">Tennessee Williams is the idol of this author who wrote "Who's Afraid of Virginia Woolf?"</td>
+    <td id="clue_DJ_1_2_r" class="clue_text" style="display:none;">(Stephanie: [No response])<br />[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Edward Albee</em><br /><br /><table width="100%"><tr><td class="wrong">Stephanie</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_1" class="clue_text">For past 20 yrs, this conqueror of Everest has been camping equipment advisor for Sears</td>
+    <td id="clue_DJ_2_1_r" class="clue_text" style="display:none;">(Rick: Who is... Ted Williams?)<br />...<br />(Alex: Ted Williams, I don't think, ever climbed Mount Everest. He could probably have hit a baseball that high, but that's about it.)<br /><br /><em class="correct_response">Sir Edmund Hillary</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_DJ_2_2" class="clue_text">This company's president, Victor Kiam, asks, "What have you got to lose except your whiskers?"</td>
+    <td id="clue_DJ_2_2_r" class="clue_text" style="display:none;">(Stephanie: What is Schick?)<br /><br /><em class="correct_response">Remington</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Stephanie</td></tr></table></td>
+    <td id="clue_DJ_2_3" class="clue_text">Metromedia, Inc. now owns this celebrated non-league basketball team</td>
+    <td id="clue_DJ_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">the Harlem Globetrotters</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_2_4" class="clue_text">Designed as a hunting cap by William Coke in 1850, new ads in England are revitalizing its sales</td>
+    <td id="clue_DJ_2_4_r" class="clue_text" style="display:none;">(Guy: What is a deerstalker?)<br /><br /><em class="correct_response">a bowler hat (derby)</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_2_5" class="clue_text">The poorest country in the W. Hemisphere, it makes 90% of the world's baseballs</td>
+    <td id="clue_DJ_2_5_r" class="clue_text" style="display:none;"><em class="correct_response">Haiti</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_1" class="clue_text">10,000 American and Filipino prisoners died in "death march" on this Philippine peninsula</td>
+    <td id="clue_DJ_3_1_r" class="clue_text" style="display:none;">(Rick: What is the In Peninsula?)<br /><br /><em class="correct_response">the Bataan Peninsula</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_DJ_3_2" class="clue_text">Jack Oakie played Benzino Napaloni, ruler of Bacteria, in this Charlie Chaplin film</td>
+    <td id="clue_DJ_3_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>The Great Dictator</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_3" class="clue_text">Ship which took the most casualties in the attack on Pearl Harbor</td>
+    <td id="clue_DJ_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">the USS <i>Arizona</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_4" class="clue_text">Based on a German sailor's experiences, <a href="https://www.j-archive.com/media/1985-05-15_DJ_05.mp3">this</a> film showed WWII "from the other side":</td>
+    <td id="clue_DJ_3_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Das Boot</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_3_5" class="clue_text">World's tallest full-figure statue, "Motherland" commemorates this key Soviet victory</td>
+    <td id="clue_DJ_3_5_r" class="clue_text" style="display:none;"><em class="correct_response">the Battle of Stalingrad</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_1" class="clue_text">He said he's "not going to worry about the deficit; it's big enough to worry about itself"</td>
+    <td id="clue_DJ_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Ronald Reagan</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_2" class="clue_text">"If you don't say anything, you won't be called on to repeat it", he said "silently"</td>
+    <td id="clue_DJ_4_2_r" class="clue_text" style="display:none;">(Rick: Who is Harry Truman?)<br /><br /><em class="correct_response">Calvin Coolidge</em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_DJ_4_3" class="clue_text">He said to Churchill, "it is fun to be in the same decade as you"</td>
+    <td id="clue_DJ_4_3_r" class="clue_text" style="display:none;"><em class="correct_response">FDR</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_4_4" class="clue_text">According to Harry Truman, it's what you should do if you can't convince them</td>
+    <td id="clue_DJ_4_4_r" class="clue_text" style="display:none;"><em class="correct_response">confuse them</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_DJ_4_5" class="clue_text">In 1787, he wrote "A little rebellion now &amp; then is a good thing"</td>
+    <td id="clue_DJ_4_5_r" class="clue_text" style="display:none;">(Guy: Who is George Washington?)<br /><br /><em class="correct_response">Thomas Jefferson</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td></tr></table></td>
+    <td id="clue_DJ_5_1" class="clue_text">The Trojans</td>
+    <td id="clue_DJ_5_1_r" class="clue_text" style="display:none;"><em class="correct_response">Southern Cal</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_DJ_5_2" class="clue_text">The Razorbacks</td>
+    <td id="clue_DJ_5_2_r" class="clue_text" style="display:none;"><em class="correct_response">the University of Arkansas</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_5_3" class="clue_text">The Boilermakers</td>
+    <td id="clue_DJ_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">Purdue</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_DJ_5_4" class="clue_text">The Hoyas</td>
+    <td id="clue_DJ_5_4_r" class="clue_text" style="display:none;"><em class="correct_response">Georgetown</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_5_5" class="clue_text">The Hawkeyes</td>
+    <td id="clue_DJ_5_5_r" class="clue_text" style="display:none;">(Guy: Who are Iowa State?)<br /><br /><em class="correct_response">University of Iowa</em><br /><br /><table width="100%"><tr><td class="wrong">Guy</td><td class="right">Rick</td></tr></table></td>
+    <td id="clue_DJ_6_1" class="clue_text">Armless, backless sofa named for the Turkish empire</td>
+    <td id="clue_DJ_6_1_r" class="clue_text" style="display:none;">(Rick: I have no idea.)<br />...<br />(Alex: Less than a minute to go in the round.)<br /><br /><em class="correct_response">an Ottoman</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_DJ_6_2" class="clue_text">Confection of jellylike cubes covered with powdered sugar</td>
+    <td id="clue_DJ_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">Turkish delight</em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_DJ_6_3" class="clue_text">1964 M. Mercouri/ M. Schell film about theft of a dagger from famed Turkish museum</td>
+    <td id="clue_DJ_6_3_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Topkapi</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_DJ_6_4" class="clue_text">Mustafa Kemal, founder of Turkish republic, changed his name to this</td>
+    <td id="clue_DJ_6_4_r" class="clue_text" style="display:none;"><em class="correct_response">Kemal Ataturk</em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td></tr></table></td>
+    <td id="clue_FJ" class="clue_text">One of only two countries in South America not bordering Brazil</td>
+    <td id="clue_FJ_r" class="clue_text" style="display:none;"><table><tr><td class="wrong">Stephanie</td><td rowspan="2" valign="top">What is Colombia?</td></tr><tr><td>$300</td></tr><tr><td class="right">Rick</td><td rowspan="2" valign="top">What is Chili</td></tr><tr><td>$1,200</td></tr><tr><td class="right">Guy</td><td rowspan="2" valign="top">What is Chile?</td></tr><tr><td>$3,400</td></tr></table><em class="correct_response">(1 of) Chile & Ecuador</em></td>
+    <td id="clue_J_1_1" class="clue_text">Professor Harold Hill said it spelled "trouble" for River City</td>
+    <td id="clue_J_1_1_r" class="clue_text" style="display:none;"><em class="correct_response">pool</em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td></tr></table></td>
+    <td id="clue_J_1_2" class="clue_text">"M·A·S·H·'s" Radar who made his name as the "Good Man, Charlie Brown"</td>
+    <td id="clue_J_1_2_r" class="clue_text" style="display:none;">[ERRATUM: <i>M*A*S*H</i>'s title has historically been rendered with asterisks, not interpuncts, and one does not occur after the final H.]<br />(Alex: We've got less than a minute to go in this round.)<br /><br /><em class="correct_response">Gary Burghoff</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_2_1" class="clue_text">Gum is often flavored with this minty herb, probably named for its sharp leaves</td>
+    <td id="clue_J_2_1_r" class="clue_text" style="display:none;">(Stephanie: What is evergreen?)<br /><br /><em class="correct_response">spearmint</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Stephanie</td></tr></table></td>
+    <td id="clue_J_2_2" class="clue_text">The white root of this herb makes a pungent relish, usually served with roast beef</td>
+    <td id="clue_J_2_2_r" class="clue_text" style="display:none;">(Rick: What is...?)<br /><br /><em class="correct_response">horseradish</em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_2_3" class="clue_text">From French for "nail" because of its shape, they spike oranges for pomanders &amp; ham for Easter</td>
+    <td id="clue_J_2_3_r" class="clue_text" style="display:none;"><em class="correct_response">cloves</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_3_1" class="clue_text">To cover a couch</td>
+    <td id="clue_J_3_1_r" class="clue_text" style="display:none;"><em class="correct_response">upholster</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_3_2" class="clue_text">It could hold water or dear, departed Uncle Max</td>
+    <td id="clue_J_3_2_r" class="clue_text" style="display:none;"><em class="correct_response">an urn</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_3_3" class="clue_text">In '58, '59 &amp; '71, quarterback who led the Colts to world championships</td>
+    <td id="clue_J_3_3_r" class="clue_text" style="display:none;"><em class="correct_response">Johnny Unitas</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_3_4" class="clue_text">A theater's "leading" man... in the aisles</td>
+    <td id="clue_J_3_4_r" class="clue_text" style="display:none;"><em class="correct_response">an usher</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_3_5" class="clue_text">Its charter's preamble begins "We the peoples..."</td>
+    <td id="clue_J_3_5_r" class="clue_text" style="display:none;">(Rick: Who is Uganda?)<br /><br /><em class="correct_response">the United Nations</em><br /><br /><table width="100%"><tr><td class="wrong">Rick</td></tr></table><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_4_1" class="clue_text">Perhaps the only cop who ever asked a crook "Who loves ya, baby?"</td>
+    <td id="clue_J_4_1_r" class="clue_text" style="display:none;"><em class="correct_response">Kojak</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_4_2" class="clue_text">Its lead character introduced himself with, "My name's Friday; I'm a cop"</td>
+    <td id="clue_J_4_2_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Dragnet</i></em><br /><br /><table width="100%"><tr><td class="right">Stephanie</td></tr></table></td>
+    <td id="clue_J_4_3" class="clue_text">Series William Shatner has starred in since he came down to Earth</td>
+    <td id="clue_J_4_3_r" class="clue_text" style="display:none;">(Rick: Who is... I don't know.)<br /><br /><em class="correct_response"><i>T.J. Hooker</i></em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_4_4" class="clue_text">Comic question asked of officers Toody &amp; Muldoon</td>
+    <td id="clue_J_4_4_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Car 54, Where Are You?</i></em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_4_5" class="clue_text">This show only gained popularity in re-release after Burt Reynolds became a star</td>
+    <td id="clue_J_4_5_r" class="clue_text" style="display:none;"><em class="correct_response"><i>Dan August</i></em><br /><br /><table width="100%"><tr><td class="wrong">Triple Stumper</td></tr></table></td>
+    <td id="clue_J_5_1" class="clue_text">The tiny malleus, incus &amp; stapes bones of the ear are better known as these</td>
+    <td id="clue_J_5_1_r" class="clue_text" style="display:none;">(Stephanie: What are the ear canal?)<br /><br /><em class="correct_response">the stirrup, anvil, and hammer (the three bones of the inner ear)</em><br /><br /><table width="100%"><tr><td class="wrong">Stephanie</td><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_5_2" class="clue_text">The olfactory nerve controls this sense</td>
+    <td id="clue_J_5_2_r" class="clue_text" style="display:none;">(Rick: What is the eyes, or sight?)<br /><br /><em class="correct_response">the sense of smell</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_5_3" class="clue_text">Formal name for the voice box</td>
+    <td id="clue_J_5_3_r" class="clue_text" style="display:none;"><em class="correct_response">the larynx</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_5_4" class="clue_text">When food goes down the wrong pipe, it should have gone down this one</td>
+    <td id="clue_J_5_4_r" class="clue_text" style="display:none;">(Stephanie: [No response])<br /><br /><em class="correct_response">the esophagus</em><br /><br /><table width="100%"><tr><td class="wrong">Stephanie</td><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_5_5" class="clue_text">Mad's Alfred E. Neuman might be a good candidate for otoplasty, which is this</td>
+    <td id="clue_J_5_5_r" class="clue_text" style="display:none;"><em class="correct_response">reducing your ears</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_6_1" class="clue_text">Both names for father that fit this category</td>
+    <td id="clue_J_6_1_r" class="clue_text" style="display:none;"><em class="correct_response">Dad & Pop</em><br /><br /><table width="100%"><tr><td class="right">Guy</td></tr></table></td>
+    <td id="clue_J_6_2" class="clue_text">You give this for "tat" to make things even Steven</td>
+    <td id="clue_J_6_2_r" class="clue_text" style="display:none;"><em class="correct_response">tit</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
+    <td id="clue_J_6_3" class="clue_text">It was to her he said, "Madam, I'm Adam"</td>
+    <td id="clue_J_6_3_r" class="clue_text" style="display:none;">(Rick: Who is Queen Elizabeth?)<br /><br /><em class="correct_response">Eve</em><br /><br /><table width="100%"><tr><td class="right">Guy</td><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_6_4" class="clue_text">Logically completes classical palindrome: "A man, a plan, a canal,..."</td>
+    <td id="clue_J_6_4_r" class="clue_text" style="display:none;">(Rick: I don't know.)<br /><br /><em class="correct_response">Panama</em><br /><br /><table width="100%"><tr><td class="wrong">Rick</td></tr></table></td>
+    <td id="clue_J_6_5" class="clue_text">A child king; doubled, it's a way to express disapproval</td>
+    <td id="clue_J_6_5_r" class="clue_text" style="display:none;">[The end-of-round signal sounds.]<br /><br /><em class="correct_response">Tut</em><br /><br /><table width="100%"><tr><td class="right">Rick</td></tr></table></td>
