@@ -1,0 +1,856 @@
+\begin{examnotes}{Exam 1}
+    \subsection*{Basic Scala}
+
+    Key topics include class definitions, error handling, function definitions and recursion, loop constructs, string manipulation, mathematical computations, and object-oriented programming.
+    
+    \subsubsection*{Class Definitions and Object-Oriented Programming}
+    
+    Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects," which are instances of classes. These objects can contain data, in the form of fields (attributes 
+    or properties), and code, in the form of procedures (methods). OOP encourages the bundling of data with the methods that operate on that data.
+    
+    \begin{highlight}[Class Definitions and Object-Oriented Programming]
+        In Scala, class definitions encapsulate data and behavior, emphasizing immutability and the use of methods. The materials cover how to define classes, use \texttt{val} for immutable 
+        fields, \texttt{var} for mutable fields, and implement methods.
+    
+        \begin{itemize}
+            \item \textbf{Immutable Fields}: Defined with \texttt{val}, cannot be changed once set.
+            \item \textbf{Mutable Fields}: Defined with \texttt{var}, can be updated after initialization.
+            \item \textbf{Methods}: Defined using the \texttt{def} keyword, perform actions within classes.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Error Handling}
+    
+    Error handling is the process of responding to and recovering from error conditions in a program. Effective error handling is crucial for creating robust and reliable software. In programming, 
+    errors can be broadly classified into syntax errors, runtime errors, and logical errors.
+    
+    \begin{highlight}[Error Handling]
+        In Scala, managing common errors such as type mismatches and reassignment issues is critical. The materials demonstrate how to handle these errors to ensure type safety and proper use 
+        of immutable fields.
+    
+        \begin{itemize}
+            \item \textbf{Type Mismatches}: Occur when incompatible types are combined or used incorrectly.
+            \item \textbf{Reassignment to \texttt{val}}: Immutable fields defined with \texttt{val} cannot be reassigned.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Function Definitions and Recursion}
+    
+    Functions are fundamental building blocks in programming, used to perform specific tasks, calculate values, and manage the complexity of programs by breaking them into smaller, reusable 
+    pieces. Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem.
+    
+    \begin{highlight}[Function Definitions and Recursion]
+        Scala functions are defined with the \texttt{def} keyword, specifying input and return types for type safety. Recursion, where a function calls itself, is emphasized to solve problems 
+        without loops or mutable state.
+    
+        \begin{itemize}
+            \item \textbf{Function Definitions}: Specify input and return types, ensuring type safety and clarity.
+            \item \textbf{Recursion}: Allows functions to call themselves to solve smaller instances of a problem.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Loop Constructs}
+    
+    Loop constructs are used to execute a block of code repeatedly based on a condition. They are fundamental in controlling the flow of programs and handling repetitive tasks.
+    
+    \begin{highlight}[Loop Constructs]
+        Scala supports both \texttt{for} loops and comprehensions, with constructs such as \texttt{to} for inclusive ranges and \texttt{until} for exclusive ranges. These constructs are 
+        illustrated for iterating over collections and ranges.
+    
+        \begin{itemize}
+            \item \textbf{Range Definitions}: Use \texttt{to} for inclusive ranges and \texttt{until} for exclusive ranges.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{String Manipulation}
+    
+    String manipulation refers to the process of altering, parsing, and working with strings. Strings are a fundamental data type in programming and are used for storing and managing text data.
+    
+    \begin{highlight}[String Manipulation]
+        In Scala, string manipulation involves using various methods to transform and analyze strings. The materials cover tasks such as checking for palindromes by reversing strings and 
+        comparing them to the original.
+    
+        \begin{itemize}
+            \item \textbf{Palindrome Check}: Involves reversing strings and comparing them to the original.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Mathematical Computations}
+    
+    Mathematical computations in programming involve performing arithmetic operations, solving equations, and implementing algorithms to handle numerical data. These computations are 
+    essential in various applications, from scientific computing to financial analysis.
+    
+    \begin{highlight}[Mathematical Computations]
+        The Newton-Raphson method is used in Scala to find roots of equations. This involves iterative and recursive implementations, showcasing Scala's capabilities in handling mathematical algorithms.
+    
+        \begin{itemize}
+            \item \textbf{Newton-Raphson Method}: An iterative method for finding roots of equations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Object-Oriented Programming}
+    
+    Object-oriented programming in Scala involves designing and implementing classes to model real-world entities and manage data and behavior. It emphasizes concepts such as encapsulation, inheritance, 
+    and polymorphism.
+    
+    \begin{highlight}[Object-Oriented Programming]
+        The focus is on designing classes to encapsulate data and methods, ensuring robust and reusable code. Examples like the "Rational" class demonstrate arithmetic operations, input validation, 
+        and method overriding.
+    
+        \begin{itemize}
+            \item \textbf{Class Design}: Creating classes to handle specific tasks and ensuring input validity.
+            \item \textbf{Method Overriding}: Custom logic implementation by overriding methods like \texttt{toString} and \texttt{equals}.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Recursion And Inductive Definitions}
+
+    Key topics include tail recursion, recursive function depth, grammar and regular expressions, and inductive definitions.
+    
+    \subsubsection*{Recursion and Tail Recursion}
+    
+    Recursion is a method where the solution to a problem depends on solutions to smaller instances of the same problem. Tail recursion is a special form of recursion where the recursive call is the 
+    last operation in the function, allowing for optimization by the compiler.
+    
+    \begin{highlight}[Recursion and Tail Recursion in Scala]
+        In Scala, recursion and tail recursion are used to solve problems without mutable state:
+        \begin{itemize}
+            \item \textbf{Recursive Functions}: Functions that call themselves to break down problems into smaller subproblems.
+            \item \textbf{Tail Recursion}: Tail-recursive functions where the recursive call is the last operation, enabling optimization.
+            \item \textbf{Examples}: Implementing functions like "isPowerOfTwo" and "addNumbersUptoN" in both recursive and tail-recursive styles.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Function Depth and Stack Depth}
+    
+    Function depth refers to the number of nested function calls, while stack depth indicates how deep the call stack grows due to recursive calls.
+    
+    \begin{highlight}[Function Depth and Stack Depth in Scala]
+        Understanding recursion depth and its impact on stack usage is important:
+        \begin{itemize}
+            \item \textbf{Recursion Depth}: Calculating the depth of recursive functions, such as "isPowerOfTwo".
+            \item \textbf{Stack Depth}: Evaluating the number of stack frames used during recursion, important for optimizing performance.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Grammar and Regular Expressions}
+    
+    Grammar defines the syntactic structure of a language, while regular expressions are patterns used to match strings within text.
+    
+    \begin{highlight}[Grammar and Regular Expressions in Scala]
+        Scala can define grammars and work with regular expressions through:
+        \begin{itemize}
+            \item \textbf{Defining Grammars}: Creating grammars for specific languages or patterns.
+            \item \textbf{Regular Expressions}: Using case classes to model regular expressions, such as "Atom", "Concat", "Or", "And", and "Star".
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Inductive Definitions}
+    
+    Inductive definitions provide a way to define sets or structures recursively, specifying how complex elements can be built from simpler ones.
+    
+    \begin{highlight}[Inductive Definitions in Scala]
+        Inductive definitions are used to build complex structures:
+        \begin{itemize}
+            \item \textbf{Regular Expressions}: Defining regular expressions inductively using constructors like "Atom", "Concat", "Or", "And", and "Star".
+            \item \textbf{Case Classes}: Implementing inductive definitions with case classes in Scala to model complex data types.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Key Concepts]
+        This section covers fundamental concepts related to recursion, tail recursion, function depth, stack depth, grammar, regular expressions, and inductive definitions in Scala. \vspace*{1em}
+    
+        \textbf{Recursion and Tail Recursion}:
+        \begin{itemize}
+            \item \textbf{Recursive Functions}: Functions that call themselves to solve problems by breaking them into smaller subproblems.
+            \item \textbf{Tail Recursion}: A form of recursion where the recursive call is the last operation, enabling compiler optimization.
+        \end{itemize}
+        
+        \textbf{Function Depth and Stack Depth}:
+        \begin{itemize}
+            \item \textbf{Recursion Depth}: The depth of nested function calls in recursive functions.
+            \item \textbf{Stack Depth}: The amount of stack space used by recursive calls, important for performance optimization.
+        \end{itemize}
+    
+        \textbf{Grammar and Regular Expressions}:
+        \begin{itemize}
+            \item \textbf{Defining Grammars}: Creating formal grammars to define the syntactic structure of languages or patterns.
+            \item \textbf{Regular Expressions}: Using constructs like "Atom", "Concat", "Or", "And", and "Star" to model patterns for text matching.
+        \end{itemize}
+        
+        \textbf{Inductive Definitions}:
+        \begin{itemize}
+            \item \textbf{Constructing Elements}: Building complex elements from simpler ones using inductive rules.
+            \item \textbf{Case Classes}: Implementing inductive definitions with case classes to represent complex data types in Scala.
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 2}
+    \subsection*{Inductive Definitions And Case Pattern Matching}
+
+    This document covers essential principles of programming languages, particularly focusing on inductive definitions and case pattern matching in Scala. Key topics include abstract syntax trees 
+    (ASTs), pattern matching, higher-order functions, and implementing custom control structures.
+    
+    \subsubsection*{Inductive Definitions}
+    
+    Inductive definitions provide a way to define sets or structures recursively, specifying how complex elements can be built from simpler ones. This technique is crucial in the definition and 
+    manipulation of data structures like lists and trees.
+    
+    \begin{highlight}[Inductive Definitions in Inductive Definitions And Case Pattern Matching]
+        Inductive definitions are used to construct and handle complex data structures:
+        \begin{itemize}
+            \item \textbf{Defining Data Structures}: Using inductive definitions to create lists and trees.
+            \item \textbf{Pattern Matching}: Employing pattern matching to manipulate data structures effectively.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Abstract Syntax Trees (ASTs)}
+    
+    ASTs represent the hierarchical structure of source code. They are used in compilers and interpreters to analyze and transform code.
+    
+    \begin{highlight}[Abstract Syntax Trees in Inductive Definitions And Case Pattern Matching]
+        ASTs are used to represent and manipulate the structure of source code:
+        \begin{itemize}
+            \item \textbf{Representation}: Creating case classes to model different elements of the syntax tree.
+            \item \textbf{Manipulation}: Using pattern matching to traverse and transform ASTs.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Pattern Matching}
+    
+    Pattern matching allows checking a value against a pattern and can decompose data structures. It's a powerful feature in Scala for handling different data forms concisely and clearly.
+    
+    \begin{highlight}[Pattern Matching in Inductive Definitions And Case Pattern Matching]
+        Pattern matching simplifies the handling of complex data structures:
+        \begin{itemize}
+            \item \textbf{Match Expressions}: Using match expressions to handle different cases of data structures.
+            \item \textbf{Guards}: Employing guards to add conditions to patterns.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Higher-Order Functions}
+    
+    Higher-order functions are functions that take other functions as parameters or return functions as results. They are essential in functional programming for creating reusable and modular code.
+    
+    \begin{highlight}[Higher-Order Functions in Inductive Definitions And Case Pattern Matching]
+        Higher-order functions enable more abstract and reusable code:
+        \begin{itemize}
+            \item \textbf{Function Parameters}: Passing functions as arguments to other functions.
+            \item \textbf{Returning Functions}: Returning functions as results from other functions.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Custom Control Structures}
+    
+    Implementing custom control structures allows extending the language with new syntactic constructs tailored to specific needs, enhancing the expressiveness of the language.
+    
+    \begin{highlight}[Custom Control Structures in Inductive Definitions And Case Pattern Matching]
+        Custom control structures provide flexibility in language design:
+        \begin{itemize}
+            \item \textbf{Switch Statements}: Defining and implementing switch statements in a custom language.
+            \item \textbf{For Loops}: Adding for loops to a custom language for iterative control.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts in Inductive Definitions And Case Pattern Matching]
+        This section covers fundamental concepts related to inductive definitions and case pattern matching in Scala.
+    
+        \textbf{Inductive Definitions}:
+        \begin{itemize}
+            \item \textbf{Defining Data Structures}: Using inductive definitions to create lists and trees.
+            \item \textbf{Pattern Matching}: Employing pattern matching to manipulate data structures effectively.
+        \end{itemize}
+        
+        \textbf{Abstract Syntax Trees (ASTs)}:
+        \begin{itemize}
+            \item \textbf{Representation}: Creating case classes to model different elements of the syntax tree.
+            \item \textbf{Manipulation}: Using pattern matching to traverse and transform ASTs.
+        \end{itemize}
+        
+        \textbf{Pattern Matching}:
+        \begin{itemize}
+            \item \textbf{Match Expressions}: Using match expressions to handle different cases of data structures.
+            \item \textbf{Guards}: Employing guards to add conditions to patterns.
+        \end{itemize}
+        
+        \textbf{Higher-Order Functions}:
+        \begin{itemize}
+            \item \textbf{Function Parameters}: Passing functions as arguments to other functions.
+            \item \textbf{Returning Functions}: Returning functions as results from other functions.
+        \end{itemize}
+        
+        \textbf{Custom Control Structures}:
+        \begin{itemize}
+            \item \textbf{Switch Statements}: Defining and implementing switch statements in a custom language.
+            \item \textbf{For Loops}: Adding for loops to a custom language for iterative control.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Functors And Operational Semantics}
+
+    Key topics include the role of functors in functional programming, the interpretation of operational semantics, manipulating abstract syntax trees (ASTs), and using higher-order functions to replace traditional loops.
+    
+    \subsubsection*{Functors}
+    
+    Functors are a type class in functional programming that allow for the mapping of a function over a structure without altering the structure itself. They are essential for abstracting over different 
+    kinds of mappable containers, such as lists, options, and more.
+    
+    \begin{highlight}[Functors in Functors and Operational Semantics]
+        Functors enable the application of functions over wrapped values in a uniform manner:
+        \begin{itemize}
+            \item \textbf{Definition}: A functor is defined by a type class with a map function.
+            \item \textbf{Usage}: Functors allow for the transformation of data within a context, maintaining the context's structure.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Operational Semantics}
+    
+    Operational semantics provides a formal description of how the execution of a program progresses. It describes how each step of a computation proceeds, which is crucial for understanding the 
+    behavior of programming languages.
+    
+    \begin{highlight}[Operational Semantics in Functors and Operational Semantics]
+        Operational semantics defines the meaning of a program by describing the transitions between its states:
+        \begin{itemize}
+            \item \textbf{Small-Step Semantics}: Describes the computation in small steps, focusing on individual operations.
+            \item \textbf{Big-Step Semantics}: Describes the overall result of the computation from the initial state to the final state.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Manipulating ASTs and Automatic Differentiation}
+    
+    Abstract Syntax Trees (ASTs) represent the hierarchical structure of source code, and automatic differentiation computes derivatives of expressions programmatically. These concepts are crucial 
+    for building interpreters and analyzers.
+    
+    \begin{highlight}[Manipulating ASTs and Automatic Differentiation in Functors and Operational Semantics]
+        These techniques enable the automatic computation of derivatives and the manipulation of code structures:
+        \begin{itemize}
+            \item \textbf{ASTs}: Representing and manipulating code structures.
+            \item \textbf{Automatic Differentiation}: Computing derivatives of expressions using pattern matching and case classes.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Newton's Method}
+    
+    Newton's method is a numerical technique for finding approximate solutions to equations. It involves iteratively improving guesses based on function values and derivatives.
+    
+    \begin{highlight}[Newton's Method in Functors and Operational Semantics]
+        This technique provides a systematic approach to solving equations:
+        \begin{itemize}
+            \item \textbf{Iterative Improvement}: Using function values and derivatives to update guesses.
+            \item \textbf{Stopping Criteria}: Ensuring convergence by checking the function value and iteration limits.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Higher-Order Functions}
+    
+    Higher-order functions like "map", "filter", and "foldLeft" enable functional programming styles by operating on collections without explicit loops or recursion.
+    
+    \begin{highlight}[Higher-Order Functions in Functors and Operational Semantics]
+        These functions replace traditional loops and promote a functional programming approach:
+        \begin{itemize}
+            \item \textbf{Map}: Applies a function to each element in a collection.
+            \item \textbf{Filter}: Selects elements from a collection based on a predicate.
+            \item \textbf{FoldLeft}: Aggregates elements in a collection using an associative function.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts in Functors and Operational Semantics]
+        This section covers fundamental concepts related to functors and operational semantics in Scala.
+    
+        \textbf{Functors}:
+        \begin{itemize}
+            \item \textbf{Definition}: A functor is defined by a type class with a map function.
+            \item \textbf{Usage}: Functors allow for the transformation of data within a context, maintaining the context's structure.
+        \end{itemize}
+        
+        \textbf{Operational Semantics}:
+        \begin{itemize}
+            \item \textbf{Small-Step Semantics}: Describes the computation in small steps, focusing on individual operations.
+            \item \textbf{Big-Step Semantics}: Describes the overall result of the computation from the initial state to the final state.
+        \end{itemize}
+        
+        \textbf{Manipulating ASTs and Automatic Differentiation}:
+        \begin{itemize}
+            \item \textbf{ASTs}: Representing and manipulating code structures.
+            \item \textbf{Automatic Differentiation}: Computing derivatives of expressions using pattern matching and case classes.
+        \end{itemize}
+        
+        \textbf{Newton's Method}:
+        \begin{itemize}
+            \item \textbf{Iterative Improvement}: Using function values and derivatives to update guesses.
+            \item \textbf{Stopping Criteria}: Ensuring convergence by checking the function value and iteration limits.
+        \end{itemize}
+        
+        \textbf{Higher-Order Functions}:
+        \begin{itemize}
+            \item \textbf{Map}: Applies a function to each element in a collection.
+            \item \textbf{Filter}: Selects elements from a collection based on a predicate.
+            \item \textbf{FoldLeft}: Aggregates elements in a collection using an associative function.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Lettuce, Scoping, And Closures}
+
+    Key topics include focusing on Lettuce, scoping, and closures in Scala. Key topics include let binding semantics, scoping rules, function closures, and the implementation of multiple simultaneous let bindings.
+    
+    \subsubsection*{Let Binding Semantics}
+
+    Let binding in functional programming involves associating variables with expressions in a specific local scope. This is fundamental in ensuring variables are bound to the correct values within 
+    their context, avoiding unintended side effects.
+    
+    \begin{highlight}[Let Binding Semantics in Lettuce, Scoping, and Closures]
+        In Scala, let bindings create new variables within an expression:
+        \begin{itemize}
+            \item \textbf{Single Let Binding}: Syntax looks like "let x = expr1 in expr2", where "x" is bound to "expr1" only within "expr2".
+            \item \textbf{Multiple Let Bindings}: Syntax allows simultaneous bindings, e.g., "let (x = expr1, y = expr2) in expr3", enabling cleaner and more efficient code.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Scoping Rules}
+    
+    Scoping rules determine the visibility and lifetime of variables. Lexical scoping, common in functional languages, means that a variable's scope is determined by its physical location in the 
+    source code, providing predictability in variable access.
+    
+    \begin{highlight}[Scoping Rules in Lettuce, Scoping, and Closures]
+        Understanding scoping rules is crucial for managing variable lifetimes and avoiding conflicts:
+        \begin{itemize}
+            \item \textbf{Lexical Scoping}: Variables are accessible within the block they are defined and nested blocks. This prevents variables from leaking into unintended areas of the code.
+            \item \textbf{Dynamic Scoping}: Variables are accessible based on the calling context, not common in Scala but useful to understand for comparison.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Function Closures}
+    
+    Closures are functions that capture the bindings of free variables from their environment. They are powerful tools in functional programming, allowing functions to maintain state between 
+    invocations or to create function factories.
+    
+    \begin{highlight}[Function Closures in Lettuce, Scoping, and Closures]
+        Closures enhance the expressiveness and flexibility of functions in Scala:
+        \begin{itemize}
+            \item \textbf{Definition}: A closure is a function along with a referencing environment for the non-local variables of that function. For example, "val add = (x: Int) => (y: Int) => x + y" 
+            captures "x" in its environment.
+            \item \textbf{Usage}: Useful in scenarios requiring functions with persistent state or for generating specialized functions on-the-fly.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Implementing Multiple Simultaneous Let Bindings}
+    
+    Implementing multiple simultaneous let bindings allows binding multiple variables in one expression, which simplifies code and enhances readability.
+    
+    \begin{highlight}[Implementing Multiple Simultaneous Let Bindings in Lettuce, Scoping, and Closures]
+        Multiple let bindings reduce redundancy and increase code clarity:
+        \begin{itemize}
+            \item \textbf{Syntax}: "let (x = expr1, y = expr2) in expr3" binds "x" and "y" simultaneously before evaluating "expr3".
+            \item \textbf{Semantics}: Ensures that all bindings are evaluated in parallel, preventing dependencies between bindings.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts in Lettuce, Scoping, and Closures]
+        This section covers the core principles related to let binding semantics, scoping rules, function closures, and multiple simultaneous let bindings in Scala. \vspace*{1em}
+    
+        \textbf{Let Binding Semantics}:
+        \begin{itemize}
+            \item \textbf{Single Let Binding}: Binds a single variable to an expression within a local scope.
+            \item \textbf{Multiple Let Bindings}: Allows for the simultaneous binding of multiple variables, enhancing code clarity.
+        \end{itemize}
+        
+        \textbf{Scoping Rules}:
+        \begin{itemize}
+            \item \textbf{Lexical Scoping}: Scope is determined by the structure of the code.
+            \item \textbf{Dynamic Scoping}: Scope is determined by the call stack at runtime (less common in Scala).
+        \end{itemize}
+        
+        \textbf{Function Closures}:
+        \begin{itemize}
+            \item \textbf{Definition}: Functions that capture their surrounding environment's state.
+            \item \textbf{Usage}: Useful for maintaining state and creating parameterized functions.
+        \end{itemize}
+        
+        \textbf{Implementing Multiple Simultaneous Let Bindings}:
+        \begin{itemize}
+            \item \textbf{Syntax}: Allows for the declaration of multiple variables in a single let expression.
+            \item \textbf{Semantics}: Evaluates all bindings simultaneously, preventing interdependencies.
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 3}
+    \subsection*{Functions and Recursion in Lettuce}
+
+    Key topics include the definition and use of functions, the principles of recursion, and the importance of base and recursive cases in recursive functions.
+    
+    \subsubsection*{Functions}
+    
+    Functions are fundamental building blocks in functional programming. They encapsulate reusable code and can be passed as arguments to other functions or returned as values.
+    
+    \begin{highlight}[Functions in Lettuce]
+        Functions in Lettuce allow for the creation of reusable and composable code blocks:
+        \begin{itemize}
+            \item \textbf{Definition}: Functions are defined using the "fun" keyword, followed by parameters and a body. For example, "fun(x) = x + 1" defines a simple function that increments its input.
+            \item \textbf{First-Class Citizens}: Functions can be assigned to variables, passed as arguments, and returned from other functions, enabling higher-order functions.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Recursion}
+    
+    Recursion is a powerful technique where a function calls itself to solve smaller instances of the same problem. It is essential for implementing algorithms that can be naturally divided into similar subproblems.
+    
+    \begin{highlight}[Recursion in Lettuce]
+        Recursion in Lettuce involves defining functions that call themselves:
+        \begin{itemize}
+            \item \textbf{Base Case}: The condition under which the recursion terminates. For example, in a factorial function, the base case is when the input is 0.
+            \item \textbf{Recursive Case}: The part of the function that includes the recursive call, breaking the problem into smaller instances. For instance, "factorial(n) = n * factorial(n-1)".
+            \item \textbf{Tail Recursion}: A special form of recursion where the recursive call is the last operation in the function. Tail-recursive functions are optimized by the compiler to prevent stack overflow.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts in Functions and Recursion in Lettuce]
+        This section covers the core principles related to functions and recursion in Lettuce.
+    
+        \textbf{Functions}:
+        \begin{itemize}
+            \item \textbf{Definition}: Creating reusable code blocks with the "fun" keyword.
+            \item \textbf{First-Class Citizens}: Functions can be treated as values, enabling higher-order functions.
+        \end{itemize}
+        
+        \textbf{Recursion}:
+        \begin{itemize}
+            \item \textbf{Base Case}: The terminating condition for recursion.
+            \item \textbf{Recursive Case}: The self-referential part of the function that breaks down the problem.
+            \item \textbf{Tail Recursion}: A form of recursion optimized by the compiler to prevent stack overflow.
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 4}
+    \subsection*{References And Garbage Collection}
+
+    Key topics include understanding references, the process of garbage collection, the creation and management of references, and the significance of closures in memory management.
+    
+    \subsubsection*{References}
+    
+    References in programming languages are mechanisms to access objects stored in memory. They are essential for dynamic memory management, allowing for the creation, manipulation, and deletion of objects.
+    
+    \begin{highlight}[References in Lettuce, Scoping, and Closures]
+        In Scala, references play a crucial role in managing objects and their lifecycle:
+        \begin{itemize}
+            \item \textbf{Definition}: A reference is a pointer or an address that allows access to a specific memory location where an object is stored.
+            \item \textbf{Dereferencing}: The process of accessing the value stored at a reference.
+            \item \textbf{Assignment}: Changing the value stored at a reference or making a reference point to a different memory location.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Garbage Collection}
+    
+    Garbage collection is the process of automatically reclaiming memory that is no longer in use, thus preventing memory leaks and optimizing memory usage. It is a critical aspect of modern programming languages that manage dynamic memory.
+    
+    \begin{highlight}[Garbage Collection in Lettuce, Scoping, and Closures]
+        Understanding how garbage collection works is essential for efficient memory management:
+        \begin{itemize}
+            \item \textbf{Mark-and-Sweep}: A common garbage collection algorithm that marks active objects and sweeps through memory to collect unmarked, inactive objects.
+            \item \textbf{Reference Counting}: An algorithm where each object has a counter that tracks the number of references to it. When the counter reaches zero, the object can be safely deleted.
+            \item \textbf{Generational GC}: Divides objects into generations based on their age, collecting younger objects more frequently than older ones.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Creation and Management of References}
+    
+    Creating and managing references involves allocating memory for new objects and ensuring that references are correctly updated when objects are assigned or deleted.
+    
+    \begin{highlight}[Creation and Management of References in Lettuce, Scoping, and Closures]
+        Efficiently managing references ensures optimal use of memory:
+        \begin{itemize}
+            \item \textbf{NewRef}: Allocates memory for a new object and returns a reference to it.
+            \item \textbf{AssignRef}: Updates the value stored at a reference.
+            \item \textbf{DeRef}: Accesses the value stored at a reference.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Closures and Memory Management}
+    
+    Closures are functions that capture the bindings of free variables from their environment. They play a significant role in memory management by keeping the captured variables alive as long as the closure is accessible.
+    
+    \begin{highlight}[Closures and Memory Management in Lettuce, Scoping, and Closures]
+        Closures are powerful tools for managing state and memory:
+        \begin{itemize}
+            \item \textbf{Definition}: A closure is a function along with a referencing environment for the non-local variables of that function.
+            \item \textbf{Usage}: Closures maintain access to their captured variables even when they are invoked outside their original scope.
+            \item \textbf{Memory Implications}: Closures can extend the lifetime of captured variables, impacting garbage collection and memory management.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts in References and Garbage Collection]
+        This section covers the core principles related to references and garbage collection in Scala. \vspace*{1em}
+    
+        \textbf{References}:
+        \begin{itemize}
+            \item \textbf{Definition}: A pointer or address for accessing objects in memory.
+            \item \textbf{Dereferencing}: Accessing the value stored at a reference.
+            \item \textbf{Assignment}: Changing the value or memory location a reference points to.
+        \end{itemize}
+        
+        \textbf{Garbage Collection}:
+        \begin{itemize}
+            \item \textbf{Mark-and-Sweep}: Marks active objects and sweeps to collect inactive ones.
+            \item \textbf{Reference Counting}: Tracks the number of references to an object.
+            \item \textbf{Generational GC}: Collects younger objects more frequently.
+        \end{itemize}
+        
+        \textbf{Creation and Management of References}:
+        \begin{itemize}
+            \item \textbf{NewRef}: Allocates memory for a new object.
+            \item \textbf{AssignRef}: Updates the value at a reference.
+            \item \textbf{DeRef}: Accesses the value at a reference.
+        \end{itemize}
+        
+        \textbf{Closures and Memory Management}:
+        \begin{itemize}
+            \item \textbf{Definition}: Functions that capture non-local variable bindings.
+            \item \textbf{Usage}: Maintain state and access to captured variables.
+            \item \textbf{Memory Implications}: Affect the lifetime of captured variables.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Continuation Passing Style (CPS) and Trampolines}
+
+    Key topics include understanding the principles of CPS transformation, the implementation of trampolines to optimize recursion, and how these techniques enhance control over program execution and 
+    memory management.
+    
+    \subsubsection*{Continuation Passing Style (CPS)}
+    
+    CPS is a style of programming where control is passed explicitly in the form of continuations. This technique is used to make control flow explicit and to handle operations like function calls and 
+    returns in a flexible manner.
+    
+    \begin{highlight}[CPS in Continuation Passing Style and Trampolines]
+        In CPS, every function takes an extra argument, a continuation, which represents the rest of the computation:
+        \begin{itemize}
+            \item \textbf{Definition}: Transform functions to take an additional argument (continuation) that specifies what to do next.
+            \item \textbf{Transformation}: Rewrite functions so that each call returns immediately to its continuation.
+            \item \textbf{Benefits}: Facilitates advanced control flow constructs, such as early exits, loops, and asynchronous programming.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Trampolines}
+    
+    Trampolines are a technique used to convert recursive function calls into iterative loops, preventing stack overflow by managing the call stack explicitly.
+    
+    \begin{highlight}[Trampolines in Continuation Passing Style and Trampolines]
+        Trampolines help in managing deep recursion without growing the call stack:
+        \begin{itemize}
+            \item \textbf{Definition}: Use a loop to repeatedly invoke functions that return either a result or another function to be invoked.
+            \item \textbf{Implementation}: Wrap recursive calls in functions that return other functions or values, which are then executed in a loop.
+            \item \textbf{Benefits}: Allows for safe execution of recursive algorithms in a stack-safe manner.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Combining CPS and Trampolines}
+    
+    By combining CPS and trampolines, we can ensure that our programs run efficiently and without risk of stack overflow, even for deeply recursive algorithms.
+    
+    \begin{highlight}[Combining CPS and Trampolines in Continuation Passing Style and Trampolines]
+        The combination of CPS and trampolines enhances control over recursion and program execution:
+        \begin{itemize}
+            \item \textbf{CPS Transformation}: Convert functions to CPS to handle control flow explicitly.
+            \item \textbf{Trampolining}: Use trampolines to manage and optimize recursive calls, ensuring stack safety.
+            \item \textbf{Practical Use}: Apply these techniques to complex algorithms requiring deep recursion, like tree traversals or state machines.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts in CPS and Trampolines]
+        This section covers the core principles related to Continuation Passing Style (CPS) and trampolines.
+    
+        \textbf{Continuation Passing Style (CPS)}:
+        \begin{itemize}
+            \item \textbf{Definition}: Transform functions to take an additional argument (continuation) that specifies what to do next.
+            \item \textbf{Transformation}: Rewrite functions so that each call returns immediately to its continuation.
+            \item \textbf{Benefits}: Facilitates advanced control flow constructs, such as early exits, loops, and asynchronous programming.
+        \end{itemize}
+        
+        \textbf{Trampolines}:
+        \begin{itemize}
+            \item \textbf{Definition}: Use a loop to repeatedly invoke functions that return either a result or another function to be invoked.
+            \item \textbf{Implementation}: Wrap recursive calls in functions that return other functions or values, which are then executed in a loop.
+            \item \textbf{Benefits}: Allows for safe execution of recursive algorithms in a stack-safe manner.
+        \end{itemize}
+        
+        \textbf{Combining CPS and Trampolines}:
+        \begin{itemize}
+            \item \textbf{CPS Transformation}: Convert functions to CPS to handle control flow explicitly.
+            \item \textbf{Trampolining}: Use trampolines to manage and optimize recursive calls, ensuring stack safety.
+            \item \textbf{Practical Use}: Apply these techniques to complex algorithms requiring deep recursion, like tree traversals or state machines.
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 5}
+    \subsection*{Types and Type Checking}
+
+    Key topics include understanding types, type checking, type inference, and the application of these concepts in functional programming languages like Scala and Lettuce.
+    
+    \subsubsection*{Types}
+    
+    Types define the kind of values that can be used in a programming language, ensuring correctness and preventing errors by enforcing rules on the kinds of data that can be manipulated.
+    
+    \begin{highlight}[Types in Types and Type Checking]
+        Types categorize values and expressions:
+        \begin{itemize}
+            \item \textbf{Primitive Types}: Basic types such as `num` for numbers, `bool` for booleans, and `string` for strings.
+            \item \textbf{Function Types}: Describe functions by their input and output types, e.g., `num => bool` denotes a function taking a `num` and returning a `bool`.
+            \item \textbf{Complex Types}: Include arrays, tuples, and custom types such as classes and enums.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Type Checking}
+    
+    Type checking involves verifying the type constraints of expressions and functions to ensure type safety in programs.
+    
+    \begin{highlight}[Type Checking in Types and Type Checking]
+        Type checking ensures that programs adhere to specified type constraints:
+        \begin{itemize}
+            \item \textbf{Static Type Checking}: Types are checked at compile-time, catching errors before program execution.
+            \item \textbf{Dynamic Type Checking}: Types are checked at runtime, which can handle more dynamic typing but may lead to runtime errors.
+            \item \textbf{Type Safety}: Ensures that operations are performed on compatible types, preventing type errors.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Type Inference}
+    
+    Type inference is the ability of a language to automatically deduce the types of expressions without explicit type annotations.
+    
+    \begin{highlight}[Type Inference in Types and Type Checking]
+        Type inference streamlines coding by deducing types:
+        \begin{itemize}
+            \item \textbf{Inference Algorithms}: Systems like Hindley-Milner algorithm in functional languages.
+            \item \textbf{Benefits}: Reduces the need for explicit type annotations, making code more concise.
+            \item \textbf{Limitations}: Complex cases may still require explicit annotations to resolve ambiguities.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts in Types and Type Checking]
+        This section covers the core principles related to types and type checking in programming languages.
+    
+        \textbf{Types}:
+        \begin{itemize}
+            \item \textbf{Primitive Types}: Basic types like numbers, booleans, and strings.
+            \item \textbf{Function Types}: Types that describe function signatures.
+            \item \textbf{Complex Types}: Include arrays, tuples, classes, and enums.
+        \end{itemize}
+        
+        \textbf{Type Checking}:
+        \begin{itemize}
+            \item \textbf{Static Type Checking}: Ensures type correctness at compile time.
+            \item \textbf{Dynamic Type Checking}: Ensures type correctness at runtime.
+            \item \textbf{Type Safety}: Ensures that operations are performed on compatible types.
+        \end{itemize}
+        
+        \textbf{Type Inference}:
+        \begin{itemize}
+            \item \textbf{Inference Algorithms}: Automatically deduce types of expressions.
+            \item \textbf{Benefits}: Reduces the need for explicit type annotations.
+            \item \textbf{Limitations}: Complex scenarios may still require explicit annotations.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Object-Oriented Programming}
+
+    Key topics include class inheritance, trait composition, type bounds, and method overriding in Scala.
+    
+    \subsubsection*{Class Inheritance}
+    
+    Inheritance in object-oriented programming allows classes to inherit properties and methods from other classes, promoting code reuse and the creation of hierarchical relationships.
+    
+    \begin{highlight}[Class Inheritance in Object-Oriented Programming]
+        In Scala, classes can extend other classes to inherit their members:
+        \begin{itemize}
+            \item \textbf{Abstract Classes}: Cannot be instantiated and can contain unimplemented members.
+            \item \textbf{Concrete Classes}: Can be instantiated and provide implementations for all their members.
+            \item \textbf{Inheritance Syntax}: Using the `extends` keyword, e.g., `class B extends A`.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Trait Composition}
+    
+    Traits in Scala are used to share interfaces and fields among classes. They are similar to interfaces in other languages but can contain method implementations and state.
+    
+    \begin{highlight}[Trait Composition in Object-Oriented Programming]
+        Traits enable multiple inheritance and code reuse:
+        \begin{itemize}
+            \item \textbf{Defining Traits}: Use the `trait` keyword, e.g., `trait A`.
+            \item \textbf{Mixing Traits}: Combine traits with classes using the `with` keyword, e.g., `class D extends C with A`.
+            \item \textbf{Mix-in Order}: The order of trait mix-in can affect the resulting class's behavior.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Type Bounds}
+    
+    Type bounds in Scala define constraints on the types that can be used as arguments for generics. They ensure that the type parameters adhere to certain criteria.
+    
+    \begin{highlight}[Type Bounds in Object-Oriented Programming]
+        Type bounds control the types that can be used with generic classes or methods:
+        \begin{itemize}
+            \item \textbf{Upper Bounds}: Specify a superclass that the type must extend, e.g., `[T <: B]`.
+            \item \textbf{Lower Bounds}: Specify a superclass that the type must be a superclass of, e.g., `[T >: B]`.
+            \item \textbf{Usage}: Helps in creating flexible and reusable components.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Method Overriding}
+    
+    Method overriding allows a subclass to provide a specific implementation of a method that is already defined in its superclass. It is a key feature for implementing polymorphism.
+    
+    \begin{highlight}[Method Overriding in Object-Oriented Programming]
+        Overriding methods allows customizing behavior in subclasses:
+        \begin{itemize}
+            \item \textbf{Override Keyword}: Must use the `override` keyword when overriding methods, e.g., `override def foo = ...`.
+            \item \textbf{Polymorphism}: Allows a method to perform different tasks based on the object that invokes it.
+            \item \textbf{Super Keyword}: Used to call the superclass's method, e.g., `super.foo()`.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts in Object-Oriented Programming]
+        This section covers the core principles related to object-oriented programming in Scala.
+    
+        \textbf{Class Inheritance}:
+        \begin{itemize}
+            \item \textbf{Abstract Classes}: Cannot be instantiated, serve as blueprints for other classes.
+            \item \textbf{Concrete Classes}: Provide implementations for all their members and can be instantiated.
+            \item \textbf{Inheritance Syntax}: Using the `extends` keyword.
+        \end{itemize}
+    
+        \textbf{Trait Composition}:
+        \begin{itemize}
+            \item \textbf{Defining Traits}: Traits can have both abstract and concrete members.
+            \item \textbf{Mixing Traits}: Multiple traits can be mixed into a single class.
+            \item \textbf{Mix-in Order}: The order affects the final implementation.
+        \end{itemize}
+    
+        \textbf{Type Bounds}:
+        \begin{itemize}
+            \item \textbf{Upper Bounds}: Constrain the type to be a subtype of a given type.
+            \item \textbf{Lower Bounds}: Constrain the type to be a supertype of a given type.
+            \item \textbf{Usage}: Ensures type safety and flexibility in generics.
+        \end{itemize}
+    
+        \textbf{Method Overriding}:
+        \begin{itemize}
+            \item \textbf{Override Keyword}: Required for method overriding.
+            \item \textbf{Polymorphism}: Enables the same method to behave differently based on the object.
+            \item \textbf{Super Keyword}: Calls the superclass's version of the method.
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}

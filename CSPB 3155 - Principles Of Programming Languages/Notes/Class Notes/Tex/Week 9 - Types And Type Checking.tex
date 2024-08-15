@@ -1,0 +1,402 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Types And Type Checking}
+\renewcommand{\SectionTitle}{Types And Type Checking}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{N/A}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=Z6VjnruK9fI}{Type Checking: Introduction}{18}
+    \item \lecture{https://www.youtube.com/watch?v=rbtVO70Qjeo}{Type Checking In Lettuce}{33}
+    \item \lecture{https://www.youtube.com/watch?v=g21xY-lC-gE}{Type Inference Recitation}{52}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks:
+    \begin{itemize}
+        \item \textbf{Types And Type Checking - Type Inference Lettuce Lecture Notes}
+        \item \textbf{Types And Type Checking - Types And Type Checking In Lettuce Lecture Notes}
+        \item \textbf{Types And Type Checking Recitation}
+        \item \textbf{Types And Type Checking Recitation Solutions}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \textbf{Problem Set 8 - Types And Type Checking}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 8 - Types And Type Checking.pdf}{Quiz 8 - Types And Type Checking}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The topic that is being covered this week is \textbf{Types And Type Checking}. The first topic that is being covered this week is \textbf{Type Checking: Introduction}.
+
+\begin{notes}{Type Checking: Introduction}
+    \subsection*{Overview}
+
+    Type checking is a crucial process in programming languages that ensures code correctness by verifying that operations are performed on compatible types. It prevents type errors during execution, 
+    enhancing program reliability and safety.
+    
+    \subsubsection*{What is Type Checking?}
+    
+    Type checking involves examining the types of expressions and statements in a program to ensure they adhere to the language's type rules. It can be performed statically at compile-time or dynamically at runtime.
+    
+    \begin{highlight}[What is Type Checking?]
+    
+        This example provides a basic understanding of type checking.
+    
+    \begin{code}[Scala]
+    // Statically typed example
+    val x: Int = 10
+    val y: String = "Hello"
+    // val z: Int = "World"  // This would cause a compile-time type error
+    
+    // Dynamically typed example
+    val a = 10
+    val b = "Hello"
+    // val c = a + b  // This would cause a runtime type error
+    \end{code}
+    
+        In this example, the static type checker ensures that "x" is an "Int" and "y" is a "String". A compile-time error occurs if an "Int" is assigned a "String". In dynamically typed languages, type 
+        errors are detected at runtime.
+    
+        \begin{itemize}
+            \item Type checking verifies that operations are performed on compatible types.
+            \item Prevents type errors during execution.
+            \item Can be performed statically at compile-time or dynamically at runtime.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Static vs. Dynamic Type Checking}
+    
+    Static type checking occurs at compile-time, ensuring type safety before program execution. Dynamic type checking occurs at runtime, verifying types as the program executes.
+    
+    \begin{highlight}[Static vs. Dynamic Type Checking]
+    
+        This example compares static and dynamic type checking.
+    
+    \begin{code}[Scala]
+    // Static type checking
+    def add(x: Int, y: Int): Int = x + y
+    
+    // Dynamic type checking (in a dynamically typed language like Python)
+    // def add(x, y):
+    //     return x + y
+    
+    // Static type checking error
+    // add(1, "two")  // Compile-time error
+    
+    // Dynamic type checking error
+    // add(1, "two")  // Runtime error
+    \end{code}
+    
+        In this example, the static type checker ensures that "add" only accepts "Int" parameters, catching errors at compile-time. In dynamically typed languages, errors are caught at runtime.
+    
+        \begin{itemize}
+            \item \textbf{Static Type Checking}: Ensures type safety at compile-time.
+            \item \textbf{Dynamic Type Checking}: Verifies types at runtime.
+            \item Static checking catches errors earlier, while dynamic checking provides flexibility.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type Systems}
+    
+    A type system defines the rules for assigning types to expressions and ensuring that operations are performed on compatible types. Type systems can be strong or weak, and static or dynamic.
+    
+    \begin{highlight}[Type Systems]
+    
+        This example illustrates a type system in Scala.
+    
+    \begin{code}[Scala]
+    // Strongly typed system
+    val x: Int = 5
+    // val y: String = x  // Compile-time error
+    
+    // Weakly typed system (hypothetical)
+    // var a: Any = 5
+    // a = "Hello"  // No error in a weakly typed system
+    \end{code}
+    
+        In this example, Scala's type system enforces strong typing, preventing an "Int" from being assigned to a "String". In weakly typed systems, type conversions may occur implicitly.
+    
+        \begin{itemize}
+            \item A type system defines rules for assigning types and ensuring compatibility.
+            \item \textbf{Strongly Typed Systems}: Enforce strict type rules, preventing implicit type conversions.
+            \item \textbf{Weakly Typed Systems}: Allow more flexibility with implicit type conversions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Benefits of Type Checking}
+    
+    Type checking provides several benefits, including early error detection, improved code reliability, better documentation, and enhanced performance through optimizations.
+    
+    \begin{highlight}[Benefits of Type Checking]
+    
+        The benefits of type checking include:
+    
+        \begin{itemize}
+            \item \textbf{Early Error Detection}: Catches type errors at compile-time or early in execution.
+            \item \textbf{Improved Code Reliability}: Ensures operations are performed on compatible types.
+            \item \textbf{Better Documentation}: Types serve as documentation, clarifying the expected data.
+            \item \textbf{Enhanced Performance}: Enables compiler optimizations based on type information.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type Inference}
+    
+    Type inference allows the compiler to deduce types automatically, reducing the need for explicit type annotations while maintaining type safety.
+    
+    \begin{highlight}[Type Inference]
+    
+        This example demonstrates type inference in Scala.
+    
+    \begin{code}[Scala]
+    // Explicit type annotation
+    val x: Int = 10
+    
+    // Type inference
+    val y = 20  // Compiler infers that y is of type Int
+    \end{code}
+    
+        In this example, the Scala compiler infers that "y" is of type "Int" based on the assigned value, reducing the need for explicit type annotations.
+    
+        \begin{itemize}
+            \item Type inference deduces types automatically.
+            \item Reduces the need for explicit type annotations.
+            \item Maintains type safety while simplifying code.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Type checking is a fundamental process in programming languages that ensures code correctness by verifying type compatibility. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{What is Type Checking?}: Verifies that operations are performed on compatible types, preventing type errors.
+            \item \textbf{Static vs. Dynamic Type Checking}: Static type checking occurs at compile-time, while dynamic type checking occurs at runtime.
+            \item \textbf{Type Systems}: Define rules for assigning types and ensuring compatibility, with strong or weak, static or dynamic systems.
+            \item \textbf{Benefits of Type Checking}: Early error detection, improved code reliability, better documentation, and enhanced performance.
+            \item \textbf{Type Inference}: Allows the compiler to deduce types automatically, reducing the need for explicit type annotations.
+        \end{itemize}
+    
+        These concepts highlight the importance of type checking in ensuring code correctness, safety, and performance.
+    
+    \end{highlight}
+\end{notes}
+
+The last topic that is being covered this week is \textbf{Type Checking In Lettuce}.
+
+\begin{notes}{Type Checking In Lettuce}
+    \subsection*{Overview}
+
+    Type checking in Lettuce ensures that operations are performed on compatible types, enhancing the safety and correctness of programs. Lettuce, as a functional programming language, utilizes a type 
+    system to enforce type rules and catch errors at compile time.
+    
+    \subsubsection*{Type System in Lettuce}
+    
+    Lettuce employs a static type system, meaning types are checked at compile time. This prevents type errors from occurring during program execution.
+    
+    \begin{highlight}[Type System in Lettuce]
+    
+        This example illustrates the static type system in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Valid type assignments
+    let x: Int = 10
+    let y: String = "Hello"
+    
+    // Type error
+    // let z: Int = "World"  // Compile-time error
+    \end{code}
+    
+        In this example, Lettuce's type system ensures that "x" is an "Int" and "y" is a "String". Assigning a "String" to an "Int" variable "z" results in a compile-time error.
+    
+        \begin{itemize}
+            \item Lettuce uses a static type system.
+            \item Types are checked at compile time.
+            \item Prevents type errors during program execution.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type Annotations}
+    
+    Type annotations in Lettuce specify the types of variables and function parameters explicitly, aiding in type checking and improving code readability.
+    
+    \begin{highlight}[Type Annotations]
+    
+        This example demonstrates type annotations in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function with type annotations
+    let add: (Int, Int) => Int = fun(x: Int, y: Int) {
+        x + y
+    }
+    
+    // Variable with type annotation
+    let message: String = "Hello, Lettuce!"
+    \end{code}
+    
+        In this example, the function "add" is annotated with types for its parameters and return type. The variable "message" is explicitly annotated as a "String".
+    
+        \begin{itemize}
+            \item Type annotations specify variable and function parameter types.
+            \item Improves type checking and code readability.
+            \item Helps the type checker enforce type rules.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type Inference in Lettuce}
+    
+    Lettuce supports type inference, allowing the compiler to deduce types automatically, reducing the need for explicit type annotations while maintaining type safety.
+    
+    \begin{highlight}[Type Inference in Lettuce]
+    
+        This example demonstrates type inference in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Variable with type inference
+    let x = 10  // Compiler infers x is of type Int
+    
+    // Function with type inference
+    let add = fun(x, y) {
+        x + y
+    }  // Compiler infers add: (Int, Int) => Int
+    \end{code}
+    
+        In this example, the compiler infers the type of "x" as "Int" and the function "add" as "(Int, Int) => Int" based on the assigned values.
+    
+        \begin{itemize}
+            \item Type inference deduces types automatically.
+            \item Reduces the need for explicit type annotations.
+            \item Maintains type safety while simplifying code.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type Checking Functions}
+    
+    Type checking functions in Lettuce involves verifying that function parameters and return types are consistent with their type annotations or inferred types.
+    
+    \begin{highlight}[Type Checking Functions]
+    
+        This example demonstrates type checking for functions in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function with correct type annotations
+    let multiply: (Int, Int) => Int = fun(a: Int, b: Int) {
+        a * b
+    }
+    
+    // Function with type error
+    // let concatenate: (Int, String) => String = fun(a: Int, b: Int) {
+    //     a + b  // Compile-time error: type mismatch
+    // }
+    \end{code}
+    
+        In this example, "multiply" is correctly annotated and type-checked. The "concatenate" function has a type error because "a + b" is not a valid operation for "Int" and "String".
+    
+        \begin{itemize}
+            \item Type checking verifies function parameter and return types.
+            \item Ensures consistency with type annotations or inferred types.
+            \item Catches type errors during function definition.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Polymorphic Functions}
+    
+    Lettuce supports polymorphic functions, allowing functions to operate on different types. Type parameters are used to define polymorphic functions.
+    
+    \begin{highlight}[Polymorphic Functions]
+    
+        This example demonstrates defining polymorphic functions in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Polymorphic identity function
+    let identity: [T] => (T) => T = fun[T](x: T) {
+        x
+    }
+    
+    // Using the polymorphic function
+    let intIdentity = identity 
+    let stringIdentity = identity[String]("Hello")
+    \end{code}
+    
+        In this example, "identity" is a polymorphic function that works with any type "T". It can be used with different types, such as "Int" and "String".
+    
+        \begin{itemize}
+            \item Polymorphic functions operate on different types.
+            \item Type parameters define the polymorphic behavior.
+            \item Provides flexibility and reusability in function definitions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type Safety and Error Prevention}
+    
+    Type checking in Lettuce ensures type safety and prevents errors by verifying that operations are performed on compatible types. This enhances the reliability and correctness of programs.
+    
+    \begin{highlight}[Type Safety and Error Prevention]
+    
+        The benefits of type checking in Lettuce include:
+    
+        \begin{itemize}
+            \item \textbf{Type Safety}: Ensures operations are performed on compatible types, preventing type errors.
+            \item \textbf{Error Prevention}: Catches type errors at compile-time, improving program reliability.
+            \item \textbf{Improved Documentation}: Types serve as documentation, clarifying the expected data.
+            \item \textbf{Enhanced Code Quality}: Maintains code consistency and correctness through rigorous type checks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Type checking in Lettuce is crucial for ensuring the correctness and safety of programs. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Type System in Lettuce}: Utilizes a static type system to check types at compile time.
+            \item \textbf{Type Annotations}: Explicitly specify variable and function parameter types for better type checking.
+            \item \textbf{Type Inference in Lettuce}: Allows the compiler to deduce types automatically, reducing the need for explicit annotations.
+            \item \textbf{Type Checking Functions}: Verifies that function parameters and return types are consistent with type annotations or inferred types.
+            \item \textbf{Polymorphic Functions}: Defines functions that can operate on different types using type parameters.
+            \item \textbf{Type Safety and Error Prevention}: Ensures operations are performed on compatible types, preventing errors and improving program reliability.
+        \end{itemize}
+    
+        These concepts highlight the importance of type checking in maintaining the safety, correctness, and quality of programs in Lettuce.
+    
+    \end{highlight}
+\end{notes}

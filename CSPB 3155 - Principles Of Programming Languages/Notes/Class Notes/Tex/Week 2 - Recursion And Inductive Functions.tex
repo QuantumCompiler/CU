@@ -1,0 +1,421 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Recursion And Inductive Functions}
+\renewcommand{\SectionTitle}{Recursion And Inductive Functions}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{Programming In Scala - Chapter 15.1 - A Simple Example}
+    \item \textbf{Programming In Scala - Chapter 15.2 - Kinds Of Patterns}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=LkiPOcjMpsE}{Recursion 1: Introduction And The Stack}{8}
+    \item \lecture{https://www.youtube.com/watch?v=tUJnWQ9v868}{Recursion 2: Recursion Trees}{5}
+    \item \lecture{https://www.youtube.com/watch?v=nhwqDuqZN6k}{Recursion 3: Tail Recursion}{12}
+    \item \lecture{https://www.youtube.com/watch?v=tdcysn8mg-E}{Inductive Definitions: Grammar}{20}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks
+    \begin{itemize}
+        \item \textbf{Recursion And Inductive Functions - Inductively Defined Structures}
+        \item \textbf{Recursion And Inductive Functions - Recursion}
+        \item \textbf{Recursion And Inductive Functions - Recitation}
+        \item \textbf{Recursion And Inductive Functions - Recitation Solutions}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \textbf{Problem Set 2 - Recursion And Inductive Functions}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 2 - Recursion And Inductive Functions.pdf}{Quiz 2 - Recursion And Inductive Functions}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is covered this week is \textbf{Chapter 15: Case Classes And Pattern Matching}. The first section that is covered from this chapter this week is \textbf{Section 15.1: A Simple Example}.
+
+\begin{notes}{Section 15.1: A Simple Example}
+    \subsection*{Overview}
+
+    This chapter introduces case classes and pattern matching in Scala, which support writing regular, non-encapsulated data structures, particularly tree-like recursive data. By the end of this 
+    chapter, readers should understand how to use these features for various applications.
+    
+    \subsubsection*{Case Classes}
+    
+    Case classes are a special type of class in Scala that come with several built-in features that simplify their creation and usage. They are particularly useful for defining immutable data structures. 
+    Let's explore what makes case classes special.
+    
+    \begin{highlight}[Defining Case Classes]
+    
+    Case classes allow you to define classes without having to write a lot of boilerplate code. Here is an example of how to define simple case classes for arithmetic expressions.
+    
+    \begin{code}[Scala]
+    abstract class Expr
+    case class Var(name: String) extends Expr
+    case class Number(num: Double) extends Expr
+    case class UnOp(operator: String, arg: Expr) extends Expr
+    case class BinOp(operator: String, left: Expr, right: Expr) extends Expr
+    \end{code}
+    
+    This example defines an abstract class "Expr" with four case class subclasses: "Var", "Number", "UnOp", and "BinOp".
+    
+    \begin{itemize}
+        \item \textit{Factory Methods}: Create instances without \texttt{new}.
+        \item \textit{Automatic Properties}: Parameters are automatically \texttt{val}.
+        \item \textit{Useful Methods}: Automatically generated \texttt{toString}, \texttt{hashCode}, and \texttt{equals}.
+        \item \textit{Copy Method}: Create modified copies easily.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Pattern Matching}
+    
+    Pattern matching is a powerful feature in Scala that allows you to check the structure of data and decompose it based on its patterns. It is similar to switch statements in other languages but 
+    much more powerful. 
+    
+    \begin{highlight}[Pattern Matching]
+    
+    This example shows how to use pattern matching to simplify arithmetic expressions by applying specific rules.
+    
+    \begin{code}[Scala]
+    def simplifyTop(expr: Expr): Expr = expr match {
+      case UnOp("-", UnOp("-", e)) => e        // Double negation
+      case BinOp("+", e, Number(0)) => e       // Adding zero
+      case BinOp("*", e, Number(1)) => e       // Multiplying by one
+      case _ => expr                           // Anything else
+    }
+    \end{code}
+    
+    In this example, the function "simplifyTop" simplifies expressions like double negation, adding zero, and multiplying by one.
+    
+    \begin{itemize}
+        \item \textit{Match Expressions}: Similar to switch statements, but more powerful.
+        \item \textit{Patterns}: Can be constants, variables, or constructors.
+        \item \textit{Order of Patterns}: Tried in sequence, first match selected.
+        \item \textit{MatchError}: Thrown if no pattern matches.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comparison to Switch}
+    
+    Match expressions in Scala are a generalization of switch statements found in other languages. They are more flexible and powerful, with several key differences.
+    
+    \begin{highlight}[Match with Default Case]
+    
+    This example illustrates a simple pattern match with a default case, similar to a switch statement but without fall-through behavior.
+    
+    \begin{code}[Scala]
+    expr match {
+        case BinOp(op, left, right) =>
+            println(expr + " is a binary operation")
+        case _ =>
+    }
+    \end{code}
+    
+    In this example, the pattern matches binary operations specifically, and any other value falls through to the default case.
+    
+    \begin{itemize}
+        \item \textit{Expression Result}: Always results in a value.
+        \item \textit{No Fall Through}: Alternatives do not fall through.
+        \item \textit{MatchError}: Exception if no pattern matches, requiring a default case.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Scala's case classes and pattern matching provide a powerful way to define and decompose data structures. Here are the key concepts covered in this section:
+    
+    \begin{itemize}
+        \item \textbf{Case Classes}: Simplify creating and using classes with factory methods, automatic properties, useful methods like \texttt{toString}, and the ability to create modified copies.
+        \item \textbf{Pattern Matching}: Allows checking and deconstructing data structures based on their patterns, similar to but more powerful than switch statements.
+        \item \textbf{Comparison to Switch}: Match expressions always result in a value, do not fall through, and require a default case to handle unmatched patterns.
+    \end{itemize}
+    
+    These features make Scala's case classes and pattern matching a versatile and powerful tool for working with complex data structures, enabling clear and concise code.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 15.2: Kinds Of Patterns}.
+
+\begin{notes}{Section 15.2: Kinds Of Patterns}
+    \subsection*{Overview}
+
+    This section covers the different types of patterns in Scala's pattern matching, explaining their syntax and how they can be used effectively in various scenarios. Pattern matching is a powerful 
+    feature in Scala that allows you to match data structures against patterns and decompose them.
+    
+    \subsubsection*{Kinds of Patterns}
+    
+    Scala provides several kinds of patterns that can be used in pattern matching, making it a versatile tool for different scenarios.
+    
+    \subsubsection*{Wildcard Patterns}
+    
+    The wildcard pattern ("\_") is used in pattern matching to match any value. This pattern is often used as a default case to catch any values that do not match other specific patterns. Think of it 
+    as a catch-all condition that ensures all possible values are accounted for.
+    
+    \begin{highlight}[Wildcard Pattern]
+    
+    This example demonstrates using a wildcard pattern to catch any unmatched values, printing a specific message for binary operations and a default message for other cases.
+    
+    \begin{code}[Scala]
+    expr match {
+        case BinOp(op, left, right) => println(expr + " is a binary operation")
+        case _ => println("It's something else")
+    }
+    \end{code}
+    
+    This example matches any binary operation and prints a message. If it does not match, it falls back to the default case.
+    
+    \begin{itemize}
+        \item Wildcard patterns match any value.
+        \item Useful as a catch-all default case.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Constant Patterns}
+    
+    A constant pattern matches a specific value, like a literal or a singleton object. This type of pattern is used when you want to match exact values. For instance, you might want to execute 
+    certain code only when a variable is exactly 5 or "hello".
+    
+    \begin{highlight}[Constant Pattern]
+    
+    Here, constant patterns are used to match specific values and provide a description for each matched value.
+    
+    \begin{code}[Scala]
+    def describe(x: Any) = x match {
+        case 5 => "five"
+        case true => "truth"
+        case "hello" => "hi!"
+        case Nil => "the empty list"
+        case _ => "something else"
+    }
+    \end{code}
+    
+    This example matches specific constant values and provides a corresponding description.
+    
+    \begin{itemize}
+        \item Constant patterns match exact values.
+        \item Useful for matching literals and singleton objects.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Variable Patterns}
+    
+    A variable pattern matches any object and binds the variable to that object. This allows you to refer to the matched object within the case block, making it possible to perform further operations 
+    on it. It's like catching any value and giving it a name to use later.
+    
+    \begin{highlight}[Variable Pattern]
+    
+    This example shows how variable patterns can match any value and bind it to a variable for further use.
+    
+    \begin{code}[Scala]
+    expr match {
+        case 0 => "zero"
+        case somethingElse => "not zero: " + somethingElse
+    }
+    \end{code}
+    
+    This example matches zero specifically and any other value, binding the non-zero value to "somethingElse".
+    
+    \begin{itemize}
+        \item Variable patterns match any value.
+        \item Binds the matched value to a variable for further use.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Constructor Patterns}
+    
+    Constructor patterns match the structure of case class instances, allowing for deep pattern matching. This is particularly powerful for deconstructing nested data structures. You can think of it 
+    as matching the shape and content of an object, not just its type.
+    
+    \begin{highlight}[Constructor Pattern]
+    
+    This example uses constructor patterns to match specific structures within nested data, such as a binary operation where the right-hand side is zero.
+    
+    \begin{code}[Scala]
+    expr match {
+        case BinOp("+", e, Number(0)) => println("a deep match")
+        case _ =>
+    }
+    \end{code}
+    
+    This example matches a binary operation where the operation is addition, and the right-hand side is zero.
+    
+    \begin{itemize}
+        \item Constructor patterns match case class structures.
+        \item Supports deep matching of nested objects.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Sequence Patterns}
+    
+    Sequence patterns match sequence types like lists or arrays. You can specify the exact number of elements or allow for variable-length sequences. This is useful when you need to match patterns 
+    within collections of elements.
+    
+    \begin{highlight}[Fixed Length Sequence Pattern]
+    
+    This example demonstrates matching a fixed-length list where the first element is zero.
+    
+    \begin{code}[Scala]
+    expr match {
+        case List(0, _, _) => println("found it")
+        case _ =>
+    }
+    \end{code}
+    
+    This example matches a three-element list starting with zero.
+    
+    \begin{itemize}
+        \item Matches a specific length sequence.
+        \item Useful for fixed-length lists or arrays.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Arbitrary Length Sequence Pattern]
+    
+    This example shows how to match a list of any length that starts with zero.
+    
+    \begin{code}[Scala]
+    expr match {
+        case List(0, _*) => println("found it")
+        case _ =>
+    }
+    \end{code}
+    
+    This example matches any list that starts with zero, regardless of length.
+    
+    \begin{itemize}
+        \item Matches sequences of arbitrary length.
+        \item Useful for variable-length lists or arrays.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Tuple Patterns}
+    
+    Tuple patterns match tuples, allowing access to their elements. This is useful for working with fixed-size collections of different types. Tuples can hold a fixed number of items of different 
+    types, and pattern matching helps to deconstruct them easily.
+    
+    \begin{highlight}[Tuple Pattern]
+    
+    This example matches a 3-tuple and prints its elements.
+    
+    \begin{code}[Scala]
+    def tupleDemo(expr: Any) = expr match {
+        case (a, b, c) => println("matched " + a + b + c)
+        case _ =>
+    }
+    \end{code}
+    
+    This example matches a 3-tuple and prints its elements.
+    
+    \begin{itemize}
+        \item Matches fixed-size collections like tuples.
+        \item Useful for tuples with different types of elements.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Typed Patterns}
+    
+    Typed patterns match and cast an object to a specific type, providing a convenient replacement for type tests and casts. This simplifies the code and makes it more readable. Instead of checking 
+    the type and then casting, you can do both in one step with a typed pattern.
+    
+    \begin{highlight}[Typed Pattern]
+    
+    This example uses typed patterns to determine the type of an object and perform type-specific operations.
+    
+    \begin{code}[Scala]
+    def generalSize(x: Any) = x match {
+        case s: String => s.length
+        case m: Map[_, _] => m.size
+        case _ => -1
+    }
+    \end{code}
+    
+    This example returns the size or length of different types of objects, like strings and maps.
+    
+    \begin{itemize}
+        \item Matches specific types and casts the object.
+        \item Simplifies type tests and casts.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Variable Binding}
+    
+    Variable binding patterns use the "@" symbol to bind a variable to a matched pattern. This allows you to retain a reference to the whole matched object while still deconstructing it. It's useful 
+    when you need to work with both the whole object and its parts.
+    
+    \begin{highlight}[Variable Binding]
+    
+    This example shows how to use variable binding to simplify an expression with nested patterns.
+    
+    \begin{code}[Scala]
+    expr match {
+        case UnOp("abs", e @ UnOp("abs", _)) => e
+        case _ =>
+    }
+    \end{code}
+    
+    This example matches an absolute value operation applied twice and simplifies it to a single absolute value operation.
+    
+    \begin{itemize}
+        \item Retains a reference to the matched object.
+        \item Useful for simplifying complex expressions.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Scala's pattern matching provides a powerful way to decompose and match data structures against patterns. Here are the key concepts covered in this section:
+    
+    \begin{itemize}
+        \item \textbf{Wildcard Patterns}: Match any value, useful as a default case.
+        \item \textbf{Constant Patterns}: Match specific values, such as literals or singletons.
+        \item \textbf{Variable Patterns}: Match any value and bind it to a variable.
+        \item \textbf{Constructor Patterns}: Match the structure of case class instances, allowing deep pattern matching.
+        \item \textbf{Sequence Patterns}: Match sequence types like lists or arrays, with fixed or variable lengths.
+        \item \textbf{Tuple Patterns}: Match tuples, allowing access to their elements.
+        \item \textbf{Typed Patterns}: Match and cast objects to specific types, simplifying type tests and casts.
+        \item \textbf{Variable Binding}: Use the "@" symbol to bind a variable to a matched pattern, retaining a reference to the whole matched object.
+    \end{itemize}
+    
+    These patterns make Scala's pattern matching a versatile and powerful tool for working with complex data structures, enabling clear and concise code.
+    
+    \end{highlight}
+\end{notes}

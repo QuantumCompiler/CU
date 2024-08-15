@@ -1,0 +1,1035 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Object Oriented Programming}
+\renewcommand{\SectionTitle}{Object Oriented Programming}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{N/A}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=le0WWDKkqp4}{Intro To Object Oriented Programming}{8}
+    \item \lecture{https://www.youtube.com/watch?v=yvj8B5-Xfzc}{Object Oriented Programming In Scala}{29}
+    \item \lecture{https://www.youtube.com/watch?v=Hn5aQVAcr2I}{Inheritance And Dynamic Dispatch}{12}
+    \item \lecture{https://www.youtube.com/watch?v=9UWQ9itTS9c}{Traits Generics And Variances}{22}
+    \item \lecture{https://www.youtube.com/watch?v=jy-JY768-fY}{Higher Order Types}{68}
+    \item \lecture{https://www.youtube.com/watch?v=_IZqUsjdXV4}{Recitation 13}{45}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks
+    \begin{itemize}
+        \item \textbf{Object Oriented Programming - Higher Order Types Lecture Notes}
+        \item \textbf{Object Oriented Programming - Higher Order Types Solutions Lecture Notes}
+        \item \textbf{Object Oriented Programming - Introduction To Object Oriented Concepts Lecture Notes}
+        \item \textbf{Object Oriented Programming - Traits Generics And Variances Lecture Notes}
+        \item \textbf{Object Oriented Programming Recitation 13 Solutions}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \textbf{Problem Set 9 - Object Oriented Programming}
+    \item \textbf{Mini Project 3 - Event Driven Programming DSL}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 9 - Object Oriented Programming.pdf}{Quiz 9 - Object Oriented Programming}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNotesDir Spot Exam 4 Notes.pdf}{Spot Exam 4 Notes}
+    \item \pdflink{\ExamsDir Spot Exam 4.pdf}{Spot Exam 4}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The topic that is being covered this week is \textbf{Object Oriented Programming}. The first topic that is being covered this week is \textbf{Intro To Object Oriented Programming}.
+
+\begin{notes}{Intro To Object Oriented Programming}
+    \subsection*{Overview}
+
+    Object-Oriented Programming (OOP) is a programming paradigm centered around objects and classes. It promotes modularity, reusability, and organization of code by encapsulating data and behavior within objects, facilitating better management of complex software systems.
+    
+    \subsubsection*{Key Concepts of Object-Oriented Programming}
+    
+    OOP is built around several core concepts that define how data and behaviors are structured and interact within a program.
+    
+    \begin{highlight}[Key Concepts of Object-Oriented Programming]
+    
+        The primary concepts of OOP include:
+    
+        \begin{itemize}
+            \item \textbf{Objects}: Instances of classes that contain data and behaviors.
+            \item \textbf{Classes}: Blueprints for creating objects, defining their properties and methods.
+            \item \textbf{Encapsulation}: The bundling of data and methods that operate on that data within a single unit or class, restricting access to certain components.
+            \item \textbf{Inheritance}: A mechanism for creating new classes from existing ones, allowing the reuse and extension of code.
+            \item \textbf{Polymorphism}: The ability to present the same interface for different underlying data types, enabling flexibility in code.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Objects and Classes}
+    
+    In OOP, objects are the basic units of code organization, representing entities with state and behavior. Classes are templates that define the structure and behavior of objects.
+    
+    \begin{highlight}[Objects and Classes]
+    
+        This example illustrates objects and classes in OOP.
+    
+    \begin{code}[Scala]
+    // Class definition
+    class Animal(val name: String, val sound: String) {
+        def makeSound(): String = s"$name says $sound"
+    }
+    
+    // Object instantiation
+    val dog = new Animal("Dog", "Woof")
+    val cat = new Animal("Cat", "Meow")
+    
+    // Using the objects
+    println(dog.makeSound())  // Output: Dog says Woof
+    println(cat.makeSound())  // Output: Cat says Meow
+    \end{code}
+    
+        In this example, "Animal" is a class that defines properties "name" and "sound", and a method "makeSound". "dog" and "cat" are objects (instances) of the "Animal" class.
+    
+        \begin{itemize}
+            \item Objects are instances of classes containing data and behaviors.
+            \item Classes define the blueprint for creating objects, specifying their properties and methods.
+            \item Objects interact with each other through methods and properties.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Encapsulation}
+    
+    Encapsulation involves bundling data and methods that manipulate that data within a single unit, typically a class. It restricts access to certain components, promoting modularity and preventing unintended interference.
+    
+    \begin{highlight}[Encapsulation]
+    
+        This example demonstrates encapsulation in OOP.
+    
+    \begin{code}[Scala]
+    // Class with encapsulation
+    class Account(private var balance: Double) {
+        def deposit(amount: Double): Unit = {
+            if (amount > 0) balance += amount
+        }
+    
+        def withdraw(amount: Double): Unit = {
+            if (amount > 0 && amount <= balance) balance -= amount
+        }
+    
+        def getBalance: Double = balance
+    }
+    
+    // Using the class with encapsulation
+    val account = new Account(1000)
+    account.deposit(500)
+    account.withdraw(200)
+    println(account.getBalance)  // Output: 1300
+    \end{code}
+    
+        In this example, the "Account" class encapsulates the "balance" field, providing methods "deposit", "withdraw", and "getBalance" to access and modify the balance.
+    
+        \begin{itemize}
+            \item Encapsulation bundles data and methods within a class.
+            \item Restricts access to certain components to protect data integrity.
+            \item Promotes modularity and prevents unintended interference.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Inheritance}
+    
+    Inheritance allows a new class to inherit properties and methods from an existing class, promoting code reuse and the creation of hierarchical class structures.
+    
+    \begin{highlight}[Inheritance]
+    
+        This example demonstrates inheritance in OOP.
+    
+    \begin{code}[Scala]
+    // Base class
+    class Animal(val name: String) {
+        def makeSound(): Unit = println(s"$name makes a sound")
+    }
+    
+    // Derived class
+    class Dog(name: String) extends Animal(name) {
+        override def makeSound(): Unit = println(s"$name barks")
+    }
+    
+    // Using inheritance
+    val dog = new Dog("Buddy")
+    dog.makeSound()  // Output: Buddy barks
+    \end{code}
+    
+        In this example, "Dog" inherits from "Animal", gaining access to its properties and methods. The "Dog" class overrides the "makeSound" method to provide a specific behavior.
+    
+        \begin{itemize}
+            \item Inheritance allows a class to inherit properties and methods from another class.
+            \item Promotes code reuse and the creation of hierarchical class structures.
+            \item Enables the extension and modification of inherited behaviors.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Polymorphism}
+    
+    Polymorphism enables objects to be treated as instances of their parent class or interface, allowing the same interface to be used for different underlying data types.
+    
+    \begin{highlight}[Polymorphism]
+    
+        This example demonstrates polymorphism in OOP.
+    
+    \begin{code}[Scala]
+    // Base class
+    class Animal(val name: String) {
+        def makeSound(): Unit = println(s"$name makes a sound")
+    }
+    
+    // Derived classes
+    class Dog(name: String) extends Animal(name) {
+        override def makeSound(): Unit = println(s"$name barks")
+    }
+    
+    class Cat(name: String) extends Animal(name) {
+        override def makeSound(): Unit = println(s"$name meows")
+    }
+    
+    // Using polymorphism
+    val animals: List[Animal] = List(new Dog("Buddy"), new Cat("Whiskers"))
+    animals.foreach(_.makeSound())  // Output: Buddy barks, Whiskers meows
+    \end{code}
+    
+        In this example, "Dog" and "Cat" are treated as "Animal" instances, demonstrating polymorphism. The "makeSound" method is called on each "Animal" object, producing different behaviors.
+    
+        \begin{itemize}
+            \item Polymorphism allows objects to be treated as instances of their parent class or interface.
+            \item Enables the same interface to be used for different underlying data types.
+            \item Facilitates flexibility and extensibility in code.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Object-Oriented Programming (OOP) is a powerful paradigm for organizing and managing complex software systems. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Objects and Classes}: Objects are instances of classes containing data and behaviors, while classes define the blueprint for objects.
+            \item \textbf{Encapsulation}: Bundles data and methods within a class, restricting access to protect data integrity and promote modularity.
+            \item \textbf{Inheritance}: Allows classes to inherit properties and methods from other classes, promoting code reuse and hierarchical structures.
+            \item \textbf{Polymorphism}: Enables objects to be treated as instances of their parent class or interface, allowing for flexible and extensible code.
+        \end{itemize}
+    
+        These concepts form the foundation of OOP, facilitating better code organization, reusability, and maintainability.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Object Oriented Programming In Scala}.
+
+\begin{notes}{Object Oriented Programming In Scala}
+    \subsection*{Overview}
+
+    Scala is a hybrid language that supports both object-oriented and functional programming paradigms. Its object-oriented features include classes, traits, objects, and inheritance, allowing developers to build robust and modular applications.
+    
+    \subsubsection*{Classes and Objects in Scala}
+    
+    In Scala, classes define the blueprint for objects, specifying their properties and methods. Objects are instances of classes, and they can be created using the "new" keyword.
+    
+    \begin{highlight}[Classes and Objects in Scala]
+    
+        This example demonstrates defining and using classes and objects in Scala.
+    
+    \begin{code}[Scala]
+    // Class definition
+    class Person(val name: String, var age: Int) {
+        def greet(): String = s"Hello, my name is $name and I am $age years old."
+    }
+    
+    // Object instantiation
+    val alice = new Person("Alice", 30)
+    val bob = new Person("Bob", 25)
+    
+    // Using the objects
+    println(alice.greet())  // Output: Hello, my name is Alice and I am 30 years old.
+    println(bob.greet())    // Output: Hello, my name is Bob and I am 25 years old.
+    \end{code}
+    
+        In this example, the "Person" class defines properties "name" and "age", and a method "greet". The objects "alice" and "bob" are instances of the "Person" class.
+    
+        \begin{itemize}
+            \item Classes define the structure and behavior of objects.
+            \item Objects are instances of classes created using the "new" keyword.
+            \item Objects contain state (properties) and behavior (methods).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Traits in Scala}
+    
+    Traits in Scala are similar to interfaces in other languages but can also contain concrete methods. They are used to share interfaces and fields between classes.
+    
+    \begin{highlight}[Traits in Scala]
+    
+        This example demonstrates defining and using traits in Scala.
+    
+    \begin{code}[Scala]
+    // Trait definition
+    trait Greeter {
+        def greet(name: String): String
+    }
+    
+    // Class implementing a trait
+    class EnglishGreeter extends Greeter {
+        def greet(name: String): String = s"Hello, $name!"
+    }
+    
+    // Using the class with the trait
+    val greeter = new EnglishGreeter()
+    println(greeter.greet("Alice"))  // Output: Hello, Alice!
+    \end{code}
+    
+        In this example, the "Greeter" trait defines a method "greet". The class "EnglishGreeter" implements the trait, providing a concrete implementation of the "greet" method.
+    
+        \begin{itemize}
+            \item Traits define interfaces and can contain concrete methods.
+            \item Classes can implement multiple traits, providing a form of multiple inheritance.
+            \item Traits are used to share functionality across different classes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Inheritance in Scala}
+    
+    Inheritance in Scala allows a class to inherit properties and methods from another class, promoting code reuse and hierarchical class structures.
+    
+    \begin{highlight}[Inheritance in Scala]
+    
+        This example demonstrates inheritance in Scala.
+    
+    \begin{code}[Scala]
+    // Base class
+    class Animal(val name: String) {
+        def makeSound(): Unit = println(s"$name makes a sound")
+    }
+    
+    // Derived class
+    class Dog(name: String) extends Animal(name) {
+        override def makeSound(): Unit = println(s"$name barks")
+    }
+    
+    // Using inheritance
+    val dog = new Dog("Buddy")
+    dog.makeSound()  // Output: Buddy barks
+    \end{code}
+    
+        In this example, the "Dog" class inherits from the "Animal" class, gaining access to its properties and methods. The "Dog" class overrides the "makeSound" method.
+    
+        \begin{itemize}
+            \item Inheritance allows a class to inherit properties and methods from another class.
+            \item Promotes code reuse and the creation of hierarchical class structures.
+            \item Derived classes can override methods from the base class.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Case Classes and Pattern Matching}
+    
+    Case classes in Scala are a special type of class that provides built-in methods for equality comparison, pattern matching, and more. They are commonly used in functional programming.
+    
+    \begin{highlight}[Case Classes and Pattern Matching]
+    
+        This example demonstrates defining and using case classes in Scala.
+    
+    \begin{code}[Scala]
+    // Case class definition
+    case class Person(name: String, age: Int)
+    
+    // Using case classes with pattern matching
+    val bob = Person("Bob", 25)
+    
+    bob match {
+        case Person(name, age) => println(s"$name is $age years old.")
+    }  // Output: Bob is 25 years old.
+    \end{code}
+    
+        In this example, "Person" is a case class that automatically provides methods like "equals", "hashCode", and "toString". Pattern matching is used to destructure the "Person" object.
+    
+        \begin{itemize}
+            \item Case classes provide built-in methods for common operations.
+            \item Useful in functional programming for representing data.
+            \item Pattern matching is used to destructure and extract values from case classes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Singleton Objects}
+    
+    Singleton objects in Scala are instances of their own unique classes. They are often used to define utility methods or to implement the Singleton design pattern.
+    
+    \begin{highlight}[Singleton Objects]
+    
+        This example demonstrates defining and using singleton objects in Scala.
+    
+    \begin{code}[Scala]
+    // Singleton object definition
+    object MathUtils {
+        def add(x: Int, y: Int): Int = x + y
+    }
+    
+    // Using the singleton object
+    val sum = MathUtils.add(3, 5)
+    println(sum)  // Output: 8
+    \end{code}
+    
+        In this example, "MathUtils" is a singleton object containing the "add" method. Singleton objects are created only once and do not require instantiation.
+    
+        \begin{itemize}
+            \item Singleton objects are instances of their own unique classes.
+            \item Often used for utility methods or implementing the Singleton design pattern.
+            \item Created only once and do not require instantiation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mixins and Multiple Inheritance}
+    
+    Scala allows multiple inheritance through mixins, enabling classes to inherit from multiple traits, providing flexibility and reusability.
+    
+    \begin{highlight}[Mixins and Multiple Inheritance]
+    
+        This example demonstrates using mixins for multiple inheritance in Scala.
+    
+    \begin{code}[Scala]
+    // Trait definitions
+    trait Swimmer {
+        def swim(): Unit = println("Swimming...")
+    }
+    
+    trait Runner {
+        def run(): Unit = println("Running...")
+    }
+    
+    // Class using mixins
+    class Triathlete extends Swimmer with Runner
+    
+    // Using the class with mixins
+    val athlete = new Triathlete()
+    athlete.swim()  // Output: Swimming...
+    athlete.run()   // Output: Running...
+    \end{code}
+    
+        In this example, the "Triathlete" class inherits from both "Swimmer" and "Runner" traits, demonstrating multiple inheritance through mixins.
+    
+        \begin{itemize}
+            \item Mixins allow a class to inherit from multiple traits.
+            \item Provides flexibility and reusability in class design.
+            \item Enables multiple inheritance while avoiding the complexities of traditional multiple inheritance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Object-Oriented Programming in Scala combines the power of OOP with functional programming features. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Classes and Objects in Scala}: Define the structure and behavior of objects using classes and create instances using the "new" keyword.
+            \item \textbf{Traits in Scala}: Define reusable interfaces and concrete methods, allowing classes to implement multiple traits.
+            \item \textbf{Inheritance in Scala}: Enable classes to inherit properties and methods from other classes, promoting code reuse.
+            \item \textbf{Case Classes and Pattern Matching}: Use case classes for data representation and pattern matching for destructuring.
+            \item \textbf{Singleton Objects}: Define single instances of classes for utility methods or Singleton pattern implementation.
+            \item \textbf{Mixins and Multiple Inheritance}: Use mixins to achieve multiple inheritance by inheriting from multiple traits.
+        \end{itemize}
+    
+        These features provide a robust foundation for building modular, reusable, and maintainable software in Scala.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Inheritance And Dynamic Dispatch}.
+
+\begin{notes}{Inheritance And Dynamic Dispatch}
+    \subsection*{Overview}
+
+    Inheritance and dynamic dispatch are fundamental concepts in Object-Oriented Programming (OOP) that enable code reuse, organization, and polymorphism. Inheritance allows a class to inherit properties 
+    and behaviors from another class, while dynamic dispatch ensures the correct method implementation is called at runtime based on the actual object's type.
+    
+    \subsubsection*{Inheritance}
+    
+    Inheritance allows a new class, called a subclass, to inherit properties and methods from an existing class, called a superclass. This promotes code reuse and helps create hierarchical relationships between classes.
+    
+    \begin{highlight}[Inheritance]
+    
+        This example demonstrates inheritance in Scala.
+    
+    \begin{code}[Scala]
+    // Superclass
+    class Animal(val name: String) {
+        def makeSound(): Unit = println(s"$name makes a sound")
+    }
+    
+    // Subclass
+    class Dog(name: String) extends Animal(name) {
+        override def makeSound(): Unit = println(s"$name barks")
+    }
+    
+    // Using inheritance
+    val animal = new Animal("Generic Animal")
+    val dog = new Dog("Buddy")
+    animal.makeSound()  // Output: Generic Animal makes a sound
+    dog.makeSound()     // Output: Buddy barks
+    \end{code}
+    
+        In this example, the "Dog" class inherits from the "Animal" class. The "Dog" class overrides the "makeSound" method to provide a specific implementation.
+    
+        \begin{itemize}
+            \item Inheritance allows a subclass to inherit properties and methods from a superclass.
+            \item Promotes code reuse and the creation of hierarchical relationships.
+            \item Subclasses can override methods to provide specific implementations.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Super and Subclasses}
+    
+    The terms superclass and subclass describe the hierarchical relationship in inheritance. A superclass is the base class that provides the general properties and methods, while a subclass inherits from the superclass and can add or override properties and methods.
+    
+    \begin{highlight}[Super and Subclasses]
+    
+        This example illustrates the relationship between super and subclasses.
+    
+    \begin{code}[Scala]
+    // Superclass
+    class Vehicle(val brand: String) {
+        def start(): Unit = println(s"The $brand vehicle is starting.")
+    }
+    
+    // Subclass
+    class Car(brand: String, val model: String) extends Vehicle(brand) {
+        override def start(): Unit = println(s"The $brand $model car is starting.")
+    }
+    
+    // Using super and subclasses
+    val vehicle = new Vehicle("Generic")
+    val car = new Car("Toyota", "Corolla")
+    vehicle.start()  // Output: The Generic vehicle is starting.
+    car.start()      // Output: The Toyota Corolla car is starting.
+    \end{code}
+    
+        In this example, "Vehicle" is the superclass with a general method "start". The "Car" subclass extends "Vehicle" and provides a more specific implementation of "start".
+    
+        \begin{itemize}
+            \item Superclass: The base class that provides general properties and methods.
+            \item Subclass: Inherits from the superclass and can add or override properties and methods.
+            \item Supports hierarchical class organization and code specialization.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Dynamic Dispatch}
+    
+    Dynamic dispatch is the process by which a call to an overridden method is resolved at runtime rather than compile-time. This mechanism enables polymorphism, allowing the correct method implementation to be invoked based on the actual object's type.
+    
+    \begin{highlight}[Dynamic Dispatch]
+    
+        This example demonstrates dynamic dispatch in Scala.
+    
+    \begin{code}[Scala]
+    // Superclass
+    class Animal(val name: String) {
+        def makeSound(): Unit = println(s"$name makes a generic sound")
+    }
+    
+    // Subclass
+    class Cat(name: String) extends Animal(name) {
+        override def makeSound(): Unit = println(s"$name meows")
+    }
+    
+    // Dynamic dispatch example
+    val animals: List[Animal] = List(new Animal("Generic"), new Cat("Whiskers"))
+    animals.foreach(_.makeSound())  
+    // Output: 
+    // Generic makes a generic sound
+    // Whiskers meows
+    \end{code}
+    
+        In this example, dynamic dispatch ensures that the "makeSound" method called on each "Animal" object is the appropriate implementation for the object's actual type, even when using a reference of the superclass type.
+    
+        \begin{itemize}
+            \item Dynamic dispatch resolves method calls at runtime based on the actual object's type.
+            \item Enables polymorphism, allowing different implementations to be called through the same interface.
+            \item Supports runtime decision-making in method invocation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Overriding Methods}
+    
+    Method overriding occurs when a subclass provides a specific implementation for a method already defined in its superclass. Overriding enables polymorphism and allows subclasses to define behaviors specific to their types.
+    
+    \begin{highlight}[Overriding Methods]
+    
+        This example demonstrates method overriding in Scala.
+    
+    \begin{code}[Scala]
+    // Superclass
+    class Bird(val species: String) {
+        def fly(): Unit = println(s"The $species bird is flying.")
+    }
+    
+    // Subclass
+    class Penguin(species: String) extends Bird(species) {
+        override def fly(): Unit = println(s"The $species penguin cannot fly.")
+    }
+    
+    // Using method overriding
+    val bird = new Bird("Eagle")
+    val penguin = new Penguin("Emperor")
+    bird.fly()     // Output: The Eagle bird is flying.
+    penguin.fly()  // Output: The Emperor penguin cannot fly.
+    \end{code}
+    
+        In this example, the "Penguin" class overrides the "fly" method from the "Bird" superclass, providing a specific implementation that reflects the penguin's inability to fly.
+    
+        \begin{itemize}
+            \item Overriding methods allows subclasses to provide specific implementations for superclass methods.
+            \item Enables polymorphic behavior, where the same method name can have different implementations.
+            \item Must match the method signature of the overridden method.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type Hierarchies and Liskov Substitution Principle}
+    
+    In OOP, type hierarchies allow classes to be organized in a hierarchical structure based on inheritance relationships. The Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
+    
+    \begin{highlight}[Type Hierarchies and Liskov Substitution Principle]
+    
+        This example demonstrates type hierarchies and LSP in Scala.
+    
+    \begin{code}[Scala]
+    // Superclass
+    class Shape {
+        def draw(): Unit = println("Drawing a shape")
+    }
+    
+    // Subclass
+    class Circle extends Shape {
+        override def draw(): Unit = println("Drawing a circle")
+    }
+    
+    // Using LSP
+    val shapes: List[Shape] = List(new Shape(), new Circle())
+    shapes.foreach(_.draw())
+    // Output:
+    // Drawing a shape
+    // Drawing a circle
+    \end{code}
+    
+        In this example, both "Shape" and "Circle" objects are treated as "Shape" types, demonstrating LSP. The "draw" method can be called on any "Shape" object, and the correct method for each type is invoked.
+    
+        \begin{itemize}
+            \item Type hierarchies organize classes based on inheritance relationships.
+            \item The Liskov Substitution Principle ensures that subclasses can replace superclass objects without affecting program correctness.
+            \item Promotes the consistent use of polymorphism in OOP.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Inheritance and dynamic dispatch are crucial components of Object-Oriented Programming, facilitating code reuse and polymorphism. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Inheritance}: Allows a subclass to inherit properties and methods from a superclass, promoting code reuse.
+            \item \textbf{Super and Subclasses}: Define hierarchical relationships where subclasses extend superclasses.
+            \item \textbf{Dynamic Dispatch}: Resolves method calls at runtime based on the actual object's type, enabling polymorphism.
+            \item \textbf{Overriding Methods}: Allows subclasses to provide specific implementations for superclass methods.
+            \item \textbf{Type Hierarchies and Liskov Substitution Principle}: Organizes classes in a hierarchical structure and ensures substitutability of subclasses for superclasses.
+        \end{itemize}
+    
+        These concepts are fundamental to creating flexible, reusable, and maintainable object-oriented software systems.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Traits Generics And Variances}.
+
+\begin{notes}{Traits Generics And Variances}
+    \subsection*{Overview}
+
+    Traits, generics, and variances are powerful features in Scala that enhance code reusability, flexibility, and type safety. Traits allow for modular code design by enabling multiple inheritance of 
+    methods and fields. Generics enable the creation of classes, methods, and traits that work with any type. Variance annotations provide fine-grained control over subtyping relationships, ensuring 
+    type safety while maintaining flexibility.
+    
+    \subsubsection*{Traits}
+    
+    Traits in Scala are similar to interfaces in other languages but can also include concrete methods and fields. They are used to define reusable behaviors that can be mixed into classes.
+    
+    \begin{highlight}[Traits]
+    
+        This example demonstrates defining and using traits in Scala.
+    
+    \begin{code}[Scala]
+    // Trait definition
+    trait Drivable {
+        def drive(): Unit
+    }
+    
+    // Concrete trait
+    trait Electric {
+        def recharge(): Unit = println("Recharging...")
+    }
+    
+    // Class mixing in traits
+    class Car extends Drivable with Electric {
+        def drive(): Unit = println("Driving the car")
+    }
+    
+    // Using the class with traits
+    val tesla = new Car()
+    tesla.drive()   // Output: Driving the car
+    tesla.recharge() // Output: Recharging...
+    \end{code}
+    
+        In this example, "Drivable" is a trait with an abstract method "drive", while "Electric" is a trait with a concrete method "recharge". The "Car" class mixes in both traits, providing an implementation for the "drive" method.
+    
+        \begin{itemize}
+            \item Traits define reusable behaviors and can contain both abstract and concrete methods.
+            \item Classes can mix in multiple traits, enabling multiple inheritance.
+            \item Traits promote modular design and code reuse.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Generics}
+    
+    Generics in Scala allow the creation of classes, methods, and traits that can operate on any type. This feature enhances code reusability and type safety by enabling type parameterization.
+    
+    \begin{highlight}[Generics]
+    
+        This example demonstrates defining and using generics in Scala.
+    
+    \begin{code}[Scala]
+    // Generic class definition
+    class Box[T](val value: T) {
+        def getValue: T = value
+    }
+    
+    // Using the generic class
+    val intBox = new Box 
+    val stringBox = new Box[String]("Hello")
+    
+    println(intBox.getValue)  // Output: 123
+    println(stringBox.getValue)  // Output: Hello
+    \end{code}
+    
+        In this example, the "Box" class is defined with a type parameter "T". This allows "Box" to store and return a value of any type, such as "Int" or "String".
+    
+        \begin{itemize}
+            \item Generics enable the creation of components that can operate on any type.
+            \item Type parameters are specified using square brackets, e.g., "Box[T]".
+            \item Enhances code reusability and type safety by avoiding the need for type casting.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Variance}
+    
+    Variance in Scala refers to how subtyping between complex types relates to subtyping between their component types. Variance annotations control how generic types behave when their type parameters are subtypes or supertypes.
+    
+    \begin{highlight}[Variance]
+    
+        This example demonstrates variance annotations in Scala.
+    
+    \begin{code}[Scala]
+    // Covariant definition
+    class Covariant[+A]
+    
+    // Contravariant definition
+    class Contravariant[-A]
+    
+    // Invariant definition
+    class Invariant[A]
+    
+    // Covariance example
+    val covariantList: Covariant[Any] = new Covariant[String]
+    
+    // Contravariance example
+    val contravariantFunc: Contravariant[String] = new Contravariant[Any]
+    \end{code}
+    
+        In this example, "Covariant" is a covariant class, "Contravariant" is a contravariant class, and "Invariant" is an invariant class. Covariance ("+A") allows a generic class to accept subtypes, 
+        while contravariance ("-A") allows it to accept supertypes.
+    
+        \begin{itemize}
+            \item \textbf{Covariance (+A)}: A generic class can accept a subtype as a type parameter.
+            \item \textbf{Contravariance (-A)}: A generic class can accept a supertype as a type parameter.
+            \item \textbf{Invariance (A)}: No variance, the exact type must match.
+            \item Variance annotations ensure type safety in generic classes and traits.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Combining Traits and Generics}
+    
+    Traits and generics can be combined to create highly reusable and type-safe components. This combination allows traits to define generic methods and properties, enabling flexible and reusable designs.
+    
+    \begin{highlight}[Combining Traits and Generics]
+    
+        This example demonstrates combining traits and generics in Scala.
+    
+    \begin{code}[Scala]
+    // Generic trait definition
+    trait Container[T] {
+        def add(item: T): Unit
+        def remove(item: T): Unit
+        def getAll: List[T]
+    }
+    
+    // Concrete class implementing the generic trait
+    class Storage[T] extends Container[T] {
+        private var items: List[T] = List()
+    
+        def add(item: T): Unit = items ::= item
+        def remove(item: T): Unit = items = items.filterNot(_ == item)
+        def getAll: List[T] = items
+    }
+    
+    // Using the generic class with trait
+    val intStorage = new Storage[Int]()
+    intStorage.add(1)
+    intStorage.add(2)
+    intStorage.remove(1)
+    println(intStorage.getAll)  // Output: List(2)
+    \end{code}
+    
+        In this example, the "Container" trait defines generic methods for adding, removing, and retrieving items. The "Storage" class implements this trait, providing a concrete implementation for handling items of any type.
+    
+        \begin{itemize}
+            \item Combining traits and generics enables the creation of reusable, type-safe components.
+            \item Generic traits define methods and properties that operate on any type.
+            \item Concrete classes can implement these traits, providing specific behaviors while maintaining type flexibility.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications and Benefits}
+    
+    The use of traits, generics, and variances in Scala offers several benefits, including code reuse, type safety, and flexibility in software design.
+    
+    \begin{highlight}[Applications and Benefits]
+    
+        The benefits of using traits, generics, and variances include:
+    
+        \begin{itemize}
+            \item \textbf{Code Reuse}: Traits and generics allow for reusable and modular code components.
+            \item \textbf{Type Safety}: Variance annotations and generics ensure that operations are performed on compatible types, preventing runtime errors.
+            \item \textbf{Flexibility}: Enables the creation of flexible APIs and components that can work with a wide range of types and behaviors.
+            \item \textbf{Modularity}: Traits promote modularity by allowing the composition of behaviors from multiple sources.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Traits, generics, and variances are essential features in Scala that enhance the language's flexibility and type safety. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Traits}: Define reusable behaviors and can contain both abstract and concrete methods.
+            \item \textbf{Generics}: Enable the creation of classes, methods, and traits that can operate on any type, enhancing code reusability and type safety.
+            \item \textbf{Variance}: Provides fine-grained control over subtyping relationships, ensuring type safety with annotations like covariance and contravariance.
+            \item \textbf{Combining Traits and Generics}: Creates highly reusable and type-safe components by defining generic traits and implementing them in concrete classes.
+            \item \textbf{Applications and Benefits}: Include code reuse, type safety, flexibility, and modularity, making Scala a powerful language for building complex systems.
+        \end{itemize}
+    
+        These features contribute to Scala's strength in supporting both functional and object-oriented programming paradigms, providing robust tools for developers.
+    
+    \end{highlight}
+\end{notes}
+
+The last topic that is being covered this week is \textbf{Higher Order Types}.
+
+\begin{notes}{Higher Order Types}
+    \subsection*{Overview}
+
+    Higher-order types in Scala extend the concept of generics, allowing type constructors to take other type constructors as parameters. This powerful feature enables the creation of more abstract 
+    and flexible code structures, often used in advanced functional programming.
+    
+    \subsubsection*{Understanding Higher-Order Types}
+    
+    Higher-order types are type constructors that take other type constructors as arguments. This allows for the creation of complex type relationships and abstractions in Scala.
+    
+    \begin{highlight}[Understanding Higher-Order Types]
+    
+        This example introduces the concept of higher-order types.
+    
+    \begin{code}[Scala]
+    // Higher-order type example
+    trait Functor[F[_]] {
+        def map[A, B](fa: F[A])(f: A => B): F[B]
+    }
+    
+    // Example implementation for Option
+    object OptionFunctor extends Functor[Option] {
+        def map[A, B](fa: Option[A])(f: A => B): Option[B] = fa match {
+            case Some(value) => Some(f(value))
+            case None => None
+        }
+    }
+    
+    // Using the Functor
+    val result = OptionFunctor.map(Some(1))(_ + 1)
+    println(result)  // Output: Some(2)
+    \end{code}
+    
+        In this example, "Functor" is a higher-order type that takes a type constructor "F[\_]" as a parameter. The "OptionFunctor" object implements the "Functor" trait for the "Option" type.
+    
+        \begin{itemize}
+            \item Higher-order types take type constructors as parameters, allowing for more abstract and flexible type definitions.
+            \item Enables the creation of complex type relationships.
+            \item Often used in advanced functional programming for defining generic abstractions like Functor, Monad, etc.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type Constructors}
+    
+    A type constructor is a type that takes other types as parameters. Higher-order types leverage type constructors to create more abstract type definitions.
+    
+    \begin{highlight}[Type Constructors]
+    
+        This example demonstrates the concept of type constructors.
+    
+    \begin{code}[Scala]
+    // Type constructor example
+    trait Container[A]
+    
+    // Higher-order type example
+    trait Transformer[F[_]] {
+        def transform[A](container: F[A]): F[A]
+    }
+    
+    // Example implementation for List
+    object ListTransformer extends Transformer[List] {
+        def transform[A](container: List[A]): List[A] = container.reverse
+    }
+    
+    // Using the Transformer
+    val transformedList = ListTransformer.transform(List(1, 2, 3))
+    println(transformedList)  // Output: List(3, 2, 1)
+    \end{code}
+    
+        In this example, "Container" is a type constructor that takes a type "A". "Transformer" is a higher-order type that operates on the type constructor "F[\_]", with "ListTransformer" providing an implementation for "List".
+    
+        \begin{itemize}
+            \item Type constructors take types as parameters and are used in higher-order types.
+            \item They allow for the creation of generic data structures and abstractions.
+            \item Essential in defining operations over collections and other data structures in a type-safe manner.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Higher-Order Type Applications}
+    
+    Higher-order types are used in various advanced programming constructs, such as Functors, Monads, and Applicatives. They enable operations over types that themselves take other types as parameters, 
+    providing powerful abstractions in functional programming.
+    
+    \begin{highlight}[Higher-Order Type Applications]
+    
+        This example demonstrates higher-order types in the context of Monads.
+    
+    \begin{code}[Scala]
+    // Monad higher-order type
+    trait Monad[F[_]] {
+        def flatMap[A, B](fa: F[A])(f: A => F[B]): F[B]
+        def pure[A](value: A): F[A]
+    }
+    
+    // Example implementation for Option
+    object OptionMonad extends Monad[Option] {
+        def flatMap[A, B](fa: Option[A])(f: A => Option[B]): Option[B] = fa match {
+            case Some(value) => f(value)
+            case None => None
+        }
+        def pure[A](value: A): Option[A] = Some(value)
+    }
+    
+    // Using the Monad
+    val result = OptionMonad.flatMap(Some(2))(x => OptionMonad.pure(x * 2))
+    println(result)  // Output: Some(4)
+    \end{code}
+    
+        In this example, the "Monad" trait is a higher-order type that defines operations "flatMap" and "pure". The "OptionMonad" object implements these operations for the "Option" type.
+    
+        \begin{itemize}
+            \item Higher-order types like Monads define operations on type constructors, providing a framework for working with wrapped or computational contexts.
+            \item Commonly used in functional programming to abstract over computation, error handling, and asynchronous processing.
+            \item Enhance code modularity and reusability by defining generic operations.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Benefits of Higher-Order Types}
+    
+    Higher-order types provide significant benefits, including greater abstraction, code reuse, and the ability to define generic operations that work across various data structures and contexts.
+    
+    \begin{highlight}[Benefits of Higher-Order Types]
+    
+        The benefits of using higher-order types include:
+    
+        \begin{itemize}
+            \item \textbf{Abstraction}: Encapsulate complex type manipulations and relationships, making code more readable and maintainable.
+            \item \textbf{Code Reuse}: Define generic operations that can be reused across different data structures and types.
+            \item \textbf{Type Safety}: Maintain type safety even with highly abstract operations, reducing runtime errors.
+            \item \textbf{Flexibility}: Enable the creation of flexible APIs and frameworks that can operate on a wide range of types and contexts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Higher-order types in Scala enable powerful abstractions and flexible code structures. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Understanding Higher-Order Types}: Type constructors that take other type constructors as parameters, allowing for abstract and flexible type definitions.
+            \item \textbf{Type Constructors}: Types that accept other types as parameters, essential in defining generic data structures.
+            \item \textbf{Higher-Order Type Applications}: Used in constructs like Functors, Monads, and Applicatives, providing powerful functional programming abstractions.
+            \item \textbf{Benefits of Higher-Order Types}: Include greater abstraction, code reuse, type safety, and flexibility in creating APIs and frameworks.
+        \end{itemize}
+    
+        These concepts are fundamental to advanced functional programming in Scala, enabling the creation of expressive and type-safe software.
+    
+    \end{highlight}
+\end{notes}

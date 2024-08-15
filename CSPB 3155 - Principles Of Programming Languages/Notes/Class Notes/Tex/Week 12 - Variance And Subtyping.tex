@@ -1,0 +1,196 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Variance And Subtyping}
+\renewcommand{\SectionTitle}{Variance And Subtyping}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{N/A}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=_CLcfvteDUY}{Type Hierarchy, Covariance, And Contravariance}{17}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks
+    \begin{itemize}
+        \item \textbf{Variance And Subtyping - Subtyping And Variance Annotations Lecture Notes}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The topic that is being covered this week is \textbf{Type Hierarchy, Covariance, And Contravariance}.
+
+\begin{notes}{Type Hierarchy, Covariance, And Contravariance}
+    \subsection*{Overview}
+
+    Type hierarchy, covariance, and contravariance are key concepts in Scala that govern the relationships between types and how they interact with each other. Understanding these concepts is essential 
+    for designing flexible and type-safe APIs, especially when dealing with collections and generics.
+    
+    \subsubsection*{Type Hierarchy}
+    
+    In Scala, the type hierarchy defines the relationships between different types, where more specific types inherit from more general types. This hierarchy starts with the "Any" type at the top, which 
+    is the supertype of all types, and progresses down to more specific types like "Int", "String", and custom classes.
+    
+    \begin{highlight}[Type Hierarchy]
+    
+        This example illustrates Scala's type hierarchy.
+    
+    \begin{code}[Scala]
+    // Type hierarchy example
+    val anyValue: Any = "Hello"
+    val anyRefValue: AnyRef = "World"
+    val stringValue: String = "Scala"
+    
+    // Assigning to a more general type
+    val anyRef: AnyRef = stringValue  // String is a subtype of AnyRef
+    val any: Any = anyRefValue        // AnyRef is a subtype of Any
+    \end{code}
+    
+        In this example, "String" is a subtype of "AnyRef", and "AnyRef" is a subtype of "Any". The type hierarchy allows assigning more specific types to variables of more general types.
+    
+        \begin{itemize}
+            \item The type hierarchy in Scala starts with "Any" at the top, encompassing all types.
+            \item "AnyRef" is the base class of all reference types (similar to "Object" in Java).
+            \item Specific types like "String" are subtypes of "AnyRef" and "Any".
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Covariance}
+    
+    Covariance allows a type parameter to be substituted with a subtype. In Scala, this is expressed using the "+" variance annotation. Covariant types are typically used in situations where a generic 
+    type can accept a more specific type.
+    
+    \begin{highlight}[Covariance]
+    
+        This example demonstrates covariance in Scala.
+    
+    \begin{code}[Scala]
+    // Covariant class definition
+    class Box[+A]
+    
+    // Covariance example
+    val intBox: Box[Int] = new Box[Int]
+    val anyValBox: Box[AnyVal] = intBox  // Box[Int] is a subtype of Box[AnyVal]
+    \end{code}
+    
+        In this example, "Box[+A]" is a covariant class, allowing "Box[Int]" to be assigned to a variable of type "Box[AnyVal]", since "Int" is a subtype of "AnyVal".
+    
+        \begin{itemize}
+            \item Covariance allows a type parameter to be substituted with a subtype.
+            \item Expressed using the "+" annotation, e.g., "Box[+A]".
+            \item Enables generic types to accept more specific types, maintaining type safety.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Contravariance}
+    
+    Contravariance allows a type parameter to be substituted with a supertype. In Scala, this is expressed using the "-" variance annotation. Contravariant types are useful in scenarios where a more 
+    general type can be substituted for a more specific one, such as in function arguments.
+    
+    \begin{highlight}[Contravariance]
+    
+        This example demonstrates contravariance in Scala.
+    
+    \begin{code}[Scala]
+    // Contravariant class definition
+    class Printer[-A] {
+        def print(value: A): Unit = println(value)
+    }
+    
+    // Contravariance example
+    val anyPrinter: Printer[Any] = new Printer[Any]
+    val stringPrinter: Printer[String] = anyPrinter  // Printer[Any] is a supertype of Printer[String]
+    stringPrinter.print("Hello, Scala!")  // Output: Hello, Scala!
+    \end{code}
+    
+        In this example, "Printer[-A]" is a contravariant class, allowing "Printer[Any]" to be assigned to a variable of type "Printer[String]", since "Any" is a supertype of "String".
+    
+        \begin{itemize}
+            \item Contravariance allows a type parameter to be substituted with a supertype.
+            \item Expressed using the "-" annotation, e.g., "Printer[-A]".
+            \item Useful for defining types that are more general in function arguments or similar contexts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Invariance}
+    
+    Invariance means that a type parameter cannot be substituted with either a subtype or a supertype. In Scala, this is the default behavior when no variance annotation is provided. Invariant types 
+    require exact type matching.
+    
+    \begin{highlight}[Invariance]
+    
+        This example demonstrates invariance in Scala.
+    
+    \begin{code}[Scala]
+    // Invariant class definition
+    class Container[A]
+    
+    // Invariance example
+    val stringContainer: Container[String] = new Container[String]
+    // val anyContainer: Container[Any] = stringContainer  // Compile-time error: type mismatch
+    \end{code}
+    
+        In this example, "Container[A]" is invariant, meaning "Container[String]" cannot be assigned to a variable of type "Container[Any]".
+    
+        \begin{itemize}
+            \item Invariance means that a type parameter must match exactly; it cannot be substituted with a subtype or supertype.
+            \item No variance annotation is used, making it the default behavior in Scala.
+            \item Ensures strict type matching, which can be necessary in certain contexts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications of Covariance and Contravariance}
+    
+    Covariance and contravariance are particularly useful in designing type-safe APIs, especially when dealing with collections, function types, and class hierarchies. They allow developers to define 
+    how types relate to one another, ensuring that subtyping relationships are preserved where appropriate.
+    
+    \begin{highlight}[Applications of Covariance and Contravariance]
+    
+        The applications and benefits of covariance and contravariance include:
+    
+        \begin{itemize}
+            \item \textbf{Covariance}: Commonly used in collections like "List[+A]", where it makes sense to allow a "List[Dog]" to be treated as a "List[Animal]".
+            \item \textbf{Contravariance}: Useful in function arguments or event handlers, where a handler for a general type can handle specific subtypes.
+            \item \textbf{Invariance}: Ensures strict type matching, important in scenarios where exact type preservation is necessary, such as in mutable collections.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Understanding type hierarchy, covariance, and contravariance is essential for designing flexible and type-safe Scala programs. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Type Hierarchy}: Defines the relationships between types, with "Any" at the top, followed by "AnyRef" and more specific types like "String".
+            \item \textbf{Covariance}: Allows a type parameter to be substituted with a subtype, indicated by "+", enabling flexible and type-safe collection handling.
+            \item \textbf{Contravariance}: Allows a type parameter to be substituted with a supertype, indicated by "-", useful in function arguments and other contexts.
+            \item \textbf{Invariance}: Requires exact type matching, ensuring that a type cannot be substituted with a subtype or supertype.
+            \item \textbf{Applications}: Covariance and contravariance are crucial in designing type-safe APIs, collections, and class hierarchies, while invariance is important for maintaining strict 
+            type constraints.
+        \end{itemize}
+    
+        These concepts are fundamental to understanding and leveraging Scala's powerful type system, enabling developers to create robust and flexible software.
+    
+    \end{highlight}
+\end{notes}

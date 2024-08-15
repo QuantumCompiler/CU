@@ -1,0 +1,426 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Functors And Operational Semantics}
+\renewcommand{\SectionTitle}{Functors And Operational Semantics}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{N/A}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=dy80ZuhKb84}{Anonymous Functions In Scala}{5}
+    \item \lecture{https://www.youtube.com/watch?v=mtiRbzmSplg}{Intro To Functors}{18}
+    \item \lecture{https://www.youtube.com/watch?v=7OWXU8Q0Jpc}{Functors: Map}{10}
+    \item \lecture{https://www.youtube.com/watch?v=HVpbmsmCCHU}{Functors: Fold}{20}
+    \item \lecture{https://www.youtube.com/watch?v=TT7f4GpTz1E}{Functors: Filter}{4}
+    \item \lecture{https://www.youtube.com/watch?v=PV9ecot1DGc}{Operational Semantics For Arithmetic Expressions}{35}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks
+    \begin{itemize}
+        \item \textbf{Functors And Operational Semantics}
+        \item \textbf{Functors And Operational Semantics Recitation}
+        \item \textbf{Functors And Operational Semantics Recitation Solutions}
+        \item \textbf{Functors And Operational Semantics - Map And Reduce}
+        \item \textbf{Functors And Operational Semantics - Big Step Semantics Expressions}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \textbf{Problem Set 4 - Functors And Operational Semantics}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNotesDir Spot Exam 1 Notes.pdf}{Spot Exam 1 Notes}
+    \item \pdflink{\ExamsDir Spot Exam 1.pdf}{Spot Exam 1}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first topic that is being covered this week is \textbf{Anonymous Functions In Scala}.
+
+\begin{notes}{Anonymous Functions In Scala}
+    \subsection*{Overview}
+
+    Anonymous functions provide a concise way to define and use functions without needing to name them. By the end of this section, readers should understand how to create and use anonymous functions in Scala effectively.
+    
+    \subsubsection*{Anonymous Functions}
+    
+    Anonymous functions are functions that are defined without a name. They are often used in situations where you need to pass a function as an argument to another function or when you want to create 
+    a quick, throwaway function for a specific task.
+    
+    \begin{highlight}[Defining Anonymous Functions]
+    
+        This example shows how to define an anonymous function that takes two parameters and returns their sum.
+    
+    \begin{code}[Scala]
+    val add = (x: Int, y: Int) => x + y
+    \end{code}
+    
+        In this example, the anonymous function "(x: Int, y: Int) => x + y" is assigned to the variable "add", which can then be used like any other function.
+        
+        \begin{itemize}
+            \item Anonymous functions are defined without a name.
+            \item Use the syntax "(parameters) => expression".
+            \item Useful for creating quick, throwaway functions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Using Anonymous Functions}
+    
+    Anonymous functions are often used as arguments to higher-order functions. Higher-order functions are functions that take other functions as parameters or return functions as results.
+    
+    \begin{highlight}[Using Anonymous Functions]
+    
+        This example demonstrates using anonymous functions with the "map" method on a list.
+    
+    \begin{code}[Scala]
+    val nums = List(1, 2, 3, 4)
+    val doubled = nums.map(x => x * 2)
+    \end{code}
+    
+        In this example, the anonymous function "x => x * 2" is passed to the "map" method, which applies the function to each element in the list "nums".
+        
+        \begin{itemize}
+            \item Anonymous functions can be passed as arguments to higher-order functions.
+            \item Higher-order functions can operate on or return functions.
+            \item The "map" method applies a function to each element in a collection.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Placeholder Syntax}
+    
+        Scala provides a shorthand for defining simple anonymous functions using placeholders. This can make the code more concise and readable.
+    
+    \begin{highlight}[Placeholder Syntax]
+    
+        This example shows how to use the placeholder syntax to simplify an anonymous function.
+    
+    \begin{code}[Scala]
+    val doubled = nums.map(_ * 2)
+    \end{code}
+    
+        In this example, the placeholder "\_" is used to represent each element in the list, simplifying the function definition.
+    
+        \begin{itemize}
+            \item Placeholder syntax uses "\_" to represent parameters.
+            \item Simplifies the definition of simple anonymous functions.
+            \item Makes the code more concise and readable.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Function Types}
+    
+    In Scala, functions have types that describe the number and types of their parameters and their return type. Anonymous functions follow the same rules for function types as named functions.
+    
+    \begin{highlight}[Function Types]
+    
+        This example defines a function type for an anonymous function that takes two integers and returns their sum.
+    
+    \begin{code}[Scala]
+    val add: (Int, Int) => Int = (x, y) => x + y
+    \end{code}
+    
+        In this example, the type "(Int, Int) => Int" specifies that "add" is a function taking two integers and returning an integer.
+    
+        \begin{itemize}
+            \item Function types describe the parameters and return type of a function.
+            \item Anonymous functions follow the same type rules as named functions.
+            \item Function types are written as "(ParameterTypes) => ReturnType".
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Anonymous functions in Scala provide a concise way to define and use functions without naming them. Here are the key concepts covered in this section:
+        
+        \begin{itemize}
+            \item \textbf{Anonymous Functions}: Defined without a name using the syntax "(parameters) => expression".
+            \item \textbf{Usage}: Often passed as arguments to higher-order functions.
+            \item \textbf{Placeholder Syntax}: Uses "\_" to simplify anonymous functions.
+            \item \textbf{Function Types}: Describes the number and types of parameters and the return type of functions.
+        \end{itemize}
+        
+        These features make anonymous functions a powerful tool in Scala, enabling concise and expressive code.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Functors}.
+
+\begin{notes}{Functors}
+    \subsection*{Overview}
+
+    Functors are a fundamental concept in functional programming and allow for powerful and flexible data manipulation. In Scala, collections like lists, options, and more can be treated as functors. 
+    By the end of this section, readers should understand how to use functors and the operations "map", "fold", and "filter".
+    
+    \subsubsection*{Functors}
+    
+    A functor is a type that can be mapped over. In Scala, this concept is most commonly associated with collections such as "List", "Option", and "Future". Functors provide a way to apply a function 
+    to each element in the container without changing the structure of the container itself.
+    
+    \begin{highlight}[Definition of Functors]
+    
+        A functor is any type that implements the "map" method, which applies a function to each element in the container and returns a new container with the results.
+    
+    \begin{code}[Scala]
+    trait Functor[F[_]] {
+        def map[A, B](fa: F[A])(f: A => B): F[B]
+    }
+    \end{code}
+    
+        In this example, the "Functor" trait defines a single method "map" that transforms elements of type "A" to elements of type "B" within the functor "F".
+        
+        \begin{itemize}
+            \item Functors implement the "map" method.
+            \item Allow functions to be applied to each element in a container.
+            \item The structure of the container is preserved.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Map Operation}
+    
+    The "map" operation is the most fundamental operation on a functor. It applies a given function to each element in the container, producing a new container with the results.
+    
+    \begin{highlight}[Map Operation]
+    
+        This example demonstrates using the "map" function on a list to double each element.
+    
+    \begin{code}[Scala]
+    val nums = List(1, 2, 3, 4)
+    val doubled = nums.map(_ * 2)
+    \end{code}
+    
+        In this example, the "map" function applies the anonymous function "\_ * 2" to each element in the list "nums", resulting in a new list "doubled".
+    
+        \begin{itemize}
+            \item The "map" operation applies a function to each element in the container.
+            \item Produces a new container with the transformed elements.
+            \item Preserves the structure of the original container.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Fold Operation}
+    
+    The "fold" operation (also known as "reduce" or "aggregate") combines all elements of a container using a given binary function and a starting value. It is used to reduce a collection to a single cumulative value.
+    
+    \begin{highlight}[Fold Operation]
+    
+        This example demonstrates using the "foldLeft" function to sum all elements in a list.
+    
+    \begin{code}[Scala]
+    val nums = List(1, 2, 3, 4)
+    val sum = nums.foldLeft(0)(_ + _)
+    \end{code}
+    
+    In this example, the "foldLeft" function starts with an initial value of "0" and applies the binary function "\_ + \_" to combine the elements of the list "nums".
+        
+        \begin{itemize}
+            \item The "fold" operation combines elements using a binary function.
+            \item Requires an initial starting value.
+            \item Reduces the container to a single cumulative value.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Filter Operation}
+    
+    The "filter" operation selects elements of a container that satisfy a given predicate function. It returns a new container with only the elements that match the predicate.
+    
+    \begin{highlight}[Filter Operation]
+    
+        This example demonstrates using the "filter" function to select even numbers from a list.
+    
+    \begin{code}[Scala]
+    val nums = List(1, 2, 3, 4)
+    val evens = nums.filter(_ % 2 == 0)
+    \end{code}
+    
+        In this example, the "filter" function applies the predicate "\_ \% 2 == 0" to each element in the list "nums", resulting in a new list "evens" that contains only the even numbers.
+        
+        \begin{itemize}
+            \item The "filter" operation selects elements that satisfy a predicate.
+            \item Produces a new container with the selected elements.
+            \item Preserves the structure of the original container.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Functors in Scala are powerful abstractions that allow for flexible data manipulation using operations like "map", "fold", and "filter". Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Functors}: Types that implement the "map" method, allowing functions to be applied to each element while preserving the container's structure.
+            \item \textbf{Map Operation}: Applies a function to each element in the container, producing a new container with the results.
+            \item \textbf{Fold Operation}: Combines elements using a binary function and an initial value, reducing the container to a single value.
+            \item \textbf{Filter Operation}: Selects elements that satisfy a predicate, producing a new container with the selected elements.
+        \end{itemize}
+        
+        These operations make functors a versatile and essential concept in functional programming, enabling concise and expressive data transformations.
+    
+    \end{highlight}
+\end{notes}
+
+The last topic that is being covered this week is \textbf{Operational Semantics For Arithmetic Expressions}.
+
+\begin{notes}{Operational Semantics For Arithmetic Expressions}
+    \subsection*{Overview}
+
+    Operational semantics provides a formal way to describe how expressions in a programming language are evaluated. By the end of this section, readers should understand the rules that define the 
+    evaluation of arithmetic expressions and how these rules can be applied systematically.
+    
+    \subsubsection*{Operational Semantics}
+    
+    Operational semantics describes the behavior of a program by defining the step-by-step execution of its statements. For arithmetic expressions, operational semantics specifies how expressions 
+    are evaluated to produce a result.
+    
+    \begin{highlight}[Operational Semantics]
+    
+        Operational semantics for arithmetic expressions involves defining a set of rules that describe how expressions are evaluated. These rules are typically written in the form of inference rules.
+    
+        \begin{itemize}
+            \item Operational semantics provides a formal framework for describing program behavior.
+            \item Defines how expressions are evaluated step-by-step.
+            \item Uses inference rules to specify evaluation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Inference Rules}
+    
+    Inference rules are used to describe how an expression can be reduced to a simpler expression or a value. These rules are applied systematically to evaluate an expression.
+    
+    \begin{highlight}[Inference Rules]
+    
+        This example shows some basic inference rules for arithmetic expressions.
+    
+    \begin{code}
+    // Rule for evaluating a number
+    (n is a number)
+    --------------------
+    n ⇓ n
+    
+    // Rule for addition
+    e1 ⇓ n1   e2 ⇓ n2
+    --------------------
+    e1 + e2 ⇓ n1 + n2
+    \end{code}
+    
+        In these rules, "n" is a number, "e1" and "e2" are expressions, and "⇓" denotes evaluation. The first rule states that a number evaluates to itself. The second rule states that if "e1" evaluates 
+        to "n1" and "e2" evaluates to "n2", then "e1 + e2" evaluates to "n1 + n2".
+        
+        \begin{itemize}
+            \item Inference rules specify how expressions are reduced.
+            \item Rules are applied systematically to evaluate expressions.
+            \item Use notation like "⇓" to denote evaluation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Evaluation Strategy}
+    
+    The evaluation strategy defines the order in which expressions are evaluated. For arithmetic expressions, a common strategy is to evaluate from the innermost expressions outward.
+    
+    \begin{highlight}[Evaluation Strategy]
+    
+        This example demonstrates an evaluation strategy for an arithmetic expression.
+    
+    \begin{code}
+    (2 + 3) * (4 - 1)
+    --------------------
+    5 * (4 - 1)
+    --------------------
+    5 * 3
+    --------------------
+    15
+    \end{code}
+    
+        In this example, the expressions "(2 + 3)" and "(4 - 1)" are evaluated first, followed by the multiplication of the results.
+    
+        \begin{itemize}
+            \item Evaluation strategy defines the order of evaluation.
+            \item Common strategy: evaluate innermost expressions first.
+            \item Ensures systematic and predictable evaluation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Operational Semantics in Scala}
+    
+    Scala can be used to implement operational semantics for arithmetic expressions. This involves defining a set of case classes for expressions and a method to evaluate them according to the inference rules.
+    
+    \begin{highlight}[Operational Semantics in Scala]
+    
+        This example shows how to define and evaluate arithmetic expressions in Scala using operational semantics.
+    
+    \begin{code}[Scala]
+    sealed abstract class Expr
+    case class Number(n: Int) extends Expr
+    case class Add(e1: Expr, e2: Expr) extends Expr
+    case class Sub(e1: Expr, e2: Expr) extends Expr
+    case class Mul(e1: Expr, e2: Expr) extends Expr
+    
+    def eval(expr: Expr): Int = expr match {
+        case Number(n) => n
+        case Add(e1, e2) => eval(e1) + eval(e2)
+        case Sub(e1, e2) => eval(e1) - eval(e2)
+        case Mul(e1, e2) => eval(e1) * eval(e2)
+    }
+    \end{code}
+    
+        In this example, the "eval" function evaluates an arithmetic expression by recursively applying the inference rules defined for addition, subtraction, and multiplication.
+    
+        \begin{itemize}
+            \item Scala can be used to implement operational semantics.
+            \item Define case classes for different types of expressions.
+            \item Use a recursive function to evaluate expressions according to inference rules.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Operational semantics provides a formal way to describe how arithmetic expressions are evaluated in a programming language. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Operational Semantics}: Defines step-by-step execution of expressions.
+            \item \textbf{Inference Rules}: Specify how expressions are reduced to simpler expressions or values.
+            \item \textbf{Evaluation Strategy}: Defines the order in which expressions are evaluated, typically from innermost to outermost.
+            \item \textbf{Implementation in Scala}: Use Scala to define and evaluate arithmetic expressions using operational semantics.
+        \end{itemize}
+        
+        These concepts provide a foundation for understanding how programs are executed and how expressions are systematically evaluated to produce results.
+    
+    \end{highlight}
+\end{notes}

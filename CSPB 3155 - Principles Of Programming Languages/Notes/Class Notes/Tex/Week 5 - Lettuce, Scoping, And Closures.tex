@@ -1,0 +1,1018 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Lettuce, Scoping, And Closures}
+\renewcommand{\SectionTitle}{Lettuce, Scoping, And Closures}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{N/A}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=i1ifTxGMQOQ}{Intro To Lettuce}{18}
+    \item \lecture{https://www.youtube.com/watch?v=SHTufQzzT_Q}{Lettuce AST And Conditionals}{21}
+    \item \lecture{https://www.youtube.com/watch?v=7rkMa6me-mY}{If, Then, Else In Lettuce}{6}
+    \item \lecture{https://www.youtube.com/watch?v=OdLIyI2ZlU8}{Environments In Lettuce}{12}
+    \item \lecture{https://www.youtube.com/watch?v=dUPKnW9v3YA}{Let Bindings In Lettuce}{15}
+    \item \lecture{https://www.youtube.com/watch?v=1zFKZjmoyB0}{Functions In Lettuce}{14}
+    \item \lecture{https://www.youtube.com/watch?v=GGMosvM4Xf8}{Function Scoping In Lettuce}{8}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks
+    \begin{itemize}
+        \item \textbf{Lettuce, Scoping, And Closures - Big Step Semantics Expressions}
+        \item \textbf{Lettuce, Scoping, And Closures - Lettuce - The Let Language}
+        \item \textbf{Lettuce, Scoping, And Closures - Lettuce Function Calls}
+        \item \textbf{Lettuce, Scoping, And Closures - Lettuce Scopes Environments}
+        \item \textbf{Lettuce, Scoping, And Closures - Supplemental Derivations}
+        \item \textbf{Lettuce, Scoping, And Closures Recitation}
+        \item \textbf{Lettuce, Scoping, And Closures Recitation Solutions}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \textbf{Problem Set 5 - Lettuce, Scoping, And Closures}
+    \item \textbf{Mini Project 1 - Compilation Of Lettuce Into ByteCode}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 4 - Functors And Operational Semantics.pdf}{Quiz 4 - Functors And Operational Semantics}
+    \item \pdflink{\QuizDir Quiz 5 - Lettuce, Scoping, And Closures.pdf}{Quiz 5 - Lettuce, Scoping, And Closures}
+    \item \pdflink{\QuizDir Quiz - Project 1.pdf}{Quiz - Project 1}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first concept that is being covered this week is \textbf{Lettuce}.
+
+\begin{notes}{Lettuce}
+    \subsection*{Overview}
+
+    Lettuce is a simple, functional programming language designed primarily for educational purposes. It helps illustrate key concepts in functional programming and language design, such as expressions, 
+    functions, recursion, and variable binding. 
+    
+    \subsubsection*{Basic Syntax}
+    
+    Lettuce's syntax is designed to be minimalistic and easy to understand, making it an excellent tool for learning the fundamentals of functional programming. The language supports basic arithmetic 
+    operations, variable bindings, function definitions, and function applications.
+    
+    \begin{highlight}[Basic Syntax]
+    
+        This example demonstrates the basic syntax of Lettuce for arithmetic operations and variable bindings.
+    
+    \begin{code}[Lettuce]
+    // Variable binding
+    let x = 5 in
+    let y = x + 2 in
+    x * y
+    \end{code}
+    
+        In this example, the "let" expression is used to bind variables "x" and "y", and the final expression computes the product of "x" and "y".
+    
+        \begin{itemize}
+            \item Uses "let" for variable binding.
+            \item Supports basic arithmetic operations.
+            \item Evaluates expressions in sequence.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Functions and Recursion}
+    
+    Lettuce allows the definition of functions and supports recursive function calls. This is crucial for expressing complex computations and algorithms in a functional style.
+    
+    \begin{highlight}[Functions and Recursion]
+    
+        This example shows how to define and use a recursive function in Lettuce to calculate the factorial of a number.
+    
+    \begin{code}[Lettuce]
+    // Recursive function definition
+    letrec fact = fun(n) {
+        if n == 0 then 1 else n * fact(n - 1)
+    } in
+    fact(5)
+    \end{code}
+    
+        In this example, "letrec" is used to define a recursive function "fact" that computes the factorial of a given number "n".
+    
+        \begin{itemize}
+            \item Supports "letrec" for recursive function definitions.
+            \item Uses "fun" to define functions.
+            \item Enables recursion for iterative computations.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Higher-Order Functions}
+    
+    Lettuce supports higher-order functions, which are functions that take other functions as arguments or return functions as results. This feature is a hallmark of functional programming languages and allows for powerful abstractions and code reuse.
+    
+    \begin{highlight}[Higher-Order Functions]
+    
+        This example demonstrates a higher-order function in Lettuce that takes a function as an argument and applies it to a value.
+    
+    \begin{code}[Lettuce]
+    // Higher-order function
+    let applyTwice = fun(f, x) {
+        f(f(x))
+    } in
+    let addOne = fun(n) {
+        n + 1
+    } in
+    applyTwice(addOne, 5)
+    \end{code}
+    
+        In this example, "applyTwice" is a higher-order function that applies the function "f" to the argument "x" twice. The "addOne" function is then passed to "applyTwice".
+    
+    \begin{itemize}
+        \item Supports higher-order functions.
+        \item Allows functions to be passed as arguments.
+        \item Enables powerful abstractions and code reuse.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Conditional Expressions}
+    
+    Lettuce includes conditional expressions to allow branching logic based on conditions. This is essential for writing programs that can make decisions based on their inputs.
+    
+    \begin{highlight}[Conditional Expressions]
+    
+        This example demonstrates the use of conditional expressions in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Conditional expression
+    let abs = fun(n) {
+        if n < 0 then -n else n
+    } in
+    abs(-3)
+    \end{code}
+    
+        In this example, the "abs" function computes the absolute value of a number "n" using a conditional expression.
+    
+        \begin{itemize}
+            \item Supports conditional expressions with "if-then-else".
+            \item Allows branching logic based on conditions.
+            \item Essential for decision-making in programs.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Lettuce is a simple functional programming language designed to teach fundamental programming concepts. Here are the key concepts covered in this section:
+        
+        \begin{itemize}
+            \item \textbf{Basic Syntax}: Minimalistic syntax for variable binding and arithmetic operations.
+            \item \textbf{Functions and Recursion}: Supports function definitions and recursive calls.
+            \item \textbf{Higher-Order Functions}: Allows functions to be passed as arguments or returned as results.
+            \item \textbf{Conditional Expressions}: Provides branching logic for decision-making in programs.
+        \end{itemize}
+        
+        These features make Lettuce an effective tool for learning and illustrating the core principles of functional programming.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered is \textbf{Lettuce AST And Conditionals}.
+
+\begin{notes}{Lettuce AST And Conditionals}
+    \subsection*{Overview}
+
+    The AST is a crucial component in the compilation and interpretation of programs, representing the hierarchical structure of source code.
+    
+    \subsubsection*{Abstract Syntax Tree (AST)}
+    
+    An Abstract Syntax Tree (AST) is a tree representation of the abstract syntactic structure of source code. Each node in the tree represents a construct occurring in the source code. In Lettuce, 
+    the AST captures the structure of expressions, functions, and other language constructs.
+    
+    \begin{highlight}[Lettuce AST]
+    
+        This example shows a simple AST structure for Lettuce expressions.
+    
+    \begin{code}[Scala]
+    sealed trait Expr
+    case class Const(value: Int) extends Expr
+    case class Var(name: String) extends Expr
+    case class Add(lhs: Expr, rhs: Expr) extends Expr
+    case class Sub(lhs: Expr, rhs: Expr) extends Expr
+    case class Mul(lhs: Expr, rhs: Expr) extends Expr
+    case class Div(lhs: Expr, rhs: Expr) extends Expr
+    case class Let(name: String, value: Expr, body: Expr) extends Expr
+    case class If(cond: Expr, thenBranch: Expr, elseBranch: Expr) extends Expr
+    case class Fun(param: String, body: Expr) extends Expr
+    case class App(fun: Expr, arg: Expr) extends Expr
+    \end{code}
+    
+        In this example, the "Expr" trait represents an expression in Lettuce, with various case classes defining different types of expressions such as constants, variables, arithmetic operations, 
+        and function applications.
+    
+        \begin{itemize}
+            \item AST represents the hierarchical structure of source code.
+            \item Each node corresponds to a syntactic construct.
+            \item Defines different types of expressions and their structure.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Conditionals in AST}
+    
+    Conditionals in Lettuce are represented as nodes in the AST. An "If" node captures the conditional expression, including the condition, the expression to evaluate if the condition is true, and 
+    the expression to evaluate if the condition is false.
+    
+    \begin{highlight}[Conditionals in AST]
+    
+        This example shows how a conditional expression is represented in the AST.
+    
+    \begin{code}[Scala]
+    case class If(cond: Expr, thenBranch: Expr, elseBranch: Expr) extends Expr
+    \end{code}
+    
+        A conditional expression in Lettuce, such as "if x < 0 then -x else x", would be represented by an "If" node in the AST.
+    
+        \begin{itemize}
+            \item Conditional expressions are represented by "If" nodes.
+            \item "If" nodes contain the condition, then-branch, and else-branch.
+            \item Provides a structured way to represent branching logic in the AST.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Evaluating Conditionals}
+    
+    Evaluating conditionals in Lettuce involves recursively evaluating the AST nodes. For an "If" node, the condition is evaluated first. Based on the result, either the then-branch or the else-branch is evaluated.
+    
+    \begin{highlight}[Evaluating Conditionals]
+    
+        This example demonstrates the evaluation of conditional expressions in Lettuce.
+    
+    \begin{code}[Scala]
+    def eval(expr: Expr): Int = expr match {
+        case Const(value) => value
+        case Var(name) => /* lookup variable value */
+        case Add(lhs, rhs) => eval(lhs) + eval(rhs)
+        case Sub(lhs, rhs) => eval(lhs) - eval(rhs)
+        case Mul(lhs, rhs) => eval(lhs) * eval(rhs)
+        case Div(lhs, rhs) => eval(lhs) / eval(rhs)
+        case Let(name, value, body) => 
+            val valueEval = eval(value)
+            /* evaluate body with name bound to valueEval */
+        case If(cond, thenBranch, elseBranch) => 
+            val condEval = eval(cond)
+            if (condEval != 0) eval(thenBranch) else eval(elseBranch)
+        case Fun(param, body) => /* return a closure */
+        case App(fun, arg) => 
+            val funEval = eval(fun)
+            val argEval = eval(arg)
+            /* apply funEval to argEval */
+    }
+    \end{code}
+    
+        In this example, the "If" node is evaluated by first evaluating the condition. If the condition evaluates to a non-zero value, the then-branch is evaluated; otherwise, the else-branch is evaluated.
+    
+        \begin{itemize}
+            \item Conditionals are evaluated by first evaluating the condition.
+            \item Depending on the condition's result, either the then-branch or else-branch is evaluated.
+            \item Uses recursive evaluation of AST nodes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        The Abstract Syntax Tree (AST) and conditionals in Lettuce provide a structured way to represent and evaluate expressions. Here are the key concepts covered in this section:
+    
+    \begin{itemize}
+        \item \textbf{Abstract Syntax Tree (AST)}: Represents the hierarchical structure of source code, with nodes corresponding to syntactic constructs.
+        \item \textbf{Conditionals in AST}: Conditional expressions are represented by "If" nodes containing the condition, then-branch, and else-branch.
+        \item \textbf{Evaluating Conditionals}: Conditionals are evaluated by recursively evaluating AST nodes, first evaluating the condition and then the appropriate branch based on the result.
+    \end{itemize}
+    
+        These concepts are fundamental for understanding how Lettuce processes and evaluates code, providing a basis for more advanced features and techniques in the language.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is covered this week is \textbf{If, Then, Else In Lettuce}.
+
+\begin{notes}{If, Then, Else In Lettuce}
+    \subsection*{Overview}
+
+    Conditional expressions allow programs to make decisions based on conditions, enabling different execution paths. By the end of this section, readers should understand how to write and evaluate 
+    "if-then-else" expressions in Lettuce.
+    
+    \subsubsection*{If-Then-Else Syntax}
+    
+    The "if-then-else" construct in Lettuce is used to evaluate expressions based on a condition. If the condition is true, the then-branch is evaluated; otherwise, the else-branch is evaluated.
+    
+    \begin{highlight}[If-Then-Else Syntax]
+    
+        This example demonstrates the basic syntax of the "if-then-else" construct in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // If-Then-Else expression
+    if x < 0 then -x else x
+    \end{code}
+    
+        In this example, the expression checks if "x" is less than 0. If true, it evaluates to "-x"; otherwise, it evaluates to "x".
+    
+        \begin{itemize}
+            \item "if-then-else" allows branching based on a condition.
+            \item The syntax is "if condition then expression1 else expression2".
+            \item Evaluates "expression1" if the condition is true, otherwise evaluates "expression2".
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Representing If-Then-Else in AST}
+    
+    In the Abstract Syntax Tree (AST) of Lettuce, the "if-then-else" construct is represented by an "If" node. This node captures the condition, the then-branch, and the else-branch.
+    
+    \begin{highlight}[If-Then-Else in AST]
+    
+        This example shows how the "if-then-else" construct is represented in the AST.
+    
+    \begin{code}[Scala]
+    case class If(cond: Expr, thenBranch: Expr, elseBranch: Expr) extends Expr
+    \end{code}
+    
+        An "if-then-else" expression, such as "if x < 0 then -x else x", would be represented by an "If" node in the AST.
+        
+        \begin{itemize}
+            \item The "If" node represents the "if-then-else" construct in the AST.
+            \item Contains three parts: condition, then-branch, and else-branch.
+            \item Provides a structured way to represent conditional logic.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Evaluating If-Then-Else Expressions}
+    
+    Evaluating "if-then-else" expressions in Lettuce involves first evaluating the condition. Depending on the result, either the then-branch or the else-branch is evaluated. This process is recursive, 
+    as the branches themselves can contain further expressions.
+    
+    \begin{highlight}[Evaluating If-Then-Else Expressions]
+    
+        This example demonstrates how to evaluate an "if-then-else" expression in Lettuce.
+    
+    \begin{code}[Scala]
+    def eval(expr: Expr): Int = expr match {
+        case Const(value) => value
+        case Var(name) => /* lookup variable value */
+        case Add(lhs, rhs) => eval(lhs) + eval(rhs)
+        case Sub(lhs, rhs) => eval(lhs) - eval(rhs)
+        case Mul(lhs, rhs) => eval(lhs) * eval(rhs)
+        case Div(lhs, rhs) => eval(lhs) / eval(rhs)
+        case Let(name, value, body) => 
+            val valueEval = eval(value)
+            /* evaluate body with name bound to valueEval */
+        case If(cond, thenBranch, elseBranch) => 
+            val condEval = eval(cond)
+            if (condEval != 0) eval(thenBranch) else eval(elseBranch)
+        case Fun(param, body) => /* return a closure */
+        case App(fun, arg) => 
+            val funEval = eval(fun)
+            val argEval = eval(arg)
+            /* apply funEval to argEval */
+    }
+    \end{code}
+    
+        In this example, the "If" node is evaluated by first evaluating the condition. If the condition evaluates to a non-zero value, the then-branch is evaluated; otherwise, the else-branch is evaluated.
+    
+        \begin{itemize}
+            \item Condition is evaluated first.
+            \item If the condition is true (non-zero), the then-branch is evaluated.
+            \item If the condition is false (zero), the else-branch is evaluated.
+            \item Uses recursive evaluation of AST nodes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Examples of If-Then-Else}
+    
+    Here are some practical examples of using "if-then-else" expressions in Lettuce.
+    
+    \begin{highlight}[Examples of If-Then-Else]
+    
+        These examples demonstrate various uses of the "if-then-else" construct in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Absolute value function
+    let abs = fun(n) {
+        if n < 0 then -n else n
+    } in
+    abs(-5)
+    
+    // Maximum of two numbers
+    let max = fun(a, b) {
+        if a > b then a else b
+    } in
+    max(3, 7)
+    \end{code}
+    
+        In the first example, the "abs" function returns the absolute value of a number. In the second example, the "max" function returns the maximum of two numbers.
+    
+        \begin{itemize}
+            \item "abs" function uses "if-then-else" to compute absolute values.
+            \item "max" function uses "if-then-else" to find the maximum of two numbers.
+            \item Demonstrates practical use cases for "if-then-else".
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        The "if-then-else" construct in Lettuce allows for branching logic based on conditions. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{If-Then-Else Syntax}: Allows branching based on a condition using the syntax "if condition then expression1 else expression2".
+            \item \textbf{Representing If-Then-Else in AST}: Represented by "If" nodes in the AST, capturing the condition, then-branch, and else-branch.
+            \item \textbf{Evaluating If-Then-Else Expressions}: Evaluated by first evaluating the condition, then evaluating the appropriate branch based on the result.
+            \item \textbf{Examples of If-Then-Else}: Practical examples include functions for absolute value and maximum of two numbers.
+        \end{itemize}
+        
+        These features make the "if-then-else" construct a fundamental part of programming in Lettuce, enabling decision-making and branching logic in programs.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Environments In Lettuce}.
+
+\begin{notes}{Environments In Lettuce}
+    \subsection*{Overview}
+
+    Environments are essential for managing variable bindings and scopes during the evaluation of expressions.
+    
+    \subsubsection*{Environments}
+    
+    An environment in Lettuce is a mapping from variable names to their corresponding values. Environments are used to keep track of variable bindings as expressions are evaluated. Each environment 
+    can be thought of as a snapshot of the current state of variable bindings at a particular point in the program.
+    
+    \begin{highlight}[Environments]
+    
+        This example shows how environments are typically represented and used in Lettuce.
+    
+    \begin{code}[Scala]
+    type Env = Map[String, Int]
+    \end{code}
+    
+        In this example, an environment is represented as a "Map" from "String" to "Int", where the "String" is the variable name and the "Int" is the variable's value.
+        
+        \begin{itemize}
+            \item Environments map variable names to values.
+            \item Used to keep track of variable bindings during evaluation.
+            \item Represented as a "Map[String, Int]" in Scala.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Variable Lookup}
+    
+    When evaluating an expression that involves a variable, the environment is consulted to find the variable's value. This process is known as variable lookup.
+    
+    \begin{highlight}[Variable Lookup]
+    
+        This example demonstrates how to look up the value of a variable in the environment.
+    
+    \begin{code}[Scala]
+    def lookup(env: Env, name: String): Int = {
+        env.getOrElse(name, throw new RuntimeException(s"Variable $name not found"))
+    }
+    \end{code}
+    
+        In this example, the "lookup" function retrieves the value of a variable from the environment. If the variable is not found, an exception is thrown.
+        
+        \begin{itemize}
+            \item Variable lookup retrieves a variable's value from the environment.
+            \item Uses the environment "Map" to find the variable's value.
+            \item Throws an exception if the variable is not found.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Extending Environments}
+    
+    When evaluating expressions that introduce new variable bindings (e.g., "let" expressions), the environment must be extended to include these new bindings. This ensures that the new bindings are 
+    available within the scope of the expression.
+    
+    \begin{highlight}[Extending Environments]
+    
+        This example demonstrates how to extend the environment with a new variable binding.
+    
+    \begin{code}[Scala]
+    def extend(env: Env, name: String, value: Int): Env = {
+        env + (name -> value)
+    }
+    \end{code}
+    
+        In this example, the "extend" function creates a new environment that includes the new variable binding. The original environment remains unchanged.
+        
+        \begin{itemize}
+            \item Extending the environment adds new variable bindings.
+            \item Ensures new bindings are available within the scope of the expression.
+            \item The original environment remains unchanged.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Scopes and Nested Environments}
+    
+    Environments in Lettuce support nested scopes, allowing for variables to be redefined within inner scopes. Each nested scope can have its own environment, which can access variables from outer scopes.
+    
+    \begin{highlight}[Scopes and Nested Environments]
+    
+        This example shows how nested environments work in Lettuce.
+    
+    \begin{code}[Scala]
+    def eval(expr: Expr, env: Env): Int = expr match {
+        case Const(value) => value
+        case Var(name) => lookup(env, name)
+        case Add(lhs, rhs) => eval(lhs, env) + eval(rhs, env)
+        case Sub(lhs, rhs) => eval(lhs, env) - eval(rhs, env)
+        case Mul(lhs, rhs) => eval(lhs, env) * eval(rhs, env)
+        case Div(lhs, rhs) => eval(lhs, env) / eval(rhs, env)
+        case Let(name, value, body) => 
+            val valueEval = eval(value, env)
+            val newEnv = extend(env, name, valueEval)
+            eval(body, newEnv)
+    }
+    \end{code}
+    
+        In this example, the "eval" function evaluates expressions with respect to the current environment. When encountering a "Let" expression, it extends the environment for the scope of the body.
+    
+        \begin{itemize}
+            \item Supports nested scopes with their own environments.
+            \item Inner scopes can access variables from outer scopes.
+            \item Ensures proper variable bindings within different scopes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Environments in Lettuce are crucial for managing variable bindings and scopes during expression evaluation. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Environments}: Map variable names to values, represented as "Map[String, Int]".
+            \item \textbf{Variable Lookup}: Retrieves a variable's value from the environment, throwing an exception if not found.
+            \item \textbf{Extending Environments}: Adds new variable bindings, ensuring they are available within the expression's scope.
+            \item \textbf{Scopes and Nested Environments}: Support nested scopes with their own environments, allowing inner scopes to access variables from outer scopes.
+        \end{itemize}
+        
+        These features ensure that variable bindings are correctly managed and that the correct values are used during the evaluation of expressions in Lettuce.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic being covered this week is \textbf{Let Bindings In Lettuce}.
+
+\begin{notes}{Let Bindings In Lettuce}
+    \subsection*{Overview}
+
+    Let bindings are used in Lettuce to bind variables to values within a specific scope during the evaluation of expressions.
+    
+    \subsubsection*{Let Bindings}
+    
+    A "let" binding in Lettuce allows you to bind a variable to a value within a specific expression. This binding is only valid within the scope of the expression. Let bindings help create intermediate 
+    values and manage variable scopes effectively.
+    
+    \begin{highlight}[Let Bindings]
+    
+        This example demonstrates the basic syntax of "let" bindings in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Let binding
+    let x = 5 in
+    let y = x + 2 in
+    x * y
+    \end{code}
+    
+        In this example, the variable "x" is bound to "5", and within the scope of that binding, "y" is bound to "x + 2". The final expression "x * y" is evaluated using these bindings.
+    
+        \begin{itemize}
+            \item "let" binds a variable to a value within an expression.
+            \item The binding is only valid within the scope of the "let" expression.
+            \item Helps manage variable scopes and create intermediate values.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Nested Let Bindings}
+    
+    Lettuce allows for nested "let" bindings, where one "let" expression is nested inside another. This enables complex expressions with multiple intermediate bindings.
+    
+    \begin{highlight}[Nested Let Bindings]
+    
+        This example shows how nested "let" bindings work in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Nested let bindings
+    let a = 2 in
+    let b = 3 in
+    let c = a + b in
+    c * 2
+    \end{code}
+    
+        In this example, "a" is bound to "2", "b" is bound to "3", and "c" is bound to "a + b". The final expression "c * 2" is evaluated using these nested bindings.
+        
+        \begin{itemize}
+            \item Supports nesting of "let" bindings.
+            \item Each nested binding is valid within its specific scope.
+            \item Enables complex expressions with multiple intermediate values.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Representing Let Bindings in AST}
+    
+    In the Abstract Syntax Tree (AST) of Lettuce, "let" bindings are represented by "Let" nodes. These nodes capture the variable name, the value it is bound to, and the body of the expression where 
+    the binding is valid.
+    
+    \begin{highlight}[Let Bindings in AST]
+    
+        This example shows how "let" bindings are represented in the AST.
+    
+    \begin{code}[Scala]
+    case class Let(name: String, value: Expr, body: Expr) extends Expr
+    \end{code}
+    
+        A "let" expression like "let x = 5 in x * 2" would be represented by a "Let" node in the AST, capturing the variable "x", the value "5", and the body "x * 2".
+        
+        \begin{itemize}
+            \item "Let" nodes represent "let" bindings in the AST.
+            \item Capture the variable name, value, and body of the expression.
+            \item Provide a structured representation of "let" bindings.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Evaluating Let Bindings}
+    
+    Evaluating "let" bindings in Lettuce involves extending the current environment with the new binding and then evaluating the body of the "let" expression within this extended environment.
+    
+    \begin{highlight}[Evaluating Let Bindings]
+    
+        This example demonstrates how to evaluate "let" bindings in Lettuce.
+    
+    \begin{code}[Scala]
+    def eval(expr: Expr, env: Env): Int = expr match {
+        case Const(value) => value
+        case Var(name) => lookup(env, name)
+        case Add(lhs, rhs) => eval(lhs, env) + eval(rhs, env)
+        case Sub(lhs, rhs) => eval(lhs, env) - eval(rhs, env)
+        case Mul(lhs, rhs) => eval(lhs, env) * eval(rhs, env)
+        case Div(lhs, rhs) => eval(lhs, env) / eval(rhs, env)
+        case Let(name, value, body) => 
+            val valueEval = eval(value, env)
+            val newEnv = extend(env, name, valueEval)
+            eval(body, newEnv)
+    }
+    \end{code}
+    
+        In this example, the "Let" node is evaluated by first evaluating the value to be bound, extending the environment with this binding, and then evaluating the body of the "let" expression 
+        within the new environment.
+    
+        \begin{itemize}
+            \item Evaluate the value to be bound first.
+            \item Extend the current environment with the new binding.
+            \item Evaluate the body of the "let" expression within the extended environment.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Let bindings in Lettuce are crucial for managing variable scopes and creating intermediate values during expression evaluation. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Let Bindings}: Bind a variable to a value within an expression, valid within the scope of the "let" expression.
+            \item \textbf{Nested Let Bindings}: Support for nested "let" bindings, enabling complex expressions with multiple intermediate values.
+            \item \textbf{Representing Let Bindings in AST}: "Let" nodes in the AST capture the variable name, value, and body of the expression.
+            \item \textbf{Evaluating Let Bindings}: Involves extending the current environment with the new binding and evaluating the body within the extended environment.
+        \end{itemize}
+        
+        These features ensure that variable bindings are correctly managed and that the correct values are used during the evaluation of expressions in Lettuce.
+    
+    \end{highlight}
+\end{notes}
+
+The next section being covered this week is \textbf{Functions In Lettuce}.
+
+\begin{notes}{Functions In Lettuce}
+    \subsection*{Overview}
+
+    Functions are essential for modularizing and reusing code. In Lettuce, functions allow you to define reusable blocks of code that can be invoked with different arguments during the evaluation of expressions.
+    
+    \subsubsection*{Function Definitions}
+    
+    A "function" in Lettuce is defined using the `fun` keyword. A function takes parameters and a body, which is an expression that defines the computation performed by the function.
+    
+    \begin{highlight}[Function Definitions]
+    
+        This example demonstrates the syntax for defining a function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function definition
+    let add = fun(x, y) {
+        x + y
+    } in
+    add(3, 4)
+    \end{code}
+    
+        In this example, a function "add" is defined to take two parameters "x" and "y" and return their sum. The function is then invoked with the arguments "3" and "4".
+    
+        \begin{itemize}
+            \item Functions are defined using the `fun` keyword.
+            \item Functions take parameters and a body expression.
+            \item The body defines the computation performed by the function.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Anonymous Functions}
+    
+    Lettuce supports anonymous functions (lambdas), which are functions defined without a name. These are useful for creating quick, throwaway functions.
+    
+    \begin{highlight}[Anonymous Functions]
+    
+        This example shows how to define and use an anonymous function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Anonymous function
+    let result = (fun(x) { x * x })(5)
+    \end{code}
+    
+        In this example, an anonymous function that squares its input is defined and immediately invoked with the argument "5".
+    
+        \begin{itemize}
+            \item Anonymous functions are defined without a name.
+            \item Useful for quick, throwaway functions.
+            \item Can be defined and invoked inline.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Function Applications}
+    
+    Function applications in Lettuce involve invoking a function with specific arguments. The function's body is evaluated with the arguments bound to the function's parameters.
+    
+    \begin{highlight}[Function Applications]
+    
+        This example demonstrates how to apply a function to arguments in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function application
+    let square = fun(x) {
+        x * x
+    } in
+    square(6)
+    \end{code}
+    
+        In this example, the function "square" is defined to take one parameter "x" and return "x * x". The function is then invoked with the argument "6".
+    
+        \begin{itemize}
+            \item Function applications involve invoking a function with specific arguments.
+            \item The function's body is evaluated with arguments bound to parameters.
+            \item Allows reuse of function definitions with different inputs.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Representing Functions in AST}
+    
+    In the Abstract Syntax Tree (AST) of Lettuce, functions and function applications are represented by "Fun" and "App" nodes, respectively. These nodes capture the function parameters, body, and the 
+    arguments to which the function is applied.
+    
+    \begin{highlight}[Functions in AST]
+    
+        This example shows how functions and function applications are represented in the AST.
+    
+    \begin{code}[Scala]
+    case class Fun(param: String, body: Expr) extends Expr
+    case class App(fun: Expr, arg: Expr) extends Expr
+    \end{code}
+    
+        A function definition like "fun(x) { x + 1 }" would be represented by a "Fun" node, and its application "f(5)" would be represented by an "App" node in the AST.
+    
+        \begin{itemize}
+            \item "Fun" nodes represent function definitions in the AST.
+            \item "App" nodes represent function applications in the AST.
+            \item Capture the parameters, body, and arguments of functions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Evaluating Functions}
+    
+    Evaluating functions in Lettuce involves extending the current environment with the function's parameters bound to the arguments and then evaluating the function's body within this extended environment.
+    
+    \begin{highlight}[Evaluating Functions]
+    
+        This example demonstrates how to evaluate functions and function applications in Lettuce.
+    
+    \begin{code}[Scala]
+    def eval(expr: Expr, env: Env): Int = expr match {
+        case Const(value) => value
+        case Var(name) => lookup(env, name)
+        case Add(lhs, rhs) => eval(lhs, env) + eval(rhs, env)
+        case Sub(lhs, rhs) => eval(lhs, env) - eval(rhs, env)
+        case Mul(lhs, rhs) => eval(lhs, env) * eval(rhs, env)
+        case Div(lhs, rhs) => eval(lhs, env) / eval(rhs, env)
+        case Let(name, value, body) => 
+            val valueEval = eval(value, env)
+            val newEnv = extend(env, name, valueEval)
+            eval(body, newEnv)
+        case Fun(param, body) => 
+            (arg: Int) => eval(body, extend(env, param, arg))
+        case App(fun, arg) => 
+            val funEval = eval(fun, env).asInstanceOf[Int => Int]
+            val argEval = eval(arg, env)
+            funEval(argEval)
+    }
+    \end{code}
+    
+        In this example, the "Fun" node is evaluated by creating a closure, and the "App" node is evaluated by applying the function to the argument within the current environment.
+    
+        \begin{itemize}
+            \item Functions are evaluated by creating closures.
+            \item Function applications are evaluated by applying the function to arguments.
+            \item The environment is extended with the function's parameters bound to arguments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Functions in Lettuce are essential for modularizing and reusing code. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Function Definitions}: Defined using the `fun` keyword, taking parameters and a body expression.
+            \item \textbf{Anonymous Functions}: Functions defined without a name, useful for quick, throwaway computations.
+            \item \textbf{Function Applications}: Involve invoking functions with specific arguments and evaluating the body with those arguments.
+            \item \textbf{Representing Functions in AST}: "Fun" and "App" nodes capture function definitions and applications in the AST.
+            \item \textbf{Evaluating Functions}: Extend the environment with parameters bound to arguments and evaluate the function's body within this extended environment.
+        \end{itemize}
+    
+        These features ensure that functions in Lettuce are powerful tools for creating reusable and modular code.
+    
+    \end{highlight}
+\end{notes}
+
+The last topic that is being covered this week is \textbf{Function Scoping In Lettuce}.
+
+\begin{notes}{Function Scoping In Lettuce}
+    \subsection*{Overview}
+
+    Function scoping in Lettuce determines the visibility and lifetime of variables within functions, ensuring that variables are accessed and modified within their intended scope during the evaluation of expressions.
+    
+    \subsubsection*{Function Scoping}
+    
+    In Lettuce, function scoping refers to the rules governing how variable bindings are resolved within functions. This involves understanding the scope of variables, which can be either local to the 
+    function or accessible from an outer scope.
+    
+    \begin{highlight}[Function Scoping]
+    
+        This example demonstrates the basic concept of function scoping in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function scoping
+    let x = 10 in
+    let add = fun(y) {
+        x + y
+    } in
+    add(5)
+    \end{code}
+    
+        In this example, the variable "x" is defined in an outer scope, and the function "add" can access it. When "add" is called with "5", it returns "15" by adding "x" (which is "10") and "y" (which is "5").
+    
+        \begin{itemize}
+            \item Function scoping determines the visibility of variables within functions.
+            \item Variables defined in outer scopes can be accessed within inner functions.
+            \item Ensures that variables are accessed and modified within their intended scope.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Lexical Scoping}
+    
+    Lettuce uses lexical scoping (also known as static scoping), where the scope of a variable is determined by its position within the source code. Variables are resolved by looking up the bindings 
+    in the environment where the function was defined.
+    
+    \begin{highlight}[Lexical Scoping]
+    
+        This example shows how lexical scoping works in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Lexical scoping
+    let x = 2 in
+    let multiply = fun(y) {
+        x * y
+    } in
+    let x = 3 in
+    multiply(5)
+    \end{code}
+    
+        In this example, the function "multiply" is defined when "x" is "2". Even though "x" is redefined as "3" later, the function still uses the "x" that was in scope when it was defined, resulting in "10".
+    
+        \begin{itemize}
+            \item Lexical scoping resolves variable bindings based on the function's definition context.
+            \item Variables are resolved by the environment where the function was defined, not where it is called.
+            \item Ensures consistent and predictable behavior of functions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Nested Functions}
+    
+    Lettuce supports nested functions, where functions are defined within other functions. This allows for more complex scoping rules and the creation of closures.
+    
+    \begin{highlight}[Nested Functions]
+    
+        This example demonstrates nested functions in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Nested functions
+    let outer = fun(x) {
+        let inner = fun(y) {
+            x + y
+        } in
+        inner(5)
+    } in
+    outer(3)
+    \end{code}
+    
+        In this example, the function "outer" defines a function "inner" inside its body. The function "inner" can access the variable "x" from its enclosing scope, and when "outer(3)" is called, it returns "8".
+    
+        \begin{itemize}
+            \item Supports nested function definitions.
+            \item Inner functions can access variables from their outer functions.
+            \item Enables the creation of closures that capture the outer scope.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Closures}
+    
+    A closure in Lettuce is a function that captures its lexical environment. This means that the function retains access to the variables from the scope where it was defined, even if it is called outside that scope.
+    
+    \begin{highlight}[Closures]
+    
+        This example shows how closures work in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Closures
+    let makeAdder = fun(x) {
+        fun(y) { x + y }
+    } in
+    let add3 = makeAdder(3) in
+    add3(10)
+    \end{code}
+    
+        In this example, "makeAdder" creates a closure that captures the variable "x". The function "add3" is a closure that adds "3" to its argument, resulting in "13" when called with "10".
+    
+        \begin{itemize}
+            \item Closures capture their lexical environment.
+            \item Retain access to variables from the scope where they were defined.
+            \item Allow functions to maintain state across different invocations.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Function scoping in Lettuce ensures that variables are accessed and modified within their intended scope. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Function Scoping}: Determines the visibility and lifetime of variables within functions.
+            \item \textbf{Lexical Scoping}: Resolves variable bindings based on the function's definition context.
+            \item \textbf{Nested Functions}: Supports defining functions within other functions, allowing for more complex scoping rules.
+            \item \textbf{Closures}: Functions that capture their lexical environment, retaining access to variables from their defining scope.
+        \end{itemize}
+    
+        These features ensure that functions in Lettuce behave predictably and can maintain state across different invocations.
+    
+    \end{highlight}
+\end{notes}

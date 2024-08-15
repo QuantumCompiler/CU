@@ -1,0 +1,518 @@
+\clearpage
+
+\newcommand{\ChapTitle}{Intro To Programming Languages And Scala}
+\newcommand{\SectionTitle}{Intro To Programming Languages And Scala}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{Programming In Scala - Chapter 2 - First Steps In Scala}
+    \item \textbf{Programming In Scala - Chapter 3 - Next Steps In Scala}
+    \item \textbf{Programming In Scala - Chapter 4 - Classes And Objects}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=rDkodBuOK4k}{Intro To Programming Languages 1: What's Covered In This Class}{12}
+    \item \lecture{https://www.youtube.com/watch?v=fw_TbJ6uDfU}{Intro To Programming Languages 2: Anatomy Of A Language}{12}
+    \item \lecture{https://www.youtube.com/watch?v=l82PyAidkew}{Domain Specific Languages}{4}
+    \item \lecture{https://www.youtube.com/watch?v=2eNBcl4FhGg}{Intro To Scala}{35}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks:
+    \begin{itemize}
+        \item \textbf{Intro To Programming Languages And Scala - Basic Introduction To Scala}
+        \item \textbf{Intro To Programming Languages And Scala - Intro To Scala}
+        \item \textbf{Intro To Programming Languages And Scala - Introduction To Programming Languages}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \textbf{Problem Set 1 - Intro To Programming Languages And Scala}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 1 - Intro To Programming In Scala.pdf}{Quiz 1 - Intro To Programming In Scala}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 2: First Steps In Scala}.
+
+\begin{notes}{Chapter 2: First Steps in Scala}
+    \subsubsection*{Overview}
+
+    This chapter provides a practical introduction to Scala, covering the essential steps needed to start writing and running Scala programs. It introduces the Scala interpreter, variable definitions, 
+    function definitions, scripting, and basic control structures. By following along with the examples, readers can gain hands-on experience with Scala's syntax and features.
+
+    \subsubsection*{Step 1: Learn to Use the Scala Interpreter}
+
+    The Scala interpreter is an interactive shell for writing and evaluating Scala expressions and programs. To start the interpreter, type \texttt{scala} at the command prompt. The interpreter evaluates 
+    expressions and prints the results. For example:
+
+    \begin{highlight}[Using the Interpreter]
+    \begin{code}[Scala]
+    scala> 1 + 2
+    res0: Int = 3
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Step 2: Define Some Variables}
+
+    Scala has two types of variables:
+
+    \begin{itemize}
+        \item \textbf{val}: Immutable variable, similar to \texttt{final} in Java. Once initialized, it cannot be reassigned.
+        \item \textbf{var}: Mutable variable, can be reassigned throughout its lifetime.
+    \end{itemize}
+
+    Example:
+
+    \begin{highlight}[Defining Variables]
+    \begin{code}[Scala]
+    val msg = "Hello, world!"
+    var greeting = "Hello, world!"
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Step 3: Define Some Functions}
+
+    Functions in Scala are defined using \texttt{def}. A function definition includes the function name, parameter list, return type, and body. Example:
+
+    \begin{highlight}[Defining Functions]
+    \begin{code}[Scala]
+    def max(x: Int, y: Int): Int = {
+        if (x > y) x else y
+    }
+    \end{code}
+    \end{highlight}
+
+    The return type can sometimes be inferred by the compiler.
+
+    \subsubsection*{Step 4: Write Some Scala Scripts}
+
+    A Scala script is a sequence of statements in a file executed sequentially. Example script (\texttt{hello.scala}):
+
+    \begin{highlight}[Writing Scripts]
+    \begin{code}[Scala]
+    println("Hello, world, from a script!")
+    \end{code}
+    \end{highlight}
+
+    Run the script with:
+
+    \begin{highlight}[Running Scripts]
+    \begin{code}[Scala]
+    $ scala hello.scala
+    \end{code}
+    \end{highlight}
+
+    Command line arguments can be accessed via the \texttt{args} array.
+
+    \subsubsection*{Step 5: Loop with \texttt{while}; Decide with \texttt{if}}
+
+    Example of using \texttt{while} loop:
+
+    \begin{highlight}[Using while Loop]
+    \begin{code}[Scala]
+    var i = 0
+    while (i < args.length) {
+        println(args(i))
+        i += 1
+    }
+    \end{code}
+    \end{highlight}
+
+    Example of using \texttt{if} statement:
+
+    \begin{highlight}[Using if Statement]
+    \begin{code}[Scala]
+    if (i != 0) print(" ")
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Step 6: Iterate with \texttt{foreach} and \texttt{for}}
+
+    Using \texttt{foreach} to iterate over a collection:
+
+    \begin{highlight}[Using foreach]
+    \begin{code}[Scala]
+    args.foreach(arg => println(arg))
+    \end{code}
+    \end{highlight}
+
+    Using \texttt{for} expression:
+
+    \begin{highlight}[Using for Expression]
+    \begin{code}[Scala]
+    for (arg <- args) println(arg)
+    \end{code}
+    \end{highlight}
+\end{notes}
+
+The next chapter that is covered this week is \textbf{Chapter3: Next Steps In Scala}.
+
+\begin{notes}{Chapter 3: Next Steps in Scala}
+    \subsubsection*{Overview}
+
+    This chapter continues the introduction to Scala, covering more advanced features. By the end of this chapter, readers should have enough knowledge to write useful scripts in Scala. Topics include 
+    parameterizing arrays with types, using lists and tuples, working with sets and maps, adopting a functional programming style, and reading lines from a file.
+
+    \subsubsection*{Step 7: Parameterize Arrays with Types}
+
+    In Scala, you can instantiate objects and parameterize them with types and values. Example:
+
+    \begin{highlight}[Instantiating Arrays]
+
+    \begin{code}[Scala]
+    val greetStrings = new Array 
+
+    greetStrings(0) = "Hello"
+    greetStrings(1) = ", "
+    greetStrings(2) = "world!\n"
+
+    for (i <- 0 to 2)
+        print(greetStrings(i))
+    \end{code}
+
+    \end{highlight}
+
+    Arrays in Scala are accessed with parentheses, not square brackets. Example:
+
+    \begin{highlight}[Explicit Type Specification]
+
+    \begin{code}[Scala]
+    val greetStrings: Array[String] = new Array[String](3)
+    \end{code}
+
+    \end{highlight}
+
+    \subsubsection*{Step 8: Use Lists}
+
+    Lists in Scala are immutable sequences. Example:
+
+    \begin{highlight}[Creating Lists]
+
+    \begin{code}[Scala]
+    val oneTwoThree = List(1, 2, 3)
+    \end{code}
+
+    \end{highlight}
+
+    Lists can be concatenated with the \texttt{:::} method or constructed with the \texttt{::} (cons) operator. Example:
+
+    \begin{highlight}[Concatenating Lists]
+
+    \begin{code}[Scala]
+    val oneTwo = List(1, 2)
+    val threeFour = List(3, 4)
+    val oneTwoThreeFour = oneTwo ::: threeFour
+    \end{code}
+
+    \end{highlight}
+
+    \subsubsection*{Step 9: Use Tuples}
+
+    Tuples are immutable and can contain different types of elements. Example:
+
+    \begin{highlight}[Using Tuples]
+
+    \begin{code}[Scala]
+    val pair = (99, "Luftballons")
+    println(pair._1)
+    println(pair._2)
+    \end{code}
+
+    \end{highlight}
+
+    Tuples are useful for returning multiple values from a method.
+
+    \subsubsection*{Step 10: Use Sets and Maps}
+
+    Scala provides mutable and immutable sets and maps. Example of an immutable set:
+
+    \begin{highlight}[Immutable Set]
+
+    \begin{code}[Scala]
+    var jetSet = Set("Boeing", "Airbus")
+    jetSet += "Lear"
+    println(jetSet.contains("Cessna"))
+    \end{code}
+
+    \end{highlight}
+
+    Example of a mutable set:
+
+    \begin{highlight}[Mutable Set]
+
+    \begin{code}[Scala]
+    import scala.collection.mutable
+
+    val movieSet = mutable.Set("Hitch", "Poltergeist")
+    movieSet += "Shrek"
+    println(movieSet)
+    \end{code}
+
+    \end{highlight}
+
+    Example of a mutable map:
+
+    \begin{highlight}[Mutable Map]
+
+    \begin{code}[Scala]
+    import scala.collection.mutable
+
+    val treasureMap = mutable.Map[Int, String]()
+    treasureMap += (1 -> "Go to island.")
+    treasureMap += (2 -> "Find big X on ground.")
+    treasureMap += (3 -> "Dig.")
+    println(treasureMap(2))
+    \end{code}
+
+    \end{highlight}
+
+    Example of an immutable map:
+
+    \begin{highlight}[Immutable Map]
+    \begin{code}[Scala]
+    val romanNumeral = Map(
+        1 -> "I", 2 -> "II", 3 -> "III", 4 -> "IV", 5 -> "V"
+    )
+    println(romanNumeral(4))
+    \end{code}
+
+    \end{highlight}
+
+    \subsubsection*{Step 11: Learn to Recognize the Functional Style}
+
+    Scala encourages functional programming. Avoid using \texttt{var} and prefer \texttt{val}. Example of transforming imperative code to functional style:
+
+    \begin{highlight}[Imperative to Functional]
+
+    \begin{code}[Scala]
+    def printArgs(args: Array[String]): Unit = {
+        for (arg <- args)
+            println(arg)
+    }
+
+    def formatArgs(args: Array[String]) = args.mkString("\n")
+
+    println(formatArgs(args))
+    \end{code}
+
+    \end{highlight}
+
+    Prefer methods without side effects for better code readability and testability.
+
+    \subsubsection*{Step 12: Read Lines from a File}
+
+    Example of reading lines from a file and printing them with their lengths:
+
+    \begin{highlight}[Reading Lines]
+
+    \begin{code}[Scala]
+    import scala.io.Source
+
+    if (args.length > 0) {
+        for (line <- Source.fromFile(args(0)).getLines())
+            println(line.length + " " + line)
+    } else {
+        Console.err.println("Please enter filename")
+    }
+    \end{code}
+
+    \end{highlight}
+
+    Enhanced version to format the output:
+
+    \begin{highlight}[Formatted Output]
+
+    \begin{code}[Scala]
+    import scala.io.Source
+
+    def widthOfLength(s: String) = s.length.toString.length
+
+    if (args.length > 0) {
+        val lines = Source.fromFile(args(0)).getLines().toList
+        val longestLine = lines.reduceLeft(
+            (a, b) => if (a.length > b.length) a else b
+        )
+        val maxWidth = widthOfLength(longestLine)
+
+        for (line <- lines) {
+            val numSpaces = maxWidth - widthOfLength(line)
+            val padding = " " * numSpaces
+            println(padding + line.length + " | " + line)
+        }
+    } else {
+        Console.err.println("Please enter filename")
+    }
+    \end{code}
+
+    \end{highlight}
+\end{notes}
+
+The last chapter that is being covered this week is \textbf{Chapter 4: Classes And Objects}
+
+\begin{notes}{Chapter 4: Classes and Objects}
+    \subsubsection*{Overview}
+
+    This chapter delves deeper into classes and objects in Scala. You will learn more about classes, fields, and methods, semicolon inference, singleton objects, and how to write and run a Scala application. Although Scala concepts are similar to those in Java, there are important differences worth noting. \vspace*{1em}
+
+    \subsubsection*{Section 4.1: Classes, Fields, and Methods}
+
+    A class is a blueprint for objects. Fields (defined with \texttt{val} or \texttt{var}) hold the state of an object, while methods (defined with \texttt{def}) perform computations. Example:
+
+    \begin{highlight}[Class Definition]
+    \begin{code}[Scala]
+    class ChecksumAccumulator {
+        var sum = 0
+    }
+    \end{code}
+    \end{highlight}
+
+    You can instantiate objects from the class blueprint with \texttt{new}. Each object has its own set of instance variables.
+
+    \begin{highlight}[Object Instantiation]
+    \begin{code}[Scala]
+    val acc = new ChecksumAccumulator
+    val csa = new ChecksumAccumulator
+    \end{code}
+    \end{highlight}
+
+    Fields should be made \texttt{private} to ensure the object's state remains valid during its lifetime. Methods provide controlled access to these fields.
+
+    \begin{highlight}[Encapsulation]
+    \begin{code}[Scala]
+    class ChecksumAccumulator {
+        private var sum = 0
+
+        def add(b: Byte): Unit = { sum += b }
+
+        def checksum(): Int = ~(sum & 0xFF) + 1
+    }
+    \end{code}
+    \end{highlight}
+
+    Methods return the last computed value unless an explicit \texttt{return} statement is used. Conciseness is encouraged by omitting curly braces and using inferred return types.
+
+    \begin{highlight}[Concise Methods]
+    \begin{code}[Scala]
+    class ChecksumAccumulator {
+        private var sum = 0
+        def add(b: Byte) = sum += b
+        def checksum() = ~(sum & 0xFF) + 1
+    }
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Section 4.2: Semicolon Inference}
+
+    Semicolons at the end of a statement are usually optional in Scala. They are inferred unless multiple statements are on a single line or a line ending is ambiguous.
+
+    \begin{highlight}[Semicolon Inference]
+    \begin{code}[Scala]
+    val s = "hello"; println(s)
+
+    if (x < 2)
+        println("too small")
+    else
+        println("ok")
+
+    x +
+    y +
+    z
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Section 4.3: Singleton Objects}
+
+    Scala uses singleton objects instead of static members. A singleton object with the same name as a class is called a companion object, and both must be defined in the same file.
+
+    \begin{highlight}[Companion Object]
+    \begin{code}[Scala]
+    import scala.collection.mutable
+
+    object ChecksumAccumulator {
+        private val cache = mutable.Map.empty[String, Int]
+
+        def calculate(s: String): Int = {
+            if (cache.contains(s))
+                cache(s)
+            else {
+                val acc = new ChecksumAccumulator
+                for (c <- s)
+                    acc.add(c.toByte)
+                val cs = acc.checksum()
+                cache += (s -> cs)
+                cs
+            }
+        }
+    }
+    \end{code}
+    \end{highlight}
+
+    Singleton objects do not define a type and cannot take parameters. They are first-class objects initialized the first time they are accessed.
+
+    \subsubsection*{Section 4.4: A Scala Application}
+
+    A Scala program must have a standalone singleton object with a \texttt{main} method that takes an \texttt{Array[String]} and returns \texttt{Unit}.
+
+    \begin{highlight}[Scala Application]
+    \begin{code}[Scala]
+    import ChecksumAccumulator.calculate
+
+    object Summer {
+        def main(args: Array[String]) = {
+            for (arg <- args)
+                println(arg + ": " + calculate(arg))
+        }
+    }
+    \end{code}
+    \end{highlight}
+
+    Compile the program with \texttt{scalac} or \texttt{fsc}, then run it using the \texttt{scala} command.
+
+    \begin{highlight}[Compiling and Running]
+    \begin{code}[Scala]
+    $ scalac ChecksumAccumulator.scala Summer.scala
+    $ scala Summer of love
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Section 4.5: The App Trait}
+
+    The \texttt{App} trait can be used to simplify Scala applications. It allows you to write the program code directly within the object definition.
+
+    \begin{highlight}[Using the App Trait]
+    \begin{code}[Scala]
+    import ChecksumAccumulator.calculate
+
+    object FallWinterSpringSummer extends App {
+        for (season <- List("fall", "winter", "spring"))
+            println(season + ": " + calculate(season))
+    }
+    \end{code}
+    \end{highlight}
+\end{notes}

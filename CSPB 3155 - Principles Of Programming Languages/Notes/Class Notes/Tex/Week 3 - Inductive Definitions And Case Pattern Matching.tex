@@ -1,0 +1,353 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Inductive Definitions And Case Pattern Matching}
+\renewcommand{\SectionTitle}{Inductive Definitions And Case Pattern Matching}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{Programming In Scala - Chapter 15.3 - Pattern Guards}
+    \item \textbf{Programming In Scala - Chapter 15.4 - Pattern Overlaps}
+    \item \textbf{Programming In Scala - Chapter 15.5 - Sealed Classes}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=UTiskTYflG0}{Inductive Definitions 1: Trees And Arithmetic Expressions}{13}
+    \item \lecture{https://www.youtube.com/watch?v=qChzAUwSN2U}{Inductive Definitions 2: Abstract Syntax of Programming Languages}{9}
+    \item \lecture{https://www.youtube.com/watch?v=r4BgmqlmFKY}{Inductive Definitions 3: Case Pattern Matching}{17}
+    \item \lecture{https://www.youtube.com/watch?v=WQM6mJz4a_I}{Inductive Definitions 4: Case Pattern Matching Features}{24}
+    \item \lecture{https://www.youtube.com/watch?v=JDClyX4C6Os}{Inductive Definitions 5: Case Pattern Matching with Scala Types}{4}
+    \item \lecture{https://www.youtube.com/watch?v=46g2e2j1LgQ}{Brief Into To Parsers}{10}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks
+    \begin{itemize}
+        \item \textbf{Inductive Definitions And Case Pattern Matching - Parsers In Scala}
+        \item \textbf{Inductive Definitions And Case Pattern Matching - Operations And Inductive Definitions}
+        \item \textbf{Inductive Definitions And Case Pattern Matching - Supplemental High Level Parsing}
+        \item \textbf{Inductive Definitions And Case Pattern Matching - Lecture Notes}
+        \item \textbf{Inductive Definitions And Case Pattern Matching - Recitation}
+        \item \textbf{Inductive Definitions And Case Pattern Matching - Solutions}
+    \end{itemize}
+    \item Resources
+    \begin{itemize}
+        \item \pdflink{\LecNoteDir/Notes/Mython Grammar.pdf}{Mython Grammar}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \textbf{Problem Set 3 - Inductive Definitions And Case Pattern Matching}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 3 - Inductive Definitions And Case Pattern Matching.pdf}{Quiz 3 - Inductive Definitions And Case Pattern Matching}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is covered this week is \textbf{Chapter 15: Case Classes And Pattern Matching}. The first section that is covered from this chapter this week is \textbf{Section 15.3: Pattern Guards}.
+
+\begin{notes}{Section 15.3: Pattern Guards}
+    \subsection*{Overview}
+
+    This chapter continues exploring Scala's pattern matching capabilities by introducing pattern guards. Pattern guards extend the flexibility of pattern matching by allowing additional conditions 
+    on matches. By the end of this chapter, readers should understand how to use pattern guards to refine pattern matching in Scala.
+    
+    \subsubsection*{Variable Binding}
+    
+    Variable binding is a technique in pattern matching where you bind a variable to a matched pattern. This allows you to keep a reference to the whole matched object while also deconstructing it. 
+    You can add a variable to any other pattern by writing the variable name, an at sign ("\@"), and the pattern.
+    
+    \begin{highlight}[Variable Binding]
+    
+        This example shows a pattern match that looks for the absolute value operation applied twice in a row and simplifies it to a single absolute value operation.
+    
+    \begin{code}[Scala]
+    expr match {
+        case UnOp("abs", e @ UnOp("abs", _)) => e
+        case _ =>
+    }
+    \end{code}
+    
+        In this example, the pattern "e \@ UnOp("abs", \_)" binds "e" to the result of the inner "UnOp" pattern, allowing you to refer to the entire matched object.
+    
+        \begin{itemize}
+            \item Variable binding patterns retain a reference to the matched object.
+            \item Useful for simplifying complex expressions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Pattern Guards}
+    
+    Sometimes, syntactic pattern matching is not precise enough. Pattern guards allow you to add additional conditions to patterns, making them more precise. A pattern guard comes after a pattern and 
+    starts with an "if". The guard can be any boolean expression that typically refers to variables in the pattern.
+    
+    \begin{highlight}[Pattern Guards]
+    
+        This example shows how to use a pattern guard to simplify an addition of identical operands by converting it to multiplication by two.
+    
+    \begin{code}[Scala]
+    def simplifyAdd(e: Expr) = e match {
+        case BinOp("+", x, y) if x == y => BinOp("*", x, Number(2))
+        case _ => e
+    }
+    \end{code}
+    
+        In this example, the pattern guard "if x == y" ensures that the pattern only matches when the two operands are equal.
+    
+        \begin{itemize}
+            \item Pattern guards add additional conditions to patterns.
+            \item They make pattern matching more precise and flexible.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    Other examples of pattern guards include:
+    
+    \begin{highlight}[Other Pattern Guards]
+    
+        These examples demonstrate matching only positive integers and strings starting with the letter 'a'.
+    
+    \begin{code}[Scala]
+    // match only positive integers
+    case n: Int if 0 < n => ...
+    
+    // match only strings starting with the letter 'a'
+    case s: String if s(0) == 'a' => ...
+    \end{code}
+    
+        In these examples, the guards "if 0 < n" and "if s(0) == 'a'" ensure that only specific values match the patterns.
+    
+        \begin{itemize}
+            \item Pattern guards can be used to match specific conditions within broader patterns.
+            \item Useful for filtering matches based on additional criteria.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Scala's pattern guards provide additional flexibility and precision in pattern matching. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Variable Binding}: Use the "\@" symbol to bind a variable to a matched pattern, retaining a reference to the whole matched object.
+            \item \textbf{Pattern Guards}: Add additional conditions to patterns using "if" statements to refine matches.
+            \item \textbf{Usage Examples}: Guard patterns to match specific conditions like positive integers or strings starting with a particular letter.
+        \end{itemize}
+    
+        These features enhance Scala's pattern matching, making it a versatile and powerful tool for working with complex data structures and refining matches based on additional conditions.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 15.4: Pattern Overlaps}.
+
+\begin{notes}{Section 15.4: Pattern Overlaps}
+    \subsection*{Overview}
+
+    This section explores pattern overlaps in Scala's pattern matching, emphasizing the importance of the order in which patterns are tried. Patterns are evaluated sequentially, and the first matching 
+    pattern is selected. By the end of this section, readers should understand how to correctly order patterns to ensure proper matching and avoid issues like unreachable code.
+    
+    \subsubsection*{Pattern Overlaps}
+    
+    Pattern overlaps occur when multiple patterns can match the same input. In Scala, patterns are tried in the order they are written, so the sequence in which you write your patterns can significantly 
+    affect the behavior of your pattern matching.
+    
+    \begin{highlight}[Pattern Overlaps]
+    
+        This example demonstrates a situation where the order of patterns matters in a match expression.
+    
+    \begin{code}[Scala]
+    def simplifyAll(expr: Expr): Expr = expr match {
+    case UnOp("-", UnOp("-", e)) =>
+        simplifyAll(e) // '-' is its own inverse
+    case BinOp("+", e, Number(0)) =>
+        simplifyAll(e) // '0' is a neutral element for '+'
+    case BinOp("*", e, Number(1)) =>
+        simplifyAll(e) // '1' is a neutral element for '*'
+    case UnOp(op, e) =>
+        UnOp(op, simplifyAll(e))
+    case BinOp(op, l, r) =>
+        BinOp(op, simplifyAll(l), simplifyAll(r))
+    case _ => expr
+    }
+    \end{code}
+    
+        In this example, the "simplifyAll" function applies simplification rules everywhere in an expression, not just at the top level. The specific simplification rules come before the catch-all 
+        cases for unary and binary operations, ensuring they are applied first.
+    
+        \begin{itemize}
+            \item Patterns are tried in the order they are written.
+            \item Specific rules should precede more general catch-all cases.
+            \item Ensures that specific patterns are matched before general ones.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    If the catch-all cases are written before the specific rules, they will be matched first, causing the specific rules to be ignored. For example:
+    
+    \begin{highlight}[Incorrect Pattern Order]
+    
+        This example shows a pattern match where the specific rule is unreachable due to the catch-all case being first.
+    
+    \begin{code}[Scala]
+    def simplifyBad(expr: Expr): Expr = expr match {
+        case UnOp(op, e) => UnOp(op, simplifyBad(e))
+        case UnOp("-", UnOp("-", e)) => e
+    }
+    \end{code}
+    
+        In this example, the catch-all case for "UnOp" is written before the specific double negation rule, making the specific rule unreachable.
+    
+        \begin{itemize}
+            \item Catch-all cases should not precede specific rules.
+            \item Ensures that all specific patterns are evaluated first.
+            \item Avoids unreachable code and compiler warnings.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Understanding pattern overlaps is crucial for writing effective pattern matching in Scala. Here are the key concepts covered in this section:
+        
+        \begin{itemize}
+            \item \textbf{Pattern Order}: Patterns are tried in the order they are written.
+            \item \textbf{Specific vs. General Patterns}: Specific rules should come before catch-all cases.
+            \item \textbf{Avoiding Unreachable Code}: Ensure specific patterns are evaluated first to avoid making them unreachable.
+        \end{itemize}
+        
+        By correctly ordering patterns, you can ensure that your pattern matching is both efficient and correct, avoiding common pitfalls like unreachable code.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is covered from this chapter this week is \textbf{Section 15.5: - Sealed Classes}.
+
+\begin{notes}{Section 15.5: - Sealed Classes}
+    \subsection*{Overview}
+
+    This section introduces sealed classes in Scala, which restricts the creation of subclasses to within the same file. This restriction is particularly useful for pattern matching, as it ensures 
+    all possible subclasses are known at compile-time, allowing the compiler to help detect missing cases in match expressions. By the end of this section, readers should understand how to use 
+    sealed classes to enhance pattern matching and ensure exhaustive matching.
+    
+    \subsubsection*{Sealed Classes}
+    
+    When writing pattern matches, it's important to cover all possible cases to avoid runtime errors. In Scala, sealed classes can help achieve this by ensuring that no new subclasses can be added 
+    outside the file where the sealed class is defined.
+    
+    \begin{highlight}[Sealed Classes]
+    
+        This example shows how to define a sealed class hierarchy for arithmetic expressions.
+    
+    \begin{code}[Scala]
+    sealed abstract class Expr
+    case class Var(name: String) extends Expr
+    case class Number(num: Double) extends Expr
+    case class UnOp(operator: String, arg: Expr) extends Expr
+    case class BinOp(operator: String, left: Expr, right: Expr) extends Expr
+    \end{code}
+    
+        With the "sealed" keyword, you ensure that all subclasses of "Expr" are known and defined within the same file, enabling the compiler to check for exhaustive pattern matches.
+        
+        \begin{itemize}
+            \item Sealed classes restrict subclassing to within the same file.
+            \item Ensures all possible subclasses are known at compile-time.
+            \item Enhances compiler support for detecting missing cases in pattern matches.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Exhaustive Pattern Matching}
+    
+    When matching against a sealed class, the Scala compiler can warn you if some cases are not handled, helping to avoid potential runtime errors. This is especially useful in ensuring that your pattern matches are exhaustive.
+    
+    \begin{highlight}[Exhaustive Pattern Matching]
+    
+        This example demonstrates defining a pattern match on the "Expr" class that is not exhaustive and the resulting compiler warning.
+    
+    \begin{code}[Scala]
+    def describe(e: Expr): String = e match {
+        case Number(_) => "a number"
+        case Var(_) => "a variable"
+    }
+    \end{code}
+    
+        When compiled, the above code will generate a warning because not all possible cases are covered.
+        
+        \begin{itemize}
+            \item Compiler warns about missing cases.
+            \item Helps ensure all possible patterns are handled.
+            \item Prevents potential "MatchError" exceptions at runtime.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    If you are certain that only specific cases will be used, you can handle the compiler warning in different ways.
+    
+    \begin{highlight}[Handling Missing Cases]
+    
+        You can add a default case or use the "@unchecked" annotation to suppress the warning.
+    
+    \begin{code}[Scala]
+    // Adding a default case
+    def describe(e: Expr): String = e match {
+        case Number(_) => "a number"
+        case Var(_) => "a variable"
+        case _ => throw new RuntimeException // Should not happen
+    }
+    
+    // Using the @unchecked annotation
+    def describe(e: Expr): String = (e: @unchecked) match {
+        case Number(_) => "a number"
+        case Var(_) => "a variable"
+    }
+    \end{code}
+    
+        Adding a default case ensures all possible values are handled, while the "@unchecked" annotation suppresses the compiler warning.
+        
+        \begin{itemize}
+            \item Default case ensures all values are handled.
+            \item "@unchecked" annotation suppresses compiler warnings.
+            \item Useful when you know specific cases will not occur.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Using sealed classes in Scala enhances pattern matching by ensuring that all possible cases are known at compile-time. Here are the key concepts covered in this section:
+        
+        \begin{itemize}
+            \item \textbf{Sealed Classes}: Restrict subclassing to within the same file, ensuring all possible subclasses are known.
+            \item \textbf{Exhaustive Pattern Matching}: The compiler can warn about missing cases, helping to avoid runtime errors.
+            \item \textbf{Handling Missing Cases}: Use default cases or the "@unchecked" annotation to handle or suppress warnings about missing cases.
+        \end{itemize}
+        
+        These features make sealed classes a powerful tool for writing robust and error-free pattern matching code in Scala.
+    
+    \end{highlight}
+\end{notes}

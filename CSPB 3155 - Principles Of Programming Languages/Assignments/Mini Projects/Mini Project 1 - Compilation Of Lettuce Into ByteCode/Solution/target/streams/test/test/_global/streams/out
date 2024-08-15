@@ -1,0 +1,25 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(edu.colorado.csci3155.project1.StackMachineTest, org.scalatest.tools.Framework$$anon$1@275d3e23, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(edu.colorado.csci3155.project1.CompilerTest, org.scalatest.tools.Framework$$anon$1@275d3e23, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mStackMachineTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- stack machine test 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- stack machine test 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- stack machine test 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- stack machine test 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- stack machine test 5[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCompilerTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- simple expression 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- simple expression 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- simple expression 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- simple expression 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- LetBinding + Ident Test 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- LetBinding + Ident Test 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- LetBinding + Ident Test 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- LetBinding + Ident Test 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 98 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 13[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 2, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 13, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu.colorado.csci3155.project1.CompilerTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu.colorado.csci3155.project1.StackMachineTest[0m

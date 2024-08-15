@@ -1,0 +1,397 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/csci3155_f20_project2_2.11-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/MyCircle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/MyCircle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/ConstBool.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/ConstBool.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Eq$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Eq$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Polygon$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Polygon$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Closure$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Closure$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$2$$anonfun$apply$mcV$sp$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$2$$anonfun$apply$mcV$sp$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$3$$anonfun$apply$20.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$3$$anonfun$apply$20.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Let$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Let$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/ExtendREC$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/ExtendREC$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$4$$anonfun$apply$21.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$4$$anonfun$apply$21.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/MyCanvas$$anonfun$toString$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/MyCanvas$$anonfun$toString$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev2$1$$anonfun$apply$11.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev2$1$$anonfun$apply$11.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Extend.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Extend.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$3$$anonfun$apply$mcV$sp$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$3$$anonfun$apply$mcV$sp$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/NumValue$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/NumValue$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$1$$anonfun$apply$16$$anonfun$apply$18.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$1$$anonfun$apply$16$$anonfun$apply$18.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Environment.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Environment.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Circle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Circle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev1$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev1$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/And.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/And.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev2$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev2$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$12$$anonfun$apply$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$12$$anonfun$apply$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/MyCanvas$$anonfun$numPolygons$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/MyCanvas$$anonfun$numPolygons$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/FigValue$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/FigValue$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Closure.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Closure.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/BoolValue.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/BoolValue.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/FunDef$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/FunDef$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Ident.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Ident.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Rectangle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Rectangle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/FunCall.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/FunCall.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6$$anonfun$apply$33$$anonfun$apply$34.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6$$anonfun$apply$33$$anonfun$apply$34.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$3$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$3$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$5$$anonfun$apply$mcV$sp$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$5$$anonfun$apply$mcV$sp$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/TopLevel$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/TopLevel$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Minus$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Minus$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$8$$anonfun$apply$mcV$sp$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$8$$anonfun$apply$mcV$sp$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$4$$anonfun$apply$mcV$sp$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$4$$anonfun$apply$mcV$sp$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$11$$anonfun$apply$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$11$$anonfun$apply$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6$$anonfun$apply$31.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6$$anonfun$apply$31.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Minus.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Minus.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/EmptyEnvironment$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/EmptyEnvironment$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/FigValue.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/FigValue.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6$$anonfun$apply$33.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6$$anonfun$apply$33.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$4$$anonfun$apply$22.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$4$$anonfun$apply$22.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LetRec$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LetRec$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$14$$anonfun$apply$8$$anonfun$apply$9.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$14$$anonfun$apply$8$$anonfun$apply$9.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/FunCall$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/FunCall$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$7$$anonfun$apply$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$7$$anonfun$apply$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$3$$anonfun$apply$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$3$$anonfun$apply$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev1$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev1$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Mult.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Mult.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Neq$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Neq$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Div$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Div$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Expr.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Expr.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$30.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$30.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/IfThenElse.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/IfThenElse.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/IfThenElse$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/IfThenElse$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/TestPrograms.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/TestPrograms.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$2$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$2$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$6$$anonfun$apply$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$6$$anonfun$apply$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/DrawingCanvas.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/DrawingCanvas.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Polygon$$anonfun$render$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Polygon$$anonfun$render$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Plus$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Plus$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/ExtendREC.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/ExtendREC.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$funDefinition$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/And$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/And$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev1$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev1$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$LetKwd$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$LetKwd$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Interpreter$$anonfun$evalExpr$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/EquiTriangle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/EquiTriangle$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$9.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$9.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Div.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Div.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Gt$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Gt$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$27.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$27.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Interpreter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Interpreter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$1$$anonfun$apply$13$$anonfun$apply$14.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$1$$anonfun$apply$13$$anonfun$apply$14.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$27$$anonfun$apply$28.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$27$$anonfun$apply$28.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$11.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$11.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Not.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Not.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Extend$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Extend$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$1$$anonfun$apply$16$$anonfun$apply$17.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$1$$anonfun$apply$16$$anonfun$apply$17.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$funCallArgs$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$funCallArgs$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$2$$anonfun$apply$19.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$2$$anonfun$apply$19.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$13.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$13.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/MyCanvas.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/MyCanvas.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Interpreter$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Interpreter$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Ident$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Ident$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$25.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$25.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Geq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Geq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Line.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Line.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/BoolValue$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/BoolValue$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/ValueOps.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/ValueOps.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$1$$anonfun$apply$16.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$1$$anonfun$apply$16.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Program.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Program.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Line$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Line$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LetRec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LetRec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Gt.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Gt.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$14$$anonfun$apply$8$$anonfun$apply$10.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$14$$anonfun$apply$8$$anonfun$apply$10.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Neq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Neq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$23.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$23.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$1$$anonfun$apply$mcV$sp$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$1$$anonfun$apply$mcV$sp$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$15.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$15.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/ValueOps$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/ValueOps$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Let.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Let.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Polygon.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Polygon.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Circle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Circle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$24.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$24.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/MyCanvas$$anonfun$numCircles$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/MyCanvas$$anonfun$numCircles$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/ConstBool$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/ConstBool$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$12.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$12.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev4$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$10.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$10.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/NumValue.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/NumValue.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$27$$anonfun$apply$29.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$27$$anonfun$apply$29.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$1$$anonfun$apply$13$$anonfun$apply$15.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$1$$anonfun$apply$13$$anonfun$apply$15.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/MyCircle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/MyCircle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$26.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$5$$anonfun$apply$26.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6$$anonfun$apply$31$$anonfun$apply$32.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$6$$anonfun$apply$31$$anonfun$apply$32.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/EquiTriangle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/EquiTriangle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/EmptyEnvironment.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/EmptyEnvironment.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$funCallArgs$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$funCallArgs$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Const.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Const.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/TestPrograms$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/TestPrograms$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Figure.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Figure.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev2$1$$anonfun$apply$11$$anonfun$apply$12.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev2$1$$anonfun$apply$11$$anonfun$apply$12.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Plus.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Plus.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/FunDef.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/FunDef.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Rectangle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Rectangle.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$7$$anonfun$apply$mcV$sp$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$7$$anonfun$apply$mcV$sp$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Eq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Eq.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$14.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$14.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Not$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Not$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$6$$anonfun$apply$mcV$sp$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$6$$anonfun$apply$mcV$sp$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$14$$anonfun$apply$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$14$$anonfun$apply$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Value.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Value.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/MyCanvas$$anonfun$render$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/MyCanvas$$anonfun$render$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/MyCanvas$$anonfun$numVerticesTotal$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/MyCanvas$$anonfun$numVerticesTotal$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/TopLevel.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/TopLevel.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$2$$anonfun$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Geq$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Geq$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Const$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Const$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Mult$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Mult$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/CanvasRenderTest$$anon$1$$anon$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$1$$anonfun$apply$13.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev3$1$$anonfun$apply$13.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$compOperator$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/LettuceParser$$anonfun$exprLev5$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Or.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Or.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu/colorado/csci3155/project2/Or$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/taylor/Documents/CSPB 3155/Mini Project 2 - Lettuce With Figures/Solution/target/scala-2.11/classes/edu/colorado/csci3155/project2/Or$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

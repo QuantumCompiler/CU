@@ -1,0 +1,26 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(edu.colorado.csci3155.project2.InterpreterTests, org.scalatest.tools.Framework$$anon$1@651fd063, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(edu.colorado.csci3155.project2.CanvasTests, org.scalatest.tools.Framework$$anon$1@651fd063, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCanvasTests:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test Bounding Box with Polygon [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test Bounding Box with Circle [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test Bounding Box with two circles and one polygon[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test Overlap of two figures[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test Place Right[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test Place Top[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test Rotate[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Test Translate[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mInterpreterTests:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Program 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Program 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Program 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Serpinski[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Mandala[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- Petals[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 193 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 14[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 2, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 14, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu.colorado.csci3155.project2.InterpreterTests[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu.colorado.csci3155.project2.CanvasTests[0m

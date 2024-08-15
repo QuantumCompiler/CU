@@ -1,0 +1,986 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{References And Garbage Collection}
+\renewcommand{\SectionTitle}{References And Garbage Collection}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{N/A}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=eYL2Fappz3M}{Explicit References In Lettuce: Syntax}{13}
+    \item \lecture{https://www.youtube.com/watch?v=ceFk2dZY2lk}{Side Effects And Referential Transparency}{9}
+    \item \lecture{https://www.youtube.com/watch?v=BsIyR1MAu7E}{Explicit References In Lettuce: Semantics}{26}
+    \item \lecture{https://www.youtube.com/watch?v=Hg8SPpAby_E}{Implicit References In Lettuce: Syntax}{21}
+    \item \lecture{https://www.youtube.com/watch?v=BRNlRFGNzI4}{Implicit References In Lettuce: Semantics}{14}
+    \item \lecture{https://www.youtube.com/watch?v=2B6hDk5lLVg}{Functions: Call By Value Vs Call By Reference}{22}
+    \item \lecture{https://www.youtube.com/watch?v=mZQ1hsNIxJw}{Garbage Collection}{24}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks
+    \begin{itemize}
+        \item \textbf{References And Garbage Collection - Calling Conventions Lecture Notes}
+        \item \textbf{References And Garbage Collection - Garbage Collection Lecture Notes}
+        \item \textbf{References And Garbage Collection - Implicit References Vars Lecture Notes}
+        \item \textbf{References And Garbage Collection - References And Mutable Vars Lettuce Lecture Notes}
+        \item \textbf{References And Garbage Collection - Supplemental TryCatch Lecture Notes}
+        \item \textbf{References And Garbage Collection Recitation}
+        \item \textbf{References And Garbage Collection Recitation Solutions}
+    \end{itemize}
+    \item Lecture Notes
+    \begin{itemize}
+        \item \pdflink{\LecNoteDir/Notes/Memory Management Lecture Notes.pdf}{Memory Management Lecture Notes}
+        \item \pdflink{\LecNoteDir/Notes/Smart Pointers In C++ Lecture Notes.pdf}{Smart Pointers In C++ Lecture Notes}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \textbf{Problem Set 6 - References And Garbage Collection}
+    \item \textbf{Mini Project 2 - Lettuce With Figures}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 6 - References And Garbage Collection.pdf}{Quiz 6 - References And Garbage Collection}
+    \item \pdflink{\QuizDir Quiz - Project 2.pdf}{Quiz - Project 2}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNotesDir Spot Exam 3 Notes.pdf}{Spot Exam 3 Notes}
+    \item \pdflink{\ExamsDir Spot Exam 3.pdf}{Spot Exam 3}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first topic that is being covered this week is \textbf{Explicit References In Lettuce: Syntax}.
+
+\begin{notes}{Explicit References In Lettuce: Syntax}
+    \subsection*{Overview}
+
+    Explicit references in Lettuce provide a way to create and manipulate mutable state within the language. This involves using specific syntax to define and access references, allowing variables to 
+    be updated and shared across different scopes.
+    
+    \subsubsection*{Syntax for Creating References}
+    
+    In Lettuce, references are created using the "ref" keyword, which allocates a mutable storage location that can hold a value.
+    
+    \begin{highlight}[Creating References]
+    
+        This example demonstrates how to create a reference in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Creating a reference
+    let xRef = ref(10)
+    \end{code}
+    
+        In this example, "xRef" is a reference that initially holds the value "10". This reference can be updated or read later in the program.
+    
+        \begin{itemize}
+            \item References are created using the "ref" keyword.
+            \item Allocates a mutable storage location for a value.
+            \item Enables variables to hold mutable state.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Dereferencing}
+    
+    Dereferencing is the process of accessing the value stored in a reference. In Lettuce, this is done using the "!" operator.
+    
+    \begin{highlight}[Dereferencing]
+    
+        This example shows how to dereference a reference in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Dereferencing a reference
+    let xRef = ref(10) in
+    let x = !xRef
+    \end{code}
+    
+        In this example, the "!xRef" expression accesses the current value stored in "xRef", which is "10", and assigns it to "x".
+    
+        \begin{itemize}
+            \item Dereferencing accesses the value stored in a reference.
+            \item Uses the "!" operator to retrieve the value.
+            \item Allows reading the current state of a reference.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Updating References}
+    
+    References in Lettuce can be updated using the ":=" operator, which assigns a new value to the reference.
+    
+    \begin{highlight}[Updating References]
+    
+        This example demonstrates how to update a reference in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Updating a reference
+    let xRef = ref(10) in
+    xRef := 20
+    \end{code}
+    
+        In this example, the value of "xRef" is updated to "20" using the ":=" operator, changing the stored value from "10" to "20".
+    
+        \begin{itemize}
+            \item References are updated using the ":=" operator.
+            \item Assigns a new value to the reference.
+            \item Enables variables to be modified and shared across different scopes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Combining References with Functions}
+    
+    References can be combined with functions to encapsulate mutable state and create more complex behaviors.
+    
+    \begin{highlight}[Combining References with Functions]
+    
+        This example shows how to use references within a function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Using references in a function
+    let makeCounter = fun() {
+        let countRef = ref(0) in
+        fun() {
+            countRef := !countRef + 1;
+            !countRef
+        }
+    } in
+    let counter = makeCounter() in
+    counter(); counter()
+    \end{code}
+    
+        In this example, "makeCounter" creates a function that maintains a counter using a reference. Each call to "counter" increments the count and returns the updated value.
+    
+        \begin{itemize}
+            \item References can be used within functions to encapsulate mutable state.
+            \item Allows functions to maintain state across multiple calls.
+            \item Enables more complex behaviors through state manipulation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Explicit references in Lettuce provide a way to create and manipulate mutable state. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Creating References}: Use the "ref" keyword to allocate mutable storage locations.
+            \item \textbf{Dereferencing}: Access the value stored in a reference using the "!" operator.
+            \item \textbf{Updating References}: Change the value of a reference using the ":=" operator.
+            \item \textbf{Combining References with Functions}: Use references within functions to encapsulate state and create complex behaviors.
+        \end{itemize}
+    
+        These features allow for stateful programming in Lettuce, enabling variables to be updated and shared across different scopes.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Side Effects And Referential Transparency}.
+
+\begin{notes}{Side Effects And Referential Transparency}
+    \subsection*{Overview}
+
+    Side effects and referential transparency are key concepts in functional programming that affect how functions interact with state and other expressions. Understanding these concepts helps in 
+    writing clearer and more predictable code.
+    
+    \subsubsection*{Side Effects}
+    
+    A side effect occurs when a function modifies some state outside its scope or interacts with the outside world, such as updating a variable, modifying a data structure, or performing I/O operations.
+    
+    \begin{highlight}[Side Effects]
+    
+        This example demonstrates a function with side effects in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function with side effects
+    let xRef = ref(10) in
+    let increment = fun() {
+        xRef := !xRef + 1
+    } in
+    increment(); !xRef
+    \end{code}
+    
+        In this example, the "increment" function updates the value of "xRef", which is a side effect because it modifies the state outside its local scope.
+    
+        \begin{itemize}
+            \item Side effects occur when a function modifies state or interacts with the outside world.
+            \item Examples include updating variables, modifying data structures, and performing I/O operations.
+            \item Functions with side effects can lead to unpredictable behavior if not managed carefully.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Referential Transparency}
+    
+    Referential transparency means that an expression can be replaced with its value without changing the program's behavior. Functions without side effects are referentially transparent because they 
+    always produce the same output for the same input.
+    
+    \begin{highlight}[Referential Transparency]
+    
+        This example shows a referentially transparent function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Referentially transparent function
+    let add = fun(x, y) {
+        x + y
+    } in
+    add(3, 4)
+    \end{code}
+    
+        In this example, the "add" function is referentially transparent because calling "add(3, 4)" will always return "7", and it can be replaced with "7" in the program.
+    
+        \begin{itemize}
+            \item Referential transparency allows expressions to be replaced with their values without changing program behavior.
+            \item Functions without side effects are referentially transparent.
+            \item Ensures predictable and consistent results.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Benefits of Referential Transparency}
+    
+    Referentially transparent functions provide several benefits, including easier reasoning about code, simplified testing, and the ability to perform optimizations like memoization.
+    
+    \begin{highlight}[Benefits of Referential Transparency]
+    
+        This example illustrates the benefits of referential transparency in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Using referential transparency
+    let square = fun(x) {
+        x * x
+    } in
+    let result = square(4) + square(4)
+    \end{code}
+    
+        In this example, "square(4)" can be replaced with "16" without changing the behavior of the program. This allows for optimizations like computing "square(4)" once and reusing the result.
+    
+        \begin{itemize}
+            \item Easier reasoning about code as functions always produce the same output for the same input.
+            \item Simplified testing since functions are predictable.
+            \item Enables optimizations such as memoization, where results are cached for efficiency.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Balancing Side Effects and Referential Transparency}
+    
+    While functional programming emphasizes referential transparency, some side effects are necessary, such as I/O operations. It is essential to balance side effects with referential transparency 
+    to maintain clarity and predictability in the code.
+    
+    \begin{highlight}[Balancing Side Effects and Referential Transparency]
+    
+        This example shows how to balance side effects with referential transparency in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Balancing side effects
+    let readValue = fun() {
+        // hypothetical input function
+        readInput()
+    } in
+    let processValue = fun(val) {
+        val * 2
+    } in
+    let result = processValue(readValue())
+    \end{code}
+    
+        In this example, "readValue" contains a side effect (reading input), while "processValue" remains referentially transparent, balancing necessary side effects with pure functions.
+    
+        \begin{itemize}
+            \item Functional programming emphasizes minimizing side effects.
+            \item Some side effects are necessary, such as I/O operations.
+            \item Balance side effects with referentially transparent functions for clarity and predictability.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Understanding side effects and referential transparency is crucial for writing clear and predictable functional programs. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Side Effects}: Occur when a function modifies state or interacts with the outside world, leading to potential unpredictability.
+            \item \textbf{Referential Transparency}: Functions that always produce the same output for the same input, allowing expressions to be replaced with their values.
+            \item \textbf{Benefits of Referential Transparency}: Easier reasoning about code, simplified testing, and optimization opportunities like memoization.
+            \item \textbf{Balancing Side Effects and Referential Transparency}: While some side effects are necessary, they should be balanced with pure functions to maintain code clarity and predictability.
+        \end{itemize}
+    
+        These concepts are foundational in functional programming, guiding the design and implementation of functions in Lettuce.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Explicit References In Lettuce: Semantics}.
+
+\begin{notes}{Explicit References In Lettuce: Semantics}
+    \subsection*{Overview}
+
+    The semantics of explicit references in Lettuce describe how references behave during program execution, including creation, dereferencing, updating, and their interaction with the environment.
+    
+    \subsubsection*{Semantics of Creating References}
+    
+    Creating a reference in Lettuce involves allocating a mutable storage location that can hold a value. This is done using the "ref" keyword.
+    
+    \begin{highlight}[Semantics of Creating References]
+    
+        When a reference is created, it allocates a new storage location.
+    
+    \begin{code}[Lettuce]
+    // Creating a reference
+    let xRef = ref(10)
+    \end{code}
+    
+        In this example, "xRef" is a reference to a mutable location that initially holds the value "10". This location can be updated or accessed later.
+    
+        \begin{itemize}
+            \item Creates a new storage location for the value.
+            \item The initial value is stored at the reference location.
+            \item References provide mutable state within the program.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Semantics of Dereferencing}
+    
+    Dereferencing accesses the current value stored in a reference. This is done using the "!" operator, which retrieves the value from the reference's storage location.
+    
+    \begin{highlight}[Semantics of Dereferencing]
+    
+        Dereferencing retrieves the value from a reference.
+    
+    \begin{code}[Lettuce]
+    // Dereferencing a reference
+    let xRef = ref(10) in
+    let x = !xRef
+    \end{code}
+    
+        In this example, "!xRef" accesses the value "10" stored in "xRef", which is then assigned to "x".
+    
+        \begin{itemize}
+            \item Accesses the value stored at the reference's location.
+            \item Uses the "!" operator to retrieve the current value.
+            \item Allows reading the state of a mutable reference.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Semantics of Updating References}
+    
+    Updating a reference changes the value stored at its location. This is performed using the ":=" operator, which assigns a new value to the reference.
+    
+    \begin{highlight}[Semantics of Updating References]
+    
+        Updating modifies the value at a reference's storage location.
+    
+    \begin{code}[Lettuce]
+    // Updating a reference
+    let xRef = ref(10) in
+    xRef := 20
+    \end{code}
+    
+        In this example, the value of "xRef" is updated to "20", changing the stored value from "10" to "20".
+    
+        \begin{itemize}
+            \item Changes the value at the reference's location.
+            \item Uses the ":=" operator to assign a new value.
+            \item Enables variables to be modified and shared across scopes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Environment Interaction}
+    
+    References interact with the environment by allowing mutable state to be shared and updated across different scopes. This can lead to complex state management scenarios.
+    
+    \begin{highlight}[Environment Interaction]
+    
+        References enable shared mutable state across different scopes.
+    
+    \begin{code}[Lettuce]
+    // Environment interaction with references
+    let xRef = ref(10) in
+    let increment = fun() {
+        xRef := !xRef + 1
+    } in
+    increment(); increment(); !xRef
+    \end{code}
+    
+        In this example, "increment" modifies the state of "xRef", which is accessible from different parts of the program. The final value of "xRef" is "12" after two increments.
+    
+        \begin{itemize}
+            \item References allow mutable state to be shared across scopes.
+            \item Functions can modify references, affecting the global state.
+            \item Careful management is required to avoid unexpected behavior.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Garbage Collection}
+    
+    In Lettuce, references are managed by garbage collection, which automatically reclaims memory that is no longer accessible. This ensures efficient memory use.
+    
+    \begin{highlight}[Garbage Collection]
+    
+        References are subject to garbage collection.
+    
+    \begin{code}[Lettuce]
+    // Implicit memory management
+    let xRef = ref(10) in
+    xRef := 20; // Updates the reference
+    // Reference will be collected when no longer accessible
+    \end{code}
+    
+        In this example, "xRef" is a reference that will be collected when it is no longer reachable from the program, ensuring efficient memory management.
+    
+        \begin{itemize}
+            \item References are automatically managed by garbage collection.
+            \item Memory is reclaimed when references are no longer accessible.
+            \item Promotes efficient memory use and reduces manual management.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        The semantics of explicit references in Lettuce describe how references behave and interact within the program. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Semantics of Creating References}: Allocates mutable storage locations for values, providing mutable state.
+            \item \textbf{Semantics of Dereferencing}: Retrieves the current value stored at a reference's location using the "!" operator.
+            \item \textbf{Semantics of Updating References}: Modifies the value at a reference's location using the ":=" operator.
+            \item \textbf{Environment Interaction}: Allows mutable state to be shared across scopes, requiring careful management.
+            \item \textbf{Garbage Collection}: Automatically reclaims memory of references when they are no longer accessible.
+        \end{itemize}
+    
+        These semantics enable stateful programming in Lettuce, allowing variables to be updated and shared across different parts of a program.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Implicit References In Lettuce: Syntax}.
+
+\begin{notes}{Implicit References In Lettuce: Syntax}
+    \subsection*{Overview}
+
+    Implicit references in Lettuce provide a way to handle mutable state without explicitly managing references. This simplifies the syntax and helps maintain cleaner code by abstracting reference handling.
+    
+    \subsubsection*{Implicit Reference Creation}
+    
+    In Lettuce, implicit references are created automatically when variables are defined within a mutable context, without the need for explicit "ref" syntax.
+    
+    \begin{highlight}[Implicit Reference Creation]
+    
+        This example demonstrates how implicit references are created in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Implicit reference creation
+    var x = 10
+    \end{code}
+    
+        In this example, "x" is implicitly treated as a reference, capable of being updated without explicitly using the "ref" keyword.
+    
+        \begin{itemize}
+            \item Implicit references are created automatically in mutable contexts.
+            \item No need for explicit "ref" syntax.
+            \item Variables are treated as references when defined with "var".
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Accessing Implicit References}
+    
+    Accessing the value of an implicit reference in Lettuce does not require explicit dereferencing, simplifying the syntax for reading variable values.
+    
+    \begin{highlight}[Accessing Implicit References]
+    
+        This example shows how to access implicit references in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Accessing an implicit reference
+    var y = 20
+    let z = y + 5
+    \end{code}
+    
+        In this example, "y" is implicitly a reference, and its value can be accessed directly in the expression "y + 5", resulting in "25" assigned to "z".
+    
+        \begin{itemize}
+            \item Accessing implicit references does not require dereferencing.
+            \item Variables can be used directly in expressions.
+            \item Simplifies the syntax for reading variable values.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Updating Implicit References}
+    
+    Updating the value of an implicit reference in Lettuce is straightforward, using the assignment operator "=" to change the value stored in the reference.
+    
+    \begin{highlight}[Updating Implicit References]
+    
+        This example demonstrates how to update implicit references in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Updating an implicit reference
+    var count = 0
+    count = count + 1
+    \end{code}
+    
+        In this example, "count" is updated by incrementing its value. The assignment "count = count + 1" modifies the implicit reference.
+    
+        \begin{itemize}
+            \item Implicit references are updated using the assignment operator "=".
+            \item Allows straightforward modification of variable values.
+            \item Maintains clear and concise syntax.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Combining Implicit References with Functions}
+    
+    Implicit references can be used within functions to maintain state, providing an easy way to encapsulate mutable data without explicit reference management.
+    
+    \begin{highlight}[Combining Implicit References with Functions]
+    
+        This example shows how to use implicit references within a function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Using implicit references in a function
+    let createCounter = fun() {
+        var count = 0
+        fun() {
+            count = count + 1;
+            count
+        }
+    }
+    let counter = createCounter()
+    counter(); counter()
+    \end{code}
+    
+        In this example, "createCounter" returns a function that maintains a "count" variable. Each call to "counter" increments "count" and returns the updated value.
+    
+        \begin{itemize}
+            \item Implicit references can be used within functions to encapsulate mutable state.
+            \item Allows functions to maintain and update internal state across calls.
+            \item Simplifies state management without explicit reference handling.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Implicit references in Lettuce simplify the management of mutable state by abstracting reference handling. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Implicit Reference Creation}: Automatically created in mutable contexts without explicit "ref" syntax.
+            \item \textbf{Accessing Implicit References}: No need for explicit dereferencing; variables are accessed directly.
+            \item \textbf{Updating Implicit References}: Use the assignment operator "=" for straightforward value modification.
+            \item \textbf{Combining Implicit References with Functions}: Encapsulate mutable state within functions for simplified state management.
+        \end{itemize}
+    
+        These features enable cleaner syntax and easier management of mutable state in Lettuce.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Implicit References In Lettuce: Semantics}.
+
+\begin{notes}{Implicit References In Lettuce: Semantics}
+    \subsection*{Overview}
+
+    The semantics of implicit references in Lettuce describe how mutable state is managed without explicit reference syntax. Implicit references simplify variable management by handling references automatically during execution.
+    
+    \subsubsection*{Semantics of Implicit Reference Creation}
+    
+    Implicit references in Lettuce are automatically created when variables are declared with "var", allocating storage for mutable state.
+    
+    \begin{highlight}[Semantics of Implicit Reference Creation]
+    
+        When a variable is declared with "var", it becomes an implicit reference.
+    
+    \begin{code}[Lettuce]
+    // Implicit reference creation
+    var x = 10
+    \end{code}
+    
+        In this example, "x" is implicitly treated as a reference, with storage allocated for the initial value "10".
+    
+        \begin{itemize}
+            \item Implicitly creates a reference with allocated storage.
+            \item Variables declared with "var" are mutable.
+            \item Simplifies state management without explicit reference syntax.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Semantics of Accessing Implicit References}
+    
+    Accessing an implicit reference retrieves its current value without the need for explicit dereferencing. This simplifies reading values during program execution.
+    
+    \begin{highlight}[Semantics of Accessing Implicit References]
+    
+        Accessing retrieves the current value stored in the reference.
+    
+    \begin{code}[Lettuce]
+    // Accessing an implicit reference
+    var y = 20
+    let z = y + 5
+    \end{code}
+    
+        In this example, "y" is accessed directly in the expression "y + 5", resulting in "25" assigned to "z".
+    
+        \begin{itemize}
+            \item Directly retrieves the value of the reference.
+            \item No explicit dereferencing is required.
+            \item Simplifies syntax for accessing variable values.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Semantics of Updating Implicit References}
+    
+    Updating an implicit reference modifies the value stored in its allocated storage, using the assignment operator "=".
+    
+    \begin{highlight}[Semantics of Updating Implicit References]
+    
+        Updating changes the value of an implicit reference.
+    
+    \begin{code}[Lettuce]
+    // Updating an implicit reference
+    var count = 0
+    count = count + 1
+    \end{code}
+    
+        In this example, the value of "count" is updated by incrementing it, changing the stored value from "0" to "1".
+    
+        \begin{itemize}
+            \item Uses the assignment operator "=" to update the value.
+            \item Modifies the value stored in the reference's storage.
+            \item Allows straightforward updates to mutable variables.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Environment Interaction with Implicit References}
+    
+    Implicit references interact with the environment by allowing mutable state to be maintained and updated within different scopes, promoting encapsulation.
+    
+    \begin{highlight}[Environment Interaction with Implicit References]
+    
+        Implicit references allow shared mutable state across different scopes.
+    
+    \begin{code}[Lettuce]
+    // Environment interaction with implicit references
+    var x = 10
+    let increment = fun() {
+        x = x + 1
+    }
+    increment(); increment(); x
+    \end{code}
+    
+        In this example, "increment" modifies "x", which is accessible in the global scope. The final value of "x" is "12" after two increments.
+    
+        \begin{itemize}
+            \item Maintains mutable state within different scopes.
+            \item Functions can update implicit references, affecting global state.
+            \item Facilitates encapsulation of mutable data.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Garbage Collection and Implicit References}
+    
+    Implicit references in Lettuce are subject to garbage collection, which automatically reclaims memory when references are no longer accessible.
+    
+    \begin{highlight}[Garbage Collection and Implicit References]
+    
+        Implicit references are managed by garbage collection.
+    
+    \begin{code}[Lettuce]
+    // Implicit memory management
+    var temp = 5
+    temp = 10 // Updates the reference
+    // Reference is collected when no longer accessible
+    \end{code}
+    
+        In this example, "temp" is an implicit reference that will be collected when it is no longer reachable, ensuring efficient memory use.
+    
+        \begin{itemize}
+            \item Managed automatically by garbage collection.
+            \item Memory is reclaimed when references are no longer accessible.
+            \item Promotes efficient memory management without manual intervention.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        The semantics of implicit references in Lettuce simplify mutable state management. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Semantics of Implicit Reference Creation}: Automatically creates references with allocated storage for mutable variables.
+            \item \textbf{Semantics of Accessing Implicit References}: Directly retrieves the current value without explicit dereferencing.
+            \item \textbf{Semantics of Updating Implicit References}: Modifies the value stored in the reference using the assignment operator.
+            \item \textbf{Environment Interaction with Implicit References}: Allows mutable state to be maintained and updated within different scopes.
+            \item \textbf{Garbage Collection and Implicit References}: Automatically reclaims memory of references when they are no longer accessible.
+        \end{itemize}
+    
+        These semantics provide a simplified approach to managing mutable state in Lettuce, enhancing code readability and maintainability.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Functions: Call By Value Vs Call By Reference}.
+
+\begin{notes}{Functions: Call By Value Vs Call By Reference}
+    \subsection*{Overview}
+
+    Understanding the difference between call by value and call by reference is essential in functional programming. These concepts determine how arguments are passed to functions and how changes to those arguments affect the original data.
+    
+    \subsubsection*{Call By Value}
+    
+    In call by value, arguments are evaluated before being passed to a function. The function operates on the values, and changes within the function do not affect the original arguments.
+    
+    \begin{highlight}[Call By Value]
+    
+        This example demonstrates call by value in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Call by value example
+    let increment = fun(x) {
+        x = x + 1;
+        x
+    } in
+    let a = 5 in
+    increment(a); a
+    \end{code}
+    
+        In this example, the argument "a" is evaluated to "5" and passed to "increment". The function increments "x", but "a" remains unchanged outside the function.
+    
+        \begin{itemize}
+            \item Arguments are evaluated before being passed to the function.
+            \item Functions operate on copies of the arguments.
+            \item Changes within the function do not affect the original arguments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Call By Reference}
+    
+    In call by reference, arguments are passed as references, allowing the function to modify the original data. Changes made within the function affect the original arguments.
+    
+    \begin{highlight}[Call By Reference]
+    
+        This example demonstrates call by reference in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Call by reference example
+    var b = 5
+    let incrementRef = fun(xRef) {
+        xRef = xRef + 1
+    } in
+    incrementRef(b); b
+    \end{code}
+    
+        In this example, "b" is passed by reference to "incrementRef". The function modifies "b", and the change is reflected outside the function, with "b" becoming "6".
+    
+        \begin{itemize}
+            \item Arguments are passed as references, allowing modification.
+            \item Functions operate on the actual data.
+            \item Changes within the function affect the original arguments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comparison of Call By Value and Call By Reference}
+    
+    Understanding the differences between call by value and call by reference helps determine which method to use based on the requirements of the program.
+    
+    \begin{highlight}[Comparison of Call By Value and Call By Reference]
+    
+        This table summarizes the differences between the two methods:
+    
+        \begin{center}
+            \begin{tabular}{|l|l|l|}
+                \hline
+                \textbf{Aspect} & \textbf{Call By Value} & \textbf{Call By Reference} \\
+                \hline
+                Evaluation & Arguments evaluated before passing & References passed directly \\
+                \hline
+                Modification & Changes do not affect original data & Changes affect original data \\
+                \hline
+                Usage & Suitable for immutable data & Suitable for mutable data \\
+                \hline
+                Overhead & Lower overhead, no aliasing issues & Potential aliasing issues \\
+                \hline
+            \end{tabular}
+        \end{center}
+    
+        \begin{itemize}
+            \item \textbf{Call By Value}: Good for cases where data should not be modified.
+            \item \textbf{Call By Reference}: Useful when modifications to data are needed.
+            \item Consider the impact on data when choosing between the two.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implications in Lettuce}
+    
+    In Lettuce, understanding the distinction between call by value and call by reference impacts how functions are designed and used, particularly in terms of side effects and data integrity.
+    
+    \begin{highlight}[Implications in Lettuce]
+    
+        Consider these implications when using call by value and call by reference:
+    
+        \begin{itemize}
+            \item \textbf{Data Integrity}: Call by value preserves data integrity by preventing accidental modifications.
+            \item \textbf{Efficiency}: Call by reference can be more efficient for large data structures but risks unintended side effects.
+            \item \textbf{Side Effects}: Call by reference introduces side effects that can complicate reasoning about code behavior.
+            \item \textbf{Best Practices}: Use call by value for safety and predictability; use call by reference when necessary for performance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Understanding call by value and call by reference is crucial for effective function design in Lettuce. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Call By Value}: Arguments are evaluated before being passed, with no modifications to the original data.
+            \item \textbf{Call By Reference}: Arguments are passed as references, allowing modifications to the original data.
+            \item \textbf{Comparison}: Differences include evaluation, modification, usage, and potential overhead.
+            \item \textbf{Implications in Lettuce}: Considerations include data integrity, efficiency, side effects, and best practices.
+        \end{itemize}
+    
+        These concepts guide function design and usage in Lettuce, balancing performance and data integrity.
+    
+    \end{highlight}
+\end{notes}
+
+The last topic that is being covered this week is \textbf{Garbage Collection}.
+
+\begin{notes}{Garbage Collection}
+    \subsection*{Overview}
+
+    Garbage collection in Lettuce is a memory management process that automatically reclaims memory allocated to objects that are no longer accessible. This helps prevent memory leaks and ensures efficient memory usage.
+    
+    \subsubsection*{Purpose of Garbage Collection}
+    
+    The main purpose of garbage collection is to manage memory automatically, freeing developers from manual memory management and reducing the risk of memory-related errors.
+    
+    \begin{highlight}[Purpose of Garbage Collection]
+    
+        Garbage collection helps in:
+    
+        \begin{itemize}
+            \item Automatically reclaiming memory occupied by unused objects.
+            \item Preventing memory leaks by ensuring all inaccessible objects are collected.
+            \item Simplifying memory management for developers, reducing errors.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{How Garbage Collection Works}
+    
+    Garbage collection identifies objects that are no longer reachable from any references in the program and reclaims their memory.
+    
+    \begin{highlight}[How Garbage Collection Works]
+    
+        The process typically involves:
+    
+        \begin{itemize}
+            \item \textbf{Marking}: Identifying all accessible objects by traversing reference graphs.
+            \item \textbf{Sweeping}: Reclaiming memory occupied by objects that are not marked as accessible.
+            \item \textbf{Compacting}: Optionally rearranging memory to reduce fragmentation and optimize space.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Types of Garbage Collection Strategies}
+    
+    Various strategies are used in garbage collection to efficiently manage memory. Common strategies include:
+    
+    \begin{highlight}[Types of Garbage Collection Strategies]
+    
+        \begin{itemize}
+            \item \textbf{Reference Counting}: Counts references to each object, reclaiming memory when the count reaches zero.
+            \item \textbf{Mark-and-Sweep}: Marks all accessible objects and sweeps through memory to collect unmarked ones.
+            \item \textbf{Copying Collection}: Divides memory into two spaces, copying active objects to the second space and collecting the first.
+            \item \textbf{Generational Collection}: Separates objects by age, focusing collection efforts on younger objects that are more likely to be garbage.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Garbage Collection}
+    
+    Garbage collection provides several advantages, contributing to improved program safety and performance.
+    
+    \begin{highlight}[Advantages of Garbage Collection]
+    
+        \begin{itemize}
+            \item \textbf{Automatic Memory Management}: Reduces the need for manual memory handling, decreasing errors.
+            \item \textbf{Prevents Memory Leaks}: Automatically collects unused objects, avoiding memory waste.
+            \item \textbf{Simplifies Development}: Developers can focus on programming logic without worrying about memory deallocation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Challenges of Garbage Collection}
+    
+    Despite its advantages, garbage collection presents some challenges that need to be addressed.
+    
+    \begin{highlight}[Challenges of Garbage Collection]
+    
+        \begin{itemize}
+            \item \textbf{Performance Overhead}: Garbage collection can introduce pauses in program execution, affecting performance.
+            \item \textbf{Latency}: The timing of garbage collection cycles may introduce delays in response time.
+            \item \textbf{Complexity}: Implementing efficient garbage collection algorithms can be complex and requires careful tuning.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Garbage collection in Lettuce ensures efficient memory management and reduces the risk of memory-related errors. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Purpose of Garbage Collection}: Automatically reclaims memory occupied by unused objects, preventing leaks.
+            \item \textbf{How Garbage Collection Works}: Involves marking accessible objects, sweeping unmarked ones, and compacting memory.
+            \item \textbf{Types of Garbage Collection Strategies}: Includes reference counting, mark-and-sweep, copying collection, and generational collection.
+            \item \textbf{Advantages of Garbage Collection}: Provides automatic memory management, prevents memory leaks, and simplifies development.
+            \item \textbf{Challenges of Garbage Collection}: Includes performance overhead, latency, and the complexity of implementation.
+        \end{itemize}
+    
+        These concepts are essential for understanding memory management in Lettuce and writing efficient, error-free programs.
+    
+    \end{highlight}
+\end{notes}

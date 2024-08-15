@@ -1,0 +1,846 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Functions And Recursion In Lettuce}
+\renewcommand{\SectionTitle}{Functions And Recursion In Lettuce}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AtomicScalaBook, \EssOfPPLBook, \FuncOfPPLBook, and \ProgInScalaBook:
+
+\begin{itemize}
+    \item \textbf{N/A}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=qKD5zskEpYI}{Functions: Syntax}{11}
+    \item \lecture{https://www.youtube.com/watch?v=usq4V-trsBs}{Functions: Closures}{8}
+    \item \lecture{https://www.youtube.com/watch?v=ewCbkX-U35A}{Functions: Semantics}{13}
+    \item \lecture{https://www.youtube.com/watch?v=-RAUiUm9n2M}{Recursion In Lettuce}{24}
+    \item \lecture{https://www.youtube.com/watch?v=UyfSCr2OkF0}{Recursion: Y-Combinators}{7}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item Jupyter Notebooks
+    \begin{itemize}
+        \item \textbf{Functions And Recursion In Lettuce - Lettuce Function Calls Lecture Notes}
+        \item \textbf{Functions And Recursion In Lettuce - Recursion In Lettuce Lecture Notes}
+        \item \textbf{Functions And Recursion In Lettuce Recitation}
+        \item \textbf{Functions And Recursion In Lettuce Recitation Solutions}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNotesDir Spot Exam 2 Notes.pdf}{Spot Exam 2 Notes}
+    \item \pdflink{\ExamsDir Spot Exam 2.pdf}{Spot Exam 2}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first topic that is being covered this week is \textbf{Functions: Syntax}.
+
+\begin{notes}{Functions: Syntax}
+    \subsection*{Overview}
+
+    Functions in Lettuce are defined using a specific syntax that allows you to create reusable blocks of code. Understanding the syntax for defining and using functions is fundamental for writing 
+    effective Lettuce programs.
+    
+    \subsubsection*{Function Syntax}
+    
+    In Lettuce, functions are defined using the "fun" keyword. A function takes parameters and a body, which is an expression that defines the computation performed by the function.
+    
+    \begin{highlight}[Function Syntax]
+    
+        This example demonstrates the basic syntax for defining a function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function definition
+    let add = fun(x, y) {
+        x + y
+    } in
+    add(3, 4)
+    \end{code}
+    
+        In this example, a function "add" is defined to take two parameters "x" and "y" and return their sum. The function is then invoked with the arguments "3" and "4".
+    
+        \begin{itemize}
+            \item Functions are defined using the "fun" keyword.
+            \item Functions take parameters and a body expression.
+            \item The body defines the computation performed by the function.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Single Parameter Functions}
+    
+    Functions in Lettuce can also be defined with a single parameter. The syntax is similar to multi-parameter functions but with only one parameter.
+    
+    \begin{highlight}[Single Parameter Functions]
+    
+        This example shows how to define a function with a single parameter in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Single parameter function
+    let square = fun(x) {
+        x * x
+    } in
+    square(5)
+    \end{code}
+    
+        In this example, the function "square" is defined to take one parameter "x" and return "x * x". The function is then invoked with the argument "5".
+    
+        \begin{itemize}
+            \item Functions can be defined with a single parameter.
+            \item The syntax is similar to multi-parameter functions.
+            \item Useful for simple operations on a single input.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Anonymous Functions}
+    
+    Lettuce supports anonymous functions (lambdas), which are functions defined without a name. These are useful for creating quick, throwaway functions.
+    
+    \begin{highlight}[Anonymous Functions]
+    
+        This example demonstrates the syntax for defining and using an anonymous function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Anonymous function
+    let result = (fun(x) { x * x })(6)
+    \end{code}
+    
+        In this example, an anonymous function that squares its input is defined and immediately invoked with the argument "6".
+    
+        \begin{itemize}
+            \item Anonymous functions are defined without a name.
+            \item Useful for quick, throwaway functions.
+            \item Can be defined and invoked inline.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Higher-Order Functions}
+    
+    Lettuce allows the definition of higher-order functions, which are functions that take other functions as parameters or return functions as results.
+    
+    \begin{highlight}[Higher-Order Functions]
+    
+        This example shows how to define and use a higher-order function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Higher-order function
+    let applyTwice = fun(f, x) {
+        f(f(x))
+    } in
+    let addOne = fun(n) {
+        n + 1
+    } in
+    applyTwice(addOne, 5)
+    \end{code}
+    
+        In this example, "applyTwice" is a higher-order function that takes a function "f" and a value "x" and applies "f" to "x" twice. The "addOne" function is then passed to "applyTwice".
+    
+        \begin{itemize}
+            \item Higher-order functions take other functions as parameters or return functions.
+            \item Enable powerful abstractions and code reuse.
+            \item Useful for applying functions in a flexible manner.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Recursive Functions}
+    
+    Lettuce supports recursive functions, which are functions that call themselves within their definition. This is useful for solving problems that can be broken down into smaller subproblems.
+    
+    \begin{highlight}[Recursive Functions]
+    
+        This example demonstrates how to define a recursive function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Recursive function
+    letrec factorial = fun(n) {
+        if n == 0 then 1 else n * factorial(n - 1)
+    } in
+    factorial(5)
+    \end{code}
+    
+        In this example, the "factorial" function is defined recursively to compute the factorial of a number "n". It calls itself with "n - 1" until "n" is "0".
+    
+        \begin{itemize}
+            \item Recursive functions call themselves within their definition.
+            \item Useful for solving problems that can be broken down into smaller subproblems.
+            \item Enables elegant and concise solutions to complex problems.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Understanding the syntax for defining and using functions in Lettuce is fundamental for writing effective programs. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Function Syntax}: Functions are defined using the "fun" keyword with parameters and a body expression.
+            \item \textbf{Single Parameter Functions}: Functions can be defined with a single parameter for simple operations.
+            \item \textbf{Anonymous Functions}: Functions defined without a name, useful for quick, throwaway computations.
+            \item \textbf{Higher-Order Functions}: Functions that take other functions as parameters or return functions.
+            \item \textbf{Recursive Functions}: Functions that call themselves within their definition, useful for solving problems recursively.
+        \end{itemize}
+    
+        These features ensure that functions in Lettuce are powerful tools for creating reusable and modular code.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Functions: Closures}.
+
+\begin{notes}{Functions: Closures}
+    \subsection*{Overview}
+
+    Closures are a fundamental concept in functional programming that allows functions to capture and retain access to their lexical environment even when invoked outside their original scope. In 
+    Lettuce, closures enable functions to maintain state across different invocations.
+    
+    \subsubsection*{Closures}
+    
+    A closure in Lettuce is a function that captures its surrounding environment. This means that the function retains access to the variables from the scope in which it was defined, even if it is 
+    called outside that scope.
+    
+    \begin{highlight}[Closures]
+    
+        This example demonstrates how closures work in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Closure example
+    let makeAdder = fun(x) {
+        fun(y) { x + y }
+    } in
+    let add3 = makeAdder(3) in
+    add3(10)
+    \end{code}
+    
+        In this example, "makeAdder" creates a closure that captures the variable "x". The function "add3" is a closure that adds "3" to its argument, resulting in "13" when called with "10".
+    
+        \begin{itemize}
+            \item Closures capture their surrounding environment.
+            \item Retain access to variables from the scope in which they were defined.
+            \item Allow functions to maintain state across different invocations.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Creating Closures}
+    
+    Closures are created whenever a function is defined within another function. The inner function captures the variables from its enclosing scope.
+    
+    \begin{highlight}[Creating Closures]
+    
+        This example shows how closures are created in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Creating a closure
+    let counter = fun() {
+        let count = 0 in
+        fun() {
+            count = count + 1;
+            count
+        }
+    } in
+    let increment = counter() in
+    increment(); increment()
+    \end{code}
+    
+        In this example, the inner function captures the "count" variable from its enclosing scope. Each time "increment" is called, it increments and returns the value of "count".
+    
+        \begin{itemize}
+            \item Closures are created when a function is defined within another function.
+            \item Inner functions capture variables from their enclosing scope.
+            \item Enable functions to maintain and update state across invocations.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Using Closures for State Management}
+    
+    Closures are often used to manage state in functional programming. By capturing variables from their environment, closures can maintain and update state across multiple function calls.
+    
+    \begin{highlight}[Using Closures for State Management]
+    
+        This example demonstrates how closures can be used for state management in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // State management with closures
+    let makeCounter = fun() {
+        let count = 0 in
+        fun() {
+            count = count + 1;
+            count
+        }
+    } in
+    let counter1 = makeCounter() in
+    let counter2 = makeCounter() in
+    counter1(); counter1(); counter2()
+    \end{code}
+    
+        In this example, "makeCounter" creates a new closure each time it is called, each with its own independent "count" variable. The two counters "counter1" and "counter2" maintain separate states.
+    
+        \begin{itemize}
+            \item Closures can be used to manage state by capturing and updating variables from their environment.
+            \item Each closure instance maintains its own independent state.
+            \item Useful for creating stateful functions in a functional programming context.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Closures in the AST}
+    
+    In the Abstract Syntax Tree (AST) of Lettuce, closures are represented as function nodes that capture their environment. These nodes store references to the variables they capture.
+    
+    \begin{highlight}[Closures in the AST]
+    
+        This example shows how closures are represented in the AST.
+    
+    \begin{code}[Scala]
+    case class Fun(param: String, body: Expr, env: Env) extends Expr
+    case class App(fun: Expr, arg: Expr) extends Expr
+    \end{code}
+    
+        A closure is represented by a "Fun" node that includes a reference to the environment in which it was created, allowing it to access the captured variables.
+    
+        \begin{itemize}
+            \item Closures in the AST are represented as function nodes that capture their environment.
+            \item These nodes store references to the variables they capture.
+            \item Enable functions to access and maintain state from their defining scope.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Evaluating Closures}
+    
+    Evaluating closures in Lettuce involves creating a function with access to its defining environment. When the closure is invoked, it uses the captured environment to resolve variable bindings.
+    
+    \begin{highlight}[Evaluating Closures]
+    
+        This example demonstrates how closures are evaluated in Lettuce.
+    
+    \begin{code}[Scala]
+    def eval(expr: Expr, env: Env): Int = expr match {
+        case Const(value) => value
+        case Var(name) => lookup(env, name)
+        case Add(lhs, rhs) => eval(lhs, env) + eval(rhs, env)
+        case Sub(lhs, rhs) => eval(lhs, env) - eval(rhs, env)
+        case Mul(lhs, rhs) => eval(lhs, env) * eval(rhs, env)
+        case Div(lhs, rhs) => eval(lhs, env) / eval(rhs, env)
+        case Let(name, value, body) => 
+            val valueEval = eval(value, env)
+            val newEnv = extend(env, name, valueEval)
+            eval(body, newEnv)
+        case Fun(param, body, closureEnv) => 
+            (arg: Int) => eval(body, extend(closureEnv, param, arg))
+        case App(fun, arg) => 
+            val funEval = eval(fun, env).asInstanceOf[Int => Int]
+            val argEval = eval(arg, env)
+            funEval(argEval)
+    }
+    \end{code}
+    
+        In this example, a closure is evaluated by creating a function with access to its defining environment. When invoked, it uses the captured environment to resolve variable bindings.
+    
+        \begin{itemize}
+            \item Closures are evaluated by creating functions with access to their defining environment.
+            \item The captured environment is used to resolve variable bindings when the closure is invoked.
+            \item Ensures that closures can access and maintain state from their defining scope.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Closures in Lettuce are a powerful feature that enables functions to capture and retain access to their lexical environment. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Closures}: Functions that capture their surrounding environment, retaining access to variables from their defining scope.
+            \item \textbf{Creating Closures}: Created when a function is defined within another function, capturing variables from the enclosing scope.
+            \item \textbf{Using Closures for State Management}: Used to manage and update state across multiple function calls.
+            \item \textbf{Closures in the AST}: Represented as function nodes that capture their environment, storing references to captured variables.
+            \item \textbf{Evaluating Closures}: Involves creating functions with access to their defining environment and using the captured environment to resolve variable bindings.
+        \end{itemize}
+    
+        These features make closures a powerful tool in functional programming, enabling state management and maintaining context across different invocations.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Functions: Semantics}.
+
+\begin{notes}{Functions: Semantics}
+    \subsection*{Overview}
+
+    Understanding the semantics of functions in Lettuce is crucial for knowing how functions behave during execution. Function semantics describe how functions are interpreted and evaluated, including how arguments are passed, how the function body is executed, and how the results are returned.
+    
+    \subsubsection*{Function Semantics}
+    
+    Function semantics in Lettuce involve the rules and mechanisms by which functions are interpreted and executed. This includes the process of parameter passing, environment handling, and return value computation.
+    
+    \begin{highlight}[Function Semantics]
+    
+        This example demonstrates the basic process of function evaluation in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function definition and application
+    let add = fun(x, y) {
+        x + y
+    } in
+    add(3, 4)
+    \end{code}
+    
+        In this example, the function "add" is defined and then applied to the arguments "3" and "4". The function semantics dictate that the parameters "x" and "y" are bound to "3" and "4", respectively, and the body "x + y" is evaluated to produce the result "7".
+    
+        \begin{itemize}
+            \item Parameters are bound to the arguments provided during function application.
+            \item The function body is evaluated in the context of these bindings.
+            \item The result of the function body is returned as the function's value.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Parameter Passing}
+    
+    In Lettuce, parameters are passed to functions by value. This means that the arguments are evaluated before being passed to the function, and the function operates on these evaluated values.
+    
+    \begin{highlight}[Parameter Passing]
+    
+        This example shows how parameter passing works in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Parameter passing by value
+    let square = fun(x) {
+        x * x
+    } in
+    let a = 4 in
+    square(a + 1)
+    \end{code}
+    
+        In this example, the argument "a + 1" is evaluated to "5" before being passed to the "square" function. The function then operates on the value "5", resulting in "25".
+    
+        \begin{itemize}
+            \item Parameters are passed by value, meaning arguments are evaluated before being passed.
+            \item The function operates on the evaluated values of the arguments.
+            \item Ensures that functions work with concrete values rather than unevaluated expressions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Environment Handling}
+    
+    When a function is called in Lettuce, a new environment is created. This new environment includes the bindings of the function's parameters to the provided arguments and retains access to the environment in which the function was defined.
+    
+    \begin{highlight}[Environment Handling]
+    
+        This example demonstrates how environments are handled during function calls in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Environment handling
+    let x = 10 in
+    let add = fun(y) {
+        x + y
+    } in
+    add(5)
+    \end{code}
+    
+        In this example, when the function "add" is called with "5", a new environment is created where "y" is bound to "5". This new environment also has access to the outer environment where "x" is bound to "10", allowing the function to return "15".
+    
+        \begin{itemize}
+            \item A new environment is created for each function call.
+            \item This new environment includes bindings of parameters to arguments.
+            \item Retains access to the environment in which the function was defined.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Return Values}
+    
+    The return value of a function in Lettuce is the result of evaluating its body. Once the function body has been fully evaluated, this result is returned to the caller.
+    
+    \begin{highlight}[Return Values]
+    
+        This example shows how return values are determined in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function return value
+    let multiply = fun(x, y) {
+        x * y
+    } in
+    multiply(3, 4)
+    \end{code}
+    
+        In this example, the function "multiply" returns the result of evaluating "x * y" with "x" bound to "3" and "y" bound to "4". The return value of the function is "12".
+    
+        \begin{itemize}
+            \item The return value is the result of evaluating the function body.
+            \item The function body is evaluated in the context of the current environment.
+            \item The result is returned to the caller.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Function Composition}
+    
+    Function composition allows functions to be combined to form new functions. In Lettuce, functions can be composed by passing one function as an argument to another or by returning a function as a result.
+    
+    \begin{highlight}[Function Composition]
+    
+        This example demonstrates function composition in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Function composition
+    let addOne = fun(x) { x + 1 } in
+    let square = fun(x) { x * x } in
+    let addOneThenSquare = fun(x) {
+        square(addOne(x))
+    } in
+    addOneThenSquare(4)
+    \end{code}
+    
+        In this example, "addOneThenSquare" is a function that first applies "addOne" to its argument and then applies "square" to the result. When called with "4", it returns "25".
+    
+        \begin{itemize}
+            \item Function composition combines functions to form new functions.
+            \item Functions can be passed as arguments or returned as results.
+            \item Enables the creation of complex behaviors by combining simpler functions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        The semantics of functions in Lettuce describe how functions are interpreted and executed. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Function Semantics}: Rules and mechanisms by which functions are interpreted and executed.
+            \item \textbf{Parameter Passing}: Parameters are passed by value, meaning arguments are evaluated before being passed to the function.
+            \item \textbf{Environment Handling}: A new environment is created for each function call, including parameter bindings and access to the defining environment.
+            \item \textbf{Return Values}: The return value is the result of evaluating the function body in the current environment.
+            \item \textbf{Function Composition}: Functions can be combined by passing them as arguments or returning them as results, enabling complex behaviors.
+        \end{itemize}
+    
+        These features ensure that functions in Lettuce are powerful and flexible tools for creating reusable and modular code.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Recursion In Lettuce}.
+
+\begin{notes}{Recursion In Lettuce}
+    \subsection*{Overview}
+
+    Recursion is a powerful technique in functional programming where a function calls itself to solve a problem. In Lettuce, recursion allows functions to operate on complex data structures and solve problems that can be broken down into smaller subproblems.
+    
+    \subsubsection*{Recursive Functions}
+    
+    In Lettuce, a recursive function is one that calls itself within its own definition. This is useful for tasks that can be naturally divided into simpler, repetitive tasks.
+    
+    \begin{highlight}[Recursive Functions]
+    
+        This example demonstrates a basic recursive function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Recursive function example
+    letrec factorial = fun(n) {
+        if n == 0 then 1 else n * factorial(n - 1)
+    } in
+    factorial(5)
+    \end{code}
+    
+        In this example, the "factorial" function computes the factorial of a number "n". It calls itself with "n - 1" until "n" equals "0". When called with "5", it returns "120".
+    
+        \begin{itemize}
+            \item Recursive functions call themselves within their own definition.
+            \item Useful for tasks that can be divided into simpler, repetitive tasks.
+            \item Enables elegant and concise solutions to complex problems.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Base Case and Recursive Case}
+    
+    A recursive function typically consists of a base case and a recursive case. The base case stops the recursion, while the recursive case reduces the problem and calls the function itself.
+    
+    \begin{highlight}[Base Case and Recursive Case]
+    
+        This example illustrates the structure of a recursive function with a base case and a recursive case.
+    
+    \begin{code}[Lettuce]
+    // Base case and recursive case
+    letrec gcd = fun(a, b) {
+        if b == 0 then a else gcd(b, a % b)
+    } in
+    gcd(48, 18)
+    \end{code}
+    
+        In this example, the "gcd" function computes the greatest common divisor of "a" and "b". The base case is when "b" equals "0", and the recursive case calls "gcd" with "b" and "a % b".
+    
+        \begin{itemize}
+            \item The base case stops the recursion and provides an answer.
+            \item The recursive case reduces the problem and calls the function itself.
+            \item Ensures that the function progresses towards the base case.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Recursive Data Structures}
+    
+    Recursion is particularly useful for operating on recursive data structures, such as lists or trees. Functions can be defined to traverse and manipulate these structures recursively.
+    
+    \begin{highlight}[Recursive Data Structures]
+    
+        This example demonstrates a recursive function that operates on a list.
+    
+    \begin{code}[Lettuce]
+    // Recursive function on a list
+    letrec sumList = fun(lst) {
+        if lst == [] then 0 else head(lst) + sumList(tail(lst))
+    } in
+    sumList([1, 2, 3, 4])
+    \end{code}
+    
+        In this example, the "sumList" function computes the sum of all elements in a list. The base case is when the list is empty, and the recursive case adds the head of the list to the result of "sumList" applied to the tail.
+    
+        \begin{itemize}
+            \item Recursion is useful for operating on recursive data structures like lists or trees.
+            \item Functions can traverse and manipulate these structures recursively.
+            \item The base case handles the simplest form of the data structure, and the recursive case breaks it down further.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Tail Recursion}
+    
+    Tail recursion is a specific form of recursion where the recursive call is the last operation in the function. This allows for optimizations by the compiler or interpreter, converting the recursion into iteration.
+    
+    \begin{highlight}[Tail Recursion]
+    
+        This example demonstrates a tail-recursive function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Tail-recursive function
+    letrec factorial = fun(n, acc) {
+        if n == 0 then acc else factorial(n - 1, n * acc)
+    } in
+    factorial(5, 1)
+    \end{code}
+    
+        In this example, the "factorial" function is written in a tail-recursive manner. The accumulator "acc" carries the result, and the recursive call is the last operation in the function.
+    
+        \begin{itemize}
+            \item Tail recursion allows for optimization by converting recursion into iteration.
+            \item The recursive call is the last operation in the function.
+            \item Useful for preventing stack overflow in deep recursions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mutual Recursion}
+    
+    Mutual recursion occurs when two or more functions call each other recursively. This can be used to solve problems where multiple functions need to collaborate.
+    
+    \begin{highlight}[Mutual Recursion]
+    
+        This example shows how mutual recursion can be implemented in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Mutual recursion example
+    letrec isEven = fun(n) {
+        if n == 0 then true else isOdd(n - 1)
+    } and isOdd = fun(n) {
+        if n == 0 then false else isEven(n - 1)
+    } in
+    isEven(4)
+    \end{code}
+    
+        In this example, "isEven" and "isOdd" are mutually recursive functions that determine if a number is even or odd. "isEven" calls "isOdd" and vice versa, reducing the problem until "n" is "0".
+    
+        \begin{itemize}
+            \item Mutual recursion involves two or more functions calling each other.
+            \item Useful for solving problems that require collaboration between multiple functions.
+            \item Each function handles a part of the problem and defers to the other function for the next step.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        Recursion in Lettuce allows functions to call themselves to solve problems that can be broken down into smaller subproblems. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Recursive Functions}: Functions that call themselves within their own definition.
+            \item \textbf{Base Case and Recursive Case}: The base case stops the recursion, while the recursive case reduces the problem and calls the function itself.
+            \item \textbf{Recursive Data Structures}: Recursion is useful for operating on data structures like lists and trees.
+            \item \textbf{Tail Recursion}: A form of recursion where the recursive call is the last operation, allowing for optimization.
+            \item \textbf{Mutual Recursion}: Occurs when two or more functions call each other recursively, solving problems collaboratively.
+        \end{itemize}
+    
+        These features make recursion a powerful tool in Lettuce for solving complex problems in a modular and efficient way.
+    
+    \end{highlight}
+\end{notes}
+
+The last topic that is being covered this week is \textbf{Recursion: Y-Combinators}.
+
+\begin{notes}{Recursion: Y-Combinators}
+    \subsection*{Overview}
+
+    The Y-combinator is a higher-order function used in functional programming to enable recursion in languages that do not support named recursive functions directly. It allows the definition of anonymous recursive functions by finding fixed points of higher-order functions.
+    
+    \subsubsection*{Understanding Y-Combinators}
+    
+    The Y-combinator is a fixed-point combinator that enables recursion by transforming a non-recursive function into a recursive one. It is particularly useful in lambda calculus and functional languages that support higher-order functions.
+    
+    \begin{highlight}[Understanding Y-Combinators]
+    
+        This example demonstrates the concept of the Y-combinator in a simplified form.
+    
+    \begin{code}[Lettuce]
+    // Y-Combinator example in pseudo-code
+    Y = fun(f) {
+        (fun(x) { f(fun(y) { x(x)(y) }) })(fun(x) { f(fun(y) { x(x)(y) }) })
+    }
+    
+    // Factorial using Y-Combinator
+    factorial = Y(fun(f) {
+        fun(n) {
+            if n == 0 then 1 else n * f(n - 1)
+        }
+    })
+    factorial(5)
+    \end{code}
+    
+        In this example, the Y-combinator "Y" is defined to enable recursion for the factorial function. The "factorial" function uses the Y-combinator to call itself recursively.
+    
+        \begin{itemize}
+            \item The Y-combinator enables recursion by transforming non-recursive functions into recursive ones.
+            \item Useful in lambda calculus and functional languages that support higher-order functions.
+            \item Allows the definition of anonymous recursive functions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Fixed-Point Combinators}
+    
+    A fixed-point combinator is a function that, for a given function "f", returns a value "x" such that "f(x) = x". The Y-combinator is a specific type of fixed-point combinator that applies this concept to enable recursion.
+    
+    \begin{highlight}[Fixed-Point Combinators]
+    
+        This example illustrates the fixed-point combinator concept.
+    
+    \begin{code}[Lettuce]
+    // Fixed-point combinator concept
+    let fixedPoint = fun(f) {
+        let x = f(x) in x
+    }
+    \end{code}
+    
+        In this example, "fixedPoint" finds a value "x" such that "f(x) = x". The Y-combinator applies this concept to enable recursive function definitions.
+    
+        \begin{itemize}
+            \item A fixed-point combinator returns a value "x" such that "f(x) = x".
+            \item The Y-combinator is a specific type of fixed-point combinator used for enabling recursion.
+            \item Allows functions to be self-referential and call themselves.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Using the Y-Combinator in Lettuce}
+    
+    In Lettuce, the Y-combinator can be implemented to enable anonymous recursion. This allows the definition of recursive functions without explicitly naming them.
+    
+    \begin{highlight}[Using the Y-Combinator in Lettuce]
+    
+        This example demonstrates using the Y-combinator to define a recursive function in Lettuce.
+    
+    \begin{code}[Lettuce]
+    // Y-Combinator in Lettuce
+    let Y = fun(f) {
+        (fun(x) { f(fun(y) { x(x)(y) }) })(fun(x) { f(fun(y) { x(x)(y) }) })
+    } in
+    
+    let factorial = Y(fun(f) {
+        fun(n) {
+            if n == 0 then 1 else n * f(n - 1)
+        }
+    }) in
+    
+    factorial(5)
+    \end{code}
+    
+        In this example, the Y-combinator "Y" is defined and used to create a recursive "factorial" function. The "factorial" function calculates the factorial of "5", resulting in "120".
+    
+        \begin{itemize}
+            \item The Y-combinator enables the creation of anonymous recursive functions in Lettuce.
+            \item Allows defining recursive functions without explicit names.
+            \item Facilitates complex recursive computations in a functional programming context.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications of Y-Combinators}
+    
+    The Y-combinator is used in various applications within functional programming, particularly in theoretical computer science and language design. It provides a foundation for understanding recursion and fixed-point theory.
+    
+    \begin{highlight}[Applications of Y-Combinators]
+    
+        This example shows a practical application of the Y-combinator for defining recursive algorithms.
+    
+    \begin{code}[Lettuce]
+    // Recursive algorithm using Y-Combinator
+    let Y = fun(f) {
+        (fun(x) { f(fun(y) { x(x)(y) }) })(fun(x) { f(fun(y) { x(x)(y) }) })
+    } in
+    
+    let fib = Y(fun(f) {
+        fun(n) {
+            if n <= 1 then n else f(n - 1) + f(n - 2)
+        }
+    }) in
+    
+    fib(6)
+    \end{code}
+    
+        In this example, the Y-combinator "Y" is used to define a recursive "fib" function for computing Fibonacci numbers. The function calculates the 6th Fibonacci number, resulting in "8".
+    
+        \begin{itemize}
+            \item The Y-combinator is used to define recursive algorithms.
+            \item Useful in theoretical computer science and functional programming.
+            \item Provides a foundation for understanding recursion and fixed-point theory.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        The Y-combinator is a powerful tool in functional programming for enabling recursion in languages that do not support named recursive functions directly. Here are the key concepts covered in this section:
+    
+        \begin{itemize}
+            \item \textbf{Understanding Y-Combinators}: Enable recursion by transforming non-recursive functions into recursive ones.
+            \item \textbf{Fixed-Point Combinators}: Return a value "x" such that "f(x) = x", allowing functions to be self-referential.
+            \item \textbf{Using the Y-Combinator in Lettuce}: Implement the Y-combinator to define anonymous recursive functions.
+            \item \textbf{Applications of Y-Combinators}: Used in recursive algorithms and theoretical computer science, providing a foundation for recursion and fixed-point theory.
+        \end{itemize}
+    
+        These features make the Y-combinator a fundamental concept in functional programming, enabling complex recursive computations in a modular and elegant way.
+    
+    \end{highlight}
+\end{notes}
