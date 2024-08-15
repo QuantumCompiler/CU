@@ -1,0 +1,383 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Bayes Network}
+\renewcommand{\SectionTitle}{Bayes Network}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 13.1 - Representing Knowledge In An Uncertain Domain}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 13.2 - The Semantics Of Bayesian Networks}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 13.3 - Exact Inference In Bayesian Networks}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=ayGGK5TcoqY}{Probabilistic Reasoning 1 - Probability Review}{69}
+    \item \lecture{https://www.youtube.com/watch?v=G4Ly02ydaj8}{Bayes Net - Representation}{34}
+    \item \lecture{https://www.youtube.com/watch?v=nEhzDUYn1FI}{Bayes Net - Independence}{32}
+    \item \lecture{https://www.youtube.com/watch?v=_iYrM0Y7D2w}{Bayes Net - Inference}{50}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Bayes Net - Independence Lecture Notes.pdf}{Bayes Net - Independence Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Bayes Net - Inference Lecture Notes.pdf}{Bayes Net - Inference Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Bayes Net - Representation Lecture Notes.pdf}{Bayes Net - Representation Lecture Notes}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 9 - Bayes Network.pdf}{Quiz 9 - Bayes Network}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+This weeks material is from \textbf{Chapter 13: Probabilistic Reasoning}. The first section that is covered from this chapter this week is \textbf{Section 13.1: Representing Knowledge In An Uncertain Domain}.
+
+\begin{notes}{Section 13.1: Representing Knowledge In An Uncertain Domain}
+    \subsection*{Overview}
+
+    This section introduces Bayesian networks as a powerful tool for representing and reasoning with probabilistic knowledge in uncertain domains. It explains the limitations of full joint probability 
+    distributions and the advantages of using Bayesian networks to capture conditional independence relationships efficiently.
+    
+    \subsubsection*{Bayesian Networks}
+    
+    Bayesian networks are graphical models that use directed acyclic graphs (DAGs) to represent the dependencies among variables. Each node in the network represents a random variable, and the directed 
+    edges between nodes represent probabilistic dependencies.
+    
+    \begin{highlight}[Bayesian Networks]
+    
+        \begin{itemize}
+            \item \textbf{Nodes and Edges}: Each node corresponds to a random variable, which can be either discrete or continuous. Directed edges indicate a dependency between the connected nodes.
+            \item \textbf{Directed Acyclic Graph (DAG)}: The structure of the network is a DAG, meaning it has no directed cycles. This hierarchical structure allows for a clear representation of causal relationships.
+            \item \textbf{Conditional Probability Table (CPT)}: Each node $X_i$ is associated with a CPT $P(X_i | \text{Parents}(X_i))$, which quantifies the effect of its parents on the node. The CPT 
+            provides the probability distribution of the node given its parents' values.
+            \item \textbf{Example}: Consider a network with nodes for Burglary ($B$), Earthquake ($E$), Alarm ($A$), JohnCalls ($J$), and MaryCalls ($M$). The edges from $B$ and $E$ to $A$, 
+            and from $A$ to $J$ and $M$, capture the dependencies among these variables.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Constructing Bayesian Networks}
+    
+    Constructing a Bayesian network involves determining the variables, their dependencies, and the corresponding conditional probabilities. The process typically follows these steps:
+    
+    \begin{highlight}[Constructing Bayesian Networks]
+    
+        \begin{itemize}
+            \item \textbf{Identifying Variables}: Determine the set of relevant variables for the domain.
+            \item \textbf{Ordering Variables}: Order the variables in a sequence where causes precede effects.
+            \item \textbf{Adding Links}: For each variable, identify its parents from the preceding variables in the order. Add directed edges from the parents to the variable.
+            \item \textbf{Specifying CPTs}: Define the conditional probability table for each variable given its parents.
+            \item \textbf{Example}: In a burglary scenario, the variable "Alarm" might depend on "Burglary" and "Earthquake," with a CPT that specifies the probability of the alarm going off given the 
+            occurrence of a burglary or earthquake.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mathematical Representation}
+    
+    The joint probability distribution of a set of variables in a Bayesian network can be factored into a product of conditional probabilities, leveraging the conditional independence relationships.
+    
+    \begin{highlight}[Mathematical Representation]
+    
+        \begin{itemize}
+            \item \textbf{Chain Rule for Bayesian Networks}: The joint probability $P(X_1, X_2, \ldots, X_n)$ of the variables can be written as:
+            \[
+            P(X_1, X_2, \ldots, X_n) = \prod_{i=1}^n P(X_i | \text{Parents}(X_i))
+            \]
+            \item \textbf{Example}: For the Burglary example, the joint probability is:
+            \[
+            P(B, E, A, J, M) = P(B) P(E) P(A | B, E) P(J | A) P(M | A)
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Bayesian Networks}
+    
+    Bayesian networks offer several advantages over full joint probability distributions, particularly in handling large and complex domains.
+    
+    \begin{highlight}[Advantages of Bayesian Networks]
+    
+        \begin{itemize}
+            \item \textbf{Compact Representation}: By exploiting conditional independence, Bayesian networks require fewer parameters to represent the joint distribution.
+            \item \textbf{Ease of Specification}: Experts can often specify the local relationships (CPTs) more easily than the full joint distribution.
+            \item \textbf{Efficient Inference}: Algorithms can leverage the network structure to perform probabilistic inference more efficiently.
+            \item \textbf{Scalability}: Suitable for large-scale applications due to their compactness and efficiency.
+            \item \textbf{Example}: A network with 30 binary variables, each having up to 5 parents, requires significantly fewer parameters (960) compared to the full joint distribution (over a billion parameters).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications of Bayesian Networks}
+    
+    Bayesian networks are widely used in various fields, including medical diagnosis, risk assessment, and decision support systems. They provide a systematic way to model uncertainty and make informed 
+    decisions.
+    
+    \begin{highlight}[Applications of Bayesian Networks]
+    
+        \begin{itemize}
+            \item \textbf{Medical Diagnosis}: Used to model the probabilistic relationships between diseases and symptoms, aiding in diagnostic reasoning.
+            \item \textbf{Risk Assessment}: Employed to evaluate the likelihood of different risks and their impacts in fields such as finance and engineering.
+            \item \textbf{Decision Support}: Assist in making decisions under uncertainty by modeling the dependencies among various factors and their probable outcomes.
+            \item \textbf{Example}: A Bayesian network in medical diagnosis might include variables for different diseases, symptoms, and test results, with edges representing causal relationships and 
+            CPTs providing the conditional probabilities.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Bayesian Networks}: Graphical models that represent probabilistic dependencies using directed acyclic graphs (DAGs).
+            \item \textbf{Nodes and Edges}: Nodes represent random variables, and directed edges indicate dependencies.
+            \item \textbf{Conditional Probability Tables (CPTs)}: Quantify the effect of parent nodes on each variable.
+            \item \textbf{Constructing Bayesian Networks}: Involves identifying variables, ordering them, adding links, and specifying CPTs.
+            \item \textbf{Mathematical Representation}: The joint probability distribution is factored into a product of conditional probabilities.
+            \item \textbf{Advantages}: Offer compact representation, ease of specification, efficient inference, and scalability.
+            \item \textbf{Applications}: Used in medical diagnosis, risk assessment, decision support, and more.
+        \end{itemize}
+    
+        Understanding Bayesian networks is crucial for modeling and reasoning under uncertainty, enabling the development of robust and efficient probabilistic models for various applications.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 13.2: The Semantics Of Bayesian Networks}.
+
+\begin{notes}{Section 13.2: The Semantics Of Bayesian Networks}
+    \subsection*{Overview}
+
+    This section delves into the semantics of Bayesian networks, explaining how the structure of the network encodes probabilistic relationships among variables. It covers the formal interpretation of 
+    nodes and edges, and how to understand the joint probability distribution represented by a Bayesian network.
+    
+    \subsubsection*{Conditional Independence}
+    
+    The key idea behind Bayesian networks is the representation of conditional independence among variables. The network structure encodes these dependencies, simplifying the representation of the joint 
+    probability distribution.
+    
+    \begin{highlight}[Conditional Independence]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: A variable $X_i$ is conditionally independent of its non-descendants, given its parents.
+            \item \textbf{Mathematical Formulation}: For variables $X, Y, Z$, $X$ is conditionally independent of $Y$ given $Z$ if:
+            \[
+            P(X | Y, Z) = P(X | Z)
+            \]
+            \item \textbf{Example}: In the Burglary network, JohnCalls and MaryCalls are conditionally independent given Alarm.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Local Semantics}
+    
+    The local semantics of a Bayesian network specify that each node is independent of its non-parents given its parents. This local property leads to the global property of the joint distribution.
+    
+    \begin{highlight}[Local Semantics]
+    
+        \begin{itemize}
+            \item \textbf{Node Independence}: Each node is conditionally independent of its non-parents given its parents.
+            \item \textbf{Mathematical Expression}: For a node $X_i$ with parents $\text{Parents}(X_i)$:
+            \[
+            P(X_i | \text{NonParents}(X_i), \text{Parents}(X_i)) = P(X_i | \text{Parents}(X_i))
+            \]
+            \item \textbf{Example}: In the Burglary network, $P(\text{JohnCalls} | \text{Burglary}, \text{Earthquake}, \text{Alarm}) = P(\text{JohnCalls} | \text{Alarm})$.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Global Semantics}
+    
+    The global semantics of a Bayesian network describe the joint probability distribution over all variables as the product of the local conditional probabilities defined by the network structure.
+    
+    \begin{highlight}[Global Semantics]
+    
+        \begin{itemize}
+            \item \textbf{Joint Probability Distribution}: The joint probability of all variables is the product of the conditional probabilities of each variable given its parents:
+            \[
+            P(X_1, X_2, \ldots, X_n) = \prod_{i=1}^n P(X_i | \text{Parents}(X_i))
+            \]
+            \item \textbf{Example}: For the Burglary network, the joint probability is:
+            \[
+            P(B, E, A, J, M) = P(B) P(E) P(A | B, E) P(J | A) P(M | A)
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{d-Separation}
+    
+    d-Separation is a graphical criterion used to determine whether a set of variables is conditionally independent given another set of variables. It provides a method for reading conditional 
+    independencies directly from the network structure.
+    
+    \begin{highlight}[d-Separation]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: A set of nodes $X$ is d-separated from a set of nodes $Y$ given a set of nodes $Z$ if all paths from any node in $X$ to any node in $Y$ are blocked 
+            by $Z$.
+            \item \textbf{Blocking Criteria}: A path is blocked if:
+                \begin{itemize}
+                    \item It contains a node such that one of its arcs is directed towards the node and neither the node nor any of its descendants are in $Z$.
+                    \item It contains a collider (a node with two incoming arcs) that is not in $Z$ and has no descendants in $Z$.
+                \end{itemize}
+            \item \textbf{Example}: In the Burglary network, JohnCalls is d-separated from Earthquake given Alarm.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Markov Blanket}
+    
+    The Markov blanket of a node in a Bayesian network is the minimal set of nodes that renders the node conditionally independent of the rest of the network. It consists of the node's parents, children, 
+    and children's parents.
+    
+    \begin{highlight}[Markov Blanket]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: The Markov blanket of a node $X$ includes:
+                \begin{itemize}
+                    \item The parents of $X$.
+                    \item The children of $X$.
+                    \item The parents of the children of $X$.
+                \end{itemize}
+            \item \textbf{Mathematical Formulation}: Given the Markov blanket $\text{MB}(X)$ of $X$:
+            \[
+            P(X | \text{All nodes except } X) = P(X | \text{MB}(X))
+            \]
+            \item \textbf{Example}: In the Burglary network, the Markov blanket of Alarm includes Burglary, Earthquake, JohnCalls, and MaryCalls.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Conditional Independence}: Encodes dependencies among variables, reducing complexity.
+            \item \textbf{Local Semantics}: Each node is conditionally independent of its non-parents given its parents.
+            \item \textbf{Global Semantics}: The joint probability distribution is the product of local conditional probabilities.
+            \item \textbf{d-Separation}: A criterion to determine conditional independence from the network structure.
+            \item \textbf{Markov Blanket}: The minimal set of nodes that renders a node conditionally independent of the rest of the network.
+        \end{itemize}
+    
+        Understanding the semantics of Bayesian networks is crucial for accurately modeling probabilistic dependencies and performing efficient inference in complex domains.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is covered from this chapter this week is \textbf{Section 13.3: Exact Inference In Bayesian Networks}.
+
+\begin{notes}{Section 13.3: Exact Inference In Bayesian Networks}
+    \subsection*{Overview}
+
+    This section covers exact inference methods in Bayesian networks, which involve computing the posterior distribution of a set of query variables given some evidence. It discusses several algorithms 
+    for performing exact inference, including enumeration, variable elimination, and belief propagation.
+    
+    \subsubsection*{Inference by Enumeration}
+    
+    Inference by enumeration involves summing over the joint probability distribution to compute the desired posterior probabilities. While straightforward, it can be computationally expensive for large 
+    networks.
+    
+    \begin{highlight}[Inference by Enumeration]
+    
+        \begin{itemize}
+            \item \textbf{Posterior Probability}: To compute $P(X | e)$ for query variable $X$ and evidence $e$, sum over all possible values of the hidden variables $Y$:
+            \[
+            P(X | e) = \alpha P(X, e) = \alpha \sum_{Y} P(X, Y, e)
+            \]
+            where $\alpha$ is a normalization constant.
+            \item \textbf{Example}: In the Burglary network, to find $P(\text{Burglary} | \text{JohnCalls} = \text{true})$, sum over all possible values of Earthquake, Alarm, and MaryCalls.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Variable Elimination}
+    
+    Variable elimination is an efficient method for exact inference that systematically eliminates variables by summing out their probabilities, reducing the complexity compared to enumeration.
+    
+    \begin{highlight}[Variable Elimination]
+    
+        \begin{itemize}
+            \item \textbf{Procedure}: 
+                \begin{itemize}
+                    \item Express the joint probability distribution as a product of factors.
+                    \item Eliminate variables one by one by summing them out, combining factors as necessary.
+                \end{itemize}
+            \item \textbf{Mathematical Formulation}: For a query $P(X | e)$, where $Z$ are the variables to be eliminated:
+            \[
+            P(X | e) = \alpha \sum_{Z} \prod_{i} f_i
+            \]
+            \item \textbf{Example}: In the Burglary network, to compute $P(\text{JohnCalls} = \text{true})$, eliminate variables Earthquake, Burglary, Alarm, and MaryCalls in sequence.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Belief Propagation}
+    
+    Belief propagation (also known as the sum-product algorithm) is an exact inference method for tree-structured Bayesian networks. It passes messages between nodes to compute marginal probabilities.
+    
+    \begin{highlight}[Belief Propagation]
+    
+        \begin{itemize}
+            \item \textbf{Message Passing}: Nodes send messages to their neighbors containing summarized information from the rest of the network.
+            \item \textbf{Procedure}: 
+                \begin{itemize}
+                    \item Initialize messages at the leaf nodes.
+                    \item Pass messages inward to a root node.
+                    \item Pass messages outward from the root node to compute marginals.
+                \end{itemize}
+            \item \textbf{Mathematical Formulation}: For a node $X$, the message $\mu_{Y \to X}(X)$ from node $Y$ to node $X$ is:
+            \[
+            \mu_{Y \to X}(X) = \sum_{Y} P(Y | \text{Parents}(Y)) \prod_{Z \in \text{Children}(Y) \setminus X} \mu_{Z \to Y}(Y)
+            \]
+            \item \textbf{Example}: In a chain-structured network, belief propagation efficiently computes marginals by passing messages along the chain.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Complexity of Exact Inference}
+    
+    The complexity of exact inference in Bayesian networks depends on the network structure and the chosen method. In general, exact inference is NP-hard, but certain structures allow for more efficient 
+    computation.
+    
+    \begin{highlight}[Complexity of Exact Inference]
+    
+        \begin{itemize}
+            \item \textbf{Treewidth}: The complexity of variable elimination and belief propagation is exponential in the treewidth of the network. The treewidth is a measure of how tree-like the network is.
+            \item \textbf{Efficient Structures}: For tree-structured networks, belief propagation is efficient. For networks with low treewidth, variable elimination is feasible.
+            \item \textbf{Intractable Cases}: For networks with high treewidth, exact inference becomes intractable, necessitating approximate methods.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Inference by Enumeration}: Summing over the joint probability distribution, straightforward but computationally expensive.
+            \item \textbf{Variable Elimination}: Systematically eliminates variables by summing out their probabilities, more efficient than enumeration.
+            \item \textbf{Belief Propagation}: An exact inference method for tree-structured networks, using message passing to compute marginals.
+            \item \textbf{Complexity of Exact Inference}: Depends on the network's treewidth; exact inference is generally NP-hard but feasible for certain structures.
+        \end{itemize}
+    
+        Exact inference methods in Bayesian networks allow for precise probabilistic reasoning in structured domains, but their feasibility depends on the network's complexity and structure.
+    
+    \end{highlight}
+\end{notes}

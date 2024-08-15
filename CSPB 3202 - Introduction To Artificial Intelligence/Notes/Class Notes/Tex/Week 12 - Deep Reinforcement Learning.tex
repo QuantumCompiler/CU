@@ -1,0 +1,711 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Deep Reinforcement Learning}
+\renewcommand{\SectionTitle}{Deep Reinforcement Learning}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 10.1 - Episodic Semi-Gradient Control}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 11.1 - Semi-Gradient Methods}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 11.2 - Examples Of Off-Policy Divergence}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 11.3 - The Deadly Triad}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 13.1 - Policy Approximation And Its Advantages}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 13.2 - The Policy Gradient Theorem}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 13.3 - REINFORCE: Monte Carlo Policy Gradient}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 13.4 - REINFORCE With Baseline}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=Z3xjk78FNqE}{RL Review / Deep Reinforcement Learning Intro / DQN}{40}
+    \item \lecture{https://www.youtube.com/watch?v=CnyY7cw6sRg}{Policy Gradient Method}{33}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Deep Reinforcement Learning Intro Lecture Notes.pdf}{Deep Reinforcement Learning Intro Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Policy Gradient Lecture Notes.pdf}{Policy Gradient Lecture Notes}
+\end{itemize}
+
+\subsection{Project}
+
+The final project for this course can be found below:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/workshop/view.php?id=60066}{Final Project}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamsDir Makeup Exam.pdf}{Makeup Exam}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapters that are being covered this week are \textbf{Chapter 10: Knowledge Representation}, \textbf{Chapter 11: Automated Planning}, and \textbf{Chapter 13: Probabilistic Reasoning}. The 
+section that is covered from \textbf{Chapter 10: Knowledge Representation} is \textbf{Section 10.1: Episodic Semi-Gradient Control}.
+
+\begin{notes}{Section 10.1: Episodic Semi-Gradient Control}
+    \subsection*{Overview}
+
+    This section introduces episodic semi-gradient control methods, particularly focusing on the application of the semi-gradient Sarsa algorithm in on-policy control tasks. These methods extend value 
+    function approximation techniques to control problems, where the goal is to learn a policy that maximizes expected returns in an episodic setting. The section covers the algorithmic details and provides 
+    an example application in the Mountain Car task.
+    
+    \subsubsection*{Semi-gradient Sarsa for Control}
+    
+    Semi-gradient Sarsa is an on-policy control algorithm that updates action-value function estimates using semi-gradient methods. The algorithm iteratively improves the policy by coupling action-value 
+    predictions with policy improvement techniques, such as ε-greedy action selection.
+    
+    \begin{highlight}[Semi-gradient Sarsa for Control]
+    
+        \begin{itemize}
+            \item \textbf{Action-value Function Update}: The weights $w$ of the action-value function $\hat{q}(S, A, w)$ are updated at each time step using the following rule:
+            \[
+            w_{t+1} = w_t + \alpha \left[ R_{t+1} + \gamma \hat{q}(S_{t+1}, A_{t+1}, w_t) - \hat{q}(S_t, A_t, w_t) \right] \nabla_w \hat{q}(S_t, A_t, w_t)
+            \]
+            where $\alpha$ is the step size, $\gamma$ is the discount factor, and $\nabla_w \hat{q}$ denotes the gradient with respect to the weights.
+            \item \textbf{Policy Improvement}: The policy is improved by selecting actions that maximize the estimated action-value function. In practice, a soft policy such as ε-greedy is used to balance exploration 
+            and exploitation.
+            \item \textbf{Algorithm Outline}: The semi-gradient Sarsa algorithm alternates between evaluating the current policy and improving it by updating the weights based on the observed rewards and 
+            state transitions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Mountain Car Task}
+    
+    The Mountain Car task is a classic continuous control problem where an underpowered car must build up momentum to reach the top of a steep hill. The task demonstrates the challenges of continuous control 
+    and the effectiveness of semi-gradient Sarsa in such environments.
+    
+    \begin{highlight}[Example: Mountain Car Task]
+    
+        \begin{itemize}
+            \item \textbf{Task Description}: The car must first move away from the goal to gain enough speed to ascend the hill. The reward is $-1$ per time step until the car reaches the goal, at which point the 
+            episode ends.
+            \item \textbf{State and Action Representation}: The state is represented by the car's position and velocity, and the actions include full throttle forward, full throttle reverse, and zero throttle.
+            \item \textbf{Function Approximation}: The action-value function is approximated using tile coding, where the continuous state space is discretized into binary features. The function approximation is 
+            linear, with weights corresponding to the tiles.
+            \item \textbf{Learning Dynamics}: During learning, the agent initially explores the state space extensively, driven by the optimistic initialization of action values. Over time, the agent converges to a 
+            policy that efficiently solves the task.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Algorithm Performance}
+    
+    The performance of semi-gradient Sarsa in the Mountain Car task is illustrated through learning curves, showing how the number of steps per episode decreases as the agent learns the optimal policy.
+    
+    \begin{highlight}[Algorithm Performance]
+    
+        \begin{itemize}
+            \item \textbf{Learning Curves}: The curves show the number of steps required per episode as the agent improves its policy. Various step sizes $\alpha$ affect the speed and stability of learning.
+            \item \textbf{Exploration Strategy}: The ε-greedy action selection strategy ensures sufficient exploration during the initial phases of learning, while gradually converging to a near-optimal policy.
+            \item \textbf{Optimization}: The choice of function approximation method and hyperparameters such as the step size significantly impacts the algorithm's performance and convergence rate.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Semi-gradient Sarsa}: An on-policy control algorithm that combines value function approximation with policy improvement techniques.
+            \item \textbf{Episodic Control Tasks}: Suitable for tasks where the agent learns a policy to maximize returns over episodes, such as the Mountain Car task.
+            \item \textbf{Function Approximation}: Essential for handling continuous state spaces, often implemented using methods like tile coding.
+            \item \textbf{Learning Performance}: Influenced by factors such as exploration strategy, step size, and the choice of function approximation.
+        \end{itemize}
+    
+        Understanding these concepts is crucial for developing and applying reinforcement learning algorithms in continuous control tasks, where the state and action spaces are large or continuous.
+    
+    \end{highlight}
+\end{notes}
+
+The first section that is covered from \textbf{Chapter 11: Automated Planning} this week is \textbf{Section 11.1: Semi-Gradient Methods}.
+
+\begin{notes}{Section 11.1: Semi-Gradient Methods}
+    \subsection*{Overview}
+
+    This section introduces semi-gradient methods in the context of off-policy learning with function approximation. Semi-gradient methods extend the off-policy algorithms discussed in earlier chapters to 
+    handle function approximation by updating a weight vector rather than a table of values. The section explains how these methods work, their challenges, and the potential for divergence in certain cases.
+    
+    \subsubsection*{Off-policy Learning with Function Approximation}
+    
+    Off-policy learning involves learning a target policy different from the behavior policy that generates the data. When combined with function approximation, this approach faces the challenge of unstable 
+    updates due to the mismatch between the update distribution and the on-policy distribution.
+    
+    \begin{highlight}[Off-policy Learning with Function Approximation]
+    
+        \begin{itemize}
+            \item \textbf{Update Distribution}: The distribution of updates in off-policy learning does not match the on-policy distribution, which is critical for the stability of semi-gradient methods.
+            \item \textbf{Importance Sampling}: One approach to address this issue is to use importance sampling, which re-weights the updates to match the on-policy distribution. However, this can lead 
+            to high variance in the updates.
+            \item \textbf{True Gradient Methods}: Another approach is to develop true gradient methods that do not rely on the on-policy distribution for stability, though this area remains an active 
+            research topic with ongoing developments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Semi-gradient Methods for Off-policy Learning}
+    
+    Semi-gradient methods extend tabular off-policy algorithms to function approximation. The key idea is to update a weight vector $w$ rather than a value table, using the approximate value function 
+    $\hat{v}$ or $\hat{q}$ and their gradients.
+    
+    \begin{highlight}[Semi-gradient Methods for Off-policy Learning]
+    
+        \begin{itemize}
+            \item \textbf{Per-step Importance Sampling}: The per-step importance sampling ratio $\rho_t$ is used to adjust the updates in off-policy learning:
+            \[
+            \rho_t = \frac{\pi(A_t | S_t)}{b(A_t | S_t)}
+            \]
+            where $\pi$ is the target policy and $b$ is the behavior policy.
+            \item \textbf{Semi-gradient TD(0)}: For state-value functions, the semi-gradient TD(0) update is:
+            \[
+            w_{t+1} = w_t + \alpha \rho_t \delta_t \nabla_w \hat{v}(S_t, w_t)
+            \]
+            where $\delta_t$ is the TD error:
+            \[
+            \delta_t = R_{t+1} + \gamma \hat{v}(S_{t+1}, w_t) - \hat{v}(S_t, w_t)
+            \]
+            \item \textbf{Semi-gradient Expected Sarsa}: For action-value functions, the semi-gradient Expected Sarsa update is:
+            \[
+            w_{t+1} = w_t + \alpha \delta_t \nabla_w \hat{q}(S_t, A_t, w_t)
+            \]
+            with the TD error $\delta_t$ defined as:
+            \[
+            \delta_t = R_{t+1} + \gamma \sum_a \pi(a | S_{t+1}) \hat{q}(S_{t+1}, a, w_t) - \hat{q}(S_t, A_t, w_t)
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Multi-step Generalizations and Challenges}
+    
+    The section also covers multi-step versions of these algorithms and highlights the challenges involved, such as the potential for divergence when the update distribution is not properly handled.
+    
+    \begin{highlight}[Multi-step Generalizations and Challenges]
+    
+        \begin{itemize}
+            \item \textbf{n-step Semi-gradient Sarsa}: Extends the one-step Sarsa algorithm to consider returns over multiple time steps. The weight update is adjusted using importance sampling over 
+            the multi-step return:
+            \[
+            w_{t+n} = w_{t+n-1} + \alpha \rho_{t+1} \cdots \rho_{t+n-1} [G_{t:t+n} - \hat{q}(S_t, A_t, w_{t+n-1})] \nabla_w \hat{q}(S_t, A_t, w_{t+n-1})
+            \]
+            where $G_{t:t+n}$ represents the n-step return.
+            \item \textbf{Potential Divergence}: Semi-gradient methods can diverge if the update distribution is not properly managed, particularly in off-policy settings with function approximation.
+            \item \textbf{Tree-backup Algorithm}: An alternative multi-step algorithm that avoids importance sampling by backing up action values through a tree of possibilities, ensuring stability.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Off-policy Learning}: Involves learning a target policy from data generated by a different behavior policy.
+            \item \textbf{Semi-gradient Methods}: Extend tabular off-policy algorithms to function approximation by updating a weight vector.
+            \item \textbf{Importance Sampling}: Used to adjust the updates to match the on-policy distribution, but can lead to high variance.
+            \item \textbf{Potential Challenges}: Includes the risk of divergence in off-policy learning with function approximation.
+        \end{itemize}
+    
+        These methods are foundational for extending off-policy reinforcement learning to more complex environments where function approximation is necessary, though careful management of update 
+        distributions is crucial to ensure stability and convergence.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 11.2: Examples Of Off-Policy Divergence}.
+
+\begin{notes}{Section 11.2: Examples Of Off-Policy Divergence}
+    \subsection*{Overview}
+
+    This section examines the inherent risks of instability and divergence when applying off-policy learning methods with function approximation. By providing concrete counterexamples, it illustrates how 
+    even simple algorithms can become unstable and diverge, particularly in off-policy settings. The section emphasizes the mismatch between the distribution of updates and the on-policy distribution as a 
+    key factor leading to these issues.
+    
+    \subsubsection*{Counterexamples to Off-policy Learning}
+    
+    Off-policy learning with function approximation can lead to divergence under certain conditions. This is demonstrated through specific examples where the use of semi-gradient methods results in the 
+    weight vector diverging to infinity.
+    
+    \begin{highlight}[Counterexamples to Off-policy Learning]
+    
+        \begin{itemize}
+            \item \textbf{Simple Divergence Example}: Consider two states with values represented as $w$ and $2w$. If the first state always transitions to the second with a reward of zero, updates 
+            can cause $w$ to diverge because the TD error increases with each transition:
+            \[
+            \delta_t = (2\gamma - 1)w_t
+            \]
+            If $\gamma > 0.5$, the system is unstable, and $w$ increases without bound.
+            \item \textbf{Key Insight}: Off-policy learning can result in repeated updates to one state without corresponding updates to another, causing instability. This is less likely in on-policy 
+            learning where the distribution of updates is more balanced.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Baird's Counterexample}
+    
+    Baird's counterexample provides a complete and practical demonstration of divergence in off-policy learning. It involves a seven-state, two-action Markov Decision Process (MDP) where a behavior policy 
+    and a target policy are defined, leading to instability when semi-gradient TD(0) is applied.
+    
+    \begin{highlight}[Baird's Counterexample]
+    
+        \begin{itemize}
+            \item \textbf{MDP Structure}: The MDP consists of six states that transition uniformly to one terminal state under a behavior policy, while the target policy consistently transitions to a different 
+            state. The linear function approximation represents state values as combinations of weights:
+            \[
+            v(s) = 2w_i + w_8 \quad \text{for } i = 1, \dots, 6
+            \]
+            \item \textbf{Divergence Behavior}: When semi-gradient TD(0) is applied with any positive step size, the weights diverge to infinity, demonstrating instability. The divergence occurs even when 
+            the expected update (as in dynamic programming) is used:
+            \[
+            w_{k+1} = w_k + \alpha \sum_s \left( E_\pi \left[ R_{t+1} + \gamma v(s_{t+1}, w_k) \mid s_t = s \right] - v(s, w_k) \right) \nabla_w v(s, w_k)
+            \]
+            \item \textbf{Implications}: The example shows that instability can arise in simple settings when the update distribution is not aligned with the target policy, and that even expected updates 
+            cannot guarantee stability in off-policy settings.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Other Divergence Examples}
+    
+    Other examples, like Tsitsiklis and Van Roy's counterexample, further illustrate that linear function approximation can diverge even when using sophisticated update rules like least-squares.
+    
+    \begin{highlight}[Other Divergence Examples]
+    
+        \begin{itemize}
+            \item \textbf{Tsitsiklis and Van Roy's Counterexample}: Extends the simple two-state example by adding a terminal state. Even when using least-squares updates, the system can diverge if the 
+            discount factor $\gamma$ exceeds a certain threshold.
+            \item \textbf{Function Approximation Methods}: Stability is guaranteed only for specific types of function approximation methods that do not extrapolate from observed targets, such as nearest 
+            neighbor or locally weighted regression.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Off-policy Divergence}: Demonstrated through examples where semi-gradient methods lead to instability and weight divergence.
+            \item \textbf{Distribution Mismatch}: The key issue in off-policy learning, where the update distribution does not match the on-policy distribution, leading to instability.
+            \item \textbf{Baird's Counterexample}: A classic demonstration of divergence in off-policy learning with function approximation.
+            \item \textbf{Function Approximation Risks}: Certain function approximation methods are more prone to instability in off-policy settings.
+        \end{itemize}
+    
+        These examples underscore the critical importance of understanding the risks of divergence in off-policy learning and the need for careful management of function approximation methods to ensure stability.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is covered from this chapter this week is \textbf{Section 11.3: The Deadly Triad}.
+
+\begin{notes}{Section 11.3: The Deadly Triad}
+    \subsection*{Overview}
+
+    This section introduces the concept of the "Deadly Triad," a combination of three elements that can lead to instability and divergence in reinforcement learning when they are used together. These elements 
+    are function approximation, bootstrapping, and off-policy training. The section explores why this combination is problematic and discusses potential approaches to mitigate the risks associated with it.
+    
+    \subsubsection*{The Deadly Triad Components}
+    
+    The Deadly Triad consists of three components that, when combined, pose significant risks of instability in reinforcement learning algorithms.
+    
+    \begin{highlight}[The Deadly Triad Components]
+    
+        \begin{itemize}
+            \item \textbf{Function Approximation}: Involves using scalable methods to generalize across a large state space. Common techniques include linear function approximation and artificial neural 
+            networks (ANNs). While necessary for handling large-scale problems, function approximation can lead to issues if not managed properly.
+            \item \textbf{Bootstrapping}: Refers to updating value estimates based on other estimates rather than directly on rewards or complete returns. Bootstrapping is commonly used in dynamic programming 
+            and TD methods but introduces potential instability by relying on existing estimates that may be inaccurate.
+            \item \textbf{Off-policy Training}: Occurs when learning is based on a distribution of transitions different from that produced by the target policy. Off-policy training is essential for flexibility 
+            in learning but can exacerbate the instability caused by the other two components.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implications of the Deadly Triad}
+    
+    The combination of these three elements leads to significant challenges in reinforcement learning, particularly in maintaining stability and avoiding divergence.
+    
+    \begin{highlight}[Implications of the Deadly Triad]
+    
+        \begin{itemize}
+            \item \textbf{Instability and Divergence}: When function approximation, bootstrapping, and off-policy training are combined, they can interact in ways that cause the learning process to become 
+            unstable. This can lead to divergence, where the estimated values grow without bound, ultimately rendering the algorithm ineffective.
+            \item \textbf{Function Approximation}: Cannot be eliminated due to its necessity in scaling to large problems. Alternatives like nonparametric methods or state aggregation are either too weak 
+            or computationally expensive for large-scale applications.
+            \item \textbf{Bootstrapping vs. Monte Carlo}: While avoiding bootstrapping can prevent instability, it comes at the cost of reduced computational and data efficiency. Bootstrapping allows for more 
+            efficient updates and faster learning, particularly in environments with significant state re-visitation.
+            \item \textbf{Off-policy Training}: Although on-policy methods like Sarsa can be used as an alternative, off-policy learning is essential for certain applications where learning multiple policies 
+            in parallel is required, such as in predictive models of the world used in planning.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mitigating the Risks of the Deadly Triad}
+    
+    The section suggests that while the Deadly Triad poses significant challenges, careful design choices can mitigate the risks associated with it.
+    
+    \begin{highlight}[Mitigating the Risks of the Deadly Triad]
+    
+        \begin{itemize}
+            \item \textbf{Selective Bootstrapping}: Using longer n-step updates or large bootstrapping parameters can reduce reliance on bootstrapping, minimizing its potential to cause instability.
+            \item \textbf{Safe Function Approximation}: Choosing function approximation methods that do not extrapolate from observed targets, such as nearest neighbor methods or locally weighted regression, 
+            can enhance stability.
+            \item \textbf{Pragmatic Off-policy Learning}: While off-policy learning is critical for certain advanced applications, using it judiciously and ensuring a good overlap between the behavior policy 
+            and target policy can help maintain stability.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{The Deadly Triad}: The combination of function approximation, bootstrapping, and off-policy training, which can lead to instability in reinforcement learning.
+            \item \textbf{Instability Risks}: Divergence and instability arise when all three elements are used together, particularly in large-scale problems with complex state spaces.
+            \item \textbf{Mitigation Strategies}: Involves careful selection of function approximation methods, controlled use of bootstrapping, and judicious application of off-policy learning.
+        \end{itemize}
+    
+        Understanding the Deadly Triad is crucial for designing robust reinforcement learning algorithms that can scale effectively without succumbing to instability.
+    
+    \end{highlight}
+\end{notes}
+
+The first section that is covered from \textbf{Chapter 13: Probabilistic Reasoning} this week is \textbf{Section 13.1: Policy Approximation And Its Advantages}.
+
+\begin{notes}{Section 13.1: Policy Approximation And Its Advantages}
+    \subsection*{Overview}
+
+    This section introduces policy gradient methods, focusing on the advantages of parameterizing policies directly. Unlike action-value methods, policy gradient methods optimize the policy itself, which can 
+    be particularly beneficial in handling large or continuous action spaces. The section discusses common parameterizations, particularly for discrete action spaces, and highlights the benefits of these 
+    approaches over traditional action-value methods.
+    
+    \subsubsection*{Policy Parameterization}
+    
+    In policy gradient methods, the policy is parameterized in a way that allows for differentiation with respect to its parameters. This parameterization must ensure that the policy is differentiable and 
+    that it never becomes fully deterministic to guarantee exploration.
+    
+    \begin{highlight}[Policy Parameterization]
+    
+        \begin{itemize}
+            \item \textbf{Differentiable Policy}: The policy $\pi(a|s, \theta)$ is parameterized by $\theta$, ensuring that the gradient $\nabla_\theta \pi(a|s, \theta)$ exists and is finite for 
+            all states $s$ and actions $a$.
+            \item \textbf{Soft-max in Action Preferences}: A common parameterization for discrete action spaces is the soft-max distribution over action preferences:
+            \[
+            \pi(a|s, \theta) = \frac{e^{h(s,a,\theta)}}{\sum_b e^{h(s,b,\theta)}}
+            \]
+            where $h(s, a, \theta)$ represents the preference for action $a$ in state $s$, parameterized by $\theta$.
+            \item \textbf{Action Preferences}: These can be parameterized using a linear combination of features $x(s, a)$, such that:
+            \[
+            h(s, a, \theta) = \theta^\top x(s, a)
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Policy Gradient Methods}
+    
+    Policy gradient methods offer several advantages over action-value methods, especially in environments requiring stochastic policies or continuous action spaces.
+    
+    \begin{highlight}[Advantages of Policy Gradient Methods]
+    
+        \begin{itemize}
+            \item \textbf{Stochastic Policies}: Policy gradient methods naturally support stochastic policies, which are often optimal in environments with partial information or where mixed strategies are 
+            required (e.g., bluffing in Poker).
+            \item \textbf{Deterministic Policies}: The soft-max parameterization allows the policy to approach determinism, unlike $\epsilon$-greedy action selection in action-value methods, where there 
+            is always a non-zero probability of selecting a suboptimal action.
+            \item \textbf{Simpler Policy Approximation}: In some problems, approximating the policy directly is simpler than approximating the action-value function, leading to faster learning and better 
+            performance.
+            \item \textbf{Incorporating Prior Knowledge}: Policy parameterization can be a powerful way to inject prior knowledge about the desired policy structure into the learning process, guiding the 
+            agent towards more effective behaviors.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Short Corridor with Switched Actions}
+    
+    The section provides an example of a small gridworld with reversed actions in one state, demonstrating the limitations of $\epsilon$-greedy action selection and the advantages of a parameterized policy 
+    that can learn a specific action probability.
+    
+    \begin{highlight}[Example: Short Corridor with Switched Actions]
+    
+        \begin{itemize}
+            \item \textbf{Gridworld Description}: The gridworld consists of three states, with actions reversed in the second state. Traditional action-value methods struggle due to the identical feature 
+            representation for all states.
+            \item \textbf{Optimal Policy}: The optimal policy involves selecting the "right" action with a specific probability (approximately 0.59), which is better captured by a parameterized policy 
+            compared to $\epsilon$-greedy action selection.
+            \item \textbf{Performance Comparison}: The value achieved by the optimal stochastic policy is significantly better than that of policies derived from $\epsilon$-greedy action selection.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Policy Gradient Methods}: Focus on optimizing the policy directly, providing advantages in stochastic and continuous action spaces.
+            \item \textbf{Soft-max Parameterization}: A common approach for discrete action spaces, allowing for flexible and effective policy representation.
+            \item \textbf{Advantages over Action-value Methods}: Include better support for stochastic policies, potential for determinism, and the ability to incorporate prior knowledge.
+            \item \textbf{Practical Example}: Demonstrates the practical benefits of policy gradient methods in a challenging gridworld task.
+        \end{itemize}
+    
+        Understanding these advantages is crucial for selecting appropriate methods in reinforcement learning tasks, particularly when dealing with complex environments that require sophisticated policies.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 13.2: The Policy Gradient Theorem}.
+
+\begin{notes}{Section 13.2: The Policy Gradient Theorem}
+    \subsection*{Overview}
+
+    This section introduces the Policy Gradient Theorem, a foundational result in reinforcement learning that provides an analytical expression for the gradient of the performance measure with respect to 
+    the policy parameters. This theorem is critical for developing and understanding policy gradient methods, as it underpins the gradient ascent algorithms used to optimize policies directly.
+    
+    \subsubsection*{Policy Gradient Theorem for Episodic Tasks}
+    
+    The Policy Gradient Theorem is first presented in the context of episodic tasks, where the performance measure $J(\theta)$ is defined as the expected return from a specific start state. The theorem 
+    provides a way to compute the gradient of this performance measure, crucial for policy optimization.
+    
+    \begin{highlight}[Policy Gradient Theorem for Episodic Tasks]
+    
+        \begin{itemize}
+            \item \textbf{Performance Measure}: For an episodic task, the performance measure $J(\theta)$ is defined as:
+            \[
+            J(\theta) = v_{\pi_\theta}(s_0)
+            \]
+            where $v_{\pi_\theta}(s_0)$ is the value of the start state $s_0$ under the policy $\pi_\theta$, parameterized by $\theta$.
+            \item \textbf{Gradient of the State-value Function}: The gradient of the state-value function can be expressed using the action-value function:
+            \[
+            \nabla_\theta v_{\pi_\theta}(s) = \sum_a \nabla_\theta \pi_\theta(a|s) q_{\pi_\theta}(s, a)
+            \]
+            \item \textbf{Policy Gradient Theorem}: The theorem states that the gradient of the performance measure with respect to the policy parameters is proportional to:
+            \[
+            \nabla_\theta J(\theta) \propto \sum_s \mu(s) \sum_a \nabla_\theta \pi_\theta(a|s) q_{\pi_\theta}(s, a)
+            \]
+            where $\mu(s)$ is the on-policy state distribution, representing the frequency with which state $s$ is visited under the policy $\pi_\theta$.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Policy Gradient Methods}
+    
+    The section also highlights the theoretical advantages of policy gradient methods over traditional action-value methods, particularly in terms of the continuity and smoothness of policy updates.
+    
+    \begin{highlight}[Advantages of Policy Gradient Methods]
+    
+        \begin{itemize}
+            \item \textbf{Continuity of Policy Updates}: Unlike $\epsilon$-greedy action selection, where small changes in estimated action values can lead to abrupt changes in action probabilities, 
+            policy gradient methods ensure smooth changes in the policy as the parameters are updated.
+            \item \textbf{Convergence Guarantees}: The continuity provided by the smooth changes in policy parameters enables stronger convergence guarantees for policy gradient methods compared to 
+            action-value methods.
+            \item \textbf{Practical Application}: These advantages make policy gradient methods particularly suitable for environments with continuous or large action spaces, where deterministic or 
+            $\epsilon$-greedy methods might struggle.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implications of the Policy Gradient Theorem}
+    
+    The Policy Gradient Theorem simplifies the process of computing gradients for policy optimization, enabling the development of efficient algorithms that can be applied to a wide range of reinforcement 
+    learning tasks.
+    
+    \begin{highlight}[Implications of the Policy Gradient Theorem]
+    
+        \begin{itemize}
+            \item \textbf{Gradient Ascent Optimization}: The theorem directly informs the development of gradient ascent algorithms, where the policy parameters are updated using the gradient of the 
+            performance measure.
+            \item \textbf{Applicability}: The theorem is applicable to both episodic and continuing tasks, although the performance measure and gradients are defined differently in each case.
+            \item \textbf{Foundation for Algorithms}: The Policy Gradient Theorem serves as the theoretical foundation for various policy gradient algorithms, including REINFORCE and actor-critic methods.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Policy Gradient Theorem}: Provides a method for calculating the gradient of the performance measure with respect to policy parameters, crucial for optimizing policies.
+            \item \textbf{Episodic Performance Measure}: Defines the expected return from a start state as the performance measure in episodic tasks.
+            \item \textbf{Advantages of Policy Gradient Methods}: Include smooth policy updates and stronger convergence guarantees, making them suitable for complex environments.
+            \item \textbf{Theorem's Implications}: Underpin the development of various policy optimization algorithms, guiding the design of effective reinforcement learning methods.
+        \end{itemize}
+    
+        Understanding the Policy Gradient Theorem is essential for leveraging policy gradient methods in reinforcement learning, enabling the optimization of policies in both simple and complex environments.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 13.3: REINFORCE: Monte Carlo Policy Gradient}.
+
+\begin{notes}{Section 13.3: REINFORCE: Monte Carlo Policy Gradient}
+    \subsection*{Overview}
+
+    This section introduces the REINFORCE algorithm, one of the simplest and most well-known policy gradient methods. REINFORCE uses Monte Carlo sampling to estimate the policy gradient, enabling the 
+    optimization of policies in episodic tasks. The section explains the derivation of the REINFORCE update rule and discusses its properties, including its simplicity, convergence behavior, and potential 
+    high variance.
+    
+    \subsubsection*{Deriving the REINFORCE Algorithm}
+    
+    The REINFORCE algorithm is derived from the Policy Gradient Theorem, which provides an expression for the gradient of the performance measure with respect to the policy parameters. This gradient is 
+    then estimated using Monte Carlo methods, where the return is computed based on complete episodes.
+    
+    \begin{highlight}[Deriving the REINFORCE Algorithm]
+    
+        \begin{itemize}
+            \item \textbf{Policy Gradient Theorem}: The gradient of the performance measure $J(\theta)$ with respect to the policy parameters $\theta$ is given by:
+            \[
+            \nabla_\theta J(\theta) = E_\pi \left[ \sum_a q_\pi(S_t, a) \nabla_\theta \pi_\theta(a|S_t) \right]
+            \]
+            where $q_\pi(S_t, a)$ is the action-value function under the policy $\pi_\theta$.
+            \item \textbf{Monte Carlo Estimation}: The REINFORCE algorithm uses Monte Carlo sampling to estimate this gradient. The key idea is to replace the action-value function $q_\pi(S_t, a)$ with 
+            the return $G_t$, resulting in:
+            \[
+            \nabla_\theta J(\theta) \approx E_\pi \left[ G_t \frac{\nabla_\theta \pi_\theta(A_t|S_t)}{\pi_\theta(A_t|S_t)} \right]
+            \]
+            \item \textbf{REINFORCE Update Rule}: The update rule for the policy parameters at each time step $t$ is:
+            \[
+            \theta_{t+1} = \theta_t + \alpha G_t \frac{\nabla_\theta \pi_\theta(A_t|S_t)}{\pi_\theta(A_t|S_t)}
+            \]
+            where $\alpha$ is the step size, and $G_t$ is the return from time step $t$ to the end of the episode.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Intuition Behind REINFORCE}
+    
+    The REINFORCE update has an intuitive interpretation: it adjusts the policy parameters in a way that increases the likelihood of actions that lead to high returns while reducing the likelihood of 
+    actions that lead to low returns.
+    
+    \begin{highlight}[Intuition Behind REINFORCE]
+    
+        \begin{itemize}
+            \item \textbf{Return-weighted Updates}: The update is proportional to both the return $G_t$ and the gradient of the policy. This ensures that actions leading to higher returns have a larger 
+            impact on the policy update.
+            \item \textbf{Exploration vs. Exploitation}: The gradient term $\nabla_\theta \pi_\theta(A_t|S_t) / \pi_\theta(A_t|S_t)$ adjusts the policy in the direction that increases the probability of 
+            selecting action $A_t$ in state $S_t$, balancing exploration and exploitation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Properties and Performance of REINFORCE}
+    
+    The section discusses the performance of REINFORCE, highlighting its theoretical convergence properties as well as its practical limitations, such as high variance.
+    
+    \begin{highlight}[Properties and Performance of REINFORCE]
+    
+        \begin{itemize}
+            \item \textbf{Theoretical Convergence}: As a stochastic gradient method, REINFORCE is guaranteed to converge to a local optimum under certain conditions, provided the step size $\alpha$ is 
+            sufficiently small.
+            \item \textbf{High Variance}: Since REINFORCE relies on complete episode returns, it can suffer from high variance, leading to slow learning. This is particularly problematic in environments 
+            with long episodes or sparse rewards.
+            \item \textbf{Monte Carlo Nature}: REINFORCE is well-suited for episodic tasks where updates are made after the completion of an episode. Its Monte Carlo nature makes it less effective for 
+            continuing tasks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{REINFORCE Algorithm}: A Monte Carlo policy gradient method that uses episode returns to update policy parameters.
+            \item \textbf{Gradient Estimation}: REINFORCE estimates the policy gradient using the return from each episode, weighted by the gradient of the policy.
+            \item \textbf{High Variance}: While simple and theoretically sound, REINFORCE can suffer from high variance, leading to slow convergence in practice.
+            \item \textbf{Application Scope}: Best suited for episodic tasks, particularly when episodes are relatively short and rewards are dense.
+        \end{itemize}
+    
+        Understanding the REINFORCE algorithm is essential for applying Monte Carlo policy gradient methods in reinforcement learning, especially in tasks with well-defined episodes and clear returns.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is covered from this chapter this week is \textbf{Section 13.4: REINFORCE With Baseline}.
+
+\begin{notes}{Section 13.4: REINFORCE With Baseline}
+    \subsection*{Overview}
+
+    This section introduces an extension to the REINFORCE algorithm by incorporating a baseline into the update rule. The use of a baseline is a common technique in policy gradient methods to reduce the 
+    variance of gradient estimates, which in turn can speed up learning. The section explains how the baseline is integrated into the REINFORCE algorithm and discusses its impact on learning efficiency.
+    
+    \subsubsection*{Policy Gradient Theorem with Baseline}
+    
+    The Policy Gradient Theorem can be generalized to include a baseline, which is subtracted from the action-value function. The baseline does not affect the expected value of the gradient but can 
+    significantly reduce its variance.
+    
+    \begin{highlight}[Policy Gradient Theorem with Baseline]
+    
+        \begin{itemize}
+            \item \textbf{Generalized Theorem}: The policy gradient theorem with baseline is expressed as:
+            \[
+            \nabla_\theta J(\theta) \propto \sum_s \mu(s) \sum_a \left( q_\pi(s, a) - b(s) \right) \nabla_\theta \pi_\theta(a|s)
+            \]
+            where $b(s)$ is the baseline, which can be any function that does not depend on the action $a$.
+            \item \textbf{Baseline Subtraction}: The subtraction of the baseline $b(s)$ helps in reducing the variance of the gradient estimate, making the learning process more stable.
+            \item \textbf{Expected Update}: The expected update remains the same as in the original REINFORCE algorithm, ensuring that the baseline does not introduce bias into the gradient estimation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{REINFORCE with Baseline Algorithm}
+    
+    Incorporating the baseline into the REINFORCE algorithm leads to a modified update rule. A commonly used baseline is the state-value function $v_\pi(s)$, which is also learned using Monte Carlo methods.
+    
+    \begin{highlight}[REINFORCE with Baseline Algorithm]
+    
+        \begin{itemize}
+            \item \textbf{Update Rule}: The update rule for REINFORCE with baseline is given by:
+            \[
+            \theta_{t+1} = \theta_t + \alpha \left( G_t - b(St) \right) \frac{\nabla_\theta \pi_\theta(A_t|S_t)}{\pi_\theta(A_t|S_t)}
+            \]
+            where $G_t$ is the return, and $b(St)$ is the baseline, often chosen as an estimate of the state-value function $v_\pi(s)$.
+            \item \textbf{Learning the Baseline}: The baseline $b(s)$ is typically learned using the same data generated by the policy. For instance, the state-value function can be learned using a 
+            separate Monte Carlo or TD method:
+            \[
+            w_{t+1} = w_t + \alpha_w \left( G_t - \hat{v}(S_t, w_t) \right) \nabla_w \hat{v}(S_t, w_t)
+            \]
+            \item \textbf{Reduction in Variance}: The introduction of the baseline reduces the variance of the gradient estimates, which can result in faster and more stable learning.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Practical Benefits of Using a Baseline}
+    
+    The section discusses the practical benefits of using a baseline in the REINFORCE algorithm, particularly in terms of learning speed and efficiency. It includes a comparison of the REINFORCE algorithm 
+    with and without a baseline in a specific example.
+    
+    \begin{highlight}[Practical Benefits of Using a Baseline]
+    
+        \begin{itemize}
+            \item \textbf{Faster Learning}: By reducing the variance of gradient estimates, the baseline can lead to significantly faster learning, especially in complex environments with high variance in returns.
+            \item \textbf{Example Comparison}: The section compares the performance of REINFORCE with and without a baseline in the short-corridor gridworld. The results demonstrate that adding a baseline 
+            improves convergence speed and reduces the number of steps required to achieve a good policy.
+            \item \textbf{Flexibility of Baseline Choice}: While the state-value function is a common choice for the baseline, other functions can be used as long as they do not depend on the action $a$.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Baseline in Policy Gradient Methods}: A technique to reduce variance in gradient estimates, leading to more efficient learning.
+            \item \textbf{REINFORCE with Baseline}: An extension of the REINFORCE algorithm that incorporates a baseline, typically the state-value function, to stabilize learning.
+            \item \textbf{Learning Efficiency}: The addition of a baseline can result in faster convergence and more stable updates, particularly in environments with high return variance.
+            \item \textbf{Practical Application}: Demonstrated through examples where the baseline improves the learning speed in reinforcement learning tasks.
+        \end{itemize}
+    
+        Incorporating a baseline into policy gradient methods is a powerful technique that enhances the efficiency and stability of learning, making it a standard practice in advanced reinforcement learning algorithms.
+    \end{highlight}
+\end{notes}

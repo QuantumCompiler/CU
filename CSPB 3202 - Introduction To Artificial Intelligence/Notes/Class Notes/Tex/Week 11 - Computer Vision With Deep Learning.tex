@@ -1,0 +1,1096 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Computer Vision With Deep Learning}
+\renewcommand{\SectionTitle}{Computer Vision With Deep Learning}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 21.1 - Simple Feedforward Networks}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 21.2 - Computation Graphs For Deep Learning}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 21.3 - Convolutional Networks}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 21.4 - Learning Algorithms}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 21.5 - Generalization}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 25.1 - Introduction}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 25.2 - Image Formation}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 25.3 - Simple Image Features}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 25.4 - Classifying Images}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 25.5 - Detecting Objects}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 25.6 - The 3D World}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 25.7 - Using Computer Vision}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=FRNwAVTYsTA}{Intro To Deep Learning And MLP}{39}
+    \item \lecture{https://www.youtube.com/watch?v=JgYjJqTOJkE}{Neural Network Training: Backpropagation}{29}
+    \item \lecture{https://www.youtube.com/watch?v=8nmYftEH8iY}{Nueral Network Training: Optimization And Training Tips}{40}
+    \item \lecture{https://www.youtube.com/watch?v=g7uGaRfyG0I}{Deep Learning Hardware}{9}
+    \item \lecture{https://www.youtube.com/watch?v=VtZBo8Kkw54}{Intro To Keras And Demo}{33}
+    \item \lecture{https://www.youtube.com/watch?v=HGU4REWuH7U}{Convolutional Neural Network - Intro And Definitions}{66}
+    \item \lecture{https://www.youtube.com/watch?v=TP-ArehUtB4}{CNN2: Architectures And Training}{69}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Convolutional Neural Networks 1 Lecture Notes.pdf}{Convolutional Neural Networks 1 Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Convolutional Neural Networks 2 Lecture Notes.pdf}{Convolutional Neural Networks 2 Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Intro To Deep Learning Lecture Notes.pdf}{Intro To Deep Learning Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Neural Network Training Lecture Notes.pdf}{Neural Network Training Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Optimization And Tips For Neural Network Training Lecture Notes.pdf}{Optimization And Tips For Neural Network Training Lecture Notes}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapters that are being covered this week are \textbf{Chapter 21: Deep Learning} and \textbf{Chapter 25: Computer Vision}. The first topic that is being covered from \textbf{Chapter 21: Deep Learning}
+is \textbf{Section 21.1: Simple Feedforward Networks}.
+
+\begin{notes}{Section 21.1: Simple Feedforward Networks}
+    \subsection*{Overview}
+
+    This section introduces simple feedforward networks, a foundational architecture in deep learning. Feedforward networks are characterized by their lack of cycles and one-way connections from input 
+    nodes to output nodes. These networks compute functions by passing information from inputs to outputs through a series of transformations at each layer.
+    
+    \subsubsection*{Feedforward Networks Explained}
+    
+    Feedforward networks consist of nodes arranged in layers, where each node computes a function of its inputs and passes the result to subsequent layers. The network forms a directed acyclic graph, 
+    ensuring a unidirectional flow of information.
+    
+    \begin{highlight}[Feedforward Networks Explained]
+    
+        \begin{itemize}
+            \item \textbf{Architecture}: Comprised of input, hidden, and output layers. Each node (unit) in a layer takes inputs from the previous layer and computes an output.
+            \item \textbf{Mathematical Representation}: Each unit computes a weighted sum of its inputs followed by a nonlinear activation function:
+            \[
+            a_j = g_j\left(\sum_{i} w_{i,j}a_i\right) \equiv g_j(\text{in}_j)
+            \]
+            where $w_{i,j}$ are the weights, $a_i$ are the inputs, and $g_j$ is the activation function of unit $j$.
+            \item \textbf{No Cycles}: Information flows in one direction only, with no cycles, distinguishing feedforward networks from recurrent networks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Networks as Complex Functions}
+    
+    Each feedforward network can be viewed as a complex function composed of simpler functions computed at each layer. The power of these networks lies in their ability to approximate complex mappings 
+    from inputs to outputs.
+    
+    \begin{highlight}[Networks as Complex Functions]
+    
+        \begin{itemize}
+            \item \textbf{Universal Approximation Theorem}: States that a network with one hidden layer can approximate any continuous function given sufficient units and appropriate weights.
+            \item \textbf{Activation Functions}: Nonlinear functions applied at each unit to introduce non-linearity. Common functions include:
+            \begin{itemize}
+                \item \textbf{Sigmoid}: $\sigma(x) = \frac{1}{1 + e^{-x}}$
+                \item \textbf{ReLU (Rectified Linear Unit)}: $\text{ReLU}(x) = \max(0, x)$
+                \item \textbf{Tanh}: $\tanh(x) = \frac{e^{2x} - 1}{e^{2x} + 1}$
+            \end{itemize}
+            \item \textbf{Example}: The output $\hat{y}$ of a network with two inputs, one hidden layer of two units, and one output unit can be expressed as:
+            \[
+            \hat{y} = g_5(w_{0,5} + w_{3,5}g_3(\text{in}_3) + w_{4,5}g_4(\text{in}_4))
+            \]
+            where $g_3$ and $g_4$ are the activation functions in the hidden layer.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Gradients and Learning}
+    
+    Gradient-based optimization methods, such as gradient descent, are used to train feedforward networks by minimizing a loss function. The gradient of the loss with respect to the weights is computed 
+    using backpropagation.
+    
+    \begin{highlight}[Gradients and Learning]
+    
+        \begin{itemize}
+            \item \textbf{Loss Function}: Often the squared loss $L_2$ for regression tasks:
+            \[
+            \text{Loss}(h_w) = \sum (y - \hat{y})^2
+            \]
+            where $\hat{y}$ is the predicted output and $y$ is the true output.
+            \item \textbf{Backpropagation}: A method for calculating the gradient of the loss function with respect to each weight in the network:
+            \[
+            \Delta w_{i,j} \propto \frac{\partial \text{Loss}}{\partial w_{i,j}}
+            \]
+            \item \textbf{Vanishing Gradient Problem}: In deep networks, gradients can diminish as they propagate back through the layers, leading to slow learning or convergence issues.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Feedforward Networks}: Simple networks with unidirectional information flow and no cycles.
+            \item \textbf{Complex Function Representation}: Can approximate complex functions using layers of nonlinear units.
+            \item \textbf{Activation Functions}: Key to introducing non-linearity into the network.
+            \item \textbf{Gradient-Based Learning}: Uses backpropagation to adjust weights and minimize the loss function.
+            \item \textbf{Challenges}: Includes issues like the vanishing gradient problem, which can hinder training in deep networks.
+        \end{itemize}
+    
+        Understanding these foundational aspects of feedforward networks is crucial for building and training deep learning models capable of tackling a wide range of tasks.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered from this chapter this week is \textbf{Section 21.2: Computation Graphs For Deep Learning}.
+
+\begin{notes}{Section 21.2: Computation Graphs For Deep Learning}
+    \subsection*{Overview}
+
+    This section explores the concept of computation graphs in deep learning, a foundational tool for structuring and optimizing neural networks. Computation graphs represent the flow of computations 
+    through a network, from input data through intermediate hidden layers to the final output. This framework is crucial for understanding how to construct and train deep learning models efficiently.
+    
+    \subsubsection*{Input Encoding}
+    
+    The input layer of a computation graph represents the raw data fed into the network. This data must be encoded appropriately to facilitate effective processing by the network's hidden and output layers.
+    
+    \begin{highlight}[Input Encoding]
+    
+        \begin{itemize}
+            \item \textbf{Factored Data}: For structured data with clear attributes (e.g., numerical or Boolean), each attribute corresponds to an input node. Numeric attributes may be scaled or normalized.
+            \item \textbf{Image Data}: Input nodes correspond to pixels or groups of pixels. For RGB images, each pixel may be represented by three values corresponding to red, green, and blue channels.
+            \item \textbf{Categorical Attributes}: Use one-hot encoding for attributes with multiple categories. For instance, an attribute with four categories may be encoded with four input nodes, with only 
+            one active node representing the present category.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Output Layers and Loss Functions}
+    
+    Output layers are responsible for producing the final predictions of the network. The choice of output layer and loss function depends on the type of task, such as classification or regression.
+    
+    \begin{highlight}[Output Layers and Loss Functions]
+    
+        \begin{itemize}
+            \item \textbf{Sigmoid Output Layer}: Suitable for binary classification tasks. The sigmoid function $\sigma(z) = \frac{1}{1 + e^{-z}}$ outputs probabilities.
+            \item \textbf{Softmax Output Layer}: Used for multiclass classification, where each output node corresponds to a class, and the softmax function ensures the outputs form a probability distribution:
+            \[
+            \text{softmax}(z)_k = \frac{e^{z_k}}{\sum_{k'} e^{z_{k'}}}
+            \]
+            \item \textbf{Linear Output Layer}: Used for regression tasks, where the output is a continuous value. Typically, the output $\hat{y} = z$ is interpreted as the mean of a Gaussian distribution.
+            \item \textbf{Loss Functions}: The choice of loss function depends on the task:
+            \begin{itemize}
+                \item \textbf{Cross-Entropy Loss}: Common for classification, measures the difference between the predicted probability distribution and the true distribution.
+                \item \textbf{Mean Squared Error (MSE)}: Used in regression tasks, it measures the average squared difference between predicted and true values.
+            \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Hidden Layers}
+    
+    Hidden layers in a neural network are responsible for transforming the input data into more abstract representations, facilitating the learning of complex patterns and features.
+    
+    \begin{highlight}[Hidden Layers]
+    
+        \begin{itemize}
+            \item \textbf{Nonlinear Transformations}: Each hidden unit applies a nonlinear activation function to a weighted sum of its inputs, allowing the network to capture complex relationships.
+            \item \textbf{Common Activation Functions}: Include ReLU ($\text{ReLU}(z) = \max(0, z)$), sigmoid, and tanh ($\tanh(z) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}}$).
+            \item \textbf{Role of Depth}: Deeper networks (more hidden layers) can learn more complex functions but are harder to train due to issues like the vanishing gradient problem.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Computation Graphs}: Represent the flow of data and computations through a neural network, crucial for both training and inference.
+            \item \textbf{Input Encoding}: Proper encoding of input data is essential for effective learning.
+            \item \textbf{Output Layers and Loss Functions}: The choice depends on the task (classification vs. regression) and the nature of the output.
+            \item \textbf{Hidden Layers}: Transform inputs into higher-level features, enabling the network to learn complex patterns.
+            \item \textbf{Activation Functions}: Introduce non-linearity into the network, essential for capturing complex relationships in the data.
+        \end{itemize}
+    
+        Understanding computation graphs and their components is fundamental for designing and training deep learning models, ensuring they can efficiently learn from data and generalize well to new inputs.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered from this chapter this week is \textbf{Section 21.3: Convolutional Networks}.
+
+\begin{notes}{Chapter 21.3: Convolutional Networks}
+    \subsection*{Overview}
+
+    This section introduces convolutional neural networks (CNNs), a class of deep learning models particularly effective for processing data with a known grid-like topology, such as images. CNNs leverage 
+    the spatial structure of the data through convolutional layers, which apply filters to local patches of the input to detect features, and pooling layers, which downsample the spatial dimensions.
+    
+    \subsubsection*{Convolutional Layers}
+    
+    Convolutional layers are the core building blocks of CNNs. They apply a set of learnable filters (or kernels) to the input data, generating feature maps that capture various aspects of the data, such as 
+    edges, textures, or more complex patterns.
+    
+    \begin{highlight}[Convolutional Layers]
+    
+        \begin{itemize}
+            \item \textbf{Filters (Kernels)}: Small, learnable matrices applied across the input to produce a feature map. Each filter detects specific patterns, and the same filter is applied to all positions 
+            in the input.
+            \item \textbf{Convolution Operation}: The convolution of a filter $k$ with an input $x$ is defined as:
+            \[
+            z_i = (x \ast k)_i = \sum_{j=1}^{l} k_j x_{i+j-(l+1)/2}
+            \]
+            where $l$ is the size of the filter.
+            \item \textbf{Stride and Padding}: Stride controls the step size of the filter as it moves across the input. Padding can be added to control the spatial size of the output, allowing the filter to be 
+            applied to the border regions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Pooling and Downsampling}
+    
+    Pooling layers reduce the spatial dimensions of the feature maps, helping to manage the computational load and control overfitting. They summarize the outputs of local patches by taking the maximum 
+    (max-pooling) or average (average-pooling) of the values.
+    
+    \begin{highlight}[Pooling and Downsampling]
+    
+        \begin{itemize}
+            \item \textbf{Max-Pooling}: Takes the maximum value from each patch of the feature map, highlighting the most salient features detected by the convolutional filters.
+            \item \textbf{Average-Pooling}: Computes the average value of each patch, providing a smoother downsampled feature map.
+            \item \textbf{Downsampling Effect}: Reduces the spatial dimensions of the feature maps, e.g., an input of size $n \times n$ with a stride $s$ results in an output of size $\frac{n}{s} \times 
+            \frac{n}{s}$.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Kernels and Convolution Operation}
+    
+    Kernels (or filters) are critical in CNNs for detecting local features. The convolution operation involves sliding these kernels over the input data to produce feature maps.
+    
+    \begin{highlight}[Kernels and Convolution Operation]
+    
+        \begin{itemize}
+            \item \textbf{Convolution Formula}: The feature map $z$ is calculated by:
+            \[
+            z_i = (x \ast k)_i = \sum_{j=1}^{l} k_j x_{i+j-(l+1)/2}
+            \]
+            where $l$ is the kernel size.
+            \item \textbf{Stride and Padding}: Stride defines the step size for moving the filter, and padding allows the filter to cover border regions of the input.
+            \item \textbf{Multiple Kernels}: A convolutional layer typically uses multiple kernels to extract different types of features from the input.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Residual Networks}
+    
+    Residual networks (ResNets) address the vanishing gradient problem in very deep networks by introducing shortcut connections that allow gradients to bypass certain layers, facilitating more stable and 
+    efficient training.
+    
+    \begin{highlight}[Residual Networks]
+    
+        \begin{itemize}
+            \item \textbf{Residual Blocks}: Introduce an identity shortcut connection that bypasses one or more layers:
+            \[
+            z^{(i)} = g_r(z^{(i-1)} + f(z^{(i-1)}))
+            \]
+            where $g_r$ is the activation function and $f$ represents the residual mapping.
+            \item \textbf{Benefits}: Enable the construction of much deeper networks by mitigating the vanishing gradient problem and allowing for better gradient flow through the network.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Convolutional Layers}: Use learnable filters to detect features in data, with mechanisms like stride and padding controlling output size.
+            \item \textbf{Pooling Layers}: Downsample the feature maps, summarizing the presence of features and reducing dimensionality.
+            \item \textbf{Kernels and Convolution}: Core operations in CNNs that extract local patterns from the input data.
+            \item \textbf{Residual Networks}: Introduce shortcut connections to facilitate training of deeper networks by improving gradient flow.
+        \end{itemize}
+    
+        Convolutional networks are fundamental in processing and extracting hierarchical features from grid-like data, such as images, enabling a wide range of applications in computer vision and beyond.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered from this chapter this week is \textbf{Section 21.4: Learning Algorithms}.
+
+\begin{notes}{Section 21.4: Learning Algorithms}
+    \subsection*{Overview}
+
+    This section discusses the algorithms used for training neural networks, with a focus on optimizing the network's parameters to minimize a loss function. The primary technique discussed is stochastic 
+    gradient descent (SGD) and its variants, which are widely used due to their efficiency and effectiveness in handling large datasets and high-dimensional parameter spaces.
+    
+    \subsubsection*{Stochastic Gradient Descent (SGD)}
+    
+    SGD is a popular optimization method for training neural networks. Unlike standard gradient descent, which uses the entire training set to compute the gradient, SGD updates the model parameters using 
+    a randomly selected subset of the training data (minibatch).
+    
+    \begin{highlight}[Stochastic Gradient Descent (SGD)]
+    
+        \begin{itemize}
+            \item \textbf{Gradient Update Rule}: The parameters $w$ are updated using the gradient of the loss function $L$ with respect to $w$:
+            \[
+            w \leftarrow w - \alpha \nabla_w L(w)
+            \]
+            where $\alpha$ is the learning rate.
+            \item \textbf{Minibatch Size}: A small subset $m$ of training examples is used at each step, making the algorithm computationally efficient and helping to escape local minima.
+            \item \textbf{Advantages}: SGD is particularly effective for large-scale datasets and can leverage parallelism on hardware like GPUs and TPUs.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Computing Gradients in Computation Graphs}
+    
+    The backpropagation algorithm is used to compute the gradient of the loss function with respect to each parameter in the network, propagating the gradient information from the output layer back through 
+    the network.
+    
+    \begin{highlight}[Computing Gradients in Computation Graphs]
+    
+        \begin{itemize}
+            \item \textbf{Backpropagation}: Involves calculating the gradient of the loss $L$ with respect to the output of each node, and then using the chain rule to compute the gradient with respect 
+            to the weights:
+            \[
+            \frac{\partial L}{\partial h} = \frac{\partial L}{\partial h_j} + \frac{\partial L}{\partial h_k}
+            \]
+            where $h$ influences the loss through multiple paths.
+            \item \textbf{Node Derivatives}: For a node $h$ with inputs from nodes $f$ and $g$:
+            \[
+            \frac{\partial L}{\partial f_h} = \frac{\partial L}{\partial h} \frac{\partial h}{\partial f_h}
+            \]
+            \[
+            \frac{\partial L}{\partial g_h} = \frac{\partial L}{\partial h} \frac{\partial h}{\partial g_h}
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Batch Normalization}
+    
+    Batch normalization is a technique to improve the training efficiency and stability of neural networks by normalizing the inputs to each layer. It mitigates issues like vanishing and exploding gradients 
+    and accelerates convergence.
+    
+    \begin{highlight}[Batch Normalization]
+    
+        \begin{itemize}
+            \item \textbf{Normalization}: The outputs of each layer are normalized using the mean $\mu$ and standard deviation $\sigma$ of the inputs within the minibatch:
+            \[
+            \hat{z_i} = \frac{z_i - \mu}{\sqrt{\sigma^2 + \epsilon}}
+            \]
+            where $\epsilon$ is a small constant to prevent division by zero.
+            \item \textbf{Learnable Parameters}: Includes scaling factor $\gamma$ and shift $\beta$ that are learned during training:
+            \[
+            z_i^{\text{normalized}} = \gamma \hat{z_i} + \beta
+            \]
+            \item \textbf{Benefits}: Helps in maintaining a stable distribution of activations across layers, reducing sensitivity to initialization and accelerating the training process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Stochastic Gradient Descent (SGD)}: An efficient optimization algorithm for large-scale datasets, using minibatches to update model parameters.
+            \item \textbf{Backpropagation}: A method for computing gradients in neural networks, essential for training via gradient descent.
+            \item \textbf{Batch Normalization}: Improves training stability and convergence by normalizing layer inputs.
+        \end{itemize}
+    
+        Understanding these learning algorithms and techniques is crucial for effectively training deep neural networks, ensuring they can learn complex patterns from data and generalize well to new inputs.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 21.5: Generalization}.
+
+\begin{notes}{Section 21.5: Generalization}
+    \subsection*{Overview}
+
+    This section explores the concept of generalization in neural networks, focusing on techniques to improve a model's ability to perform well on unseen data. Generalization is crucial in machine learning, 
+    as it determines how well a model trained on a finite dataset will perform on new, previously unseen examples.
+    
+    \subsubsection*{Choosing a Network Architecture}
+    
+    Selecting an appropriate network architecture is key to achieving good generalization. Different types of data and tasks may require different architectures, such as convolutional networks for images 
+    or recurrent networks for sequential data.
+    
+    \begin{highlight}[Choosing a Network Architecture]
+    
+        \begin{itemize}
+            \item \textbf{Task-Specific Architectures}: Convolutional neural networks (CNNs) are well-suited for image data, while recurrent neural networks (RNNs) are ideal for sequential data like text 
+            or speech.
+            \item \textbf{Depth and Complexity}: Generally, deeper networks with more layers can capture more complex patterns, but they also risk overfitting if not managed properly.
+            \item \textbf{Empirical Findings}: Deeper networks with a similar number of weights typically generalize better than shallower ones. For instance, an eleven-layer network tends to have lower test-set 
+            error than a three-layer network for the same task and number of weights.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Weight Decay}
+    
+    Weight decay, a form of regularization, is used to prevent overfitting by penalizing large weights in the network. It helps in controlling the model complexity and thus improves generalization.
+    
+    \begin{highlight}[Weight Decay]
+    
+        \begin{itemize}
+            \item \textbf{Regularization Term}: The weight decay adds a penalty term to the loss function:
+            \[
+            \text{Cost}(w) = \text{EmpLoss}(w) + \lambda \sum_{i,j} w_{i,j}^2
+            \]
+            where $\lambda$ controls the strength of the penalty.
+            \item \textbf{Effect}: Encourages the network to use smaller weights, which helps in avoiding overfitting and keeping the model simpler.
+            \item \textbf{Interpretation}: Can be seen as implementing a prior on the weights, favoring smaller values under a Gaussian distribution.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Dropout}
+    
+    Dropout is a technique to prevent overfitting by randomly deactivating a subset of units in the network during training. This forces the network to learn redundant representations, making it more robust.
+    
+    \begin{highlight}[Dropout]
+    
+        \begin{itemize}
+            \item \textbf{Mechanism}: During training, each unit (hidden or input) is kept with a probability $p$ and dropped with a probability $1 - p$:
+            \[
+            \hat{z}_i = \frac{z_i}{p} \text{ if unit } i \text{ is kept, else } 0
+            \]
+            \item \textbf{Ensemble Learning Analogy}: Dropout can be thought of as training a large number of "thinned" networks with shared weights, effectively creating an ensemble of networks.
+            \item \textbf{Benefits}: Helps in preventing co-adaptation of units, ensuring that the network does not rely too heavily on any single feature.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Neural Architecture Search}
+    
+    Neural architecture search (NAS) involves using algorithms to automate the process of finding the best neural network architecture for a given task. This process explores different configurations, 
+    including depth, width, and connectivity, to find architectures that generalize well.
+    
+    \begin{highlight}[Neural Architecture Search]
+    
+        \begin{itemize}
+            \item \textbf{Techniques}: Includes methods like evolutionary algorithms, reinforcement learning, and gradient-based optimization to explore the space of possible architectures.
+            \item \textbf{Challenges}: Evaluating each architecture can be computationally expensive, often requiring full training runs, which makes this process resource-intensive.
+            \item \textbf{Evaluation Methods}: Approaches to reduce the cost include training on smaller datasets or using proxy models to estimate performance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Network Architecture}: Selecting an appropriate architecture is crucial for good generalization.
+            \item \textbf{Weight Decay}: Regularizes the network by penalizing large weights, helping to control model complexity.
+            \item \textbf{Dropout}: A regularization technique that improves robustness by preventing units from relying too heavily on any single feature.
+            \item \textbf{Neural Architecture Search}: Automated methods for finding the best neural network architecture for a specific task.
+        \end{itemize}
+    
+        Understanding these techniques is essential for developing neural networks that generalize well to new data, providing robust and reliable predictions in various applications.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 25: Computer Vision}. The first section that is being covered from this chapter this week is \textbf{Section 25.1: Introduction}.
+
+\begin{notes}{Section 25.1: Introduction}
+    \subsection*{Overview}
+
+    This section introduces the field of computer vision, which involves connecting computers to the physical world through visual data. Vision, as a perceptual channel, provides valuable information about 
+    the environment, enabling agents to make predictions and decisions. The section discusses both passive and active sensing and introduces key concepts in computer vision, including feature extraction, 
+    model-based approaches, and the core problems of reconstruction and recognition.
+    
+    \subsubsection*{Vision as a Perceptual Channel}
+    
+    Vision allows agents to perceive and interpret their surroundings, offering significant advantages despite the associated costs of maintaining visual systems. Vision enables agents to navigate, identify 
+    objects, and predict future events based on visual cues.
+    
+    \begin{highlight}[Vision as a Perceptual Channel]
+    
+        \begin{itemize}
+            \item \textbf{Passive Sensing}: Most vision systems use passive sensing, which relies on ambient light without emitting signals. This includes natural vision systems in animals and standard cameras.
+            \item \textbf{Active Sensing}: Involves emitting signals like ultrasound, radar, or light and interpreting the reflections. Examples include echolocation in bats and sonar in dolphins.
+            \item \textbf{Feature Extraction}: Simple computations applied to an image to derive useful information, such as edge detection or color segmentation.
+            \item \textbf{Examples}: Animals use vision to avoid obstacles, assess threats, find food, and interact with others.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Model-Based Approaches to Vision}
+    
+    Model-based approaches in vision involve using predefined models to interpret visual data. These models can describe the geometric, physical, and statistical properties of objects and scenes.
+    
+    \begin{highlight}[Model-Based Approaches to Vision]
+    
+        \begin{itemize}
+            \item \textbf{Object Models}: Precise geometric models, like those used in computer-aided design (CAD), or general descriptions, such as the typical appearance of faces at low resolution.
+            \item \textbf{Rendering Models}: Describe how images are formed based on the interaction of light with objects, accounting for factors like lighting, perspective, and material properties.
+            \item \textbf{Ambiguities in Vision}: Visual perception can be ambiguous; for instance, a small object nearby may look similar to a larger distant object, or lighting can alter the perceived color of objects.
+            \item \textbf{Managing Ambiguities}: Techniques include leveraging prior knowledge (e.g., there are no real Godzillas) and focusing on relevant details while ignoring insignificant ones.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Core Problems of Computer Vision}
+    
+    The two fundamental problems in computer vision are reconstruction and recognition. Reconstruction involves building a model of the environment from visual data, while recognition entails identifying and 
+    distinguishing between objects.
+    
+    \begin{highlight}[Core Problems of Computer Vision]
+    
+        \begin{itemize}
+            \item \textbf{Reconstruction}: Creating a geometric or texture-based model of the scene from one or multiple images. This includes tasks like 3D reconstruction and depth estimation.
+            \item \textbf{Recognition}: Involves classifying objects, identifying their state, or understanding their attributes (e.g., determining if an object is animate or inanimate, or identifying specific 
+            objects like faces or animals).
+            \item \textbf{Examples}: Identifying whether a visual input depicts a real scene or a toy model, or distinguishing between different types of objects in an image.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Vision Systems}: Enable agents to perceive and interpret their environment, crucial for navigation and interaction.
+            \item \textbf{Passive vs. Active Sensing}: Different approaches to capturing visual data, each with its applications and limitations.
+            \item \textbf{Model-Based Vision}: Uses predefined models to interpret visual data, accounting for ambiguities and variations in appearance.
+            \item \textbf{Core Problems}: Focus on reconstruction and recognition, essential for applications like autonomous vehicles, robotics, and image analysis.
+        \end{itemize}
+    
+        Understanding these foundational concepts in computer vision is critical for developing systems that can interpret and act upon visual data, enabling a wide range of applications from robotics to 
+        medical imaging.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 25.2: Image Formation}.
+
+\begin{notes}{Section 25.2: Image Formation}
+    \subsection*{Overview}
+
+    This section explains the fundamental concepts and physical principles behind image formation, a critical aspect of computer vision. Understanding how images are formed and the factors that influence 
+    their appearance is essential for developing models that can accurately interpret visual data. The section covers different imaging systems, geometric distortions, and the role of light and shading in 
+    image formation.
+    
+    \subsubsection*{Images without Lenses: The Pinhole Camera}
+    
+    A pinhole camera represents the simplest model of image formation, using a small aperture to project light onto an image plane. This system helps in understanding the basic principles of how images are 
+    captured.
+    
+    \begin{highlight}[Images without Lenses: The Pinhole Camera]
+    
+        \begin{itemize}
+            \item \textbf{Pinhole Camera}: Consists of a small aperture (pinhole) that allows light from a scene to form an inverted image on the opposite side of a dark box.
+            \item \textbf{Geometric Model}: The pinhole camera can be described using a 3D coordinate system with the origin at the pinhole. The projection of a point \( P \) with coordinates \((X, Y, Z)\) 
+            to the image plane with coordinates \((x, y)\) is given by:
+            \[
+            x = -f \frac{X}{Z}, \quad y = -f \frac{Y}{Z}
+            \]
+            where \( f \) is the focal length, the distance from the pinhole to the image plane.
+            \item \textbf{Perspective Projection}: This process means that the image size decreases with increasing distance from the camera, causing distant objects to appear smaller.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Lens Systems}
+    
+    While pinhole cameras provide a basic understanding, real-world imaging systems typically use lenses to gather more light and focus it more accurately.
+    
+    \begin{highlight}[Lens Systems]
+    
+        \begin{itemize}
+            \item \textbf{Function of Lenses}: Lenses collect light over a larger area than a pinhole, focusing it to a point on the image plane. This increases image brightness and reduces noise.
+            \item \textbf{Focal Plane and Depth of Field}: The focal plane is the specific distance at which objects are in sharp focus. The depth of field refers to the range within which objects appear 
+            acceptably sharp. It is influenced by the aperture size and lens properties.
+            \item \textbf{Aperture and Light Gathering}: A larger aperture allows more light to enter, making the image brighter, but it also reduces the depth of field, requiring more precise focusing.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Scaled Orthographic Projection}
+    
+    In certain cases, perspective distortions are minimal, and a simplified model called scaled orthographic projection can be used. This model is particularly useful for objects at a similar distance from 
+    the camera.
+    
+    \begin{highlight}[Scaled Orthographic Projection]
+    
+        \begin{itemize}
+            \item \textbf{Assumption}: This model assumes that the depth \( Z \) of all points on an object lies within a small range \( Z_0 \pm \Delta Z \) relative to the distance \( Z_0 \), allowing the perspective 
+            scaling factor \( f/Z \) to be approximated as constant.
+            \item \textbf{Projection Equations}: The equations for projection from scene coordinates \((X, Y, Z)\) to the image plane become:
+            \[
+            x = sX, \quad y = sY
+            \]
+            where \( s = f/Z_0 \).
+            \item \textbf{Application}: Useful in scenarios where objects have minimal depth variation, making the perspective effects negligible.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Light and Shading}
+    
+    The brightness of an image is influenced by the lighting conditions and the properties of the surfaces in the scene. Understanding these effects is crucial for interpreting image content accurately.
+    
+    \begin{highlight}[Light and Shading]
+    
+        \begin{itemize}
+            \item \textbf{Diffuse Reflection}: Light is scattered evenly across all directions from a surface, with brightness depending on the angle of incidence. Most surfaces in everyday life, such as cloth, 
+            wood, and unpolished stones, exhibit diffuse reflection.
+            \item \textbf{Specular Reflection}: Light reflects in a specific direction, creating bright spots known as specular highlights. Surfaces like metal, water, and glossy paint exhibit specular reflection.
+            \item \textbf{Lambert's Cosine Law}: Describes the brightness \( I \) of a diffuse surface as:
+            \[
+            I = \rho I_0 \cos\theta
+            \]
+            where \( \rho \) is the diffuse albedo, \( I_0 \) is the light source intensity, and \( \theta \) is the angle between the light direction and the surface normal.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Image Formation Models}: Include the pinhole camera and lens systems, each with specific characteristics and applications.
+            \item \textbf{Perspective and Orthographic Projection}: Different models for projecting 3D scenes onto 2D planes, each with unique distortion properties.
+            \item \textbf{Light and Shading}: Crucial for understanding the appearance of objects, influenced by the type of reflection and the lighting conditions.
+        \end{itemize}
+    
+        A thorough understanding of these principles is essential for developing accurate models in computer vision, enabling effective interpretation and analysis of visual data.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 25.3: Simple Image Features}.
+
+\begin{notes}{Section 25.3: Simple Image Features}
+    \subsection*{Overview}
+
+    This section covers the extraction and utilization of simple image features in computer vision. These features include edges, texture, optical flow, and segmentation into regions. Simple image features 
+    provide a foundational level of analysis, allowing for the abstraction of complex visual data into manageable and interpretable components.
+    
+    \subsubsection*{Edges}
+    
+    Edges are fundamental features in images, representing significant changes in intensity. They are crucial for understanding the structure of a scene and are often the first step in image analysis.
+    
+    \begin{highlight}[Edges]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: Edges are lines or curves in the image where there is a noticeable change in brightness, marking boundaries between different regions.
+            \item \textbf{Types of Edges}: Include depth discontinuities, surface orientation changes, reflectance changes, and illumination changes (shadows).
+            \item \textbf{Edge Detection}: Involves differentiating the image to find points with large gradients, typically after applying a smoothing function like a Gaussian filter to reduce noise:
+            \[
+            \text{Gradient} = \nabla I = \left(\frac{\partial I}{\partial x}, \frac{\partial I}{\partial y}\right)
+            \]
+            \item \textbf{Noise and Smoothing}: Gaussian smoothing helps in reducing noise and enhancing the true edges:
+            \[
+            G_\sigma(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{x^2}{2\sigma^2}}
+            \]
+            \item \textbf{Edge Linking}: After detecting edges, the next step is to link these edges to form continuous contours, aiding in the delineation of object boundaries.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Texture}
+    
+    Texture describes the visual patterns on a surface, which can range from regular and repetitive to random and irregular. It is a higher-level feature that helps in recognizing objects and materials.
+    
+    \begin{highlight}[Texture]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: Texture refers to the repeated patterns or statistical properties in an image region, such as the grain on wood or the weave in fabric.
+            \item \textbf{Texels}: The fundamental unit of texture, similar to pixels in an image. Texels can represent repetitive elements within a texture.
+            \item \textbf{Texture Descriptors}: Methods like histogram of gradient orientations capture the essence of texture, providing invariance to illumination changes:
+            \[
+            \text{Histogram of Orientations}
+            \]
+            \item \textbf{Applications}: Used in object recognition, scene classification, and image segmentation, as textures often differentiate between different objects or surfaces.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Optical Flow}
+    
+    Optical flow refers to the apparent motion of objects in the visual field, caused by the relative motion between the observer and the scene. It is a critical feature for understanding dynamics in a scene.
+    
+    \begin{highlight}[Optical Flow]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: Optical flow describes the motion of pixels in an image sequence, representing the velocity and direction of movement.
+            \item \textbf{Computation}: Typically involves tracking the displacement of pixel intensities between frames:
+            \[
+            (v_x, v_y) = \left(\frac{D_x}{\Delta t}, \frac{D_y}{\Delta t}\right)
+            \]
+            \item \textbf{Applications}: Used in motion detection, video stabilization, and understanding scene dynamics. It can indicate object movement, camera motion, or changes in the environment.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Segmentation of Natural Images}
+    
+    Segmentation is the process of partitioning an image into meaningful regions, often corresponding to objects or surfaces. This process simplifies the image analysis by focusing on larger units rather than individual pixels.
+    
+    \begin{highlight}[Segmentation of Natural Images]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: Dividing an image into segments based on criteria like color, brightness, or texture to identify distinct regions.
+            \item \textbf{Methods}: Includes edge-based segmentation, region-based segmentation, and clustering methods like k-means.
+            \item \textbf{Challenges}: Segmentation must handle noise, overlapping regions, and varying object appearances. Often, both local (pixel-level) and global (object-level) information is used.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Edges}: Key indicators of structural boundaries in images, essential for shape analysis.
+            \item \textbf{Texture}: Provides detailed information about the surface properties of objects.
+            \item \textbf{Optical Flow}: Captures motion information, critical for understanding dynamics in video sequences.
+            \item \textbf{Segmentation}: Essential for dividing images into meaningful regions, facilitating higher-level analysis.
+        \end{itemize}
+    
+        These simple image features form the building blocks for more advanced computer vision techniques, enabling detailed analysis and interpretation of visual data.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 25.4: Classifying Images}.
+
+\begin{notes}{Section 25.4: Classifying Images}
+    \subsection*{Overview}
+
+    This section discusses the techniques and challenges associated with image classification, a fundamental task in computer vision. Image classification involves assigning a label to an image based on its 
+    content, which can include identifying objects, scenes, or specific attributes. The section covers the role of convolutional neural networks (CNNs) in achieving state-of-the-art results and addresses 
+    various challenges such as appearance variation and context.
+    
+    \subsubsection*{Image Classification Challenges}
+    
+    Classifying images accurately can be challenging due to variations in appearance caused by lighting, foreshortening, aspect changes, occlusion, and deformation. These factors can make the same object 
+    appear differently in different images.
+    
+    \begin{highlight}[Image Classification Challenges]
+    
+        \begin{itemize}
+            \item \textbf{Lighting}: Changes in lighting can alter the brightness and color of the image, affecting the appearance of objects.
+            \item \textbf{Foreshortening}: When a pattern is viewed at a glancing angle, it becomes distorted, as seen with objects like circular patches appearing elliptical.
+            \item \textbf{Aspect Changes}: Different viewing angles can significantly alter the shape of objects, such as a doughnut appearing as an oval from the side and as an annulus from above.
+            \item \textbf{Occlusion}: Parts of an object may be hidden by other objects or by itself (self-occlusion), complicating identification.
+            \item \textbf{Deformation}: Objects that change shape, like humans or animals moving, add complexity to classification tasks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Image Classification with Convolutional Neural Networks (CNNs)}
+    
+    CNNs have proven to be highly effective for image classification tasks, largely due to their ability to learn relevant features directly from data. They excel in handling the challenges posed by variations 
+    in appearance.
+    
+    \begin{highlight}[Image Classification with Convolutional Neural Networks (CNNs)]
+    
+        \begin{itemize}
+            \item \textbf{Architecture}: CNNs consist of multiple layers, including convolutional layers, pooling layers, and fully connected layers. Each layer extracts increasingly abstract features from the input.
+            \item \textbf{Training on Large Datasets}: The availability of large datasets like ImageNet, containing millions of labeled images, has been crucial for training effective CNNs. These datasets 
+            provide diverse examples that help networks learn to generalize well.
+            \item \textbf{ImageNet and Performance}: ImageNet's large-scale dataset has facilitated the development of highly accurate classifiers, with CNNs achieving top-5 accuracies of over 98\%, surpassing 
+            human performance in some categories.
+            \item \textbf{Learning Features}: Unlike traditional methods that rely on hand-crafted features, CNNs learn features directly from the data, ensuring they are well-suited for the classification 
+            task.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Why CNNs Classify Images Well}
+    
+    CNNs' ability to classify images effectively stems from their architecture, which is adept at capturing spatial hierarchies and local patterns. Data augmentation and the hierarchical structure of CNNs 
+    contribute to their robustness and accuracy.
+    
+    \begin{highlight}[Why CNNs Classify Images Well]
+    
+        \begin{itemize}
+            \item \textbf{Hierarchical Feature Learning}: CNNs learn to detect simple patterns in early layers and combine them into complex features in deeper layers. This hierarchical learning allows 
+            the network to capture intricate details and contextual relationships.
+            \item \textbf{Data Augmentation}: Techniques like random shifting, rotating, and flipping of training images help CNNs become invariant to transformations, improving their robustness.
+            \item \textbf{Context Sensitivity}: CNNs can learn to ignore irrelevant background information and focus on discriminative features, even when only a small portion of the image contains the 
+            object of interest.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Image Classification Challenges}: Variations in lighting, perspective, occlusion, and object deformation make classification complex.
+            \item \textbf{Convolutional Neural Networks}: CNNs are powerful tools for image classification, learning features directly from large datasets.
+            \item \textbf{Hierarchical Learning and Data Augmentation}: Key factors that contribute to the robustness and high performance of CNNs in image classification tasks.
+        \end{itemize}
+    
+        These concepts are fundamental to understanding and developing effective image classification systems, capable of accurately identifying and categorizing objects and scenes in diverse visual data.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 25.5: Detecting Objects}.
+
+\begin{notes}{Section 25.5: Detecting Objects}
+    \subsection*{Overview}
+
+    This section explores object detection in images, a critical task in computer vision that involves not only identifying objects but also localizing them within the image. Object detection systems output 
+    bounding boxes around detected objects and classify them into predefined categories. The section covers key concepts such as the sliding window approach, regional proposal networks, and advanced 
+    techniques like Faster R-CNN.
+    
+    \subsubsection*{Image Classification vs. Object Detection}
+    
+    While image classifiers label an entire image with a single class, object detectors locate and classify multiple objects within the same image. This distinction requires object detectors to manage both 
+    classification and localization tasks.
+    
+    \begin{highlight}[Image Classification vs. Object Detection]
+    
+        \begin{itemize}
+            \item \textbf{Bounding Boxes}: Object detectors use bounding boxes to specify the location of each detected object within an image.
+            \item \textbf{Sliding Window Approach}: A method where a classifier scans the image with a fixed-size window, classifying the contents of each window. This approach, however, can be computationally 
+            intensive due to the large number of possible window positions and sizes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Regional Proposal Networks (RPNs) and Faster R-CNN}
+    
+    The Faster R-CNN architecture improves object detection efficiency by using a Regional Proposal Network (RPN) to suggest potential object locations, which are then refined and classified.
+    
+    \begin{highlight}[Regional Proposal Networks (RPNs) and Faster R-CNN]
+    
+        \begin{itemize}
+            \item \textbf{Regional Proposal Network (RPN)}: Generates a set of bounding boxes, known as anchor boxes, that likely contain objects. The RPN is trained to distinguish between object and 
+            non-object regions.
+            \item \textbf{Anchor Boxes}: Predefined boxes of various sizes and aspect ratios that the network evaluates at different positions within the image. Each anchor box is scored based on its 
+            "objectness," or likelihood of containing an object.
+            \item \textbf{ROI Pooling}: Region of Interest (ROI) pooling is used to standardize the size of feature maps extracted from these boxes, allowing the subsequent classifier to process them.
+            \item \textbf{Non-Maximum Suppression}: A technique used to filter out multiple detections of the same object by keeping only the bounding box with the highest score for each object and 
+            discarding the others that overlap significantly.
+            \item \textbf{Bounding Box Regression}: Refines the location and size of the bounding boxes to more accurately match the objects, correcting any initial inaccuracies from the RPN.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Evaluation of Object Detectors}
+    
+    Evaluating the performance of object detectors involves comparing their predictions with ground truth annotations. Key metrics include precision, recall, and intersection over union (IoU).
+    
+    \begin{highlight}[Evaluation of Object Detectors]
+    
+        \begin{itemize}
+            \item \textbf{Ground Truth Annotations}: Human-provided labels that include the category and precise location of objects within the image, used as the standard for evaluating detector performance.
+            \item \textbf{Precision and Recall}: Precision measures the proportion of correct positive detections, while recall measures the proportion of true objects detected by the system.
+            \item \textbf{Intersection over Union (IoU)}: A metric used to assess the overlap between predicted bounding boxes and ground truth boxes. It is defined as the ratio of the area of intersection 
+            to the area of union between the predicted and ground truth boxes.
+            \item \textbf{Non-Maximum Suppression (NMS)}: A post-processing step to remove duplicate detections and ensure that each object is reported once, using a threshold on IoU to merge overlapping boxes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Object Detection}: Involves both classification and localization of multiple objects within an image.
+            \item \textbf{Faster R-CNN and RPNs}: Advanced frameworks for efficient and accurate object detection, utilizing regional proposal networks and ROI pooling.
+            \item \textbf{Bounding Box Regression and Non-Maximum Suppression}: Techniques for refining object localization and removing redundant detections.
+            \item \textbf{Evaluation Metrics}: Precision, recall, and IoU are essential metrics for assessing the performance of object detectors.
+        \end{itemize}
+    
+        These concepts are crucial for developing robust object detection systems capable of accurately identifying and localizing objects in complex scenes.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 25.6: The 3D World}.
+
+\begin{notes}{Section 25.6: The 3D World}
+    \subsection*{Overview}
+
+    This section delves into how images, which are inherently two-dimensional, can provide rich information about the three-dimensional (3D) world. By leveraging multiple views and various cues within 
+    images, it is possible to reconstruct and interpret the 3D structure of scenes. The section explores methods for extracting 3D cues from multiple views, binocular stereopsis, motion, and single images.
+    
+    \subsubsection*{3D Cues from Multiple Views}
+    
+    Multiple images of the same scene taken from different viewpoints can be used to reconstruct the 3D geometry. This process involves matching corresponding points across images and using geometric 
+    principles to infer depth information.
+    
+    \begin{highlight}[3D Cues from Multiple Views]
+    
+        \begin{itemize}
+            \item \textbf{Correspondence Problem}: Identifying matching points in different views of the same scene. Features such as texture can aid in matching points across images.
+            \item \textbf{Reconstruction Techniques}: By triangulating matched points from different views, it is possible to construct a 3D model of the scene. The precision of this reconstruction improves 
+            with the number of views and the diversity of viewpoints.
+            \item \textbf{Applications}: This technique is fundamental in fields like photogrammetry, where precise measurements of the 3D structure are essential.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Binocular Stereopsis}
+    
+    Binocular stereopsis is the method by which depth is perceived using the slight difference in images between the left and right eyes. This disparity provides crucial information about the relative distance 
+    of objects.
+    
+    \begin{highlight}[Binocular Stereopsis]
+    
+        \begin{itemize}
+            \item \textbf{Disparity}: The difference in position of an object's image on the left and right retinas is known as disparity. The size of this disparity is inversely proportional to the object's 
+            distance from the observer.
+            \item \textbf{Depth Estimation}: Using the formula:
+            \[
+            \text{disparity} = \frac{b \delta Z}{Z^2}
+            \]
+            where \( b \) is the baseline (distance between the eyes), \( \delta Z \) is the change in depth, and \( Z \) is the depth.
+            \item \textbf{Applications}: Useful in both biological vision systems and artificial systems like stereo cameras, aiding in navigation and interaction with the environment.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{3D Cues from a Moving Camera}
+    
+    Similar to stereopsis, moving a single camera provides sequential images from different viewpoints. Analyzing the differences between these images, known as optical flow, can reveal the 3D structure 
+    of the scene.
+    
+    \begin{highlight}[3D Cues from a Moving Camera]
+    
+        \begin{itemize}
+            \item \textbf{Optical Flow}: The apparent motion of objects in the image as the camera moves. It provides information about the relative motion and depth of objects.
+            \item \textbf{Focus of Expansion (FOE)}: The point in the image where the optical flow vectors converge, indicating the direction of motion. This can be used to deduce the camera's trajectory 
+            and relative depth of objects.
+            \item \textbf{Depth from Motion}: The speed and direction of object motion in the image plane correlate with their distance from the camera, allowing depth estimation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{3D Cues from One View}
+    
+    Even a single image can provide cues about the 3D structure of the scene. These cues include perspective, shading, texture gradients, and occlusion.
+    
+    \begin{highlight}[3D Cues from One View]
+    
+        \begin{itemize}
+            \item \textbf{Perspective}: The way parallel lines converge in an image provides information about depth and distance.
+            \item \textbf{Texture Gradients}: Changes in the size, shape, and density of texture elements can indicate the surface orientation and depth.
+            \item \textbf{Shading and Lighting}: The distribution of light and shadow on surfaces can reveal the shape and depth of objects.
+            \item \textbf{Occlusion}: When one object overlaps another, it provides a powerful cue about their relative positions in depth.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{3D Cues from Multiple Views}: Techniques like triangulation are used to reconstruct 3D models from multiple images.
+            \item \textbf{Binocular Stereopsis}: Utilizes the disparity between left and right eye views to gauge depth.
+            \item \textbf{3D Cues from Motion}: Optical flow and focus of expansion provide depth information from moving cameras.
+            \item \textbf{Single-View Cues}: Perspective, texture, shading, and occlusion cues are crucial for inferring 3D structure from a single image.
+        \end{itemize}
+    
+        These principles are fundamental to various applications in computer vision, robotics, and augmented reality, where understanding the 3D structure of the environment is critical.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 25.7: Using Computer Vision}.
+
+\begin{notes}{Section 25.7: Using Computer Vision}
+    \subsection*{Overview}
+
+    This section explores various applications of computer vision, highlighting its transformative impact across numerous fields. It covers areas such as understanding human activities, linking pictures with 
+    words, 3D reconstruction from multiple views, geometry from a single view, creating pictures, and controlling movement with vision. These applications showcase the versatility and power of computer vision 
+    technologies in interpreting and interacting with the visual world.
+    
+    \subsubsection*{Understanding What People Are Doing}
+    
+    Computer vision systems can analyze video data to understand human activities, leading to applications in surveillance, human-computer interaction, and more.
+    
+    \begin{highlight}[Understanding What People Are Doing]
+    
+        \begin{itemize}
+            \item \textbf{Activity Recognition}: Systems can now accurately predict the locations of a person’s joints and reconstruct 3D body poses from images, enabling applications such as surveillance and 
+            gaming.
+            \item \textbf{Behavior Classification}: While structured activities like sports are easier to classify, understanding more general behaviors remains challenging due to varying contexts and appearances.
+            \item \textbf{Applications}: Includes public safety, ergonomic assessments in workplaces, and interactive entertainment.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Linking Pictures and Words}
+    
+    Image captioning and tagging systems link visual data with descriptive text, enhancing accessibility and searchability of images.
+    
+    \begin{highlight}[Linking Pictures and Words]
+    
+        \begin{itemize}
+            \item \textbf{Image Tagging}: Uses image classification and object detection techniques to label images with keywords, aiding in organizing and retrieving visual content.
+            \item \textbf{Image Captioning}: Combines convolutional networks with sequence models like RNNs or transformers to generate descriptive sentences for images. Challenges include generating contextually 
+            accurate and detailed descriptions.
+            \item \textbf{Visual Question Answering (VQA)}: Systems answer natural language questions about images, testing their comprehension beyond simple descriptions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Reconstruction from Many Views}
+    
+    Using multiple images from different viewpoints, it is possible to reconstruct detailed 3D models of scenes and objects.
+    
+    \begin{highlight}[Reconstruction from Many Views]
+    
+        \begin{itemize}
+            \item \textbf{Multi-View Geometry}: Involves matching points across different images to build 3D models, with applications in urban modeling, virtual reality, and movie production.
+            \item \textbf{Applications}: Includes creating detailed 3D models from tourist photos, integrating CGI characters in live-action footage, and tracking construction progress with drones.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Geometry from a Single View}
+    
+    Single images can also provide cues for 3D reconstruction, using learned models to estimate depth and geometry.
+    
+    \begin{highlight}[Geometry from a Single View]
+    
+        \begin{itemize}
+            \item \textbf{Depth Maps}: Predicting depth from a single image, useful for understanding room layouts and object placement.
+            \item \textbf{Object Pose Estimation}: Using known object models to estimate the pose and shape of objects from single images, extending to complete texture mapping.
+            \item \textbf{Applications}: Includes virtual try-ons in fashion, enhancing realism in gaming, and interior design visualization.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Making Pictures}
+    
+    Computer vision also involves creating new visual content, such as inserting objects into scenes or transforming images.
+    
+    \begin{highlight}[Making Pictures]
+    
+        \begin{itemize}
+            \item \textbf{Image Synthesis and Style Transfer}: Techniques like GANs can generate realistic images, alter styles, and even create deepfakes, blending real and synthetic elements seamlessly.
+            \item \textbf{Applications}: Ranging from entertainment and art to privacy-preserving data synthesis in medical imaging.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Controlling Movement with Vision}
+    
+    Vision-based control is essential for robotics and autonomous systems, enabling navigation and interaction with the environment.
+    
+    \begin{highlight}[Controlling Movement with Vision]
+    
+        \begin{itemize}
+            \item \textbf{Autonomous Vehicles}: Use vision systems for lane detection, obstacle avoidance, and adherence to traffic signals.
+            \item \textbf{Mobile Robotics}: Includes SLAM (Simultaneous Localization and Mapping) and path planning, crucial for applications like automated delivery.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Activity Recognition}: Understanding human actions through video analysis.
+            \item \textbf{Image Captioning and VQA}: Linking visual data with textual descriptions and answers.
+            \item \textbf{3D Reconstruction}: Techniques for creating 3D models from multiple or single images.
+            \item \textbf{Image Synthesis and Transformation}: Generating new visual content and altering existing images.
+            \item \textbf{Vision-Based Control}: Applications in autonomous navigation and robotic manipulation.
+        \end{itemize}
+    
+        These diverse applications highlight the versatility of computer vision technologies and their expanding role in various domains, from entertainment to practical automation.
+    
+    \end{highlight}
+\end{notes}

@@ -1,0 +1,929 @@
+\begin{examnotes}{Exam 1}
+    \subsection*{Introduction to AI and Search Problems}
+
+    Key topics include world state calculations, task environment characteristics, and various search algorithms such as breadth-first search (BFS), depth-first search (DFS), and uniform-cost search (UCS).
+    
+    \subsubsection*{World State Calculation in AI}
+    
+    World state calculation involves determining the number of possible configurations or states in a given problem space. This concept is crucial for understanding the complexity of search problems and the computational resources required.
+    
+    \begin{highlight}[World State Calculation]
+        The calculation of world states helps in evaluating the scope of the problem and planning search strategies accordingly.
+        
+        \begin{itemize}
+            \item \textbf{State Space Size}: Determined by the possible positions and conditions of all elements in the problem space.
+            \item \textbf{Constraints}: Conditions that limit the possible configurations in the state space.
+            \item \textbf{Combinatorial Explosion}: The rapid growth of the state space size as the number of elements and constraints increases.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Task Environment Characteristics}
+    
+    The task environment for an agent is defined by various characteristics, such as determinism, dynamism, and observability. Understanding these characteristics helps in designing appropriate algorithms for different environments.
+    
+    \begin{highlight}[Task Environment Characteristics]
+        Task environments can be characterized by their properties, which influence the design and behavior of intelligent agents.
+        
+        \begin{itemize}
+            \item \textbf{Deterministic vs. Stochastic}: Whether the outcomes of actions are predictable or involve randomness.
+            \item \textbf{Static vs. Dynamic}: Whether the environment changes independently of the agent's actions.
+            \item \textbf{Fully Observable vs. Partially Observable}: Whether the agent has access to the complete state of the environment at any time.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Breadth-First Search (BFS)}
+    
+    BFS is a search algorithm that explores all the nodes at the present depth level before moving on to nodes at the next depth level. It is particularly useful for finding the shortest path in an unweighted graph.
+    
+    \begin{highlight}[Breadth-First Search (BFS)]
+        BFS uses a queue to explore nodes level by level. It is suitable for scenarios where the shortest path is required, and all edge costs are equal.
+        
+        \begin{itemize}
+            \item \textbf{Queue Data Structure}: Utilized to keep track of nodes to be explored.
+            \item \textbf{Node Expansion}: Explores all neighbors of a node before moving to the next level.
+            \item \textbf{Shortest Path Guarantee}: Ensures finding the shortest path in an unweighted graph.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Depth-First Search (DFS)}
+    
+    DFS is a search algorithm that explores as far down a branch as possible before backtracking. It is useful for problems where the solution is deep in the search tree or for checking connectivity.
+    
+    \begin{highlight}[Depth-First Search (DFS)]
+        DFS uses a stack (or recursion) to explore nodes. It is effective for problems requiring deep exploration but does not guarantee the shortest path.
+        
+        \begin{itemize}
+            \item \textbf{Stack Data Structure}: Utilized to keep track of nodes to be explored.
+            \item \textbf{Deep Exploration}: Continues down a path until a dead end is reached before backtracking.
+            \item \textbf{Memory Efficiency}: Requires less memory than BFS in many cases.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Uniform-Cost Search (UCS)}
+    
+    UCS is a search algorithm that expands the least-cost node first, guaranteeing the shortest path in terms of cost. It is useful for weighted graphs where edge costs vary.
+    
+    \begin{highlight}[Uniform-Cost Search (UCS)]
+        UCS uses a priority queue to explore nodes based on path cost. It is optimal and complete, ensuring the least-cost path is found.
+        
+        \begin{itemize}
+            \item \textbf{Priority Queue}: Used to select the next node to expand based on the lowest path cost.
+            \item \textbf{Path Cost Calculation}: Considers the cumulative cost from the start node to the current node.
+            \item \textbf{Optimality}: Guarantees finding the least-cost path in a weighted graph.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Informed Search}
+
+    Key topics include greedy best-first search, A* search, and heuristic functions. These concepts are crucial for optimizing search strategies and finding efficient solutions in complex problem spaces.
+    
+    \subsubsection*{Greedy Best-First Search}
+    
+    Greedy best-first search is an informed search algorithm that expands the node that appears to be closest to the goal based on a heuristic function. It uses the heuristic to guide the search towards 
+    the goal, but does not guarantee finding the optimal path.
+    
+    \begin{highlight}[Greedy Best-First Search]
+        Greedy best-first search uses a heuristic function to prioritize nodes that seem closest to the goal, aiming for efficiency but not necessarily optimality.
+        
+        \begin{itemize}
+            \item \textbf{Heuristic Function}: A function $h(n)$ that estimates the cost from node $n$ to the goal.
+            \item \textbf{Priority Queue}: Nodes are prioritized based on their heuristic values.
+            \item \textbf{Non-Optimality}: Does not guarantee the shortest or least-cost path.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{A* Search}
+    
+    A* search is an informed search algorithm that combines the strengths of uniform-cost search and greedy best-first search. It uses both the cost to reach a node and the heuristic estimate to the 
+    goal to prioritize nodes.
+    
+    \begin{highlight}[A* Search]
+        A* search uses a combined cost function to ensure both efficiency and optimality, guaranteeing the least-cost path to the goal if the heuristic is admissible and consistent.
+        
+        \begin{itemize}
+            \item \textbf{Cost Function}: $f(n) = g(n) + h(n)$, where $g(n)$ is the cost to reach node $n$ and $h(n)$ is the heuristic estimate to the goal.
+            \item \textbf{Admissibility}: The heuristic $h(n)$ must never overestimate the true cost to reach the goal.
+            \item \textbf{Consistency}: The heuristic must satisfy $h(n) \leq c(n, n') + h(n')$ for every edge $(n, n')$.
+            \item \textbf{Optimality}: Guarantees the least-cost path if the heuristic is admissible and consistent.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Heuristic Functions}
+    
+    Heuristic functions play a crucial role in informed search algorithms by providing estimates of the cost to reach the goal from a given node. These functions help guide the search process, improving 
+    efficiency and performance.
+    
+    \begin{highlight}[Heuristic Functions]
+        Heuristic functions are used to estimate the cost from a node to the goal, significantly impacting the performance of informed search algorithms.
+        
+        \begin{itemize}
+            \item \textbf{Admissibility}: A heuristic is admissible if it never overestimates the actual cost to reach the goal.
+            \item \textbf{Consistency (Monotonicity)}: A heuristic is consistent if for every node $n$ and successor $n'$, $h(n) \leq c(n, n') + h(n')$.
+            \item \textbf{Combination of Heuristics}: Multiple heuristics can be combined to form a new heuristic, often taking the maximum value among them to ensure admissibility and improve efficiency.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Comparative Search Algorithms}
+    
+    Various search algorithms, such as BFS, DFS, UCS, greedy best-first search, and A* search, can be compared based on their efficiency, optimality, and use of heuristics.
+    
+    \begin{highlight}[Comparative Search Algorithms]
+        Different search algorithms have unique properties and are suited to various types of problems based on their characteristics.
+        
+        \begin{itemize}
+            \item \textbf{Breadth-First Search (BFS)}: Explores all nodes at the present depth before moving to the next level, guaranteeing the shortest path in unweighted graphs.
+            \item \textbf{Depth-First Search (DFS)}: Explores as far down a branch as possible before backtracking, suitable for deep searches but not necessarily optimal.
+            \item \textbf{Uniform-Cost Search (UCS)}: Expands the least-cost node first, guaranteeing the shortest path in weighted graphs.
+            \item \textbf{Greedy Best-First Search}: Prioritizes nodes that seem closest to the goal based on a heuristic, not guaranteeing the optimal path.
+            \item \textbf{A* Search}: Combines UCS and greedy search, ensuring the optimal path if the heuristic is admissible and consistent.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to informed search algorithms, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Greedy Best-First Search}
+                \begin{itemize}
+                    \item \textbf{Heuristic Function}: A function $h(n)$ that estimates the cost from node $n$ to the goal.
+                    \item \textbf{Priority Queue}: Nodes are prioritized based on their heuristic values.
+                    \item \textbf{Non-Optimality}: Does not guarantee the shortest or least-cost path.
+                \end{itemize}
+            \item \textbf{A* Search}
+                \begin{itemize}
+                    \item \textbf{Cost Function}: $f(n) = g(n) + h(n)$, where $g(n)$ is the cost to reach node $n$ and $h(n)$ is the heuristic estimate to the goal.
+                    \item \textbf{Admissibility}: The heuristic $h(n)$ must never overestimate the true cost to reach the goal.
+                    \item \textbf{Consistency}: The heuristic must satisfy $h(n) \leq c(n, n') + h(n')$ for every edge $(n, n')$.
+                    \item \textbf{Optimality}: Guarantees the least-cost path if the heuristic is admissible and consistent.
+                \end{itemize}
+            \item \textbf{Heuristic Functions}
+                \begin{itemize}
+                    \item \textbf{Admissibility}: A heuristic is admissible if it never overestimates the actual cost to reach the goal.
+                    \item \textbf{Consistency (Monotonicity)}: A heuristic is consistent if for every node $n$ and successor $n'$, $h(n) \leq c(n, n') + h(n')$.
+                    \item \textbf{Combination of Heuristics}: Multiple heuristics can be combined to form a new heuristic, often taking the maximum value among them to ensure admissibility and improve efficiency.
+                \end{itemize}
+            \item \textbf{Comparative Search Algorithms}
+                \begin{itemize}
+                    \item \textbf{Breadth-First Search (BFS)}: Explores all nodes at the present depth before moving to the next level, guaranteeing the shortest path in unweighted graphs.
+                    \item \textbf{Depth-First Search (DFS)}: Explores as far down a branch as possible before backtracking, suitable for deep searches but not necessarily optimal.
+                    \item \textbf{Uniform-Cost Search (UCS)}: Expands the least-cost node first, guaranteeing the shortest path in weighted graphs.
+                    \item \textbf{Greedy Best-First Search}: Prioritizes nodes that seem closest to the goal based on a heuristic, not guaranteeing the optimal path.
+                    \item \textbf{A* Search}: Combines UCS and greedy search, ensuring the optimal path if the heuristic is admissible and consistent.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Constraint Satisfaction Problems (CSPs)}
+
+    Key topics include arc consistency, backtracking search, heuristics such as minimum remaining values (MRV) and least constraining value (LCV), and the min-conflicts algorithm.
+    
+    \subsubsection*{Arc Consistency}
+    
+    Arc consistency is a property of binary constraint satisfaction problems, ensuring that for every value of one variable, there is some consistent value in the connected variable.
+    
+    \begin{highlight}[Arc Consistency]
+        Enforcing arc consistency helps to reduce the search space by pruning values that cannot participate in any valid solution.
+        
+        \begin{itemize}
+            \item \textbf{Order Independence}: The set of values remaining after enforcing arc consistency does not depend on the order in which arcs are processed.
+            \item \textbf{Domain Pruning}: Involves removing values from the domain of a variable that are inconsistent with any value in the domain of a connected variable.
+            \item \textbf{Limitation}: Enforcing arc consistency alone may not be sufficient to solve a CSP; backtracking might still be needed.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Backtracking Search}
+    
+    Backtracking search is a depth-first search algorithm for CSPs that incrementally builds candidates to the solutions and abandons each partial candidate as soon as it determines that the candidate 
+    cannot possibly be completed to a valid solution.
+    
+    \begin{highlight}[Backtracking Search]
+        Backtracking search involves exploring possible assignments and backtracking when a constraint violation is detected.
+        
+        \begin{itemize}
+            \item \textbf{Complexity}: The maximum number of backtracks is $O(d^n)$ for $n$ variables, each with $d$ values.
+            \item \textbf{Heuristics}: Using heuristics like MRV and LCV can significantly reduce the number of backtracks required.
+            \item \textbf{Tree-Structured CSPs}: In tree-structured CSPs with optimal variable ordering and arc consistency, no backtracking is required.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Heuristics in CSPs}
+    
+    Heuristics are used to improve the efficiency of solving CSPs by making informed choices about which variables to assign next and in what order.
+    
+    \begin{highlight}[Heuristics in CSPs]
+        Effective heuristics guide the search process, reducing the need for backtracking and improving performance.
+        
+        \begin{itemize}
+            \item \textbf{Minimum Remaining Values (MRV)}: Chooses the variable with the fewest legal values left in its domain.
+            \item \textbf{Least Constraining Value (LCV)}: Prefers values that leave the maximum flexibility for subsequent variable assignments.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Min-Conflicts Algorithm}
+    
+    The min-conflicts algorithm is a heuristic method for solving CSPs that starts with an initial assignment and iteratively resolves conflicts by reassigning values.
+    
+    \begin{highlight}[Min-Conflicts Algorithm]
+        The min-conflicts algorithm aims to minimize the number of constraint violations through iterative refinement of variable assignments.
+        
+        \begin{itemize}
+            \item \textbf{Initialization}: Starts with an arbitrary initial assignment, ignoring constraints.
+            \item \textbf{Conflict Resolution}: Iteratively selects a variable involved in a conflict and assigns it a value that minimizes the number of conflicts.
+            \item \textbf{Efficiency}: Particularly effective for large CSPs with many constraints.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to constraint satisfaction problems, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Arc Consistency}
+                \begin{itemize}
+                    \item \textbf{Order Independence}: Set of values remaining after arc consistency does not depend on arc processing order.
+                    \item \textbf{Domain Pruning}: Removes inconsistent values from variable domains.
+                    \item \textbf{Limitation}: May not suffice to solve CSPs without backtracking.
+                \end{itemize}
+            \item \textbf{Backtracking Search}
+                \begin{itemize}
+                    \item \textbf{Complexity}: Maximum backtracks is $O(d^n)$ for $n$ variables each with $d$ values.
+                    \item \textbf{Heuristics}: MRV and LCV reduce backtracks.
+                    \item \textbf{Tree-Structured CSPs}: No backtracking needed with optimal ordering and arc consistency.
+                \end{itemize}
+            \item \textbf{Heuristics in CSPs}
+                \begin{itemize}
+                    \item \textbf{Minimum Remaining Values (MRV)}: Chooses variable with fewest legal values left.
+                    \item \textbf{Least Constraining Value (LCV)}: Prefers values maximizing subsequent assignment flexibility.
+                \end{itemize}
+            \item \textbf{Min-Conflicts Algorithm}
+                \begin{itemize}
+                    \item \textbf{Initialization}: Starts with arbitrary initial assignment.
+                    \item \textbf{Conflict Resolution}: Iteratively resolves conflicts by minimizing violations.
+                    \item \textbf{Efficiency}: Effective for large CSPs with many constraints.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Games}
+
+    Key topics include alpha-beta pruning, expectimax, minimax search, reflex agents, and evaluation functions. These concepts are crucial for developing intelligent agents that can effectively make 
+    decisions in complex game environments.
+    
+    \subsubsection*{Alpha-Beta Pruning}
+    
+    Alpha-beta pruning is an optimization technique for the minimax algorithm. It reduces the number of nodes evaluated in the search tree by eliminating branches that cannot affect the final decision.
+    
+    \begin{highlight}[Alpha-Beta Pruning]
+        Alpha-beta pruning enhances the efficiency of minimax search by pruning branches that do not influence the final decision.
+        
+        \begin{itemize}
+            \item \textbf{Pruning Condition}: Stops evaluation of a branch when at least one possibility has been found that proves the branch to be worse than a previously examined move.
+            \item \textbf{Alpha Value}: The best value that the maximizer currently can guarantee at that level or above.
+            \item \textbf{Beta Value}: The best value that the minimizer currently can guarantee at that level or above.
+            \item \textbf{Efficiency}: Reduces the effective branching factor, allowing deeper search in the same amount of time.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Expectimax}
+    
+    Expectimax is a variant of the minimax algorithm used for games with probabilistic elements. It computes the expected utility by averaging the utilities of all possible outcomes weighted by their probabilities.
+    
+    \begin{highlight}[Expectimax]
+        Expectimax accounts for the probabilistic behavior of agents by averaging the utilities of all possible outcomes.
+        
+        \begin{itemize}
+            \item \textbf{Expected Utility}: Computes the average utility of possible outcomes.
+            \item \textbf{Probabilistic Models}: Assumes agents choose their actions according to some probability distribution.
+            \item \textbf{Handling Uncertainty}: More suited for environments where opponents do not always play optimally.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Minimax Search}
+    
+    Minimax search is a decision rule used for minimizing the possible loss while maximizing the potential gain in zero-sum games. It assumes that the opponent plays optimally.
+    
+    \begin{highlight}[Minimax Search]
+        Minimax search finds the optimal strategy by assuming both players play optimally and by minimizing the possible loss.
+        
+        \begin{itemize}
+            \item \textbf{Minimax Value}: The value of a node representing the best achievable outcome under optimal play.
+            \item \textbf{MAX Player}: Seeks to maximize the minimax value.
+            \item \textbf{MIN Player}: Seeks to minimize the minimax value.
+            \item \textbf{Game Tree Exploration}: Explores all possible moves to determine the optimal strategy.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Reflex Agents}
+    
+    Reflex agents make decisions based on the current percept and do not consider the future consequences of their actions. They are simple but often suboptimal.
+    
+    \begin{highlight}[Reflex Agents]
+        Reflex agents decide actions based on the current state without considering future consequences.
+        
+        \begin{itemize}
+            \item \textbf{Evaluation Function}: Rates possible actions based on the current game state.
+            \item \textbf{Simplicity}: Quick and easy to implement, but can be short-sighted.
+            \item \textbf{State-Action Pairs}: Evaluates the desirability of immediate actions rather than future states.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Evaluation Functions}
+    
+    Evaluation functions estimate the desirability of a game state in the absence of complete search. They are used to evaluate non-terminal states during search.
+    
+    \begin{highlight}[Evaluation Functions]
+        Evaluation functions estimate the desirability of game states to guide decision-making during search.
+        
+        \begin{itemize}
+            \item \textbf{Heuristics}: Provide a way to estimate the value of a state without exhaustive search.
+            \item \textbf{State Features}: Include relevant attributes such as distance to goals or presence of threats.
+            \item \textbf{Weighted Sum}: Combine various features into a single score using weighted sums.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to game-playing agents and search algorithms, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Alpha-Beta Pruning}
+                \begin{itemize}
+                    \item \textbf{Pruning Condition}: Eliminates branches that are provably worse.
+                    \item \textbf{Alpha and Beta Values}: Bound the search to reduce nodes evaluated.
+                    \item \textbf{Efficiency}: Allows deeper search in less time.
+                \end{itemize}
+            \item \textbf{Expectimax}
+                \begin{itemize}
+                    \item \textbf{Expected Utility}: Averages utilities of all outcomes.
+                    \item \textbf{Probabilistic Models}: Handles uncertainty in opponents' actions.
+                    \item \textbf{Utility Calculation}: More realistic for non-optimal opponents.
+                \end{itemize}
+            \item \textbf{Minimax Search}
+                \begin{itemize}
+                    \item \textbf{Minimax Value}: Best outcome under optimal play.
+                    \item \textbf{MAX and MIN Players}: MAX seeks to maximize, MIN seeks to minimize.
+                    \item \textbf{Game Tree Exploration}: Exhaustive search to determine optimal moves.
+                \end{itemize}
+            \item \textbf{Reflex Agents}
+                \begin{itemize}
+                    \item \textbf{Evaluation Function}: Rates actions based on current state.
+                    \item \textbf{Simplicity}: Quick decision-making, but often suboptimal.
+                    \item \textbf{State-Action Pairs}: Focuses on immediate consequences.
+                \end{itemize}
+            \item \textbf{Evaluation Functions}
+                \begin{itemize}
+                    \item \textbf{Heuristics}: Estimate state value without full search.
+                    \item \textbf{State Features}: Attributes relevant to evaluating states.
+                    \item \textbf{Weighted Sum}: Combines features into a single score.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 2}
+    \subsection*{Markov Decision Problems (MDP)}
+
+    Key topics include the basics of Markov Decision Problems (MDP), value iteration, policy iteration, the Bellman equation, discount factors, and evaluation of policies in gridworld environments. 
+    These concepts are crucial for understanding decision-making under uncertainty in AI.
+    
+    MDPs provide a framework for modeling decision-making where outcomes are partly random and partly under the control of a decision-maker.
+    
+    \begin{highlight}[Markov Decision Problems (MDP)]
+        MDPs consist of states, actions, transition functions, and rewards, used to model decision-making under uncertainty.
+        
+        \begin{itemize}
+            \item \textbf{States}: Configurations of the environment.
+            \item \textbf{Actions}: Possible moves or decisions available to the agent.
+            \item \textbf{Transition Function}: Probability of reaching a new state given a current state and action.
+            \item \textbf{Rewards}: Immediate gain or loss resulting from an action in a state.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Value Iteration}
+    
+    Value iteration is an algorithm for computing the optimal policy and value function in an MDP by iteratively updating the value of each state using the Bellman equation.
+    
+    \begin{highlight}[Value Iteration]
+        Value iteration iteratively computes the optimal value function, converging to the true values for each state.
+        
+        \begin{itemize}
+            \item \textbf{Bellman Equation}: Updates the value of a state based on the expected utility of possible actions.
+                \[
+                V(s) = \max_{a} \sum_{s'} T(s, a, s') \left[ R(s, a, s') + \gamma V(s') \right]
+                \]
+                - \(V(s)\): Value of state \(s\).
+                - \(T(s, a, s')\): Transition probability from state \(s\) to \(s'\) using action \(a\).
+                - \(R(s, a, s')\): Reward received after transitioning.
+                - \(\gamma\): Discount factor.
+            \item \textbf{Convergence}: Guaranteed for MDPs with a finite number of states and a discount factor \(0 < \gamma < 1\).
+            \item \textbf{Optimal Policy}: Derived from the value function by selecting actions that maximize expected rewards.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Policy Iteration}
+    
+    Policy iteration alternates between policy evaluation and policy improvement to find the optimal policy.
+    
+    \begin{highlight}[Policy Iteration]
+        Policy iteration involves evaluating a policy to determine its value function and then improving the policy based on the value function.
+        
+        \begin{itemize}
+            \item \textbf{Policy Evaluation}: Computes the value function for a given policy using the Bellman equation.
+            \item \textbf{Policy Improvement}: Updates the policy by choosing actions that maximize the expected value.
+            \item \textbf{Convergence}: Guaranteed for MDPs with a finite number of states and actions.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Bellman Equation}
+    
+    The Bellman equation provides a recursive definition of the value function, expressing the value of a state in terms of the expected rewards and the values of successor states.
+    
+    \begin{highlight}[Bellman Equation]
+        The Bellman equation defines the value of a state based on the maximum expected utility of subsequent states.
+        
+        \begin{itemize}
+            \item \textbf{Equation}: 
+                \[
+                V(s) = \max_{a} \sum_{s'} T(s, a, s') \left[ R(s, a, s') + \gamma V(s') \right]
+                \]
+            \item \textbf{Explanation}: 
+                - The value of state \(s\) is the maximum expected return achievable by any action \(a\).
+                - The equation considers all possible successor states \(s'\), weighted by the probability \(T(s, a, s')\).
+                - Rewards \(R(s, a, s')\) and discounted future values \(\gamma V(s')\) are summed to compute expected utility.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Discount Factor}
+    
+    The discount factor in an MDP determines the present value of future rewards, balancing immediate and long-term benefits.
+    
+    \begin{highlight}[Discount Factor]
+        The discount factor $\gamma$ influences the agent's preference for immediate versus future rewards.
+        
+        \begin{itemize}
+            \item \textbf{Value Range}: \(0 < \gamma < 1\) for convergence.
+            \item \textbf{Impact on Policy}: Higher values favor long-term rewards, while lower values favor immediate rewards.
+            \item \textbf{Policy Sensitivity}: Changes in $\gamma$ can lead to different optimal policies.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Evaluation in Gridworld}
+    
+    Gridworld is a simple environment used to illustrate MDP concepts, where an agent moves in a grid to maximize rewards.
+    
+    \begin{highlight}[Evaluation in Gridworld]
+        In gridworld, agents evaluate policies based on the expected rewards for different actions in grid states.
+        
+        \begin{itemize}
+            \item \textbf{Actions}: Typically include moving in cardinal directions or exiting the grid.
+            \item \textbf{Reward Structure}: Rewards can vary based on the grid location and action.
+            \item \textbf{Policy Evaluation}: Involves calculating the expected rewards for different policies.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to Markov Decision Problems, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Markov Decision Problems (MDP)}
+                \begin{itemize}
+                    \item \textbf{States}: Environment configurations.
+                    \item \textbf{Actions}: Possible decisions.
+                    \item \textbf{Transition Function}: State change probabilities.
+                    \item \textbf{Rewards}: Gains or losses from actions.
+                \end{itemize}
+            \item \textbf{Value Iteration}
+                \begin{itemize}
+                    \item \textbf{Bellman Equation}: State value updates based on maximum expected utility.
+                    \item \textbf{Convergence}: Guaranteed with \(0 < \gamma < 1\).
+                    \item \textbf{Optimal Policy}: Maximizes expected rewards.
+                \end{itemize}
+            \item \textbf{Policy Iteration}
+                \begin{itemize}
+                    \item \textbf{Policy Evaluation}: Computes value functions.
+                    \item \textbf{Policy Improvement}: Updates policies for maximum value.
+                    \item \textbf{Convergence}: Guaranteed for finite states and actions.
+                \end{itemize}
+            \item \textbf{Bellman Equation}
+                \begin{itemize}
+                    \item \textbf{Equation}: Recursive definition of state value.
+                    \item \textbf{Explanation}: Value based on expected returns of actions and successor states.
+                \end{itemize}
+            \item \textbf{Discount Factor}
+                \begin{itemize}
+                    \item \textbf{Value Range}: \(0 < \gamma < 1\).
+                    \item \textbf{Impact on Policy}: Balances short and long-term rewards.
+                    \item \textbf{Policy Sensitivity}: Affects optimal policy decisions.
+                \end{itemize}
+            \item \textbf{Evaluation in Gridworld}
+                \begin{itemize}
+                    \item \textbf{Actions}: Movement and exits.
+                    \item \textbf{Reward Structure}: Varies by grid location.
+                    \item \textbf{Policy Evaluation}: Calculates expected rewards.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Reinforcement Learning}
+
+    Key topics include the Markov Decision Process (MDP), value iteration, policy iteration, and Q-learning.
+    
+    \subsubsection*{Markov Decision Process (MDP)}
+    
+    MDP is a framework for modeling decision-making situations where outcomes are partly random and partly under the control of a decision maker.
+    
+    \begin{highlight}[MDP in Reinforcement Learning]
+        An MDP is defined by:
+        \begin{itemize}
+            \item \textbf{States (S)}: The set of all possible states.
+            \item \textbf{Actions (A)}: The set of all possible actions.
+            \item \textbf{Transition Function (T)}: Probability of moving from one state to another given an action.
+            \item \textbf{Reward Function (R)}: Immediate reward received after transitioning from one state to another.
+            \item \textbf{Policy ($\pi$)}: A strategy that specifies the action to take in each state.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Value Iteration}
+    
+    Value iteration is a method of computing the optimal policy by iteratively improving the value function.
+    
+    \begin{highlight}[Value Iteration in Reinforcement Learning]
+        Value iteration involves:
+        \begin{itemize}
+            \item \textbf{Value Function (V)}: Estimates the expected return from each state.
+            \item \textbf{Bellman Equation}: $V(s) = \max_a \sum_{s'} T(s, a, s') [R(s, a, s') + \gamma V(s')]$
+            \item \textbf{Convergence}: Iteratively updating $V(s)$ until it converges to the optimal value function.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Policy Iteration}
+    
+    Policy iteration alternates between evaluating the current policy and improving it.
+    
+    \begin{highlight}[Policy Iteration in Reinforcement Learning]
+        Policy iteration involves:
+        \begin{itemize}
+            \item \textbf{Policy Evaluation}: Computing the value function for the current policy.
+            \item \textbf{Policy Improvement}: Updating the policy by choosing actions that maximize the value function.
+            \item \textbf{Convergence}: Repeating evaluation and improvement until the policy converges to the optimal policy.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Q-Learning}
+    
+    Q-learning is a model-free reinforcement learning algorithm that seeks to learn the value of the optimal policy.
+    
+    \begin{highlight}[Q-Learning in Reinforcement Learning]
+        Q-learning involves:
+        \begin{itemize}
+            \item \textbf{Q-Function (Q)}: Estimates the expected return of taking an action in a given state.
+            \item \textbf{Update Rule}: $Q(s, a) \leftarrow Q(s, a) + \alpha [r + \gamma \max_{a'} Q(s', a') - Q(s, a)]$
+            \item \textbf{Exploration vs. Exploitation}: Balancing between exploring new actions and exploiting known actions that yield high rewards.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Approximate Reinforcement Learning}
+    
+    Key topics include feature-based representations, function approximation, and policy gradient methods.
+    
+    \subsubsection*{Feature-Based Representations}
+    
+    Feature-based representations use features to approximate the value function or policy.
+    
+    \begin{highlight}[Feature-Based Representations in Approximate RL]
+        Using features involves:
+        \begin{itemize}
+            \item \textbf{Features (f)}: Relevant characteristics of the state or state-action pair.
+            \item \textbf{Linear Combination}: Approximating Q-values using a linear combination of features, $Q(s, a) \approx \mathbf{w}^T \mathbf{f}(s, a)$.
+            \item \textbf{Weight Vector (w)}: Parameters to be learned that determine the contribution of each feature.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Function Approximation}
+    
+    Function approximation is used to generalize the value function or policy from limited data.
+    
+    \begin{highlight}[Function Approximation in Approximate RL]
+        Function approximation techniques include:
+        \begin{itemize}
+            \item \textbf{Linear Function Approximation}: Approximating functions using a linear combination of features.
+            \item \textbf{Non-linear Function Approximation}: Using methods like neural networks to approximate functions.
+            \item \textbf{Gradient Descent}: Updating weights using the gradient of the loss function.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Policy Gradient Methods}
+    
+    Policy gradient methods directly parameterize the policy and optimize it using gradient ascent.
+    
+    \begin{highlight}[Policy Gradient Methods in Approximate RL]
+        Policy gradient methods involve:
+        \begin{itemize}
+            \item \textbf{Parameterization}: Representing the policy using a parameterized function $\pi_{\theta}(a|s)$.
+            \item \textbf{Gradient Ascent}: Updating the policy parameters using the gradient of the expected return, $\nabla_{\theta} J(\theta)$.
+            \item \textbf{REINFORCE Algorithm}: A Monte Carlo method to estimate policy gradients and update the parameters.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts in Reinforcement Learning and Approximate RL]
+        This section covers the core principles related to reinforcement learning and approximate reinforcement learning.
+    
+        \textbf{Reinforcement Learning}:
+        \begin{itemize}
+            \item \textbf{MDP}: Framework for decision-making under uncertainty.
+            \item \textbf{Value Iteration}: Iterative method to compute the optimal value function.
+            \item \textbf{Policy Iteration}: Alternates between policy evaluation and improvement.
+            \item \textbf{Q-Learning}: Model-free algorithm to learn the optimal Q-function.
+        \end{itemize}
+    
+        \textbf{Approximate Reinforcement Learning}:
+        \begin{itemize}
+            \item \textbf{Feature-Based Representations}: Using features to approximate value functions or policies.
+            \item \textbf{Function Approximation}: Generalizing value functions or policies from limited data.
+            \item \textbf{Policy Gradient Methods}: Directly optimizing policies using gradient ascent.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Approximate Reinforcement Learning}
+
+    Key topics include feature-based representation for Q-learning, action selection using approximate Q-functions, weight updates in linear function approximation, and handling stochastic rewards. 
+    These concepts are critical for implementing and understanding reinforcement learning with function approximation techniques.
+    
+    \subsubsection*{Feature-Based Representation}
+    
+    In feature-based representation, the state-action space is represented using a set of features, which simplifies the learning process in environments with large or continuous state spaces.
+    
+    \begin{highlight}[Feature-Based Representation]
+        Feature-based representation uses a vector of features to represent the state-action space, enabling efficient learning in large or continuous environments.
+        
+        \begin{itemize}
+            \item \textbf{Features}: Functions that map state-action pairs to numerical values, representing different aspects of the state.
+            \item \textbf{Linear Function Approximation}: The Q-value $Q(s, a)$ is approximated as a linear combination of features.
+            \item \textbf{Weight Vector}: A set of weights $w$ associated with the features, adjusted during learning to approximate the true Q-values.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Action Selection Using Approximate Q-Functions}
+    
+    Agents select actions based on the estimated Q-values from the feature-based representation, aiming to maximize expected rewards.
+    
+    \begin{highlight}[Action Selection Using Approximate Q-Functions]
+        Actions are selected based on approximate Q-values computed from feature-based representations, guiding agents towards optimal behavior.
+        
+        \begin{itemize}
+            \item \textbf{Q-Value Calculation}: $Q(s, a) = \sum_i w_i f_i(s, a)$, where $f_i$ are features and $w_i$ are weights.
+            \item \textbf{Policy}: Selects the action $a$ that maximizes $Q(s, a)$.
+            \item \textbf{Exploration vs. Exploitation}: Balances exploring new actions and exploiting known good actions.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Weight Updates in Linear Function Approximation}
+    
+    Weight updates adjust the feature weights to reduce the difference between predicted and actual rewards, refining the policy.
+    
+    \begin{highlight}[Weight Updates in Linear Function Approximation]
+        Weights in the feature-based representation are updated to improve the accuracy of Q-value predictions.
+        
+        \begin{itemize}
+            \item \textbf{Update Rule}: $w_i \leftarrow w_i + \alpha \left( r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right) f_i(s, a)$
+            \item \textbf{Learning Rate ($\alpha$)}: Determines the size of weight updates.
+            \item \textbf{Temporal Difference (TD) Error}: The difference between predicted and actual reward, guiding the weight adjustment.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Handling Stochastic Rewards}
+    
+    Stochastic rewards introduce variability in the rewards received, requiring strategies that can handle such uncertainties.
+    
+    \begin{highlight}[Handling Stochastic Rewards]
+        Strategies for handling stochastic rewards are crucial for making robust decisions in environments with inherent uncertainty.
+        
+        \begin{itemize}
+            \item \textbf{Expected Value}: Q-values represent expected returns, taking into account all possible outcomes.
+            \item \textbf{Reward Averaging}: Using averages of observed rewards to estimate Q-values.
+            \item \textbf{Robustness}: Ensuring that policies can handle fluctuations in rewards and still perform well.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to approximate reinforcement learning, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Feature-Based Representation}
+                \begin{itemize}
+                    \item \textbf{Features}: Numerical representations of state-action pairs.
+                    \item \textbf{Linear Function Approximation}: Q-values approximated using features and weights.
+                    \item \textbf{Weight Vector}: Adjusted during learning to match true Q-values.
+                \end{itemize}
+            \item \textbf{Action Selection Using Approximate Q-Functions}
+                \begin{itemize}
+                    \item \textbf{Q-Value Calculation}: Summation of weighted features.
+                    \item \textbf{Policy}: Chooses actions that maximize Q-values.
+                    \item \textbf{Exploration vs. Exploitation}: Balances exploring new actions and exploiting known good actions.
+                \end{itemize}
+            \item \textbf{Weight Updates in Linear Function Approximation}
+                \begin{itemize}
+                    \item \textbf{Update Rule}: Adjusts weights based on TD error.
+                    \item \textbf{Learning Rate ($\alpha$)}: Controls the magnitude of updates.
+                    \item \textbf{TD Error}: Guides weight adjustments to improve predictions.
+                \end{itemize}
+            \item \textbf{Handling Stochastic Rewards}
+                \begin{itemize}
+                    \item \textbf{Expected Value}: Accounts for all possible reward outcomes.
+                    \item \textbf{Reward Averaging}: Averages observed rewards for Q-value estimates.
+                    \item \textbf{Robustness}: Maintains policy performance despite reward variability.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Approximate Reinforcement Learning And Probability}
+
+    Key topics include feature-based representation for Q-learning, action selection with feature weights, probability distributions, and conditional independence in probability theory. These concepts 
+    are fundamental for understanding decision-making in uncertain environments and the role of probability in reinforcement learning.
+    
+    \subsubsection*{Feature-Based Representation in Q-Learning}
+    
+    Feature-based representation simplifies the representation of Q-values by using a set of features, especially in environments with large or continuous state spaces.
+    
+    \begin{highlight}[Feature-Based Representation in Q-Learning]
+        Features represent state-action pairs using a vector of attributes, allowing efficient learning in complex environments.
+        
+        \begin{itemize}
+            \item \textbf{Features}: Numerical values representing various aspects of the state or state-action pairs.
+            \item \textbf{Linear Approximation}: The Q-value $Q(s, a)$ is approximated by $Q(s, a) = \sum_i w_i f_i(s, a)$.
+            \item \textbf{Weight Vector $w$}: Adjusted during learning to approximate the true Q-values accurately.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Action Selection with Feature Weights}
+    
+    Agents use the Q-values derived from the feature weights to select actions, typically choosing the action that maximizes the Q-value.
+    
+    \begin{highlight}[Action Selection with Feature Weights]
+        Actions are chosen based on the Q-values calculated using feature weights, guiding the agent towards optimal decisions.
+        
+        \begin{itemize}
+            \item \textbf{Q-Value Calculation}: $Q(s, a) = \sum_i w_i f_i(s, a)$.
+            \item \textbf{Policy}: Selects the action $a$ that maximizes $Q(s, a)$.
+            \item \textbf{Exploration vs. Exploitation}: Balances exploring new actions and exploiting known rewarding actions.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Probability Distributions}
+    
+    Understanding and utilizing probability distributions is essential for modeling uncertainty and making decisions under uncertainty.
+    
+    \begin{highlight}[Probability Distributions]
+        Probability distributions describe the likelihood of different outcomes, essential for decision-making under uncertainty.
+        
+        \begin{itemize}
+            \item \textbf{Discrete Distributions}: Probability assigned to discrete outcomes or events.
+            \item \textbf{Conditional Probability}: The probability of an event given the occurrence of another event, denoted $P(A | B)$.
+            \item \textbf{Joint Probability}: The probability of two events occurring together, denoted $P(A, B)$.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conditional Independence}
+    
+    Conditional independence is a key concept in probability theory, indicating that two events are independent given the occurrence of a third event.
+    
+    \begin{highlight}[Conditional Independence]
+        Conditional independence simplifies the representation and computation of probabilities in complex models.
+        
+        \begin{itemize}
+            \item \textbf{Definition}: Events $A$ and $B$ are conditionally independent given $C$ if $P(A, B | C) = P(A | C)P(B | C)$.
+            \item \textbf{Notation}: Denoted as $A \perp B | C$.
+            \item \textbf{Applications}: Used in Bayesian networks and other probabilistic models to simplify calculations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to approximate reinforcement learning and probability, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Feature-Based Representation in Q-Learning}
+                \begin{itemize}
+                    \item \textbf{Features}: Attributes representing state-action pairs.
+                    \item \textbf{Linear Approximation}: Q-values approximated using features and weights.
+                    \item \textbf{Weight Vector}: Adjusted during learning to approximate true Q-values.
+                \end{itemize}
+            \item \textbf{Action Selection with Feature Weights}
+                \begin{itemize}
+                    \item \textbf{Q-Value Calculation}: Sum of weighted features.
+                    \item \textbf{Policy}: Chooses actions that maximize Q-values.
+                    \item \textbf{Exploration vs. Exploitation}: Balances exploration and exploitation.
+                \end{itemize}
+            \item \textbf{Probability Distributions}
+                \begin{itemize}
+                    \item \textbf{Discrete Distributions}: Likelihood of discrete outcomes.
+                    \item \textbf{Conditional Probability}: Probability of an event given another.
+                    \item \textbf{Joint Probability}: Probability of events occurring together.
+                \end{itemize}
+            \item \textbf{Conditional Independence}
+                \begin{itemize}
+                    \item \textbf{Definition}: Independence of events given another event.
+                    \item \textbf{Notation}: $A \perp B | C$.
+                    \item \textbf{Applications}: Simplifies probabilistic calculations.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Bayes Network}
+
+    Key topics include the concepts of marginal and conditional probabilities, the chain rule for Bayesian networks, independence and conditional independence, and the use of graphical models to 
+    represent probabilistic dependencies. These concepts are crucial for understanding and utilizing Bayes Networks in probabilistic reasoning.
+    
+    \subsubsection*{Marginal and Conditional Probabilities}
+    
+    Marginal and conditional probabilities are fundamental components of probabilistic reasoning, providing the likelihood of events in different contexts.
+    
+    \begin{highlight}[Marginal and Conditional Probabilities]
+        Marginal and conditional probabilities quantify the likelihood of events and their interdependencies.
+        
+        \begin{itemize}
+            \item \textbf{Marginal Probability}: The probability of an event occurring, irrespective of other variables.
+            \item \textbf{Conditional Probability}: The probability of an event given that another event has occurred, denoted $P(A | B)$.
+            \item \textbf{Example}: $P(X_2 = 0) = 0.420$, $P(X_0 = 0, X_1 = 1) = 0.240$.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Chain Rule for Bayesian Networks}
+    
+    The chain rule is used to compute joint distributions from conditional probabilities specified by a Bayesian network's structure.
+    
+    \begin{highlight}[Chain Rule for Bayesian Networks]
+        The chain rule allows the computation of joint probability distributions from conditional probabilities in a Bayesian network.
+        
+        \begin{itemize}
+            \item \textbf{Equation}: $P(X_1, X_2, \dots, X_n) = \prod_{i=1}^{n} P(X_i | \text{Parents}(X_i))$
+            \item \textbf{Application}: Used to compute joint distributions like $P(X = 0, Y = 0) = P(X)P(Y | X)$.
+            \item \textbf{Example Calculation}: $P(X = 0, Y = 0, Z = 0) = P(X)P(Y | X)P(Z | Y)$
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Independence and Conditional Independence}
+    
+    Independence and conditional independence are key concepts in Bayesian networks, defining how variables are related or independent.
+    
+    \begin{highlight}[Independence and Conditional Independence]
+        These concepts describe whether variables in a Bayesian network are independent or conditionally independent given other variables.
+        
+        \begin{itemize}
+            \item \textbf{Independence}: Two variables $X$ and $Y$ are independent if $P(X, Y) = P(X)P(Y)$.
+            \item \textbf{Conditional Independence}: $X$ and $Y$ are conditionally independent given $Z$ if $P(X, Y | Z) = P(X | Z)P(Y | Z)$.
+            \item \textbf{Example}: $X$ is independent of $Y$, but $X$ is not independent of $Y$ given $Z$.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Graphical Models and Probabilistic Dependencies}
+    
+    Graphical models visually represent the dependencies among variables in a Bayesian network, helping to understand and compute joint distributions.
+    
+    \begin{highlight}[Graphical Models and Probabilistic Dependencies]
+        Graphical models illustrate the conditional dependencies and independencies among variables in a Bayesian network.
+        
+        \begin{itemize}
+            \item \textbf{Nodes and Edges}: Nodes represent random variables, and edges indicate direct dependencies.
+            \item \textbf{Directed Acyclic Graph (DAG)}: Represents the structure of a Bayesian network.
+            \item \textbf{Applications}: Useful in genetic inheritance models, such as modeling handedness and genetic influences.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to Bayesian networks, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Marginal and Conditional Probabilities}
+                \begin{itemize}
+                    \item \textbf{Marginal Probability}: Probability of an event irrespective of other variables.
+                    \item \textbf{Conditional Probability}: Probability of an event given another event.
+                \end{itemize}
+            \item \textbf{Chain Rule for Bayesian Networks}
+                \begin{itemize}
+                    \item \textbf{Joint Distribution Calculation}: Using conditional probabilities from the network.
+                    \item \textbf{Application}: Computes joint probabilities from a set of conditional probabilities.
+                \end{itemize}
+            \item \textbf{Independence and Conditional Independence}
+                \begin{itemize}
+                    \item \textbf{Independence}: No probabilistic influence between variables.
+                    \item \textbf{Conditional Independence}: Independence given a third variable.
+                \end{itemize}
+            \item \textbf{Graphical Models and Probabilistic Dependencies}
+                \begin{itemize}
+                    \item \textbf{Nodes and Edges}: Represent variables and their dependencies.
+                    \item \textbf{DAG Structure}: Defines the Bayesian network's structure.
+                    \item \textbf{Applications}: Useful in genetic modeling and other probabilistic systems.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}

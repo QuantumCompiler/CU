@@ -1,0 +1,284 @@
+\clearpage
+
+\chapter{\documentName}
+\section{\documentName}
+
+\testimonial
+
+The original assignment can be found \pdflink{\AssDir Assignment 4A - MDP And RL.pdf}{here}.
+
+% Problem
+\begin{problem}{Problem 1 - MPDs: Dice Bonanza}
+    \begin{statement}{Problem Statement}
+        A casino is considering adding a new game to their collection, but need to analyze it before releasing it on their floor. They have hired you to execute the analysis. On each round of the game, 
+        the player has the option of rolling a fair 6-sided die. That is, the die lands on values 1 through 6 with equal probability. Each roll costs 1 dollar, and the player \textbf{must} roll the very 
+        first round. Each time the player rolls the die, the player has two possible actions
+
+        \begin{enumerate}
+            \item \textit{Stop}: Stop playing by collecting the dollar value that the die lands on, or
+            \item \textit{Roll}: Roll again, paying another 1 dollar.
+        \end{enumerate}
+        You decide to model this problem using an infinite horizon Markov Decision Process (MDP). The player initially starts in state \textit{Start}, where the player only has one possible action: 
+        \textit{Roll}. State $s_{i}$ denotes the state where the die lands on i. Once a player decides to \textit{Stop}, the game is over, transitioning the player to the \textit{End} state
+
+        \begin{enumerate}[label=(\alph*)]
+            \item In solving this problem, you consider using policy iteration. Your initial policy π is in the table below. Evaluate the policy at each state, with $\gamma = 1$.
+            \begin{center}
+                \begin{tabular}[ht]{|c|c|c|c|c|c|c|}
+                    \hline State & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ & $s_{5}$ & $s_{6}$ \\ \hline
+                    $\pi(s)$ & \textit{Roll} & \textit{Roll} & \textit{Stop} & \textit{Stop} & \textit{Stop} & \textit{Stop} \\ \hline
+                    $V^{\pi}(s)$ & & & & & & \\ \hline
+                \end{tabular}
+            \end{center}
+            \item Having determined the values, perform a policy update to find the new policy $\pi'$. The table below shows the old policy $\pi$ and has filled in parts of the updated policy $\pi'$ 
+            for you. If both \textit{Roll} and \textit{Stop} are viable new actions for a state, write down both \textit{Roll}/\textit{Stop}. In this part as well, we have $\gamma = 1$.
+            \begin{center}
+                \begin{tabular}[ht]{|c|c|c|c|c|c|c|}
+                    \hline State & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ & $s_{5}$ & $s_{6}$ \\ \hline
+                    $\pi(s)$ & \textit{Roll} & \textit{Roll} & \textit{Stop} & \textit{Stop} & \textit{Stop} & \textit{Stop} \\ \hline
+                    $\pi'(s)$ & \textit{Roll} & & & & & \textit{Stop} \\ \hline
+                \end{tabular}
+            \end{center}
+            \item Is $\pi(s)$ from part (a) optimal? Explain why or why not.
+        \end{enumerate}
+    \end{statement}
+
+    \newpage
+
+    \begin{highlight}[Problem 1 - Solution]
+        \begin{enumerate}[label=(\alph*)]
+            \item The domain for the set of $i$ in $s_{i} = i$ is $\{3,4,5,6\}$ because the player will not be rewarded for further actions according to the policy. This in turn creates two expressions
+            that are derived for $V(s_{1})$ and $V(s_{2})$:
+
+            \begin{align*}
+                V(s_{1}) & = -1 + \frac{1}{6}(V(s_{1}) + V(s_{2}) + 3 + 4 + 5 + 6) \\
+                V(s_{2}) & = -1 + \frac{1}{6}(V(s_{1}) + V(s_{2}) + 3 + 4 + 5 + 6)
+            \end{align*}
+            Unwinding the above system of equations we find that $V(s_{1}) = V(s_{2}) = 3$. This in turn makes our table
+            \begin{center}
+                \begin{tabular}[ht]{|c|c|c|c|c|c|c|}
+                    \hline State & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ & $s_{5}$ & $s_{6}$ \\ \hline
+                    $\pi(s)$ & \textit{Roll} & \textit{Roll} & \textit{Stop} & \textit{Stop} & \textit{Stop} & \textit{Stop} \\ \hline
+                    $V^{\pi}(s)$ & \color{green}{3} & \color{green}{3} & \color{green}{3} & \color{green}{4} & \color{green}{5} & \color{green}{6} \\ \hline
+                \end{tabular}
+            \end{center}
+            \item We essentially need to take the action that will produce the largest value. Comparing this with the original policy and the updated policy we can confidently say:
+            \begin{center}
+                \begin{tabular}[ht]{|c|c|c|c|c|c|c|}
+                    \hline State & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ & $s_{5}$ & $s_{6}$ \\ \hline
+                    $\pi(s)$ & \textit{Roll} & \textit{Roll} & \textit{Stop} & \textit{Stop} & \textit{Stop} & \textit{Stop} \\ \hline
+                    $\pi'(s)$ & \textit{Roll} & \color{green}{Roll} & \color{green}{Roll / Stop} & \color{green}{Stop} & \color{green}{Stop} & \textit{Stop} \\ \hline
+                \end{tabular}
+            \end{center}
+            \item When comparing to the old and new policy, there is not significant improvement over the old policy. In fact, there are two ties between the new and old policy, indicating that the 
+            original policy is optimal. So, yes, \color{green}{the old policy is optimal}.
+        \end{enumerate}
+    \end{highlight}
+\end{problem}
+
+\begin{problem}{Problem 2 - Reinforcement Learning}
+    \begin{statement}{Problem Statement}
+        Imagine an unknown game which has only two states \{A, B\} and in each state the agent has two actions to choose from: \{Up, Down\}. Suppose a game agent chooses actions according to some policy 
+        $\pi$ and generates the following sequence of actions and rewards in the unknown game:
+
+        \begin{center}
+            \begin{tabular}[ht]{|c|c|c|c|c|}
+                \hline $t$ & $s_{t}$ & $a_{t}$ & $s_{t+1}$ & $r_{t}$ \\ \hline
+                0 & A & Down & B & 2 \\ \hline
+                1 & B & Down & B & -4 \\ \hline
+                2 & B & Up & B & 0 \\ \hline
+                3 & B & Up & A & 3 \\ \hline
+                4 & A & Up & A & -1 \\ \hline
+            \end{tabular}
+        \end{center}
+        \textit{Unless specified otherwise, assume a discount factor} $\gamma = 0.5$ \textit{and a learning rate} $\alpha = 0.5$
+
+        \begin{enumerate}[label=(\alph*)]
+            \item Recall the update function of Q-learning is:
+            \begin{equation*}
+                Q(s_{t}, a_{t}) \leftarrow (1 - \alpha)Q(s_{t}, a_{t}) + \alpha(r_{t} + \gamma \hspace*{1pt} \underset{a'}{\text{max}} \hspace*{1pt} Q(s_{t + 1}, a'))
+            \end{equation*}
+            Assume that all Q-values initialized as 0. What are the following Q-values learned by running Q-learning with the above experience sequence?
+            \begin{center}
+                $Q$(A, Down) = \underline{\hspace*{3cm}} \hspace*{5pt} , \hspace*{5pt} $Q$(B, Up) = \underline{\hspace*{3cm}}
+            \end{center}
+            \item In model-based reinforcement learning, we first estimate the transition function $T(s, a, s')$ and the reward function $R(s, a, s')$. Fill in the following estimates of T and R, 
+            estimated from the experience above. Write “n/a” if not applicable or undefined.
+            \begin{center}
+                $\hat{T}$(A, Up, A) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{T}$(A, Up, B) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{T}$(B, Up, A) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{T}$(B, Up, B) = \underline{\hspace*{1cm}}, \hspace*{2pt}
+            \end{center}
+            \begin{center}
+                $\hat{R}$(A, Up, A) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{R}$(A, Up, B) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{R}$(B, Up, A) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{R}$(B, Up, B) = \underline{\hspace*{1cm}}, \hspace*{2pt}
+            \end{center}
+            \item To decouple this question from the previous one, assume we had a different experience and ended up with the following estimates of the transition and reward functions:
+            \begin{center}
+                \begin{tabular}[ht]{|c|c|c|c|c|}
+                    \hline $s$ & $a$ & $s'$ & $\hat{T}(s, a, s')$ & $\hat{R}(s, a, s')$ \\ \hline
+                    A & Up & A & 1 & 10 \\ \hline
+                    A & Down & A & 0.5 & 2 \\ \hline
+                    A & Down & B & 0.5 & 2 \\ \hline
+                    B & Up & A & 1 & -5 \\ \hline
+                    B & Down & B & 1 & 8 \\ \hline
+                \end{tabular}
+            \end{center}
+            \begin{enumerate}[label=(\roman*)]
+                \item Give the optimal policy $\hat{\pi}^{*}(s)$ and $\hat{V}^{*}(s)$ for the MDP with transition function $\hat{T}$ and reward function $\hat{R}$. \textit{Hint: for any} $x \in R, \hspace*{1pt} |x| < 1, \hspace*{1pt} \text{\textit{we have} } 1 + x + x^{2} + x^{3} + x^{4} + \dots = 1 /(1 - x)$.
+                \begin{center}
+                    $\hat{\pi}^{*}$(A) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{\pi}^{*}$(B) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{V}^{*}$(A) = \underline{\hspace*{1cm}}, \hspace*{2pt} $\hat{V}^{*}$(B) = \underline{\hspace*{1cm}}, \hspace*{2pt}
+                \end{center}
+                \item If we repeatedly feed this new experience sequence through our Q-learning algorithm, what values will it converge to? Assume the learning rate $\alpha$ is properly chosen so that convergence is guaranteed
+                \begin{enumerate}[label=\(\circ\)]
+                    \item The values found above for, $\hat{V}^{*}$
+                    \item The optimal values, $\hat{V}^{*}$
+                    \item Neither $\hat{V}^{*}$ nor $\hat{V}^{*}$
+                    \item Not enough information to determine
+                \end{enumerate}
+            \end{enumerate}
+        \end{enumerate}
+    \end{statement}
+
+    \newpage
+
+    \begin{highlight}[Problem 2 - Solution]
+        \begin{enumerate}[label=(\alph*)]
+            \item We need to perform policy iteration for each of these. Starting with
+            \begin{equation*}
+                Q(s_{t}, a_{t}) \leftarrow (1 - \alpha)Q(s_{t}, a_{t}) + \alpha(r_{t} + \gamma \hspace*{1pt} \underset{a'}{\text{max}} \hspace*{1pt} Q(s_{t + 1}, a'))
+            \end{equation*}
+            and plugging in the values we then can say
+            \setcounter{equation}{-1}
+            \begin{align}
+                Q(A, \text{Down}) & \leftarrow (1 - 0.5)(0) + (0.5)(2 + (0.5)(0)) = 1 \\
+                Q(B, \text{Down}) & \leftarrow (1 - 0.5)(0) + (0.5)(-4 + (0.5)(0)) = -2 \\
+                Q(B, \text{Up}) & \leftarrow (1 - 0.5)(0) + (0.5)(0 + (0.5)(0)) = 0 \\
+                Q(B, \text{Up}) & \leftarrow (1 - 0.5)(0) + (0.5)(3 + (0.5)(1)) = 1.75 \\
+                Q(A, \text{Up}) & \leftarrow (1 - 0.5)(0) + (0.5)(-1 + (0.5)(1)) = -0.25
+            \end{align}
+            This then gives us
+            \begin{center}
+                $Q$(A, Down) = \underline{\color{green}{1}} \hspace*{5pt} , \hspace*{5pt} $Q$(B, Up) = \underline{\color{green}{1.75}}.
+            \end{center}
+            \item To answer the $\hat{T}$ part, we need to count the number of times that a specific transition occurs for an action. For $\hat{R}$, we simply read off the reward:
+            \begin{center}
+                $\hat{T}$(A, Up, A) = \underline{\color{green}{1}}, \hspace*{2pt} $\hat{T}$(A, Up, B) = \underline{\color{green}{0}}, \hspace*{2pt} $\hat{T}$(B, Up, A) = \underline{\color{green}{0.5}}, \hspace*{2pt} $\hat{T}$(B, Up, B) = \underline{\color{green}{0.5}}, \hspace*{2pt}
+            \end{center}
+            \begin{center}
+                $\hat{R}$(A, Up, A) = \underline{\color{green}{-1}}, \hspace*{2pt} $\hat{R}$(A, Up, B) = \underline{\color{green}{n/a}}, \hspace*{2pt} $\hat{R}$(B, Up, A) = \underline{\color{green}{3}}, \hspace*{2pt} $\hat{R}$(B, Up, B) = \underline{\color{green}{0}}, \hspace*{2pt}
+            \end{center}
+            \item Regarding the optimal policy, we essentially need to look at the reward for a given action for a state. So the policy is pretty straightforward to calculate. For each possible action 
+            \{Up, Down\}, the corresponding Bellman equations are produced
+            \begin{align*}
+                \hat{V}(s) & = \underset{a}{\text{max}} \hspace*{1pt} \sum_{s'} \hat{T}(s,a,s')\left(\hat{R}(s,a,s') + \gamma\hat{V}(s')\right) \\
+                \hat{V}(A) & = \hat{T}(A,Up,s')\left(\hat{R}(A,Up,s') + \gamma\hat{V}(s')\right) \\
+                & = 1 \cdot \left(10 + 0.5 \cdot \hat{V}(A)\right) = \color{green}{10 + 0.5 \cdot \hat{V}(A)} \\
+                \hat{V}(A) & = \sum_{s'} \hat{T}(A,Down,s')\left(\hat{R}(A,Down,s') + \gamma\hat{V}(s')\right) \\
+                & = 0.5 \cdot \left(2 + 0.5 \cdot \hat{V}(A)\right) + 0.5 \cdot \left(2 + 0.5 \cdot \hat{V}(B)\right) = \color{green}{2 + 0.25\hat{V}(A) + 0.25\hat{V}(B)} \\
+                \hat{V}(B) & = \hat{T}(B,Down,s')\left(\hat{R}(B,Down,s') + \gamma\hat{V}(s')\right) \\
+                & = 1 \cdot \left(8 + 0.5 \cdot \hat{V}(B)\right) = \color{green}{8 + 0.5 \cdot \hat{V}(B)} \\
+                \hat{V}(B) & = \hat{T}(B,Up,s')\left(\hat{R}(B,Up,s') + \gamma\hat{V}(s')\right) \\
+                & = 1 \cdot \left(-5 + 0.5 \cdot \hat{V}(A)\right) = \color{green}{-5 + 0.5 \cdot \hat{V}(B)} \\
+            \end{align*}
+            We can first solve for $\hat{V}(A)$ and then use this result for $\hat{V}(B)$. Doing this we have
+            \begin{align*}
+                \hat{V}(A) & = 10 + 0.5 \cdot \hat{V}(A) \rightarrow 0.5 \cdot \hat{V}(A) = 10 \rightarrow \color{green}{\hat{V}(A) = 20} \\
+                \hat{V}(B) & = 8 + 0.5 \cdot \hat{V}(B) \rightarrow 0.5 \cdot \hat{V}(B) = 8 \rightarrow \color{green}{\hat{V}(B) = 16}
+            \end{align*}
+            \begin{enumerate}[label=(\roman*)]
+                \item The optimal policy is then:
+                \begin{center}
+                    $\hat{\pi}^{*}$(A) = \underline{\color{green}{Up}}, \hspace*{2pt} $\hat{\pi}^{*}$(B) = \underline{\color{green}{Down}}, \hspace*{2pt} $\hat{V}^{*}$(A) = \underline{\color{green}{20}}, \hspace*{2pt} $\hat{V}^{*}$(B) = \underline{\color{green}{16}}, \hspace*{2pt}
+                \end{center}
+                \item The values this will in turn converge to is:
+                \begin{enumerate}[label=\(\circ\)]
+                    \item \color{green}{The values found above for, $\hat{V}^{*}$}
+                \end{enumerate}
+                This is because the values for $\hat{V}^{*}$ are not exactly representative of the MDP that is defined.
+            \end{enumerate}
+        \end{enumerate}
+    \end{highlight}
+\end{problem}
+
+\begin{problem}{Problem 3 - Policy Evaluation}
+    \begin{statement}{Problem Statement}
+        In this question, you will be working in an MDP with states $S$, actions $A$, discount factor $\gamma$, transition function $T$, and reward function $R$.
+
+        We have some fixed policy $\pi : S \rightarrow A$, which returns an action $a = \pi(s)$ for each state $s \in S$. We want to learn the $Q$ function $Q^{\pi}(s,a)$ for this policy: the expected 
+        discounted reward from taking action $a$ in state $s$ and then continuing to act according to $\pi$: $Q^{\pi}(s,a) = \sum_{s'} T(s,a,s')[R(s,a,s') + \gamma Q^{\pi}(s', \pi(s'))]$. The policy 
+        $\pi$ will not change while running any of the algorithms below.
+
+        \begin{enumerate}[label=(\alph*)]
+            \item Can we guarantee anything about how the values $Q^{\pi}$ compare to the values $Q^{*}$ for an optimal policy $π^{*}$?
+            \begin{enumerate}[label=\(\circ\)]
+                \item $Q^{\pi}(s, a) \leq Q^{*}(s, a) \text{ for all } s, a$
+                \item $Q^{\pi}(s, a) = Q^{*}(s, a) \text{ for all } s, a$
+                \item $Q^{\pi}(s, a) \geq Q^{*}(s, a) \text{ for all } s, a$
+                \item None of the above are guaranteed
+            \end{enumerate}
+            \item Suppose $T$ and $R$ are unknown. You will develop sample-based methods to estimate $Q^{\pi}$. You obtain a series of \textit{samples} $(s_{1}, a_{1}, r_{1}), (s_{2}, a_{2}, r_{2}), \dots (s_{T}, a_{T}, r_{T})$ 
+            from acting according to this policy (where $a_{t} = \pi(s_{t})$, for all $t$).
+            \begin{enumerate}[label=(\roman*)]
+                \item Recall the update equation for the Temporal Difference algorithm, performed on each sample in sequence:
+                \begin{equation*}
+                    V(s_{t}) \leftarrow (1 - \alpha)V(s_{t}) + \alpha(r_{t} + \gamma V(s_{t + 1}))
+                \end{equation*}
+                which approximates the expected discounted reward $V\pi(s)$ for following policy $\pi$ from each state \textit{s}, for a learning rate $\alpha$.
+
+                \noindent Fill in the blank below to create a similar update equation which will approximate $Q^{\pi}$ using the samples.
+
+                \noindent You can use any of the terms $Q, s_{t}, s_{t+1}, a_{t}, a_{t+1}, r_{t}, r_{t+1}, \gamma, \alpha, \pi$ in your equation, as well as $\Sigma$ and max with any index variables 
+                (i.e. you could write $\text{max}_{a}$, or $\Sigma_{a}$ and then use a somewhere else), but no other terms.
+
+                \begin{equation*}
+                    Q(s_{t}, a_{t}) \leftarrow (1 - \alpha)Q(s_{t}, a_{t}) + \alpha [\text{\underline{\hspace*{7.5cm}}}]
+                \end{equation*}
+                \item Now, we will approximate $Q^{\pi}$ using a linear function: $Q(s, a) = \sum^{d}_{i = 1} w_{i}f_{i}(s, a)$ for weights $w_{1}, \dots , w_{d}$ and feature functions $f_{1}(s, a), \dots , f_{d}(s, a)$.
+                
+                \noindent To decouple this part from the previous part, use $Q_{samp}$ for the value in the blank in part (i) (i.e. $Q(s_{t}, a_{t}) \leftarrow (1 - \alpha)Q(s_{t}, a_{t}) + \alpha Q_{samp}$).
+
+                \noindent Which of the following is the correct sample-based update for each $w_{i}$?
+
+                \begin{enumerate}[label=\(\circ\)]
+                    \item $w_{i} \leftarrow w_{i} + \alpha [Q(s_{t}, a_{t}) - Q_{samp}]$
+                    \item $w_{i} \leftarrow w_{i} - \alpha [Q(s_{t}, a_{t}) - Q_{samp}]$
+                    \item $w_{i} \leftarrow w_{i} + \alpha [Q(s_{t}, a_{t}) - Q_{samp}]f_{i}(s_{t}, a_{t})$
+                    \item $w_{i} \leftarrow w_{i} - \alpha [Q(s_{t}, a_{t}) - Q_{samp}]f_{i}(s_{t}, a_{t})$
+                    \item $w_{i} \leftarrow w_{i} + \alpha [Q(s_{t}, a_{t}) - Q_{samp}]w_{i}$
+                    \item $w_{i} \leftarrow w_{i} - \alpha [Q(s_{t}, a_{t}) - Q_{samp}]w_{i}$
+                \end{enumerate}
+                \item The algorithms in the previous parts (part i and ii) are:
+                \begin{enumerate}[label=\(\circ\)]
+                    \item model-based
+                    \item model-free
+                \end{enumerate}
+            \end{enumerate}
+        \end{enumerate}
+    \end{statement}
+
+    \newpage
+
+    \begin{highlight}[Problem 3 - Solution]
+        \begin{enumerate}[label=(\alph*)]
+            \item $Q^{*}(s,a)$ represents the maximum expected discounted reward achievable from state $s$ by taking action $a$. Therefore, $Q^{\pi}(s,a)$ will by default be less than or equal to the maximum:
+            \begin{enumerate}[label=\(\circ\)]
+                \item \color{green}{$Q^{\pi}(s, a) \leq Q^{*}(s, a) \text{ for all } s, a$}
+            \end{enumerate}
+            \item For the following
+            \begin{enumerate}[label=(\roman*)]
+                \item Following the pattern of the Temporal Difference algorithm, we can then say
+                \begin{equation*}
+                    Q(s_{t}, a_{t}) \leftarrow (1 - \alpha)Q(s_{t}, a_{t}) + \alpha \color{green}{(r_{t} + \gamma Q(s_{t + 1}, a_{t + 1}))}.
+                \end{equation*}
+                \item The correct sample-based update for each $w_{i}$ is:
+                \begin{enumerate}[label=\(\circ\)]
+                    \item \color{green}{$w_{i} \leftarrow w_{i} - \alpha [Q(s_{t}, a_{t}) - Q_{samp}]f_{i}(s_{t}, a_{t})$}
+                \end{enumerate}
+                because we are seeking to minimize the error in iterations.
+                \item The algorithms are:
+                \begin{enumerate}[label=\(\circ\)]
+                    \item \color{green}{model-free}
+                \end{enumerate}
+                because these are based upon samples and not reinforcing a model.
+            \end{enumerate}
+        \end{enumerate}
+    \end{highlight}
+\end{problem}

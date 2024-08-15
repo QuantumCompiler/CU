@@ -1,0 +1,378 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Informed Search}
+\renewcommand{\SectionTitle}{Informed Search}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 3.5 - Informed (Heuristic) Search Strategies}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 3.6 - Heuristic Functions}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=nUKWuOLSKvc}{Informed Search}{22}
+    \item \lecture{https://www.youtube.com/watch?v=DyjSru4QyQ0}{Heuristics}{16}
+    \item \lecture{https://www.youtube.com/watch?v=Jn425IPnW2Y}{Demo Of Search Algorithms Comparison}{19}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Heuristics Lecture Notes.pdf}{Heuristics Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Informed Search Lecture Notes.pdf}{Informed Search Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \pdflink{\AssDir/Assignment 2 - Informed Search/Assignment 2 - Informed Search.pdf}{Assignment 2 - Informed Search}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 2 - Informed Search.pdf}{Quiz 2 - Informed Search}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 3: Solving Problems By Searching}. The first section that is being covered from this chapter this week is \textbf{Section 3.5: Informed (Heuristic) Search Strategies}.
+
+\begin{notes}{Section 3.5: Informed (Heuristic) Search Strategies}
+    \subsection*{Overview}
+
+    This section explores informed (heuristic) search strategies, which utilize domain-specific knowledge to guide the search process, making it more efficient compared to uninformed strategies. These 
+    strategies are essential for problems where additional information can significantly reduce the search effort.
+    
+    \subsubsection*{Heuristics}
+    
+    A heuristic is a technique that helps in solving problems more quickly when classic methods are too slow or fail to find an exact solution. In the context of search algorithms, a heuristic function 
+    $h(n)$ provides an estimate of the cost to reach the goal from node $n$. The better the heuristic, the more efficient the search process.
+    
+    \begin{highlight}[Heuristic Function]
+    
+    Heuristics guide the search process by estimating how close a given node is to the goal.
+    
+    \begin{itemize}
+        \item A heuristic function $h(n)$ estimates the cost from node $n$ to the goal.
+        \item Good heuristics reduce the number of nodes expanded during the search.
+        \item Heuristics are problem-specific and must be designed based on domain knowledge.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Greedy Best-First Search}
+    
+    Greedy best-first search expands the node that appears to be closest to the goal, as determined by a heuristic function $h(n)$.
+    
+    \begin{highlight}[Greedy Best-First Search]
+    
+    This example demonstrates using a heuristic function to prioritize nodes that are closer to the goal.
+    
+    \begin{code}[Pseudo]
+    function GREEDY-BEST-FIRST-SEARCH(problem) returns a solution node or failure
+        node ← NODE(problem.INITIAL)
+        frontier ← a priority queue ordered by h(n), with node as an element
+        while not IS-EMPTY(frontier) do
+            node ← POP(frontier)
+            if problem.IS-GOAL(node.STATE) then return node
+            for each child in EXPAND(problem, node) do
+                add child to frontier
+        return failure
+    \end{code}
+    
+    This example shows how the search prioritizes nodes based on their heuristic values.
+    
+    \begin{itemize}
+        \item Expands nodes that appear to be closest to the goal.
+        \item Complete in finite state spaces but not necessarily optimal.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{A* Search}
+    
+    A* search combines the path cost from the start node and the heuristic estimate to the goal to select the node with the lowest combined cost $f(n) = g(n) + h(n)$.
+    
+    \begin{highlight}[A* Search]
+    
+    This example demonstrates using both path cost and heuristic estimates to guide the search.
+    
+    \begin{code}[Pseudo]
+    function A*-SEARCH(problem) returns a solution node or failure
+        node ← NODE(problem.INITIAL)
+        frontier ← a priority queue ordered by f(n), with node as an element
+        reached ← a lookup table with node.STATE as key and node as value
+        while not IS-EMPTY(frontier) do
+            node ← POP(frontier)
+            if problem.IS-GOAL(node.STATE) then return node
+            for each child in EXPAND(problem, node) do
+                s ← child.STATE
+                if s not in reached or PATH-COST(child) < PATH-COST(reached[s]) then
+                    reached[s] ← child
+                    add child to frontier
+        return failure
+    \end{code}
+    
+    This example shows how A* search uses both the path cost and heuristic to find the optimal solution.
+    
+    \begin{itemize}
+        \item Expands nodes based on combined cost $f(n) = g(n) + h(n)$.
+        \item Complete and optimal with an admissible heuristic.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Memory-Bounded Heuristic Search}
+    
+    Memory-bounded heuristic search algorithms, such as Recursive Best-First Search (RBFS) and Simplified Memory-Bounded A* (SMA*), aim to manage memory usage while maintaining optimality.
+    
+    \begin{highlight}[Recursive Best-First Search]
+    
+    This example demonstrates RBFS, which uses linear space and backs up values to manage memory.
+    
+    \begin{code}[Pseudo]
+    function RBFS(problem) returns a solution node or failure
+        return RBFS(problem, NODE(problem.INITIAL), ∞)
+    
+    function RBFS(problem, node, f_limit) returns a solution node or failure
+        if problem.IS-GOAL(node.STATE) then return node
+        successors ← EXPAND(problem, node)
+        if successors is empty then return failure, ∞
+        for each s in successors do
+            s.f ← max(s.g + s.h, node.f)
+        while true do
+            best ← the node in successors with lowest f value
+            if best.f > f_limit then return failure, best.f
+            alternative ← the second lowest f value among successors
+            result, best.f ← RBFS(problem, best, min(f_limit, alternative))
+            if result ≠ failure then return result
+    \end{code}
+    
+    This example shows how RBFS maintains linear space complexity by backtracking when necessary.
+    
+    \begin{itemize}
+        \item Optimal with admissible heuristics.
+        \item Uses linear space, but may re-expand nodes.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Simplified Memory-Bounded A*]
+    
+    SMA* manages memory by expanding the best nodes until memory is full and then dropping the least promising nodes.
+    
+    \begin{itemize}
+        \item Expands nodes in best-first order until memory is full.
+        \item Drops the worst leaf node when necessary, backing up values.
+        \item Complete if a solution is reachable within memory constraints.
+        \item Optimal if an optimal solution is reachable; otherwise, returns the best reachable solution.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comparing Informed Search Algorithms}
+    
+    The performance of informed search algorithms is evaluated based on completeness, optimality, time complexity, and space complexity.
+    
+    \begin{highlight}[Comparison of Informed Search Algorithms]
+    
+    \begin{itemize}
+        \item \textbf{Greedy Best-First Search}: Complete in finite spaces, not optimal, time and space complexity $O(|V|)$.
+        \item \textbf{A* Search}: Complete and optimal with admissible heuristics, time and space complexity $O(b^d)$.
+        \item \textbf{Recursive Best-First Search (RBFS)}: Optimal with admissible heuristics, space complexity $O(bm)$, where $m$ is the maximum depth.
+        \item \textbf{Simplified Memory-Bounded A* (SMA*)}: Complete and optimal if sufficient memory, otherwise returns the best reachable solution.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Informed (heuristic) search strategies leverage additional knowledge to enhance search efficiency. Here are the key concepts covered:
+    
+    \begin{itemize}
+        \item \textbf{Heuristics}: Guide the search process by providing cost estimates to reach the goal, improving efficiency.
+        \item \textbf{Greedy Best-First Search}: Expands nodes closest to the goal based on heuristic values; complete in finite spaces, not necessarily optimal.
+        \item \textbf{A* Search}: Combines path cost and heuristic estimate to find the optimal solution; complete and optimal with an admissible heuristic.
+        \item \textbf{Recursive Best-First Search (RBFS)}: Uses linear space, backs up values to manage memory, optimal with admissible heuristics.
+        \item \textbf{Simplified Memory-Bounded A* (SMA*)}: Expands nodes in best-first order until memory is full, drops least promising nodes, complete and optimal if memory is sufficient.
+    \end{itemize}
+    
+    These strategies make informed search a powerful tool for solving complex problems more efficiently by utilizing domain-specific knowledge.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is covered from this chapter this week is \textbf{Section 3.6: Heuristic Functions}.
+
+\begin{notes}{Section 3.6: Heuristic Functions}
+    \subsection*{Overview}
+
+    This section explores heuristic functions, which enhance search performance by providing informed guidance about the likely direction of goal states. We examine the accuracy of heuristics and 
+    methods to generate effective heuristics for complex problems. Understanding heuristics is crucial as they can significantly reduce the time and computational resources required to find a 
+    solution by making educated guesses about the best paths to follow in a search space.
+    
+    \subsubsection*{Heuristics}
+    
+    A heuristic is a method used to estimate the cost from a given node to the goal. It helps in solving problems more efficiently than uninformed strategies by providing domain-specific knowledge. 
+    Heuristics are essential in search algorithms because they guide the search process, helping to avoid paths that are unlikely to lead to a solution.
+    
+    \begin{highlight}[Heuristic Function]
+    
+    Heuristics guide the search process by estimating how close a given node is to the goal. This estimate is not necessarily perfect but should be good enough to make the search more efficient.
+    
+    \begin{itemize}
+        \item A heuristic function \(h(n)\) estimates the cost from node \(n\) to the goal.
+        \item Good heuristics reduce the number of nodes expanded during the search, saving time and computational resources.
+        \item Heuristics are problem-specific and must be designed based on domain knowledge, meaning they rely on understanding the problem's structure and constraints.
+        \item For example, in a map navigation problem, the straight-line distance to the destination can serve as a heuristic, indicating how close a location is to the goal.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{The Effect of Heuristic Accuracy on Performance}
+    
+    The accuracy of a heuristic significantly impacts the efficiency of the search. An effective heuristic reduces the effective branching factor, making the search faster. The effective branching 
+    factor \(b^*\) represents the average number of child nodes per parent node in the search tree, and lower values indicate a more efficient search.
+    
+    \begin{highlight}[Effective Branching Factor]
+    
+    The effective branching factor \(b^*\) indicates the quality of a heuristic. A lower \(b^*\) value implies a more efficient search, as fewer nodes need to be explored.
+    
+    \begin{itemize}
+        \item Defined as the branching factor of a uniform tree that generates the same number of nodes as the search.
+        \item Calculated by comparing the total number of nodes generated by the search to the depth of the solution.
+        \item An effective heuristic has a \(b^*\) close to 1, meaning it guides the search process very efficiently.
+        \item For instance, if a heuristic reduces the number of nodes explored from thousands to just a few dozen, it significantly speeds up the search process.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Generating Heuristics from Relaxed Problems}
+    
+    Relaxed problems simplify constraints to make the problem easier to solve, providing admissible heuristics for the original problem. An admissible heuristic never overestimates the true cost to 
+    reach the goal, ensuring that the search algorithm remains optimal.
+    
+    \begin{highlight}[Relaxed Problems]
+    
+    By relaxing the problem's constraints, we can derive admissible heuristics. These simplified problems are easier to solve and give us useful information for the original problem.
+    
+    \begin{itemize}
+        \item A relaxed problem removes some restrictions, adding edges to the state-space graph, thus making it easier to navigate.
+        \item The cost of an optimal solution to a relaxed problem serves as an admissible heuristic for the original problem because it represents a lower bound on the true cost.
+        \item Examples include the Manhattan distance and misplaced tiles heuristics for the 8-puzzle, where constraints on tile movement are relaxed.
+        \item For example, in the 8-puzzle, if we allow tiles to move anywhere regardless of the blank space, the number of misplaced tiles can serve as a heuristic.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Generating Heuristics from Subproblems: Pattern Databases}
+    
+    Pattern databases store the exact solution costs for subproblems, providing highly accurate admissible heuristics. These databases precompute the optimal solution costs for all possible 
+    configurations of a subset of the problem, which can then be used to guide the search in the full problem space.
+    
+    \begin{highlight}[Pattern Databases]
+    
+    These databases precompute solution costs for subproblems, improving heuristic accuracy by providing exact solution costs for parts of the problem.
+    
+    \begin{itemize}
+        \item Stores solution costs for every possible configuration of a subset of the problem, making lookups during the search process fast and efficient.
+        \item Lookups in the database provide heuristics for the larger problem, which can drastically reduce the number of nodes that need to be explored.
+        \item Combined heuristics from multiple pattern databases can further enhance performance by using the most accurate estimate available for each state.
+        \item For example, in a sliding-tile puzzle, a pattern database might store the cost of arranging tiles 1, 2, 3, and 4, regardless of the positions of other tiles.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Generating Heuristics with Landmarks}
+    
+    Landmarks provide a way to estimate the cost between nodes by precomputing distances to and from selected landmark points. This method is particularly effective in large graphs, such as maps for navigation.
+    
+    \begin{highlight}[Landmarks]
+    
+    Using landmarks helps create efficient heuristics for large-scale problems like route-finding by precomputing distances to and from key points.
+    
+    \begin{itemize}
+        \item Select a few significant points (landmarks) in the graph that are well-distributed across the search space.
+        \item Precompute and store the cost from each vertex to the landmarks, allowing quick lookups during the search.
+        \item Use these precomputed costs to estimate the heuristic for any given node, improving search efficiency.
+        \item For instance, in a city map, landmarks could be major intersections or well-known locations, and the heuristic would estimate travel costs based on these points.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Learning to Search Better}
+    
+    Agents can learn to improve their search strategies over time by using a metalevel state space, which captures the internal state of the search process. This approach allows the agent to learn 
+    from past experiences, optimizing future searches.
+    
+    \begin{highlight}[Metalevel Learning]
+    
+    Learning from experience helps agents to avoid unpromising paths and improve search efficiency by analyzing the search process itself.
+    
+    \begin{itemize}
+        \item The metalevel state space captures the computational state of the search algorithm, such as which nodes have been expanded and what paths are being considered.
+        \item Metalevel learning algorithms can optimize the search process based on past experiences, identifying patterns that lead to quicker solutions.
+        \item For example, if certain paths frequently lead to dead ends, the agent can learn to avoid those paths in future searches, saving time and resources.
+        \item This approach can be compared to a chess player learning from previous games, refining strategies to avoid losing positions and favor winning ones.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Learning Heuristics from Experience}
+    
+    Heuristics can also be learned from past problem-solving experiences, creating an approximation function that guides the search. This method involves analyzing previously solved problems to derive 
+    patterns and features that can predict solution costs.
+    
+    \begin{highlight}[Learning Heuristics]
+    
+    Learning heuristics from experience involves constructing a function based on solved examples to guide future searches more effectively.
+    
+    \begin{itemize}
+        \item Use features of the state to predict the heuristic value, such as the number of misplaced tiles in a puzzle or the distance to a goal in a navigation problem.
+        \item Combine multiple features using a linear combination or other methods to create a comprehensive heuristic.
+        \item Balances learning time, search run time, and solution cost, aiming to improve overall efficiency.
+        \item For instance, a learning algorithm might analyze many instances of the 8-puzzle, learning that certain configurations are usually closer to the goal than others, and use this knowledge 
+        to speed up future searches.
+    \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+    Heuristic functions enhance search efficiency by providing informed estimates of costs to goal states. Here are the key concepts covered:
+    
+    \begin{itemize}
+        \item \textbf{Heuristics}: Guide the search process by providing cost estimates to reach the goal, improving efficiency.
+        \item \textbf{Effective Branching Factor}: A measure of the heuristic's efficiency; lower values indicate better performance and faster search processes.
+        \item \textbf{Relaxed Problems}: Simplified versions of the original problem used to generate admissible heuristics that provide lower bounds on the cost.
+        \item \textbf{Pattern Databases}: Precomputed solution costs for subproblems that provide highly accurate heuristics and significantly reduce search times.
+        \item \textbf{Landmarks}: Significant points in the graph used to estimate costs and create heuristics, especially useful in large-scale problems like route-finding.
+        \item \textbf{Metalevel Learning}: Learning from the internal states of search algorithms to improve efficiency by avoiding unpromising paths.
+        \item \textbf{Learning Heuristics}: Constructing heuristics from past problem-solving experiences to guide future searches, enhancing efficiency and accuracy.
+    \end{itemize}
+    
+    These strategies make heuristic functions a powerful tool for solving complex problems more efficiently by utilizing domain-specific knowledge and learning from experience.
+    
+    \end{highlight}
+\end{notes}

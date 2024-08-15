@@ -1,0 +1,1606 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Reinforcement Learning (RL)}
+\renewcommand{\SectionTitle}{Reinforcement Learning (RL)}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 22.1 - Learning From Rewards}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 22.2 - Passive Reinforcement Learning}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 22.3 - Active Reinforcement Learning}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 22.4 - Generalization In Reinforcement Learning}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 22.5 - Policy Search}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 5.1 - Monte Carlo Prediction}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 5.2 - Monte Carlo Estimation Of Action Values}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 5.3 - Monte Carlo Control}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 5.4 - Monte Carlo Control Without Exploring Starts}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 5.7 - Off-policy Monte Carlo Control}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 6.1 - TD Prediction}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 6.2 - Advantages Of TD Prediction Methods}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 6.4 - Sarsa - On-policy TD Control}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 6.5 - Q-learning - Off-policy TD Control}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=e-1KRGWVpTA}{Reinforcement Learning - Intro, Model-Based, Passive RL}{65}
+    \item \lecture{https://www.youtube.com/watch?v=5lk1trI8Vko}{Reinforcement Learning - Active RL}{59}
+    \item \lecture{https://www.youtube.com/watch?v=ljnVJCowWJg}{Approximate Reinforcement Learning}{73}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Reinforcement Learning - Active RL Lecture Notes.pdf}{Reinforcement Learning - Active RL Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Reinforcement Learning - Intro, Model-Based, Passive RL Lecture Notes.pdf}{Reinforcement Learning - Intro, Model-Based, Passive RL Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Approximate Reinforcement Learning Lecture Notes.pdf}{Approximate Reinforcement Learning Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Approximate Reinforcement Learning Review Lecture Notes.pdf}{Approximate Reinforcement Learning Review Lecture Notes}
+\end{itemize}
+
+\subsection{Assignment}
+
+The assignment for this week is:
+
+\begin{itemize}
+    \item \pdflink{\AssDir/Assignment 5 - MDP And RL/Assignment 5 - MDP And RL.pdf}{Assignment 5 - MDP And RL}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 6 - Reinforcement Learning.pdf}{Quiz 6 - Reinforcement Learning}
+    \item \pdflink{\QuizDir Quiz 7 - Approximate Reinforcement Learning.pdf}{Quiz 7 - Approximate Reinforcement Learning}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The reading this week is from \textbf{Artificial Intelligence - A Modern Approach} and \textbf{Reinforcement Learning - An Introduction}. The chapter that is being covered from \textbf{Artificial Intelligence - A Modern Approach}
+is \textbf{Chapter 22: Reinforcement Learning}. The first section that is being covered from this chapter this week is \textbf{Section 22.1: Learning From Rewards}.
+
+\begin{notes}{Section 22.1: Learning From Rewards}
+    \subsection*{Overview}
+
+    This section introduces reinforcement learning (RL), where agents learn to make decisions through rewards and punishments. Unlike supervised learning, which relies on labeled examples, RL enables agents 
+    to learn from their own experiences, optimizing actions based on outcomes. This approach is essential for problems where exhaustive training data is unavailable, allowing agents to generalize from limited 
+    feedback.
+    
+    \subsubsection*{Reinforcement Learning Fundamentals}
+    
+    In RL, agents interact with the environment and receive rewards, guiding their learning process. The objective is to maximize the cumulative reward over time by balancing exploration and exploitation.
+    
+    \begin{highlight}[Reinforcement Learning Fundamentals]
+    
+        \begin{itemize}
+            \item \textbf{Interaction}: Agents interact with the environment by taking actions and observing the consequences, receiving rewards that indicate success or failure. This feedback loop allows 
+            agents to learn optimal behaviors.
+            \item \textbf{Rewards}: In games like chess, rewards can be sparse (e.g., 1 for winning, 0.5 for a draw, and 0 for losing). Sparse rewards provide limited feedback, making it challenging to 
+            learn effective strategies quickly.
+            \item \textbf{Exploration vs. Exploitation}: Agents must explore the environment to discover rewarding strategies while exploiting known strategies to maximize rewards. This tradeoff is central 
+            to RL and requires careful balancing.
+            \item \textbf{Comparison with Supervised Learning}: Supervised learning uses labeled examples to train agents, but in many real-world scenarios, such data is unavailable. RL provides a way 
+            to learn from the environment without explicit examples.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Model-Based vs. Model-Free Learning}
+    
+    RL approaches are categorized into model-based and model-free methods, depending on the agent's knowledge of the environment's dynamics.
+    
+    \begin{highlight}[Model-Based vs. Model-Free Learning]
+    
+        \begin{itemize}
+            \item \textbf{Model-Based RL}: The agent uses a transition model to interpret rewards and make decisions. It may learn this model from interactions or rely on a pre-existing understanding of 
+            the environment's rules. This approach facilitates state estimation and planning.
+            \item \textbf{Model-Free RL}: The agent does not rely on a transition model, instead learning directly from experience. Two main approaches are:
+                \begin{itemize}
+                    \item \textbf{Action-Utility Learning (Q-Learning)}: Agents learn a quality function $Q(s, a)$ that estimates the expected rewards from taking action $a$ in state $s$. The optimal 
+                    policy is derived by selecting actions with the highest $Q$ values.
+                    \item \textbf{Policy Search}: Agents learn a policy $\pi(s)$ that maps states directly to actions, optimizing performance through experience. This approach is akin to reflex agents 
+                    that respond directly to inputs.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Reinforcement Learning}
+    
+    Reinforcement learning offers several advantages for developing intelligent agents, especially in environments where direct supervision is impractical.
+    
+    \begin{highlight}[Advantages of Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Scalability}: RL is well-suited for large and complex environments where supervised learning would require vast datasets. Agents can learn from simulations, gaining experience 
+            without the need for exhaustive labeled data.
+            \item \textbf{Versatility}: RL applies to various domains, including robotics, gaming, and autonomous systems. Agents can learn diverse tasks from playing video games to controlling real-world 
+            robots.
+            \item \textbf{Intermediate Rewards}: Providing intermediate rewards for progress (e.g., points in games) helps guide agents, facilitating faster learning. This strategy overcomes challenges 
+            associated with sparse rewards.
+            \item \textbf{Integration with Deep Learning}: Combining RL with deep learning enables agents to process high-dimensional sensory inputs, expanding RL's applicability to more complex tasks 
+            like visual perception and language understanding.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Categories of Reinforcement Learning}
+    
+    RL can be divided into several categories based on how agents learn and optimize their behaviors.
+    
+    \begin{highlight}[Categories of Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Passive Reinforcement Learning}: Agents follow a fixed policy and learn the utility of states or state-action pairs. The goal is to evaluate the given policy, akin to policy 
+            evaluation in Markov Decision Processes (MDPs).
+            \item \textbf{Active Reinforcement Learning}: Agents explore the environment and adapt their policies based on accumulated experiences. This approach requires addressing the exploration-exploitation 
+            tradeoff effectively.
+            \item \textbf{Policy Search Methods}: Agents search for optimal policies using various optimization techniques. These methods can include gradient ascent, evolutionary algorithms, and more, 
+            tailored to find the best mapping from states to actions.
+            \item \textbf{Apprenticeship Learning}: Agents learn from demonstrations, using observed behaviors to guide their learning. This method leverages expert demonstrations to accelerate the learning 
+            process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Challenges in Reinforcement Learning}
+    
+    Despite its advantages, RL also presents challenges that need to be addressed for successful application in real-world scenarios.
+    
+    \begin{highlight}[Challenges in Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Sparse Rewards}: In many environments, rewards are infrequent, making it difficult for agents to learn effective strategies. Providing intermediate rewards or shaping reward 
+            functions can mitigate this issue.
+            \item \textbf{Exploration}: Balancing exploration and exploitation is crucial. Too much exploration may lead to inefficiency, while excessive exploitation may prevent discovering optimal strategies.
+            \item \textbf{Scalability}: As environments become more complex, the state and action spaces grow, posing challenges for RL algorithms in terms of computational efficiency and convergence.
+            \item \textbf{Sample Efficiency}: Learning from limited interactions is essential, especially in real-world applications where simulations are not feasible. Sample-efficient algorithms are crucial 
+            for practical RL applications.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Reinforcement Learning}: A learning paradigm where agents learn through interactions with the environment, optimizing actions based on received rewards.
+            \item \textbf{Model-Based vs. Model-Free}: Approaches differ based on the agent's knowledge of the environment's dynamics, affecting how policies are learned.
+            \item \textbf{Advantages}: RL is scalable, versatile, and integrates well with deep learning, making it suitable for various domains.
+            \item \textbf{Challenges}: Sparse rewards, exploration, scalability, and sample efficiency are key challenges that need addressing for effective RL.
+            \item \textbf{Categories}: Includes passive and active RL, policy search methods, and apprenticeship learning, each with unique characteristics and applications.
+        \end{itemize}
+    
+        Reinforcement learning provides a robust framework for developing intelligent agents capable of learning from experience, making it an essential area of study in artificial intelligence.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 22.2: Passive Reinforcement Learning}.
+
+\begin{notes}{Section 22.2: Passive Reinforcement Learning}
+    \subsection*{Overview}
+
+    This section explores passive reinforcement learning, where the agent follows a fixed policy and learns the utilities of states. Unlike active learning, where agents explore actions to discover the best 
+    policies, passive learning focuses on evaluating an existing policy. This approach is essential in scenarios where the agent must operate within predetermined rules or constraints.
+    
+    \subsubsection*{Passive Learning in Reinforcement Learning}
+    
+    In passive reinforcement learning, the agent does not control its actions but instead observes the rewards received from the environment while following a predefined policy. The goal is to learn the utility 
+    of each state under this policy.
+    
+    \begin{highlight}[Passive Learning in Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Fixed Policy}: The agent adheres to a fixed policy $\pi$, which maps states to actions without considering future consequences. The focus is on evaluating the policy rather than 
+            improving it.
+            \item \textbf{Utility Estimation}: The agent aims to estimate the utility $U(s)$ of each state $s$ under the given policy $\pi$. This estimation helps understand the long-term value of being 
+            in a state and following the policy thereafter.
+            \item \textbf{Learning from Experience}: The agent learns from observed transitions and rewards, updating its estimates of state utilities as it gathers more data.
+            \item \textbf{Application Scenarios}: Passive learning is suitable for environments where exploration is risky or undesirable, such as in medical treatment plans or automated trading systems where 
+            predefined strategies must be followed.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Policy Evaluation Methods}
+    
+    There are several methods to evaluate the utility of states under a fixed policy, each with its own advantages and limitations.
+    
+    \begin{highlight}[Policy Evaluation Methods]
+    
+        \begin{itemize}
+            \item \textbf{Direct Utility Estimation}: The agent calculates the average reward received from each state over time. This method requires numerous episodes to converge and may suffer from high 
+            variance, making it less practical in environments with limited interactions.
+            \item \textbf{Temporal-Difference Learning (TD)}: A model-free approach where the agent updates its utility estimates based on the difference between successive state utilities. The update rule is:
+            \[
+            U(s) \leftarrow U(s) + \alpha (r + \gamma U(s') - U(s))
+            \]
+            where $r$ is the reward received, $\alpha$ is the learning rate, and $\gamma$ is the discount factor.
+            \item \textbf{Adaptive Dynamic Programming (ADP)}: A model-based approach that constructs a transition model and reward function based on observed data, using them to update utility estimates through 
+            dynamic programming techniques.
+            \item \textbf{Monte Carlo Methods}: The agent learns from complete episodes, updating the utility estimates based on the total return from each state. This approach requires episodic tasks and 
+            may be computationally expensive due to the need to run complete episodes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Convergence and Stability}
+    
+    The convergence and stability of utility estimates depend on the method used and the properties of the environment.
+    
+    \begin{highlight}[Convergence and Stability]
+    
+        \begin{itemize}
+            \item \textbf{Temporal-Difference Learning}: TD methods converge to the correct utility values under certain conditions, such as appropriate learning rates and exploration strategies.
+            \item \textbf{Monte Carlo Methods}: These methods converge to the true utility values but require a large number of episodes and may suffer from high variance in returns.
+            \item \textbf{Adaptive Dynamic Programming}: ADP approaches rely on accurate models, which can be challenging to construct in complex environments. Their convergence depends on the accuracy of the 
+            estimated transition models.
+            \item \textbf{Stability}: Stability in learning is crucial, ensuring that utility estimates do not oscillate or diverge during the learning process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Gridworld}
+    
+    Gridworld is a classic example used to illustrate passive reinforcement learning, where an agent navigates a grid following a fixed policy, learning the utility of each state based on the rewards received.
+    
+    \begin{highlight}[Example: Gridworld]
+    
+        \begin{itemize}
+            \item \textbf{Environment}: A grid with states representing positions. Each position has associated rewards, and the agent moves according to a fixed policy.
+            \item \textbf{Policy}: The agent follows a predefined policy, such as moving randomly or always heading towards a goal state.
+            \item \textbf{Learning Process}: As the agent navigates the grid, it collects rewards and updates the utility estimates for each state based on the observed transitions and rewards.
+            \item \textbf{Outcome}: Over time, the agent learns the expected utility of each state under the fixed policy, which can be used to evaluate the policy's effectiveness.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Challenges in Passive Reinforcement Learning}
+    
+    While passive learning simplifies the learning process by following a fixed policy, it still presents challenges that need to be addressed.
+    
+    \begin{highlight}[Challenges in Passive Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Exploration}: Since the policy is fixed, the agent's ability to explore the environment is limited, potentially leading to suboptimal utility estimates in unexplored states.
+            \item \textbf{Convergence Speed}: Methods like direct utility estimation and Monte Carlo methods may converge slowly, especially in large state spaces with sparse rewards.
+            \item \textbf{Model Dependence}: ADP methods rely on accurate models, and inaccuracies can lead to erroneous utility estimates.
+            \item \textbf{Variance and Bias}: High variance in returns can affect the stability of learning, while bias in utility estimates can result from insufficient exploration or inaccurate models.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Passive Reinforcement Learning}: Involves learning the utility of states under a fixed policy without exploring alternative actions.
+            \item \textbf{Policy Evaluation}: Various methods exist, including direct utility estimation, temporal-difference learning, adaptive dynamic programming, and Monte Carlo methods.
+            \item \textbf{Convergence and Stability}: These depend on the learning method and the environment, with challenges in exploration, convergence speed, and model accuracy.
+            \item \textbf{Gridworld Example}: Illustrates passive learning where an agent learns state utilities by navigating a grid following a fixed policy.
+            \item \textbf{Challenges}: Include limited exploration, slow convergence, model dependence, and issues with variance and bias in utility estimates.
+        \end{itemize}
+    
+        Passive reinforcement learning provides a foundational understanding of policy evaluation, helping agents learn the value of states within predetermined constraints.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 22.3: Active Reinforcement Learning}.
+
+\begin{notes}{Section 22.3: Active Reinforcement Learning}
+    \subsection*{Overview}
+
+    This section explores active reinforcement learning, where agents have the freedom to select actions rather than follow a fixed policy. This approach allows agents to optimize their behavior by learning 
+    which actions yield the highest rewards. Active reinforcement learning emphasizes the balance between exploration and exploitation, which is crucial for maximizing cumulative rewards over time.
+    
+    \subsubsection*{Active Learning in Reinforcement Learning}
+    
+    Active learning agents choose their actions based on learned models of the environment. Unlike passive agents, they seek to improve their knowledge and policies through interaction.
+    
+    \begin{highlight}[Active Learning in Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Freedom of Action}: Active agents select actions based on their current knowledge, which allows them to explore and learn the utility of different actions in various states.
+            \item \textbf{Utility Estimation}: Agents learn utilities defined by the optimal policy, adhering to the Bellman equations:
+            \[
+            U(s) = \max_{a \in A(s)} \sum_{s'} P(s' | s, a) [R(s, a, s') + \gamma U(s')]
+            \]
+            where $U(s)$ is the utility of state $s$, and $R(s, a, s')$ is the reward received when moving from state $s$ to state $s'$ via action $a$.
+            \item \textbf{Exploration vs. Exploitation}: Active agents face the challenge of deciding whether to explore new actions or exploit known rewarding actions. This tradeoff is critical for learning 
+            optimal policies.
+            \item \textbf{Model Learning}: Active agents need to learn a complete transition model for all actions, not just those specified by a fixed policy.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Exploration Strategies}
+    
+    The success of active reinforcement learning heavily depends on the exploration strategy employed, which determines how the agent balances learning and exploiting.
+    
+    \begin{highlight}[Exploration Strategies]
+    
+        \begin{itemize}
+            \item \textbf{Greedy Agents}: These agents choose actions that currently appear optimal, but they risk missing better strategies because they do not explore sufficiently. Greedy strategies often 
+            converge quickly but may not find the optimal policy.
+            \item \textbf{GLIE (Greedy in the Limit of Infinite Exploration)}: This approach ensures that every action in each state is explored an unbounded number of times. It prevents the agent from 
+            becoming stuck in suboptimal policies by guaranteeing exploration.
+            \item \textbf{Exploration Function}: This function $f(u, n)$ balances utility $u$ and novelty $n$. It favors actions with high utility or low exploration count, effectively encouraging the 
+            agent to explore lesser-known state-action pairs:
+            \[
+            U^+(s) \leftarrow \max_a f\left(\sum_{s'} P(s' | s, a) [R(s, a, s') + \gamma U^+(s')], N(s, a)\right)
+            \]
+            \item \textbf{Optimistic Initial Values}: Setting high initial utility estimates encourages exploration by making unexplored actions appear attractive, preventing premature convergence to suboptimal 
+            policies.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Safe Exploration}
+    
+    In real-world scenarios, exploration can lead to irreversible or costly states. Safe exploration strategies are necessary to prevent negative consequences.
+    
+    \begin{highlight}[Safe Exploration]
+    
+        \begin{itemize}
+            \item \textbf{Irreversible Actions}: Actions that lead to states from which recovery is impossible or costly must be avoided. For instance, a self-driving car must not enter states leading to 
+            severe accidents or mechanical failures.
+            \item \textbf{Absorbing States}: These are states where no further actions have any effect, often with no reward. Avoiding such states is crucial, as entering them can halt learning and 
+            performance.
+            \item \textbf{Approaches to Safe Exploration}:
+                \begin{itemize}
+                    \item \textbf{Bayesian Reinforcement Learning}: Incorporates prior knowledge about the environment and updates beliefs based on observations, using posterior probabilities to guide 
+                    actions.
+                    \item \textbf{Robust Control Theory}: Considers worst-case scenarios, optimizing for the best outcome under the least favorable conditions. This approach helps agents avoid risky actions.
+                    \item \textbf{Teacher Guidance}: Human intervention or predefined constraints can ensure safety during learning. For example, an autonomous helicopter may have safety constraints 
+                    overriding exploratory actions in risky states.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Temporal-Difference Q-Learning}
+    
+    Q-learning is a popular model-free algorithm used in active reinforcement learning, focusing on learning an action-value function directly without requiring a transition model.
+    
+    \begin{highlight}[Temporal-Difference Q-Learning]
+    
+        \begin{itemize}
+            \item \textbf{Q-Values}: The function $Q(s, a)$ estimates the expected total reward for taking action $a$ in state $s$ and following an optimal policy thereafter. The update rule is:
+            \[
+            Q(s, a) \leftarrow Q(s, a) + \alpha [R(s, a, s') + \gamma \max_{a'} Q(s', a') - Q(s, a)]
+            \]
+            \item \textbf{Exploration Policy}: Uses an exploration function similar to that in ADP, balancing exploration and exploitation based on observed rewards and action counts.
+            \item \textbf{SARSA}: A variant of Q-learning that updates Q-values based on the action actually taken, providing an on-policy learning method. The update rule is:
+            \[
+            Q(s, a) \leftarrow Q(s, a) + \alpha [R(s, a, s') + \gamma Q(s', a') - Q(s, a)]
+            \]
+            \item \textbf{Comparison of SARSA and Q-Learning}:
+                \begin{itemize}
+                    \item \textbf{SARSA (On-Policy)}: Learns the value of the policy being followed, making it sensitive to the actions actually taken during exploration.
+                    \item \textbf{Q-Learning (Off-Policy)}: Learns the value of the optimal policy, independent of the agent's actions, making it more robust to different exploration strategies.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Active Reinforcement Learning}: Agents choose actions based on learned models, balancing exploration and exploitation to maximize rewards.
+            \item \textbf{Exploration Strategies}: Include greedy approaches, GLIE, and optimistic initial values to ensure sufficient exploration of the state space.
+            \item \textbf{Safe Exploration}: Strategies that prevent agents from entering irreversible or costly states, using Bayesian methods, robust control, and human guidance.
+            \item \textbf{Temporal-Difference Q-Learning}: A model-free method that learns action-value functions without requiring a transition model, with variants like SARSA and Q-learning.
+            \item \textbf{Exploration-Exploitation Tradeoff}: Central to active reinforcement learning, this tradeoff determines the balance between exploring new actions and exploiting known rewards.
+        \end{itemize}
+    
+        Active reinforcement learning provides a framework for agents to learn optimal behaviors in dynamic environments, where balancing exploration and exploitation is key to maximizing long-term rewards.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 22.4: Generalization In Reinforcement Learning}.
+
+\begin{notes}{Section 22.4: Generalization In Reinforcement Learning}
+    \subsection*{Overview}
+
+    This section discusses generalization in reinforcement learning (RL), focusing on how agents can learn from limited experiences and apply that knowledge to unvisited states. In real-world environments 
+    with vast state spaces, it is impractical to explore all states exhaustively. Generalization allows agents to make informed decisions by approximating the utility of unvisited states based on features 
+    and past experiences.
+    
+    \subsubsection*{Function Approximation}
+    
+    Function approximation is used to estimate utility functions or Q-functions compactly, making it feasible to handle large state spaces.
+    
+    \begin{highlight}[Function Approximation]
+    
+        \begin{itemize}
+            \item \textbf{Concept}: Instead of maintaining a table of utility values for each state, agents use a parameterized function to approximate utilities:
+            \[
+            \hat{U}_\theta(s) = \theta_1 f_1(s) + \theta_2 f_2(s) + \ldots + \theta_n f_n(s)
+            \]
+            where $f_i(s)$ are features of state $s$ and $\theta_i$ are the parameters.
+            \item \textbf{Example}: In a 4x3 grid, utilities might be approximated using the coordinates $(x, y)$:
+            \[
+            \hat{U}_\theta(x, y) = \theta_0 + \theta_1 x + \theta_2 y
+            \]
+            This reduces the number of parameters significantly, allowing generalization across states.
+            \item \textbf{Learning Process}: Parameters $\theta$ are adjusted using data from state visits, minimizing the difference between predicted and actual rewards. This allows the model to generalize 
+            from visited states to unvisited ones.
+            \item \textbf{Importance}: Enables agents to perform well in large state spaces, where explicit state enumeration is infeasible, by capturing the underlying structure of the environment.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Direct Utility Estimation with Function Approximation}
+    
+    Direct utility estimation can be enhanced using function approximation, allowing agents to estimate utilities more effectively.
+    
+    \begin{highlight}[Direct Utility Estimation with Function Approximation]
+    
+        \begin{itemize}
+            \item \textbf{Process}: Agents run trials, gathering rewards and state features. Each trial provides training examples, which are used to update the parameterized utility function.
+            \item \textbf{Example}: Using a linear function $\hat{U}_\theta(x, y)$ with parameters updated through gradient descent:
+            \[
+            \theta_i \leftarrow \theta_i + \alpha [u_j(s) - \hat{U}_\theta(s)] \frac{\partial \hat{U}_\theta(s)}{\partial \theta_i}
+            \]
+            where $u_j(s)$ is the observed total reward from state $s$.
+            \item \textbf{Convergence}: With a proper learning rate $\alpha$, the parameters converge to values that minimize prediction error, providing a good approximation of true utilities.
+            \item \textbf{Challenges}: Care must be taken to avoid high variance in returns and ensure a suitable feature set that accurately represents the environment.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Temporal-Difference Learning with Function Approximation}
+    
+    Temporal-difference (TD) learning can also benefit from function approximation, allowing agents to learn from incremental updates rather than full episodes.
+    
+    \begin{highlight}[Temporal-Difference Learning with Function Approximation]
+    
+        \begin{itemize}
+            \item \textbf{Update Rule}: Parameters are updated based on the temporal difference error:
+            \[
+            \theta_i \leftarrow \theta_i + \alpha [R(s, a, s') + \gamma \hat{U}_\theta(s') - \hat{U}_\theta(s)] \frac{\partial \hat{U}_\theta(s)}{\partial \theta_i}
+            \]
+            where $R(s, a, s')$ is the reward received, and $\gamma$ is the discount factor.
+            \item \textbf{Q-Learning with Function Approximation}:
+            \[
+            \theta_i \leftarrow \theta_i + \alpha [R(s, a, s') + \gamma \max_{a'} \hat{Q}_\theta(s', a') - \hat{Q}_\theta(s, a)] \frac{\partial \hat{Q}_\theta(s, a)}{\partial \theta_i}
+            \]
+            \item \textbf{Convergence}: For linear function approximators, convergence is guaranteed under certain conditions. Nonlinear approximators, like neural networks, may present challenges 
+            such as instability and catastrophic forgetting.
+            \item \textbf{Catastrophic Forgetting}: When new experiences overwrite previously learned information, causing significant degradation in performance. Techniques like experience replay 
+            help mitigate this issue by reusing past experiences.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Deep Reinforcement Learning}
+    
+    Deep reinforcement learning uses deep neural networks as function approximators, allowing agents to learn directly from high-dimensional inputs like images.
+    
+    \begin{highlight}[Deep Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Concept}: Deep networks approximate utility or Q-functions using many layers of non-linear transformations, automatically extracting features from raw input data.
+            \item \textbf{Application}: Successfully applied in various domains, such as playing video games at expert levels, mastering the game of Go, and training robots for complex tasks.
+            \item \textbf{Advantages}:
+                \begin{itemize}
+                    \item \textbf{Feature Learning}: Automatically learns relevant features without manual feature engineering.
+                    \item \textbf{Scalability}: Capable of handling complex environments with high-dimensional state spaces.
+                \end{itemize}
+            \item \textbf{Challenges}: Deep RL systems can be unstable, sensitive to hyperparameters, and may not generalize well to environments differing from the training data.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Reward Shaping}
+    
+    Reward shaping involves modifying the reward function to guide learning, addressing the sparse reward problem in complex environments.
+    
+    \begin{highlight}[Reward Shaping]
+    
+        \begin{itemize}
+            \item \textbf{Concept}: Introduces pseudorewards to accelerate learning, providing additional feedback for intermediate steps toward the goal.
+            \item \textbf{Example}: In a soccer robot, pseudorewards may be given for ball contact or progressing towards the goal, encouraging beneficial behaviors.
+            \item \textbf{Potential Function}: Adjusts the reward function without altering the optimal policy:
+            \[
+            R'(s, a, s') = R(s, a, s') + \gamma \Phi(s') - \Phi(s)
+            \]
+            where $\Phi(s)$ reflects desirable aspects of the state, such as proximity to subgoals.
+            \item \textbf{Risks}: Care must be taken to ensure agents do not over-optimize pseudorewards at the expense of true objectives, potentially developing suboptimal strategies.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Hierarchical Reinforcement Learning}
+    
+    Hierarchical reinforcement learning (HRL) breaks down complex tasks into simpler subtasks, facilitating learning in environments with long action sequences.
+    
+    \begin{highlight}[Hierarchical Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Concept}: Decomposes tasks into a hierarchy of subtasks, each with its own policies, facilitating more manageable learning.
+            \item \textbf{Example}: In a simplified soccer game, tasks may include passing, dribbling, and shooting, each with its sub-level decisions.
+            \item \textbf{Partial Programs}: Use structured frameworks, guiding agents while leaving specifics for the agent to learn.
+            \item \textbf{Benefits}: Speeds up learning by focusing on subtasks, leveraging previously learned skills, and improving overall policy performance.
+            \item \textbf{Joint State Space}: Incorporates both physical and internal states, allowing for detailed behavior modulation based on the agent's context.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Function Approximation}: Enables agents to generalize from limited experiences, approximating utility and Q-functions using parameterized models.
+            \item \textbf{Direct Utility Estimation and TD Learning}: Enhanced through function approximation, allowing for effective utility estimation in large state spaces.
+            \item \textbf{Deep Reinforcement Learning}: Utilizes deep networks for automatic feature extraction and complex state-space representation.
+            \item \textbf{Reward Shaping}: Introduces additional rewards to guide learning, but must be carefully managed to avoid suboptimal behavior.
+            \item \textbf{Hierarchical Reinforcement Learning}: Breaks tasks into subtasks, improving learning efficiency and policy performance in complex environments.
+        \end{itemize}
+    
+        Generalization in reinforcement learning enables agents to efficiently learn and apply knowledge in vast state spaces, paving the way for sophisticated applications in dynamic and complex environments.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 22.5: Policy Search}.
+
+\begin{notes}{Section 22.5: Policy Search}
+    \subsection*{Overview}
+
+    This section discusses policy search, a method in reinforcement learning where the goal is to find an optimal policy by adjusting parameters to maximize performance. Unlike value-based methods that 
+    estimate value functions, policy search focuses directly on finding the best policy representation. This approach is useful when value functions are difficult to estimate or when policies are naturally 
+    parameterized.
+    
+    \subsubsection*{Policy Representation}
+    
+    Policies in reinforcement learning map states to actions. In policy search, these policies are often represented using parameterized functions, significantly reducing the number of parameters compared to 
+    explicit state-action mappings.
+    
+    \begin{highlight}[Policy Representation]
+    
+        \begin{itemize}
+            \item \textbf{Parameterized Policies}: Represent policies with a set of parameters $\theta$, such as:
+            \[
+            \pi_\theta(s) = \arg\max_a \hat{Q}_\theta(s, a)
+            \]
+            where $\hat{Q}_\theta(s, a)$ is a parameterized Q-function. This could be a linear function or a nonlinear model like a neural network.
+            \item \textbf{Stochastic Policies}: Use probabilistic representations such as the softmax function:
+            \[
+            \pi_\theta(s, a) = \frac{e^{\beta \hat{Q}_\theta(s, a)}}{\sum_{a'} e^{\beta \hat{Q}_\theta(s, a')}}
+            \]
+            where $\beta$ controls the randomness. A higher $\beta$ leads to deterministic choices, while a lower $\beta$ results in more exploration.
+            \item \textbf{Continuous Differentiability}: Stochastic policies ensure that the policy's value changes smoothly with the parameters, facilitating gradient-based optimization.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Policy Search Methods}
+    
+    Policy search methods optimize policy parameters to improve the expected reward. These methods include gradient-based approaches and evolutionary algorithms.
+    
+    \begin{highlight}[Policy Search Methods]
+    
+        \begin{itemize}
+            \item \textbf{Policy Gradient Methods}: Directly optimize the expected return by following the gradient $\nabla_\theta \rho(\theta)$:
+            \[
+            \nabla_\theta \rho(\theta) \approx \frac{1}{N} \sum_{j=1}^N u_j(s) \frac{\nabla_\theta \pi_\theta(s, a_j)}{\pi_\theta(s, a_j)}
+            \]
+            where $u_j(s)$ is the total reward from state $s$ onward.
+            \item \textbf{REINFORCE Algorithm}: An on-policy method that estimates the gradient from sampled episodes, effectively updating policy parameters based on observed returns.
+            \item \textbf{Hill Climbing}: Evaluates changes in policy value for small parameter increments. This method can be slow and unreliable, particularly in noisy environments.
+            \item \textbf{Evolutionary Algorithms}: Use population-based search, mutating and selecting policies based on performance. These methods are robust but computationally intensive.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Challenges in Policy Search}
+    
+    Policy search faces unique challenges, including high variance in reward estimation and sensitivity to initial parameter settings.
+    
+    \begin{highlight}[Challenges in Policy Search]
+    
+        \begin{itemize}
+            \item \textbf{Variance in Reward Estimation}: Estimating the expected return can have high variance, especially in stochastic environments. This affects the reliability of gradient estimates.
+            \item \textbf{Discontinuous Policies}: When actions are discrete, small changes in parameters can lead to abrupt policy changes, complicating gradient-based optimization.
+            \item \textbf{Sample Inefficiency}: Policy search often requires many samples to accurately estimate gradients, making it computationally expensive.
+            \item \textbf{Local Optima}: The optimization landscape may contain local optima, where simple hill climbing might get stuck without finding the global best policy.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Techniques for Effective Policy Search}
+    
+    Several techniques enhance the effectiveness of policy search by improving sample efficiency and stability.
+    
+    \begin{highlight}[Techniques for Effective Policy Search]
+    
+        \begin{itemize}
+            \item \textbf{Baseline Subtraction}: Reduces variance by subtracting a baseline from the return, which does not change the gradient's expectation but lowers its variance.
+            \item \textbf{Correlated Sampling}: Compares policies using the same sequence of environmental states, reducing variance in performance comparisons. This method is particularly useful in stochastic environments.
+            \item \textbf{Actor-Critic Methods}: Combine value function approximation with policy search, where the actor updates policy parameters and the critic evaluates the value function. This structure 
+            provides stable updates and reduces variance.
+            \item \textbf{Trust Region Policy Optimization (TRPO)}: Ensures updates do not deviate too much from the current policy, maintaining stability by constraining the size of policy updates.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications of Policy Search}
+    
+    Policy search methods are applicable in various domains where direct policy representation is advantageous, such as robotics and autonomous systems.
+    
+    \begin{highlight}[Applications of Policy Search]
+    
+        \begin{itemize}
+            \item \textbf{Robotics}: Policy search enables robots to learn complex tasks with continuous action spaces, leveraging parameterized policies for efficient exploration and learning.
+            \item \textbf{Autonomous Vehicles}: Vehicles use policy search to navigate and make real-time decisions in dynamic environments, optimizing safety and efficiency.
+            \item \textbf{Game Playing}: In games with large action spaces or continuous controls, policy search provides effective strategies, leveraging deep neural networks for high-dimensional inputs.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Policy Search}: Focuses on optimizing policy parameters directly, suitable for environments where value functions are hard to estimate.
+            \item \textbf{Policy Representation}: Utilizes parameterized or stochastic policies, facilitating smooth optimization through gradient-based methods.
+            \item \textbf{Policy Search Methods}: Includes policy gradient, hill climbing, and evolutionary algorithms, each with strengths and challenges.
+            \item \textbf{Challenges}: High variance, sample inefficiency, and local optima are key challenges in policy search.
+            \item \textbf{Techniques for Improvement}: Baseline subtraction, correlated sampling, and actor-critic methods enhance policy search effectiveness.
+            \item \textbf{Applications}: Policy search is widely used in robotics, autonomous systems, and game playing, leveraging direct policy optimization for complex tasks.
+        \end{itemize}
+    
+        Policy search provides a robust framework for optimizing agent behavior in complex environments, offering flexibility and effectiveness in scenarios where traditional value-based methods may struggle.
+    
+    \end{highlight}
+\end{notes}
+
+The first chapter that is being covered from \textbf{Reinforcement Learning - An Introduction} is \textbf{Chapter 5: Monte Carlo Methods}. The first section that is being covered from this chapter this
+week is \textbf{Section 5.1: Monte Carlo Prediction}.
+
+\begin{notes}{Section 5.1: Monte Carlo Prediction}
+    \subsection*{Overview}
+
+    This section introduces Monte Carlo methods for predicting state values in reinforcement learning. Monte Carlo methods rely on sampling episodes to estimate the expected return of states under a given 
+    policy. Unlike Dynamic Programming (DP), Monte Carlo does not require a model of the environment's dynamics, making it suitable for problems where the environment model is unknown or complex.
+    
+    \subsubsection*{Monte Carlo Prediction}
+    
+    Monte Carlo prediction estimates the state-value function $v_\pi(s)$ for a given policy $\pi$ by averaging the returns obtained from multiple episodes.
+    
+    \begin{highlight}[Monte Carlo Prediction]
+    
+        \begin{itemize}
+            \item \textbf{State-Value Function}: The value of a state $s$ under policy $\pi$ is the expected cumulative future discounted reward starting from $s$.
+            \item \textbf{First-Visit MC Method}: Estimates $v_\pi(s)$ as the average of returns following the first visit to $s$ in each episode.
+            \item \textbf{Every-Visit MC Method}: Averages the returns following all visits to $s$ across episodes. It converges similarly to first-visit MC but may be less biased.
+            \item \textbf{Convergence}: Both methods converge to the true value $v_\pi(s)$ as the number of visits increases, leveraging the law of large numbers.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Blackjack}
+    
+    The card game of blackjack illustrates the application of Monte Carlo methods in an episodic task where the player's objective is to maximize the sum of card values without exceeding 21.
+    
+    \begin{highlight}[Example: Blackjack]
+    
+        \begin{itemize}
+            \item \textbf{Game Setup}: The player competes against a dealer, and the state depends on the player's cards, the dealer's visible card, and whether the player holds a usable ace.
+            \item \textbf{Policy}: A simple policy might involve sticking on a sum of 20 or 21 and hitting otherwise.
+            \item \textbf{Monte Carlo Simulation}: By simulating many games and following the policy, the agent can estimate the state-value function by averaging the returns from each state.
+            \item \textbf{Results}: After many episodes, the estimated state-value function approximates the true values, guiding the player on the expected outcomes of different states.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Monte Carlo Methods}
+    
+    Monte Carlo methods offer several advantages, particularly when dealing with large or complex environments.
+    
+    \begin{highlight}[Advantages of Monte Carlo Methods]
+    
+        \begin{itemize}
+            \item \textbf{Model-Free Learning}: Unlike DP, Monte Carlo does not require knowledge of the environment's transition probabilities, making it applicable in environments where the model is unknown.
+            \item \textbf{Independence of States}: Estimates for each state are independent, allowing targeted evaluation of specific states without needing a complete model of the environment.
+            \item \textbf{Sample Efficiency}: Monte Carlo methods can efficiently learn from actual or simulated experience, useful when exact models are unavailable or difficult to derive.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Backup Diagrams in Monte Carlo}
+    
+    Backup diagrams illustrate the difference between Monte Carlo and DP methods, focusing on how states are updated based on episodes.
+    
+    \begin{highlight}[Backup Diagrams in Monte Carlo]
+    
+        \begin{itemize}
+            \item \textbf{Monte Carlo Diagrams}: Show the entire trajectory of transitions in an episode, emphasizing the cumulative reward up to the terminal state.
+            \item \textbf{Comparison with DP}: Unlike DP, which updates values based on one-step transitions, Monte Carlo updates use complete episode returns, reflecting sample-based learning.
+            \item \textbf{Independence from Bootstrapping}: Monte Carlo methods do not bootstrap; each state's value is updated independently based on the observed returns from episodes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications and Limitations}
+    
+    Monte Carlo methods have practical applications but also face limitations in specific scenarios.
+    
+    \begin{highlight}[Applications and Limitations]
+    
+        \begin{itemize}
+            \item \textbf{Applications}: Effective in tasks like game playing, where episodic interactions provide clear feedback and the model is not readily available.
+            \item \textbf{Limitations}: 
+                \begin{itemize}
+                    \item \textbf{Long Episodes}: Monte Carlo methods can be computationally expensive if episodes are lengthy, requiring many iterations to converge.
+                    \item \textbf{Exploration Requirements}: Effective exploration is necessary to ensure all states are visited; otherwise, the estimates may be biased or incomplete.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Monte Carlo Prediction}: Uses sampling to estimate state values, relying on episodic returns.
+            \item \textbf{First-Visit and Every-Visit Methods}: Two approaches to calculating state-value estimates, differing in how visits are considered.
+            \item \textbf{Model-Free Learning}: Monte Carlo methods do not require a model of the environment, making them versatile in complex domains.
+            \item \textbf{Backup Diagrams}: Visualize the process of updating state values based on entire episodes rather than single transitions.
+            \item \textbf{Advantages and Limitations}: Effective for model-free learning but can be resource-intensive with long episodes and require good exploration strategies.
+        \end{itemize}
+    
+        Monte Carlo methods provide a powerful approach for learning state values in reinforcement learning, especially in environments where model knowledge is limited or unavailable.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 5.2: Monte Carlo Estimation Of Action Values}.
+
+\begin{notes}{Section 5.2: Monte Carlo Estimation Of Action Values}
+    \subsection*{Overview}
+
+    This section focuses on the estimation of action values using Monte Carlo methods in reinforcement learning. When a model of the environment is unavailable, estimating the values of state-action pairs 
+    directly becomes essential. Monte Carlo methods offer a way to estimate these action values by sampling episodes and calculating returns, allowing agents to learn optimal policies through experience.
+    
+    \subsubsection*{Monte Carlo Estimation of Action Values}
+    
+    Monte Carlo methods estimate the expected return of state-action pairs $q_\pi(s, a)$, which is the expected return starting from state $s$, taking action $a$, and following policy $\pi$ thereafter.
+    
+    \begin{highlight}[Monte Carlo Estimation of Action Values]
+    
+        \begin{itemize}
+            \item \textbf{Action-Value Function}: $q_\pi(s, a)$ represents the expected return when starting in state $s$, taking action $a$, and then following policy $\pi$.
+            \item \textbf{First-Visit MC Method}: Estimates $q_\pi(s, a)$ by averaging the returns following the first visit to the state-action pair $(s, a)$ in each episode.
+            \item \textbf{Every-Visit MC Method}: Averages the returns following all visits to the state-action pair $(s, a)$ across episodes, similar to the state-value estimation.
+            \item \textbf{Convergence}: Both methods converge to the true values as the number of visits to each state-action pair approaches infinity, leveraging the law of large numbers.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Exploring Starts}
+    
+    To ensure that all state-action pairs are explored adequately, the assumption of exploring starts is introduced, which ensures sufficient exploration of the action space.
+    
+    \begin{highlight}[Exploring Starts]
+    
+        \begin{itemize}
+            \item \textbf{Concept}: Each episode begins with a random state-action pair, ensuring that all pairs have a non-zero probability of being selected.
+            \item \textbf{Purpose}: Guarantees that all state-action pairs will be visited infinitely often, facilitating comprehensive learning of action values.
+            \item \textbf{Limitations}: While useful in theoretical analysis, exploring starts may not always be practical or possible in real-world scenarios where initial states are constrained.
+            \item \textbf{Alternative}: Policies with stochastic components that ensure all actions in each state have non-zero probability, fostering exploration without relying solely on exploring starts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Challenges in Monte Carlo Estimation of Action Values}
+    
+    While Monte Carlo methods provide a powerful framework for estimating action values, they present specific challenges that need addressing.
+    
+    \begin{highlight}[Challenges in Monte Carlo Estimation of Action Values]
+    
+        \begin{itemize}
+            \item \textbf{Lack of Visits}: Deterministic policies may lead to certain state-action pairs never being visited, resulting in incomplete estimates.
+            \item \textbf{Exploration vs. Exploitation}: Balancing exploration of new actions and exploitation of known rewarding actions is crucial for learning effective policies.
+            \item \textbf{Dependence on Initial Policy}: The initial policy can heavily influence the learning process, particularly in deterministic setups, potentially biasing the learning outcome.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comparison with State-Value Estimation}
+    
+    Monte Carlo estimation of action values extends the concepts from state-value estimation, adapting them to focus on state-action pairs.
+    
+    \begin{highlight}[Comparison with State-Value Estimation]
+    
+        \begin{itemize}
+            \item \textbf{Focus on State-Action Pairs}: Unlike state-value methods that estimate $v_\pi(s)$, action-value methods estimate $q_\pi(s, a)$, providing a more granular view of the environment.
+            \item \textbf{Policy Dependency}: State-action values are directly tied to the policy being followed, necessitating a comprehensive exploration strategy.
+            \item \textbf{Practical Implications}: Provides the basis for deriving policies by selecting actions with the highest estimated values, guiding decision-making in the absence of a model.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Monte Carlo Estimation of Action Values}: Utilizes sampling to estimate the expected return for state-action pairs under a given policy.
+            \item \textbf{Exploring Starts}: Ensures all state-action pairs are visited, promoting comprehensive learning of the action-value function.
+            \item \textbf{First-Visit and Every-Visit Methods}: Two approaches to estimating action values, converging to true values with sufficient visits.
+            \item \textbf{Challenges}: Include lack of visits, exploration-exploitation balance, and initial policy dependence, affecting the effectiveness of learning.
+            \item \textbf{Comparison with State-Value Estimation}: Highlights the focus on state-action pairs and the practical implications for policy derivation.
+        \end{itemize}
+    
+        Monte Carlo methods for action-value estimation provide a powerful tool for learning policies in model-free environments, supporting effective decision-making through direct experience.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 5.3: Monte Carlo Control}.
+
+\begin{notes}{Section 5.3: Monte Carlo Control}
+    \subsection*{Overview}
+
+    This section covers Monte Carlo control, focusing on approximating optimal policies by using Monte Carlo methods. The approach combines policy evaluation and policy improvement to iteratively refine 
+    policies based on sampled episodes. This method is model-free, relying solely on experience rather than explicit knowledge of the environment's dynamics.
+    
+    \subsubsection*{Monte Carlo Control}
+    
+    Monte Carlo control methods aim to find optimal policies by estimating action-value functions through episodic sampling and iteratively improving policies.
+    
+    \begin{highlight}[Monte Carlo Control]
+    
+        \begin{itemize}
+            \item \textbf{Generalized Policy Iteration (GPI)}: Combines policy evaluation and improvement:
+                \[
+                \pi \rightarrow q_\pi \rightarrow \pi'
+                \]
+                where $q_\pi$ is the estimated action-value function for policy $\pi$, and $\pi'$ is a policy improvement based on $q_\pi$.
+            \item \textbf{Policy Evaluation}: Uses Monte Carlo methods to estimate the action-value function by averaging the returns of episodes starting from each state-action pair.
+            \item \textbf{Policy Improvement}: Constructs a new greedy policy $\pi'$ by selecting actions that maximize the estimated action values:
+                \[
+                \pi'(s) = \arg\max_a q_\pi(s, a)
+                \]
+            \item \textbf{Exploring Starts}: Assumes that all state-action pairs are initially explored, ensuring that all pairs have a non-zero probability of being selected.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Monte Carlo ES (Exploring Starts)}
+    
+    Monte Carlo ES is an algorithm designed to find optimal policies using the concept of exploring starts, ensuring comprehensive exploration of the state-action space.
+    
+    \begin{highlight}[Monte Carlo ES (Exploring Starts)]
+    
+        \begin{itemize}
+            \item \textbf{Initialization}:
+                \begin{itemize}
+                    \item $\pi(s) \in A(s)$ arbitrarily for all states $s$.
+                    \item $Q(s, a)$ initialized randomly for all state-action pairs $(s, a)$.
+                    \item Returns lists for state-action pairs initialized as empty.
+                \end{itemize}
+            \item \textbf{Episode Generation}:
+                \begin{itemize}
+                    \item Selects a random starting state-action pair, ensuring all pairs have a non-zero probability.
+                    \item Follows policy $\pi$ to generate an episode, recording the sequence of states, actions, and rewards.
+                \end{itemize}
+            \item \textbf{Policy Evaluation and Improvement}:
+                \begin{itemize}
+                    \item For each state-action pair $(S_t, A_t)$ in the episode, updates the estimated return $G$ by summing rewards.
+                    \item Updates the action-value function $Q(S_t, A_t)$ by averaging returns and updates the policy to be greedy with respect to $Q$.
+                \end{itemize}
+            \item \textbf{Convergence}: The algorithm converges to the optimal policy and value function, assuming infinite episodes and exploring starts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Blackjack}
+    
+    The Monte Carlo ES method is applied to the game of blackjack, illustrating its effectiveness in finding optimal policies.
+    
+    \begin{highlight}[Example: Blackjack]
+    
+        \begin{itemize}
+            \item \textbf{Game Setup}: Involves a player against a dealer, where the player's goal is to maximize the sum of card values without exceeding 21.
+            \item \textbf{Policy Initialization}: The initial policy may stick on sums of 20 or 21, with the action-value function initialized to zero.
+            \item \textbf{Exploration}: Exploring starts ensure that all possible combinations of the player's sum, dealer's cards, and usable ace are covered.
+            \item \textbf{Results}: Monte Carlo ES finds an optimal policy that closely matches the known basic strategy for blackjack, with minor differences potentially due to specific game rules.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Challenges and Limitations}
+    
+    Monte Carlo control, while powerful, has certain challenges and limitations, particularly related to assumptions and practical applicability.
+    
+    \begin{highlight}[Challenges and Limitations]
+    
+        \begin{itemize}
+            \item \textbf{Exploring Starts Assumption}: Assumes all state-action pairs are explored, which may not be feasible in real-world scenarios where some states are inaccessible or actions are restricted.
+            \item \textbf{Infinite Episodes}: Convergence theoretically requires an infinite number of episodes, which is impractical. Approaches like approximate policy evaluation can mitigate this.
+            \item \textbf{Sample Inefficiency}: The method may require many episodes to converge, especially in environments with a vast state-action space.
+            \item \textbf{Alternative Strategies}: On-policy and off-policy methods can address the assumption of exploring starts, using $\epsilon$-greedy or soft policies to ensure sufficient exploration.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Monte Carlo Control}: Focuses on optimizing policies through episodic sampling and policy iteration without needing a model of the environment.
+            \item \textbf{Generalized Policy Iteration (GPI)}: Iteratively improves policies by alternating between policy evaluation and improvement.
+            \item \textbf{Monte Carlo ES}: A specific algorithm using exploring starts to ensure all state-action pairs are explored, facilitating learning of optimal policies.
+            \item \textbf{Challenges}: Include assumptions of exploring starts, the need for infinite episodes, and sample inefficiency in large state-action spaces.
+            \item \textbf{Example: Blackjack}: Demonstrates the application of Monte Carlo ES to find optimal strategies in a card game environment.
+        \end{itemize}
+    
+        Monte Carlo control provides a robust framework for learning optimal policies in model-free environments, though practical implementations may require adjustments to address exploration and efficiency challenges.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 5.4: Monte Carlo Control Without Exploring Starts}.
+
+\begin{notes}{Section 5.4: Monte Carlo Control Without Exploring Starts}
+    \subsection*{Overview}
+
+    This section introduces Monte Carlo control methods that do not rely on the unrealistic assumption of exploring starts. Instead, these methods ensure that all actions are selected sufficiently often 
+    through soft policies. This approach allows for on-policy control without requiring initial visits to all state-action pairs, making it more applicable in real-world scenarios.
+    
+    \subsubsection*{On-Policy Control with $\epsilon$-Greedy Policies}
+    
+    On-policy methods in Monte Carlo control aim to improve the policy that is being used to generate data. These methods use $\epsilon$-greedy policies to balance exploration and exploitation.
+    
+    \begin{highlight}[On-Policy Control with $\epsilon$-Greedy Policies]
+    
+        \begin{itemize}
+            \item \textbf{$\epsilon$-Greedy Policies}: A soft policy where:
+                \[
+                \pi(a|s) = 
+                \begin{cases}
+                1 - \epsilon + \frac{\epsilon}{|A(s)|}, & \text{if } a = \arg\max_a q(s, a) \\
+                \frac{\epsilon}{|A(s)|}, & \text{otherwise}
+                \end{cases}
+                \]
+            \item \textbf{Exploration and Exploitation}: Most of the time, the agent selects actions with the highest estimated value, but with probability $\epsilon$, it selects a random action to ensure 
+            exploration.
+            \item \textbf{Policy Improvement}: The $\epsilon$-greedy policy is gradually shifted towards a deterministic optimal policy by reducing $\epsilon$ over time.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{On-Policy First-Visit Monte Carlo Control}
+    
+    This algorithm iteratively estimates the action-value function and improves the policy based on $\epsilon$-greedy selection.
+    
+    \begin{highlight}[On-Policy First-Visit Monte Carlo Control]
+    
+        \begin{itemize}
+            \item \textbf{Initialization}:
+                \begin{itemize}
+                    \item Initialize $\pi$ as an arbitrary $\epsilon$-soft policy.
+                    \item Initialize $Q(s, a)$ arbitrarily for all state-action pairs $(s, a)$.
+                    \item Create empty lists for returns of each state-action pair.
+                \end{itemize}
+            \item \textbf{Episode Generation}:
+                \begin{itemize}
+                    \item Generate episodes using the current policy $\pi$.
+                    \item Record the sequence of states, actions, and rewards.
+                \end{itemize}
+            \item \textbf{Policy Evaluation}:
+                \begin{itemize}
+                    \item For each state-action pair $(S_t, A_t)$ in the episode, compute the return $G$ from that point.
+                    \item Update $Q(S_t, A_t)$ as the average of the returns.
+                \end{itemize}
+            \item \textbf{Policy Improvement}:
+                \begin{itemize}
+                    \item Update the policy $\pi$ to be $\epsilon$-greedy with respect to the current action-value estimates $Q(s, a)$.
+                \end{itemize}
+            \item \textbf{Convergence}: The algorithm converges to the optimal policy and action-value function, assuming all actions are sufficiently explored.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of $\epsilon$-Greedy Policies}
+    
+    Using $\epsilon$-greedy policies addresses some of the limitations of exploring starts, making Monte Carlo control more practical.
+    
+    \begin{highlight}[Advantages of $\epsilon$-Greedy Policies]
+    
+        \begin{itemize}
+            \item \textbf{Avoids Exploring Starts}: Removes the need for the unrealistic assumption that all state-action pairs are initially explored.
+            \item \textbf{Ensures Exploration}: $\epsilon$-greedy policies guarantee that all actions have a non-zero probability of being selected, ensuring comprehensive exploration over time.
+            \item \textbf{Gradual Policy Improvement}: The policy iteratively approaches optimality while maintaining exploration, facilitating learning in complex environments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comparison with Exploring Starts}
+    
+    The transition from exploring starts to $\epsilon$-greedy policies marks a significant shift in Monte Carlo control methods, enhancing their applicability.
+    
+    \begin{highlight}[Comparison with Exploring Starts]
+    
+        \begin{itemize}
+            \item \textbf{Exploring Starts}: Assumes all state-action pairs are visited initially, which is often impractical.
+            \item \textbf{$\epsilon$-Greedy Policies}: Enable gradual exploration and learning without needing to visit all state-action pairs at the beginning.
+            \item \textbf{Real-World Applicability}: $\epsilon$-greedy policies are more feasible in practical scenarios, especially where some states or actions are initially inaccessible.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Monte Carlo Control Without Exploring Starts}: Uses $\epsilon$-greedy policies for on-policy control, eliminating the need for initial state-action exploration.
+            \item \textbf{On-Policy Control}: Iteratively improves the policy used to generate episodes, balancing exploration and exploitation.
+            \item \textbf{$\epsilon$-Greedy Policies}: Soft policies that ensure all actions are selected with non-zero probability, promoting sufficient exploration.
+            \item \textbf{Advantages Over Exploring Starts}: More practical and applicable in real-world environments where initial exploration of all state-action pairs is unrealistic.
+        \end{itemize}
+    
+        Monte Carlo control without exploring starts provides a robust framework for learning optimal policies in complex environments, making it a valuable approach in reinforcement learning.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 5.7: Off-policy Monte Carlo Control}.
+
+\begin{notes}{Section 5.7: Off-policy Monte Carlo Control}
+    \subsection*{Overview}
+
+    This section covers off-policy Monte Carlo control, where the policy used to generate behavior (behavior policy) differs from the policy being evaluated and improved (target policy). Off-policy methods 
+    allow learning about one policy while following another, providing flexibility and enabling the use of exploratory behavior policies while still learning optimal target policies.
+    
+    \subsubsection*{Off-policy Control Basics}
+    
+    Off-policy control involves learning optimal policies by using a behavior policy that explores the state-action space, while the target policy is optimized for performance.
+    
+    \begin{highlight}[Off-policy Control Basics]
+    
+        \begin{itemize}
+            \item \textbf{Behavior Policy ($b$)}: Used to generate episodes, ensuring exploration by being $\epsilon$-soft, where all actions have non-zero probability.
+            \item \textbf{Target Policy ($\pi$)}: The policy being evaluated and improved, often greedy with respect to the current action-value estimates.
+            \item \textbf{Separation of Policies}: Allows the target policy to be deterministic (e.g., greedy), while the behavior policy can explore different actions.
+            \item \textbf{Importance Sampling}: Used to weigh returns from the behavior policy to estimate the value of the target policy accurately.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Importance Sampling}
+    
+    Importance sampling is crucial in off-policy methods, adjusting the returns from the behavior policy to match the target policy.
+    
+    \begin{highlight}[Importance Sampling]
+    
+        \begin{itemize}
+            \item \textbf{Importance Sampling Ratio}: Adjusts the return $G_t$ by the product of the ratios of the probabilities of the actions under the target and behavior policies:
+            \[
+            W_t = \prod_{k=t}^{T-1} \frac{\pi(A_k|S_k)}{b(A_k|S_k)}
+            \]
+            \item \textbf{Weighted Returns}: The action-value function is updated using weighted returns:
+            \[
+            Q(S_t, A_t) \leftarrow Q(S_t, A_t) + W_t (G_t - Q(S_t, A_t))
+            \]
+            \item \textbf{Ensuring Coverage}: The behavior policy must ensure that all actions have non-zero probability, guaranteeing sufficient exploration of the action space.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Off-policy Monte Carlo Control Algorithm}
+    
+    The algorithm combines Monte Carlo methods with off-policy control using weighted importance sampling to evaluate and improve the target policy.
+    
+    \begin{highlight}[Off-policy Monte Carlo Control Algorithm]
+    
+        \begin{itemize}
+            \item \textbf{Initialization}:
+                \begin{itemize}
+                    \item Initialize $Q(s, a)$ arbitrarily for all state-action pairs $(s, a)$.
+                    \item Initialize $C(s, a) = 0$ for all state-action pairs to store cumulative weights.
+                \end{itemize}
+            \item \textbf{Episode Generation}:
+                \begin{itemize}
+                    \item Generate episodes using the behavior policy $b$, ensuring all actions have non-zero probability.
+                \end{itemize}
+            \item \textbf{Updating Process}:
+                \begin{itemize}
+                    \item For each episode, initialize $G = 0$ and $W = 1$.
+                    \item Loop backward through the episode:
+                        \begin{itemize}
+                            \item Update $G$ with the reward:
+                            \[
+                            G \leftarrow G + R_{t+1}
+                            \]
+                            \item Update cumulative weights:
+                            \[
+                            C(S_t, A_t) \leftarrow C(S_t, A_t) + W
+                            \]
+                            \item Update action-value estimates:
+                            \[
+                            Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \frac{W}{C(S_t, A_t)} (G - Q(S_t, A_t))
+                            \]
+                            \item Update the policy:
+                            \[
+                            \pi(S_t) \leftarrow \arg\max_a Q(S_t, a)
+                            \]
+                            \item If $A_t$ is not equal to $\pi(S_t)$, exit the loop.
+                            \item Update importance sampling ratio:
+                            \[
+                            W \leftarrow W \frac{\pi(A_t|S_t)}{b(A_t|S_t)}
+                            \]
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Convergence}: The algorithm converges to the optimal policy and action-value function as the number of episodes increases.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Challenges and Considerations}
+    
+    Off-policy Monte Carlo control presents unique challenges, particularly related to the variance of importance sampling estimates and slow learning rates.
+    
+    \begin{highlight}[Challenges and Considerations]
+    
+        \begin{itemize}
+            \item \textbf{High Variance}: Importance sampling can introduce high variance, especially in long episodes where the product of ratios can become unstable.
+            \item \textbf{Slow Learning}: Learning may be slow if the behavior policy frequently chooses actions that differ from the target policy, resulting in fewer effective updates.
+            \item \textbf{Tail-only Learning}: Learning primarily occurs at the tails of episodes when the remaining actions are greedy, potentially slowing down convergence.
+            \item \textbf{Alternative Approaches}: Techniques such as temporal-difference learning or discounting-aware importance sampling may mitigate some issues by reducing variance and improving convergence rates.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Off-policy Monte Carlo Control}: Utilizes a behavior policy to explore and a target policy to optimize, allowing separation of exploration and exploitation.
+            \item \textbf{Importance Sampling}: Adjusts returns from the behavior policy to evaluate the target policy accurately, ensuring unbiased estimates.
+            \item \textbf{Off-policy Algorithm}: Iteratively updates action-value estimates and policies using weighted returns from sampled episodes.
+            \item \textbf{Challenges}: High variance, slow learning, and tail-only updates are notable challenges, requiring careful management of exploration strategies.
+            \item \textbf{Considerations}: Alternative approaches, such as temporal-difference learning, can address some limitations by improving learning efficiency and reducing variance.
+        \end{itemize}
+    
+        Off-policy Monte Carlo control provides a powerful framework for learning optimal policies in complex environments, offering flexibility and robustness in separating behavior and target policies.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 6: Temporal-Difference Learning}. The first section that is being covered this week is \textbf{Section 6.1: TD Prediction}.
+
+\begin{notes}{Section 6.1: TD Prediction}
+    \subsection*{Overview}
+
+    This section introduces Temporal-Difference (TD) learning, a central concept in reinforcement learning that combines ideas from both Monte Carlo methods and dynamic programming (DP). TD methods allow 
+    agents to learn directly from raw experience without requiring a model of the environment. Unlike Monte Carlo methods, which wait until the end of an episode, TD methods update value estimates based on 
+    other learned estimates immediately at each time step.
+    
+    \subsubsection*{TD Prediction}
+    
+    TD prediction focuses on estimating the value function $v_\pi$ for a given policy $\pi$. It utilizes bootstrapping, updating estimates using existing value estimates and immediate rewards.
+    
+    \begin{highlight}[TD Prediction]
+    
+        \begin{itemize}
+            \item \textbf{Value Function Update}: TD methods update the value function $V$ incrementally at each step:
+            \[
+            V(S_t) \leftarrow V(S_t) + \alpha [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]
+            \]
+            where $R_{t+1}$ is the immediate reward, $S_{t+1}$ is the subsequent state, and $\alpha$ is the step-size parameter.
+            \item \textbf{TD(0) or One-Step TD}: The simplest form of TD learning that updates the value of the current state based on the next state. It combines sampling and bootstrapping, making it 
+            more data-efficient than Monte Carlo methods.
+            \item \textbf{TD Error}: The difference between the predicted value and the updated estimate:
+            \[
+            \delta_t = R_{t+1} + \gamma V(S_{t+1}) - V(S_t)
+            \]
+            This error measures the discrepancy between the estimated value of the current state and the backed-up value.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comparison with Monte Carlo Methods}
+    
+    TD learning and Monte Carlo methods both use experience to estimate value functions, but they differ in how they handle updates.
+    
+    \begin{highlight}[Comparison with Monte Carlo Methods]
+    
+        \begin{itemize}
+            \item \textbf{Monte Carlo Methods}: Use complete returns $G_t$ from entire episodes to update values, requiring the end of episodes to calculate returns.
+            \item \textbf{TD Methods}: Update values at each time step using the immediate reward and the estimated value of the next state, without waiting for episode termination.
+            \item \textbf{Bootstrapping}: TD methods update value estimates using existing estimates, unlike Monte Carlo methods which rely solely on sampled returns.
+            \item \textbf{Sample Updates vs. Expected Updates}: TD methods rely on sample updates based on a single successor state, whereas DP methods use expected updates over all possible successor 
+            states.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Driving Home}
+    
+    This example illustrates the application of TD prediction in estimating travel time while driving home.
+    
+    \begin{highlight}[Example: Driving Home]
+    
+        \begin{itemize}
+            \item \textbf{Scenario}: Predicting travel time based on current observations (e.g., weather, day of the week). Initial estimates are updated as new information becomes available.
+            \item \textbf{TD Learning}: Updates travel time predictions incrementally at each decision point (e.g., reaching the car, exiting the highway) based on current and subsequent observations.
+            \item \textbf{Outcome}: Predictions are refined continuously as new states and rewards are observed, providing immediate learning and adjustment.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of TD Methods}
+    
+    TD methods offer several advantages over other reinforcement learning approaches, making them efficient and practical in various scenarios.
+    
+    \begin{highlight}[Advantages of TD Methods]
+    
+        \begin{itemize}
+            \item \textbf{Immediate Learning}: TD methods allow updates at every time step, providing faster learning compared to waiting for episode completion.
+            \item \textbf{Bootstrapping}: Combines elements of both Monte Carlo sampling and DP bootstrapping, making it more data-efficient.
+            \item \textbf{Flexibility}: Applicable in non-stationary environments and scenarios where complete episodes may be unavailable or impractical.
+            \item \textbf{Reduced Variance}: TD methods often exhibit lower variance in estimates compared to Monte Carlo methods, particularly in episodic tasks with long episodes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Challenges of TD Methods}
+    
+    Despite their advantages, TD methods also face challenges that need careful consideration in practice.
+    
+    \begin{highlight}[Challenges of TD Methods]
+    
+        \begin{itemize}
+            \item \textbf{Bias in Estimates}: Since TD methods rely on current estimates for updates, they may introduce bias, particularly if initial estimates are inaccurate.
+            \item \textbf{Step-Size Parameter}: Choosing an appropriate $\alpha$ is crucial for convergence and stability. Too high or too low values can affect learning rates.
+            \item \textbf{Non-Stationary Environments}: In environments where dynamics change over time, maintaining up-to-date value estimates becomes challenging.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Temporal-Difference (TD) Learning}: Combines aspects of Monte Carlo methods and dynamic programming, updating value estimates incrementally at each step.
+            \item \textbf{TD(0) Method}: A one-step TD method that uses the next state's value estimate to update the current state's value.
+            \item \textbf{TD Error}: The discrepancy between the current state's value estimate and the backed-up estimate, guiding updates.
+            \item \textbf{Advantages and Challenges}: TD methods offer immediate learning and lower variance but may introduce bias and depend on careful parameter tuning.
+        \end{itemize}
+    
+        TD learning provides a powerful framework for reinforcement learning, allowing agents to learn from experience efficiently and adaptively in dynamic environments.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered this week is \textbf{Section 6.2: Advantages Of TD Prediction Methods}.
+
+\begin{notes}{Section 6.2: Advantages Of TD Prediction Methods}
+    \subsection*{Overview}
+
+    This section discusses the advantages of Temporal-Difference (TD) methods in reinforcement learning, highlighting their strengths over Monte Carlo (MC) and Dynamic Programming (DP) methods. TD methods 
+    combine the benefits of both approaches, using bootstrapping to update value estimates incrementally without requiring a model of the environment.
+    
+    \subsubsection*{Advantages of TD Methods}
+    
+    TD methods offer several advantages that make them particularly useful in various reinforcement learning scenarios.
+    
+    \begin{highlight}[Advantages of TD Methods]
+    
+        \begin{itemize}
+            \item \textbf{Model-Free Learning}: Unlike DP, TD methods do not require knowledge of the environment's transition probabilities or reward functions, allowing learning from raw experience.
+            \item \textbf{Online and Incremental Updates}: TD methods update value estimates at each time step based on the current state and reward, providing continuous learning:
+            \[
+            V(S_t) \leftarrow V(S_t) + \alpha [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]
+            \]
+            This is in contrast to MC methods, which must wait until the end of an episode to update.
+            \item \textbf{Handling Long Episodes and Continuing Tasks}: In tasks with very long episodes or no episodes (continuing tasks), TD methods allow learning without waiting for terminal states, 
+            facilitating quicker adaptation.
+            \item \textbf{Reduced Susceptibility to Experimental Actions}: TD methods learn from each transition, reducing the impact of exploratory actions on learning speed compared to MC methods, which may 
+            need to ignore or discount exploratory episodes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Convergence of TD Methods}
+    
+    TD methods have been proven to converge under certain conditions, providing robust learning in various environments.
+    
+    \begin{highlight}[Convergence of TD Methods]
+    
+        \begin{itemize}
+            \item \textbf{Convergence Guarantees}: TD(0) converges to the true value function $v_\pi$ for any fixed policy $\pi$ under appropriate conditions for the step-size parameter $\alpha$:
+            \[
+            \alpha \text{ is sufficiently small or decreases appropriately over time.}
+            \]
+            \item \textbf{Applicability to Linear Function Approximation}: Convergence results extend beyond table-based implementations to include cases with general linear function approximators.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Comparison of Learning Speed}
+    
+    TD methods generally converge faster than MC methods, especially in stochastic environments, as demonstrated in the Random Walk example.
+    
+    \begin{highlight}[Comparison of Learning Speed]
+    
+        \begin{itemize}
+            \item \textbf{Empirical Evidence}: In many practical scenarios, TD methods converge faster than constant-$\alpha$ MC methods, making more efficient use of limited data.
+            \item \textbf{Example 6.2: Random Walk}:
+                \begin{itemize}
+                    \item \textbf{Setup}: A Markov Reward Process (MRP) with states A through E, starting from C, and moving left or right with equal probability.
+                    \item \textbf{Comparison}: TD(0) consistently achieved lower root mean-squared (RMS) error compared to MC, as shown in learning curves for various $\alpha$ values.
+                    \item \textbf{Results}: TD(0) demonstrated superior performance in terms of convergence speed and accuracy of value estimates.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Empirical Performance in Random Walk Example}
+    
+    The Random Walk example provides insight into the empirical performance of TD methods compared to MC methods.
+    
+    \begin{highlight}[Empirical Performance in Random Walk Example]
+    
+        \begin{itemize}
+            \item \textbf{Markov Reward Process (MRP)}: No actions involved, focusing purely on state-value prediction. The task was to estimate the probability of reaching the rightmost state from any 
+            starting state.
+            \item \textbf{RMS Error Analysis}: TD(0) achieved consistently lower RMS error than MC, averaged over multiple episodes and runs, indicating more accurate predictions.
+            \item \textbf{Impact of Step-Size ($\alpha$)}: Varying $\alpha$ affected convergence, with higher $\alpha$ leading to faster convergence but potentially increasing variance in value 
+            estimates.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Advantages of TD Methods}: Model-free learning, online incremental updates, applicability in long or continuous tasks, and reduced sensitivity to exploratory actions.
+            \item \textbf{Convergence}: Proven under specific conditions, including for linear function approximators, ensuring robustness across various environments.
+            \item \textbf{Learning Speed}: Generally faster convergence compared to MC methods, demonstrated in empirical comparisons such as the Random Walk example.
+            \item \textbf{Empirical Performance}: TD methods show lower RMS error and quicker adaptation to true value functions, making them effective in practical applications.
+        \end{itemize}
+    
+        TD methods provide a flexible and efficient approach for value prediction in reinforcement learning, offering significant advantages over traditional methods, especially in complex or unknown environments.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered this week is \textbf{Section 6.4: Sarsa - On-policy TD Control}.
+
+\begin{notes}{Section 6.4: Sarsa - On-policy TD Control}
+    \subsection*{Overview}
+
+    This section discusses Sarsa, an on-policy Temporal-Difference (TD) control method for learning the action-value function $q_\pi(s, a)$ for the current policy $\pi$. Sarsa is a combination of TD 
+    learning and Generalized Policy Iteration (GPI), where the policy is continually improved based on learned action values while balancing exploration and exploitation.
+    
+    \subsubsection*{Sarsa: On-policy TD Control}
+    
+    Sarsa estimates the action-value function and uses it to update the policy towards optimality. The method derives its name from the quintuple $(S_t, A_t, R_{t+1}, S_{t+1}, A_{t+1})$ used in its update rule.
+    
+    \begin{highlight}[Sarsa: On-policy TD Control]
+    
+        \begin{itemize}
+            \item \textbf{Update Rule}:
+            \[
+            Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t) \right]
+            \]
+            where:
+            \begin{itemize}
+                \item $S_t, A_t$: Current state and action.
+                \item $R_{t+1}$: Reward received after taking action $A_t$.
+                \item $S_{t+1}, A_{t+1}$: Next state and action.
+                \item $\alpha$: Step-size parameter.
+                \item $\gamma$: Discount factor.
+            \end{itemize}
+            \item \textbf{Policy Improvement}: The policy is updated to be $\epsilon$-greedy with respect to the action-value estimates, ensuring exploration.
+            \item \textbf{Terminal States}: If $S_{t+1}$ is terminal, $Q(S_{t+1}, A_{t+1})$ is defined as zero.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Convergence of Sarsa}
+    
+    Sarsa converges to an optimal policy under specific conditions, depending on the policy's characteristics and exploration strategy.
+    
+    \begin{highlight}[Convergence of Sarsa]
+    
+        \begin{itemize}
+            \item \textbf{Convergence Conditions}:
+                \begin{itemize}
+                    \item All state-action pairs must be visited infinitely often.
+                    \item The policy should converge in the limit to the greedy policy, achievable with $\epsilon$-greedy or $\epsilon$-soft policies.
+                    \item $\epsilon$ is typically decreased over time (e.g., $\epsilon = \frac{1}{t}$).
+                \end{itemize}
+            \item \textbf{Optimality}: Sarsa converges with probability 1 to the optimal policy and action-value function as the number of episodes approaches infinity.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Windy Gridworld}
+    
+    The Windy Gridworld example illustrates the application of Sarsa in an environment with deterministic and stochastic elements.
+    
+    \begin{highlight}[Example: Windy Gridworld]
+    
+        \begin{itemize}
+            \item \textbf{Environment}: A grid with a crosswind that varies by column, affecting the agent's movement.
+            \item \textbf{Objective}: Reach the goal state from the start state, minimizing the number of time steps, with constant rewards of $-1$ per step.
+            \item \textbf{Actions}: Move up, down, left, or right, with wind potentially shifting the agent vertically.
+            \item \textbf{Results}: 
+                \begin{itemize}
+                    \item Sarsa, with parameters $\epsilon = 0.1$ and $\alpha = 0.5$, successfully learned a near-optimal policy.
+                    \item Over time, the average episode length decreased, showing improvement in reaching the goal quickly.
+                    \item Sarsa adapted to avoid suboptimal policies, unlike Monte Carlo methods, which might struggle with non-terminating episodes.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages and Challenges of Sarsa}
+    
+    Sarsa presents both advantages and challenges, making it suitable for various reinforcement learning tasks with specific considerations.
+    
+    \begin{highlight}[Advantages and Challenges of Sarsa]
+    
+        \begin{itemize}
+            \item \textbf{Advantages}:
+                \begin{itemize}
+                    \item \textbf{On-policy Learning}: Directly learns the action-value function for the policy being followed, ensuring coherence between policy and value estimates.
+                    \item \textbf{Exploration-Exploitation Balance}: $\epsilon$-greedy policies provide a practical mechanism for exploration while allowing exploitation of known rewards.
+                    \item \textbf{Flexibility}: Can handle environments where policies may not always lead to termination, adapting quickly to poor policies.
+                \end{itemize}
+            \item \textbf{Challenges}:
+                \begin{itemize}
+                    \item \textbf{Exploration Strategy}: Proper tuning of $\epsilon$ is critical to ensure sufficient exploration without sacrificing convergence speed.
+                    \item \textbf{Convergence Speed}: Convergence may be slow in environments with large state-action spaces, requiring careful parameter tuning.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Sarsa Algorithm}: An on-policy TD control method that estimates action-value functions and improves policies iteratively.
+            \item \textbf{Update Rule}: Utilizes the quintuple $(S_t, A_t, R_{t+1}, S_{t+1}, A_{t+1})$ to update action-value estimates.
+            \item \textbf{Convergence Conditions}: Requires sufficient exploration and policy convergence to the greedy policy for optimality.
+            \item \textbf{Example - Windy Gridworld}: Demonstrates Sarsa's effectiveness in an environment with dynamic elements, showing its ability to learn optimal policies.
+            \item \textbf{Advantages and Challenges}: Highlights the method's on-policy nature, balance of exploration and exploitation, and the need for careful parameter tuning.
+        \end{itemize}
+    
+        Sarsa provides a robust framework for on-policy learning in reinforcement learning, balancing exploration and exploitation while continuously improving the policy based on experience.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered this week is \textbf{Section 6.5: Q-learning - Off-policy TD Control}.
+
+\begin{notes}{Section 6.5: Q-learning - Off-policy TD Control}
+    \subsection*{Overview}
+
+    This section explores Q-learning, a widely used off-policy Temporal-Difference (TD) control algorithm in reinforcement learning. Q-learning learns the optimal action-value function $q^*$ independently 
+    of the policy being followed, allowing it to improve the target policy even while following a different behavior policy.
+    
+    \subsubsection*{Q-learning: Off-policy TD Control}
+    
+    Q-learning updates its estimates of the optimal action-value function using the maximum action value of the next state, making it robust to various exploration strategies.
+    
+    \begin{highlight}[Q-learning: Off-policy TD Control]
+    
+        \begin{itemize}
+            \item \textbf{Update Rule}:
+            \[
+            Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \left[ R_{t+1} + \gamma \max_a Q(S_{t+1}, a) - Q(S_t, A_t) \right]
+            \]
+            where:
+            \begin{itemize}
+                \item $S_t, A_t$: Current state and action.
+                \item $R_{t+1}$: Reward received after taking action $A_t$.
+                \item $S_{t+1}$: Next state.
+                \item $\alpha$: Step-size parameter.
+                \item $\gamma$: Discount factor.
+            \end{itemize}
+            \item \textbf{Off-policy Nature}: The algorithm updates the policy using the maximum future action value, irrespective of the current policy, leading to learning about the optimal policy.
+            \item \textbf{Convergence}: Q-learning converges to the optimal action-value function $q^*$ with probability 1, provided that all state-action pairs continue to be updated.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Q-learning Algorithm}
+    
+    The Q-learning algorithm iteratively updates action-value estimates and improves the policy based on the maximum expected future rewards.
+    
+    \begin{highlight}[Q-learning Algorithm]
+    
+        \begin{itemize}
+            \item \textbf{Initialization}:
+                \begin{itemize}
+                    \item Initialize $Q(s, a)$ arbitrarily for all state-action pairs $(s, a)$.
+                    \item Set $Q(\text{terminal}, \cdot) = 0$.
+                \end{itemize}
+            \item \textbf{Loop for each episode}:
+                \begin{itemize}
+                    \item Initialize state $S$.
+                    \item Loop for each step of the episode:
+                        \begin{itemize}
+                            \item Choose action $A$ from $S$ using a policy derived from $Q$ (e.g., $\epsilon$-greedy).
+                            \item Take action $A$, observe reward $R$ and next state $S'$.
+                            \item Update $Q$ value:
+                            \[
+                            Q(S, A) \leftarrow Q(S, A) + \alpha \left[ R + \gamma \max_a Q(S', a) - Q(S, A) \right]
+                            \]
+                            \item Update state $S \leftarrow S'$.
+                        \end{itemize}
+                \end{itemize}
+                \item \textbf{Until} $S$ is terminal.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Cliff Walking}
+    
+    The Cliff Walking example illustrates the differences between on-policy and off-policy methods, comparing Sarsa and Q-learning.
+    
+    \begin{highlight}[Example: Cliff Walking]
+    
+        \begin{itemize}
+            \item \textbf{Environment}: A gridworld with start and goal states, where moving into the cliff results in a large negative reward ($-100$) and resets the agent to the start.
+            \item \textbf{Reward Structure}: All other transitions have a reward of $-1$, encouraging the agent to reach the goal quickly while avoiding the cliff.
+            \item \textbf{Comparison}:
+                \begin{itemize}
+                    \item \textbf{Sarsa}: Learns a safer path, taking the exploration policy into account, resulting in fewer episodes falling off the cliff.
+                    \item \textbf{Q-learning}: Learns the optimal policy that follows the edge of the cliff but is more prone to fall due to exploratory moves.
+                \end{itemize}
+            \item \textbf{Results}: While Q-learning eventually learns the optimal path, its online performance may be worse due to risky exploratory actions, unlike Sarsa which learns a more conservative policy.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages and Challenges of Q-learning}
+    
+    Q-learning offers significant advantages in flexibility and robustness but also presents challenges that must be managed.
+    
+    \begin{highlight}[Advantages and Challenges of Q-learning]
+    
+        \begin{itemize}
+            \item \textbf{Advantages}:
+                \begin{itemize}
+                    \item \textbf{Off-policy Learning}: Learns about the optimal policy independently of the behavior policy, allowing for flexible exploration strategies.
+                    \item \textbf{Optimality}: Converges to the optimal action-value function, making it highly effective for various tasks.
+                    \item \textbf{Simplicity}: The algorithm is straightforward to implement and widely used in practice.
+                \end{itemize}
+            \item \textbf{Challenges}:
+                \begin{itemize}
+                    \item \textbf{Exploration-Exploitation Trade-off}: Balancing exploration and exploitation requires careful tuning of $\epsilon$ in $\epsilon$-greedy policies.
+                    \item \textbf{Variance in Updates}: The use of maximum estimates in updates can lead to high variance, especially in stochastic environments.
+                    \item \textbf{Convergence Speed}: May converge slowly in large state-action spaces, necessitating appropriate parameter tuning and exploration strategies.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Q-learning Algorithm}: An off-policy TD control method that updates action-value estimates using the maximum action value of the next state.
+            \item \textbf{Update Rule}: Uses the maximum of future action values to guide policy improvement towards optimality.
+            \item \textbf{Example - Cliff Walking}: Demonstrates the differences between on-policy (Sarsa) and off-policy (Q-learning) approaches in a dynamic environment.
+            \item \textbf{Advantages and Challenges}: Highlights Q-learning's robustness and flexibility, while noting challenges in exploration, variance, and convergence speed.
+        \end{itemize}
+    
+        Q-learning provides a powerful framework for off-policy learning, allowing agents to learn optimal policies while balancing exploration and exploitation through experience.
+    
+    \end{highlight}
+\end{notes}

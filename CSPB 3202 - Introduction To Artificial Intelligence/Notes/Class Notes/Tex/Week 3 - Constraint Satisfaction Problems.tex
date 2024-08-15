@@ -1,0 +1,626 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Constraint Satisfaction Problems}
+\renewcommand{\SectionTitle}{Constraint Satisfaction Problems}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 6.1 - Defining Constraint Satisfaction Problems}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 6.2 - Constraint Propagation - Inference In CSPs}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 6.3 - Backtracking Search For CSPs}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 6.4 - Local Search For CSPs}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 6.5 - The Structure Of Problems}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=NbiN7av-qVo}{CSP Intro}{20}
+    \item \lecture{https://www.youtube.com/watch?v=xqh__WX3FDE}{CSP Solving 1: Backtracking \& Arc Consistency}{21}
+    \item \lecture{https://www.youtube.com/watch?v=JgbHedekhJw}{CSP Ordering \& Structure}{28}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/CSP Intro Lecture Notes.pdf}{CSP Intro Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/CSP Solving 1 - Backtracking & Arc Consistency Lecture Notes.pdf}{CSP Solving 1 - Backtracking & Arc Consistency Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/CSP Solving 2 - Backtracking & Arc Consistency Lecture Notes.pdf}{CSP Solving 2 - Backtracking & Arc Consistency Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \pdflink{\AssDir/Assignment 3 - Constraint Satisfaction Problems/Assignment 3 - Constraint Satisfaction Problems.pdf}{Assignment 3 - Constraint Satisfaction Problems}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 3 - Constraint Satisfaction Problems.pdf}{Quiz 3 - Constraint Satisfaction Problems}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 6: Constraint Satisfaction Problems}. The first section that is covered from this chapter this week is \textbf{Section 6.1: Defining Constraint Satisfaction Problems}.
+
+\begin{notes}{Section 6.1: Defining Constraint Satisfaction Problems}
+    \subsection*{Overview}
+
+    In this section, we delve into constraint satisfaction problems (CSPs), which are mathematical problems defined by a set of objects whose state must satisfy a number of constraints or limitations. 
+    This approach treats states as more than just indivisible entities by using a factored representation, allowing us to use general heuristics to solve complex problems efficiently.
+    
+    \subsubsection*{Defining Constraint Satisfaction Problems}
+    
+    A constraint satisfaction problem consists of three main components: variables, domains, and constraints.
+    
+    \begin{highlight}[Components of a CSP]
+    
+        \begin{itemize}
+            \item \textbf{Variables (X)}: A set of variables $\{X_1, X_2, \ldots, X_n\}$.
+            \item \textbf{Domains (D)}: A set of domains $\{D_1, D_2, \ldots, D_n\}$, one for each variable, where each domain $D_i$ consists of a set of allowable values $\{v_1, v_2, \ldots, v_k\}$ for variable $X_i$.
+            \item \textbf{Constraints (C)}: A set of constraints specifying allowable combinations of values. Each constraint $C_j$ consists of a pair $\langle \text{scope}, \text{rel} \rangle$, 
+            where scope is a tuple of variables involved in the constraint and rel is a relation defining the permissible values.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    CSPs deal with assignments of values to variables. An assignment that does not violate any constraints is called a consistent or legal assignment. A complete assignment assigns values to all 
+    variables, and a solution to a CSP is a consistent, complete assignment. Partial assignments leave some variables unassigned, and a partial solution is a consistent partial assignment.
+    
+    \subsubsection*{Example Problem: Map Coloring}
+    
+    To illustrate a CSP, consider the problem of coloring a map of Australia such that no two neighboring regions have the same color.
+    
+    \begin{highlight}[Map Coloring CSP]
+    
+        \begin{itemize}
+            \item \textbf{Variables (X)}: The regions $\{WA, NT, Q, NSW, V, SA, T\}$.
+            \item \textbf{Domains (D)}: The colors $\{\text{red}, \text{green}, \text{blue}\}$ for each variable.
+            \item \textbf{Constraints (C)}: Adjacent regions must have different colors. This results in constraints like $SA \neq WA$, $SA \neq NT$, etc.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    Visualizing a CSP as a constraint graph, where nodes represent variables and edges represent constraints, can help understand the problem structure and facilitate efficient problem solving.
+    
+    \subsubsection*{Example Problem: Job-Shop Scheduling}
+    
+    In job-shop scheduling, the task is to schedule a series of jobs subject to constraints such as task precedence and resource limitations.
+    
+    \begin{highlight}[Job-Shop Scheduling CSP]
+    
+        \begin{itemize}
+            \item \textbf{Variables (X)}: Tasks involved in assembling a car, such as $\{\text{AxleF}, \text{AxleB}, \text{WheelRF}, \ldots, \text{Inspect}\}$.
+            \item \textbf{Domains (D)}: Start times for each task, within a specified range (e.g., 0 to 30 minutes).
+            \item \textbf{Constraints (C)}: Precedence constraints (e.g., $\text{AxleF} + 10 \leq \text{WheelRF}$), resource constraints (e.g., only one tool for axle installation), and overall completion time.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    CSPs are particularly effective in such scheduling problems due to their ability to prune large portions of the search space by identifying variable assignments that violate constraints.
+    
+    \subsubsection*{Variations on the CSP Formalism}
+    
+    CSPs can vary based on the types of variables and constraints involved.
+    
+    \begin{highlight}[CSP Variations]
+    
+        \begin{itemize}
+            \item \textbf{Discrete and Finite Domains}: Variables with a limited set of possible values, such as colors in the map-coloring problem.
+            \item \textbf{Infinite Domains}: Variables with an infinite set of possible values, such as start times without a deadline.
+            \item \textbf{Continuous Domains}: Variables with continuous values, common in operations research (e.g., scheduling telescope observations).
+            \item \textbf{Unary Constraints}: Constraints on a single variable (e.g., $SA \neq \text{green}$).
+            \item \textbf{Binary Constraints}: Constraints between two variables (e.g., $SA \neq NSW$).
+            \item \textbf{Global Constraints}: Constraints involving multiple variables (e.g., \texttt{Alldiff} constraints in Sudoku).
+            \item \textbf{Preference Constraints}: Indicating preferred solutions (e.g., scheduling preferences for professors).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{CSPs}: Problems defined by variables, domains, and constraints, where the goal is to find a consistent and complete assignment.
+            \item \textbf{Map Coloring Example}: Illustrates CSP with variables as regions, domains as colors, and constraints ensuring adjacent regions have different colors.
+            \item \textbf{Job-Shop Scheduling Example}: Demonstrates CSP in scheduling tasks with precedence and resource constraints.
+            \item \textbf{CSP Variations}: Covers discrete, finite, infinite, and continuous domains, as well as different types of constraints (unary, binary, global, and preference).
+        \end{itemize}
+    
+        CSPs provide a powerful framework for solving a wide range of problems efficiently by leveraging the structure of the problem to prune the search space.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 6.2: Constraint Propagation - Inference In CSPs}.
+
+\begin{notes}{Section 6.2: Constraint Propagation - Inference In CSPs}
+    \subsection*{Overview}
+
+    This section explores constraint propagation, a technique used in constraint satisfaction problems (CSPs) to reduce the number of legal values for variables by enforcing local consistency. Constraint 
+    propagation can significantly enhance the efficiency of solving CSPs by reducing the search space and sometimes solving the problem entirely without further search.
+    
+    \subsubsection*{Constraint Propagation}
+    
+    Constraint propagation uses the constraints of a CSP to reduce the domains of variables, making it easier to find a solution. This process can be integrated with search or performed as a preprocessing step.
+    
+    \begin{highlight}[Constraint Propagation]
+    
+        \begin{itemize}
+            \item \textbf{Purpose}: Reduce the number of legal values for variables, thereby simplifying the problem.
+            \item \textbf{Integration}: Can be intertwined with search or done as preprocessing.
+            \item \textbf{Effectiveness}: Sometimes solves the entire problem without further search.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    The key idea behind constraint propagation is local consistency. Enforcing local consistency helps eliminate inconsistent values, reducing the domains of variables and making the problem easier to solve.
+    
+    \subsubsection*{Node Consistency}
+    
+    A variable is node-consistent if all values in its domain satisfy its unary constraints. Ensuring node consistency involves removing values that violate these constraints.
+    
+    \begin{highlight}[Node Consistency]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: A variable is node-consistent if all values in its domain satisfy its unary constraints.
+            \item \textbf{Example}: In the Australia map-coloring problem, if South Australians dislike green, remove green from SA's domain.
+            \item \textbf{Implementation}: Reduce the domain of variables with unary constraints at the start of the solving process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Arc Consistency}
+    
+    A variable is arc-consistent with another variable if every value in its domain satisfies the binary constraint between them. Enforcing arc consistency ensures that all binary constraints are satisfied.
+    
+    \begin{highlight}[Arc Consistency]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: A variable $X_i$ is arc-consistent with respect to $X_j$ if for every value in $D_i$, there is some value in $D_j$ that satisfies the binary constraint between them.
+            \item \textbf{Example}: In a CSP where $Y = X^2$ with domains {0, 1, 2, 3}, $X$ is reduced to {0, 1, 2} and $Y$ to {0, 1, 4}.
+            \item \textbf{Algorithm (AC-3)}: Maintains a queue of arcs and makes each arc consistent, updating domains and rechecking affected arcs.
+            \item \textbf{Complexity}: Worst-case time complexity is $O(cd^3)$ for a CSP with $n$ variables, domain size $d$, and $c$ binary constraints.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Path Consistency}
+    
+    Path consistency extends the idea of arc consistency by considering triples of variables. It ensures that if two variables are consistent, then there exists a consistent value for a third variable.
+    
+    \begin{highlight}[Path Consistency]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: A set $\{X_i, X_j\}$ is path-consistent with $X_m$ if for every consistent assignment $\{X_i = a, X_j = b\}$, there is an assignment to $X_m$ that satisfies all constraints.
+            \item \textbf{Example}: In the Australia map-coloring problem with two colors, path consistency shows no solution is possible because three regions touching each other need at least three colors.
+            \item \textbf{Purpose}: Helps solve problems that cannot be addressed by arc consistency alone.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{K-Consistency}
+    
+    K-consistency generalizes the concept of consistency to any number of variables. A CSP is k-consistent if for any set of $k-1$ variables, a consistent value can always be assigned to the $k$-th variable.
+    
+    \begin{highlight}[K-Consistency]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: A CSP is k-consistent if for any set of $k-1$ variables, a consistent value can always be assigned to any $k$-th variable.
+            \item \textbf{Levels}: 
+                \begin{itemize}
+                    \item 1-consistency (node consistency)
+                    \item 2-consistency (arc consistency)
+                    \item 3-consistency (path consistency)
+                \end{itemize}
+            \item \textbf{Strongly K-Consistent}: A CSP is strongly k-consistent if it is k-consistent, (k-1)-consistent, ..., down to 1-consistent.
+            \item \textbf{Trade-Off}: Ensuring higher levels of consistency can be computationally expensive and requires more space.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Global Constraints}
+    
+    Global constraints involve multiple variables and are common in real-world CSPs. Special-purpose algorithms can handle these efficiently.
+    
+    \begin{highlight}[Global Constraints]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: Constraints involving an arbitrary number of variables.
+            \item \textbf{Examples}:
+                \begin{itemize}
+                    \item \textbf{Alldiff Constraint}: Ensures all variables involved have distinct values.
+                    \item \textbf{Resource Constraint (Atmost)}: Limits the total resources used by several tasks.
+                \end{itemize}
+            \item \textbf{Detection and Enforcement}: Efficient algorithms can detect inconsistencies and enforce constraints, often more effectively than binary constraints.
+            \item \textbf{Bounds Propagation}: Manages large integer domains by maintaining and propagating upper and lower bounds.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Sudoku}
+    
+    Sudoku puzzles are a popular example of CSPs, where the objective is to fill a 9x9 grid so that each row, column, and 3x3 box contains the digits 1 to 9 without repetition.
+    
+    \begin{highlight}[Sudoku]
+    
+        \begin{itemize}
+            \item \textbf{Structure}: 81 variables with domains {1, 2, ..., 9} and 27 Alldiff constraints (one for each row, column, and box).
+            \item \textbf{Arc Consistency}: Can simplify the puzzle by reducing domains of variables, but often not sufficient alone.
+            \item \textbf{Advanced Strategies}: Techniques like "naked triples" enforce stronger consistency and help solve more complex puzzles.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Constraint Propagation}: Reduces the number of legal values for variables by enforcing local consistency.
+            \item \textbf{Node Consistency}: Ensures all values in a variable's domain satisfy unary constraints.
+            \item \textbf{Arc Consistency}: Ensures binary constraints are satisfied for all values in variable domains.
+            \item \textbf{Path Consistency}: Extends arc consistency to triples of variables.
+            \item \textbf{K-Consistency}: Generalizes consistency to any set of $k$ variables, with strong k-consistency ensuring all lower levels of consistency.
+            \item \textbf{Global Constraints}: Involves multiple variables, handled by specialized algorithms for efficiency.
+            \item \textbf{Sudoku}: A well-known example of CSP demonstrating the application of various consistency techniques.
+        \end{itemize}
+    
+        Constraint propagation techniques enhance the efficiency of solving CSPs by reducing the search space and enforcing various levels of consistency.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 6.3: Backtracking Search For CSPs}.
+
+\begin{notes}{Section 6.3: Backtracking Search For CSPs}
+    \subsection*{Overview}
+
+    This section covers backtracking search algorithms for solving constraint satisfaction problems (CSPs). When constraint propagation cannot reduce the domains of all variables to single values, we 
+    need to search for a solution. Backtracking search works on partial assignments and is enhanced by various heuristics and inference techniques to improve efficiency and reduce the search space.
+    
+    \subsubsection*{Backtracking Search}
+    
+    Backtracking search is a recursive, depth-first search method that extends partial assignments one variable at a time and backtracks when a constraint violation occurs.
+    
+    \begin{highlight}[Backtracking Search]
+    
+        \begin{itemize}
+            \item \textbf{Algorithm}: Extends a partial assignment by selecting an unassigned variable and trying all possible values. If a value leads to a consistent assignment, the search continues; 
+            otherwise, it backtracks.
+            \item \textbf{Implementation}: Uses a recursive approach similar to depth-first search.
+            \item \textbf{Efficiency}: Enhanced by using variable and value ordering heuristics, as well as inference techniques to prune the search space.
+        \end{itemize}
+
+    \begin{code}[Pseudo]
+    function BACKTRACKING-SEARCH(csp) returns a solution or failure
+        return BACKTRACK(csp, {})
+    
+    function BACKTRACK(csp, assignment) returns a solution or failure
+        if assignment is complete then return assignment
+        var ← SELECT-UNASSIGNED-VARIABLE(csp, assignment)
+        for each value in ORDER-DOMAIN-VALUES(csp, var, assignment) do
+            if value is consistent with assignment then
+                add {var = value} to assignment
+                inferences ← INFERENCE(csp, var, assignment)
+                if inferences ≠ failure then
+                    add inferences to csp
+                    result ← BACKTRACK(csp, assignment)
+                    if result ≠ failure then return result
+                    remove inferences from csp
+                remove {var = value} from assignment
+        return failure
+    \end{code}
+    
+    \end{highlight}
+    
+    
+    \subsubsection*{Variable and Value Ordering}
+    
+    Choosing the right variable and value ordering can significantly reduce the search space and improve efficiency.
+    
+    \begin{highlight}[Variable and Value Ordering]
+    
+        \begin{itemize}
+            \item \textbf{Minimum-Remaining-Values (MRV)}: Selects the variable with the fewest legal values remaining, reducing the likelihood of future conflicts.
+            \item \textbf{Degree Heuristic}: Chooses the variable involved in the largest number of constraints with other unassigned variables, aiming to reduce the branching factor.
+            \item \textbf{Least-Constraining-Value}: Prefers the value that leaves the most options open for neighboring variables, maximizing future flexibility.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Interleaving Search and Inference}
+    
+    Combining search with inference can detect inconsistencies earlier and reduce the search space more effectively.
+    
+    \begin{highlight}[Interleaving Search and Inference]
+    
+        \begin{itemize}
+            \item \textbf{Forward Checking}: After assigning a value to a variable, it removes inconsistent values from the domains of neighboring unassigned variables.
+            \item \textbf{Maintaining Arc Consistency (MAC)}: Calls AC-3 algorithm during the search to enforce arc consistency and propagate constraints more thoroughly than forward checking.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Intelligent Backtracking: Looking Backward}
+    
+    When a branch fails, intelligent backtracking methods can backtrack to more appropriate points in the search tree, avoiding unnecessary re-evaluations.
+    
+    \begin{highlight}[Intelligent Backtracking]
+    
+        \begin{itemize}
+            \item \textbf{Chronological Backtracking}: Reverts to the most recent variable and tries a different value.
+            \item \textbf{Conflict-Directed Backjumping}: Backtracks to the most recent variable in the conflict set that caused the failure, skipping irrelevant variables.
+            \item \textbf{Conflict Sets}: Track variables responsible for conflicts, allowing the algorithm to backtrack more effectively.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Constraint Learning}
+    
+    Constraint learning involves identifying and recording sets of assignments that lead to conflicts, known as no-goods, to prevent the algorithm from repeating the same mistakes.
+    
+    \begin{highlight}[Constraint Learning]
+    
+        \begin{itemize}
+            \item \textbf{No-Goods}: Sets of variable assignments that are inconsistent, stored to avoid re-exploring the same conflicting paths.
+            \item \textbf{Efficiency}: Reduces redundant searches and improves the overall efficiency of the backtracking algorithm.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Backtracking Search}: Recursive search method for extending partial assignments and backtracking on conflicts.
+            \item \textbf{Variable and Value Ordering}: Heuristics like MRV, degree heuristic, and least-constraining-value to improve search efficiency.
+            \item \textbf{Interleaving Search and Inference}: Techniques like forward checking and MAC to enforce consistency during the search.
+            \item \textbf{Intelligent Backtracking}: Methods like conflict-directed backjumping to backtrack more effectively based on conflict sets.
+            \item \textbf{Constraint Learning}: Recording no-goods to prevent redundant searches and enhance efficiency.
+        \end{itemize}
+    
+        Backtracking search, enhanced by intelligent heuristics and inference techniques, is a powerful method for solving CSPs efficiently by reducing the search space and avoiding redundant work.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Section 6.4: Local Search For CSPs}.
+
+\begin{notes}{Section 6.4: Local Search For CSPs}
+    \subsection*{Overview}
+
+    This section explores local search algorithms for solving constraint satisfaction problems (CSPs). Unlike backtracking search, which works on partial assignments, local search operates on complete 
+    assignments and iteratively improves them by making local changes. Local search is particularly effective for large-scale CSPs and can handle problems dynamically as they evolve.
+    
+    \subsubsection*{Local Search for CSPs}
+    
+    Local search algorithms begin with a complete assignment of values to variables and attempt to find a solution by iteratively improving the assignment.
+    
+    \begin{highlight}[Local Search for CSPs]
+    
+        \begin{itemize}
+            \item \textbf{Complete-State Formulation}: Starts with a complete assignment, even if it violates constraints.
+            \item \textbf{Local Changes}: Iteratively changes the value of one variable at a time to reduce the number of constraint violations.
+            \item \textbf{Dynamic Adaptation}: Can handle changes in the problem dynamically, making it suitable for real-time applications.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Min-Conflicts Heuristic}
+    
+    The min-conflicts heuristic is a simple yet powerful technique for local search. It selects a variable with conflicts and assigns it a value that minimizes the number of conflicts.
+    
+    \begin{highlight}[Min-Conflicts Heuristic]
+    
+        \begin{itemize}
+            \item \textbf{Selection}: Choose a variable that is currently in conflict.
+            \item \textbf{Assignment}: Assign the variable a value that results in the fewest conflicts with other variables.
+            \item \textbf{Effectiveness}: Particularly effective for large CSPs and problems with densely distributed solutions.
+        \end{itemize}
+
+    \begin{code}[Pseudo]
+    function MIN-CONFLICTS(csp, max_steps) returns a solution or failure
+        inputs: csp, a constraint satisfaction problem
+                max_steps, the number of steps allowed before giving up
+        current ← an initial complete assignment for csp
+        for i = 1 to max_steps do
+            if current is a solution for csp then return current
+            var ← a randomly chosen conflicted variable from csp.VARIABLES
+            value ← the value for var that minimizes CONFLICTS(csp, var, value, current)
+            set var = value in current
+        return failure
+    \end{code}
+
+    \end{highlight}
+    
+    \subsubsection*{Example: 8-Queens Problem}
+    
+    The 8-queens problem is a classic example of a CSP that can be effectively solved using local search with the min-conflicts heuristic.
+    
+    \begin{highlight}[8-Queens Problem]
+    
+        \begin{itemize}
+            \item \textbf{Initial State}: Start with a complete assignment where queens are placed on the board, even if they attack each other.
+            \item \textbf{Min-Conflicts Heuristic}: Move a queen to a position that minimizes the number of conflicts with other queens.
+            \item \textbf{Efficiency}: The algorithm quickly converges to a solution, even for large instances like the million-queens problem.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Plateau Search and Techniques for Escaping Local Optima}
+    
+    Local search can encounter plateaus where many assignments have the same number of conflicts. Several techniques help escape these local optima.
+    
+    \begin{highlight}[Escaping Local Optima]
+    
+        \begin{itemize}
+            \item \textbf{Plateau Search}: Allows sideways moves to another state with the same score.
+            \item \textbf{Tabu Search}: Maintains a list of recently visited states and forbids the algorithm from returning to them.
+            \item \textbf{Simulated Annealing}: Uses probabilistic moves to escape local optima by occasionally accepting worse states.
+            \item \textbf{Constraint Weighting}: Increases the weight of violated constraints to guide the search towards more critical constraints, adding topography to plateaus and enabling learning over time.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications in Dynamic Environments}
+    
+    Local search is particularly well-suited for dynamic environments where the problem constraints can change, such as scheduling problems.
+    
+    \begin{highlight}[Dynamic Environments]
+    
+        \begin{itemize}
+            \item \textbf{Adaptability}: Can quickly adapt to changes in constraints, making minimal adjustments to existing solutions.
+            \item \textbf{Example}: Airline scheduling where bad weather disrupts the schedule; local search can reassign flights with minimal disruption.
+            \item \textbf{Efficiency}: More efficient than re-running a complete backtracking search from scratch.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Local Search for CSPs}: Uses a complete-state formulation and iteratively improves assignments.
+            \item \textbf{Min-Conflicts Heuristic}: Selects variables in conflict and assigns values to minimize conflicts, effective for large CSPs.
+            \item \textbf{Plateau Search and Techniques}: Methods like tabu search, simulated annealing, and constraint weighting help escape local optima.
+            \item \textbf{Applications in Dynamic Environments}: Local search's adaptability makes it ideal for real-time and changing CSPs, such as scheduling.
+        \end{itemize}
+    
+        Local search algorithms are powerful tools for solving CSPs, especially in dynamic and large-scale problems, due to their ability to iteratively improve solutions and adapt to changes.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is covered from this chapter this week is \textbf{Section 6.5: The Structure Of Problems}.
+
+\begin{notes}{Section 6.5: The Structure Of Problems}
+    \subsection*{Overview}
+
+    This section examines how the structure of a problem, as represented by the constraint graph, can be leveraged to find solutions more efficiently. By understanding and exploiting the structural 
+    properties of CSPs, we can often decompose large problems into smaller, more manageable subproblems.
+    
+    \subsubsection*{Independent Subproblems}
+    
+    One of the key insights is that many CSPs can be decomposed into independent subproblems, which can be solved separately.
+    
+    \begin{highlight}[Independent Subproblems]
+    
+        \begin{itemize}
+            \item \textbf{Connected Components}: Identifying connected components in the constraint graph allows for decomposition into independent subproblems.
+            \item \textbf{Example}: In the Australia map-coloring problem, Tasmania is not connected to the mainland, making it an independent subproblem.
+            \item \textbf{Efficiency}: Solving each subproblem separately can drastically reduce the overall complexity from exponential to linear in the number of variables.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Tree-Structured CSPs}
+    
+    Tree-structured CSPs can be solved efficiently using specialized algorithms that take advantage of their hierarchical structure.
+    
+    \begin{highlight}[Tree-Structured CSPs]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: A CSP where the constraint graph forms a tree.
+            \item \textbf{Directional Arc Consistency (DAC)}: Ensuring that every variable is arc-consistent with its descendants in a given ordering.
+            \item \textbf{Algorithm (TREE-CSP-SOLVER)}: Solves tree-structured CSPs in linear time by first making the tree directed arc-consistent and then assigning values in a topologically sorted order.
+            \item \textbf{Complexity}: Time complexity is $O(nd^2)$, where $n$ is the number of variables and $d$ is the domain size.
+        \end{itemize}
+    
+    \begin{code}[Pseudo]
+    function TREE-CSP-SOLVER(csp) returns a solution, or failure
+        inputs: csp, a CSP with components X, D, C
+        n ← number of variables in X
+        assignment ← an empty assignment
+        root ← any variable in X
+        X ← TOPOLOGICALSORT(X, root)
+        for j = n down to 2 do
+            MAKE-ARC-CONSISTENT(PARENT(Xj), Xj)
+            if it cannot be made consistent then return failure
+        for i = 1 to n do
+            assignment[Xi] ← any consistent value from Di
+            if there is no consistent value then return failure
+        return assignment
+    \end{code}
+
+    \end{highlight}
+    
+    
+    \subsubsection*{Cutset Conditioning}
+    
+    Cutset conditioning is a technique to transform a general constraint graph into a tree by fixing some variables, turning the remaining graph into a tree.
+    
+    \begin{highlight}[Cutset Conditioning]
+    
+        \begin{itemize}
+            \item \textbf{Cycle Cutset}: A subset of variables whose removal makes the constraint graph a tree.
+            \item \textbf{Procedure}: Assign values to variables in the cycle cutset and solve the remaining tree-structured CSP.
+            \item \textbf{Complexity}: Time complexity is $O(d^c \cdot (n-c)d^2)$, where $c$ is the size of the cycle cutset.
+            \item \textbf{Efficiency}: Effective if the cycle cutset is small, significantly reducing the problem complexity.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Tree Decomposition}
+    
+    Tree decomposition transforms the constraint graph into a tree of clusters, each containing a subset of variables, facilitating efficient problem solving.
+    
+    \begin{highlight}[Tree Decomposition]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: Converts the original graph into a tree where each node represents a cluster of variables.
+            \item \textbf{Conditions}:
+                \begin{itemize}
+                    \item Every variable appears in at least one cluster.
+                    \item If two variables are connected by a constraint, they appear together in at least one cluster.
+                    \item If a variable appears in two clusters, it must appear in all clusters along the path connecting them.
+                \end{itemize}
+            \item \textbf{Algorithm}: Solve the tree-structured CSP formed by the clusters.
+            \item \textbf{Complexity}: Time complexity is $O(nd^w)$, where $w$ is the tree width.
+            \item \textbf{Tree Width}: The minimum width among all tree decompositions of the graph.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Value Symmetry}
+    
+    Value symmetry occurs when multiple equivalent solutions exist due to interchangeable values, and breaking this symmetry can reduce the search space.
+    
+    \begin{highlight}[Value Symmetry]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: Permutations of values that result in equivalent solutions.
+            \item \textbf{Example}: In the map-coloring problem with $d$ colors, there are $d!$ equivalent solutions for permuting colors.
+            \item \textbf{Symmetry-Breaking Constraint}: Introduces constraints to reduce equivalent solutions and thus the search space.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Independent Subproblems}: Decompose CSPs into smaller subproblems using connected components.
+            \item \textbf{Tree-Structured CSPs}: Solved efficiently using directional arc consistency and topological sorting.
+            \item \textbf{Cutset Conditioning}: Reduces general graphs to trees by fixing a subset of variables, solving the simplified problem.
+            \item \textbf{Tree Decomposition}: Converts the graph into a tree of clusters, simplifying the problem solving process.
+            \item \textbf{Value Symmetry}: Reduces the search space by breaking value symmetries with additional constraints.
+        \end{itemize}
+    
+        Understanding the structure of CSPs and leveraging these techniques can greatly enhance the efficiency of finding solutions by exploiting problem decomposition and structural properties.
+    
+    \end{highlight}
+\end{notes}

@@ -1,0 +1,619 @@
+\clearpage
+
+\newcommand{\ChapTitle}{Intro To AI, Search Problems}
+\newcommand{\SectionTitle}{Intro To AI, Search Problems}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 1 - Introduction}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 2 - Intelligent Agents}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 3.1 - Problem-Solving Agents}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 3.2 - Example Problems}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 3.3 - Search Algorithms}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 3.4 - Uninformed Search Strategies}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=L7JglROnj6k}{Introduction To AI}{23}
+    \item \lecture{https://www.youtube.com/watch?v=x1q_dcRkihw}{Intelligent Agent}{17}
+    \item \lecture{https://www.youtube.com/watch?v=Sysgw2y2h_g}{Search Intro}{20}
+    \item \lecture{https://www.youtube.com/watch?v=QqPXzxDKCJg}{Uninformed Search}{30}
+    \item \lecture{https://www.youtube.com/watch?v=FZ69zwGdcJk}{HW1A Helper}{17}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Intelligent Agent Lecture Notes.pdf}{Intelligent Agent Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Introduction To AI Lecture Notes.pdf}{Introduction To AI Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Search Intro Lecture Notes.pdf}{Search Intro Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Uninformed Search Lecture Notes.pdf}{Uninformed Search Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \pdflink{\AssDir Assignment 1 - Intro To AI, Search Problems/Assignment 1 - Intro To AI, Search Problems.pdf}{Assignment 1 - Intro To AI, Search Problems}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 1 - Intro To AI, Search Problems.pdf}{Quiz 1 - Intro To AI, Search Problems}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is covered this week is \textbf{Chapter 1: Introduction}.
+
+\begin{notes}{Chapter 1: Introduction}
+    \subsubsection*{Overview}
+
+    This chapter introduces the field of artificial intelligence (AI), discussing its importance, historical context, and various approaches to defining and understanding AI. It outlines the major 
+    subfields within AI and emphasizes the ongoing intellectual challenges and opportunities in the field.
+
+    \subsubsection*{What Is AI?}
+
+    AI can be defined in various ways, including:
+    \begin{itemize}
+        \item \textbf{Human-like intelligence:} Emulating human performance and thought processes.
+        \item \textbf{Rationality:} Acting logically to achieve goals.
+        \item \textbf{Internal vs. external focus:} Some definitions emphasize internal thought processes, while others focus on observable behavior.
+    \end{itemize}
+
+    \subsubsection*{Acting Humanly: The Turing Test Approach}
+
+    The Turing Test, proposed by Alan Turing, evaluates a machine's ability to exhibit human-like intelligence. To pass, a machine must demonstrate:
+    \begin{itemize}
+        \item \textit{Natural language processing} to communicate.
+        \item \textit{Knowledge representation} to store information.
+        \item \textit{Automated reasoning} to draw conclusions.
+        \item \textit{Machine learning} to adapt and recognize patterns.
+    \end{itemize}
+
+    \subsubsection*{Thinking Humanly: The Cognitive Modeling Approach}
+
+    To model human thinking, we study cognitive processes through:
+    \begin{itemize}
+        \item \textit{Introspection:} Observing one's own thoughts.
+        \item \textit{Psychological experiments:} Observing behavior.
+        \item \textit{Brain imaging:} Studying brain activity.
+    \end{itemize}
+    AI programs can be evaluated by comparing their performance and processes to human behavior.
+
+    \subsubsection*{Thinking Rationally: The “Laws of Thought” Approach}
+
+    This approach is based on formalizing logical reasoning, as initiated by Aristotle’s syllogisms. It includes the development of logicist traditions and the incorporation of probabilistic reasoning 
+    to handle uncertainty.
+
+    \subsubsection*{Acting Rationally: The Rational Agent Approach}
+
+    AI systems are viewed as rational agents that act to achieve the best outcome or expected outcome in uncertain situations. This approach emphasizes the construction of agents that do the "right thing," 
+    guided by mathematically defined rationality.
+
+    \subsubsection*{Beneficial Machines}
+
+    The chapter discusses the value alignment problem, which addresses ensuring AI systems pursue human objectives. It emphasizes the need for machines to act cautiously and seek human permission when 
+    unsure of objectives.
+
+    \subsubsection*{The Foundations of Artificial Intelligence}
+
+    The chapter provides a brief history of the disciplines that contributed to AI:
+    \begin{itemize}
+        \item \textbf{Philosophy:} Formal rules, mind-body distinction, and ethics.
+        \item \textbf{Mathematics:} Formal logic, probability, and computability.
+        \item \textbf{Economics:} Decision theory and game theory.
+        \item \textbf{Neuroscience:} Brain function and neural networks.
+        \item \textbf{Psychology:} Cognitive science and human-computer interaction.
+        \item \textbf{Computer Engineering:} Development of computers and computational theory.
+        \item \textbf{Control Theory and Cybernetics:} Self-regulating systems and feedback control.
+        \item \textbf{Linguistics:} Language processing and understanding.
+    \end{itemize}
+
+    \subsubsection*{The History of Artificial Intelligence}
+
+    The chapter outlines the milestones in AI history, such as:
+    \begin{itemize}
+        \item \textbf{1943–1956:} Inception of AI with neural networks and Turing's work.
+        \item \textbf{1952–1969:} Early enthusiasm with programs like the Logic Theorist and the General Problem Solver.
+        \item \textbf{1966–1973:} Realization of the challenges, such as combinatorial explosion and limited problem-solving capabilities.
+    \end{itemize}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 2: Intelligent Agents}.
+
+\begin{notes}{Chapter 2: Intelligent Agents}
+    \subsubsection*{Overview}
+
+    This chapter explores the concept of intelligent agents, discussing their nature, the environments they operate in, and various types of agents. It builds on the notion of rational agents, which 
+    are central to understanding AI.
+
+    \subsubsection*{Agents and Environments}
+
+    An agent is an entity that perceives its environment through sensors and acts upon it using actuators. The agent function maps percept sequences to actions. A key example is the vacuum-cleaner 
+    agent in a simple environment with two squares, A and B. The agent's actions depend on the percept sequence it has encountered.
+
+    \subsubsection*{Good Behavior: The Concept of Rationality}
+
+    Rational agents act to maximize their performance measure based on the percept sequence and their built-in knowledge. Rationality is defined by:
+    \begin{itemize}
+        \item Performance measure
+        \item Prior knowledge
+        \item Actions available
+        \item Percept sequence
+    \end{itemize}
+    Rationality is not omniscience; it involves maximizing expected performance given the available information.
+
+    \subsubsection*{The Nature of Environments}
+
+    Environments can vary along several dimensions:
+    \begin{itemize}
+        \item \textbf{Fully vs. Partially Observable:} Whether the agent has access to the complete state of the environment.
+        \item \textbf{Single-Agent vs. Multiagent:} Whether the environment involves one or multiple agents.
+        \item \textbf{Deterministic vs. Nondeterministic:} Whether the next state of the environment is completely determined by the current state and the agent's action.
+        \item \textbf{Episodic vs. Sequential:} Whether the agent's experience is divided into atomic episodes.
+        \item \textbf{Static vs. Dynamic:} Whether the environment can change while the agent is deliberating.
+        \item \textbf{Discrete vs. Continuous:} Whether the environment has a finite number of distinct states.
+        \item \textbf{Known vs. Unknown:} Whether the agent knows the rules governing the environment.
+    \end{itemize}
+
+    \subsubsection*{The Structure of Agents}
+
+    Agent programs implement the agent function, mapping percepts to actions. Basic types of agent programs include:
+    \begin{itemize}
+        \item \textbf{Simple Reflex Agents:} Act based on the current percept.
+        \item \textbf{Model-Based Reflex Agents:} Maintain internal state to keep track of the world.
+        \item \textbf{Goal-Based Agents:} Act to achieve specific goals.
+        \item \textbf{Utility-Based Agents:} Maximize a utility function to achieve the best outcome.
+    \end{itemize}
+
+    \subsubsection*{Learning Agents}
+
+    Learning agents can improve their performance by modifying their behavior based on feedback. They consist of:
+    \begin{itemize}
+        \item \textbf{Learning Element:} Responsible for making improvements.
+        \item \textbf{Performance Element:} Responsible for selecting actions.
+        \item \textbf{Critic:} Provides feedback on the agent's performance.
+        \item \textbf{Problem Generator:} Suggests actions to gain new experiences.
+    \end{itemize}
+
+    \subsubsection*{Summary}
+
+    The chapter defines agents, rationality, and environments, laying the foundation for designing intelligent systems. The key points include:
+    \begin{itemize}
+        \item Agents perceive and act in environments.
+        \item Rational agents maximize expected performance.
+        \item Task environments vary and influence agent design.
+        \item Different types of agent programs offer varying levels of complexity and flexibility.
+        \item Learning agents can adapt and improve over time.
+    \end{itemize}
+\end{notes}
+
+The next chapter that is \textbf{Chapter 3: Solving Problems By Searching}. The first section that is covered in this chapter this week is \textbf{Section 3.1: Problem-Solving Agents}.
+
+\begin{notes}{Section 3.1: Problem-Solving Agents}
+    \subsubsection*{Overview}
+
+    This chapter introduces problem-solving agents and their use of search algorithms to plan sequences of actions to achieve goals. The focus is on agents operating in simple, fully observable, 
+    deterministic, and discrete environments.
+
+    \subsubsection*{}
+
+    \begin{highlight}[Problem-Solving Agents]
+        Problem-solving agents use search to find sequences of actions that lead to goal states. These agents use atomic representations where states are considered as wholes without internal structure. 
+        The process involves four phases:
+        \begin{itemize}
+            \item \textbf{Goal formulation:} Defining the goal to organize behavior.
+            \item \textbf{Problem formulation:} Describing the states, actions, and transitions needed to reach the goal.
+            \item \textbf{Search:} Simulating sequences of actions to find a solution.
+            \item \textbf{Execution:} Performing the actions to achieve the goal.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Search Problems and Solutions]
+        A search problem includes:
+        \begin{itemize}
+            \item \textbf{State space:} The set of all possible states.
+            \item \textbf{Initial state:} The starting point for the agent.
+            \item \textbf{Goal state(s):} The desired state(s) to achieve.
+            \item \textbf{Actions:} The set of actions available to the agent.
+            \item \textbf{Transition model:} Describes the outcome of actions.
+            \item \textbf{Action cost function:} Assigns a cost to each action.
+        \end{itemize}
+        A solution is a sequence of actions leading from the initial state to a goal state. An optimal solution has the lowest path cost among all solutions.
+    \end{highlight}
+
+    \subsubsection*{Formulating Problems}
+
+    Problem formulation involves creating an abstract model by removing irrelevant details. The abstraction must be valid and useful, allowing detailed actions to be carried out without further planning.
+
+    \subsubsection*{Example Problems}
+
+    Problems can be classified as standardized or real-world. Standardized problems are used for benchmarking algorithms, while real-world problems are practical applications used by people. Examples include:
+    \begin{itemize}
+        \item \textbf{Grid world:} A two-dimensional grid where agents move between cells, potentially containing obstacles or objects.
+    \end{itemize}
+\end{notes}
+
+The next section that is covered from this chapter is \textbf{Section 3.2: Example Problems}.
+
+\begin{notes}{Section 3.2: Example Problems}
+    \subsubsection*{Overview}
+
+    This chapter lists various problems that can be addressed using the problem-solving approach, distinguishing between standardized problems for benchmarking and real-world problems with practical 
+    applications. The examples provided serve to illustrate the diversity of problems that can be tackled using search algorithms and problem-solving techniques.
+
+    \subsubsection*{Standardized Problems}
+
+    Standardized problems are designed to illustrate or exercise problem-solving methods and are suitable for comparing the performance of algorithms. These problems have concise and exact descriptions, 
+    making them useful benchmarks for researchers.
+
+    \begin{highlight}[Grid World]
+        The grid world problem involves a two-dimensional rectangular array of square cells in which agents can move from cell to cell. The simplicity and versatility of this problem make it a popular 
+        choice for demonstrating basic search and navigation algorithms.
+    
+        \begin{itemize}
+            \item \textbf{States:} Each cell can contain objects like agents or dirt. In a simple two-cell vacuum world, the agent can be in either of the two cells, and each cell can either contain dirt or not.
+            \item \textbf{Initial state:} Any state can be designated as the starting point.
+            \item \textbf{Actions:} Movements (e.g., Left, Right, Up, Down) and actions (e.g., Suck). In multi-cell worlds, actions might include moving Upward, Downward, Forward, Backward, or turning.
+            \item \textbf{Transition model:} Actions alter the state based on predefined rules, such as removing dirt or moving the agent.
+            \item \textbf{Goal states:} States where every cell is clean.
+            \item \textbf{Action cost:} Each action costs 1.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Sokoban Puzzle]
+        The Sokoban puzzle requires an agent to push boxes scattered around a grid to designated storage locations. This problem involves both spatial reasoning and strategic planning, making it a more 
+        complex variant of the grid world problem.
+    
+        \begin{itemize}
+            \item \textbf{States:} Describes the locations of boxes and the agent. Each cell can contain one box, and the agent moves boxes to storage locations.
+            \item \textbf{Initial state:} Any configuration of boxes and the agent.
+            \item \textbf{Actions:} Movements that push boxes. If an agent moves into a cell with a box, the box moves to the adjacent cell if it is empty.
+            \item \textbf{Transition model:} Moving into a cell pushes the box if the next cell is empty.
+            \item \textbf{Goal states:} All boxes in designated storage locations.
+            \item \textbf{Action cost:} Each action costs 1.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Sliding-Tile Puzzle]
+        The sliding-tile puzzle involves arranging tiles on a grid to achieve a specific goal state. Popular variants include the 8-puzzle and 15-puzzle. These puzzles are widely used to study search 
+        algorithms due to their clear structure and challenging nature.
+    
+        \begin{itemize}
+            \item \textbf{States:} Specifies the location of each tile. For example, the 8-puzzle consists of a 3x3 grid with eight numbered tiles and one blank space.
+            \item \textbf{Initial state:} Any arrangement of tiles can be the starting state.
+            \item \textbf{Actions:} Move the blank space Left, Right, Up, or Down.
+            \item \textbf{Transition model:} Moving the blank space swaps it with the adjacent tile.
+            \item \textbf{Goal states:} Tiles arranged in a specific order.
+            \item \textbf{Action cost:} Each action costs 1.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Knuth's Conjecture Problem]
+        This mathematical problem, devised by Donald Knuth, explores sequences of operations to reach desired positive integers. It illustrates how infinite state spaces can arise in search problems.
+    
+        \begin{itemize}
+            \item \textbf{States:} Positive real numbers.
+            \item \textbf{Initial state:} The number 4.
+            \item \textbf{Actions:} Apply square root, floor, or factorial operations.
+            \item \textbf{Transition model:} Defined by mathematical operations.
+            \item \textbf{Goal states:} The desired positive integer.
+            \item \textbf{Action cost:} Each action costs 1.
+        \end{itemize}
+    \end{highlight}
+
+    \subsubsection*{Real-World Problems}
+
+    Real-world problems are practical applications used by people and often involve complex and idiosyncratic formulations. These problems illustrate the application of search algorithms in more 
+    complicated and dynamic environments.
+
+    \begin{highlight}[Route-Finding]
+        Route-finding problems involve finding paths from one location to another. These problems are common in various applications, from GPS navigation to complex logistical planning.
+    
+        \begin{itemize}
+            \item \textbf{States:} Location and time. Each state includes a location (e.g., an airport) and the current time.
+            \item \textbf{Initial state:} The user's home airport or starting location.
+            \item \textbf{Actions:} Take any flight from the current location or other available transport.
+            \item \textbf{Transition model:} The state resulting from taking a flight or transport will have the new location and arrival time.
+            \item \textbf{Goal states:} Destination city or specific location.
+            \item \textbf{Action cost:} Combination of monetary cost, waiting time, flight time, and other factors.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Touring Problems]
+        Touring problems require visiting multiple locations, rather than just reaching a single destination. These problems are exemplified by the traveling salesperson problem (TSP), which seeks 
+        to minimize travel costs while visiting all cities.
+    
+        \begin{itemize}
+            \item \textbf{Traveling Salesperson Problem (TSP):} The goal is to visit every city with the minimal possible cost.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[VLSI Layout]
+        VLSI layout problems involve positioning millions of components and connections on a chip to optimize various criteria like area and circuit delays. These problems are crucial in the design 
+        and manufacturing of electronic devices.
+    
+        \begin{itemize}
+            \item \textbf{Cell Layout:} Grouping circuit components into cells.
+            \item \textbf{Channel Routing:} Routing wires through gaps between cells.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Robot Navigation]
+        Robot navigation problems generalize route-finding by allowing a robot to create its own paths. These problems are more complex due to the continuous nature of the environment and the need 
+        to account for sensor errors and dynamic changes.
+    
+        \begin{itemize}
+            \item \textbf{States:} Positions and orientations of the robot.
+            \item \textbf{Actions:} Movements and adjustments in the robot's path.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Automatic Assembly Sequencing]
+        Automatic assembly sequencing involves finding feasible and optimized sequences for assembling parts. These problems are critical in industrial manufacturing, aiming to reduce manual labor 
+        and enhance efficiency.
+    
+        \begin{itemize}
+            \item \textbf{States:} Partially assembled objects.
+            \item \textbf{Actions:} Assembly steps and movements.
+            \item \textbf{Goal states:} Fully assembled objects.
+        \end{itemize}
+    \end{highlight}
+
+    \begin{highlight}[Protein Design]
+        Protein design problems involve finding sequences of amino acids that fold into a desired three-dimensional structure with specific properties. These problems are significant in biomedical 
+        research and drug development.
+    
+        \begin{itemize}
+            \item \textbf{States:} Sequences of amino acids.
+            \item \textbf{Actions:} Addition or modification of amino acids.
+            \item \textbf{Goal states:} Desired protein structure.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is covered in this chapter this week is \textbf{Section 3.3: Search Algorithms}
+
+\begin{notes}{Section 3.3: Search Algorithms}
+    \subsubsection*{Overview}
+
+    This section covers search algorithms, which take a search problem as input and return a solution or an indication of failure. Search algorithms construct a search tree over the state-space graph, 
+    forming various paths from the initial state and attempting to find a path to a goal state. Each node in the search tree corresponds to a state in the state space, and the edges correspond to actions.
+
+    \subsubsection*{Search Algorithms and Trees}
+
+    It is essential to distinguish between the state space and the search tree. The state space represents all possible states and the transitions between them. The search tree represents paths between 
+    these states, reaching towards the goal. Multiple nodes in the search tree may correspond to the same state, but each node has a unique path back to the root.
+
+    \begin{highlight}[Best-First Search]
+        Best-first search is a general approach where the node with the minimum value of some evaluation function $ f(n) $ is chosen next. The algorithm returns either a solution or an indication of failure.
+
+    \begin{code}[Puseudo]
+    function BEST-FIRST-SEARCH(problem, f) returns a solution node or failure
+        node ← NODE(STATE = problem.INITIAL)
+        frontier ← a priority queue ordered by f, with node as an element
+        reached ← a lookup table, with one entry with key problem.INITIAL and value node
+
+        while not IS-EMPTY(frontier) do
+            node ← POP(frontier)
+            if problem.IS-GOAL(node.STATE) then return node
+
+            for each child in EXPAND(problem, node) do
+                s ← child.STATE
+                if s is not in reached or child.PATH-COST < reached[s].PATH-COST then
+                    reached[s] ← child
+                    add child to frontier
+
+        return failure
+
+    function EXPAND(problem, node) yields nodes
+        s ← node.STATE
+        for each action in problem.ACTIONS(s) do
+            s' ← problem.RESULT(s, action)
+            cost ← node.PATH-COST + problem.ACTION-COST(s, action, s')
+            yield NODE(STATE = s', PARENT = node, ACTION = action, PATH-COST = cost)
+    \end{code}
+    \end{highlight}
+
+    \subsubsection*{Search Data Structures}
+
+    Search algorithms require specific data structures to keep track of the search tree. A node in the tree is represented by a data structure with four components: the state, the parent node, the 
+    action applied, and the path cost.
+
+    The frontier, a queue of nodes, supports operations such as checking if it is empty, popping the top node, and adding new nodes. Different types of queues used in search algorithms include 
+    priority queues, FIFO queues, and LIFO queues.
+
+    \subsubsection*{Redundant Paths}
+
+    The search tree may include redundant paths, such as cycles or loopy paths. Eliminating redundant paths can significantly speed up the search process. There are three approaches to handling redundant paths:
+    \begin{itemize}
+        \item Remember all previously reached states.
+        \item Ignore redundant paths if they are rare or impossible.
+        \item Compromise by checking for cycles without tracking all redundant paths.
+    \end{itemize}
+
+    \subsubsection*{Measuring Problem-Solving Performance}
+
+    The performance of search algorithms is evaluated using four criteria:
+    \begin{itemize}
+        \item \textbf{Completeness:} The algorithm's ability to find a solution if one exists and correctly report failure otherwise.
+        \item \textbf{Cost optimality:} Whether the algorithm finds the solution with the lowest path cost.
+        \item \textbf{Time complexity:} The duration required to find a solution, measured by the number of states and actions considered.
+        \item \textbf{Space complexity:} The memory required to perform the search.
+    \end{itemize}
+
+    Completeness requires systematic exploration of every state reachable from the initial state. In infinite state spaces, care is necessary to ensure the algorithm systematically covers all reachable states.
+\end{notes}
+
+The last section that is covered from this chapter this week is \textbf{Section 3.4: Uninformed Search Strategies}.
+
+\begin{notes}{Section 3.4: Uninformed Search Strategies}
+    \subsubsection*{Overview}
+
+    This section explores uninformed search algorithms, which are given no clue about how close a state is to the goal(s). These strategies are essential for problems where the agent has no additional 
+    information about the domain.
+
+    \subsubsection*{Breadth-First Search}
+
+    Breadth-first search expands the root node first, then all successors of the root node, and so on. It is a systematic search strategy that is complete even on infinite state spaces.
+
+    \begin{highlight}[Breadth-First Search]
+    \begin{code}[Pseudo]
+    function BREADTH-FIRST-SEARCH(problem) returns a solution node or failure
+        node ← NODE(problem.INITIAL)
+        if problem.IS-GOAL(node.STATE) then return node
+        frontier ← a FIFO queue, with node as an element
+        reached ← {problem.INITIAL}
+        while not IS-EMPTY(frontier) do
+            node ← POP(frontier)
+            for each child in EXPAND(problem, node) do
+                s ← child.STATE
+                if problem.IS-GOAL(s) then return child
+                if s is not in reached then
+                    add s to reached
+                    add child to frontier
+        return failure
+    \end{code}
+    \end{highlight}
+
+    Breadth-first search finds a solution with a minimal number of actions and is complete and optimal for problems where all actions have the same cost. Its time and space complexity are both 
+    $O(b^d)$, where $b$ is the branching factor and $d$ is the depth of the shallowest solution.
+
+    \subsubsection*{Uniform-Cost Search}
+
+    When actions have different costs, uniform-cost search is used. It expands the node with the lowest path cost from the root.
+
+    \begin{highlight}[Uniform-Cost Search]
+    \begin{code}[Pseudo]
+    function UNIFORM-COST-SEARCH(problem) returns a solution node, or failure
+        return BEST-FIRST-SEARCH(problem, PATH-COST)
+    \end{code}
+    \end{highlight}
+
+    Uniform-cost search is complete and cost-optimal. Its complexity is $O(b^{1 + \lfloor C^* / \epsilon \rfloor})$, where $C^*$ is the cost of the optimal solution and $\epsilon$ is the 
+    smallest positive action cost.
+
+    \subsubsection*{Depth-First Search}
+
+    Depth-first search expands the deepest node in the frontier first. It is usually implemented as a tree-like search that does not keep a table of reached states.
+
+    \begin{highlight}[Depth-First Search]
+    \begin{code}[Pseudo]
+    function DEPTH-FIRST-SEARCH(problem) returns a solution node or failure
+        node ← NODE(problem.INITIAL)
+        if problem.IS-GOAL(node.STATE) then return node
+        frontier ← a LIFO queue, with node as an element
+        while not IS-EMPTY(frontier) do
+            node ← POP(frontier)
+            for each child in EXPAND(problem, node) do
+                if problem.IS-GOAL(child.STATE) then return child
+                add child to frontier
+        return failure
+    \end{code}
+    \end{highlight}
+
+    Depth-first search is not cost-optimal and is incomplete in infinite state spaces. However, it uses less memory, with space complexity of $O(bm)$, where $m$ is the maximum depth of the search tree.
+
+    \subsubsection*{Depth-Limited and Iterative Deepening Search}
+
+    Depth-limited search imposes a depth limit $l$ and treats nodes at depth $l$ as if they have no successors.
+
+    \begin{highlight}[Iterative Deepening Search]
+    \begin{code}
+    function ITERATIVE-DEEPENING-SEARCH(problem) returns a solution node or failure
+        for depth = 0 to ∞ do
+            result ← DEPTH-LIMITED-SEARCH(problem, depth)
+            if result ≠ cutoff then return result
+
+    function DEPTH-LIMITED-SEARCH(problem, l) returns a node, failure, or cutoff
+        frontier ← a LIFO queue (stack) with NODE(problem.INITIAL) as an element
+        result ← failure
+        while not IS-EMPTY(frontier) do
+            node ← POP(frontier)
+            if problem.IS-GOAL(node.STATE) then return node
+            if DEPTH(node) > l then
+                result ← cutoff
+            else if not IS-CYCLE(node) do
+                for each child in EXPAND(problem, node) do
+                    add child to frontier
+        return result
+    \end{code}
+    \end{highlight}
+
+    Iterative deepening search combines the benefits of depth-first and breadth-first searches. It is complete and optimal for problems where all actions have the same cost, with time complexity 
+    $O(b^d)$ and space complexity $O(bd)$.
+
+    \subsubsection*{Bidirectional Search}
+
+    Bidirectional search simultaneously searches forward from the initial state and backward from the goal state, hoping that the two searches will meet.
+
+    \begin{highlight}[Bidirectional Best-First Search]
+    \begin{code}[Pseudo]
+    function BIBF-SEARCH(problemF, fF, problemB, fB) returns a solution node, or failure
+        nodeF ← NODE(problemF.INITIAL)
+        nodeB ← NODE(problemB.INITIAL)
+        frontierF ← a priority queue ordered by fF, with nodeF as an element
+        frontierB ← a priority queue ordered by fB, with nodeB as an element
+        reachedF ← a lookup table, with one key nodeF.STATE and value nodeF
+        reachedB ← a lookup table, with one key nodeB.STATE and value nodeB
+        solution ← failure
+        while not TERMINATED(solution, frontierF, frontierB) do
+            if fF(TOP(frontierF)) < fB(TOP(frontierB)) then
+                solution ← PROCEED(F, problemF, frontierF, reachedF, reachedB, solution)
+            else
+                solution ← PROCEED(B, problemB, frontierB, reachedB, reachedF, solution)
+        return solution
+
+    function PROCEED(dir, problem, frontier, reached, reached2, solution) returns a solution
+        node ← POP(frontier)
+        for each child in EXPAND(problem, node) do
+            s ← child.STATE
+            if s not in reached or PATH-COST(child) < PATH-COST(reached[s]) then
+                reached[s] ← child
+                add child to frontier
+                if s is in reached2 then
+                    solution2 ← JOIN-NODES(dir, child, reached2[s])
+                    if PATH-COST(solution2) < PATH-COST(solution) then
+                        solution ← solution2
+        return solution
+    \end{code}
+    \end{highlight}
+
+    Bidirectional search is highly efficient, with time and space complexity $O(b^{d/2})$. It is complete and optimal if both search directions use breadth-first or uniform-cost search.
+
+    \subsubsection*{Comparing Uninformed Search Algorithms}
+
+    The performance of uninformed search algorithms is evaluated based on completeness, optimal cost, time complexity, and space complexity. The comparison is shown in Figure 3.15.
+
+    \begin{highlight}[Comparison of Uninformed Search Algorithms]
+        \begin{itemize}
+            \item \textbf{Breadth-First Search:} Complete and optimal for uniform-cost problems, time and space complexity $O(b^d)$.
+            \item \textbf{Uniform-Cost Search:} Complete and cost-optimal, time and space complexity $O(b^{1 + \lfloor C^* / \epsilon \rfloor})$.
+            \item \textbf{Depth-First Search:} Not complete or cost-optimal, time complexity $O(b^m)$, space complexity $O(bm)$.
+            \item \textbf{Depth-Limited Search:} Not complete or cost-optimal, time and space complexity $O(b^l)$.
+            \item \textbf{Iterative Deepening Search:} Complete and optimal for uniform-cost problems, time and space complexity $O(b^d)$.
+            \item \textbf{Bidirectional Search:} Complete and optimal, time and space complexity $O(b^{d/2})$.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

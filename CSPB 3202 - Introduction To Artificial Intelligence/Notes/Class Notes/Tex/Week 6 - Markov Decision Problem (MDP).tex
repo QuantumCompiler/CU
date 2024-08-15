@@ -1,0 +1,760 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Markov Decision Problem (MDP)}
+\renewcommand{\SectionTitle}{Markov Decision Problem (MDP)}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 17.1 - Sequential Decision Problems}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 17.2 - Algorithms For MDPs}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 17.3 - Bandit Problems}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 3 - Finite Markov Decision Processes}
+    \item \textbf{Reinforcement Learning - An Introduction - Chapter 4 - Dynamic Programming}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=XuKIGgZheQA}{Markov-Decision Process}{43}
+    \item \lecture{https://www.youtube.com/watch?v=QvnAs-67uUs}{Solving MDP - Dynamic Programming}{62}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Markov Decision Process (MDP) Lecture Notes.pdf}{Markov Decision Process (MDP) Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Markov Decision Process (MDP) Solved Problems Lecture Notes.pdf}{Markov Decision Process (MDP) Solved Problems Lecture Notes}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 5 - Markov Decision Problem (MDP).pdf}{Quiz 5 - Markov Decision Problem (MDP)}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The reading for this week is from \textbf{Artificial Intelligence - A Modern Approach} and \textbf{Reinforcement Learning - An Introduction}. The chapter that is being covered from \textbf{Artificial Intelligence - A Modern Approach}
+is \textbf{Chapter 17: Making Complex Decisions}. The first section that is being covered from this chapter this week is \textbf{Section 17.1: Sequential Decision Problems}.
+
+\begin{notes}{Section 17.1: Sequential Decision Problems}
+    \subsection*{Overview}
+
+    This section introduces sequential decision problems, where the agent's utility depends on a sequence of decisions rather than a single decision. These problems incorporate utilities, uncertainty, 
+    and sensing, and include search and planning problems as special cases. The complexity arises from the need to make decisions at each step, considering both immediate and future consequences. 
+    Sequential decision problems are more realistic and complex compared to single-step decision problems because they reflect the ongoing nature of decision-making in real-world scenarios.
+    
+    \subsubsection*{Sequential Decision Problems}
+    
+    In sequential decision problems, an agent must choose actions over time, considering the stochastic nature of the environment and aiming to maximize its cumulative reward. Unlike one-shot decisions, 
+    these problems require the agent to plan ahead, anticipating the outcomes of its actions and the subsequent decisions it will need to make.
+    
+    \begin{highlight}[Sequential Decision Problems]
+    
+        \begin{itemize}
+            \item \textbf{Environment}: The agent interacts with a stochastic environment, where actions have uncertain outcomes. This uncertainty can arise from various sources, such as environmental 
+            variability or incomplete knowledge.
+            \item \textbf{States and Actions}: The agent's state changes based on the actions it takes, with each action leading to a new state with certain probabilities. The set of possible actions and 
+            their effects on the state define the transition model.
+            \item \textbf{Rewards}: The agent receives rewards for transitions between states, which are used to define the utility of sequences of actions and states. These rewards provide immediate feedback 
+            to the agent about the desirability of its actions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: 4x3 Grid Environment}
+    
+    Consider an agent navigating a 4x3 grid where it must reach a goal state while avoiding pitfalls. The environment is stochastic, with actions resulting in intended moves with high probability but 
+    sometimes causing unintended moves. This example illustrates the complexities introduced by uncertainty in action outcomes.
+    
+    \begin{highlight}[4x3 Grid Environment]
+    
+        \begin{itemize}
+            \item \textbf{States}: Each cell in the grid represents a state. The agent starts at a specific cell and aims to reach a goal cell.
+            \item \textbf{Actions}: Possible actions are Up, Down, Left, and Right. The agent selects an action at each step, intending to move in the chosen direction.
+            \item \textbf{Transition Model}: Actions succeed with probability 0.8 and fail with probability 0.2, causing the agent to move at right angles to the intended direction. This model captures 
+            the uncertainty and potential for error in executing actions.
+            \item \textbf{Rewards}: Transitioning into the goal state yields a reward of +1, while falling into a pit results in a reward of -1. Other transitions have a small negative reward (e.g., -0.04) 
+            to encourage reaching the goal quickly. These rewards reflect the agent's objectives and penalties for undesirable outcomes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Markov Decision Processes (MDPs)}
+    
+    Sequential decision problems in fully observable, stochastic environments with Markovian transitions are formalized as Markov decision processes (MDPs). MDPs provide a mathematical framework for 
+    modeling decision-making where outcomes are partly random and partly under the control of the decision-maker.
+    
+    \begin{highlight}[Markov Decision Processes (MDPs)]
+    
+        \begin{itemize}
+            \item \textbf{Components}: An MDP consists of states \(S\), actions \(A\), a transition model \(P(s' | s, a)\), and a reward function \(R(s, a, s')\). These components define the dynamics of 
+            the environment and the agent's interactions with it.
+            \item \textbf{Policy}: A policy \(\pi\) specifies the action \(\pi(s)\) to take in each state \(s\). An optimal policy \(\pi^*\) maximizes the expected utility over all possible sequences of 
+            states and actions, guiding the agent's behavior to achieve the best possible outcomes.
+            \item \textbf{Utility of a State}: The expected utility \(U(s)\) of a state \(s\) under an optimal policy is the sum of the expected rewards from that state onward. This measure reflects the 
+            long-term value of being in a particular state.
+            \item \textbf{Bellman Equation}: The utility of a state \(U(s)\) is given by \(U(s) = \max_a \sum_{s'} P(s' | s, a) [R(s, a, s') + \gamma U(s')]\), where \(\gamma\) is the discount factor. The 
+            Bellman equation captures the recursive nature of decision-making, where the utility of a state depends on the utilities of subsequent states.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Utilities Over Time}
+    
+    The utility function for MDPs can be defined over a finite or infinite horizon, affecting how the agent values future rewards. Different horizons lead to different decision strategies and complexities 
+    in solving the MDP.
+    
+    \begin{highlight}[Utilities Over Time]
+    
+        \begin{itemize}
+            \item \textbf{Finite Horizon}: There is a fixed time limit after which future rewards do not matter. This scenario is suitable for tasks with clear endpoints or deadlines.
+            \item \textbf{Infinite Horizon}: No fixed time limit; the agent seeks to maximize the sum of discounted rewards over an infinite sequence of actions. This approach models ongoing tasks without a predefined end.
+            \item \textbf{Discount Factor (\(\gamma\))}: A value between 0 and 1 that determines the present value of future rewards. A higher \(\gamma\) means future rewards are valued more highly, 
+            encouraging long-term planning. The discount factor captures the trade-off between immediate and future rewards, reflecting the agent's preference for immediate versus delayed gratification.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Optimal Policies and State Utilities}
+    
+    Optimal policies maximize the expected utility of the agent, and the utility of each state under the optimal policy can be computed using the Bellman equation. These concepts are central to 
+    finding the best strategies in MDPs.
+    
+    \begin{highlight}[Optimal Policies and State Utilities]
+    
+        \begin{itemize}
+            \item \textbf{Optimal Policy (\(\pi^*\))}: The policy that yields the highest expected utility from any given state. It guides the agent's actions to maximize long-term rewards.
+            \item \textbf{State Utility (\(U(s)\))}: The expected sum of discounted rewards from state \(s\) under the optimal policy. This value indicates the desirability of being in a particular state, 
+            considering future rewards.
+            \item \textbf{Action-Utility Function (Q-Function)}: \(Q(s, a)\) represents the expected utility of taking action \(a\) in state \(s\), following the optimal policy thereafter. The Q-function 
+            helps in evaluating the immediate benefit of actions in the context of long-term planning.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Reward Scales and Transformations}
+    
+    The scale of rewards can be transformed without changing the optimal policy, providing flexibility in defining reward functions. This property allows for different representations of rewards while 
+    preserving the decision-making framework.
+    
+    \begin{highlight}[Reward Scales and Transformations]
+    
+        \begin{itemize}
+            \item \textbf{Affine Transformation}: Replacing \(R(s, a, s')\) with \(mR(s, a, s') + b\) (where \(m > 0\)) does not change the optimal policy. This transformation scales and shifts the rewards 
+            uniformly, maintaining the relative preferences between actions.
+            \item \textbf{Shaping Theorem}: Adding a potential-based reward \(\gamma \Phi(s') - \Phi(s)\) to \(R(s, a, s')\) does not alter the optimal policy, but can make the immediate rewards more 
+            informative. This technique helps in guiding the agent towards desirable states more effectively by modifying the reward structure.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Representing MDPs}
+    
+    MDPs can be represented using various models, including big tables for small problems or dynamic decision networks (DDNs) for larger, more complex problems. Proper representation is crucial for 
+    the efficient solution of MDPs.
+    
+    \begin{highlight}[Representing MDPs]
+    
+        \begin{itemize}
+            \item \textbf{Tabular Representation}: Uses three-dimensional tables to store transition probabilities and rewards. This method is straightforward but can become impractical for large state 
+            spaces due to memory constraints.
+            \item \textbf{Dynamic Decision Networks (DDNs)}: Extend dynamic Bayesian networks (DBNs) with decision, reward, and utility nodes to model more complex, real-world problems. DDNs provide a 
+            structured and compact representation, capturing dependencies between variables efficiently.
+            \item \textbf{Example}: A mobile robot with state variables for location, velocity, charging status, and battery level, and action variables for movement and charging decisions. This example 
+            illustrates how DDNs can represent the interdependencies and dynamic nature of the robot's decision-making process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Sequential Decision Problems}: Involve making a series of decisions over time in a stochastic environment. These problems are more realistic and complex than single-step decisions, 
+            reflecting the ongoing nature of real-world tasks.
+            \item \textbf{Markov Decision Processes (MDPs)}: Formalize sequential decision problems with states, actions, transition models, and reward functions. MDPs provide a robust framework for modeling 
+            and solving complex decision-making problems under uncertainty.
+            \item \textbf{Utilities and Optimal Policies}: Utilities are defined as the expected sum of discounted rewards, and optimal policies maximize these utilities. These concepts are central to 
+            identifying the best strategies in MDPs.
+            \item \textbf{Utilities Over Time}: Can be finite or infinite horizon, with a discount factor determining the value of future rewards. The choice of horizon and discount factor affects the agent's 
+            planning and decision-making strategies.
+            \item \textbf{Reward Transformations}: Affine transformations and potential-based rewards can modify reward functions without changing the optimal policy. These transformations offer flexibility 
+            in defining rewards while preserving the decision-making framework.
+            \item \textbf{Representation of MDPs}: Tabular and dynamic decision networks are used to model MDPs, with DDNs being suitable for complex problems. Proper representation is crucial for efficiently 
+            solving MDPs and capturing the dependencies in decision-making processes.
+        \end{itemize}
+        Understanding sequential decision problems and their representation through MDPs is crucial for developing intelligent agents capable of making optimal decisions in uncertain environments. These 
+        concepts form the foundation for advanced techniques in decision-making and planning under uncertainty.
+
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 17.2: Algorithms For MDPs}.
+
+\begin{notes}{Section 17.2: Algorithms For MDPs}
+    \subsection*{Overview}
+
+    This section presents four different algorithms for solving Markov Decision Processes (MDPs). These algorithms include value iteration, policy iteration, linear programming, and online approximate 
+    algorithms like Monte Carlo planning. Each algorithm offers a different approach to finding optimal policies and utilities in MDPs, addressing various complexities and computational challenges.
+    
+    \subsubsection*{Value Iteration}
+    
+    Value iteration is a fundamental algorithm for solving MDPs based on the Bellman equation. It iteratively updates the utility values of states until they converge to the optimal values. This 
+    process helps determine the best action to take in each state to maximize cumulative rewards.
+    
+    \begin{highlight}[Value Iteration]
+    
+        \begin{itemize}
+            \item \textbf{Bellman Equation}: The Bellman equation \( U(s) = \max_a \sum_{s'} P(s'|s,a)[R(s,a,s') + \gamma U(s')] \) is the foundation of value iteration. It recursively defines the 
+            utility of a state in terms of the utilities of successor states.
+            \item \textbf{Algorithm}: The value iteration algorithm updates the utility values of all states simultaneously using the Bellman update until the utilities converge within a specified threshold.
+            \item \textbf{Convergence}: The algorithm converges to the optimal utility values exponentially fast, ensuring the computed policy is optimal. The convergence rate depends on the discount factor \(\gamma\).
+        \end{itemize}
+    
+    \begin{code}[Pseudo]
+    function VALUE-ITERATION(mdp, e) returns a utility function
+        inputs: mdp, an MDP with states S, actions A(s), transition model P(s' |s,a),
+                rewards R(s,a,s'), discount g
+                e, the maximum error allowed in the utility of any state
+        local variables: U, U', vectors of utilities for states in S, initially zero
+                        d, the maximum relative change in the utility of any state
+        repeat
+            U <- U'; d <- 0
+            for each state s in S do
+                U'[s] <- max_{a E A(s)} Q-VALUE(mdp, s, a, U)
+                if |U'[s] - U[s]| > d then d <- |U'[s] - U[s]|
+        until d <= e(1-g)/g
+        return U
+    \end{code}
+    \end{highlight}
+    
+    \subsubsection*{Policy Iteration}
+    
+    Policy iteration alternates between policy evaluation and policy improvement to find the optimal policy. It leverages the insight that even with an inaccurate utility function estimate, a good 
+    policy can be found if one action is consistently better than others.
+    
+    \begin{highlight}[Policy Iteration]
+    
+        \begin{itemize}
+            \item \textbf{Policy Evaluation}: Given a policy \(\pi\), calculate the utility of each state if \(\pi\) were executed. This step involves solving a set of linear equations.
+            \item \textbf{Policy Improvement}: Update the policy by selecting actions that maximize the expected utility based on the current utility estimates.
+            \item \textbf{Algorithm}: The algorithm iteratively evaluates and improves the policy until it converges to the optimal policy, ensuring that the utility function is a fixed point of the Bellman update.
+        \end{itemize}
+    
+    \begin{code}[Pseudo]
+    function POLICY-ITERATION(mdp) returns a policy
+        inputs: mdp, an MDP with states S, actions A(s), transition model P(s' |s,a)
+        local variables: U, a vector of utilities for states in S, initially zero
+                        p, a policy vector indexed by state, initially random
+        repeat
+            U <- POLICY-EVALUATION(p, U, mdp)
+            unchanged? <- true
+            for each state s in S do
+                a* <- argmax_{a E A(s)} Q-VALUE(mdp, s, a, U)
+                if Q-VALUE(mdp, s, a*, U) > Q-VALUE(mdp, s, p[s], U) then
+                    p[s] <- a*; unchanged? <- false
+        until unchanged?
+        return p
+    \end{code}
+
+    \end{highlight}
+
+    \subsubsection*{Linear Programming}
+    
+    Linear programming (LP) is a general approach for formulating and solving constrained optimization problems. In the context of MDPs, LP can be used to find the optimal utilities by expressing 
+    the Bellman equations as linear inequalities.
+    
+    \begin{highlight}[Linear Programming]
+    
+        \begin{itemize}
+            \item \textbf{Formulation}: The LP formulation involves minimizing the utilities \( U(s) \) for all states \( s \) subject to constraints derived from the Bellman equations.
+            \item \textbf{Optimization}: The resulting LP problem can be solved using standard LP solvers, which are well-studied and efficient for many applications.
+            \item \textbf{Complexity}: Although LP provides a polynomial-time solution, it is often less efficient than dynamic programming methods for large MDPs due to the high dimensionality of the state space.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Online Algorithms for MDPs}
+    
+    Online algorithms for MDPs, such as Monte Carlo planning, perform computation at each decision point rather than precomputing an entire policy. These algorithms are useful for large MDPs where 
+    offline computation is infeasible.
+    
+    \begin{highlight}[Online Algorithms for MDPs]
+    
+        \begin{itemize}
+            \item \textbf{Monte Carlo Planning}: Uses random sampling to estimate the value of actions by simulating many possible future scenarios and averaging the results.
+            \item \textbf{Expectimax Algorithm}: Builds a tree of alternating max and chance nodes to represent decision points and probabilistic outcomes, respectively.
+            \item \textbf{Real-Time Dynamic Programming (RTDP)}: Focuses on the most relevant parts of the state space by updating values based on the agent's current trajectory and immediate needs.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Value Iteration}: An iterative algorithm based on the Bellman equation, used to find optimal utilities and policies.
+            \item \textbf{Policy Iteration}: Alternates between policy evaluation and policy improvement to find the optimal policy.
+            \item \textbf{Linear Programming}: Formulates the Bellman equations as linear inequalities to solve for optimal utilities using LP solvers.
+            \item \textbf{Online Algorithms}: Include Monte Carlo planning and expectimax algorithms, which perform computation at each decision point for large MDPs.
+        \end{itemize}
+    
+    These algorithms provide a range of tools for solving MDPs, from exact offline methods to approximate online techniques, each suited to different types and sizes of problems.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week and from \textbf{Artificial Intelligence - A Modern Approach} is \textbf{Section 17.3: Bandit Problems}.
+
+\begin{notes}{Section 17.3: Bandit Problems}
+    \subsection*{Overview}
+
+    This section delves into bandit problems, a class of sequential decision problems where an agent must choose among multiple options, each with unknown and potentially different reward distributions. 
+    These problems exemplify the exploration-exploitation tradeoff, a fundamental challenge in decision-making under uncertainty. The term "bandit problem" originates from the analogy to slot machines 
+    (one-armed bandits) in a casino, where each lever represents an arm of the bandit. The goal is to maximize the cumulative reward over time by intelligently balancing exploration (trying new options) 
+    and exploitation (leveraging known rewarding options).
+    
+    \subsubsection*{Bandit Problems}
+    
+    Bandit problems serve as a simplified yet powerful model for various real-world scenarios where decisions must be made sequentially under uncertainty. The name "bandit problem" reflects the 
+    scenario where a gambler interacts with a slot machine, making a sequence of pulls (decisions) to maximize their total winnings.
+    
+    \begin{highlight}[Bandit Problems]
+    
+        \begin{itemize}
+            \item \textbf{Scenario}: The agent can pull one lever at a time, receiving a reward sampled from the lever's unknown distribution. The challenge is to balance exploration (trying new or 
+            less frequently used levers) with exploitation (using the lever known to give the highest reward so far).
+            \item \textbf{Applications}: Bandit problems model various real-world situations, such as clinical trials (choosing the best treatment), investment decisions (allocating resources to 
+            different assets), advertisement placement (selecting ads to show users), and research funding (distributing funds among projects).
+            \item \textbf{Historical Context}: During World War II, researchers struggled with bandit problems, highlighting their complexity and the counterintuitive nature of optimal strategies. 
+            Early attempts to solve these problems led to significant theoretical advancements and practical algorithms.
+            \item \textbf{Fundamental Tradeoff}: The exploration-exploitation tradeoff is central to bandit problems. Exploration involves trying new or less certain options to gain information, while 
+            exploitation leverages known information to maximize rewards. Balancing these two aspects is critical for long-term success.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Formulating Bandit Problems}
+    
+    Bandit problems can be formally framed using Markov reward processes (MRPs), where each arm represents an MRP with states, a transition model, and a reward function. The overall problem is modeled 
+    as a Markov decision process (MDP).
+    
+    \begin{highlight}[Formulating Bandit Problems]
+    
+        \begin{itemize}
+            \item \textbf{Markov Reward Process (MRP)}: Each arm \(M_i\) is an MRP with states \(S_i\), transition model \(P_i(s' | s, a_i)\), and reward \(R_i(s, a_i, s')\). An MRP models the dynamics 
+            of each arm, where actions lead to state transitions and generate rewards.
+            \item \textbf{State Space}: The state space of the overall bandit problem is the Cartesian product \(S = S_1 \times \cdots \times S_n\), representing all possible combinations of states for the arms.
+            \item \textbf{Actions and Transitions}: Actions correspond to selecting an arm to pull, and the transition model updates the state of the chosen arm while leaving others unchanged. This 
+            model captures the independence of arms.
+            \item \textbf{Discount Factor (\(\gamma\))}: The discount factor is used to compute the present value of future rewards, balancing immediate and long-term gains. A higher discount factor 
+            (\(\gamma\)) places more emphasis on future rewards, encouraging long-term planning.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Simple Deterministic Bandit Problem}
+    
+    Consider a simple bandit problem with two arms, each providing a sequence of rewards. This problem illustrates how switching between arms can yield higher cumulative rewards than sticking to a single arm.
+    
+    \begin{highlight}[Simple Deterministic Bandit Problem]
+    
+        \begin{itemize}
+            \item \textbf{Arms}: Arm \(M\) gives rewards [0, 2, 0, 7.2, 0, 0, ...] and arm \(M_1\) gives a constant reward of 1. The sequence of rewards highlights the variability and potential high 
+            payouts of arm \(M\) compared to the steady rewards of arm \(M_1\).
+            \item \textbf{Utilities}: The utility of an arm is the total discounted reward it generates. For arm \(M\):
+            \[
+            U(M) = 0 + 0.5 \times 2 + 0 + 0.5^3 \times 7.2 = 1.9
+            \]
+            For arm \(M_1\):
+            \[
+            U(M_1) = \sum_{t=0}^{\infty} 0.5^t = 2.0
+            \]
+            \item \textbf{Optimal Strategy}: Switching from \(M\) to \(M_1\) after the fourth pull yields a higher utility \(U(S) = 2.025\) than sticking with \(M_1\) or \(M\). This strategy leverages 
+            the high reward from arm \(M\) before switching to the steady rewards of \(M_1\).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Gittins Index}
+    
+    The Gittins index is a key concept for solving bandit problems. It provides a simple optimal policy: pull the arm with the highest Gittins index. This index balances the expected reward and the 
+    uncertainty associated with each arm.
+    
+    \begin{highlight}[Gittins Index]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: The Gittins index for an arm \(M\) in state \(s\) is the maximum value obtained by balancing the immediate reward with future discounted rewards. It quantifies 
+            the potential of an arm in terms of expected utility per unit of discounted time.
+            \item \textbf{Calculation}: 
+            \[
+            \lambda = \max_T \frac{E\left[\sum_{t=0}^{T-1} \gamma^t R_t\right]}{E\left[\sum_{t=0}^{T-1} \gamma^t\right]}
+            \]
+            This formula defines the Gittins index as the ratio of expected cumulative reward to expected discounted time over the best stopping time \(T\).
+            \item \textbf{Optimal Policy}: The optimal policy is to pull the arm with the highest Gittins index. This reduces the bandit problem to a series of decisions, each taking \(O(n)\) time 
+            initially and \(O(1)\) for subsequent decisions, as the indices of unselected arms remain unchanged.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Bernoulli Bandit}
+    
+    The Bernoulli bandit is a well-known variant where each arm produces a reward of 0 or 1 with a fixed but unknown probability. This variant illustrates the exploration-exploitation tradeoff clearly, 
+    with the agent needing to balance the uncertainty of rewards.
+    
+    \begin{highlight}[Bernoulli Bandit]
+    
+        \begin{itemize}
+            \item \textbf{States}: Defined by counts of successes \(s_i\) and failures \(f_i\) for each arm. These counts provide a statistical basis for estimating the probability of success for each arm.
+            \item \textbf{Transition Model}: The next reward is 1 with probability \(s_i/(s_i + f_i)\) and 0 with probability \(f_i/(s_i + f_i)\). This model uses Bayesian updating to refine the 
+            estimates of success probabilities as more samples are collected.
+            \item \textbf{Exploration Bonus}: Higher payoff probabilities are preferred, but arms tried fewer times have an exploration bonus to encourage sampling. This bonus accounts for the uncertainty 
+            in the reward estimates, promoting exploration of less certain arms.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Approximately Optimal Bandit Policies}
+    
+    In practice, exact calculation of the Gittins index can be complex, so approximate methods like the Upper Confidence Bound (UCB) and Thompson sampling are used. These methods provide efficient and 
+    practical solutions to bandit problems.
+    
+    \begin{highlight}[Approximately Optimal Bandit Policies]
+    
+        \begin{itemize}
+            \item \textbf{Upper Confidence Bound (UCB)}: Selects the arm with the highest upper confidence bound on its reward estimate. The UCB algorithm balances exploration and exploitation by 
+            considering both the mean reward and the uncertainty of the estimate.
+            \[
+            \text{UCB}(M_i) = \hat{\mu}_i + \frac{g(N)}{\sqrt{N_i}}
+            \]
+            where \(g(N)\) adjusts the exploration-exploitation balance. This formula captures the tradeoff by adding an exploration term to the estimated mean reward.
+            \item \textbf{Thompson Sampling}: Selects arms based on the probability distribution of their being optimal, given the samples so far. It involves sampling from the posterior distributions 
+            of the arms and choosing the arm with the highest sample.
+            \item \textbf{Regret Bounds}: Both UCB and Thompson sampling have regret bounds that grow logarithmically with the number of samples, making them efficient and practical. Regret measures 
+            the difference between the reward obtained by the algorithm and the reward that would have been obtained by an optimal policy.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Non-Indexable Variants}
+
+    Not all problems fit neatly into the bandit framework. Selection problems, where the goal is to choose the best option as quickly as possible, differ from bandit problems in their mathematical 
+    properties and optimal strategies.
+    
+    \begin{highlight}[Non-Indexable Variants]
+    
+        \begin{itemize}
+            \item \textbf{Selection Problems}: Focus on choosing the best option quickly rather than maximizing cumulative reward. Examples include hiring employees or selecting suppliers. These 
+            problems often require strategies that prioritize rapid identification of the best option rather than balancing ongoing rewards.
+            \item \textbf{Bandit Superprocess (BSP)}: A generalization where each arm is a full MDP. The optimal policy for BSPs may include actions that are locally suboptimal due to the interaction 
+            between arms. This generalization reflects more complex decision-making scenarios where each task or project has its own dynamics and reward structure.
+            \item \textbf{Opportunity Cost}: Measures the utility lost by not attending to other arms, influencing the strategy for multitasking problems. Opportunity cost considerations lead to 
+            strategies that optimize the overall allocation of attention across multiple tasks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Bandit Problems}: Involve making sequential decisions to balance exploration and exploitation among multiple options with unknown reward distributions. These problems model 
+            real-world decision-making under uncertainty.
+            \item \textbf{Formulating Bandit Problems}: Use MRPs and MDPs to model the state space, actions, and transitions of bandit problems. This formalization provides a structured approach to 
+            solving these problems.
+            \item \textbf{Gittins Index}: Provides a simple and efficient optimal policy for bandit problems by selecting the arm with the highest index. The Gittins index balances immediate and 
+            future rewards effectively.
+            \item \textbf{Bernoulli Bandit}: A variant where each arm yields binary rewards, highlighting the exploration-exploitation tradeoff. This model simplifies the analysis and solution of 
+            bandit problems.
+            \item \textbf{Approximate Policies}: Methods like UCB and Thompson sampling offer practical solutions with logarithmic regret bounds. These methods are computationally efficient and robust 
+            to uncertainties in reward estimates.
+            \item \textbf{Non-Indexable Variants}: Selection problems and BSPs require different approaches due to their unique properties and interactions. These variants reflect more complex and 
+            realistic decision-making scenarios.
+        \end{itemize}
+    
+    Understanding bandit problems and their solutions is crucial for making informed decisions in uncertain environments, balancing the need to gather information with the pursuit of immediate rewards. 
+    These concepts and methods form the foundation for advanced decision-making algorithms used in various applications, from finance and healthcare to online advertising and project management.
+    
+    \end{highlight}
+\end{notes}
+
+The first chapter that is being covered from \textbf{Reinforcement Learning - An Introduction} is \textbf{Chapter 3: Finite Markov Decision Processes}.
+
+\begin{notes}{Chapter 3: Finite Markov Decision Processes}
+    \subsection*{Overview}
+
+    This section introduces finite Markov Decision Processes (MDPs), a foundational concept in reinforcement learning. MDPs provide a formal framework for modeling decision-making where actions have 
+    long-term consequences. This framework includes states, actions, transition models, and rewards, and it is crucial for understanding how agents can learn to optimize their behavior over time.
+    
+    \subsubsection*{The Agent-Environment Interface}
+    
+    In an MDP, the agent interacts with the environment over discrete time steps. At each time step, the agent observes the current state, selects an action, receives a reward, and transitions to a 
+    new state. This interaction is governed by the dynamics of the environment, which are defined by transition probabilities and reward functions.
+    
+    \begin{highlight}[The Agent-Environment Interface]
+    
+        \begin{itemize}
+            \item \textbf{Agent and Environment}: The agent makes decisions and the environment responds to these decisions. The goal of the agent is to maximize cumulative rewards.
+            \item \textbf{States and Actions}: At each time step \(t\), the agent observes a state \(S_t\) and selects an action \(A_t\). The environment then transitions to a new state \(S_{t+1}\) 
+            and provides a reward \(R_{t+1}\).
+            \item \textbf{Trajectory}: The sequence of states, actions, and rewards forms a trajectory: \(S_0, A_0, R_1, S_1, A_1, R_2, \ldots\).
+            \item \textbf{Finite Sets}: In a finite MDP, the sets of states \(S\), actions \(A\), and rewards \(R\) are finite. The transition model \(p(s', r | s, a)\) defines the probability of 
+            transitioning to state \(s'\) and receiving reward \(r\) given the current state \(s\) and action \(a\).
+            \item \textbf{Markov Property}: The probability of transitioning to a new state depends only on the current state and action, not on previous states or actions. This is known as the Markov property.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Goals and Rewards}
+    
+    The agent's objective is to maximize the cumulative reward it receives over time. Rewards are numerical values that the environment provides in response to the agent's actions. The reward signal 
+    formalizes the goal of the agent and guides its behavior.
+    
+    \begin{highlight}[Goals and Rewards]
+    
+        \begin{itemize}
+            \item \textbf{Reward Signal}: At each time step, the agent receives a reward \(R_t\) from the environment. The agent's goal is to maximize the expected cumulative reward.
+            \item \textbf{Reward Hypothesis}: All goals can be expressed as the maximization of the expected value of the cumulative sum of rewards.
+            \item \textbf{Examples}: Rewards can be designed to encourage desired behaviors. For instance, a robot can receive rewards for moving forward, avoiding obstacles, or completing tasks.
+            \item \textbf{Designing Rewards}: It is crucial to design reward signals that accurately reflect the desired outcomes. Misaligned rewards can lead to unintended behaviors.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Returns and Episodes}
+    
+    The return is the cumulative reward the agent aims to maximize. Depending on the nature of the task, returns can be defined differently, such as over a finite horizon (episodic tasks) or an infinite 
+    horizon with discounting (continuing tasks).
+    
+    \begin{highlight}[Returns and Episodes]
+    
+        \begin{itemize}
+            \item \textbf{Return}: The return \(G_t\) is the total accumulated reward from time step \(t\) onwards. For episodic tasks, it is the sum of rewards until the end of an episode. For continuing 
+            tasks, it is often discounted to ensure finiteness.
+            \item \textbf{Episodic Tasks}: Tasks that naturally break into episodes, each ending in a terminal state. The return is the sum of rewards within an episode.
+            \item \textbf{Continuing Tasks}: Tasks with no natural end, modeled with discounting to keep the return finite. The return is a weighted sum of future rewards, \(G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}\), where \(0 \leq \gamma < 1\) is the discount factor.
+            \item \textbf{Discount Factor}: Determines the present value of future rewards. A higher discount factor makes the agent more farsighted.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Policies and Value Functions}
+    
+    A policy defines the agent's behavior, mapping states to actions. Value functions estimate the expected return from each state (or state-action pair) under a given policy.
+    
+    \begin{highlight}[Policies and Value Functions]
+    
+        \begin{itemize}
+            \item \textbf{Policy}: A policy \(\pi(a|s)\) is a mapping from states to probabilities of selecting each action. It defines the agent's behavior.
+            \item \textbf{State-Value Function}: The value function \(v_{\pi}(s)\) is the expected return starting from state \(s\) and following policy \(\pi\). It satisfies the Bellman equation:
+            \[
+            v_{\pi}(s) = \sum_{a} \pi(a|s) \sum_{s', r} p(s', r | s, a) \left[ r + \gamma v_{\pi}(s') \right]
+            \]
+            \item \textbf{Action-Value Function}: The action-value function \(q_{\pi}(s, a)\) is the expected return starting from state \(s\), taking action \(a\), and following policy \(\pi\). It 
+            also satisfies a Bellman equation:
+            \[
+            q_{\pi}(s, a) = \sum_{s', r} p(s', r | s, a) \left[ r + \gamma \sum_{a'} \pi(a'|s') q_{\pi}(s', a') \right]
+            \]
+            \item \textbf{Estimating Values}: Value functions can be estimated from experience by averaging observed returns or using more sophisticated methods like temporal-difference learning.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Optimal Policies and Value Functions}
+    
+    Optimal policies maximize the expected return from each state. The optimal state-value function \(v_*(s)\) and the optimal action-value function \(q_*(s, a)\) define the maximum expected returns.
+    
+    \begin{highlight}[Optimal Policies and Value Functions]
+    
+        \begin{itemize}
+            \item \textbf{Optimal Policy}: A policy \(\pi_*\) is optimal if it yields the highest expected return from each state compared to all other policies.
+            \item \textbf{Optimal State-Value Function}: The optimal state-value function \(v_*(s)\) is the maximum expected return achievable from state \(s\):
+            \[
+            v_*(s) = \max_{\pi} v_{\pi}(s)
+            \]
+            \item \textbf{Optimal Action-Value Function}: The optimal action-value function \(q_*(s, a)\) is the maximum expected return achievable from state \(s\) and action \(a\):
+            \[
+            q_*(s, a) = \max_{\pi} q_{\pi}(s, a)
+            \]
+            \item \textbf{Bellman Optimality Equations}: These equations define the relationships for optimal value functions:
+            \[
+            v_*(s) = \max_{a} \sum_{s', r} p(s', r | s, a) \left[ r + \gamma v_*(s') \right]
+            \]
+            \[
+            q_*(s, a) = \sum_{s', r} p(s', r | s, a) \left[ r + \gamma \max_{a'} q_*(s', a') \right]
+            \]
+            \item \textbf{Solving for Optimal Policies}: Optimal policies can be found by solving the Bellman optimality equations using dynamic programming methods like value iteration or policy iteration.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Summary of Key Concepts}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Finite MDPs}: Framework for sequential decision making with states, actions, transitions, and rewards.
+            \item \textbf{Agent-Environment Interaction}: Continuous interaction where the agent selects actions based on states and receives rewards.
+            \item \textbf{Goals and Rewards}: Agent aims to maximize cumulative rewards, defined through a reward signal.
+            \item \textbf{Returns and Episodes}: Cumulative rewards can be defined over finite or infinite horizons, with discounting for continuing tasks.
+            \item \textbf{Policies and Value Functions}: Policies map states to actions, and value functions estimate expected returns under a policy.
+            \item \textbf{Optimal Policies and Value Functions}: Optimal policies maximize expected returns, defined by Bellman optimality equations.
+        \end{itemize}
+    
+    Understanding finite MDPs and their components is fundamental to reinforcement learning. These concepts provide the foundation for developing algorithms that enable agents to learn optimal behaviors 
+    in uncertain environments.
+    
+    \end{highlight}
+\end{notes}
+
+The last chapter that is being covered from \textbf{Reinforcement Learning - An Introduction} is \textbf{Chapter 4: Dynamic Programming}.
+
+\begin{notes}{Chapter 4: Dynamic Programming}
+    \subsection*{Overview}
+
+    This section delves into Dynamic Programming (DP) methods, which are a collection of algorithms used to compute optimal policies given a perfect model of the environment as a Markov Decision Process 
+    (MDP). Despite their computational expense and assumption of a perfect model, DP methods are fundamental in theoretical reinforcement learning and provide a foundation for understanding other methods. 
+    DP assumes a finite MDP, making its principles applicable even to problems with continuous state and action spaces through approximation techniques.
+    
+    \subsubsection*{Policy Evaluation (Prediction)}
+    
+    Policy evaluation is the process of computing the state-value function \(v_\pi\) for a given policy \(\pi\). This function gives the expected return starting from a state \(s\) and following policy \(\pi\).
+    
+    \begin{highlight}[Policy Evaluation]
+    
+        \begin{itemize}
+            \item \textbf{State-Value Function}: For any state \(s\), the state-value function under policy \(\pi\) is defined as:
+            \[
+            v_\pi(s) = \mathbb{E}_\pi [G_t | S_t = s] = \mathbb{E}_\pi [R_{t+1} + \gamma v_\pi(S_{t+1}) | S_t = s]
+            \]
+            \item \textbf{Iterative Policy Evaluation}: Iterative methods update estimates of \(v_\pi\) using the Bellman equation:
+            \[
+            v_{k+1}(s) = \sum_a \pi(a|s) \sum_{s', r} p(s', r | s, a) \left[ r + \gamma v_k(s') \right]
+            \]
+            \item \textbf{Convergence}: The sequence \(\{v_k\}\) converges to \(v_\pi\) as \(k \to \infty\), assuming either \(\gamma < 1\) or eventual termination.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Policy Improvement}
+    
+    Policy improvement involves using the state-value function \(v_\pi\) to derive a better policy \(\pi'\) that is greedy with respect to \(v_\pi\).
+    
+    \begin{highlight}[Policy Improvement]
+    
+        \begin{itemize}
+            \item \textbf{Improvement Step}: Given a policy \(\pi\), a new policy \(\pi'\) is derived by:
+            \[
+            \pi'(s) = \arg\max_a \mathbb{E}[R_{t+1} + \gamma v_\pi(S_{t+1}) | S_t = s, A_t = a]
+            \]
+            \item \textbf{Policy Improvement Theorem}: If \(\pi'\) is derived from \(\pi\) using the above step, then \(\pi'\) is at least as good as \(\pi\).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Policy Iteration}
+    
+    Policy iteration involves alternating between policy evaluation and policy improvement until convergence to an optimal policy.
+    
+    \begin{highlight}[Policy Iteration]
+    
+        \begin{itemize}
+            \item \textbf{Steps}:
+                \begin{enumerate}
+                    \item \textbf{Policy Evaluation}: Compute \(v_\pi\) for the current policy \(\pi\).
+                    \item \textbf{Policy Improvement}: Derive a new policy \(\pi'\) that is greedy with respect to \(v_\pi\).
+                \end{enumerate}
+            \item \textbf{Convergence}: This process guarantees convergence to an optimal policy \(\pi^*\) and optimal value function \(v^*\).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Value Iteration}
+    
+    Value iteration combines policy evaluation and improvement into a single step, iteratively updating the value function until convergence.
+    
+    \begin{highlight}[Value Iteration]
+    
+        \begin{itemize}
+            \item \textbf{Update Rule}: The value function is updated using:
+            \[
+            v_{k+1}(s) = \max_a \sum_{s', r} p(s', r | s, a) \left[ r + \gamma v_k(s') \right]
+            \]
+            \item \textbf{Convergence}: The sequence \(\{v_k\}\) converges to \(v^*\), the optimal value function.
+            \item \textbf{Optimal Policy}: The optimal policy \(\pi^*\) is derived from \(v^*\) by selecting actions that maximize the expected return.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Asynchronous Dynamic Programming}
+    
+    Asynchronous DP methods update the value of states in any order, allowing flexibility and potentially faster convergence, especially in large state spaces.
+    
+    \begin{highlight}[Asynchronous Dynamic Programming]
+    
+        \begin{itemize}
+            \item \textbf{Flexibility}: States can be updated in any sequence, even stochastically.
+            \item \textbf{Convergence}: As long as each state is updated infinitely often, the value function converges to \(v^*\).
+            \item \textbf{Efficiency}: Particularly useful for large state spaces where sweeping through all states is impractical.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Generalized Policy Iteration (GPI)}
+    
+    GPI describes the interaction between policy evaluation and policy improvement processes, irrespective of their granularity. Both processes work together to find an optimal policy and value function.
+    
+    \begin{highlight}[Generalized Policy Iteration]
+    
+        \begin{itemize}
+            \item \textbf{Interaction}: Policy evaluation and policy improvement processes interact, with each process providing feedback to the other.
+            \item \textbf{Convergence}: The interaction typically converges to the optimal policy and value function.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Efficiency of Dynamic Programming}
+    
+    DP methods are efficient for solving MDPs with polynomial time complexity in the number of states and actions, making them exponentially faster than direct policy search methods.
+    
+    \begin{highlight}[Efficiency of Dynamic Programming]
+    
+        \begin{itemize}
+            \item \textbf{Computational Complexity}: DP methods are polynomial in time with respect to the number of states and actions.
+            \item \textbf{Comparison}: DP methods are exponentially faster than direct policy search and more practical than linear programming for large MDPs.
+            \item \textbf{Asynchronous Methods}: These methods are preferable for very large state spaces due to their flexible updating schemes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Dynamic Programming (DP)}: A set of algorithms for computing optimal policies in MDPs with a perfect model of the environment.
+            \item \textbf{Policy Evaluation}: Computes the state-value function for a given policy.
+            \item \textbf{Policy Improvement}: Derives a better policy from the state-value function.
+            \item \textbf{Policy Iteration}: Alternates between policy evaluation and policy improvement until convergence.
+            \item \textbf{Value Iteration}: Combines policy evaluation and improvement in a single iterative update.
+            \item \textbf{Asynchronous DP}: Updates states in any order, useful for large state spaces.
+            \item \textbf{Generalized Policy Iteration (GPI)}: Describes the interaction between evaluation and improvement processes leading to optimal policies.
+            \item \textbf{Efficiency}: DP methods are polynomial in time and efficient for large MDPs, especially when using asynchronous methods.
+        \end{itemize}
+    
+        Understanding these concepts is crucial for developing efficient algorithms in reinforcement learning, providing a foundation for solving MDPs and finding optimal policies.
+    
+    \end{highlight}
+\end{notes}

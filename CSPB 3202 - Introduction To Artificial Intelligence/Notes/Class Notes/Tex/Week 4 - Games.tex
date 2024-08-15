@@ -1,0 +1,605 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Games}
+\renewcommand{\SectionTitle}{Games}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 5.1 - Game Theory}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 5.2 - Optimal Decisions In Games}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 5.3 - Heuristic Alpha-Beta Tree Search}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 5.4 - Monte Carlo Tree Search}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 5.5 - Partially Observable Games}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=XvGNnxQ4jkM}{Advesarial Search Intro, Minimax Algorith}{27}
+    \item \lecture{https://www.youtube.com/watch?v=vOFAPSts6Hk}{Improving Minimax: Alpha-Beta Pruning And Depth-Limited Approach}{22}
+    \item \lecture{https://www.youtube.com/watch?v=ZQIYTRwjl9g}{Expectimax Search}{28}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Advesarial Search Intro, Minimax Algorith Lecture Notes.pdf}{Advesarial Search Intro, Minimax Algorith Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Expectimax Search Lecture Notes.pdf}{Expectimax Search Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Improving Minimax - Alpha-Beta Pruning And Depth-Limited Approach Lecture Notes.pdf}{Improving Minimax - Alpha-Beta Pruning And Depth-Limited Approach Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for this week are:
+
+\begin{itemize}
+    \item \pdflink{\AssDir/Assignment 4 - Games/Assignment 4 - Games.pdf}{Assignment 4 - Games}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir/Quiz 4 - Games.pdf}{Quiz 4 - Games}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 5: Adversarial Search And Games}. The first section that is being covered from this chapter this week is \textbf{Section 5.1: Game Theory}.
+
+\begin{notes}{Section 5.1: Game Theory}
+    \subsection*{Overview}
+
+    Key topics include two-player zero-sum games, game trees, minimax search, and heuristic evaluation functions. These concepts are crucial for understanding how to model and solve competitive environments 
+    where agents have conflicting goals.
+    
+    \subsubsection*{Two-Player Zero-Sum Games}
+    
+    Two-player zero-sum games are a fundamental concept in game theory where two players take turns making moves, and one player's gain is the other player's loss. Examples include chess, Go, and tic-tac-toe.
+    
+    \begin{highlight}[Two-Player Zero-Sum Games]
+        In two-player zero-sum games, each player's goal is to maximize their own payoff while minimizing their opponent's payoff.
+        
+        \begin{itemize}
+            \item \textbf{Perfect Information}: Both players have complete knowledge of the game state at all times.
+            \item \textbf{Zero-Sum}: The total payoff to all players is zero, meaning one player's gain is exactly the other player's loss.
+            \item \textbf{Game Representation}: The game can be represented using states, actions, results, terminal tests, and utility functions.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Game Trees}
+    
+    A game tree is a theoretical construct that represents all possible moves in a game, starting from the initial state and expanding through all possible sequences of moves to terminal states.
+    
+    \begin{highlight}[Game Trees]
+        Game trees illustrate the decision-making process in adversarial games by representing all possible game states and actions.
+        
+        \begin{itemize}
+            \item \textbf{Initial State}: The configuration of the game at the beginning.
+            \item \textbf{Actions}: The set of legal moves available to the player whose turn it is to move.
+            \item \textbf{Result}: The state resulting from a specific action taken in a given state.
+            \item \textbf{Terminal Test}: A condition that determines whether the game has ended.
+            \item \textbf{Utility Function}: A function that assigns a numeric value to each terminal state, indicating the payoff for the players.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Minimax Search}
+    
+    Minimax search is an algorithm used to determine the optimal strategy in two-player zero-sum games by assuming both players play optimally. It recursively evaluates the minimax value of each state in the game tree.
+    
+    \begin{highlight}[Minimax Search]
+        Minimax search computes the best move by evaluating the minimax values of states, assuming optimal play by both players.
+        
+        \begin{itemize}
+            \item \textbf{Minimax Value}: The utility of a state assuming both players play optimally.
+            \item \textbf{MAX Player}: Seeks to maximize the minimax value.
+            \item \textbf{MIN Player}: Seeks to minimize the minimax value.
+            \item \textbf{Ply}: One level of moves by each player.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Heuristic Evaluation Functions}
+    
+    Heuristic evaluation functions estimate the value of a game state when the game tree is too large to be fully explored. These functions approximate the minimax value based on features of the state.
+    
+    \begin{highlight}[Heuristic Evaluation Functions]
+        Heuristic evaluation functions provide an estimate of the game state's value, allowing for effective decision-making without exhaustive search.
+        
+        \begin{itemize}
+            \item \textbf{State Features}: Characteristics of the game state used to compute the heuristic value.
+            \item \textbf{Approximation}: Provides an estimate of the true minimax value.
+            \item \textbf{Efficiency}: Enables decision-making in complex games where full search is impractical.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to game theory and adversarial search, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Two-Player Zero-Sum Games}
+                \begin{itemize}
+                    \item \textbf{Perfect Information}: Complete knowledge of the game state.
+                    \item \textbf{Zero-Sum}: One player's gain is the other player's loss.
+                    \item \textbf{Game Representation}: States, actions, results, terminal tests, and utility functions.
+                \end{itemize}
+            \item \textbf{Game Trees}
+                \begin{itemize}
+                    \item \textbf{Initial State}: Configuration at the game's start.
+                    \item \textbf{Actions}: Legal moves available to players.
+                    \item \textbf{Result}: Outcome of a specific action.
+                    \item \textbf{Terminal Test}: Determines if the game has ended.
+                    \item \textbf{Utility Function}: Numeric value assigned to terminal states.
+                \end{itemize}
+            \item \textbf{Minimax Search}
+                \begin{itemize}
+                    \item \textbf{Minimax Value}: Utility assuming optimal play.
+                    \item \textbf{MAX Player}: Maximizes the minimax value.
+                    \item \textbf{MIN Player}: Minimizes the minimax value.
+                    \item \textbf{Ply}: One level of moves by each player.
+                \end{itemize}
+            \item \textbf{Heuristic Evaluation Functions}
+                \begin{itemize}
+                    \item \textbf{State Features}: Characteristics used to compute heuristic value.
+                    \item \textbf{Approximation}: Estimate of the true minimax value.
+                    \item \textbf{Efficiency}: Facilitates decision-making in complex games.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 5.2: Optimal Decisions In Games}.
+
+\begin{notes}{Section 5.2: Optimal Decisions In Games}    
+    \subsection*{Overview}
+    
+    Key topics include the minimax search algorithm, alpha-beta pruning, and optimal decisions in multiplayer games. These concepts are crucial for understanding how to model and solve competitive 
+    environments where agents have conflicting goals.
+    
+    \subsubsection*{Minimax Search Algorithm}
+    
+    The minimax search algorithm is used to determine the optimal strategy in two-player zero-sum games by assuming both players play optimally. It evaluates the minimax value of each state in the game tree.
+    
+    \begin{highlight}[Minimax Search Algorithm]
+        Minimax search computes the best move by evaluating the minimax values of states, assuming optimal play by both players.
+        
+        \begin{itemize}
+            \item \textbf{Minimax Value}: The utility of a state assuming both players play optimally.
+            \item \textbf{MAX Player}: Seeks to maximize the minimax value.
+            \item \textbf{MIN Player}: Seeks to minimize the minimax value.
+            \item \textbf{Ply}: One level of moves by each player.
+            \item \textbf{Algorithm}: Recursively explores the game tree and backs up values to determine the optimal move.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Alpha-Beta Pruning}
+    
+    Alpha-beta pruning is a technique used to improve the efficiency of the minimax algorithm by eliminating branches in the game tree that do not influence the final decision.
+    
+    \begin{highlight}[Alpha-Beta Pruning]
+        Alpha-beta pruning reduces the number of nodes evaluated in the game tree by pruning branches that cannot affect the final decision.
+        
+        \begin{itemize}
+            \item \textbf{Pruning Condition}: Stops evaluation of a move when at least one possibility has been found that proves the move to be worse than a previously examined move.
+            \item \textbf{Alpha Value}: The best value that the maximizer currently can guarantee at that level or above.
+            \item \textbf{Beta Value}: The best value that the minimizer currently can guarantee at that level or above.
+            \item \textbf{Efficiency}: Reduces the effective branching factor, allowing deeper search in the same amount of time.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Optimal Decisions in Multiplayer Games}
+    
+    Extending the minimax approach to multiplayer games involves considering a vector of utilities for each player and recognizing that optimal strategies may involve forming and breaking alliances.
+    
+    \begin{highlight}[Optimal Decisions in Multiplayer Games]
+        Multiplayer games require a more complex strategy as they involve multiple agents with potentially conflicting goals.
+        
+        \begin{itemize}
+            \item \textbf{Utility Vector}: Represents the utility of a state for each player.
+            \item \textbf{Alliances}: Players may form alliances to improve their individual outcomes, although these alliances may be temporary.
+            \item \textbf{Non-Zero-Sum}: In non-zero-sum games, collaboration can occur to achieve mutually beneficial outcomes.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Move Ordering}
+    
+    The effectiveness of alpha-beta pruning is highly dependent on the order in which nodes are examined. Good move ordering can significantly enhance the performance of the search.
+    
+    \begin{highlight}[Move Ordering]
+        Effective move ordering improves the performance of alpha-beta pruning by exploring the most promising moves first.
+        
+        \begin{itemize}
+            \item \textbf{Killer Moves}: Moves that have been successful in the past are tried first.
+            \item \textbf{Dynamic Ordering}: Uses iterative deepening to refine move ordering based on earlier searches.
+            \item \textbf{Transposition Tables}: Cache heuristic values of previously evaluated states to avoid redundant calculations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to making optimal decisions in games, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Minimax Search Algorithm}
+                \begin{itemize}
+                    \item \textbf{Minimax Value}: Utility assuming optimal play.
+                    \item \textbf{MAX Player}: Maximizes the minimax value.
+                    \item \textbf{MIN Player}: Minimizes the minimax value.
+                    \item \textbf{Ply}: One level of moves by each player.
+                    \item \textbf{Algorithm}: Recursively explores the game tree.
+                \end{itemize}
+            \item \textbf{Alpha-Beta Pruning}
+                \begin{itemize}
+                    \item \textbf{Pruning Condition}: Stops evaluation when a move is proven worse.
+                    \item \textbf{Alpha Value}: Best value maximizer can guarantee.
+                    \item \textbf{Beta Value}: Best value minimizer can guarantee.
+                    \item \textbf{Efficiency}: Reduces effective branching factor.
+                \end{itemize}
+            \item \textbf{Optimal Decisions in Multiplayer Games}
+                \begin{itemize}
+                    \item \textbf{Utility Vector}: Represents utility for each player.
+                    \item \textbf{Alliances}: Temporary partnerships to improve outcomes.
+                    \item \textbf{Non-Zero-Sum}: Collaboration for mutual benefit.
+                \end{itemize}
+            \item \textbf{Move Ordering}
+                \begin{itemize}
+                    \item \textbf{Killer Moves}: Successful moves tried first.
+                    \item \textbf{Dynamic Ordering}: Refines move order through iterative deepening.
+                    \item \textbf{Transposition Tables}: Cache heuristic values to avoid redundant calculations.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 5.3: Heuristic Alpha-Beta Tree Search}.
+
+\begin{notes}{Section 5.3: Heuristic Alpha-Beta Tree Search}    
+    \subsection*{Overview}
+    
+    Key topics include heuristic evaluation functions, cutting off search, quiescence search, the horizon effect, forward pruning, and the use of lookup tables. These concepts are crucial for optimizing 
+    search strategies in complex games and making efficient use of computational resources.
+    
+    \subsubsection*{Heuristic Evaluation Functions}
+    
+    Heuristic evaluation functions estimate the utility of a game state when the search tree is too large to fully explore. These functions approximate the minimax value based on features of the state.
+    
+    \begin{highlight}[Heuristic Evaluation Functions]
+        Heuristic evaluation functions provide an estimate of a game state's value, allowing effective decision-making without exhaustive search.
+        
+        \begin{itemize}
+            \item \textbf{EVAL Function}: Replaces the UTILITY function for nonterminal nodes.
+            \item \textbf{Features}: State characteristics (e.g., number of pawns, knights) used to compute the evaluation.
+            \item \textbf{Weighted Linear Function}: Combines feature values with weights to estimate utility.
+            \item \textbf{Correlation}: Should be strongly correlated with the actual chances of winning.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Cutting Off Search}
+    
+    Cutting off search involves stopping the search at a certain depth or when a certain condition is met, and applying the heuristic evaluation function to estimate the state's value.
+    
+    \begin{highlight}[Cutting Off Search]
+        The search is cut off early to save computation time, and the evaluation function is applied to nonterminal states.
+        
+        \begin{itemize}
+            \item \textbf{Cutoff Test}: Determines when to stop the search based on depth or state properties.
+            \item \textbf{Fixed Depth Limit}: A simple approach to control search amount by setting a maximum depth.
+            \item \textbf{Iterative Deepening}: Searches incrementally deeper until time runs out, using results to improve move ordering.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Quiescence Search}
+    
+    Quiescence search continues the search until a stable position (quiescent) is reached, avoiding misleading evaluations due to volatile positions.
+    
+    \begin{highlight}[Quiescence Search]
+        Quiescence search extends the search to stable positions, avoiding drastic evaluation changes due to immediate threats or opportunities.
+        
+        \begin{itemize}
+            \item \textbf{Quiescent Positions}: Stable states where no dramatic changes in evaluation are expected.
+            \item \textbf{Extra Search}: Searches beyond the cutoff for non-quiescent positions to resolve uncertainties.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Horizon Effect}
+    
+    The horizon effect occurs when a program cannot see beyond a certain depth, causing it to miss future significant events or threats.
+    
+    \begin{highlight}[Horizon Effect]
+        The horizon effect arises when the search is unable to see beyond a certain depth, leading to inaccurate evaluations.
+        
+        \begin{itemize}
+            \item \textbf{Delaying Tactics}: Moves that postpone the inevitable, pushing significant events beyond the search horizon.
+            \item \textbf{Singular Extensions}: Extending search for clearly superior moves to mitigate the horizon effect.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Forward Pruning}
+    
+    Forward pruning selectively prunes moves that appear to be poor, saving computation time at the risk of missing the best move.
+    
+    \begin{highlight}[Forward Pruning]
+        Forward pruning saves computation time by pruning moves that are unlikely to be good, at the risk of making errors.
+        
+        \begin{itemize}
+            \item \textbf{Beam Search}: Considers only a "beam" of the best moves at each ply.
+            \item \textbf{PROBCUT}: Prunes moves that are probably outside the current window based on statistical estimates.
+            \item \textbf{Late Move Reduction}: Reduces the search depth for moves considered less promising.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Search vs. Lookup}
+    
+    Using table lookup for well-known positions in the opening and endgame stages can significantly enhance performance by relying on precomputed solutions.
+    
+    \begin{highlight}[Search vs. Lookup]
+        Table lookup is used for known positions, especially in the opening and endgame stages, to enhance performance.
+        
+        \begin{itemize}
+            \item \textbf{Opening Books}: Precomputed sequences of optimal moves in the opening stage.
+            \item \textbf{Endgame Tables}: Complete solutions for endgames, allowing perfect play by looking up the best move.
+            \item \textbf{Retrograde Minimax Search}: Constructs endgame tables by reversing the rules to determine winning moves.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to heuristic alpha-beta tree search, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Heuristic Evaluation Functions}
+                \begin{itemize}
+                    \item \textbf{EVAL Function}: Estimates utility for nonterminal nodes.
+                    \item \textbf{Features}: State characteristics used in evaluation.
+                    \item \textbf{Weighted Linear Function}: Combines feature values with weights.
+                    \item \textbf{Correlation}: Should align with actual chances of winning.
+                \end{itemize}
+            \item \textbf{Cutting Off Search}
+                \begin{itemize}
+                    \item \textbf{Cutoff Test}: Decides when to stop search.
+                    \item \textbf{Fixed Depth Limit}: Simple approach to control search depth.
+                    \item \textbf{Iterative Deepening}: Incremental search for better move ordering.
+                \end{itemize}
+            \item \textbf{Quiescence Search}
+                \begin{itemize}
+                    \item \textbf{Quiescent Positions}: Stable states for reliable evaluation.
+                    \item \textbf{Extra Search}: Extends search to avoid volatile evaluations.
+                \end{itemize}
+            \item \textbf{Horizon Effect}
+                \begin{itemize}
+                    \item \textbf{Delaying Tactics}: Postponing significant events.
+                    \item \textbf{Singular Extensions}: Extends search for superior moves.
+                \end{itemize}
+            \item \textbf{Forward Pruning}
+                \begin{itemize}
+                    \item \textbf{Beam Search}: Considers top moves at each ply.
+                    \item \textbf{PROBCUT}: Uses statistics to prune unlikely moves.
+                    \item \textbf{Late Move Reduction}: Reduces depth for less promising moves.
+                \end{itemize}
+            \item \textbf{Search vs. Lookup}
+                \begin{itemize}
+                    \item \textbf{Opening Books}: Precomputed opening sequences.
+                    \item \textbf{Endgame Tables}: Perfect play solutions for endgames.
+                    \item \textbf{Retrograde Minimax Search}: Constructs endgame tables by reversing rules.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 5.4: Monte Carlo Tree Search}.
+
+\begin{notes}{Section 5.4: Monte Carlo Tree Search}
+    \subsection*{Overview}
+
+    Key topics include the basics of Monte Carlo Tree Search (MCTS), the selection, expansion, simulation, and back-propagation steps, upper confidence bounds applied to trees (UCT), and the comparison 
+    of MCTS with alpha-beta search. These concepts are essential for understanding how MCTS can be used to make decisions in complex games with high branching factors and uncertain evaluation functions.
+    
+    \subsubsection*{Basics of Monte Carlo Tree Search (MCTS)}
+    
+    Monte Carlo Tree Search (MCTS) is a strategy that estimates the value of a state by averaging the results of numerous simulated games played from that state to termination.
+    
+    \begin{highlight}[Basics of Monte Carlo Tree Search (MCTS)]
+        MCTS estimates state values through simulations, providing a robust method for decision-making in complex games.
+        
+        \begin{itemize}
+            \item \textbf{Simulation}: Runs complete games from a given state to terminal positions, using random or biased moves.
+            \item \textbf{Average Utility}: The state value is estimated by the average utility (win percentage) from simulations.
+            \item \textbf{Playout Policy}: Guides move selection during simulations to improve accuracy.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Selection, Expansion, Simulation, and Back-Propagation}
+    
+    MCTS involves four main steps: selection, expansion, simulation, and back-propagation. These steps iteratively build the search tree and update the estimated values.
+    
+    \begin{highlight}[Selection, Expansion, Simulation, and Back-Propagation]
+        The four steps of MCTS iteratively build the search tree and refine state value estimates.
+        
+        \begin{itemize}
+            \item \textbf{Selection}: Navigates the tree from the root to a leaf node, guided by a selection policy.
+            \item \textbf{Expansion}: Adds new child nodes to the tree from the selected node.
+            \item \textbf{Simulation}: Runs a playout from the newly added node to a terminal state.
+            \item \textbf{Back-Propagation}: Updates the values of nodes along the path from the new node to the root.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Upper Confidence Bounds Applied to Trees (UCT)}
+    
+    UCT is a popular selection policy for MCTS that balances exploration and exploitation using a mathematical formula.
+    
+    \begin{highlight}[Upper Confidence Bounds Applied to Trees (UCT)]
+        UCT guides the selection step in MCTS by balancing the need to explore new moves and exploit known good moves.
+        
+        \begin{itemize}
+            \item \textbf{Exploitation Term}: \( \frac{U(n)}{N(n)} \) represents the average utility of node \( n \).
+            \item \textbf{Exploration Term}: \( C \times \sqrt{\frac{\log N(\text{PARENT}(n))}{N(n)}} \) encourages exploring less-visited nodes.
+            \item \textbf{Balancing Constant \( C \)}: Adjusts the balance between exploration and exploitation.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Comparison with Alpha-Beta Search}
+    
+    MCTS and alpha-beta search have different strengths and weaknesses, particularly in games with high branching factors and complex evaluation functions.
+    
+    \begin{highlight}[Comparison with Alpha-Beta Search]
+        MCTS and alpha-beta search each have advantages depending on the game's characteristics and evaluation function accuracy.
+        
+        \begin{itemize}
+            \item \textbf{Branching Factor}: MCTS handles high branching factors better than alpha-beta search.
+            \item \textbf{Evaluation Function}: MCTS does not rely on an accurate heuristic evaluation function.
+            \item \textbf{Robustness}: MCTS is less susceptible to single-point evaluation errors.
+            \item \textbf{Hybrid Approaches}: Combining aspects of MCTS and alpha-beta can leverage the strengths of both.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to Monte Carlo Tree Search, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Basics of Monte Carlo Tree Search (MCTS)}
+                \begin{itemize}
+                    \item \textbf{Simulation}: Runs complete games to terminal positions.
+                    \item \textbf{Average Utility}: State value estimated by simulation results.
+                    \item \textbf{Playout Policy}: Guides move selection during simulations.
+                \end{itemize}
+            \item \textbf{Selection, Expansion, Simulation, and Back-Propagation}
+                \begin{itemize}
+                    \item \textbf{Selection}: Navigates the tree to a leaf node.
+                    \item \textbf{Expansion}: Adds new child nodes.
+                    \item \textbf{Simulation}: Runs a playout to a terminal state.
+                    \item \textbf{Back-Propagation}: Updates node values along the path.
+                \end{itemize}
+            \item \textbf{Upper Confidence Bounds Applied to Trees (UCT)}
+                \begin{itemize}
+                    \item \textbf{Exploitation Term}: Represents average utility.
+                    \item \textbf{Exploration Term}: Encourages exploring less-visited nodes.
+                    \item \textbf{Balancing Constant \( C \)}: Adjusts exploration-exploitation balance.
+                \end{itemize}
+            \item \textbf{Comparison with Alpha-Beta Search}
+                \begin{itemize}
+                    \item \textbf{Branching Factor}: MCTS handles high branching factors well.
+                    \item \textbf{Evaluation Function}: MCTS does not rely on heuristic evaluation.
+                    \item \textbf{Robustness}: Less susceptible to single-point errors.
+                    \item \textbf{Hybrid Approaches}: Combines MCTS and alpha-beta strengths.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 5.5: Partially Observable Games}.
+
+\begin{notes}{Section 5.5: Partially Observable Games}
+    \subsection*{Overview}
+
+    Key topics include the nature of partially observable games, the example of Kriegspiel (partially observable chess), belief states, and strategies for handling partial observability in games. These 
+    concepts are essential for understanding how to model and solve games where players have limited information about the game state.
+    
+    \subsubsection*{Nature of Partially Observable Games}
+    
+    Partially observable games are characterized by the players' incomplete information about the game state, leading to uncertainty and the need for strategies that account for this lack of information.
+    
+    \begin{highlight}[Nature of Partially Observable Games]
+        Partially observable games involve uncertainty due to players' incomplete information about the game state, requiring strategies that manage this uncertainty.
+        
+        \begin{itemize}
+            \item \textbf{Partial Observability}: Players do not have full information about the game state.
+            \item \textbf{Information Gathering}: Use of scouts and spies to gather information about the opponent's state.
+            \item \textbf{Concealment and Bluffing}: Techniques to hide information and mislead the opponent.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Kriegspiel: Partially Observable Chess}
+    
+    Kriegspiel is a variant of chess where each player can only see their own pieces. A referee, who sees all pieces, adjudicates the game and provides limited information to the players.
+    
+    \begin{highlight}[Kriegspiel: Partially Observable Chess]
+        Kriegspiel is a partially observable variant of chess where players only see their own pieces, and a referee provides limited information about the opponent's moves.
+        
+        \begin{itemize}
+            \item \textbf{Referee Announcements}: The referee announces information such as captures and checks.
+            \item \textbf{Move Proposals}: Players propose moves to the referee, who indicates if the move is legal or not.
+            \item \textbf{Information Gained}: Players gain information about the opponent's pieces based on the legality of proposed moves.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Belief States}
+    
+    In partially observable games, belief states represent the set of all possible configurations of the game state that are consistent with the player's observations and actions so far.
+    
+    \begin{highlight}[Belief States]
+        Belief states encapsulate all possible game states that are consistent with the player's observations and actions, allowing for decision-making under uncertainty.
+        
+        \begin{itemize}
+            \item \textbf{Initial Belief State}: The starting point, often a single known state.
+            \item \textbf{Update Mechanism}: Belief states are updated based on new observations and actions.
+            \item \textbf{Representation}: Belief states can be represented as a set or a probability distribution over possible states.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Strategies for Partial Observability}
+    
+    Strategies in partially observable games must account for the uncertainty and use information-gathering techniques to improve decision-making.
+    
+    \begin{highlight}[Strategies for Partial Observability]
+        Effective strategies in partially observable games focus on managing uncertainty and gathering information to improve decision-making.
+        
+        \begin{itemize}
+            \item \textbf{Information Gathering}: Actively seeking information about the opponent's state through probing actions.
+            \item \textbf{Conservative Play}: Avoiding high-risk moves that rely on uncertain information.
+            \item \textbf{Belief State Management}: Continuously updating and refining belief states based on new information.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Concepts}
+    
+    \begin{highlight}[Key Concepts]
+        This section summarizes the key concepts related to partially observable games, emphasizing their definitions, properties, and applications in AI.
+        
+        \begin{itemize}
+            \item \textbf{Nature of Partially Observable Games}
+                \begin{itemize}
+                    \item \textbf{Partial Observability}: Incomplete information about the game state.
+                    \item \textbf{Information Gathering}: Use of scouts and spies.
+                    \item \textbf{Concealment and Bluffing}: Techniques to mislead the opponent.
+                \end{itemize}
+            \item \textbf{Kriegspiel: Partially Observable Chess}
+                \begin{itemize}
+                    \item \textbf{Referee Announcements}: Provides limited information about moves.
+                    \item \textbf{Move Proposals}: Players propose moves to the referee.
+                    \item \textbf{Information Gained}: Based on the legality of proposed moves.
+                \end{itemize}
+            \item \textbf{Belief States}
+                \begin{itemize}
+                    \item \textbf{Initial Belief State}: Starting point of known states.
+                    \item \textbf{Update Mechanism}: Updating beliefs with new observations.
+                    \item \textbf{Representation}: Set or probability distribution of states.
+                \end{itemize}
+            \item \textbf{Strategies for Partial Observability}
+                \begin{itemize}
+                    \item \textbf{Information Gathering}: Probing actions to gather information.
+                    \item \textbf{Conservative Play}: Avoiding risky moves.
+                    \item \textbf{Belief State Management}: Refining beliefs with new information.
+                \end{itemize}
+        \end{itemize}
+    \end{highlight}
+\end{notes}

@@ -1,0 +1,3 @@
+The output from the astar\_search and uniform\_cost search should have the same paths as one another. The difference between the two should lie in how many nodes are expanded for each.
+
+In the astar search, there should be less nodes that are expanded (and this is true in the previous example) and for uniform cost search there should be more (and there is in the previous example).

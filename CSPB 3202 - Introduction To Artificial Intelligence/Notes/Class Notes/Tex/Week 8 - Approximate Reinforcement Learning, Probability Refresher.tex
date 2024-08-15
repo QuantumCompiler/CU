@@ -1,0 +1,851 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Approximate Reinforcement Learning, Probability Refresher}
+\renewcommand{\SectionTitle}{Approximate Reinforcement Learning, Probability Refresher}
+
+\chapter{\ChapTitle}
+
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week is from, \AITextbook \hspace*{1pt} and \RLTextbook.
+
+\begin{itemize}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 12.1 - Acting Under Uncertainty}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 12.2 - Basic Probability Notation}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 12.3 - Interference Using Full Joint Distributions}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 12.4 - Independence}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 12.5 - Bayes' Rule And Its Use}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 12.6 - Naive Bayes Models}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 12.7 - The Wumpus World Revisited}
+    \item \textbf{Artificial Intelligence - A Modern Approach - Chapter 22.4 - Generalization In Reinforcement Learning}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post at least \textbf{three} times this week to Piazza.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=ljnVJCowWJg}{Approximate Reinforcement Learning}{73}
+    \item \lecture{https://www.youtube.com/watch?v=ayGGK5TcoqY}{Probabilistic Reasoning 1 - Probability Review}{69}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir/Notes/Approximate Reinforcement Learning Lecture Notes.pdf}{Approximate Reinforcement Learning Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Approximate Reinforcement Learning Review Lecture Notes.pdf}{Approximate Reinforcement Learning Review Lecture Notes}
+    \item \pdflink{\LecNoteDir/Notes/Probabilistic Reasoning 1 - Probability Review Lecture Notes.pdf}{Probabilistic Reasoning 1 - Probability Review Lecture Notes}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 8 - Approximate Reinforcement Learning And Probability.pdf}{Quiz 8 - Approximate Reinforcement Learning, Probability Refresher}
+\end{itemize}
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 12: Quantifying Uncertainty}. The first section that is being covered from this chapter this week is \textbf{Section 12.1: Acting Under Uncertainty}.
+
+\begin{notes}{Section 12.1: Acting Under Uncertainty}
+    \subsection*{Overview}
+
+    This section explores how agents can act rationally under uncertainty. It highlights the challenges agents face when dealing with incomplete information, unpredictable environments, and the need 
+    for decision-making under such conditions. The section emphasizes the importance of quantifying uncertainty to enable rational decision-making.
+    
+    \subsubsection*{Uncertainty in Agent Actions}
+    
+    Agents in real-world environments must handle uncertainty caused by factors such as partial observability, nondeterminism, and adversaries. Traditional logical approaches, which rely on belief 
+    states and contingency plans, are often inadequate for dealing with such uncertainty.
+    
+    \begin{highlight}[Uncertainty in Agent Actions]
+    
+        \begin{itemize}
+            \item \textbf{Belief State}: Represents all possible states the agent might be in, given its knowledge and sensor data.
+            \item \textbf{Contingency Planning}: Generating plans that handle every possible outcome can be inefficient and infeasible.
+            \item \textbf{Example}: An automated taxi planning to reach the airport must consider various uncertainties such as traffic, breakdowns, and accidents.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Summarizing Uncertainty}
+    
+    The logical approach to handling uncertainty, such as using propositional logic for diagnosis, often fails due to practical limitations. Agents need a way to represent and reason with degrees of 
+    belief instead of relying solely on logic.
+    
+    \begin{highlight}[Summarizing Uncertainty]
+    
+        \begin{itemize}
+            \item \textbf{Degree of Belief}: Representing uncertainty using numeric values (probabilities) rather than binary true/false logic.
+            \item \textbf{Example}: Diagnosing a toothache might involve multiple possible causes, each with a certain probability.
+            \item \textbf{Challenges}: Laziness (incomplete rules), theoretical ignorance (lack of complete knowledge), and practical ignorance (incomplete tests).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Uncertainty and Rational Decisions}
+    
+    Making rational decisions under uncertainty involves considering both the likelihood of various outcomes and their relative importance. Utility theory is introduced to represent preferences and 
+    make quantitative decisions based on expected utility.
+    
+    \begin{highlight}[Uncertainty and Rational Decisions]
+    
+        \begin{itemize}
+            \item \textbf{Utility Theory}: Assigns a utility value to each possible outcome, representing the agent's preferences.
+            \item \textbf{Decision Theory}: Combines probability theory and utility theory to make rational decisions that maximize expected utility.
+            \item \textbf{Example}: Choosing between different plans to get to the airport, considering trade-offs between the likelihood of success and the cost (e.g., waiting time).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Agent Architecture for Decision Making}
+    
+    The section concludes with an outline of a decision-theoretic agent architecture, which maintains probabilistic beliefs about the state of the world and selects actions that maximize expected utility.
+    
+    \begin{highlight}[Agent Architecture for Decision Making]
+    
+        \begin{itemize}
+            \item \textbf{Belief State}: Updated based on actions and perceptions.
+            \item \textbf{Outcome Probabilities}: Calculated for potential actions.
+            \item \textbf{Action Selection}: Chooses the action with the highest expected utility.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Belief State}: A representation of all possible states an agent might be in.
+            \item \textbf{Degree of Belief}: Using probabilities to represent uncertainty.
+            \item \textbf{Utility Theory}: Quantifying preferences to guide decision-making.
+            \item \textbf{Decision Theory}: Combining probability and utility to make rational decisions.
+            \item \textbf{Agent Architecture}: A framework for decision-theoretic agents to act under uncertainty.
+        \end{itemize}
+    
+        Understanding these concepts is crucial for developing agents that can operate effectively in uncertain environments, balancing the need for accurate beliefs with practical decision-making.
+    
+    \end{highlight}
+\end{notes}
+
+The next section from this chapter that is being covered this week is \textbf{Section 12.2: Basic Probability Notation}.
+
+\begin{notes}{Section 12.2: Basic Probability Notation}
+    \subsection*{Overview}
+
+    This section introduces the basic probability notation necessary for understanding and working with uncertainty in artificial intelligence. It covers foundational concepts such as random variables, 
+    probability distributions, and key axioms and properties of probability theory. This notation forms the basis for more advanced probabilistic reasoning techniques.
+    
+    \subsubsection*{Random Variables}
+    
+    Random variables are used to represent uncertain quantities in a probabilistic framework. They can take on a range of possible values, each associated with a probability.
+    
+    \begin{highlight}[Random Variables]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: A random variable $X$ is a function that assigns a real number to each outcome in a sample space.
+            \item \textbf{Example}: In a coin toss, the random variable $X$ could represent the outcome, with $X = 1$ for heads and $X = 0$ for tails.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Probability Distributions}
+    
+    Probability distributions describe how probabilities are assigned to the values of random variables. They can be defined for both discrete and continuous variables.
+    
+    \begin{highlight}[Probability Distributions]
+    
+        \begin{itemize}
+            \item \textbf{Discrete Random Variables}: The probability distribution is specified by a probability mass function $P(X = x)$, which gives the probability that $X$ takes on the value $x$.
+            \item \textbf{Example}: For a fair die roll, $P(X = x) = \frac{1}{6}$ for $x \in \{1, 2, 3, 4, 5, 6\}$.
+            \item \textbf{Continuous Random Variables}: The probability distribution is specified by a probability density function $f_X(x)$, where the probability that $X$ falls within an interval $[a, b]$ is given by:
+            \[
+            P(a \leq X \leq b) = \int_a^b f_X(x) \, dx
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Axioms of Probability}
+    
+    The axioms of probability form the foundation of probability theory, providing the rules for how probabilities are assigned and manipulated.
+    
+    \begin{highlight}[Axioms of Probability]
+    
+        \begin{itemize}
+            \item \textbf{Non-negativity}: For any event $A$, $P(A) \geq 0$.
+            \item \textbf{Normalization}: The probability of the sample space $\Omega$ is 1, $P(\Omega) = 1$.
+            \item \textbf{Additivity}: For any two mutually exclusive events $A$ and $B$,
+            \[
+            P(A \cup B) = P(A) + P(B)
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Conditional Probability}
+    
+    Conditional probability quantifies the probability of one event given that another event has occurred. It is a key concept for reasoning about dependencies between events.
+    
+    \begin{highlight}[Conditional Probability]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: The conditional probability of $A$ given $B$ is defined as:
+            \[
+            P(A | B) = \frac{P(A \cap B)}{P(B)} \quad \text{for } P(B) > 0
+            \]
+            \item \textbf{Example}: If $A$ is the event of drawing an ace from a deck of cards and $B$ is the event of drawing a spade, then:
+            \[
+            P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{\frac{1}{52}}{\frac{13}{52}} = \frac{1}{13}
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Independence}
+    
+    Two events are independent if the occurrence of one does not affect the probability of the other. Independence simplifies the computation of joint probabilities.
+    
+    \begin{highlight}[Independence]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: Events $A$ and $B$ are independent if:
+            \[
+            P(A \cap B) = P(A)P(B)
+            \]
+            \item \textbf{Example}: Rolling two fair dice, the outcome of one die does not affect the outcome of the other.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Random Variables}: Represent uncertain quantities, taking on various values with associated probabilities.
+            \item \textbf{Probability Distributions}: Describe how probabilities are assigned to random variables, through probability mass functions for discrete variables and density functions for 
+            continuous variables.
+            \item \textbf{Axioms of Probability}: The foundational rules for probability, including non-negativity, normalization, and additivity.
+            \item \textbf{Conditional Probability}: The probability of an event given that another event has occurred, quantifying dependencies.
+            \item \textbf{Independence}: Events that do not affect each other's probabilities, simplifying joint probability computations.
+        \end{itemize}
+    
+        Understanding these basic probability notations is essential for modeling and reasoning about uncertainty in intelligent systems, forming the basis for more advanced probabilistic methods and 
+        algorithms.
+    
+    \end{highlight}
+\end{notes}
+
+The next section from this chapter that is being covered this week is \textbf{Section 12.3: Interference Using Full Joint Distributions}.
+
+\begin{notes}{Section 12.3: Interference Using Full Joint Distributions}
+    \subsection*{Overview}
+
+    This section delves into inference using full joint probability distributions, which provide a comprehensive way to represent the probabilities of all possible combinations of variable values in a 
+    domain. The full joint distribution serves as the foundation for deriving probabilities of interest through marginalization and conditioning.
+    
+    \subsubsection*{Full Joint Probability Distributions}
+    
+    A full joint probability distribution specifies the probability of every possible combination of values for a set of random variables. It is fundamental to probabilistic reasoning but often impractical 
+    to use directly due to its size.
+    
+    \begin{highlight}[Full Joint Probability Distributions]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: For a set of random variables $X_1, X_2, \ldots, X_n$, the full joint probability distribution $P(X_1, X_2, \ldots, X_n)$ assigns a probability to each possible 
+            combination of values $(x_1, x_2, \ldots, x_n)$.
+            \item \textbf{Example}: In a domain with two binary variables, $Rain$ and $Sprinkler$, the full joint distribution $P(Rain, Sprinkler)$ includes probabilities for all four combinations of 
+            true/false values.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Marginalization}
+    
+    Marginalization involves summing the probabilities of the full joint distribution over the values of one or more variables to obtain the marginal probability of a subset of variables.
+    
+    \begin{highlight}[Marginalization]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: The marginal probability $P(X)$ of a variable $X$ is obtained by summing over the probabilities of all other variables:
+            \[
+            P(X) = \sum_{Y} P(X, Y)
+            \]
+            \item \textbf{Example}: To find $P(Rain)$ from the joint distribution $P(Rain, Sprinkler)$, sum over all values of $Sprinkler$:
+            \[
+            P(Rain = true) = P(Rain = true, Sprinkler = true) + P(Rain = true, Sprinkler = false)
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Conditional Probability and Independence}
+    
+    Conditional probabilities can be derived from the full joint distribution using the definition of conditional probability. Independence assumptions simplify the joint distribution by reducing the number 
+    of probabilities that must be specified.
+    
+    \begin{highlight}[Conditional Probability and Independence]
+    
+        \begin{itemize}
+            \item \textbf{Conditional Probability}: The conditional probability $P(X | Y)$ is derived from the joint distribution:
+            \[
+            P(X | Y) = \frac{P(X, Y)}{P(Y)}
+            \]
+            \item \textbf{Independence}: Two variables $X$ and $Y$ are independent if:
+            \[
+            P(X, Y) = P(X)P(Y)
+            \]
+            Independence allows for simplifying the joint distribution into the product of marginal probabilities.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Inference by Enumeration}
+    
+    Inference by enumeration involves computing desired probabilities by summing over the appropriate entries in the full joint distribution. This method, while straightforward, can be computationally 
+    expensive for large domains.
+    
+    \begin{highlight}[Inference by Enumeration]
+    
+        \begin{itemize}
+            \item \textbf{Process}: To compute $P(X)$, sum over all entries in the joint distribution that are consistent with $X$:
+            \[
+            P(X) = \sum_{y_1, y_2, \ldots, y_n} P(X, Y_1 = y_1, Y_2 = y_2, \ldots, Y_n = y_n)
+            \]
+            \item \textbf{Example}: To compute $P(Rain | Sprinkler = true)$, sum over all values of $Rain$ and $Sprinkler$ consistent with $Sprinkler = true$:
+            \begin{align*}
+                P(Rain | Sprinkler = true) & = \frac{P(Rain = true, Sprinkler = true)}{P(Sprinkler = true)} \\
+                & = \frac{P(Rain = true, Sprinkler = true)}{P(Rain = true, Sprinkler = true) + P(Rain = false, Sprinkler = true)}
+            \end{align*}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Full Joint Probability Distributions}: Represent the probabilities of all possible combinations of variable values.
+            \item \textbf{Marginalization}: Summing over the joint distribution to obtain marginal probabilities.
+            \item \textbf{Conditional Probability}: Deriving conditional probabilities from the joint distribution.
+            \item \textbf{Independence}: Simplifying joint distributions using independence assumptions.
+            \item \textbf{Inference by Enumeration}: Computing probabilities by summing entries in the joint distribution, though computationally expensive for large domains.
+        \end{itemize}
+    
+        Understanding full joint distributions and their manipulations is essential for probabilistic reasoning, forming the basis for more sophisticated inference methods in uncertain environments.
+    
+    \end{highlight}
+\end{notes}
+
+The next section from this chapter that is being covered this week is \textbf{Section 12.4: Independence}.
+
+\begin{notes}{Section 12.4: Independence}
+    \subsection*{Overview}
+
+    This section discusses the concept of independence, which plays a crucial role in simplifying probabilistic models. Independence between variables allows for more efficient representation and 
+    computation by reducing the complexity of joint probability distributions.
+    
+    \subsubsection*{Types of Independence}
+    
+    There are different types of independence that can be leveraged in probabilistic models: absolute (marginal) independence and conditional independence.
+    
+    \begin{highlight}[Types of Independence]
+    
+        \begin{itemize}
+            \item \textbf{Absolute (Marginal) Independence}: Two variables $X$ and $Y$ are absolutely independent if:
+            \[
+            P(X, Y) = P(X)P(Y)
+            \]
+            This implies that knowing the value of one variable provides no information about the other.
+            \item \textbf{Conditional Independence}: Two variables $X$ and $Y$ are conditionally independent given a third variable $Z$ if:
+            \[
+            P(X, Y | Z) = P(X | Z)P(Y | Z)
+            \]
+            This implies that given $Z$, knowing $X$ provides no additional information about $Y$ and vice versa.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Benefits of Independence}
+    
+    Independence assumptions simplify the specification and computation of joint probability distributions, making it feasible to handle large and complex probabilistic models.
+    
+    \begin{highlight}[Benefits of Independence]
+    
+        \begin{itemize}
+            \item \textbf{Simplification}: Independence reduces the number of parameters needed to specify a joint distribution. For $n$ variables, the full joint distribution requires $2^n$ parameters, 
+            but with independence assumptions, this number can be significantly reduced.
+            \item \textbf{Efficient Computation}: Independence allows for decomposing joint probability distributions into products of smaller, marginal or conditional distributions, enabling more efficient 
+            computation.
+            \item \textbf{Example}: In a medical diagnosis model, symptoms might be conditionally independent given the disease. This reduces the complexity of the model and makes inference more tractable.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Graphical Models and Independence}
+    
+    Graphical models, such as Bayesian networks, leverage independence assumptions to represent complex joint distributions compactly and efficiently.
+    
+    \begin{highlight}[Graphical Models and Independence]
+    
+        \begin{itemize}
+            \item \textbf{Bayesian Networks}: Use directed acyclic graphs (DAGs) to represent variables and their conditional dependencies. Each node represents a variable, and edges represent direct 
+            dependencies.
+            \item \textbf{Markov Assumptions}: Each variable is conditionally independent of its non-descendants given its parents in the network.
+            \item \textbf{Example}: In a Bayesian network for a medical diagnosis, nodes might represent diseases and symptoms, with edges indicating which symptoms are directly influenced by which diseases.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Absolute (Marginal) Independence}: Simplifies joint distributions by assuming no direct influence between variables.
+            \item \textbf{Conditional Independence}: Further simplifies models by assuming independence given some other variables.
+            \item \textbf{Benefits of Independence}: Reduces the number of parameters and computational complexity in probabilistic models.
+            \item \textbf{Graphical Models}: Leverage independence assumptions to efficiently represent and compute joint distributions.
+        \end{itemize}
+    
+        Understanding and utilizing independence is crucial for building scalable and efficient probabilistic models, enabling more effective reasoning under uncertainty.
+    
+    \end{highlight}
+\end{notes}
+
+The next section from this chapter that is being covered this week is \textbf{Section 12.5: Bayes' Rule And Its Use}.
+
+\begin{notes}{Section 12.5: Bayes' Rule And Its Use}
+    \subsection*{Overview}
+
+    This section introduces Bayes' Rule, a fundamental theorem in probability theory that allows for updating probabilities based on new evidence. Bayes' Rule is crucial for probabilistic reasoning and 
+    is extensively used in various AI applications, such as diagnostics, decision-making, and machine learning.
+    
+    \subsubsection*{Bayes' Rule}
+    
+    Bayes' Rule provides a way to update the probability of a hypothesis $H$ given new evidence $E$. It relates the posterior probability $P(H | E)$ to the prior probability $P(H)$, the likelihood 
+    $P(E | H)$, and the marginal likelihood $P(E)$.
+    
+    \begin{highlight}[Bayes' Rule]
+    
+        \begin{itemize}
+            \item \textbf{Formula}: Bayes' Rule is expressed as:
+            \[
+            P(H | E) = \frac{P(E | H) P(H)}{P(E)}
+            \]
+            where:
+            \begin{itemize}
+                \item $P(H | E)$ is the posterior probability of the hypothesis $H$ given evidence $E$.
+                \item $P(E | H)$ is the likelihood of the evidence $E$ given that the hypothesis $H$ is true.
+                \item $P(H)$ is the prior probability of the hypothesis $H$.
+                \item $P(E)$ is the marginal likelihood of the evidence $E$, calculated as:
+                \[
+                P(E) = \sum_{i} P(E | H_i) P(H_i)
+                \]
+                summing over all possible hypotheses.
+            \end{itemize}
+            \item \textbf{Example}: For medical diagnosis, let $H$ be a disease and $E$ be a symptom. Bayes' Rule updates the probability of the disease given the symptom.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications of Bayes' Rule}
+    
+    Bayes' Rule is applied in numerous fields within AI, providing a systematic way to update beliefs and make decisions based on evidence.
+    
+    \begin{highlight}[Applications of Bayes' Rule]
+    
+        \begin{itemize}
+            \item \textbf{Medical Diagnosis}: Updating the probability of a disease based on observed symptoms and test results.
+            \item \textbf{Spam Filtering}: Classifying emails as spam or not spam based on the presence of certain words.
+            \item \textbf{Machine Learning}: Bayesian inference methods use Bayes' Rule for updating model parameters based on data.
+            \item \textbf{Robotics}: Updating the robot's belief about its location based on sensor readings.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Deriving Bayes' Rule}
+    
+    Bayes' Rule can be derived from the definition of conditional probability and the product rule of probability.
+    
+    \begin{highlight}[Deriving Bayes' Rule]
+    
+        \begin{itemize}
+            \item \textbf{Conditional Probability}: The definition of conditional probability is:
+            \[
+            P(H | E) = \frac{P(H \cap E)}{P(E)} \quad \text{and} \quad P(E | H) = \frac{P(H \cap E)}{P(H)}
+            \]
+            \item \textbf{Product Rule}: Rearranging the product rule gives:
+            \[
+            P(H \cap E) = P(E | H) P(H) = P(H | E) P(E)
+            \]
+            \item \textbf{Bayes' Rule}: Solving for $P(H | E)$ gives:
+            \[
+            P(H | E) = \frac{P(E | H) P(H)}{P(E)}
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Normalization}
+    
+    The denominator $P(E)$ in Bayes' Rule ensures that the posterior probabilities sum to 1, making it a normalization factor.
+    
+    \begin{highlight}[Normalization]
+    
+        \begin{itemize}
+            \item \textbf{Calculating $P(E)$}: The marginal likelihood $P(E)$ is computed by summing the joint probabilities over all hypotheses:
+            \[
+            P(E) = \sum_{i} P(E | H_i) P(H_i)
+            \]
+            \item \textbf{Normalization Factor}: Ensures that the posterior probabilities are properly scaled:
+            \[
+            P(H | E) = \frac{P(E | H) P(H)}{\sum_{i} P(E | H_i) P(H_i)}
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Bayes' Rule}: Provides a method for updating probabilities based on new evidence.
+            \item \textbf{Formula}: $P(H | E) = \frac{P(E | H) P(H)}{P(E)}$.
+            \item \textbf{Applications}: Used in medical diagnosis, spam filtering, machine learning, and robotics.
+            \item \textbf{Derivation}: Derived from the definition of conditional probability and the product rule.
+            \item \textbf{Normalization}: Ensures that posterior probabilities sum to 1, calculated using the marginal likelihood.
+        \end{itemize}
+    
+        Understanding Bayes' Rule is essential for probabilistic reasoning and decision-making in uncertain environments, enabling systematic updates to beliefs based on observed evidence.
+    
+    \end{highlight}
+\end{notes}
+
+The next section from this chapter that is being covered this week is \textbf{Section 12.6: Naive Bayes Models}.
+
+\begin{notes}{Section 12.6: Naive Bayes Models}
+    \subsection*{Overview}
+
+    This section introduces Naive Bayes models, a simple yet powerful probabilistic classifier based on Bayes' Rule. The "naive" assumption is that features are conditionally independent given the class label. 
+    Despite this simplification, Naive Bayes models perform well in various real-world applications, particularly in text classification and spam filtering.
+    
+    \subsubsection*{The Naive Bayes Assumption}
+    
+    The Naive Bayes assumption simplifies the computation of the joint probability of the features given the class by assuming conditional independence among the features.
+    
+    \begin{highlight}[The Naive Bayes Assumption]
+    
+        \begin{itemize}
+            \item \textbf{Conditional Independence}: Given a class $C$, the features $X_1, X_2, \ldots, X_n$ are conditionally independent:
+            \[
+            P(X_1, X_2, \ldots, X_n | C) = \prod_{i=1}^n P(X_i | C)
+            \]
+            \item \textbf{Simplification}: This assumption reduces the complexity of calculating the joint probability from exponential to linear in the number of features.
+            \item \textbf{Example}: In spam filtering, words in an email are considered independent given the email is spam or not spam.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Classification with Naive Bayes}
+    
+    Naive Bayes classifiers use Bayes' Rule and the Naive Bayes assumption to compute the posterior probability of each class given the observed features and to classify new instances.
+    
+    \begin{highlight}[Classification with Naive Bayes]
+    
+        \begin{itemize}
+            \item \textbf{Posterior Probability}: For a given instance with features $X_1, X_2, \ldots, X_n$, the posterior probability of class $C_k$ is:
+            \[
+            P(C_k | X_1, X_2, \ldots, X_n) = \frac{P(C_k) \prod_{i=1}^n P(X_i | C_k)}{P(X_1, X_2, \ldots, X_n)}
+            \]
+            \item \textbf{Classification Rule}: The instance is classified into the class with the highest posterior probability:
+            \[
+            \hat{C} = \arg\max_{C_k} P(C_k) \prod_{i=1}^n P(X_i | C_k)
+            \]
+            \item \textbf{Example}: In spam filtering, classify an email as spam if $P(\text{spam} | \text{words}) > P(\text{not spam} | \text{words})$.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Parameter Estimation}
+    
+    The parameters of a Naive Bayes model, namely the prior probabilities of the classes and the conditional probabilities of the features given the classes, can be estimated from training data.
+    
+    \begin{highlight}[Parameter Estimation]
+    
+        \begin{itemize}
+            \item \textbf{Class Priors}: Estimated as the relative frequencies of the classes in the training set:
+            \[
+            P(C_k) = \frac{N(C_k)}{N}
+            \]
+            where $N(C_k)$ is the number of instances of class $C_k$ and $N$ is the total number of instances.
+            \item \textbf{Conditional Probabilities}: Estimated as the relative frequencies of the feature values given the class:
+            \[
+            P(X_i = x_i | C_k) = \frac{N(X_i = x_i, C_k)}{N(C_k)}
+            \]
+            where $N(X_i = x_i, C_k)$ is the number of instances where feature $X_i$ takes value $x_i$ in class $C_k$.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Applications of Naive Bayes}
+    
+    Naive Bayes models are widely used in various domains due to their simplicity, efficiency, and effectiveness in classification tasks.
+    
+    \begin{highlight}[Applications of Naive Bayes]
+    
+        \begin{itemize}
+            \item \textbf{Text Classification}: Categorizing documents or emails into predefined categories based on word frequencies.
+            \item \textbf{Spam Filtering}: Classifying emails as spam or not spam using the presence of certain keywords.
+            \item \textbf{Sentiment Analysis}: Determining the sentiment of a text (positive, negative, neutral) based on word usage.
+            \item \textbf{Medical Diagnosis}: Diagnosing diseases based on symptoms and patient history.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Naive Bayes Assumption}: Features are conditionally independent given the class.
+            \item \textbf{Classification}: Uses Bayes' Rule to compute posterior probabilities and classify instances into the most probable class.
+            \item \textbf{Parameter Estimation}: Class priors and conditional probabilities are estimated from training data.
+            \item \textbf{Applications}: Widely used in text classification, spam filtering, sentiment analysis, and medical diagnosis.
+        \end{itemize}
+    
+        Understanding Naive Bayes models provides a foundation for applying probabilistic reasoning to practical classification problems, leveraging simplicity and efficiency to achieve effective results.
+    
+    \end{highlight}
+\end{notes}
+
+The last section from this chapter that is being covered this week is \textbf{Section 12.7: The Wumpus World Revisited}.
+
+\begin{notes}{Section 12.7: The Wumpus World Revisited}
+    \subsection*{Overview}
+
+    This section revisits the Wumpus World, a classic AI problem, to illustrate how probabilistic reasoning can be applied to complex, uncertain environments. The Wumpus World is a grid-based environment 
+    where an agent must navigate to find gold while avoiding pits and the Wumpus, a dangerous creature. This section demonstrates how to use probability to handle the inherent uncertainty in the Wumpus World.
+    
+    \subsubsection*{The Wumpus World Environment}
+    
+    The Wumpus World consists of a grid of squares, some of which contain pits, and one contains the Wumpus. The agent must find the gold without falling into a pit or encountering the Wumpus.
+    
+    \begin{highlight}[The Wumpus World Environment]
+    
+        \begin{itemize}
+            \item \textbf{Grid Layout}: The environment is a 4x4 grid with each square potentially containing a pit, the Wumpus, or being empty.
+            \item \textbf{Percepts}: The agent receives percepts indicating nearby dangers:
+                \begin{itemize}
+                    \item \textbf{Breeze}: Indicates a pit in an adjacent square.
+                    \item \textbf{Stench}: Indicates the Wumpus is in an adjacent square.
+                    \item \textbf{Glitter}: Indicates the gold is in the current square.
+                \end{itemize}
+            \item \textbf{Actions}: The agent can move forward, turn left, turn right, grab the gold, or shoot an arrow to kill the Wumpus.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Using Probabilities in the Wumpus World}
+    
+    Probabilistic reasoning is used to handle the uncertainty in the agent's knowledge about the Wumpus World's state, helping the agent to make informed decisions.
+    
+    \begin{highlight}[Using Probabilities in the Wumpus World]
+    
+        \begin{itemize}
+            \item \textbf{Belief State}: Represents the agent's knowledge about the environment, updated using Bayesian inference based on percepts.
+            \item \textbf{Probability Distribution}: The agent maintains a probability distribution over possible states of the world, reflecting the likelihood of pits, the Wumpus, and the gold being 
+            in each square.
+            \item \textbf{Example}: If the agent perceives a breeze, it updates the probability of pits in adjacent squares.
+            \item \textbf{Update Rule}: Bayes' Rule is used to update the belief state:
+            \[
+            P(X | E) = \frac{P(E | X) P(X)}{P(E)}
+            \]
+            where $X$ represents the state of the world and $E$ represents the percepts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Inference and Decision Making}
+    
+    The agent uses its probabilistic model to infer the most likely state of the world and make decisions that maximize its chances of success.
+    
+    \begin{highlight}[Inference and Decision Making]
+    
+        \begin{itemize}
+            \item \textbf{Risk Assessment}: The agent assesses the risks associated with different actions by considering the probabilities of encountering pits or the Wumpus.
+            \item \textbf{Action Selection}: Actions are chosen to maximize expected utility, considering both the likelihood of success and potential dangers.
+            \item \textbf{Example}: If the agent perceives a stench but no breeze, it might infer that moving into a square with a high probability of containing the Wumpus is too risky and choose an 
+            alternative path.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Performance in the Wumpus World}
+    
+    The probabilistic approach allows the agent to make more informed decisions, improving its performance in navigating the Wumpus World.
+    
+    \begin{highlight}[Performance in the Wumpus World]
+    
+        \begin{itemize}
+            \item \textbf{Improved Decision Making}: The agent uses probabilities to evaluate the safety and potential rewards of different actions, leading to better overall performance.
+            \item \textbf{Flexibility}: The probabilistic model can handle new percepts and update the belief state dynamically, allowing the agent to adapt to changing information.
+            \item \textbf{Example}: The agent successfully finds the gold while avoiding pits and the Wumpus by continually updating its belief state and making decisions based on the most likely scenarios.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Wumpus World Environment}: A grid-based environment with pits, the Wumpus, and gold.
+            \item \textbf{Probabilistic Reasoning}: Using probabilities to handle uncertainty and update the belief state based on percepts.
+            \item \textbf{Inference and Decision Making}: Making decisions that maximize expected utility by assessing risks and updating beliefs.
+            \item \textbf{Performance}: Improved decision-making and flexibility in adapting to new information.
+        \end{itemize}
+    
+        Revisiting the Wumpus World with probabilistic reasoning highlights the power of probability in handling uncertainty and making rational decisions in complex environments.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 22: Reinforcement Learning}. The section that is being covered from this chapter this week is \textbf{Section 22.4: Generalization In Reinforcement Learning}.
+
+\begin{notes}{Section 22.4: Generalization In Reinforcement Learning}
+    \subsection*{Overview}
+
+    This section addresses generalization in reinforcement learning, highlighting the limitations of tabular representations of utility and Q-functions in large state spaces. It introduces function 
+    approximation techniques, which allow reinforcement learning algorithms to generalize from observed states to unvisited states, thereby improving learning efficiency and performance in complex environments.
+    
+    \subsubsection*{Function Approximation}
+    
+    Function approximation methods construct compact representations of utility or Q-functions, enabling efficient learning in large state spaces. This is essential for practical applications where the 
+    number of states is vast.
+    
+    \begin{highlight}[Function Approximation]
+    
+        \begin{itemize}
+            \item \textbf{Utility Function Approximation}: Approximates the utility function $U(s)$ using a parameterized function $\hat{U}_\theta(s)$, such as a weighted linear combination of features:
+            \[
+            \hat{U}_\theta(s) = \theta_0 + \theta_1 f_1(s) + \theta_2 f_2(s) + \ldots + \theta_n f_n(s)
+            \]
+            \item \textbf{Example}: In a 4x3 grid world, the utility function can be approximated using features like the coordinates of the grid squares.
+            \item \textbf{Gradient Descent}: Parameters $\theta$ are updated using gradient descent to minimize the error between the predicted and actual utilities.
+            \item \textbf{Widrow-Hoff Rule}: Also known as the delta rule, used for online least-squares updates:
+            \[
+            \theta_i \leftarrow \theta_i + \alpha [u_j(s) - \hat{U}_\theta(s)] \frac{\partial \hat{U}_\theta(s)}{\partial \theta_i}
+            \]
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Approximating Direct Utility Estimation}
+    
+    Direct utility estimation generates trajectories and uses the sum of rewards as training examples for supervised learning algorithms, enabling approximation of utility functions for large state spaces.
+    
+    \begin{highlight}[Approximating Direct Utility Estimation]
+    
+        \begin{itemize}
+            \item \textbf{Linear Function Approximator}: Uses features such as coordinates in a grid world to approximate utility:
+            \[
+            \hat{U}_\theta(x, y) = \theta_0 + \theta_1 x + \theta_2 y
+            \]
+            \item \textbf{Online Learning}: Parameters are updated after each trial based on observed rewards, using gradient descent to reduce prediction error.
+            \item \textbf{Example}: If the total reward obtained from state $(1,1)$ is 0.4 and the current utility estimate is 0.8, the parameters are adjusted to reduce the utility estimate.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Approximating Temporal-Difference Learning}
+    
+    Temporal-Difference (TD) learning methods can also be adapted to use function approximation, adjusting parameters to minimize temporal differences between successive states.
+    
+    \begin{highlight}[Approximating Temporal-Difference Learning]
+    
+        \begin{itemize}
+            \item \textbf{TD Learning Update Rule}: Parameters are updated to reduce the temporal difference:
+            \[
+            \theta_i \leftarrow \theta_i + \alpha [R(s, a, s') + \gamma \hat{U}_\theta(s') - \hat{U}_\theta(s)] \frac{\partial \hat{U}_\theta(s)}{\partial \theta_i}
+            \]
+            \item \textbf{Q-learning Update Rule}: Similar update rule for Q-learning with function approximation:
+            \[
+            \theta_i \leftarrow \theta_i + \alpha [R(s, a, s') + \gamma \max_{a'} \hat{Q}_\theta(s', a') - \hat{Q}_\theta(s, a)] \frac{\partial \hat{Q}_\theta(s, a)}{\partial \theta_i}
+            \]
+            \item \textbf{Challenges}: With nonlinear function approximators like neural networks, parameters may diverge, leading to instability.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Experience Replay}
+    
+    Experience replay addresses catastrophic forgetting, where the agent may forget important experiences as it learns, by reusing past experiences to reinforce learning.
+    
+    \begin{highlight}[Experience Replay]
+    
+        \begin{itemize}
+            \item \textbf{Mechanism}: The agent stores trajectories and periodically replays them to ensure the value function remains accurate for all visited states.
+            \item \textbf{Benefit}: Prevents the agent from forgetting important past experiences and maintains stability in learning.
+            \item \textbf{Example}: A self-driving car replays experiences where it narrowly avoided obstacles to reinforce safe driving behaviors.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Deep Reinforcement Learning}
+    
+    Deep reinforcement learning combines deep neural networks with reinforcement learning algorithms to handle high-dimensional state spaces and automatically extract useful features.
+    
+    \begin{highlight}[Deep Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Deep Neural Networks}: Used as function approximators to learn complex state representations from raw inputs.
+            \item \textbf{Backpropagation}: Gradients required for parameter updates are computed using backpropagation.
+            \item \textbf{Applications}: Achieved significant results in playing video games, Go, and robotic tasks.
+            \item \textbf{Challenges}: Deep RL systems can behave unpredictably in environments that differ from training data.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Reward Shaping}
+    
+    Reward shaping involves providing additional rewards, or pseudorewards, to guide the agent's learning process, addressing the credit assignment problem in environments with sparse rewards.
+    
+    \begin{highlight}[Reward Shaping]
+    
+        \begin{itemize}
+            \item \textbf{Pseudorewards}: Additional rewards for intermediate progress towards the goal, speeding up learning.
+            \item \textbf{Risk}: Agent might learn to maximize pseudorewards rather than true rewards.
+            \item \textbf{Example}: A soccer robot receives pseudorewards for making contact with the ball or advancing it towards the goal.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Hierarchical Reinforcement Learning}
+    
+    Hierarchical reinforcement learning (HRL) breaks down complex tasks into smaller sub-tasks, simplifying learning by decomposing the overall task hierarchy.
+    
+    \begin{highlight}[Hierarchical Reinforcement Learning]
+    
+        \begin{itemize}
+            \item \textbf{Hierarchical Structure}: Tasks are decomposed into sub-tasks, each with its own policies and value functions.
+            \item \textbf{Joint State Space}: Combines physical state and machine state (program counter, arguments, variables) to form a joint state space.
+            \item \textbf{Example}: In a soccer game, higher-level actions like passing and shooting are broken down into lower-level motor behaviors.
+            \item \textbf{Benefit}: Learning becomes more efficient by focusing on smaller sub-problems within the task hierarchy.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Function Approximation}: Enables efficient learning by representing utility and Q-functions compactly.
+            \item \textbf{Experience Replay}: Prevents forgetting by reusing past experiences.
+            \item \textbf{Deep Reinforcement Learning}: Combines deep neural networks with RL for high-dimensional state spaces.
+            \item \textbf{Reward Shaping}: Uses pseudorewards to guide learning in sparse reward environments.
+            \item \textbf{Hierarchical Reinforcement Learning}: Decomposes tasks into sub-tasks for more efficient learning.
+        \end{itemize}
+    
+        Generalization in reinforcement learning is crucial for handling large state spaces, enabling agents to learn efficiently and perform effectively in complex environments.
+    
+    \end{highlight}
+\end{notes}
