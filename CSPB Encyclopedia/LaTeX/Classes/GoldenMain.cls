@@ -38,7 +38,7 @@
 \newcommand{\CSPBDataStructSyllabusDir}{\CSPBDataStructDir/Syllabus/}
 \newcommand{\CSPBDataStructTextbookDir}{\CSPBDataStructDir/Textbook/}
 \newcommand{\CSPBDataStructCourseNotes}{
-    \pdflink{\CSPBDataStructDir CSPB 2270 - Data Structures Course Notes.pdf}{CSPB 2270 - Data Structures Course Notes}
+    \pdflink{\CSPBDataStructDir CSPB 2270 - Data Structures Class Notes.pdf}{CSPB 2270 - Data Structures Class Notes}
 }
 \newcommand{\CSPBDataStructSyllabus}{
     \pdflink{\CSPBDataStructSyllabusDir CSPB 2270 - Data Structures Syllabus.pdf}{CSPB 2270 - Data Structures Syllabus}
@@ -51,7 +51,7 @@
 \newcommand{\CSPBCompSysSyllabusDir}{\CSPBCompSysDir/Syllabus/}
 \newcommand{\CSPBCompSysTextbookDir}{\CSPBCompSysDir/Textbook/}
 \newcommand{\CSPBCompSysCourseNotes}{
-    \pdflink{\CSPBCompSysDir CSPB 2400 - Computer Systems Course Notes.pdf}{CSPB 2400 - Computer Systems Course Notes}
+    \pdflink{\CSPBCompSysDir CSPB 2400 - Computer Systems Class Notes.pdf}{CSPB 2400 - Computer Systems Class Notes}
 }
 \newcommand{\CSPBCompSysSyllabus}{
     \pdflink{\CSPBCompSysSyllabusDir CSPB 2400 - Computer Systems Syllabus.pdf}{CSPB 2400 - Computer Systems Syllabus}
@@ -64,7 +64,7 @@
 \newcommand{\CSPBLASyllabusDir}{\CSPBLADir/Syllabus/}
 \newcommand{\CSPBLATextbookDir}{\CSPBLADir/Textbook/}
 \newcommand{\CSPBLACourseNotes}{
-    \pdflink{\CSPBLADir CSPB 2820 - Linear Algebra With Computer Science Applications Course Notes.pdf}{CSPB 2820 - Linear Algebra With Computer Science Applications Course Notes}
+    \pdflink{\CSPBLADir CSPB 2820 - Linear Algebra With Computer Science Applications Class Notes.pdf}{CSPB 2820 - Linear Algebra With Computer Science Applications Class Notes}
 }
 \newcommand{\CSPBLASyllabus}{
     \pdflink{\CSPBLASyllabusDir CSPB 2820 - Linear Algebra With Computer Science Applications Syllabus.pdf}{CSPB 2820 - Linear Algebra With Computer Science Applications Syllabus}
@@ -83,7 +83,7 @@
 \newcommand{\CSPBDiscreteSyllabusDir}{\CSPBDiscreteDir/Syllabus/}
 \newcommand{\CSPBDiscreteDirTextbookDir}{\CSPBDiscreteDir/Textbook/}
 \newcommand{\CSPBDiscreteCourseNotes}{
-    \pdflink{\CSPBDiscreteDir CSPB 2824 - Discrete Structures Course Notes.pdf}{CSPB 2824 - Discrete Structures Course Notes}
+    \pdflink{\CSPBDiscreteDir CSPB 2824 - Discrete Structures Class Notes.pdf}{CSPB 2824 - Discrete Structures Class Notes}
 }
 \newcommand{\CSPBDiscreteSyllabus}{
     \pdflink{\CSPBDiscreteSyllabusDir CSPB 2824 - Discrete Structures Syllabus.pdf}{CSPB 2824 - Discrete Structures Syllabus}
@@ -96,7 +96,7 @@
 \newcommand{\CSPBDataSciSyllabusDir}{\CSPBDataSciDir/Syllabus/}
 \newcommand{\CSPBDataSciTextbookDir}{\CSPBDataSciDir/Textbook/}
 \newcommand{\CSPBDataSciCourseNotes}{
-    \pdflink{\CSPBDataSciDir CSPB 3022 - Introduction To Data Science With Probability And Statistics Course Notes.pdf}{CSPB 3022 - Introduction To Data Science With Probability And Statistics Course Notes}
+    \pdflink{\CSPBDataSciDir CSPB 3022 - Introduction To Data Science With Probability And Statistics Class Notes.pdf}{CSPB 3022 - Introduction To Data Science With Probability And Statistics Class Notes}
 }
 \newcommand{\CSPBDataSciSyllabus}{
     \pdflink{\CSPBDataSciSyllabusDir CSPB 3022 - Introduction To Data Science With Probability And Statistics Syllabus.pdf}{CSPB 3022 - Introduction To Data Science With Probability And Statistics Syllabus}
@@ -112,7 +112,7 @@
 \newcommand{\CSPBAlgoSyllabusDir}{\CSPBAlgoDir/Syllabus/}
 \newcommand{\CSPBAlgoTextbookDir}{\CSPBAlgoDir/Textbook/}
 \newcommand{\CSPBAlgoCourseNotes}{
-    \pdflink{\CSPBAlgoDir CSPB 3104 - Algorithms Course Notes.pdf}{CSPB 3104 - Algorithms Course Notes}
+    \pdflink{\CSPBAlgoDir CSPB 3104 - Algorithms Class Notes.pdf}{CSPB 3104 - Algorithms Class Notes}
 }
 \newcommand{\CSPBAlgoSyllabus}{
     \pdflink{\CSPBAlgoSyllabusDir CSPB 3104 - Algorithms Syllabus.pdf}{CSPB 3104 - Algorithms Syllabus}
@@ -179,7 +179,7 @@
 \newcommand{\CSPBCogSciSyllabusDir}{\CSPBCogSciDir/Syllabus/}
 \newcommand{\CSPBCogSciReadMatDir}{\CSPBCogSciDir/Reading Material/}
 \newcommand{\CSPBCogSciCourseNotes}{
-    \pdflink{\CSPBCogSciDir CSPB 3702 - Cognitive Science Course Notes.pdf}{CSPB 3702 - Cognitive Science Course Notes}
+    \pdflink{\CSPBCogSciDir CSPB 3702 - Cognitive Science Class Notes.pdf}{CSPB 3702 - Cognitive Science Class Notes}
 }
 \newcommand{\CSPBCogSciSyllabus}{
     \pdflink{\CSPBCogSciSyllabusDir CSPB 3702 - Cognitive Science Syllabus.pdf}{CSPB 3702 - Cognitive Science Syllabus}
