@@ -16,342 +16,406 @@ ENCYCDIR="Encyclopedia"
 LATEXDIR="LaTeX"
 
 cd ..
-# cd "$CSPBENCYDIR"
+cd "$CSPBENCYDIR"
 
-# # Encyclopedia Set Up
+# Encyclopedia Set Up
 
-# if [ -d "$ENCYCDIR" ]; then
-#     rm -rf $ENCYCDIR
-#     echo && echo "Successfully deleted previous Encyclopedia directory." && echo
-#     mkdir $ENCYCDIR
-#     echo "Created a new Encyclopedia directory." && echo
-# else
-#     mkdir $ENCYCDIR
-#     echo && echo "Created a new Encyclopedia directory." && echo
-# fi
+if [ -d "$ENCYCDIR" ]; then
+    rm -rf $ENCYCDIR
+    echo && echo "Successfully deleted previous Encyclopedia directory." && echo
+    mkdir $ENCYCDIR
+    echo "Created a new Encyclopedia directory." && echo
+else
+    mkdir $ENCYCDIR
+    echo && echo "Created a new Encyclopedia directory." && echo
+fi
 
-# cd ..
+cd ..
 
-# # 2270 Compiling
+# 2270 Compiling
 
-# cd "$CSPB2270NOTEDIR"
+cd "$CSPB2270NOTEDIR"
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
 
-# ENCYC2270DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 2270 - Data Structures"
+ENCYC2270DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 2270 - Data Structures"
 
-# mkdir "$ENCYC2270DIR"
+mkdir "$ENCYC2270DIR"
 
-# cp main.pdf "$ENCYC2270DIR/CSPB 2270 - Data Structures Class Notes.pdf"
+cp main.pdf "$ENCYC2270DIR/CSPB 2270 - Data Structures Class Notes.pdf"
 
-# cp -r "Exam Notes" "$ENCYC2270DIR"
+cp -r "Exam Notes" "$ENCYC2270DIR"
 
-# cp -r "Exams" "$ENCYC2270DIR"
+cp -r "Exams" "$ENCYC2270DIR"
 
-# cp -r "Interview Notes" "$ENCYC2270DIR"
+cp -r "Interview Notes" "$ENCYC2270DIR"
 
-# cp -r "Lecture Notes" "$ENCYC2270DIR"
+cp -r "Lecture Notes" "$ENCYC2270DIR"
 
-# git restore main.pdf
+git restore main.pdf
 
-# cd ../../../
+cd ../../
 
-# echo "CSPB 2270 Compiled Successfully"
+ENCYC2270DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 2270 - Data Structures"
 
-# # 2400 Compiling
+cp -r "Syllabus" "$ENCYC2270DIR"
 
-# cd "$CSPB2400NOTEDIR"
+cp -r "Textbook" "$ENCYC2270DIR"
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+cd ..
 
-# ENCYC2400DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 2400 - Computer Systems"
+echo "CSPB 2270 Compiled Successfully"
 
-# mkdir "$ENCYC2400DIR"
+# 2400 Compiling
 
-# cp main.pdf "$ENCYC2400DIR/CSPB 2400 - Computer Systems Class Notes.pdf"
+cd "$CSPB2400NOTEDIR"
 
-# cp -r "Exam Notes" "$ENCYC2400DIR"
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
 
-# cp -r "Exams" "$ENCYC2400DIR"
+ENCYC2400DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 2400 - Computer Systems"
 
-# cp -r "Lecture Notes" "$ENCYC2400DIR"
+mkdir "$ENCYC2400DIR"
 
-# cp -r "Quizzes" "$ENCYC2400DIR"
+cp main.pdf "$ENCYC2400DIR/CSPB 2400 - Computer Systems Class Notes.pdf"
 
-# cp -r "Textbook" "$ENCYC2400DIR"
+cp -r "Exam Notes" "$ENCYC2400DIR"
 
-# git restore main.pdf
+cp -r "Exams" "$ENCYC2400DIR"
 
-# cd ../../../
+cp -r "Lecture Notes" "$ENCYC2400DIR"
 
-# echo "CSPB 2400 Compiled Successfully"
+cp -r "Quizzes" "$ENCYC2400DIR"
 
-# # 2820 Compiling
+cp -r "Textbook" "$ENCYC2400DIR"
 
-# cd "$CSPB2820NOTEDIR"
+git restore main.pdf
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+cd ../../
 
-# ENCYC2820DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 2820 - Linear Algebra With Computer Science Applications"
+ENCYC2400DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 2400 - Computer Systems"
 
-# mkdir "$ENCYC2820DIR"
+cp -r "Syllabus" "$ENCYC2400DIR"
 
-# cp main.pdf "$ENCYC2820DIR/CSPB 2820 - Linear Algebra With Computer Science Applications Class Notes.pdf"
+cd ..
 
-# cp -r "Assignments" "$ENCYC2820DIR"
+echo "CSPB 2400 Compiled Successfully"
 
-# cp -r "Exam Notes" "$ENCYC2820DIR"
+# 2820 Compiling
 
-# cp -r "Lecture Notes" "$ENCYC2820DIR"
+cd "$CSPB2820NOTEDIR"
 
-# cp -r "Quizzes" "$ENCYC2820DIR"
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
 
-# cp -r "Textbook" "$ENCYC2820DIR"
+ENCYC2820DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 2820 - Linear Algebra With Computer Science Applications"
 
-# git restore main.pdf
+mkdir "$ENCYC2820DIR"
 
-# cd ../../../
+cp main.pdf "$ENCYC2820DIR/CSPB 2820 - Linear Algebra With Computer Science Applications Class Notes.pdf"
 
-# echo "CSPB 2820 Compiled Successfully"
+cp -r "Assignments" "$ENCYC2820DIR"
 
-# # 2824 Compiling
+cp -r "Exam Notes" "$ENCYC2820DIR"
 
-# cd "$CSPB2824NOTEDIR"
+cp -r "Lecture Notes" "$ENCYC2820DIR"
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+cp -r "Quizzes" "$ENCYC2820DIR"
 
-# ENCYC2824DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 2824 - Discrete Structures"
+cp -r "Textbook" "$ENCYC2820DIR"
 
-# mkdir "$ENCYC2824DIR"
+git restore main.pdf
 
-# cp main.pdf "$ENCYC2824DIR/CSPB 2824 - Discrete Structures Class Notes.pdf"
+cd ../../
 
-# cp -r "Assignments" "$ENCYC2824DIR"
+ENCYC2820DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 2820 - Linear Algebra With Computer Science Applications"
 
-# cp -r "Exams" "$ENCYC2824DIR"
+cp -r "Syllabus" "$ENCYC2820DIR"
 
-# cp -r "Lecture Notes" "$ENCYC2824DIR"
+cd ..
 
-# cp -r "Quizzes" "$ENCYC2824DIR"
+echo "CSPB 2820 Compiled Successfully"
 
-# cp -r "Textbook" "$ENCYC2824DIR"
+# 2824 Compiling
 
-# git restore main.pdf
+cd "$CSPB2824NOTEDIR"
 
-# cd ../../../
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
 
-# echo "CSPB 2824 Compiled Successfully"
+ENCYC2824DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 2824 - Discrete Structures"
 
-# # 3022 Compiling
+mkdir "$ENCYC2824DIR"
 
-# cd "$CSPB3022NOTEDIR"
+cp main.pdf "$ENCYC2824DIR/CSPB 2824 - Discrete Structures Class Notes.pdf"
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+cp -r "Assignments" "$ENCYC2824DIR"
 
-# ENCYC3022DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3022 - Introduction To Data Science With Probability And Statistics"
+cp -r "Exams" "$ENCYC2824DIR"
 
-# mkdir "$ENCYC3022DIR"
+cp -r "Lecture Notes" "$ENCYC2824DIR"
 
-# cp main.pdf "$ENCYC3022DIR/CSPB 3022 - Introduction To Data Science With Probability And Statistics Class Notes.pdf"
+cp -r "Quizzes" "$ENCYC2824DIR"
 
-# cp -r "Exam Notes" "$ENCYC3022DIR"
+cp -r "Textbook" "$ENCYC2824DIR"
 
-# cp -r "Exams" "$ENCYC3022DIR"
+git restore main.pdf
 
-# cp -r "Lecture Notes" "$ENCYC3022DIR"
+cd ../../
 
-# cp -r "Quizzes" "$ENCYC3022DIR"
+ENCYC2824DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 2824 - Discrete Structures"
 
-# cp -r "Textbook" "$ENCYC3022DIR"
+cp -r "Syllabus" "$ENCYC2824DIR"
 
-# git restore main.pdf
+cd ..
 
-# cd ../../../
+echo "CSPB 2824 Compiled Successfully"
 
-# echo "CSPB 3022 Compiled Successfully"
+# 3022 Compiling
 
-# # 3104 Compiling
+cd "$CSPB3022NOTEDIR"
 
-# cd "$CSPB3104NOTEDIR"
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+ENCYC3022DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3022 - Introduction To Data Science With Probability And Statistics"
 
-# ENCYC3104DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3104 - Algorithms"
+mkdir "$ENCYC3022DIR"
 
-# mkdir "$ENCYC3104DIR"
+cp main.pdf "$ENCYC3022DIR/CSPB 3022 - Introduction To Data Science With Probability And Statistics Class Notes.pdf"
 
-# cp main.pdf "$ENCYC3104DIR/CSPB 3104 - Algorithms Class Notes.pdf"
+cp -r "Exam Notes" "$ENCYC3022DIR"
 
-# cp -r "Exam Notes" "$ENCYC3104DIR"
+cp -r "Exams" "$ENCYC3022DIR"
 
-# cp -r "Exams" "$ENCYC3104DIR"
+cp -r "Lecture Notes" "$ENCYC3022DIR"
 
-# cp -r "Lecture Notes" "$ENCYC3104DIR"
+cp -r "Quizzes" "$ENCYC3022DIR"
 
-# cp -r "Quizzes" "$ENCYC3104DIR"
+cp -r "Textbook" "$ENCYC3022DIR"
 
-# cp -r "Textbook" "$ENCYC3104DIR"
+git restore main.pdf
 
-# git restore main.pdf
+cd ../../
 
-# cd ../../../
+ENCYC3022DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 3022 - Introduction To Data Science With Probability And Statistics"
 
-# echo "CSPB 3104 Compiled Successfully"
+cp -r "Syllabus" "$ENCYC3022DIR"
 
-# # 3155 Compiling
+cd ..
 
-# cd "$CSPB3155NOTEDIR"
+echo "CSPB 3022 Compiled Successfully"
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+# 3104 Compiling
 
-# ENCYC3155DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3155 - Principles Of Programming Languages"
+cd "$CSPB3104NOTEDIR"
 
-# mkdir "$ENCYC3155DIR"
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
 
-# cp main.pdf "$ENCYC3155DIR/CSPB 3155 - Principles Of Programming Languages Class Notes.pdf"
+ENCYC3104DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3104 - Algorithms"
 
-# cp -r "Exam Notes" "$ENCYC3155DIR"
+mkdir "$ENCYC3104DIR"
 
-# cp -r "Exams" "$ENCYC3155DIR"
+cp main.pdf "$ENCYC3104DIR/CSPB 3104 - Algorithms Class Notes.pdf"
 
-# mkdir "../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3155 - Principles Of Programming Languages/Lecture Notes"
+cp -r "Exam Notes" "$ENCYC3104DIR"
 
-# mkdir "../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3155 - Principles Of Programming Languages/Lecture Notes/Notes"
+cp -r "Exams" "$ENCYC3104DIR"
 
-# cp -r "Lecture Notes/Notes" "$ENCYC3155DIR/Lecture Notes"
+cp -r "Lecture Notes" "$ENCYC3104DIR"
 
-# cp -r "Quizzes" "$ENCYC3155DIR"
+cp -r "Quizzes" "$ENCYC3104DIR"
 
-# cp -r "Textbook" "$ENCYC3155DIR"
+cp -r "Textbook" "$ENCYC3104DIR"
 
-# git restore main.pdf
+git restore main.pdf
 
-# cd ../../../
+cd ../../
 
-# echo "CSPB 3155 Compiled Successfully"
+ENCYC3104DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 3104 - Algorithms"
 
-# # 3202 Compiling
+cp -r "Syllabus" "$ENCYC3104DIR"
 
-# cd "$CSPB3202NOTEDIR"
+cd ..
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+echo "CSPB 3104 Compiled Successfully"
 
-# ENCYC3202DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3202 - Introduction To Artificial Intelligence"
+# 3155 Compiling
 
-# mkdir "$ENCYC3202DIR"
+cd "$CSPB3155NOTEDIR"
 
-# cp main.pdf "$ENCYC3202DIR/CSPB 3202 - Introduction To Artificial Intelligence Class Notes.pdf"
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
 
-# cp -r "Assignments" "$ENCYC3202DIR"
+ENCYC3155DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3155 - Principles Of Programming Languages"
 
-# cp -r "Exam Notes" "$ENCYC3202DIR"
+mkdir "$ENCYC3155DIR"
 
-# cp -r "Exams" "$ENCYC3202DIR"
+cp main.pdf "$ENCYC3155DIR/CSPB 3155 - Principles Of Programming Languages Class Notes.pdf"
 
-# mkdir "../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3202 - Introduction To Artificial Intelligence/Lecture Notes"
+cp -r "Exam Notes" "$ENCYC3155DIR"
 
-# mkdir "../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3202 - Introduction To Artificial Intelligence/Lecture Notes/Notes"
+cp -r "Exams" "$ENCYC3155DIR"
 
-# cp -r "Lecture Notes/Notes" "$ENCYC3202DIR/Lecture Notes"
+mkdir "../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3155 - Principles Of Programming Languages/Lecture Notes"
 
-# cp -r "Quizzes" "$ENCYC3202DIR"
+mkdir "../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3155 - Principles Of Programming Languages/Lecture Notes/Notes"
 
-# cp -r "Textbook" "$ENCYC3202DIR"
+cp -r "Lecture Notes/Notes" "$ENCYC3155DIR/Lecture Notes"
 
-# git restore main.pdf
+cp -r "Quizzes" "$ENCYC3155DIR"
 
-# cd ../../../
+cp -r "Textbook" "$ENCYC3155DIR"
 
-# echo "CSPB 3202 Compiled Successfully"
+git restore main.pdf
 
-# # CSPB 3308 Compiling
+cd ../../
 
-# cd "$CSPB3308NOTEDIR"
+ENCYC3155DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 3155 - Principles Of Programming Languages"
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+cp -r "Syllabus" "$ENCYC3155DIR"
 
-# ENCYC3308DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3308 - Software Development Methods And Tools"
+cd ..
 
-# mkdir "$ENCYC3308DIR"
+echo "CSPB 3155 Compiled Successfully"
 
-# cp main.pdf "$ENCYC3308DIR/CSPB 3308 - Software Development Methods And Tools Class Notes.pdf"
+# 3202 Compiling
 
-# cp -r "Exam Notes" "$ENCYC3308DIR"
+cd "$CSPB3202NOTEDIR"
 
-# cp -r "Exams" "$ENCYC3308DIR"
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
 
-# cp -r "Lecture Notes" "$ENCYC3308DIR"
+ENCYC3202DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3202 - Introduction To Artificial Intelligence"
 
-# cp -r "Quizzes" "$ENCYC3308DIR"
+mkdir "$ENCYC3202DIR"
 
-# cp -r "Textbook" "$ENCYC3308DIR"
+cp main.pdf "$ENCYC3202DIR/CSPB 3202 - Introduction To Artificial Intelligence Class Notes.pdf"
 
-# git restore main.pdf
+cp -r "Assignments" "$ENCYC3202DIR"
 
-# cd ../../../
+cp -r "Exam Notes" "$ENCYC3202DIR"
 
-# echo "CSPB 3308 Compiled Successfully"
+cp -r "Exams" "$ENCYC3202DIR"
 
-# # CSPB 3702 Compiling
+mkdir "../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3202 - Introduction To Artificial Intelligence/Lecture Notes"
 
-# cd "$CSPB3702NOTEDIR"
+mkdir "../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3202 - Introduction To Artificial Intelligence/Lecture Notes/Notes"
 
-# pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+cp -r "Lecture Notes/Notes" "$ENCYC3202DIR/Lecture Notes"
 
-# ENCYC3702DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3702 - Cognitive Science"
+cp -r "Quizzes" "$ENCYC3202DIR"
 
-# mkdir "$ENCYC3702DIR"
+cp -r "Textbook" "$ENCYC3202DIR"
 
-# cp main.pdf "$ENCYC3702DIR/CSPB 3702 - Cognitive Science Class Notes.pdf"
+git restore main.pdf
 
-# cp -r "Assignments" "$ENCYC3702DIR"
+cd ../../
 
-# cp -r "Lecture Notes" "$ENCYC3702DIR"
+ENCYC3202DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 3202 - Introduction To Artificial Intelligence"
 
-# cp -r "Quizzes" "$ENCYC3702DIR"
+cp -r "Syllabus" "$ENCYC3202DIR"
 
-# git restore main.pdf
+cd ..
 
-# cd ../../../
+echo "CSPB 3202 Compiled Successfully"
 
-# echo "CSPB 3702 Compiled Successfully"
+# CSPB 3308 Compiling
+
+cd "$CSPB3308NOTEDIR"
+
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+
+ENCYC3308DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3308 - Software Development Methods And Tools"
+
+mkdir "$ENCYC3308DIR"
+
+cp main.pdf "$ENCYC3308DIR/CSPB 3308 - Software Development Methods And Tools Class Notes.pdf"
+
+cp -r "Exam Notes" "$ENCYC3308DIR"
+
+cp -r "Exams" "$ENCYC3308DIR"
+
+cp -r "Lecture Notes" "$ENCYC3308DIR"
+
+cp -r "Quizzes" "$ENCYC3308DIR"
+
+cp -r "Textbook" "$ENCYC3308DIR"
+
+git restore main.pdf
+
+cd ../../
+
+ENCYC3308DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 3308 - Software Development Methods And Tools"
+
+cp -r "Syllabus" "$ENCYC3308DIR"
+
+cd ..
+
+echo "CSPB 3308 Compiled Successfully"
+
+# CSPB 3702 Compiling
+
+cd "$CSPB3702NOTEDIR"
+
+pdflatex *.tex > /dev/null 2>&1 && pdflatex *.tex > /dev/null 2>&1
+
+ENCYC3702DIR="../../../$CSPBENCYDIR/$ENCYCDIR/CSPB 3702 - Cognitive Science"
+
+mkdir "$ENCYC3702DIR"
+
+cp main.pdf "$ENCYC3702DIR/CSPB 3702 - Cognitive Science Class Notes.pdf"
+
+cp -r "Assignments" "$ENCYC3702DIR"
+
+cp -r "Lecture Notes" "$ENCYC3702DIR"
+
+cp -r "Quizzes" "$ENCYC3702DIR"
+
+git restore main.pdf
+
+cd ../../
+
+ENCYC3702DIR="../$CSPBENCYDIR/$ENCYCDIR/CSPB 3702 - Cognitive Science"
+
+cp -r "Syllabus" "$ENCYC3702DIR"
+
+cd ..
+
+echo "CSPB 3702 Compiled Successfully"
+
+# Main Encyclopedia Compilation
 
 cd "$CSPBENCYDIR/$ENCYCDIR"
 
-# mkdir "Courses"
+mkdir "Courses"
 
-# mv "CSPB 2270 - Data Structures" "Courses"
+mv "CSPB 2270 - Data Structures" "Courses"
 
-# mv "CSPB 2400 - Computer Systems" "Courses"
+mv "CSPB 2400 - Computer Systems" "Courses"
 
-# mv "CSPB 2820 - Linear Algebra With Computer Science Applications" "Courses"
+mv "CSPB 2820 - Linear Algebra With Computer Science Applications" "Courses"
 
-# mv "CSPB 2824 - Discrete Structures" "Courses"
+mv "CSPB 2824 - Discrete Structures" "Courses"
 
-# mv "CSPB 3022 - Introduction To Data Science With Probability And Statistics" "Courses"
+mv "CSPB 3022 - Introduction To Data Science With Probability And Statistics" "Courses"
 
-# mv "CSPB 3104 - Algorithms" "Courses"
+mv "CSPB 3104 - Algorithms" "Courses"
 
-# mv "CSPB 3155 - Principles Of Programming Languages" "Courses"
+mv "CSPB 3155 - Principles Of Programming Languages" "Courses"
 
-# mv "CSPB 3202 - Introduction To Artificial Intelligence" "Courses"
+mv "CSPB 3202 - Introduction To Artificial Intelligence" "Courses"
 
-# mv "CSPB 3308 - Software Development Methods And Tools" "Courses"
+mv "CSPB 3308 - Software Development Methods And Tools" "Courses"
 
-# mv "CSPB 3702 - Cognitive Science" "Courses"
+mv "CSPB 3702 - Cognitive Science" "Courses"
 
-# cp -r "Courses" "../LaTeX"
-
-# cd "LaTeX"
+cp -r "Courses" "../LaTeX"
 
 cd "../LaTeX"
 
 pdflatex "main.tex" > /dev/null 2>&1 && pdflatex "main.tex" > /dev/null 2>&1
 
-# cd ../../
+cd ../../
 
-# cd "Scripts"
+cd "Scripts"
 
-# ./LatexClean.sh
+echo && ./LatexClean.sh
 
-# cd ..
+cd ..
+
+echo && echo "Encyclopedia Compiled Successfully"
