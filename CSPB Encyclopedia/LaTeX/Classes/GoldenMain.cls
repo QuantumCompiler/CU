@@ -41,10 +41,10 @@
     \pdflink{\CSPBDataStructDir CSPB 2270 - Data Structures Class Notes.pdf}{CSPB 2270 - Data Structures Class Notes}
 }
 \newcommand{\CSPBDataStructSyllabus}{
-    \pdflink{\CSPBDataStructSyllabusDir CSPB 2270 - Data Structures Syllabus.pdf}{CSPB 2270 - Data Structures Syllabus}
+    \pdflink{\CSPBDataStructSyllabusDir Data Structures Syllabus.pdf}{CSPB 2270 - Data Structures Syllabus}
 }
 \newcommand{\CSPBDataStructTextbook}{
-    \pdflink{\CSPBDataStructTextbookDir CSPB 2270 - Data Structures Zybooks.pdf}{Data Structures Zybooks}
+    \pdflink{\CSPBDataStructTextbookDir Data Structures Zybooks.pdf}{Data Structures Zybooks}
 }
 % CSPB 2400
 \newcommand{\CSPBCompSysDir}{./Courses/CSPB 2400 - Computer Systems/}
@@ -54,7 +54,7 @@
     \pdflink{\CSPBCompSysDir CSPB 2400 - Computer Systems Class Notes.pdf}{CSPB 2400 - Computer Systems Class Notes}
 }
 \newcommand{\CSPBCompSysSyllabus}{
-    \pdflink{\CSPBCompSysSyllabusDir CSPB 2400 - Computer Systems Syllabus.pdf}{CSPB 2400 - Computer Systems Syllabus}
+    \pdflink{\CSPBCompSysSyllabusDir Computer Systems Syllabus.pdf}{CSPB 2400 - Computer Systems Syllabus}
 }
 \newcommand{\CSPBCompSysTextbook}{
     \pdflink{\CSPBCompSysTextbookDir Computer Systems A Programmer's Perspective (Third Edition) - Randal E. Bryant, David R. O'Hallaron.pdf}{Computer Systems A Programmer's Perspective (Third Edition)}
@@ -67,7 +67,7 @@
     \pdflink{\CSPBLADir CSPB 2820 - Linear Algebra With Computer Science Applications Class Notes.pdf}{CSPB 2820 - Linear Algebra With Computer Science Applications Class Notes}
 }
 \newcommand{\CSPBLASyllabus}{
-    \pdflink{\CSPBLASyllabusDir CSPB 2820 - Linear Algebra With Computer Science Applications Syllabus.pdf}{CSPB 2820 - Linear Algebra With Computer Science Applications Syllabus}
+    \pdflink{\CSPBLASyllabusDir Linear Algebra With Computer Science Applications Syllabus.pdf}{CSPB 2820 - Linear Algebra With Computer Science Applications Syllabus}
 }
 \newcommand{\CSPBLAVMLSTextbook}{
     \pdflink{\CSPBLATextbookDir Introduction To Applied Linear Algebra (1st Edition) - Stephen Boyd And Lieven Vandenberghe.pdf}{Introduction To Applied Linear Algebra (1st Edition)}
@@ -86,7 +86,7 @@
     \pdflink{\CSPBDiscreteDir CSPB 2824 - Discrete Structures Class Notes.pdf}{CSPB 2824 - Discrete Structures Class Notes}
 }
 \newcommand{\CSPBDiscreteSyllabus}{
-    \pdflink{\CSPBDiscreteSyllabusDir CSPB 2824 - Discrete Structures Syllabus.pdf}{CSPB 2824 - Discrete Structures Syllabus}
+    \pdflink{\CSPBDiscreteSyllabusDir Discrete Structures Syllabus.pdf}{CSPB 2824 - Discrete Structures Syllabus}
 }
 \newcommand{\CSPBDiscreteTextbook}{
     \pdflink{\CSPBDiscreteDirTextbookDir Discrete Mathematics And Its Applications (7th Edition) - Kenneth Rosen.pdf}{Discrete Mathematics And Its Applications (7th Edition)}
@@ -99,7 +99,7 @@
     \pdflink{\CSPBDataSciDir CSPB 3022 - Introduction To Data Science With Probability And Statistics Class Notes.pdf}{CSPB 3022 - Introduction To Data Science With Probability And Statistics Class Notes}
 }
 \newcommand{\CSPBDataSciSyllabus}{
-    \pdflink{\CSPBDataSciSyllabusDir CSPB 3022 - Introduction To Data Science With Probability And Statistics Syllabus.pdf}{CSPB 3022 - Introduction To Data Science With Probability And Statistics Syllabus}
+    \pdflink{\CSPBDataSciSyllabusDir Introduction To Data Science With Probability And Statistics Syllabus.pdf}{CSPB 3022 - Introduction To Data Science With Probability And Statistics Syllabus}
 }
 \newcommand{\CSPBDataSciLearnDSTextbook}{
     \pdflink{\CSPBDataSciTextbookDir Learning Data Science Data Wrangling, Exploration, Visualization, and Modeling with Python (First Edition) - Sam Lau, Joseph Gonzalez, Deborah Nolanpdf.pdf}{Learning Data Science Data Wrangling, Exploration, Visualization, and Modeling with Python (First Edition)}
@@ -115,7 +115,7 @@
     \pdflink{\CSPBAlgoDir CSPB 3104 - Algorithms Class Notes.pdf}{CSPB 3104 - Algorithms Class Notes}
 }
 \newcommand{\CSPBAlgoSyllabus}{
-    \pdflink{\CSPBAlgoSyllabusDir CSPB 3104 - Algorithms Syllabus.pdf}{CSPB 3104 - Algorithms Syllabus}
+    \pdflink{\CSPBAlgoSyllabusDir Algorithms Syllabus.pdf}{CSPB 3104 - Algorithms Syllabus}
 }
 \newcommand{\CSPBAlgoGrokkingTextbook}{
     \pdflink{\CSPBAlgoTextbookDir Grokking Algorithms An Illustrated Guide for Programmers and Other Curious People (First Edition) - Aditya Bhargava.pdf}{Grokking Algorithms An Illustrated Guide For Programmers And Other Curious People (First Edition)}
@@ -127,8 +127,11 @@
 \newcommand{\CSPBPPLDir}{./Courses/CSPB 3155 - Principles Of Programming Languages/}
 \newcommand{\CSPBPPLSyllabusDir}{\CSPBPPLDir/Syllabus/}
 \newcommand{\CSPBPPLTextbookDir}{\CSPBPPLDir/Textbook/}
+\newcommand{\CSPBPPLCourseNotes}{
+    \pdflink{\CSPBPPLDir CSPB 3155 - Principles Of Programming Languages Class Notes.pdf}{CSPB 3155 - Principles Of Programming Languages Class Notes}
+}
 \newcommand{\CSPBPPLSyllabus}{
-    \pdflink{\CSPBPPLSyllabusDir CSPB 3155 - Principles of Programming Languages Syllabus.pdf}{CSPB 3155 - Principles of Programming Languages Syllabus}
+    \pdflink{\CSPBPPLSyllabusDir Principles of Programming Languages Syllabus.pdf}{CSPB 3155 - Principles of Programming Languages Syllabus}
 }
 \newcommand{\CSPBAtomicScalaTextbook}{
     \pdflink{\CSPBPPLTextbookDir Atomic Scala - Learn Programming In The Language Of The Future (Second Edition) - Dianne Marsh, Bruce Eckel.pdf}{Atomic Scala - Learn Programming In The Language Of The Future (Second Edition)}
@@ -143,11 +146,14 @@
     \pdflink{\CSPBPPLTextbookDir Programming In Scala (Third Edition) - Martin Odersky, Lex Spoon, Bill Venners.pdf}{Programming In Scala (Third Edition)}
 }
 % CSPB 3202
-\newcommand{\CSPBAIDir}{./Courses/CSPB 3202 - Introduction To Artifical Intelligence/}
+\newcommand{\CSPBAIDir}{./Courses/CSPB 3202 - Introduction To Artificial Intelligence/}
 \newcommand{\CSPBAISyllabusDir}{\CSPBAIDir/Syllabus/}
 \newcommand{\CSPBAITextbookDir}{\CSPBAIDir/Textbook/}
+\newcommand{\CSPBAICourseNotes}{
+    \pdflink{\CSPBAIDir CSPB 3202 - Introduction To Artificial Intelligence Class Notes.pdf}{CSPB 3202 - Introduction To Artificial Intelligence Class Notes}
+}
 \newcommand{\CSPBAISyllabus}{
-    \pdflink{\CSPBAISyllabusDir CSPB 3202 - Artificial Intelligence Syllabus.pdf}{CSPB 3202 - Artificial Intelligence Syllabus}
+    \pdflink{\CSPBAISyllabusDir Artificial Intelligence Syllabus.pdf}{CSPB 3202 - Artificial Intelligence Syllabus}
 }
 \newcommand{\CSPBAITextbook}{
     \pdflink{\CSPBAITextbookDir Artificial Intelligence - A Modern Approach (Fourth Edition) - Stuart Russel, Peter Norvig.pdf}{Artificial Intelligence - A Modern Approach (Fourth Edition)}
@@ -159,8 +165,11 @@
 \newcommand{\CSPBSoftDevDir}{./Courses/CSPB 3308 - Software Development Methods And Tools/}
 \newcommand{\CSPBSoftDevSyllabusDir}{\CSPBSoftDevDir/Syllabus/}
 \newcommand{\CSPBSoftDevTextbookDir}{\CSPBSoftDevDir/Textbook/}
+\newcommand{\CSPBSoftDevCourseNotes}{
+    \pdflink{\CSPBSoftDevDir CSPB 3308 - Software Development Methods And Tools Class Notes.pdf}{CSPB 3308 - Software Development Methods And Tools Class Notes}
+}
 \newcommand{\CSPBSoftDevSyllabus}{
-    \pdflink{\CSPBSoftDevSyllabusDir CSPB 3308 - Software Development Methods And Tools Syllabus.pdf}{CSPB 3308 - Software Development Methods And Tools Syllabus}
+    \pdflink{\CSPBSoftDevSyllabusDir Software Development Methods And Tools Syllabus.pdf}{CSPB 3308 - Software Development Methods And Tools Syllabus}
 }
 \newcommand{\CSPBSoftDevAgileTextbook}{
     \pdflink{\CSPBSoftDevTextbookDir Agile For Dummies (Limited Edition) - Scott Ambler, Matthew Holitza.pdf}{Agile For Dummies (Limited Edition)}
@@ -177,7 +186,7 @@
 % CSPB 3702
 \newcommand{\CSPBCogSciDir}{./Courses/CSPB 3702 - Cognitive Science/}
 \newcommand{\CSPBCogSciSyllabusDir}{\CSPBCogSciDir/Syllabus/}
-\newcommand{\CSPBCogSciReadMatDir}{\CSPBCogSciDir/Reading Material/}
+\newcommand{\CSPBCogSciTextbookDir}{\CSPBCogSciDir/Textbook/}
 \newcommand{\CSPBCogSciCourseNotes}{
     \pdflink{\CSPBCogSciDir CSPB 3702 - Cognitive Science Class Notes.pdf}{CSPB 3702 - Cognitive Science Class Notes}
 }
@@ -185,46 +194,46 @@
     \pdflink{\CSPBCogSciSyllabusDir CSPB 3702 - Cognitive Science Syllabus.pdf}{CSPB 3702 - Cognitive Science Syllabus}
 }
 \newcommand{\CSPBCMAndIntel}{
-    \pdflink{\CSPBCogSciReadMatDir Computing Machinery And Intelligence.pdf}{Computing Machinery And Intelligence}
+    \pdflink{\CSPBCogSciTextbookDir Computing Machinery And Intelligence.pdf}{Computing Machinery And Intelligence}
 }
 \newcommand{\CSPBEvol}{
-    \pdflink{\CSPBCogSciReadMatDir Evolutionary Game Theory.pdf}{Evolutionary Game Theory}
+    \pdflink{\CSPBCogSciTextbookDir Evolutionary Game Theory.pdf}{Evolutionary Game Theory}
 }
 \newcommand{\CSPBExpInPsych}{
-    \pdflink{\CSPBCogSciReadMatDir Experiments In Synthetic Psychology.pdf}{Experiments In Synthetic Psychology}
+    \pdflink{\CSPBCogSciTextbookDir Experiments In Synthetic Psychology.pdf}{Experiments In Synthetic Psychology}
 }
 \newcommand{\CSPBTitForTat}{
-    \pdflink{\CSPBCogSciReadMatDir Is Tit-for-Tat The Answer?.pdf}{Is Tit-for-Tat The Answer?}
+    \pdflink{\CSPBCogSciTextbookDir Is Tit-for-Tat The Answer?.pdf}{Is Tit-for-Tat The Answer?}
 }
 \newcommand{\CSPBHeuristics}{
-    \pdflink{\CSPBCogSciReadMatDir Judgement Under Uncertainty - Heuristics And Biases.pdf}{Judgement Under Uncertainty - Heuristics And Biases}
+    \pdflink{\CSPBCogSciTextbookDir Judgement Under Uncertainty - Heuristics And Biases.pdf}{Judgement Under Uncertainty - Heuristics And Biases}
 }
 \newcommand{\CSPBMentalImag}{
-    \pdflink{\CSPBCogSciReadMatDir Mental Imagery And The Visual System.pdf}{Mental Imagery And The Visual System}
+    \pdflink{\CSPBCogSciTextbookDir Mental Imagery And The Visual System.pdf}{Mental Imagery And The Visual System}
 }
 \newcommand{\CSPBMindBody}{
-    \pdflink{\CSPBCogSciReadMatDir Mind, Body, World: Foundations of Cognitive Science.pdf}{Mind, Body, World: Foundations of Cognitive Science}
+    \pdflink{\CSPBCogSciTextbookDir Mind, Body, World: Foundations of Cognitive Science.pdf}{Mind, Body, World: Foundations of Cognitive Science}
 }
 \newcommand{\CSPBMindsBrain}{
-    \pdflink{\CSPBCogSciReadMatDir Minds, Brains, And Programs.pdf}{Minds, Brains, And Programs}
+    \pdflink{\CSPBCogSciTextbookDir Minds, Brains, And Programs.pdf}{Minds, Brains, And Programs}
 }
 \newcommand{\CSPBPixel}{
-    \pdflink{\CSPBCogSciReadMatDir Pixel Tutorial.pdf}{Pixel Tutorial}
+    \pdflink{\CSPBCogSciTextbookDir Pixel Tutorial.pdf}{Pixel Tutorial}
 }
 \newcommand{\CSPBProsTheory}{
-    \pdflink{\CSPBCogSciReadMatDir Prospect Theory.pdf}{Prospect Theory}
+    \pdflink{\CSPBCogSciTextbookDir Prospect Theory.pdf}{Prospect Theory}
 }
 \newcommand{\CSPBRecogProb}{
-    \pdflink{\CSPBCogSciReadMatDir Recognizing, Defining, and Representing Problems.pdf}{Recognizing, Defining, and Representing Problems}
+    \pdflink{\CSPBCogSciTextbookDir Recognizing, Defining, and Representing Problems.pdf}{Recognizing, Defining, and Representing Problems}
 }
 \newcommand{\CSPBCollActions}{
-    \pdflink{\CSPBCogSciReadMatDir The Evolution Of Institutions For Collective Action.pdf}{The Evolution Of Institutions For Collective Action}
+    \pdflink{\CSPBCogSciTextbookDir The Evolution Of Institutions For Collective Action.pdf}{The Evolution Of Institutions For Collective Action}
 }
 \newcommand{\CSPBNatMental}{
-    \pdflink{\CSPBCogSciReadMatDir The Nature of Mental States.pdf}{The Nature of Mental States}
+    \pdflink{\CSPBCogSciTextbookDir The Nature of Mental States.pdf}{The Nature of Mental States}
 }
 \newcommand{\CSPBVision}{
-    \pdflink{\CSPBCogSciReadMatDir Vision.pdf}{Vision}
+    \pdflink{\CSPBCogSciTextbookDir Vision.pdf}{Vision}
 }
 %---------------------------------------------------------------------------
 %	CUSTOM COMMANDS
