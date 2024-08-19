@@ -372,6 +372,8 @@ cd "../LaTeX"
 
 pdflatex "main.tex" && pdflatex "main.tex" && pdflatex "main.tex" 
 
+cp "main.pdf" "../../$CSPBENCYDIR/$ENCYCDIR/CSPB Encyclopedia.pdf"
+
 cd ../../
 
 cd "Scripts"

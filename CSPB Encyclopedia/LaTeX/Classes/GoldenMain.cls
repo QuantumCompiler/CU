@@ -191,7 +191,7 @@
     \pdflink{\CSPBCogSciDir CSPB 3702 - Cognitive Science Class Notes.pdf}{CSPB 3702 - Cognitive Science Class Notes}
 }
 \newcommand{\CSPBCogSciSyllabus}{
-    \pdflink{\CSPBCogSciSyllabusDir CSPB 3702 - Cognitive Science Syllabus.pdf}{CSPB 3702 - Cognitive Science Syllabus}
+    \pdflink{\CSPBCogSciSyllabusDir Cognitive Science Syllabus.pdf}{CSPB 3702 - Cognitive Science Syllabus}
 }
 \newcommand{\CSPBCMAndIntel}{
     \pdflink{\CSPBCogSciTextbookDir Computing Machinery And Intelligence.pdf}{Computing Machinery And Intelligence}
