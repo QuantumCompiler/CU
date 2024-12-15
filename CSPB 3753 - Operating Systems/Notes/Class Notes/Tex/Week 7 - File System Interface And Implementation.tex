@@ -1,0 +1,1702 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{File System Interface And Implementation}
+\renewcommand{\SectionTitle}{File System Interface And Implementation}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from the \href{https://learn.zybooks.com/zybook/COLORADOCSPB3753KnoxFall2024}{Zybooks} for the week is:
+
+\begin{itemize}
+    \item \textbf{Chapter 13: File-System Interface}
+    \item \textbf{Chapter 14: File-System Implementation}
+    \item \textbf{Chapter 15: File-System Internals}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for the week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=9TGZI--6EuY}{File System}{17}
+    \item \lecture{https://www.youtube.com/watch?v=4-I1DP-yLjw}{Virtual File System}{12}
+    \item \lecture{https://www.youtube.com/watch?v=KC66NAxK4EM}{File System Implementation}{14}
+    \item \lecture{https://www.youtube.com/watch?v=iowIcq3PK5w}{File Allocation}{31}
+    \item \lecture{https://www.youtube.com/watch?v=tT-CncDKiy8}{Performance, Reliability, Recovery}{33}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3753-fall-2024/lab-7-QuantumCompiler}{Lab 7 - Virtual Files}
+    \item \href{https://github.com/cu-cspb-3753-fall-2024/pa-lkm-QuantumCompiler}{Programming Assignment 2 - Loadable Kernel Module}
+    \item \href{https://applied.cs.colorado.edu/mod/scheduler/view.php?id=64638}{Programming Assignment 2 Interview}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for the week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 7A - File System Interface And Implementation.pdf}{Quiz 7A - File System Interface And Implementation}
+    \item \pdflink{\QuizDir Quiz 7B - File System Interface And Implementation.pdf}{Quiz 7B - File System Interface And Implementation}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for the week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNoteDir Unit 2 Exam Notes.pdf}{Unit 2 Exam Notes}
+    \item \pdflink{\ExamsDir Unit 2 Exam.pdf}{Unit 2 Exam}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapters that are covered this week are \textbf{Chapter 13: File-System Interface}, \textbf{Chapter 14: File-System Implementation}, and \textbf{Chapter 15: File-System Internals}. The first chapter that is going to be
+covered this week is \textbf{Chapter 13: File-System Interface} and the first section that is being covered from this chapter this week is \textbf{Section 13.1: File Concept}.
+
+\begin{notes}{Section 13.1: File Concept}
+    \subsection*{Overview}
+
+    This section introduces the concept of files in operating systems, describing how files are abstracted by the operating system and mapped onto physical storage devices. A file is a collection of 
+    related information defined by its creator, and file systems are responsible for managing how files are stored, accessed, and shared. Files are crucial for both user and system operations, providing 
+    a mechanism for online storage of data and programs.
+    
+    \subsubsection*{File Structure and Types}
+    
+    Files can store various forms of information, such as text, programs, images, and audio. The structure of a file is defined by its type, for example, text files, source files, and executable files. A 
+    file's attributes—such as its name, size, type, and location—help organize and manage files within the system. The system maps file names to physical storage through a directory structure.
+    
+    \begin{highlight}[File Structure and Types]
+    
+        \begin{itemize}
+            \item \textbf{File Types}: Includes text files, source files, and executable files.
+            \item \textbf{File Attributes}: Name, identifier, type, location, size, and access protection are typical attributes.
+            \item \textbf{Directory Structure}: Maps file names to physical storage, managing file organization.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File Operations}
+    
+    Files are abstract data types that support basic operations such as creating, writing, reading, deleting, and repositioning within the file. These operations require system calls to interact with the 
+    file system. For example, the \texttt{open()} call opens a file for use, while \texttt{read()} and \texttt{write()} perform input and output.
+    
+    \begin{highlight}[File Operations]
+    
+        \begin{itemize}
+            \item \textbf{Create and Open}: The \texttt{create()} and \texttt{open()} system calls allocate space and prepare the file for use.
+            \item \textbf{Read and Write}: System calls like \texttt{read()} and \texttt{write()} move data between the file and memory.
+            \item \textbf{Repositioning}: The \texttt{seek()} operation adjusts the current file position pointer for non-sequential access.
+            \item \textbf{Delete and Truncate}: \texttt{delete()} removes a file, while \texttt{truncate()} resets its length without affecting its attributes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File Locking and Concurrency}
+    
+    File locking is crucial for controlling concurrent access in systems where multiple processes may access a file simultaneously. Shared locks allow multiple processes to read a file concurrently, while 
+    exclusive locks restrict access to one process at a time. Operating systems can enforce mandatory or advisory locking mechanisms.
+    
+    \begin{highlight}[File Locking and Concurrency]
+    
+        \begin{itemize}
+            \item \textbf{Shared Lock}: Allows multiple processes to read the file concurrently, similar to a reader lock.
+            \item \textbf{Exclusive Lock}: Restricts access to one process at a time, akin to a writer lock.
+            \item \textbf{Mandatory vs. Advisory Locking}: Mandatory locks are enforced by the OS, while advisory locks require the cooperation of applications.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File Types and Structure}
+    
+    Operating systems may recognize different file types based on extensions or magic numbers, which help the system and users identify the type of data in a file. For instance, a file may have an extension 
+    like \texttt{.txt} or \texttt{.exe}, or it may have a magic number indicating that it is an executable file. The internal structure of a file is determined by its intended use.
+    
+    \begin{highlight}[File Types and Structure]
+    
+        \begin{itemize}
+            \item \textbf{File Extensions}: Provide hints about file types (e.g., \texttt{.txt}, \texttt{.exe}, \texttt{.java}).
+            \item \textbf{Magic Numbers}: Used to identify binary files by their internal data format.
+            \item \textbf{Internal Structure}: Varies based on file type, such as text vs. binary formats.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File System Implementation}
+    
+    The internal implementation of files involves managing the location of data on physical storage devices. Logical and physical file blocks may differ in size, requiring the system to pack logical records 
+    into physical blocks. Disk space allocation is handled in blocks, which can lead to internal fragmentation.
+    
+    \begin{highlight}[File System Implementation]
+    
+        \begin{itemize}
+            \item \textbf{Logical vs. Physical Blocks}: Logical records may be packed into physical blocks of a fixed size.
+            \item \textbf{Internal Fragmentation}: Wasted space at the end of blocks when the file size does not perfectly match block size.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{File Concept}: A file is a named collection of data managed by the file system, with attributes that organize and protect it.
+            \item \textbf{File Operations}: Include creating, opening, reading, writing, and deleting files through system calls.
+            \item \textbf{File Locking}: Ensures safe concurrent access using shared or exclusive locks.
+            \item \textbf{File Structure}: The internal and external structure of files may be defined by extensions, magic numbers, and the file's intended use.
+            \item \textbf{File System Implementation}: Manages logical to physical mapping, block allocation, and fragmentation.
+        \end{itemize}
+    
+    File systems provide a crucial interface for managing data storage and retrieval, supporting diverse file types, operations, and access control mechanisms.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 13.2: Access Methods}.
+
+\begin{notes}{Section 13.2: Access Methods}
+    \subsection*{Overview}
+
+    This section explores different methods by which files are accessed in a system. Files store information, and to use that information, it must be read into memory. Various access methods exist 
+    depending on how the data in the file is organized and the specific requirements of the application. Some systems support only one access method, while others (e.g., mainframes) offer multiple 
+    access methods, making the right choice crucial for system performance.
+    
+    \subsubsection*{Sequential Access}
+    
+    Sequential access is the simplest and most common method, where information is processed in order, one record after another. Editors and compilers typically use this mode of access. The primary 
+    operations are reading and writing in sequence, and the file pointer automatically advances with each operation.
+    
+    \begin{highlight}[Sequential Access]
+    
+        \begin{itemize}
+            \item \textbf{Read and Write Operations}: \texttt{read\_next()} reads the next file portion, and \texttt{write\_next()} appends to the file.
+            \item \textbf{File Pointer}: Automatically advances after each read or write.
+            \item \textbf{Common Use}: Ideal for applications like text editors and compilers that process data sequentially.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Direct Access}
+    
+    Direct access (also known as relative access) allows random access to fixed-length logical records, enabling programs to read and write records in any order. It is commonly used for large databases 
+    and systems requiring rapid access to specific data.
+    
+    \begin{highlight}[Direct Access]
+    
+        \begin{itemize}
+            \item \textbf{Random Access}: Files are viewed as numbered blocks, allowing non-sequential reads and writes.
+            \item \textbf{Block Numbering}: Access data using block numbers, such as \texttt{read(n)} or \texttt{write(n)} where \texttt{n} is the block number.
+            \item \textbf{Application}: Suitable for large data sets, such as airline reservation systems or databases.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Other Access Methods}
+    
+    Advanced access methods build on direct access by creating indices for fast lookup. For example, an index file may contain pointers to blocks in a larger data file. This indexing approach allows quick 
+    searching with minimal I/O.
+    
+    \begin{highlight}[Other Access Methods]
+    
+        \begin{itemize}
+            \item \textbf{Indexed Access}: Uses an index to quickly locate data in large files.
+            \item \textbf{Application}: Useful in systems like retail pricing databases where items can be indexed by identifiers (e.g., UPCs).
+            \item \textbf{Multi-Level Indexing}: For very large files, a primary index points to secondary index blocks, which in turn point to the actual data.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Simulating Access Methods}
+    
+    Sequential access can be simulated on a direct-access file by keeping track of the current position in the file, although simulating direct access on a sequential-access file is inefficient and difficult.
+    
+    \begin{highlight}[Simulating Access Methods]
+    
+        \begin{itemize}
+            \item \textbf{Sequential on Direct}: By maintaining a current position pointer (\texttt{cp}), sequential access can be emulated on a direct-access file.
+            \item \textbf{Direct on Sequential}: Extremely inefficient and impractical due to the need to scan through the file sequentially.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Sequential Access}: Processes files in order, record by record, suitable for linear data processing.
+            \item \textbf{Direct Access}: Allows random access to file blocks, ideal for large databases and systems requiring immediate access.
+            \item \textbf{Indexed Access}: Enhances direct access by using indices to minimize I/O operations.
+            \item \textbf{Access Method Simulation}: Simulating sequential access on direct files is possible, but the reverse is inefficient.
+        \end{itemize}
+    
+    File access methods play a crucial role in system performance and must be selected based on the application's needs for data retrieval, processing speed, and organization.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 13.3: Directory Structure}.
+
+\begin{notes}{Section 13.3: Directory Structure}
+    \subsection*{Overview}
+
+    This section examines the various structures used to organize directories in file systems. Directories serve as symbol tables that map file names to file control blocks. The organization of directories 
+    must allow for essential operations such as searching, creating, deleting, listing files, renaming files, and traversing the file system. Different directory structures are used depending on the system's 
+    complexity and requirements.
+    
+    \subsubsection*{Single-Level Directory}
+    
+    The simplest structure is the single-level directory, where all files are stored in the same directory. This structure is easy to implement but becomes problematic as the number of files or users 
+    increases, leading to naming conflicts and difficulty in managing many files.
+    
+    \begin{highlight}[Single-Level Directory]
+    
+        \begin{itemize}
+            \item \textbf{Simple Structure}: All files are contained in a single directory.
+            \item \textbf{Naming Conflicts}: Unique names are required for all files, which leads to issues in multi-user systems.
+            \item \textbf{Scalability}: As the number of files grows, it becomes challenging to organize and manage them effectively.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Two-Level Directory}
+    
+    To resolve the issues of single-level directories, the two-level directory structure creates a separate directory for each user. Each user has their own user file directory (UFD), which contains 
+    only their files, while the system maintains a master file directory (MFD) for user management.
+    
+    \begin{highlight}[Two-Level Directory]
+    
+        \begin{itemize}
+            \item \textbf{User File Directory (UFD)}: Each user has a unique directory, preventing file name conflicts between users.
+            \item \textbf{Master File Directory (MFD)}: Indexed by user name or account, each entry points to a user's UFD.
+            \item \textbf{User Isolation}: Users can only access their own files unless explicitly allowed to access other users' files.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Tree-Structured Directory}
+    
+    A tree-structured directory system allows for arbitrary depth, enabling users to create subdirectories. This structure supports more complex file organization and allows each file to have a unique 
+    path name. It also provides flexibility in organizing files hierarchically.
+    
+    \begin{highlight}[Tree-Structured Directory]
+    
+        \begin{itemize}
+            \item \textbf{Hierarchical Organization}: Directories can contain files and subdirectories, allowing users to organize files in a logical structure.
+            \item \textbf{Current Directory}: Each process has a current directory for simplified file access.
+            \item \textbf{Path Names}: Files can be accessed via absolute or relative path names.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Acyclic-Graph Directory}
+    
+    An acyclic-graph directory allows directories and files to be shared between users, which is useful for projects requiring shared access. A file can exist in multiple directories through links, 
+    with modifications visible to all users sharing the file.
+    
+    \begin{highlight}[Acyclic-Graph Directory]
+    
+        \begin{itemize}
+            \item \textbf{Shared Directories}: Files and directories can be shared among users, appearing in multiple directories.
+            \item \textbf{Linking}: Links (hard or symbolic) allow directories and files to appear in different places without duplication.
+            \item \textbf{Consistency}: Changes made to shared files are immediately visible to all users.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{General Graph Directory}
+    
+    The general graph directory extends the acyclic-graph structure by allowing cycles, which introduces complexity in traversing the directory and managing file deletion. Cycles can create issues such 
+    as infinite loops during directory traversal, which require special handling like garbage collection to avoid problems.
+    
+    \begin{highlight}[General Graph Directory]
+    
+        \begin{itemize}
+            \item \textbf{Cycles in Directories}: The structure allows links to create cycles, complicating traversal and file deletion.
+            \item \textbf{Garbage Collection}: Used to manage the space of files that are no longer accessible due to cycles.
+            \item \textbf{Traversal Complexity}: Special care must be taken to avoid infinite loops when navigating directories with cycles.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Single-Level Directory}: Simplest structure, but limited in multi-user environments due to name conflicts.
+            \item \textbf{Two-Level Directory}: Each user has a separate directory, solving naming conflicts and improving file management.
+            \item \textbf{Tree-Structured Directory}: Provides hierarchical organization and path names, allowing complex file structures.
+            \item \textbf{Acyclic-Graph Directory}: Enables file sharing among users through links, while maintaining an acyclic structure.
+            \item \textbf{General Graph Directory}: Allows cycles but requires careful handling to avoid traversal and deletion issues.
+        \end{itemize}
+    
+    Directory structures provide a fundamental way to organize files in a file system, and the choice of structure impacts both system performance and user experience.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 13.4: Protection}.
+
+\begin{notes}{Section 13.4: Protection}
+    \subsection*{Overview}
+
+    This section discusses the concept of protection in file systems, focusing on how to prevent improper access to files and ensure data integrity. Protection mechanisms are essential for controlling 
+    access to sensitive information and ensuring that only authorized users can perform specific operations. These mechanisms must balance the need for security with the practicality of access management, 
+    particularly in multiuser systems.
+    
+    \subsubsection*{Types of Access}
+    
+    Protection mechanisms control different types of access that users may need. The most common types of operations that require protection include reading, writing, executing, appending, deleting, 
+    and listing file attributes. Controlled access helps prevent unauthorized actions while allowing legitimate operations.
+    
+    \begin{highlight}[Types of Access]
+    
+        \begin{itemize}
+            \item \textbf{Read}: Allows viewing the contents of the file.
+            \item \textbf{Write}: Enables modifying or rewriting the file.
+            \item \textbf{Execute}: Permits loading and running the file in memory.
+            \item \textbf{Append}: Allows adding new information to the end of the file.
+            \item \textbf{Delete}: Removes the file and frees its space.
+            \item \textbf{List}: Displays the file's name and attributes.
+            \item \textbf{Attribute Change}: Modifies the file's attributes, such as its permissions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Access Control}
+    
+    The most common approach to protection is to base access on user identity. Systems use access-control lists (ACLs) that specify which users can perform specific operations on a file or directory. 
+    While ACLs are flexible and precise, they can be cumbersome to manage, especially in large systems with many users.
+    
+    \begin{highlight}[Access Control]
+    
+        \begin{itemize}
+            \item \textbf{Access-Control Lists (ACLs)}: Associate files and directories with lists specifying users and their allowed operations.
+            \item \textbf{Owner-Group-Other Scheme}: Simplifies access control by grouping users into categories (owner, group, other) with distinct permissions.
+            \item \textbf{Advantages of ACLs}: Enable fine-grained control over who can access or modify a file.
+            \item \textbf{Disadvantages of ACLs}: Can become lengthy and difficult to manage in large systems.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{UNIX and Windows Permissions}
+    
+    In UNIX-like systems, protection is managed through three fields (owner, group, and universe) with each field consisting of three bits: read (\texttt{r}), write (\texttt{w}), and execute (\texttt{x}). 
+    Similarly, Windows systems use ACLs, but management is typically done via a graphical user interface, allowing administrators to control access more intuitively.
+    
+    \begin{highlight}[UNIX and Windows Permissions]
+    
+        \begin{itemize}
+            \item \textbf{UNIX Permissions}: Use three fields—owner, group, and universe—each consisting of three bits (\texttt{rwx}) to manage file access.
+            \item \textbf{Windows ACLs}: Managed through a graphical user interface, allowing administrators to set specific permissions for individual users or groups.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Other Protection Approaches}
+    
+    Alternative protection mechanisms include associating passwords with files or encrypting files and directories. These methods can be effective in certain situations but come with their own limitations. 
+    Password-based protection, for instance, can become impractical when managing multiple files, while encryption provides robust security but requires careful password management.
+    
+    \begin{highlight}[Other Protection Approaches]
+    
+        \begin{itemize}
+            \item \textbf{Password Protection}: Controls access by requiring a password for each file or directory.
+            \item \textbf{Encryption}: Provides strong protection by encrypting files or partitions, with access granted via decryption keys.
+            \item \textbf{Challenges}: Managing multiple passwords or encryption keys can become burdensome.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Types of Access}: Read, write, execute, append, delete, and listing operations can be controlled to protect files.
+            \item \textbf{Access Control Lists (ACLs)}: Provide fine-grained control over user permissions but can be complex to manage.
+            \item \textbf{UNIX and Windows Permissions}: Use different approaches to managing access, with UNIX relying on \texttt{rwx} bits and Windows on ACLs.
+            \item \textbf{Other Protection Approaches}: Include password protection and encryption, which offer varying levels of security and convenience.
+        \end{itemize}
+    
+    Protection mechanisms are crucial for securing data in multiuser systems, allowing controlled access while preventing unauthorized operations.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 13.5: Memory-Mapped Files}.
+
+\begin{notes}{Section 13.5: Memory-Mapped Files}
+    \subsection*{Overview}
+
+    This section introduces memory-mapped files, a method for accessing files that can improve performance by treating file I/O as routine memory accesses. Instead of using system calls like \texttt{open()}, \texttt{read()}, and \texttt{write()} for file access, memory mapping associates part of the virtual address space with a file, allowing data to be accessed through regular memory operations. This technique simplifies file I/O and can lead to significant performance gains.
+    
+    \subsubsection*{Basic Mechanism}
+    
+    Memory mapping a file is accomplished by mapping a disk block to a page (or pages) in memory. Initially, file access proceeds through demand paging, leading to a page fault, which triggers the reading of a page-sized portion of the file from disk. Subsequent reads and writes are handled as regular memory accesses, eliminating the overhead of system calls. The file is updated on disk only when the file is closed, with changes buffered in memory until then.
+    
+    \begin{highlight}[Basic Mechanism]
+    
+        \begin{itemize}
+            \item \textbf{Demand Paging}: The first access triggers a page fault, loading a page from the file into memory.
+            \item \textbf{Memory Access}: Subsequent reads and writes to the file are treated as memory operations, improving efficiency.
+            \item \textbf{Deferred Writes}: File changes are not immediately written to disk, but rather when the file is closed.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File Sharing with Memory Mapping}
+    
+    Memory-mapped files allow multiple processes to map the same file concurrently, enabling data sharing. Processes can access the same sections of a file, with changes made by one process visible to the others. This technique also supports copy-on-write functionality, allowing processes to share a file in read-only mode but have their own copy of any modified data.
+    
+    \begin{highlight}[File Sharing with Memory Mapping]
+    
+        \begin{itemize}
+            \item \textbf{Concurrent Mapping}: Multiple processes can map the same file, enabling shared access to the data.
+            \item \textbf{Copy-on-Write}: Processes can share a read-only file but receive their own copies of modified sections.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Memory Mapping in Windows API}
+    
+    In the Windows API, memory-mapped files are established in two steps: first, a file mapping object is created using the \texttt{CreateFileMapping()} function, and then a view of the mapped file is created in the process's virtual address space using \texttt{MapViewOfFile()}. This technique allows processes to share memory through mapped files, as demonstrated in the producer-consumer example, where the producer writes a message to shared memory, and the consumer reads it.
+    
+    \begin{highlight}[Memory Mapping in Windows API]
+    
+        \begin{itemize}
+            \item \textbf{\texttt{CreateFileMapping()}}: Creates a file mapping object that represents the shared-memory object.
+            \item \textbf{\texttt{MapViewOfFile()}}: Maps the file into the process's virtual address space, allowing access via memory operations.
+            \item \textbf{Producer-Consumer Example}: The producer writes a message to the shared-memory object, and the consumer reads it, demonstrating interprocess communication through memory mapping.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Memory-Mapped Files}: Improve performance by treating file access as memory operations, avoiding system call overhead.
+            \item \textbf{File Sharing}: Allows multiple processes to map the same file and share data, with support for copy-on-write functionality.
+            \item \textbf{Windows API}: Supports memory-mapped file sharing through \texttt{CreateFileMapping()} and \texttt{MapViewOfFile()}, enabling efficient interprocess communication.
+        \end{itemize}
+    
+    Memory-mapped files provide an efficient method for file access and interprocess communication by leveraging virtual memory techniques and minimizing the overhead of traditional file I/O.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 14: File-System Implementation} and the first section that is being covered from this chapter this week is \textbf{Section 14.1: File-System Structure}.
+
+\begin{notes}{Section 14.1: File-System Structure}
+    \subsection*{Overview}
+
+    This section introduces the structure of file systems, which provide the mechanism for online storage and access to file contents, including data and programs. File systems typically reside on 
+    secondary storage devices like hard disks and nonvolatile memory (NVM). The section explores how file systems organize, allocate, recover, and track storage, while considering performance throughout. 
+    Different file systems offer varying features, performance, and reliability, with general-purpose operating systems often supporting multiple file systems.
+    
+    \subsubsection*{File System Structure}
+    
+    Disks and NVM devices provide the foundation for file systems. Two important characteristics of disks make them suitable for file systems: they can be rewritten in place, and any block of information 
+    can be accessed directly. I/O transfers between memory and storage are performed in blocks, with typical sizes of 512 bytes or 4,096 bytes. NVM devices typically have blocks of 4,096 bytes, similar 
+    to hard disks.
+    
+    \begin{highlight}[File System Structure]
+    
+        \begin{itemize}
+            \item \textbf{Disk Characteristics}: Disks can be rewritten in place and support direct access to any block.
+            \item \textbf{Block I/O}: Transfers are performed in block units, typically 512 or 4,096 bytes, depending on the device.
+            \item \textbf{NVM Devices}: Nonvolatile memory devices, often used for file storage, have similar transfer methods to hard disks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Layered File-System Design}
+    
+    The file system is structured in layers. The I/O control layer handles communication between the disk system and memory, using device drivers and interrupt handlers. Above it, the basic file system 
+    issues generic commands to the device drivers for reading and writing blocks. The file-organization module manages logical file blocks and free space. Finally, the logical file system manages metadata 
+    and directory structures.
+    
+    \begin{highlight}[Layered File-System Design]
+    
+        \begin{itemize}
+            \item \textbf{I/O Control}: Uses device drivers and interrupt handlers to transfer information between memory and disk.
+            \item \textbf{Basic File System}: Issues commands based on logical block addresses and manages buffer caches.
+            \item \textbf{File-Organization Module}: Handles logical blocks, free space, and file allocation.
+            \item \textbf{Logical File System}: Manages metadata (e.g., file-control blocks) and directory structures.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Performance Considerations}
+    
+    File system performance is optimized by managing buffers and caches efficiently. Frequently accessed metadata is cached to minimize I/O overhead. Layering introduces the potential for duplication 
+    of code but also adds flexibility, as different file systems can share common lower-level layers. However, this can also increase overhead, which may negatively impact performance.
+    
+    \begin{highlight}[Performance Considerations]
+    
+        \begin{itemize}
+            \item \textbf{Caching}: Frequently accessed metadata and data blocks are cached to improve performance.
+            \item \textbf{Layering Overhead}: While layering adds flexibility, it can introduce performance overhead.
+            \item \textbf{Buffer Management}: Efficient buffer use is critical to reduce I/O delays and improve system throughput.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{File-System Structure}: File systems manage data storage on disks and NVM devices, allowing efficient access and retrieval.
+            \item \textbf{Layered Design}: The file system is divided into layers, including I/O control, basic file system, file-organization module, and logical file system.
+            \item \textbf{Performance}: Optimizing caching and minimizing layering overhead is crucial for improving file system performance.
+        \end{itemize}
+    
+    File systems are central to managing storage in operating systems, and their layered structure helps balance flexibility, performance, and functionality across different types of storage devices.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.2: File-System Operations}.
+
+\begin{notes}{Section 14.2: File-System Operations}
+    \subsection*{Overview}
+
+    This section describes the structures and operations used to implement file-system operations, such as opening, reading, writing, and closing files. These operations rely on both on-storage and in-memory structures, which vary by operating system and file system. The section highlights the general principles that apply across file systems, detailing how they organize and manage file data.
+    
+    \subsubsection*{On-Storage Structures}
+    
+    Several key structures reside on storage devices and are used to manage file systems. These include boot control blocks, volume control blocks, directory structures, and file control blocks (FCBs). These structures are crucial for managing the storage, organization, and retrieval of data.
+    
+    \begin{highlight}[On-Storage Structures]
+    
+        \begin{itemize}
+            \item \textbf{Boot Control Block}: Contains information needed to boot the operating system. Known as the boot block in UFS and partition boot sector in NTFS.
+            \item \textbf{Volume Control Block}: Stores volume details such as block size and free space. Called the superblock in UFS and stored in the master file table in NTFS.
+            \item \textbf{Directory Structure}: Organizes files in a file system, mapping file names to their corresponding inode numbers (UFS) or storing this information in the master file table (NTFS).
+            \item \textbf{File Control Block (FCB)}: Holds detailed information about files, including unique identifiers, file size, and access permissions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{In-Memory Structures}
+    
+    In-memory structures improve file system performance and manage file operations. These include mount tables, directory caches, system-wide open-file tables, and per-process open-file tables. The data stored in memory is loaded during mount time and updated throughout file operations.
+    
+    \begin{highlight}[In-Memory Structures]
+    
+        \begin{itemize}
+            \item \textbf{Mount Table}: Stores information about each mounted volume.
+            \item \textbf{Directory-Structure Cache}: Holds recently accessed directory information, improving lookup performance.
+            \item \textbf{System-Wide Open-File Table}: Contains a copy of the FCB for each open file, shared across processes.
+            \item \textbf{Per-Process Open-File Table}: Holds pointers to the system-wide table, allowing each process to access its open files.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File Creation and Usage}
+    
+    To create a new file, the logical file system allocates an FCB and updates the directory structure with the file name and FCB. Once a file is created, it can be opened using the \texttt{open()} call, which searches the system-wide open-file table to check if the file is already open. If not, the file is located in the directory structure, and its FCB is copied into the system-wide open-file table.
+    
+    \begin{highlight}[File Creation and Usage]
+    
+        \begin{itemize}
+            \item \textbf{File Creation}: Involves allocating a new FCB and updating the directory with the file name and control block.
+            \item \textbf{File Opening}: \texttt{open()} checks if the file is already open, and if not, retrieves its FCB from storage and places it in memory.
+            \item \textbf{File Access}: Subsequent operations use a file descriptor (UNIX) or file handle (Windows) to access the file.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File Closing and Caching}
+    
+    When a process closes a file, its entry in the per-process open-file table is removed, and the system-wide table is updated. Cached information about the file remains in memory to improve performance. Systems like BSD UNIX use extensive caching for file metadata, achieving a high cache hit rate and reducing the need for disk I/O.
+    
+    \begin{highlight}[File Closing and Caching]
+    
+        \begin{itemize}
+            \item \textbf{File Closing}: The file's entry is removed from the per-process table, and updates are made to the system-wide open-file table.
+            \item \textbf{Caching}: Metadata and frequently accessed information are cached in memory to improve access speed and reduce disk I/O.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{On-Storage Structures}: Include boot control blocks, volume control blocks, directory structures, and FCBs, crucial for organizing and managing data.
+            \item \textbf{In-Memory Structures}: Enhance performance through caching and efficient file access management.
+            \item \textbf{File Operations}: Involves file creation, opening, usage, and closing, with caching mechanisms improving performance.
+        \end{itemize}
+    
+    File-system operations rely on the effective management of both on-storage and in-memory structures, allowing for efficient file access and system performance optimization.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.3: Directory Implementation}.
+
+\begin{notes}{Section 14.3: Directory Implementation}
+    \subsection*{Overview}
+
+    This section discusses directory-implementation methods, focusing on how the selection of directory-allocation and management algorithms impacts the efficiency, performance, and reliability of the 
+    file system. Two primary methods for implementing directories—linear lists and hash tables—are analyzed, along with their trade-offs in terms of speed and complexity.
+    
+    \subsubsection*{Linear List}
+    
+    A linear list is the simplest way to implement a directory, consisting of file names and pointers to the associated data blocks. While this method is straightforward to program, it is inefficient 
+    to execute, as finding a file requires a linear search. Operations such as file creation and deletion also involve searching the entire directory, leading to performance bottlenecks.
+    
+    \begin{highlight}[Linear List]
+    
+        \begin{itemize}
+            \item \textbf{File Creation}: Requires a search to ensure no existing file has the same name, followed by adding the new file entry at the end.
+            \item \textbf{File Deletion}: Involves searching for the file, releasing its allocated space, and managing the now-vacant directory entry (e.g., marking it as unused or shifting entries).
+            \item \textbf{Disadvantage}: Searching for a file is slow due to the linear nature of the list, making frequent directory access noticeably sluggish.
+            \item \textbf{Improvement}: A sorted list can speed up search times using binary search but complicates file creation and deletion.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Hash Table}
+    
+    A hash table reduces directory search time by computing a hash value from the file name and using it to locate the file in the directory. This approach is generally faster than a linear search but 
+    comes with challenges such as handling collisions (multiple files hashing to the same location) and managing a fixed-size hash table.
+    
+    \begin{highlight}[Hash Table]
+    
+        \begin{itemize}
+            \item \textbf{Fast Lookup}: Converts file names into hash values, providing a pointer to the file's location, thus reducing search time.
+            \item \textbf{Collision Handling}: Collisions occur when different file names hash to the same location; these are typically resolved by chaining (linked lists) or other methods.
+            \item \textbf{Drawback}: Fixed-size hash tables may need resizing when the number of files exceeds the table capacity, requiring rehashing of all file entries.
+            \item \textbf{Chained Overflow}: A common solution to collisions, where each hash entry becomes a linked list of files with the same hash value.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Linear List}: Easy to implement but inefficient due to the need for linear searching, especially in large directories.
+            \item \textbf{Hash Table}: Provides faster file lookup times but can be complex to manage due to collisions and the need for resizing when full.
+            \item \textbf{Directory Efficiency}: The choice of implementation—whether linear or hash-based—affects the overall performance and scalability of the file system.
+        \end{itemize}
+    
+    Directory-implementation methods significantly influence the performance of a file system, with each approach offering trade-offs in terms of simplicity, search efficiency, and complexity in handling 
+    edge cases like collisions.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.4: Allocation Methods}.
+
+\begin{notes}{Section 14.4: Allocation Methods}
+    \subsection*{Overview}
+
+    This section discusses the different methods used for allocating space to files on secondary storage. The three major allocation methods—contiguous, linked, and indexed—are each designed to address 
+    the challenges of space management, access efficiency, and fragmentation. While some file systems may support all three methods, most use one primary method depending on the file-system type and 
+    workload characteristics.
+    
+    \subsubsection*{Contiguous Allocation}
+    
+    In contiguous allocation, each file occupies a set of contiguous blocks on the storage device. This approach provides excellent performance for sequential and direct access because the blocks are stored 
+    together, reducing seek time. However, it suffers from external fragmentation, where free space is broken into small chunks, making it difficult to find contiguous space for new files.
+    
+    \begin{highlight}[Contiguous Allocation]
+    
+        \begin{itemize}
+            \item \textbf{Sequential and Direct Access}: Both are efficient since blocks are stored together and can be accessed directly.
+            \item \textbf{External Fragmentation}: Space becomes fragmented over time, making it hard to allocate large contiguous files.
+            \item \textbf{File Size Estimation}: Files must be allocated space at creation, but determining the exact size in advance can lead to inefficient use of space.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Linked Allocation}
+    
+    Linked allocation solves the fragmentation issue by storing files as linked lists of blocks, which may be scattered anywhere on the disk. Each block contains a pointer to the next block, eliminating 
+    external fragmentation. However, this method is inefficient for direct access since each block must be accessed sequentially.
+    
+    \begin{highlight}[Linked Allocation]
+    
+        \begin{itemize}
+            \item \textbf{No External Fragmentation}: Free blocks can be scattered anywhere, and space is used efficiently.
+            \item \textbf{Sequential Access}: Efficient, as each block points to the next.
+            \item \textbf{Direct Access Inefficiency}: Inefficient for direct access due to the need to traverse the linked list of blocks.
+            \item \textbf{File-Allocation Table (FAT)}: A variant used by MS-DOS, where a table at the beginning of the volume holds block pointers, reducing seek time for small files.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Indexed Allocation}
+    
+    Indexed allocation resolves the direct-access inefficiency by storing all block pointers in a single index block, which allows for efficient random access to any block. However, this method introduces 
+    overhead, as the index block consumes space even for small files.
+    
+    \begin{highlight}[Indexed Allocation]
+    
+        \begin{itemize}
+            \item \textbf{Direct Access}: Efficient, as block pointers are stored together in the index block, allowing immediate access.
+            \item \textbf{No External Fragmentation}: Any available block can be used, as the location of the data is managed by the index.
+            \item \textbf{Pointer Overhead}: Small files incur overhead due to the need for an entire index block.
+            \item \textbf{Multilevel Indexing}: Used in UNIX, where small files use direct pointers and larger files use indirect, double, or triple-indirect pointers.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Contiguous Allocation}: Provides fast sequential and direct access but suffers from external fragmentation.
+            \item \textbf{Linked Allocation}: Efficient for sequential access and eliminates external fragmentation, but direct access is inefficient.
+            \item \textbf{Indexed Allocation}: Supports efficient direct access with no external fragmentation, though it introduces space overhead for small files.
+        \end{itemize}
+    
+    The allocation method chosen depends on the type of access required by the system and the nature of the files being stored, with trade-offs in terms of performance, space utilization, and fragmentation.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.5: Free-Space Management}.
+
+\begin{notes}{Section 14.5: Free-Space Management}
+    \subsection*{Overview}
+
+    This section discusses the methods used to manage free space in file systems, which is essential for efficient storage allocation and reuse. As files are created and deleted, free space needs to be 
+    tracked and managed to allow new files to use previously allocated blocks. Several approaches to managing free space are explored, including bit vectors, linked lists, grouping, counting, and advanced 
+    techniques like space maps in modern file systems.
+    
+    \subsubsection*{Bit Vector}
+    
+    The bit vector (or bitmap) approach represents each block on the disk with a bit: 1 if the block is free, and 0 if it is allocated. This method allows for efficient searching for free blocks, as 
+    bit manipulation instructions can quickly identify the first free block or a series of consecutive free blocks.
+    
+    \begin{highlight}[Bit Vector]
+    
+        \begin{itemize}
+            \item \textbf{Simple Representation}: Each bit corresponds to a block; 1 indicates free, and 0 indicates allocated.
+            \item \textbf{Efficient Search}: Hardware-level bit manipulation allows fast identification of free blocks.
+            \item \textbf{Drawback}: Requires substantial memory to store the bit vector, especially for large disks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Linked List}
+    
+    In the linked list approach, free blocks are linked together, with each free block containing a pointer to the next free block. This method reduces the overhead of storing a large bitmap but requires 
+    sequential traversal to find free blocks, which can be inefficient.
+    
+    \begin{highlight}[Linked List]
+    
+        \begin{itemize}
+            \item \textbf{No Memory Overhead}: Free blocks are linked without requiring large bitmaps.
+            \item \textbf{Sequential Access}: Finding free blocks requires traversing the list, which can be time-consuming.
+            \item \textbf{Simple Allocation}: The first free block in the list is allocated to a new file.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Grouping}
+    
+    The grouping technique modifies the linked list approach by storing the addresses of multiple free blocks in the first free block. This method allows faster access to large groups of free blocks, as 
+    each block can store references to many others.
+    
+    \begin{highlight}[Grouping]
+    
+        \begin{itemize}
+            \item \textbf{Efficient Access}: Multiple free block addresses are stored in one block, reducing traversal times.
+            \item \textbf{Block Organization}: Blocks are grouped for faster allocation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Counting}
+    
+    Counting is used when large contiguous sections of free blocks are common. Rather than maintaining a list of individual blocks, the system keeps track of the starting block and the number of contiguous 
+    free blocks. This method is space-efficient and speeds up allocation for large files.
+    
+    \begin{highlight}[Counting]
+    
+        \begin{itemize}
+            \item \textbf{Contiguous Block Tracking}: Keeps track of the starting block and the number of free contiguous blocks.
+            \item \textbf{Efficient for Large Files}: Reduces the need for managing individual blocks in cases of large, contiguous free space.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Space Maps (ZFS)}
+    
+    Modern file systems like ZFS use advanced techniques such as space maps to manage free blocks. ZFS divides storage into metaslabs, each with its own space map, which is stored as a log of block activity 
+    (allocating and freeing). This log is replayed in memory to create an efficient, up-to-date representation of free space.
+    
+    \begin{highlight}[Space Maps (ZFS)]
+    
+        \begin{itemize}
+            \item \textbf{Metaslabs}: Storage is divided into metaslabs for easier management.
+            \item \textbf{Log-Structured Space Maps}: Free and allocated block activity is recorded in a log, which is replayed to update free space.
+            \item \textbf{Efficient Management}: Reduces the overhead of managing large-scale free space by using logs and trees.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Bit Vector}: Simple and efficient for finding free blocks but requires significant memory for large disks.
+            \item \textbf{Linked List}: Reduces memory overhead but may be slow due to sequential traversal of free blocks.
+            \item \textbf{Grouping}: Improves upon linked lists by storing multiple free block addresses in each block.
+            \item \textbf{Counting}: Efficient for tracking large contiguous blocks of free space.
+            \item \textbf{Space Maps (ZFS)}: Advanced technique used in ZFS to manage large amounts of free space efficiently using logs and metaslabs.
+        \end{itemize}
+    
+    Free-space management is crucial for file system performance, with different methods offering trade-offs between speed, complexity, and memory usage.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.6: Efficiency And Performance}.
+
+\begin{notes}{Section 14.6: Efficiency And Performance}
+    \subsection*{Overview}
+
+    This section focuses on the efficiency and performance of file systems, particularly in relation to the storage devices on which they reside. Disk drives are a major bottleneck in system performance, 
+    as they are significantly slower than other components such as the CPU and main memory. The section explores techniques aimed at improving storage performance and the trade-offs associated with various 
+    block-allocation and directory-management strategies.
+    
+    \subsubsection*{Efficiency Considerations}
+    
+    Efficiency in file systems depends heavily on the allocation and directory-management algorithms used. For example, UNIX file systems preallocate inodes across the volume, improving performance by 
+    keeping file data blocks close to their corresponding inodes, which minimizes seek time. Another example is the clustering scheme in BSD UNIX, which adjusts cluster sizes to improve performance while 
+    reducing internal fragmentation.
+    
+    \begin{highlight}[Efficiency Considerations]
+    
+        \begin{itemize}
+            \item \textbf{Inode Preallocation (UNIX)}: Spreads inodes across the disk to reduce seek time and improve file access speed.
+            \item \textbf{Cluster Management (BSD UNIX)}: Uses variable cluster sizes for different file sizes to reduce fragmentation and enhance efficiency.
+            \item \textbf{Data Tracking}: Systems often record metadata such as "last write" or "last access" dates, which, while useful, may add performance overhead due to additional read-write cycles.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Performance Improvements}
+    
+    Several techniques are used to improve file-system performance, including the use of on-board disk caches, unified buffer caches, and optimized caching strategies such as read-ahead and free-behind. 
+    On-board disk caches store entire tracks or blocks at once, reducing the number of I/O operations required. Additionally, systems like Solaris and Linux have adopted unified buffer caches, allowing 
+    both memory-mapped I/O and \texttt{read()}/\texttt{write()} system calls to share the same cache, avoiding the inefficiencies of double caching.
+    
+    \begin{highlight}[Performance Improvements]
+    
+        \begin{itemize}
+            \item \textbf{On-Board Disk Caches}: Store entire tracks or blocks to reduce the number of disk accesses needed for read/write operations.
+            \item \textbf{Unified Buffer Cache}: Combines the page cache and buffer cache, eliminating the inefficiencies associated with double caching.
+            \item \textbf{Read-Ahead and Free-Behind}: Optimize sequential file access by reading multiple pages in advance and freeing pages that are no longer needed.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Write Policies}
+    
+    File-system performance can be affected by whether writes are performed synchronously or asynchronously. Synchronous writes force the calling process to wait until the data is physically written to 
+    the storage device, whereas asynchronous writes allow the process to continue execution while the data is written to the disk in the background. Asynchronous writes are typically faster, but some 
+    operations, such as database transactions, require the guarantees provided by synchronous writes.
+    
+    \begin{highlight}[Write Policies]
+    
+        \begin{itemize}
+            \item \textbf{Synchronous Writes}: Ensure data integrity by waiting for the write operation to complete, often used in databases.
+            \item \textbf{Asynchronous Writes}: Improve performance by allowing the process to continue execution while the data is written in the background.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Caching Strategies}
+    
+    Different caching strategies are used depending on the type of file access. For sequential access, techniques such as read-ahead and free-behind optimize performance by predicting future accesses 
+    and preloading pages into memory, while removing pages that are unlikely to be used again. For random access, caching is managed using page-replacement algorithms like Least Recently Used (LRU), 
+    although these strategies can vary between operating systems.
+    
+    \begin{highlight}[Caching Strategies]
+    
+        \begin{itemize}
+            \item \textbf{Read-Ahead}: Preloads several pages when a page is requested, optimizing sequential file access.
+            \item \textbf{Free-Behind}: Frees a page from the buffer as soon as the next page is accessed, reducing memory usage for sequential files.
+            \item \textbf{Page Caching (LRU)}: In random-access scenarios, Least Recently Used (LRU) is a general-purpose algorithm for replacing cached pages.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Efficiency}: File-system efficiency is influenced by inode management, cluster allocation, and the size of metadata recorded for files.
+            \item \textbf{Performance Techniques}: Include disk caching, unified buffer caches, and strategies like read-ahead and free-behind to optimize sequential access.
+            \item \textbf{Write Policies}: Synchronous writes provide stronger guarantees, while asynchronous writes enhance performance for less critical data.
+            \item \textbf{Caching Strategies}: Effective caching techniques, tailored for sequential or random access, are crucial for minimizing disk I/O and improving performance.
+        \end{itemize}
+    
+    File-system performance hinges on careful management of disk access, caching, and allocation strategies, balancing efficiency with the need for robust data storage and retrieval.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.7: Recovery}.
+
+\begin{notes}{Section 14.7: Recovery}
+    \subsection*{Overview}
+
+    This section discusses recovery mechanisms in file systems to handle inconsistencies or corruption caused by system crashes. When a system crashes during file system operations, it may leave data 
+    structures such as directories, free-block pointers, and file control blocks (FCBs) in an inconsistent state. The section describes methods like consistency checking, log-based recovery, and backup 
+    and restore processes to maintain file system integrity and recover from crashes.
+    
+    \subsubsection*{Consistency Checking}
+    
+    Consistency checking scans file-system metadata to detect and correct inconsistencies that occur due to crashes. Tools like \texttt{fsck} in UNIX compare the directory structure and metadata against 
+    storage data. The efficiency of this method depends on the allocation algorithm used, with some methods (e.g., linked allocation) allowing easier recovery than others (e.g., indexed allocation).
+    
+    \begin{highlight}[Consistency Checking]
+    
+        \begin{itemize}
+            \item \textbf{Metadata Scanning}: Scans metadata for inconsistencies, such as mismatches between directory entries and FCB pointers.
+            \item \textbf{\texttt{fsck}}: Compares file system metadata with storage data, correcting any errors found.
+            \item \textbf{Allocation Method Impact}: Linked allocation facilitates easier recovery, while indexed allocation poses more challenges.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Log-Based Recovery (Journaling)}
+    
+    Log-based recovery records all file-system metadata changes sequentially in a log. Once a transaction (set of file-system operations) is committed to the log, it is replayed asynchronously to the 
+    actual file-system structures. This approach eliminates the need for consistency checking by ensuring all operations are either fully completed or not applied.
+    
+    \begin{highlight}[Log-Based Recovery (Journaling)]
+    
+        \begin{itemize}
+            \item \textbf{Transaction Log}: Metadata changes are written sequentially to a log and later applied to the file system.
+            \item \textbf{Crash Recovery}: If a system crashes, the log can be replayed to complete unfinished transactions, ensuring consistency.
+            \item \textbf{Performance}: Log-based recovery improves performance by turning random writes into sequential writes, reducing I/O overhead.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Other Solutions (WAFL, ZFS)}
+    
+    Some file systems, such as WAFL and ZFS, avoid overwriting data blocks directly. Instead, they write new data to free blocks and update the pointers to these new blocks. This method supports the 
+    creation of snapshots, which capture the file system's state at a specific time, enabling both recovery and point-in-time restores.
+    
+    \begin{highlight}[Other Solutions (WAFL, ZFS)]
+    
+        \begin{itemize}
+            \item \textbf{Non-Overwriting}: New data is written to free blocks, and pointers are updated atomically, preventing inconsistency.
+            \item \textbf{Snapshots}: A snapshot preserves the state of the file system at a specific time, useful for recovery.
+            \item \textbf{ZFS Checksumming}: ZFS provides checksumming for all data and metadata, ensuring data integrity even after crashes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Backup and Restore}
+    
+    Backup and restore methods ensure data is not permanently lost in case of a disk failure. Full backups capture the entire file system, while incremental backups store only changes made since the 
+    last backup. Restoring the file system from a backup involves using the full backup and any relevant incremental backups to recover lost or corrupted files.
+    
+    \begin{highlight}[Backup and Restore]
+    
+        \begin{itemize}
+            \item \textbf{Full Backup}: Copies the entire file system to backup storage.
+            \item \textbf{Incremental Backup}: Stores only the files that have changed since the last backup, reducing backup time and space.
+            \item \textbf{Restoration}: Files can be restored by applying the full backup followed by any incremental backups, recovering deleted or corrupted files.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Consistency Checking}: Detects and corrects file system inconsistencies caused by crashes through metadata scanning.
+            \item \textbf{Log-Based Recovery}: Uses transaction logs to ensure metadata consistency, replaying logs after crashes to complete pending transactions.
+            \item \textbf{Non-Overwriting Solutions}: File systems like ZFS and WAFL avoid overwriting data and use snapshots for easy recovery.
+            \item \textbf{Backup and Restore}: Regular backups ensure data recovery in case of hardware failure, using both full and incremental backup strategies.
+        \end{itemize}
+    
+    Effective recovery mechanisms are crucial for maintaining file system integrity and ensuring data availability in the event of a crash or disk failure.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 14.8: Example: The WAFL File System}.
+
+\begin{notes}{Section 14.8: Example: The WAFL File System}
+    \subsection*{Overview}
+
+    This section presents an example of a specialized file system, the Write-Anywhere File Layout (WAFL) used by NetApp, Inc. WAFL is optimized for random writes, designed to work in network file servers, 
+    and supports protocols like NFS, CIFS, iSCSI, FTP, and HTTP. The system's primary focus is handling random writes efficiently, especially in environments with many clients accessing the file server.
+    
+    \subsubsection*{File-System Design}
+    
+    WAFL is block-based and uses inodes to describe files. The file system stores all metadata in files, including the inodes themselves, the free-block map, and the free-inode map. This flexibility 
+    allows WAFL to expand metadata files automatically as the file system grows. The root inode serves as the starting point, with subsequent data organized into a tree structure of blocks.
+    
+    \begin{highlight}[File-System Design]
+    
+        \begin{itemize}
+            \item \textbf{Block-Based Structure}: WAFL uses inodes to describe files, with 16 pointers to file blocks or indirect blocks.
+            \item \textbf{Metadata in Files}: All metadata, including inodes and free-block maps, is stored as standard files, allowing flexibility in block placement.
+            \item \textbf{Tree of Blocks}: The file system is organized as a tree with the root inode as the base, supporting efficient expansion.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Snapshots}
+    
+    One of WAFL's defining features is its snapshot capability, which allows the system to create read-only copies of the file system at different points in time. A snapshot is created by copying the 
+    root inode, and any subsequent changes are written to new blocks. The snapshot continues to point to the unchanged blocks, allowing access to the file system's state at the time the snapshot was 
+    taken without consuming significant storage space.
+    
+    \begin{highlight}[Snapshots]
+    
+        \begin{itemize}
+            \item \textbf{Efficient Snapshots}: WAFL snapshots copy only the root inode, and any updates after the snapshot are written to new blocks.
+            \item \textbf{Space Efficiency}: Snapshots consume little additional space, only storing modified blocks.
+            \item \textbf{Multiple Snapshots}: WAFL can maintain several snapshots simultaneously, allowing users to access files as they were at different times.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Clones and Replication}
+    
+    WAFL also supports read-write snapshots, known as clones. A clone starts from a read-only snapshot but allows new writes to be made to the clone. Additionally, WAFL supports replication by duplicating 
+    snapshots across systems for disaster recovery, synchronizing changes between the original and replicated file systems.
+    
+    \begin{highlight}[Clones and Replication]
+    
+        \begin{itemize}
+            \item \textbf{Clones}: Read-write snapshots that allow modifications, with new blocks written as changes occur.
+            \item \textbf{Replication}: Synchronizes snapshots across systems by copying only the blocks modified since the last snapshot, ensuring efficient disaster recovery.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{APFS (Apple File System)}
+    
+    Apple introduced APFS in 2017 as a modern replacement for the HFS+ file system. APFS is designed for all Apple devices and includes features like snapshots, clones, space sharing, and encryption. 
+    It also supports I/O coalescing, an optimization for nonvolatile memory (NVM) devices that improves write performance by grouping small writes into larger transactions.
+    
+    \begin{highlight}[APFS Features]
+    
+        \begin{itemize}
+            \item \textbf{Snapshots and Clones}: Similar to WAFL, APFS supports efficient snapshots and read-write clones.
+            \item \textbf{Space Sharing}: Allows multiple file systems to share a single storage pool, enabling dynamic volume resizing.
+            \item \textbf{I/O Coalescing}: Optimizes write performance for NVM devices by combining small writes into larger blocks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{WAFL}: Optimized for random writes, WAFL uses inodes and block-based structures, storing metadata in files for flexibility.
+            \item \textbf{Snapshots and Clones}: WAFL and APFS both support snapshots and clones, allowing for efficient backups, versioning, and disaster recovery.
+            \item \textbf{APFS}: A modern file system from Apple, designed to support a wide range of devices and storage types with advanced features like space sharing and encryption.
+        \end{itemize}
+    
+    WAFL's design, particularly its snapshot and clone features, allows for efficient handling of random writes and easy disaster recovery, making it a powerful tool for network file servers.
+    
+    \end{highlight}
+\end{notes}
+
+The last chapter that is being covered this week is \textbf{Chapter 15: File-System Internals} and the first section that is being covered from this chapter this week is \textbf{Section 15.1: File Systems}.
+
+\begin{notes}{Section 15.1: File Systems}
+    \subsection*{Overview}
+
+    This section introduces file systems, which provide mechanisms for storing and accessing file contents, including data and programs. File systems are essential for managing the vast number of files 
+    stored on a computer system's random-access storage devices, such as hard disks, optical disks, and nonvolatile memory (NVM) devices. Multiple file systems can coexist within a computer, each tailored 
+    to different storage devices and use cases.
+    
+    \subsubsection*{File System Organization}
+    
+    A general-purpose computer can have multiple storage devices, each divided into partitions that contain volumes, and each volume can hold one or more file systems. This organizational structure allows 
+    for flexible management of data, with file systems implemented on random-access storage media. Figure 15.1.1 depicts a typical file-system organization, with different partitions and volumes supporting 
+    varied file systems.
+    
+    \begin{highlight}[File System Organization]
+    
+        \begin{itemize}
+            \item \textbf{Partitions and Volumes}: Storage devices are divided into partitions, which hold volumes that store file systems.
+            \item \textbf{Multiple File Systems}: Computers may contain multiple file systems, each potentially designed for a specific purpose or device type.
+            \item \textbf{Example Structure}: Figure 15.1.1 illustrates the typical organization of storage devices into partitions, volumes, and file systems.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File System Types}
+    
+    Operating systems support different types of file systems, including general-purpose and special-purpose file systems. Solaris, for instance, may host dozens of file systems of various types. Some 
+    examples include tmpfs, which is a temporary file system created in volatile memory, and objfs, a virtual file system that gives debuggers access to kernel symbols. Other examples include UFS and ZFS, 
+    both of which are general-purpose file systems commonly used in UNIX-like environments.
+    
+    \begin{highlight}[File System Types]
+    
+        \begin{itemize}
+            \item \textbf{tmpfs}: A temporary file system stored in volatile memory, erased upon reboot.
+            \item \textbf{objfs}: A virtual file system that provides access to kernel symbols for debugging.
+            \item \textbf{UFS and ZFS}: General-purpose file systems used for long-term storage.
+            \item \textbf{procfs}: A virtual file system representing processes as files.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File System Operations}
+    
+    File systems perform several key functions, including allocating storage space, recovering freed space, tracking the locations of files, and interfacing with other parts of the operating system. These 
+    operations ensure that file systems can efficiently manage large amounts of data across multiple devices and partitions, while also supporting various file operations such as reading, writing, and file sharing.
+    
+    \begin{highlight}[File System Operations]
+    
+        \begin{itemize}
+            \item \textbf{Storage Allocation}: Manages the space required for files on storage devices.
+            \item \textbf{Space Recovery}: Reclaims storage from deleted or unused files.
+            \item \textbf{File Location Tracking}: Keeps track of the physical locations of files on storage devices.
+            \item \textbf{File Sharing}: Enables multiple users or processes to access files concurrently.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{File Systems}: Manage storage on random-access devices, supporting multiple file systems within a computer.
+            \item \textbf{File System Organization}: Volumes and partitions allow flexible storage management, with each volume potentially hosting different file systems.
+            \item \textbf{File System Types}: Both general-purpose and special-purpose file systems are supported by modern operating systems.
+            \item \textbf{Operations}: Include storage allocation, space recovery, file tracking, and file sharing, crucial for efficient file system management.
+        \end{itemize}
+    
+    File systems are essential components in managing data storage and retrieval, ensuring that computers can handle large volumes of data across multiple storage devices efficiently.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.2: File-System Mounting}.
+
+\begin{notes}{Section 15.2: File-System Mounting}
+    \subsection*{Overview}
+
+    This section discusses file-system mounting, a process required before a file system can be accessed by processes on the system. File systems are often distributed across multiple volumes, and each 
+    volume must be mounted at a specific point in the directory structure before it becomes available. Mounting integrates a new file system into the overall file-system namespace.
+    
+    \subsubsection*{Mounting Procedure}
+    
+    Mounting a file system involves specifying the device and the mount point, which is the location within the directory structure where the file system will be attached. Some operating systems require 
+    the type of file system to be explicitly provided, while others automatically detect the file-system type by inspecting the device. Typically, the mount point is an empty directory, such as mounting 
+    a user's home directory at \texttt{/home}.
+    
+    \begin{highlight}[Mounting Procedure]
+    
+        \begin{itemize}
+            \item \textbf{Device and Mount Point}: The operating system is provided with the device name and the mount point where the file system will be attached.
+            \item \textbf{File-System Type}: Some systems require the file-system type, while others auto-detect it.
+            \item \textbf{Mount Point Example}: A file system containing user directories could be mounted at \texttt{/home}, allowing access via paths like \texttt{/home/jane}.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mount Verification and Directory Structure}
+    
+    Once the mount point is specified, the operating system verifies the presence of a valid file system on the device by asking the device driver to read the device directory. If the verification 
+    succeeds, the file system is integrated into the directory structure. This enables the operating system to seamlessly traverse the directory tree across different file systems.
+    
+    \begin{highlight}[Mount Verification and Directory Structure]
+    
+        \begin{itemize}
+            \item \textbf{Verification}: The operating system verifies the presence of a valid file system by reading the device directory.
+            \item \textbf{Integration}: The new file system is attached to the directory structure, allowing traversal across file systems.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mount Semantics}
+    
+    Systems impose specific semantics on mounting. For instance, some systems disallow mounting over directories that contain files, while others obscure the directory's existing contents when a new 
+    file system is mounted. Additionally, some operating systems allow multiple mounts of the same file system at different points, while others restrict mounts to a single location.
+    
+    \begin{highlight}[Mount Semantics]
+    
+        \begin{itemize}
+            \item \textbf{Obscuring Existing Files}: Some systems obscure a directory's existing contents when a file system is mounted over it.
+            \item \textbf{Multiple Mounts}: Certain systems allow the same file system to be mounted at different points in the directory structure.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mounting in macOS and Windows}
+    
+    macOS automatically mounts file systems under the \texttt{/Volumes} directory whenever a new disk is detected. Users can interact with mounted file systems via the macOS graphical interface. Similarly, 
+    Windows assigns drive letters to volumes and mounts them accordingly, but recent versions of Windows also allow mounting file systems anywhere in the directory tree, similar to UNIX-based systems.
+    
+    \begin{highlight}[Mounting in macOS and Windows]
+    
+        \begin{itemize}
+            \item \textbf{macOS}: Automatically mounts file systems under \texttt{/Volumes}, providing graphical access to newly mounted file systems.
+            \item \textbf{Windows}: Assigns drive letters to volumes and mounts them, but also supports directory-based mounting similar to UNIX.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Mounting}: File systems must be mounted at a specific point in the directory structure to be accessible.
+            \item \textbf{Mount Verification}: The operating system verifies the file system before attaching it to the directory structure.
+            \item \textbf{Mount Semantics}: Different systems have varying rules about mounting, obscuring existing files, and allowing multiple mount points.
+            \item \textbf{macOS and Windows}: Both operating systems automatically handle file-system mounting, with differing approaches to mounting and file-system integration.
+        \end{itemize}
+    
+    File-system mounting is an essential process for accessing and managing multiple file systems within a unified directory structure, ensuring that file systems from various devices can be used seamlessly.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.3: Partitions And Mounting}.
+
+\begin{notes}{Section 15.3: Partitions And Mounting}
+    \subsection*{Overview}
+
+    This section describes the partitioning of disks and the process of mounting file systems. Disk partitions can vary based on the operating system and volume management software. A disk may be divided 
+    into multiple partitions, each containing either a raw or cooked (file system) format. Additionally, multiple partitions may span multiple disks in RAID configurations, as discussed in a different section.
+    
+    \subsubsection*{Raw and Cooked Partitions}
+    
+    Partitions can be either raw or cooked. Raw partitions contain no file system and are typically used for tasks such as swap space in UNIX or databases that require direct access to the disk. Cooked 
+    partitions, on the other hand, contain a file system and are used for general data storage. A bootable partition requires additional boot information, stored in a specific format to load the operating 
+    system during startup.
+    
+    \begin{highlight}[Raw and Cooked Partitions]
+    
+        \begin{itemize}
+            \item \textbf{Raw Partitions}: Contain no file system; used for UNIX swap space and direct database access.
+            \item \textbf{Cooked Partitions}: Contain a file system and are used for regular file storage.
+            \item \textbf{Boot Information}: Stored separately in a format readable by the system during the boot process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Boot Loader and Dual-Booting}
+    
+    A boot loader manages the boot process, loading the operating system from the appropriate partition. Systems that support multiple operating systems (dual-boot systems) rely on a boot loader capable of 
+    recognizing multiple file systems. The boot loader determines which partition to boot based on the user's selection, allowing the system to boot different operating systems installed on various partitions.
+    
+    \begin{highlight}[Boot Loader and Dual-Booting]
+    
+        \begin{itemize}
+            \item \textbf{Boot Loader}: Manages the boot process and loads the operating system.
+            \item \textbf{Dual-Booting}: Supports booting multiple operating systems by selecting the appropriate partition.
+            \item \textbf{File-System Compatibility}: The boot loader must understand the file-system format to boot an operating system stored on that partition.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mounting File Systems}
+    
+    The root partition, containing the operating system kernel, is mounted at boot time. Additional volumes can be mounted automatically during boot or manually later. The operating system verifies the 
+    integrity of the file system by reading the device directory. On UNIX systems, file systems can be mounted at any directory, while Windows mounts each file system in its own name space (e.g., drive letters). 
+    Mount points are registered in a mount table, allowing the system to traverse the directory structure across different file systems.
+    
+    \begin{highlight}[Mounting File Systems]
+    
+        \begin{itemize}
+            \item \textbf{Root Partition}: Contains the OS kernel and is mounted at boot time.
+            \item \textbf{Mount Verification}: The OS verifies the file system by checking the device directory.
+            \item \textbf{Mount Table}: Stores information about mounted file systems and their mount points.
+            \item \textbf{Mounting in UNIX and Windows}: UNIX allows mounting at any directory, while Windows uses separate name spaces (drive letters).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Raw and Cooked Partitions}: Raw partitions lack a file system and are used for swap space and databases, while cooked partitions contain file systems.
+            \item \textbf{Boot Loader}: Handles system boot, supporting multiple operating systems in dual-boot setups.
+            \item \textbf{Mounting}: File systems are mounted at specific points, with their validity verified by the OS, allowing seamless traversal across file systems.
+        \end{itemize}
+    
+    The partitioning and mounting of file systems are essential for efficient management of storage devices, enabling multiple file systems and operating systems to coexist and function smoothly.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.4: File Sharing}.
+
+\begin{notes}{Section 15.4: File Sharing}
+    \subsection*{Overview}
+
+    This section examines the concept of file sharing in operating systems, which is critical for collaboration among users. It discusses the general issues associated with sharing files between multiple 
+    users and extends the discussion to remote file systems. Additionally, the section explores how the operating system manages conflicting actions, such as when multiple users attempt to modify the same 
+    file concurrently.
+    
+    \subsubsection*{Multiple Users}
+    
+    In multi-user operating systems, file sharing introduces complexities around file naming, protection, and access control. The system must determine how users access shared files, whether access is granted 
+    by default or explicitly by the file owner. This process involves maintaining additional file and directory attributes, such as owner and group IDs, which define the permissions for different users.
+    
+    \begin{highlight}[Multiple Users]
+    
+        \begin{itemize}
+            \item \textbf{Owner and Group}: Each file has an owner who controls file permissions and can grant access to others. The group attribute defines a subset of users who can share access.
+            \item \textbf{Access Control}: The system checks the user ID and group ID to determine applicable permissions, then allows or denies the requested operation.
+            \item \textbf{ID Matching}: When using portable storage between systems, care must be taken to ensure that file ownership IDs match, or ownership must be reassigned.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Remote File Systems}
+    
+    File sharing is extended to remote file systems, which allow users to access files stored on different machines. However, sharing files across different systems introduces new challenges, including 
+    network reliability, data consistency, and security. The section explores how remote file systems must manage these challenges to ensure efficient and secure file sharing.
+    
+    \begin{highlight}[Remote File Systems]
+    
+        \begin{itemize}
+            \item \textbf{Network Reliability}: Remote file systems must handle network disruptions and ensure that files remain accessible despite potential connection issues.
+            \item \textbf{Data Consistency}: Systems must ensure that multiple users see consistent file data, even when accessing files from different locations.
+            \item \textbf{Security}: Additional security measures, such as encryption, may be required to protect file data shared over a network.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Conflicting Actions}
+    
+    When multiple users attempt to access or modify the same file simultaneously, the operating system must manage potential conflicts. The system may allow all writes to occur, or it may serialize 
+    access to protect users' actions. Some file systems implement file-locking mechanisms to prevent conflicting modifications by different users.
+    
+    \begin{highlight}[Conflicting Actions]
+    
+        \begin{itemize}
+            \item \textbf{Write Conflicts}: The system must decide whether to allow concurrent writes or to serialize access to prevent conflicts.
+            \item \textbf{File Locking}: Some systems use file locks to prevent conflicting writes by ensuring only one user can modify a file at a time.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{File Sharing}: Allows users to collaborate by sharing access to files while managing issues of protection and access control.
+            \item \textbf{Owner and Group}: The owner controls file permissions, and group attributes allow specified users to access shared files.
+            \item \textbf{Remote File Systems}: Extend file sharing to different systems, requiring management of network reliability, consistency, and security.
+            \item \textbf{Conflicting Actions}: The operating system must handle concurrent access, potentially using file locking to prevent write conflicts.
+        \end{itemize}
+    
+    File sharing is a powerful feature that enhances collaboration and efficiency, but it requires careful management of permissions, access control, and conflicts, particularly when working across 
+    multiple systems or networks.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.5: Virtual File Systems}.
+
+\begin{notes}{Section 15.5: Virtual File Systems}
+    \subsection*{Overview}
+
+    This section discusses the concept of virtual file systems (VFS), which enable modern operating systems to support multiple file-system types concurrently. VFS provides a mechanism to integrate 
+    different file systems into a single directory structure, allowing users to seamlessly navigate and access files across local and networked file systems.
+    
+    \subsubsection*{VFS Architecture}
+    
+    A virtual file system abstracts the details of specific file systems, providing a unified interface for accessing different types of file systems, including network file systems like NFS. VFS is 
+    designed to simplify file system operations using object-oriented techniques, allowing dissimilar file systems to coexist and be accessed uniformly. The VFS architecture consists of three major 
+    layers: the file-system interface, the VFS layer, and the file-system implementation layer.
+    
+    \begin{highlight}[VFS Architecture]
+    
+        \begin{itemize}
+            \item \textbf{File-System Interface}: Based on common system calls like \texttt{open()}, \texttt{read()}, \texttt{write()}, and \texttt{close()}.
+            \item \textbf{VFS Layer}: Separates generic file-system operations from their specific implementations and ensures files are uniquely represented across a network via the vnode structure.
+            \item \textbf{File-System Implementation}: Handles specific operations for local or remote file systems, using protocols like NFS for network requests.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{VFS Object Types}
+    
+    In Linux, VFS defines four primary object types to manage different file system operations: the inode object, file object, superblock object, and dentry object. Each object type has a corresponding 
+    set of operations, and each object points to a function table that implements the necessary operations. This abstraction allows VFS to handle different file types without needing to know their 
+    specific implementation details.
+    
+    \begin{highlight}[VFS Object Types]
+    
+        \begin{itemize}
+            \item \textbf{Inode Object}: Represents an individual file.
+            \item \textbf{File Object}: Represents an open file.
+            \item \textbf{Superblock Object}: Represents an entire file system.
+            \item \textbf{Dentry Object}: Represents an individual directory entry.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Operation Handling}
+    
+    VFS uses function tables to perform file operations on objects, without needing to know the underlying file system type. For instance, VFS invokes the appropriate function from an object's function 
+    table for operations like \texttt{read()} or \texttt{write()}. This abstraction allows VFS to work with different types of files—disk files, directory files, or network files—without changing the 
+    core operations.
+    
+    \begin{highlight}[Operation Handling]
+    
+        \begin{itemize}
+            \item \textbf{Unified Operations}: VFS calls functions from the object's function table, allowing for consistent handling of file operations.
+            \item \textbf{File-System Agnostic}: VFS can operate on any file type—disk-based, directory, or network—without needing to know the specific file system.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{VFS}: Provides an abstraction layer that separates file-system-generic operations from their specific implementations.
+            \item \textbf{Vnode Structure}: Ensures files are uniquely identified across local and remote file systems.
+            \item \textbf{VFS Objects}: Linux defines four main VFS objects (inode, file, superblock, and dentry) to handle file-system operations uniformly.
+            \item \textbf{Function Tables}: Each VFS object uses a function table to implement specific operations like \texttt{open()}, \texttt{read()}, and \texttt{write()}.
+        \end{itemize}
+    
+    VFS allows multiple file systems to be integrated and accessed seamlessly, providing a flexible, modular approach to handling both local and network file systems.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.6: Remote File Systems}.
+
+\begin{notes}{Section 15.6: Remote File Systems}
+    \subsection*{Overview}
+
+    This section introduces remote file systems, which allow sharing files over a network, enabling access to files on remote computers. File-sharing methods have evolved with network technology, from 
+    manual file transfers using programs like FTP to more integrated systems such as distributed file systems (DFS). Remote file systems rely on the client-server model to facilitate access to remote files.
+    
+    \subsubsection*{Client-Server Model}
+    
+    In remote file systems, the client-server model is commonly used, where one machine (the server) shares resources (files) and another machine (the client) accesses them. The server specifies which 
+    files are available and which clients are allowed access. Client-server interactions often require careful authentication to prevent unauthorized access, typically using network names, IP addresses, 
+    or secure keys.
+    
+    \begin{highlight}[Client-Server Model]
+    
+        \begin{itemize}
+            \item \textbf{Client-Server Relationship}: The server provides files, and the client accesses them over the network.
+            \item \textbf{Authentication}: Clients are often identified by network names or IP addresses, but secure authentication methods (e.g., encrypted keys) are preferred to prevent spoofing.
+            \item \textbf{NFS Example}: In UNIX's Network File System (NFS), clients and servers must have matching user IDs to ensure proper access permissions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{File Access and Semantics}
+    
+    Once a remote file system is mounted, file operations (e.g., opening or reading files) are sent over the network using the DFS protocol. The server checks the client's credentials and either allows 
+    or denies access based on standard access checks. File access semantics may differ from local file systems, depending on the implementation of the remote file system.
+    
+    \begin{highlight}[File Access and Semantics]
+    
+        \begin{itemize}
+            \item \textbf{Remote File Operations}: File operations (e.g., open, read, write) are sent to the server, which verifies access rights.
+            \item \textbf{File Handles}: If access is granted, a file handle is returned, allowing the client to perform further operations on the file.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Distributed Information Systems}
+    
+    Distributed information systems simplify remote file-system management by providing unified access to resources such as user authentication, host names, and printers. Examples include the domain 
+    name system (DNS) for resolving host names and Microsoft's Active Directory for managing user credentials and authentication across a network.
+    
+    \begin{highlight}[Distributed Information Systems]
+    
+        \begin{itemize}
+            \item \textbf{DNS}: Provides host-name-to-network-address translations for accessing resources over the Internet.
+            \item \textbf{Active Directory}: Microsoft's system for managing user authentication and resource access via LDAP and Kerberos protocols.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Failure Modes}
+    
+    Remote file systems have more failure modes than local file systems due to network dependencies. Common issues include network disconnections, server crashes, and hardware failures. To handle these, 
+    remote file systems may either terminate operations or delay them until the server becomes available again. Stateless protocols like NFS Version 3 minimize state tracking but can introduce security 
+    risks, while stateful versions (e.g., NFS Version 4) improve security and recovery mechanisms.
+    
+    \begin{highlight}[Failure Modes]
+    
+        \begin{itemize}
+            \item \textbf{Network Failures}: Remote file systems must handle disruptions in the network connection, either by delaying operations or terminating them.
+            \item \textbf{Stateless vs. Stateful}: NFS Version 3 is stateless, relying on clients to reinitiate file access, while NFS Version 4 is stateful, improving security and failure recovery.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Remote File Systems}: Enable file sharing over a network, allowing users to access files stored on remote machines.
+            \item \textbf{Client-Server Model}: The server provides files to authenticated clients, managing access permissions securely.
+            \item \textbf{Distributed Information Systems}: Simplify management of network resources, such as DNS for host resolution and Active Directory for user authentication.
+            \item \textbf{Failure Recovery}: Remote file systems must manage network and server failures, using stateless or stateful protocols to ensure continuity.
+        \end{itemize}
+    
+    Remote file systems enable widespread file sharing and access but introduce complexity in managing security, failure recovery, and network dependencies.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.7: Consistency Semantics}.
+
+\begin{notes}{Section 15.7: Consistency Semantics}
+    \subsection*{Overview}
+
+    This section discusses consistency semantics, an important criterion for evaluating file systems that support file sharing. Consistency semantics specify how multiple users can access a shared 
+    file simultaneously, particularly determining when modifications by one user are visible to others. These semantics relate to process synchronization but are implemented differently in file systems 
+    due to the slower transfer rates of disks and networks.
+    
+    \subsubsection*{UNIX Semantics}
+    
+    The UNIX file system implements a form of consistency semantics where writes to an open file are immediately visible to other users who also have the file open. Users can share the file pointer, 
+    meaning that the file pointer's advancement by one user affects all other users sharing the file. This creates a single image of the file, interleaving all accesses.
+    
+    \begin{highlight}[UNIX Semantics]
+    
+        \begin{itemize}
+            \item \textbf{Immediate Visibility}: Writes are immediately visible to all users with the file open.
+            \item \textbf{Shared File Pointer}: Users can share the file pointer, causing the pointer to advance for all users.
+            \item \textbf{Single Image}: The file has a single, exclusive image, with all accesses interleaved.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Session Semantics}
+    
+    The Andrew File System (AFS) uses session semantics, where changes made to a file by one user are not visible to others until the file is closed. After a file is closed, modifications are visible in 
+    new sessions. Already open instances of the file do not reflect these changes, allowing multiple users to access different images of the file concurrently.
+    
+    \begin{highlight}[Session Semantics]
+    
+        \begin{itemize}
+            \item \textbf{Deferred Visibility}: Changes to a file are visible to other users only after the file is closed.
+            \item \textbf{Multiple Images}: Users may access different images of the file concurrently.
+            \item \textbf{No Scheduling Constraints}: Users can perform concurrent read and write operations without delay.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Immutable-Shared-Files Semantics}
+    
+    In this model, once a file is declared as shared, it cannot be modified. Immutable files have two key properties: their names cannot be reused, and their contents cannot be altered. This makes 
+    implementation in distributed systems simpler since the files are read-only, ensuring disciplined sharing.
+    
+    \begin{highlight}[Immutable-Shared-Files Semantics]
+    
+        \begin{itemize}
+            \item \textbf{No Modifications}: Once shared, the file's contents cannot be altered.
+            \item \textbf{Name Preservation}: The file name cannot be reused after sharing.
+            \item \textbf{Simplified Sharing}: As the file is read-only, the system does not need to handle conflicting writes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Consistency Semantics}: Specify when changes made by one user are visible to others during file sharing.
+            \item \textbf{UNIX Semantics}: Immediate visibility of changes with shared file pointers, creating a single image of the file.
+            \item \textbf{Session Semantics}: Changes are visible only after the file is closed, allowing concurrent access to different images.
+            \item \textbf{Immutable Shared Files}: Once shared, the file cannot be modified, simplifying consistency in distributed systems.
+        \end{itemize}
+    
+    Consistency semantics are critical for managing file sharing in multi-user systems, balancing visibility of changes and access concurrency depending on the file system's implementation.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 15.8: NFS}.
+
+\begin{notes}{Section 15.8: NFS}
+    \subsection*{Overview}
+
+    This section discusses the Network File System (NFS), a widely used client-server network file system that allows remote file access over local area networks (LANs) or even wide area networks (WANs). 
+    NFS enables machines to share file systems in a transparent manner, supporting both local and remote file systems. The description here focuses on NFS Version 3, which is commonly deployed, though 
+    there are more recent versions, including Version 4.
+    
+    \subsubsection*{NFS Structure and Mounting}
+    
+    NFS treats a group of interconnected machines as independent systems with their own file systems. Sharing a file system requires a mount operation, which attaches a remote directory to a local 
+    directory. Once mounted, the remote directory appears as part of the local file system, and users can access it transparently. Mounting requires the location of the remote directory (the server) 
+    to be explicitly specified. NFS supports cascading mounts, allowing one remote file system to be mounted over another.
+    
+    \begin{highlight}[NFS Structure and Mounting]
+    
+        \begin{itemize}
+            \item \textbf{Independent File Systems}: Machines are treated as independent systems, each with its own file systems.
+            \item \textbf{Mounting}: A remote directory is mounted over a local directory, appearing as an integral part of the local system.
+            \item \textbf{Cascading Mounts}: NFS allows mounting a file system over another already-mounted remote system.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{NFS Protocols}
+    
+    NFS uses two protocols: the mount protocol and the NFS protocol. The mount protocol establishes a connection between a client and server, while the NFS protocol handles remote file access. Both 
+    protocols are implemented using remote procedure calls (RPCs). NFS servers are stateless, meaning they do not maintain client state between requests, which improves fault tolerance but requires 
+    each request to be self-contained.
+    
+    \begin{highlight}[NFS Protocols]
+    
+        \begin{itemize}
+            \item \textbf{Mount Protocol}: Establishes the connection between client and server and defines which directories are accessible.
+            \item \textbf{NFS Protocol}: Provides RPCs for file operations like reading, writing, and accessing file attributes.
+            \item \textbf{Stateless Servers}: NFS servers do not maintain client state, simplifying recovery from crashes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Path-Name Translation and Caching}
+    
+    Path-name translation in NFS involves breaking a file path into components and sending an NFS lookup call for each component. This method allows clients to traverse remote file systems but can 
+    be inefficient. To mitigate performance issues, NFS uses a directory-name-lookup cache on the client side, speeding up access to frequently referenced files. NFS also employs file-attribute and 
+    file-block caches to reduce network traffic.
+    
+    \begin{highlight}[Path-Name Translation and Caching]
+    
+        \begin{itemize}
+            \item \textbf{Path-Name Translation}: Breaks the path into components and performs a lookup for each.
+            \item \textbf{Directory Cache}: Speeds up lookups by caching frequently accessed directory entries.
+            \item \textbf{Attribute and Block Caches}: Store file attributes and blocks locally to reduce the need for repeated network requests.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{NFS Consistency and Performance}
+    
+    Because NFS is stateless, it relies on client-side caching to improve performance, but this introduces consistency challenges. Write operations are delayed and batched to improve efficiency, 
+    but these delays can cause inconsistencies across clients. Additionally, the stateless nature of NFS means that write operations must be atomic, ensuring that multiple operations do not interfere 
+    with each other. Performance can be further improved by using nonvolatile storage for write caching.
+    
+    \begin{highlight}[NFS Consistency and Performance]
+    
+        \begin{itemize}
+            \item \textbf{Client-Side Caching}: Improves performance but can lead to consistency issues between clients.
+            \item \textbf{Atomic Write Operations}: NFS ensures that write operations are atomic to avoid conflicts.
+            \item \textbf{Nonvolatile Storage}: Using nonvolatile caches can significantly improve write performance and reliability.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{NFS}: A client-server network file system that enables transparent remote file access over LANs and WANs.
+            \item \textbf{Mounting and Cascading}: Remote directories can be mounted over local directories, with support for cascading mounts.
+            \item \textbf{Stateless Servers}: NFS servers are stateless, simplifying recovery but requiring each request to be self-contained.
+            \item \textbf{Caching and Consistency}: NFS employs client-side caching to improve performance but must handle the resulting consistency challenges.
+        \end{itemize}
+    
+    NFS provides a flexible and efficient mechanism for remote file sharing, but its stateless nature and reliance on client-side caching introduce certain challenges in terms of consistency and performance.
+    
+    \end{highlight}
+\end{notes}

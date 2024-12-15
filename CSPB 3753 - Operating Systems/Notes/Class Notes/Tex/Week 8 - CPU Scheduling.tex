@@ -1,0 +1,726 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{CPU Scheduling}
+\renewcommand{\SectionTitle}{CPU Scheduling}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from the \href{https://learn.zybooks.com/zybook/COLORADOCSPB3753KnoxFall2024}{Zybooks} for the week is:
+
+\begin{itemize}
+    \item \textbf{Chapter 5: CPU Scheduling}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for the week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=kZ5ulq5mgw4}{Process Scheduling}{22}
+    \item \lecture{https://www.youtube.com/watch?v=9E-WRre19gs}{Process Scheduling Policies}{29}
+    \item \lecture{https://www.youtube.com/watch?v=IPFxvhFODqU}{More Process Scheduling Policies}{23}
+    \item \lecture{https://www.youtube.com/watch?v=6diIrGMxRQ8}{Linux Completely Fair Scheduling}{20}
+    \item \lecture{https://www.youtube.com/watch?v=JJcDlVN8fFc}{Realtime And Multi-Core Scheduling}{12}
+\end{itemize}
+
+\noindent The lecture notes for the week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Completely Fair Scheduler Lecture Notes.pdf}{Completely Fair Scheduler Lecture Notes}
+    \item \pdflink{\LecNoteDir Process Scheduling - Priority And Multi-Level Lecture Notes.pdf}{Process Scheduling - Priority And Multi-Level Lecture Notes}
+    \item \pdflink{\LecNoteDir Process Scheduling - SJR, RR, And EDF Lecture Notes.pdf}{Process Scheduling - SJR, RR, And EDF Lecture Notes}
+    \item \pdflink{\LecNoteDir Realtime And Multi-Core Scheduling Lecture Notes.pdf}{Realtime And Multi-Core Scheduling Lecture Notes}
+    \item \pdflink{\LecNoteDir The Linux Scheduler - A Decade Of Wasted Cores.pdf}{The Linux Scheduler - A Decade Of Wasted Cores}
+    \item \pdflink{\LecNoteDir Unit 3 Exam Review Lecture Notes.pdf}{Unit 3 Exam Review Lecture Notes}
+    \item \pdflink{\LecNoteDir Unit 3 Terms Lecture Notes.pdf}{Unit 3 Terms Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \href{https://github.com/cu-cspb-3753-fall-2024/lab-8-QuantumCompiler}{Lab 8 - Synchronizing Threads With A Mutex}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for the week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 8 - CPU Scheduling.pdf}{Quiz 8 - CPU Scheduling}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 5: CPU Scheduling} and the first section that is being covered from that chapter this week is \textbf{Section 5.1: Basic Concepts}.
+
+\begin{notes}{Section 5.1: Basic Concepts}
+    \subsection*{Overview}
+
+    This section introduces the fundamental concepts of CPU scheduling in multiprogrammed operating systems. CPU scheduling is crucial for optimizing system performance, as it allows the operating 
+    system to switch the CPU among processes, keeping the CPU busy and improving productivity. The section covers the basic scheduling algorithms and discusses real-time systems. The focus is on how 
+    the CPU scheduler selects processes for execution and manages CPU and I/O bursts.
+    
+    \subsubsection*{CPU-I/O Burst Cycle}
+    
+    Processes alternate between CPU execution and I/O wait in a cyclical pattern. The success of CPU scheduling relies on understanding this cycle. Process execution begins with a CPU burst followed 
+    by an I/O burst. This cycle continues until the process terminates. The durations of CPU bursts vary, with many short bursts and fewer long bursts, making burst patterns important for CPU scheduling algorithms.
+    
+    \begin{highlight}[CPU-I/O Burst Cycle]
+    
+        \begin{itemize}
+            \item \textbf{CPU Bursts}: Periods where a process executes instructions.
+            \item \textbf{I/O Bursts}: Periods where a process waits for I/O operations to complete.
+            \item \textbf{Burst Distribution}: CPU burst durations follow a hyperexponential distribution with many short bursts and few long bursts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{CPU Scheduler}
+    
+    The CPU scheduler selects a process from the ready queue and allocates the CPU to it. The ready queue can be implemented in various ways, such as FIFO queues, priority queues, or linked lists. The 
+    CPU scheduler makes decisions on process scheduling based on various criteria.
+    
+    \begin{highlight}[CPU Scheduler]
+    
+        \begin{itemize}
+            \item \textbf{Ready Queue}: Contains processes that are ready to execute but are waiting for CPU access.
+            \item \textbf{Selection Criteria}: The scheduler selects processes based on different algorithms, such as FIFO or priority scheduling.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Preemptive and Nonpreemptive Scheduling}
+    
+    Scheduling can be preemptive or nonpreemptive. Preemptive scheduling occurs when the operating system can forcibly remove a process from the CPU. Nonpreemptive scheduling allows a process to keep the 
+    CPU until it voluntarily releases it. Preemptive scheduling is common in modern operating systems but can lead to race conditions when shared data is accessed by multiple processes.
+    
+    \begin{highlight}[Preemptive and Nonpreemptive Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Preemptive Scheduling}: The OS can interrupt a process and allocate the CPU to another process.
+            \item \textbf{Nonpreemptive Scheduling}: A process retains control of the CPU until it completes or enters a waiting state.
+            \item \textbf{Race Conditions}: Can occur in preemptive scheduling when shared data is accessed inconsistently.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Dispatcher}
+    
+    The dispatcher gives control of the CPU to the selected process. It performs three functions: switching context, switching to user mode, and resuming the user program. The time it takes for the dispatcher 
+    to complete these actions is known as dispatch latency.
+    
+    \begin{highlight}[Dispatcher]
+    
+        \begin{itemize}
+            \item \textbf{Context Switching}: The dispatcher switches from the current process to the selected process.
+            \item \textbf{Dispatch Latency}: The time it takes to stop one process and start another.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{CPU Scheduling}: Essential for managing process execution in a multiprogrammed system.
+            \item \textbf{CPU-I/O Bursts}: Processes alternate between CPU and I/O bursts, affecting scheduling efficiency.
+            \item \textbf{Preemptive vs. Nonpreemptive Scheduling}: Determines whether the OS can forcibly interrupt a process.
+            \item \textbf{Dispatcher}: Manages the transition between processes, affecting overall system performance.
+        \end{itemize}
+    
+    CPU scheduling plays a pivotal role in system performance, with various algorithms and techniques ensuring that processes are efficiently managed.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 5.2: Scheduling Criteria}.
+
+\begin{notes}{Section 5.2: Scheduling Criteria}
+    \subsection*{Overview}
+
+    This section discusses various criteria used to evaluate CPU scheduling algorithms, which help determine which algorithm is most suitable for a given situation. These criteria include CPU utilization, 
+    throughput, turnaround time, waiting time, and response time. Different algorithms optimize these criteria to different extents, and the choice of the optimal algorithm depends on the specific needs 
+    of the system.
+    
+    \subsubsection*{CPU Utilization}
+    
+    CPU utilization measures how busy the CPU is, aiming to keep the CPU as active as possible. In real systems, utilization typically ranges from 40 percent in lightly loaded systems to 90 percent in heavily 
+    loaded ones. Keeping the CPU busy ensures that the system is processing as much work as possible.
+    
+    \begin{highlight}[CPU Utilization]
+    
+        \begin{itemize}
+            \item \textbf{Busy CPU}: Utilization aims to maximize the time the CPU is active.
+            \item \textbf{Utilization Range}: Typically between 40 percent and 90 percent, depending on system load.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Throughput}
+    
+    Throughput refers to the number of processes completed in a given time period. This metric reflects the system's ability to process multiple tasks efficiently. For long processes, throughput may be measured 
+    as one process every few seconds, while for short processes, it may be tens of processes per second.
+    
+    \begin{highlight}[Throughput]
+    
+        \begin{itemize}
+            \item \textbf{Definition}: The number of processes completed per time unit.
+            \item \textbf{Rate Example}: Varies between long-running processes (few per second) and short transactions (many per second).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Turnaround Time}
+    
+    Turnaround time measures the time taken from the submission of a process to its completion. It includes all waiting time in the ready queue, CPU execution time, and any time spent performing I/O. Minimizing 
+    turnaround time is crucial for improving system performance.
+    
+    \begin{highlight}[Turnaround Time]
+    
+        \begin{itemize}
+            \item \textbf{Total Execution Time}: The total time from process submission to completion.
+            \item \textbf{Includes Waiting and I/O Time}: Considers time spent waiting in the queue and doing I/O.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Waiting Time}
+    
+    Waiting time is the total amount of time a process spends in the ready queue. Unlike execution or I/O time, it is directly affected by the CPU-scheduling algorithm. Reducing waiting time is essential for 
+    optimizing system responsiveness.
+    
+    \begin{highlight}[Waiting Time]
+    
+        \begin{itemize}
+            \item \textbf{Ready Queue Time}: The time a process spends waiting in the ready queue.
+            \item \textbf{Affected by Scheduling}: Directly influenced by the chosen scheduling algorithm.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Response Time}
+    
+    Response time measures how quickly a system begins to respond after a request is made. This is especially important in interactive systems, where users expect prompt feedback. Response time is distinct from 
+    turnaround time, as it focuses on the time taken to start responding, not to complete the entire process.
+    
+    \begin{highlight}[Response Time]
+    
+        \begin{itemize}
+            \item \textbf{Time to First Response}: Measures the time from submission to the system's initial response.
+            \item \textbf{Interactive Systems}: Important for systems where user interaction requires quick feedback.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{CPU Utilization}: Aims to keep the CPU as active as possible to maximize system efficiency.
+            \item \textbf{Throughput}: Measures the number of processes completed per unit time.
+            \item \textbf{Turnaround Time}: The total time from process submission to completion, including waiting and I/O.
+            \item \textbf{Waiting Time}: The total time spent waiting in the ready queue.
+            \item \textbf{Response Time}: The time taken to start responding to a request, particularly important for interactive systems.
+        \end{itemize}
+    
+    The choice of scheduling algorithm depends on the system's goals, whether it prioritizes CPU utilization, throughput, or user experience with response times.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 5.3: Scheduling Algorithms}.
+
+\begin{notes}{Section 5.3: Scheduling Algorithms}
+    \subsection*{Overview}
+
+    This section covers several CPU scheduling algorithms, which are used to allocate the CPU to processes in the ready queue. The algorithms are discussed in the context of a single processing core, 
+    though modern systems often feature multiple cores. The section explains several common scheduling strategies, each with its advantages and drawbacks, including first-come, first-served (FCFS), 
+    shortest-job-first (SJF), round-robin (RR), and priority scheduling.
+    
+    \subsubsection*{First-Come, First-Served Scheduling}
+    
+    The FCFS algorithm is one of the simplest CPU scheduling strategies. It schedules processes based on their arrival order, using a FIFO queue. However, this algorithm can result in poor average 
+    waiting time, especially if long processes arrive before shorter ones. FCFS is nonpreemptive, meaning once a process starts, it runs to completion or until it requests I/O.
+    
+    \begin{highlight}[First-Come, First-Served Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Nonpreemptive}: Once a process is allocated the CPU, it runs until it completes or performs I/O.
+            \item \textbf{FIFO Queue}: Processes are scheduled in the order they arrive.
+            \item \textbf{Convoy Effect}: Long processes can cause short processes to wait longer, reducing system efficiency.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Shortest-Job-First Scheduling}
+    
+    SJF selects the process with the shortest estimated CPU burst next. This algorithm minimizes average waiting time but can be difficult to implement since the length of the next CPU burst is not always 
+    known. SJF can be preemptive (shortest-remaining-time-first) or nonpreemptive, where processes with shorter bursts preempt those with longer ones.
+    
+    \begin{highlight}[Shortest-Job-First Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Optimal Waiting Time}: Minimizes the average waiting time for a given set of processes.
+            \item \textbf{Burst Time Prediction}: Relies on approximating future burst lengths, often using an exponential average.
+            \item \textbf{Preemptive or Nonpreemptive}: In the preemptive form, a running process can be interrupted if a shorter process arrives.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Round-Robin Scheduling}
+    
+    Round-robin (RR) scheduling adds preemption to the FCFS model by assigning each process a time quantum. Each process is allowed to run for a maximum of one time quantum before being preempted. This 
+    algorithm is widely used in time-sharing systems and aims to ensure a fair distribution of CPU time among processes.
+    
+    \begin{highlight}[Round-Robin Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Preemptive}: Processes are preempted after one time quantum to allow other processes to run.
+            \item \textbf{Circular Queue}: The ready queue is managed as a circular FIFO queue.
+            \item \textbf{Time Quantum}: The length of the time quantum significantly impacts performance. A short quantum increases context switching, while a long quantum behaves similarly to FCFS.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Priority Scheduling}
+    
+    Priority scheduling assigns a priority to each process, with the CPU allocated to the highest-priority process. If two processes have the same priority, they are scheduled using FCFS. This algorithm can 
+    be preemptive or nonpreemptive. One major issue with priority scheduling is the risk of starvation for lower-priority processes, which can be resolved using a technique called aging.
+    
+    \begin{highlight}[Priority Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Preemptive or Nonpreemptive}: High-priority processes preempt lower-priority ones in the preemptive version.
+            \item \textbf{Starvation}: Low-priority processes can be starved if higher-priority processes continue to arrive.
+            \item \textbf{Aging}: Gradually increases the priority of processes that wait too long to prevent starvation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{FCFS}: Simple, nonpreemptive scheduling based on process arrival order but prone to the convoy effect.
+            \item \textbf{SJF}: Optimizes waiting time by selecting the process with the shortest next burst but requires burst length estimation.
+            \item \textbf{RR}: Ensures fair time sharing through time quantums but requires careful tuning of the time quantum length.
+            \item \textbf{Priority Scheduling}: Schedules processes based on priority, with the risk of starvation mitigated by aging.
+        \end{itemize}
+    
+    Different scheduling algorithms suit different workloads, with trade-offs in terms of efficiency, fairness, and complexity.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 5.4: Thread Scheduling}.
+
+\begin{notes}{Section 5.4: Thread Scheduling}
+    \subsection*{Overview}
+
+    This section explores thread scheduling, focusing on the differences between user-level and kernel-level thread management. In most modern systems, kernel-level threads are scheduled by the operating 
+    system, while user-level threads are managed by a thread library. The scheduling of user-level threads is known as process-contention scope (PCS), while kernel-level thread scheduling is called 
+    system-contention scope (SCS). The section also discusses scheduling policies for Pthreads and their interaction with these scheduling scopes.
+    
+    \subsubsection*{Contention Scope}
+    
+    Thread scheduling can be divided into process-contention scope (PCS) and system-contention scope (SCS). In PCS, user-level threads compete for CPU resources within the same process, using a thread 
+    library to map them onto available lightweight processes (LWPs). In contrast, SCS involves kernel-level threads competing across all processes in the system, with the kernel directly handling thread 
+    scheduling. Systems that implement many-to-one or many-to-many threading models use PCS for user-level threads, while one-to-one models like those in Windows and Linux use SCS for all threads.
+    
+    \begin{highlight}[Contention Scope]
+    
+        \begin{itemize}
+            \item \textbf{Process-Contention Scope (PCS)}: User-level threads compete for CPU resources within the same process, scheduled by a thread library.
+            \item \textbf{System-Contention Scope (SCS)}: Kernel-level threads compete for CPU resources across the entire system, scheduled by the kernel.
+            \item \textbf{One-to-One Model}: Systems like Windows and Linux use SCS for thread scheduling, managing all threads directly at the kernel level.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Pthread Scheduling}
+    
+    POSIX Pthreads allow specifying the contention scope for threads during creation. The PTHREAD\_SCOPE\_PROCESS value is used to schedule threads using PCS, while PTHREAD\_SCOPE\_SYSTEM is used for SCS 
+    scheduling. In systems that implement the many-to-many threading model, PCS maps user threads to LWPs, while SCS assigns a unique LWP to each user-level thread, effectively creating a one-to-one 
+    mapping. The section provides examples of setting the scheduling policy for Pthreads using functions like \texttt{pthread\_attr\_setscope()} and \texttt{pthread\_attr\_getscope()}.
+    
+    \begin{highlight}[Pthread Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{PTHREAD\_SCOPE\_PROCESS}: Schedules user-level threads using process-contention scope.
+            \item \textbf{PTHREAD\_SCOPE\_SYSTEM}: Schedules threads using system-contention scope, binding each user thread to a kernel thread.
+            \item \textbf{Setting Scope}: Use \texttt{pthread\_attr\_setscope()} to set the contention scope and \texttt{pthread\_attr\_getscope()} to query the current scope.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Thread Scheduling}: Involves the scheduling of user-level and kernel-level threads, with PCS and SCS determining the scope of contention for CPU resources.
+            \item \textbf{PCS vs. SCS}: PCS focuses on user-level thread competition within a process, while SCS manages kernel-level thread competition across the system.
+            \item \textbf{Pthread API}: POSIX Pthreads allow specifying scheduling policies using APIs that define whether PCS or SCS is used.
+        \end{itemize}
+    
+    Thread scheduling in modern operating systems balances between user-level thread management by libraries and direct kernel-level scheduling, depending on the threading model used by the system.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 5.5: Multiple-Processor Scheduling}.
+
+\begin{notes}{Section 5.5: Multiple-Processor Scheduling}
+    \subsection*{Overview}
+
+    This section discusses multi-processor scheduling, which becomes increasingly complex as multiple CPUs become available. Traditionally, a multiprocessor referred to systems with multiple single-core CPUs. 
+    However, modern systems often have multicore processors, multithreaded cores, or NUMA (Non-Uniform Memory Access) systems, which introduce new scheduling challenges. The section outlines several scheduling 
+    approaches and architectures, including symmetric multiprocessing (SMP), asymmetric multiprocessing, and heterogeneous multiprocessing.
+    
+    \subsubsection*{Approaches to Multiple-Processor Scheduling}
+    
+    Two main approaches to multiple-processor scheduling are asymmetric and symmetric multiprocessing (SMP). In asymmetric multiprocessing, a single processor handles all system activities like scheduling 
+    and I/O processing, which simplifies data sharing but can create a bottleneck. SMP, the standard approach, allows each processor to self-schedule, either sharing a common ready queue or using private 
+    per-processor queues.
+    
+    \begin{highlight}[Approaches to Multiple-Processor Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Asymmetric Multiprocessing}: One processor manages system activities, reducing complexity but risking bottlenecks.
+            \item \textbf{Symmetric Multiprocessing (SMP)}: Each processor self-schedules, either from a common ready queue or private queues.
+            \item \textbf{Cache Efficiency}: Private queues improve cache efficiency by maintaining processor affinity.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Multicore Processors and Memory Stalls}
+    
+    Multicore processors are common in SMP systems, allowing multiple cores on a single chip to share resources. However, processors often experience memory stalls, where they wait for data from memory. 
+    To address this, modern processors use multithreaded cores, allowing them to switch between threads when a memory stall occurs. Two types of multithreading are coarse-grained, which switches threads 
+    during long-latency events, and fine-grained, which switches threads at instruction cycle boundaries.
+    
+    \begin{highlight}[Multicore Processors and Memory Stalls]
+    
+        \begin{itemize}
+            \item \textbf{Memory Stall}: Occurs when a processor waits for memory access, leading to idle time.
+            \item \textbf{Multithreaded Cores}: Allow thread switching during memory stalls to maintain processing efficiency.
+            \item \textbf{Coarse-Grained vs. Fine-Grained Multithreading}: Coarse-grained switches during long-latency events, while fine-grained switches at the instruction cycle level.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Load Balancing}
+    
+    Load balancing ensures that workloads are distributed evenly across processors in SMP systems. Two main techniques are push migration, where a task periodically checks for imbalances and redistributes 
+    tasks, and pull migration, where idle processors pull tasks from busy ones. Load balancing is critical in systems with private queues, as a common queue naturally balances the load.
+    
+    \begin{highlight}[Load Balancing]
+    
+        \begin{itemize}
+            \item \textbf{Push Migration}: Tasks are moved from overloaded processors to less busy ones to balance the load.
+            \item \textbf{Pull Migration}: Idle processors pull tasks from busy processors to maintain balance.
+            \item \textbf{Private Queues}: Load balancing is necessary in systems with per-processor queues to avoid idle processors.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Processor Affinity}
+    
+    Processor affinity refers to the practice of keeping a process on the same processor to benefit from a warm cache. Soft affinity means the operating system attempts to keep processes on the same 
+    processor, while hard affinity guarantees this. NUMA systems add complexity, as memory access times differ depending on the processor, so balancing affinity with load balancing becomes challenging.
+    
+    \begin{highlight}[Processor Affinity]
+    
+        \begin{itemize}
+            \item \textbf{Soft Affinity}: The system attempts to keep a process on the same processor but allows migration.
+            \item \textbf{Hard Affinity}: Processes are restricted to specific processors, ensuring minimal migration.
+            \item \textbf{NUMA Systems}: Memory access speed depends on the processor, making processor affinity important for performance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Heterogeneous Multiprocessing}
+    
+    Heterogeneous multiprocessing (HMP) involves processors with varying capabilities, such as ARM's big.LITTLE architecture, where high-performance big cores are paired with energy-efficient LITTLE cores. 
+    This setup allows the operating system to assign tasks to cores based on the power and performance needs of the task, optimizing energy consumption.
+    
+    \begin{highlight}[Heterogeneous Multiprocessing]
+    
+        \begin{itemize}
+            \item \textbf{big.LITTLE Architecture}: Combines high-performance big cores with energy-efficient LITTLE cores to optimize performance and power usage.
+            \item \textbf{Task Assignment}: Energy-intensive tasks are assigned to big cores, while background tasks use LITTLE cores to conserve energy.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{SMP and Asymmetric Multiprocessing}: SMP allows each processor to self-schedule, while asymmetric processing assigns system tasks to one processor.
+            \item \textbf{Multicore and Multithreaded Cores}: Multithreading improves efficiency by allowing cores to switch threads during memory stalls.
+            \item \textbf{Load Balancing}: Push and pull migration techniques are used to balance workloads across processors.
+            \item \textbf{Processor Affinity}: Keeping a process on the same processor reduces cache misses, but NUMA systems complicate this.
+            \item \textbf{HMP}: Systems like ARM's big.LITTLE architecture optimize power and performance by assigning tasks based on core capabilities.
+        \end{itemize}
+    
+    Multiprocessor scheduling introduces complexity in managing multiple cores and threads, requiring strategies like load balancing, processor affinity, and multithreading to maintain efficiency.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 5.6: Real-Time CPU Scheduling}.
+
+\begin{notes}{Section 5.6: Real-Time CPU Scheduling}
+    \subsection*{Overview}
+
+    This section covers real-time CPU scheduling, focusing on soft and hard real-time systems. Real-time operating systems must handle processes with strict timing constraints, and CPU scheduling plays 
+    a critical role in ensuring timely execution. Soft real-time systems provide preference to critical processes over noncritical ones, but they do not guarantee exact scheduling times. In contrast, 
+    hard real-time systems have stringent requirements, where missing a deadline is equivalent to system failure.
+    
+    \subsubsection*{Minimizing Latency}
+    
+    Real-time systems aim to minimize event latency, the time between when an event occurs and when it is serviced. Two types of latencies affect real-time system performance:
+    1. **Interrupt Latency**: The time from the arrival of an interrupt to the start of the interrupt service routine.
+    2. **Dispatch Latency**: The time taken by the dispatcher to stop one process and start another.
+    
+    Preemptive kernels are essential for reducing dispatch latency, ensuring that high-priority tasks can immediately access the CPU.
+    
+    \begin{highlight}[Minimizing Latency]
+    
+        \begin{itemize}
+            \item \textbf{Interrupt Latency}: The delay between an interrupt and the start of its handling.
+            \item \textbf{Dispatch Latency}: The time taken to switch between processes, minimized with preemptive kernels.
+            \item \textbf{Preemptive Kernels}: Enable immediate response to high-priority processes, crucial for hard real-time systems.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Priority-Based Scheduling}
+    
+    In real-time systems, priority-based scheduling is a key feature. Processes are assigned priorities based on their importance, with higher-priority tasks preempting lower-priority ones. However, a 
+    preemptive priority-based scheduler only ensures soft real-time functionality. For hard real-time systems, additional guarantees are required to meet deadline constraints.
+    
+    \begin{highlight}[Priority-Based Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Priority Assignment}: Higher-priority tasks preempt lower-priority ones.
+            \item \textbf{Soft Real-Time Systems}: Only guarantee that critical processes get preference, without strict deadline enforcement.
+            \item \textbf{Hard Real-Time Systems}: Must guarantee deadline fulfillment for high-priority tasks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Rate-Monotonic Scheduling}
+    
+    Rate-monotonic scheduling is a static priority algorithm where processes are assigned priorities based on their periodic rate. Tasks with shorter periods are assigned higher priorities. This method 
+    assumes that each periodic task has a fixed CPU burst, and it provides an optimal solution for scheduling processes with fixed priorities.
+    
+    \begin{highlight}[Rate-Monotonic Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Static Priority}: Priorities are assigned based on the period of the task, with shorter periods having higher priority.
+            \item \textbf{Fixed Burst Times}: Assumes that the CPU burst for each task is constant.
+            \item \textbf{Optimal Static Scheduling}: Guarantees that, if a task set cannot be scheduled by rate-monotonic scheduling, it cannot be scheduled by any static priority algorithm.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Earliest-Deadline-First Scheduling}
+    
+    Earliest-deadline-first (EDF) scheduling assigns dynamic priorities to processes based on their deadlines. The closer the deadline, the higher the priority of the task. Unlike rate-monotonic scheduling, 
+    EDF does not require periodic tasks, and it is theoretically optimal, allowing CPU utilization to reach 100 percent in ideal conditions.
+    
+    \begin{highlight}[Earliest-Deadline-First Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Dynamic Priorities}: Tasks are prioritized based on their deadlines, with earlier deadlines receiving higher priority.
+            \item \textbf{No Periodic Requirement}: EDF can handle non-periodic tasks and varying CPU burst times.
+            \item \textbf{Optimal Dynamic Scheduling}: Maximizes CPU utilization, but in practice, context switching and interrupts reduce efficiency.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Proportional Share Scheduling}
+    
+    Proportional share scheduling allocates CPU time based on shares assigned to each process. The system ensures that each process receives a proportion of CPU time relative to its assigned share. This 
+    method is combined with an admission-control policy to ensure that processes do not exceed the available resources.
+    
+    \begin{highlight}[Proportional Share Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Share Allocation}: Each process is allocated a number of shares that correspond to a portion of CPU time.
+            \item \textbf{Admission Control}: Ensures that no process is admitted if it would exceed the total available CPU resources.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Real-Time Scheduling}: Ensures timely execution of tasks in soft and hard real-time systems.
+            \item \textbf{Minimizing Latency}: Both interrupt and dispatch latency must be minimized in real-time systems.
+            \item \textbf{Rate-Monotonic Scheduling}: A static priority algorithm where shorter period tasks are prioritized.
+            \item \textbf{EDF Scheduling}: Dynamically assigns priorities based on deadlines, maximizing CPU utilization.
+            \item \textbf{Proportional Share Scheduling}: Ensures processes receive CPU time proportional to their assigned shares.
+        \end{itemize}
+    
+    Real-time CPU scheduling is essential for systems where timely process execution is critical. Various algorithms, including rate-monotonic and EDF, ensure that tasks meet their deadlines based on priority 
+    and timing requirements.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 5.7: Operating System Examples}.
+
+\begin{notes}{Section 5.7: Operating System Examples}
+    \subsection*{Overview}
+
+    This section provides an overview of scheduling policies used by three major operating systems: Linux, Windows, and Solaris. It highlights the differences in how these systems handle kernel threads 
+    and tasks using various scheduling algorithms. Each operating system adapts its scheduling approach based on system needs, such as supporting multiprocessor systems and real-time operations.
+    
+    \subsubsection*{Linux Scheduling}
+    
+    Linux scheduling has evolved over time, with significant changes in kernel versions. The Completely Fair Scheduler (CFS) is the default algorithm in modern Linux kernels, providing a balanced approach 
+    to process scheduling by assigning a proportion of CPU time based on task priority. Tasks are managed using scheduling classes, such as the default CFS class and the real-time class. Each task is 
+    assigned a \texttt{vruntime}, which determines the order of task execution.
+    
+    \begin{highlight}[Linux Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Completely Fair Scheduler (CFS)}: Assigns CPU time proportionally based on task priority.
+            \item \textbf{Virtual Runtime (vruntime)}: Tasks are ordered by their \texttt{vruntime}, with lower values indicating higher priority.
+            \item \textbf{Red-Black Tree}: CFS organizes tasks in a red-black tree, with the leftmost node representing the highest-priority task.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Windows Scheduling}
+    
+    Windows uses a priority-based preemptive scheduling algorithm. Threads are assigned priorities across 32 levels, divided into variable and real-time classes. The scheduler selects the highest-priority 
+    thread, ensuring that real-time threads have CPU access before lower-priority threads. Windows dynamically adjusts thread priorities based on their behavior, increasing the priority of interactive 
+    threads for better responsiveness.
+    
+    \begin{highlight}[Windows Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Priority-Based Scheduling}: Threads are scheduled based on their priority, with higher-priority threads preempting lower ones.
+            \item \textbf{Priority Classes}: Windows threads are grouped into priority classes, such as \texttt{NORMAL\_PRIORITY\_CLASS} and \texttt{REALTIME\_PRIORITY\_CLASS}.
+            \item \textbf{Priority Boosting}: Interactive threads, such as those waiting for user input, receive priority boosts to improve responsiveness.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Solaris Scheduling}
+    
+    Solaris uses a priority-based thread scheduling system with six scheduling classes: time sharing, interactive, real-time, system, fixed priority, and fair share. Time-sharing processes have dynamic priorities 
+    that adjust based on CPU usage, providing good response times for interactive applications. Real-time threads receive the highest priority, ensuring deterministic scheduling for time-sensitive tasks.
+    
+    \begin{highlight}[Solaris Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Dynamic Priorities}: Time-sharing and interactive processes have dynamically adjusted priorities based on CPU usage.
+            \item \textbf{Real-Time Class}: Real-time threads are given the highest priority to guarantee response times.
+            \item \textbf{Dispatch Table}: A dispatch table manages priorities, time quanta, and priority adjustments for time-sharing and interactive threads.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Linux CFS}: Uses \texttt{vruntime} to ensure fair CPU allocation, scheduling tasks based on their virtual runtime values.
+            \item \textbf{Windows Scheduling}: Implements priority-based scheduling with dynamic adjustments for interactive and real-time tasks.
+            \item \textbf{Solaris Scheduling}: Provides dynamic priority adjustments for time-sharing and interactive threads, while guaranteeing real-time performance for critical tasks.
+        \end{itemize}
+    
+    Each operating system tailors its scheduling approach to optimize performance for different workloads, balancing fairness, responsiveness, and real-time requirements.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from the chapter this week is \textbf{Section 5.8: Algorithm Evaluation}.
+
+\begin{notes}{Section 5.8: Algorithm Evaluation}
+    \subsection*{Overview}
+
+    This section covers different methods for evaluating CPU scheduling algorithms to determine which is most suitable for a particular system. The criteria used for evaluation often include 
+    CPU utilization, response time, and throughput. Once the evaluation criteria are established, various methods, such as deterministic modeling, queueing models, and simulations, can be used 
+    to compare algorithms.
+    
+    \subsubsection*{Deterministic Modeling}
+    
+    Deterministic modeling is a type of analytic evaluation that examines the performance of scheduling algorithms using a predetermined workload. It calculates exact performance metrics for each 
+    algorithm based on the given workload. For example, with five processes arriving simultaneously, the average waiting times for FCFS, SJF, and RR (with a quantum of 10 milliseconds) can be 
+    computed and compared.
+    
+    \begin{highlight}[Deterministic Modeling]
+    
+        \begin{itemize}
+            \item \textbf{Predefined Workload}: Uses specific processes and burst times to analyze scheduling performance.
+            \item \textbf{Exact Results}: Provides clear, exact numbers, useful for algorithm comparison.
+            \item \textbf{Limitations}: Only valid for the specific input data; results may not generalize to other workloads.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Queueing Models}
+    
+    Queueing models use probability distributions for CPU and I/O bursts to evaluate scheduling algorithms in systems where workloads vary. These models represent the system as a network of servers, 
+    each with a queue. By applying mathematical formulas like Little’s formula, key metrics such as average queue length and waiting time can be computed.
+    
+    \begin{highlight}[Queueing Models]
+    
+        \begin{itemize}
+            \item \textbf{Probability Distributions}: Approximates CPU bursts and arrival rates using known distributions.
+            \item \textbf{Little’s Formula}: A key equation (n = λ × W) used to compute waiting times and queue lengths.
+            \item \textbf{Limitations}: Simplified models may not fully capture the complexity of real systems.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Simulations}
+    
+    Simulations model a computer system’s behavior over time to evaluate scheduling algorithms under various conditions. Data can be generated using random-number generators or based on trace files 
+    from real systems. While simulations can produce more accurate evaluations, they are time-consuming and require significant computational resources.
+    
+    \begin{highlight}[Simulations]
+    
+        \begin{itemize}
+            \item \textbf{Random-Number Generators}: Generates synthetic workloads based on probability distributions (e.g., exponential or Poisson).
+            \item \textbf{Trace Files}: Use real system data to drive simulations and obtain more accurate results.
+            \item \textbf{Trade-Off}: Detailed simulations provide accuracy but require significant computational resources and time.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implementation}
+    
+    The most accurate way to evaluate a scheduling algorithm is by implementing it in a real system. This method allows for direct testing under real-world conditions, but it is expensive and time-consuming. 
+    It requires modifying the operating system and testing to ensure the changes do not introduce new bugs or degrade system performance.
+    
+    \begin{highlight}[Implementation]
+    
+        \begin{itemize}
+            \item \textbf{Real System Testing}: The algorithm is implemented and evaluated under actual operating conditions.
+            \item \textbf{Testing Costs}: Involves modifying the OS, coding, testing, and debugging, often in virtual environments.
+            \item \textbf{Behavioral Changes}: Users may alter their behavior in response to the scheduler, influencing system performance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Deterministic Modeling}: Uses predefined workloads to calculate exact performance metrics for each algorithm.
+            \item \textbf{Queueing Models}: Apply probability distributions to evaluate system behavior and compute key metrics.
+            \item \textbf{Simulations}: Model system behavior over time, using random data or trace files for more detailed analysis.
+            \item \textbf{Implementation}: Involves coding and testing the algorithm in a real system, providing the most accurate evaluation.
+        \end{itemize}
+    
+    The choice of evaluation method depends on the system's requirements, balancing accuracy with the resources available for analysis.
+    
+    \end{highlight}
+\end{notes}

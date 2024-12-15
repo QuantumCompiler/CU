@@ -1,0 +1,24 @@
+Shared resource initialized successfully.
+Thread 0 created successfully
+Thread 1 created successfully
+Thread 2 created successfully
+Thread 3 created successfully
+Thread 4 created successfully
+Thread 5 created successfully
+Thread 6 created successfully
+Thread 7 created successfully
+Thread 8 created successfully
+Thread 9 created successfully
+Thread 0: Results file: second line
+Thread 0: Here is another result line.
+Thread 0: This is the fourth line in results.txt
+Thread 7 finished reading.
+Thread 0 finished reading.
+Thread 6 finished reading.
+Thread 8 finished reading.
+Thread 3 finished reading.
+Thread 4 finished reading.
+Thread 5 finished reading.
+Thread 9 finished reading.
+Thread 1 finished reading.
+Thread 2 finished reading.

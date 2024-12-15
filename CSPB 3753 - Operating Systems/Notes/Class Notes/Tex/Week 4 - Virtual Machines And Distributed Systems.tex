@@ -1,0 +1,1391 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Virtual Machines And Distributed Systems}
+\renewcommand{\SectionTitle}{Virtual Machines And Distributed Systems}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from the \href{https://learn.zybooks.com/zybook/COLORADOCSPB3753KnoxFall2024}{Zybooks} for the week is:
+
+\begin{itemize}
+    \item \textbf{Chapter 18: Virtual Machines}
+    \item \textbf{Chapter 19: Networks And Distributed Systems}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for the week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=KMBXo2wYFbQ}{Virtual Machines}{23}
+    \item \lecture{https://www.youtube.com/watch?v=V0tyECM_s0I}{Distributed Systems}{28}
+    \item \lecture{https://www.youtube.com/watch?v=tk2tjw15lHM}{Network Protocol}{29}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/scheduler/view.php?id=64572}{Programming Assignment - Interview 1}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for the week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 4 - Virtual Machines And Distributed Systems.pdf}{Quiz 4 - Virtual Machines And Distributed Systems}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for the week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNoteDir Unit 1 Exam Notes.pdf}{Unit 1 Exam Notes}
+    \item \pdflink{\ExamsDir Unit 1 Exam.pdf}{Unit 1 Exam}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapters that are being covered this week are \textbf{Chapter 18: Virtual Machines} and \textbf{Chapter 19: Networks And Distributed Systems}. The first section that is being covered from 
+\textbf{Chapter 18: Virtual Machines} is \textbf{Section 18.1: Overview}.
+
+\begin{notes}{Section 18.1: Overview}
+    \subsection*{Overview}
+
+    This section introduces virtualization, a technology that abstracts the hardware of a computer into multiple virtual execution environments, creating the illusion that each environment is running 
+    on its own private machine. Virtualization enables multiple operating systems and applications to run concurrently on a single physical machine. This section explores the various types of virtual 
+    machines and their implementation methods.
+    
+    \subsubsection*{Virtual Machines and Virtual Machine Managers}
+    
+    A virtual machine (VM) is an abstraction of the hardware, providing a platform for executing guest operating systems and applications. The virtual machine manager (VMM), also known as the hypervisor, 
+    is responsible for creating and managing virtual machines. The VMM provides each guest with a virtual copy of the underlying hardware, enabling multiple operating systems to run simultaneously.
+    
+    \begin{highlight}[Virtual Machines and Virtual Machine Managers]
+    
+        \begin{itemize}
+            \item \textbf{Host System}: The underlying physical hardware that supports virtual machines.
+            \item \textbf{Guest Operating System}: The operating system running inside a virtual machine.
+            \item \textbf{Virtual Machine Manager (VMM) / Hypervisor}: The software component that creates, manages, and monitors virtual machines.
+            \item \textbf{Types of Virtual Machines}: VMs can be classified based on how they interact with the hardware and the guest operating system:
+                \begin{itemize}
+                    \item \textbf{Full Virtualization}: The VMM provides a complete simulation of the underlying hardware.
+                    \item \textbf{Paravirtualization}: The guest OS is modified to work with the VMM, improving performance by avoiding certain hardware emulations.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Types of Hypervisors}
+    
+    Hypervisors are categorized into three main types based on their implementation and functionality: type 0, type 1, and type 2.
+    
+    \begin{highlight}[Types of Hypervisors]
+    
+        \begin{itemize}
+            \item \textbf{Type 0 Hypervisors}: Hardware-based solutions that provide support for virtual machine creation and management via firmware. Common in mainframes and large servers.
+                \begin{itemize}
+                    \item \textbf{Examples}: IBM LPARs and Oracle LDOMs.
+                \end{itemize}
+            \item \textbf{Type 1 Hypervisors}: Operating-system-like software installed directly on hardware. Also called "bare-metal" hypervisors.
+                \begin{itemize}
+                    \item \textbf{Examples}: VMware ESX, Joyent SmartOS, Citrix XenServer.
+                \end{itemize}
+            \item \textbf{Type 2 Hypervisors}: Applications that run on top of a standard operating system and provide VMM features.
+                \begin{itemize}
+                    \item \textbf{Examples}: VMware Workstation, Parallels Desktop, Oracle VirtualBox.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Alternative Virtualization Techniques}
+    
+    Beyond traditional virtual machines, several alternative virtualization techniques provide similar functionality with varying levels of performance and compatibility.
+    
+    \begin{highlight}[Alternative Virtualization Techniques]
+    
+        \begin{itemize}
+            \item \textbf{Programming-Environment Virtualization}: Creates a virtual environment that optimizes a specific programming language or runtime.
+                \begin{itemize}
+                    \item \textbf{Examples}: Oracle Java Virtual Machine, Microsoft .NET CLR.
+                \end{itemize}
+            \item \textbf{Emulators}: Enable applications written for one hardware environment to run on a completely different environment.
+                \begin{itemize}
+                    \item \textbf{Example}: QEMU, which allows software compiled for ARM architecture to run on x86 systems.
+                \end{itemize}
+            \item \textbf{Application Containment}: Segregates applications from the operating system without fully virtualizing the hardware.
+                \begin{itemize}
+                    \item \textbf{Examples}: Solaris Zones, BSD Jails, IBM AIX WPARs.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Use Cases for Virtualization}
+    
+    Virtualization is widely used in data-center operations, cloud computing, software testing, and development environments. The ability to run multiple operating systems on a single machine allows 
+    for efficient resource utilization and isolation.
+    
+    \begin{highlight}[Use Cases for Virtualization]
+    
+        \begin{itemize}
+            \item \textbf{Data Centers}: Virtual machines optimize hardware utilization and allow for dynamic resource allocation.
+            \item \textbf{Cloud Computing}: Virtualization is the foundation of cloud services, enabling scalable and flexible virtual environments.
+            \item \textbf{Software Testing and Development}: Developers can test applications in different OS environments without requiring separate physical machines.
+            \item \textbf{Security and Isolation}: Virtual machines provide secure sandboxes for running untrusted applications.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Virtual Machines}: Abstract hardware resources into isolated execution environments.
+            \item \textbf{Virtual Machine Manager (VMM) / Hypervisor}: The software responsible for creating and managing virtual machines.
+            \item \textbf{Types of Hypervisors}: Include type 0 (hardware-based), type 1 (bare-metal), and type 2 (hosted) hypervisors.
+            \item \textbf{Alternative Virtualization Techniques}: Programming-environment virtualization, emulators, and application containment provide similar features with different trade-offs.
+        \end{itemize}
+    
+    Virtualization is a powerful technique for optimizing resource utilization, supporting multiple operating systems, and improving security and isolation.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 18.2: History}.
+
+\begin{notes}{Section 18.2: History}
+    \subsection*{Overview}
+
+    This section provides a historical perspective on virtualization, tracing its origins back to the IBM mainframes of the 1970s. Virtual machines were first implemented commercially on IBM's mainframes in 1972 with the IBM VM operating system, which laid the foundation for modern virtualization techniques. Virtualization has since evolved to support various hardware platforms and has become a core component of cloud computing and data-center operations.
+    
+    \subsubsection*{IBM VM Operating System}
+    
+    The IBM VM operating system was one of the earliest implementations of virtualization. It allowed a single physical mainframe to be divided into multiple virtual machines, each capable of running its own operating system. This model introduced the concept of "minidisks," virtual disks allocated to each virtual machine to overcome hardware limitations.
+    
+    \begin{highlight}[IBM VM Operating System]
+    
+        \begin{itemize}
+            \item \textbf{Minidisks}: Virtual disks that appear identical to physical disks except in size. The system allocates physical disk tracks to each minidisk as needed.
+            \item \textbf{CMS (Conversational Monitor System)}: A single-user interactive operating system that typically ran on IBM's VM system.
+            \item \textbf{Virtualization Challenges}: Managing the allocation of limited physical resources like disk drives to multiple virtual machines.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Virtualization Requirements}
+    
+    A formal definition of virtualization helped guide the development of the technology. These requirements, known as the "Popek and Goldberg virtualization requirements," outline the conditions for implementing an effective VMM (Virtual Machine Manager):
+    
+    \begin{highlight}[Virtualization Requirements]
+    
+        \begin{itemize}
+            \item \textbf{Fidelity}: The VMM should provide an environment that is essentially identical to the underlying hardware, allowing programs to run without modification.
+            \item \textbf{Performance}: Programs running under a VMM should show only minor performance degradation compared to running on native hardware.
+            \item \textbf{Safety}: The VMM must be in complete control of system resources, ensuring the isolation and integrity of each virtual machine.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Virtualization on x86 Architecture}
+    
+    By the late 1990s, the Intel 80x86 architecture had become widely used in desktops and servers. Virtualization efforts on this architecture began with the development of new techniques by companies such as VMware and Xen. These technologies enabled virtualization on standard x86 CPUs, paving the way for virtualization to become mainstream.
+    
+    \begin{highlight}[Virtualization on x86 Architecture]
+    
+        \begin{itemize}
+            \item \textbf{Early Virtualization Efforts}: VMware and Xen developed the first technologies for virtualizing x86 systems, overcoming limitations that initially prevented full virtualization.
+            \item \textbf{Open-Source and Commercial Solutions}: VirtualBox, an open-source virtualization platform, supports a variety of host and guest operating systems on x86 and AMD64 CPUs.
+            \item \textbf{Supported Platforms}: VirtualBox can run guest operating systems such as Windows, Linux, Solaris, BSD, MS-DOS, and IBM OS/2.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Modern Virtualization Landscape}
+    
+    Today, virtualization has expanded beyond traditional mainframes to include cloud computing, development environments, and desktop applications. The technology is supported by various commercial and open-source tools, making it accessible for a wide range of use cases.
+    
+    \begin{highlight}[Modern Virtualization Landscape]
+    
+        \begin{itemize}
+            \item \textbf{Cloud Computing}: Virtual machines are the foundation of cloud services, allowing dynamic resource allocation and isolation.
+            \item \textbf{Data Centers}: Virtualization enables data centers to consolidate servers and improve resource utilization.
+            \item \textbf{Development and Testing}: Developers can use virtualization to create isolated environments for testing software across different operating systems.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{IBM VM Operating System}: Introduced virtualization on mainframes, using minidisks to allocate resources to virtual machines.
+            \item \textbf{Virtualization Requirements}: Fidelity, performance, and safety are essential criteria for effective virtualization.
+            \item \textbf{x86 Virtualization}: VMware and Xen pioneered virtualization on the Intel 80x86 architecture, leading to widespread adoption.
+            \item \textbf{Modern Use Cases}: Virtualization now underpins cloud computing, data-center operations, and software development environments.
+        \end{itemize}
+    
+    Understanding the history and evolution of virtualization provides context for how the technology has shaped modern computing and its widespread use in various domains.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 18.3: Benefits And Features}.
+
+\begin{notes}{Section 18.3: Benefits And Features}
+    \subsection*{Overview}
+
+    This section discusses the various benefits and features of virtualization, focusing on the ability to share hardware resources across multiple execution environments, isolation between virtual machines, 
+    and management tools like snapshots and live migration. These features make virtualization attractive for both development and production environments, including data centers and cloud computing.
+    
+    \subsubsection*{Isolation and Sharing in Virtual Machines}
+    
+    One of the key advantages of virtualization is that virtual machines (VMs) are isolated from each other, and from the host system. A failure in one VM, such as a virus, does not affect other VMs or 
+    the host. However, this isolation can also be a limitation if resource sharing between VMs is needed.
+    
+    \begin{highlight}[Isolation and Sharing in Virtual Machines]
+    
+        \begin{itemize}
+            \item \textbf{Isolation}: Virtual machines are almost completely isolated from each other, minimizing protection issues.
+            \item \textbf{Sharing Resources}:
+                \begin{itemize}
+                    \item \textbf{File Sharing}: A file-system volume can be shared between VMs.
+                    \item \textbf{Network Sharing}: VMs can communicate over a virtual network, which is modeled after physical networks but implemented in software. VMMs can also share physical network resources among VMs.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Snapshots and Cloning}
+    
+    Many virtualization platforms support features like snapshots and cloning, which provide powerful management capabilities. Snapshots allow administrators to freeze a VM at a specific point in time, 
+    enabling them to restore the VM to that state if needed.
+    
+    \begin{highlight}[Snapshots and Cloning]
+    
+        \begin{itemize}
+            \item \textbf{Snapshots}: A snapshot records the state of a VM at a particular point in time. Administrators can revert to this state if necessary, such as after an unwanted change.
+            \item \textbf{Cloning}: Cloning creates a new VM based on the snapshot of an existing one, allowing VMs to be duplicated with their current state intact.
+            \item \textbf{Use Cases}: Snapshots are useful for creating daily backups or saving the state before testing changes. Cloning enables developers to deploy multiple instances of the same VM.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Virtualization in Development and Production Environments}
+    
+    Virtualization is especially valuable in operating system research and development. System programmers can perform testing and development on virtual machines without risking the integrity of the 
+    host system. In production environments, virtualization enables system consolidation and efficient resource management.
+    
+    \begin{highlight}[Virtualization in Development and Production Environments]
+    
+        \begin{itemize}
+            \item \textbf{System Development}: System programmers can develop and test operating systems in virtual machines, preventing disruptions to the host or other users.
+            \item \textbf{Multiple Operating Systems}: Developers can run multiple operating systems concurrently on a single workstation for testing and development.
+            \item \textbf{System Consolidation}: Virtualization enables multiple light-use systems to be consolidated into one physical system, optimizing resource usage.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Management Tools and Live Migration}
+    
+    Virtual machine managers (VMMs) provide several management tools that simplify system administration, including templating, live migration, and resource monitoring. These tools allow administrators 
+    to efficiently manage large numbers of virtual machines.
+    
+    \begin{highlight}[Management Tools and Live Migration]
+    
+        \begin{itemize}
+            \item \textbf{Templating}: VMMs allow administrators to create templates—standard VM images that can be cloned and deployed across multiple systems.
+            \item \textbf{Live Migration}: This feature allows a running VM to be moved from one physical server to another without downtime, ensuring continuous operation during maintenance or load balancing.
+            \item \textbf{Resource Monitoring}: VMMs monitor resource use and allow administrators to patch, back up, and restore virtual machines with ease.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Virtualization and Cloud Computing}
+    
+    Virtualization forms the foundation for cloud computing, enabling resources like CPU, memory, and storage to be delivered as services over the Internet. This abstraction allows for scalable, flexible 
+    environments where resources can be dynamically allocated based on demand.
+    
+    \begin{highlight}[Virtualization and Cloud Computing]
+    
+        \begin{itemize}
+            \item \textbf{Scalability}: Virtual machines can be dynamically created or removed in a cloud environment based on demand.
+            \item \textbf{Cost Efficiency}: Cloud services reduce the need for physical hardware by allowing users to rent virtualized resources.
+            \item \textbf{Security and Remote Access}: Virtual desktops provide secure access to applications and data without storing information locally, increasing security for users.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Isolation and Sharing}: Virtual machines are isolated from each other and from the host, with options for sharing resources like file systems and networks.
+            \item \textbf{Snapshots and Cloning}: Enable system administrators to back up and replicate virtual machines with ease.
+            \item \textbf{System Consolidation}: Virtualization allows multiple systems to run on a single physical server, improving resource utilization.
+            \item \textbf{Management Tools}: Tools like templating and live migration simplify the management of virtualized environments.
+            \item \textbf{Cloud Computing}: Virtualization powers cloud services, providing scalable and flexible resource allocation.
+        \end{itemize}
+    
+    Virtualization provides a flexible and powerful platform for both development and production environments, enabling resource optimization and better system management.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 18.4: Building Blocks}.
+
+\begin{notes}{Section 18.4: Building Blocks}
+    \subsection*{Overview}
+
+    This section examines the building blocks necessary for efficient virtualization, which can be challenging to implement, particularly in dual-mode systems with user and kernel modes. Virtualization 
+    techniques like trap-and-emulate and binary translation are used to overcome these challenges, and modern CPUs provide hardware support to make virtualization more efficient.
+    
+    \subsubsection*{Trap-and-Emulate}
+    
+    Trap-and-emulate is a virtualization technique where privileged instructions in a guest operating system cause a trap to the Virtual Machine Manager (VMM). The VMM emulates the action on behalf of 
+    the guest and returns control to it. This method enables virtual machines to run in user mode while still offering kernel-like functionality.
+    
+    \begin{highlight}[Trap-and-Emulate]
+    
+        \begin{itemize}
+            \item \textbf{Virtual Kernel Mode}: Guests are run in user mode, with privileged instructions trapping to the VMM.
+            \item \textbf{Process}:
+                \begin{itemize}
+                    \item When a guest attempts to execute a privileged instruction, it causes a trap.
+                    \item The VMM emulates the action and resumes the guest's execution.
+                \end{itemize}
+            \item \textbf{Performance}: Nonprivileged instructions run natively on the hardware, but privileged instructions cause overhead due to emulation.
+            \item \textbf{Hardware Support}: Modern CPUs reduce the performance hit by handling some virtualization tasks directly.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Binary Translation}
+    
+    In systems where the trap-and-emulate model is insufficient, such as older Intel x86 CPUs that do not have clear boundaries between privileged and nonprivileged instructions, binary translation 
+    is used. This method inspects each instruction in virtual kernel mode and translates special instructions that cannot be executed directly.
+    
+    \begin{highlight}[Binary Translation]
+    
+        \begin{itemize}
+            \item \textbf{Special Instructions}: Binary translation identifies and translates instructions that would cause issues in kernel mode.
+            \item \textbf{Process}: 
+                \begin{itemize}
+                    \item Nonprivileged instructions are executed natively.
+                    \item Special instructions are translated into equivalent instructions that perform the same task.
+                \end{itemize}
+            \item \textbf{Performance Optimization}: To improve performance, translated instructions are cached and reused for future execution.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Nested Page Tables (NPTs)}
+    
+    Memory management in virtual environments is complex because both the guest operating systems and the VMM maintain page tables. Nested page tables (NPTs) are a solution that allows the VMM to 
+    maintain its own page table for each guest, while the guest believes it manages its own memory.
+    
+    \begin{highlight}[Nested Page Tables (NPTs)]
+    
+        \begin{itemize}
+            \item \textbf{Guest and VMM Page Tables}: The guest maintains its page table, while the VMM uses NPTs to track the actual physical memory.
+            \item \textbf{NPT Functionality}: The VMM intercepts guest attempts to modify the page table, updating the NPT accordingly.
+            \item \textbf{Performance Considerations}: NPTs increase the likelihood of TLB (translation lookaside buffer) misses, requiring further optimization to maintain performance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Hardware Assistance}
+    
+    Modern CPUs provide extensive support for virtualization, which simplifies implementation and improves performance. Technologies like Intel VT-x and AMD-V add modes and features to directly support 
+    virtualization, reducing the need for binary translation and software-based memory management.
+    
+    \begin{highlight}[Hardware Assistance]
+    
+        \begin{itemize}
+            \item \textbf{CPU Modes}: New CPU modes—such as host and guest modes—allow more efficient handling of virtual machines.
+            \item \textbf{Memory Management}: Hardware features such as Intel's EPT and AMD's RVI support nested page tables in hardware, reducing the overhead of software-based memory translation.
+            \item \textbf{I/O Virtualization}: Hardware-assisted DMA and interrupt remapping ensure that I/O operations and interrupts are directed to the correct virtual machine without requiring VMM intervention.
+            \item \textbf{ARM Support}: ARM v8 provides a special hypervisor mode (EL2), which allows better isolation and control of virtualized environments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Trap-and-Emulate}: A method of virtualizing privileged instructions by trapping them and emulating their execution in the VMM.
+            \item \textbf{Binary Translation}: Translates problematic instructions in virtual kernel mode to allow them to execute correctly in user mode.
+            \item \textbf{Nested Page Tables}: Provide a mechanism for managing memory efficiently in virtual environments, reducing the complexity of handling guest and VMM page tables.
+            \item \textbf{Hardware Support}: Modern CPUs offer advanced virtualization features, reducing the overhead associated with software-based virtualization techniques.
+        \end{itemize}
+    
+    Efficient virtualization relies on a combination of techniques, including software methods like trap-and-emulate and binary translation, along with extensive hardware support to optimize performance.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 18.5: Types Of VMs And Their Implementations}.
+
+\begin{notes}{Section 18.5: Types Of VMs And Their Implementations}
+    \subsection*{Overview}
+
+    This section discusses different types of virtual machines (VMs), their implementations, and how they use virtualization techniques and building blocks. The life cycle of a virtual machine, the 
+    distinction between hypervisor types (Type 0, Type 1, and Type 2), paravirtualization, programming-environment virtualization, and emulation are examined.
+    
+    \subsubsection*{Virtual Machine Life Cycle}
+    
+    The virtual machine life cycle begins when a virtual machine is created using a Virtual Machine Manager (VMM), which allocates resources such as CPUs, memory, networking, and storage. Once the VM 
+    is created, the VMM manages the resources for the VM. The virtual machine can later be deleted, freeing up the resources and removing its configuration.
+    
+    \begin{highlight}[Virtual Machine Life Cycle]
+    
+        \begin{itemize}
+            \item \textbf{Creation}: The VMM allocates resources (CPUs, memory, disk, network) and creates the guest VM.
+            \item \textbf{Resource Management}: The VMM manages resources, such as CPU scheduling and memory, for each guest VM.
+            \item \textbf{Deletion}: When the VM is no longer needed, the VMM frees up resources and removes the VM configuration.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type 0 Hypervisors}
+    
+    Type 0 hypervisors, also known as hardware-based hypervisors, are integrated into firmware and run directly on hardware. They dedicate resources like CPUs and memory to guests, simplifying 
+    implementation but limiting flexibility when sharing resources.
+    
+    \begin{highlight}[Type 0 Hypervisors]
+    
+        \begin{itemize}
+            \item \textbf{Hardware-Based Virtualization}: Guest VMs run on dedicated hardware partitions with allocated resources (e.g., CPUs, memory).
+            \item \textbf{Resource Allocation}: Dedicated hardware simplifies management but can complicate I/O sharing.
+            \item \textbf{Paravirtualization Support}: Some Type 0 hypervisors allow guests to assist in virtualization by handling hardware changes dynamically.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type 1 Hypervisors}
+    
+    Type 1 hypervisors, also called bare-metal hypervisors, are specialized operating systems that run directly on hardware, managing guest VMs. They provide functionality for CPU scheduling, memory 
+    management, and I/O operations and are common in data centers for server consolidation.
+    
+    \begin{highlight}[Type 1 Hypervisors]
+    
+        \begin{itemize}
+            \item \textbf{Bare-Metal Operation}: Runs directly on hardware, with no host OS, managing guest VMs.
+            \item \textbf{CPU Scheduling and Memory Management}: Implements system-level features for managing CPU and memory resources.
+            \item \textbf{Use in Data Centers}: Enables server consolidation and efficient management of operating systems and applications.
+            \item \textbf{Examples}: VMware ESX, Citrix XenServer.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Type 2 Hypervisors}
+    
+    Type 2 hypervisors run on top of an existing operating system, treating virtual machines as applications. They provide less performance than Type 0 or Type 1 hypervisors due to the overhead of 
+    the underlying host operating system but are useful for testing and learning purposes.
+    
+    \begin{highlight}[Type 2 Hypervisors]
+    
+        \begin{itemize}
+            \item \textbf{Hosted on an OS}: The VMM runs as an application on a host operating system.
+            \item \textbf{Performance Limitations}: Lower performance due to the overhead of managing a host OS and guest VMs simultaneously.
+            \item \textbf{Examples}: Oracle VirtualBox, VMware Workstation.
+            \item \textbf{Use Case}: Ideal for students or developers testing different operating systems without replacing the host OS.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Paravirtualization}
+    
+    Paravirtualization requires modifying the guest operating system to be aware of the virtual environment, allowing more efficient resource use. This approach reduces overhead compared to full virtualization 
+    but requires changes to the guest OS.
+    
+    \begin{highlight}[Paravirtualization]
+    
+        \begin{itemize}
+            \item \textbf{Guest Modifications}: The guest OS is modified to communicate with the VMM, avoiding unnecessary hardware emulation.
+            \item \textbf{Efficient Resource Use}: Simplifies device abstraction and I/O, allowing faster communication between guest and VMM.
+            \item \textbf{Example}: Xen VMM.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Emulation}
+    
+    Emulation translates instructions from one architecture into another, enabling software designed for one system to run on a completely different system. Although emulation is slower than virtualization, 
+    it allows for compatibility across different hardware architectures.
+    
+    \begin{highlight}[Emulation]
+    
+        \begin{itemize}
+            \item \textbf{Instruction Translation}: Translates instructions from the source CPU architecture to the target architecture.
+            \item \textbf{Performance Overhead}: Typically slower than virtualization, as it requires translating each instruction.
+            \item \textbf{Use Cases}: Running legacy software or exploring older hardware architectures on modern systems.
+            \item \textbf{Example}: Emulators used in gaming or legacy application environments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Application Containment}
+    
+    Application containment isolates applications from the host operating system using containers or zones. Containers share the same kernel as the host OS but create isolated environments for running 
+    applications, using fewer resources than full VMs.
+    
+    \begin{highlight}[Application Containment]
+    
+        \begin{itemize}
+            \item \textbf{Lightweight Virtualization}: Containers provide isolation for applications without the overhead of full VMs.
+            \item \textbf{Shared Kernel}: The containerized applications share the host OS kernel, but resources like network stacks and file systems are isolated.
+            \item \textbf{Examples}: Docker, Kubernetes, Solaris Zones, Linux LXC.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Virtual Machine Life Cycle}: VMs are created, managed, and deleted by the VMM, simplifying resource allocation and reuse.
+            \item \textbf{Type 0, Type 1, and Type 2 Hypervisors}: Differ in their level of integration with hardware and host OS, providing different performance and management features.
+            \item \textbf{Paravirtualization and Emulation}: Paravirtualization improves efficiency by modifying the guest OS, while emulation allows for cross-architecture compatibility.
+            \item \textbf{Application Containment}: Provides isolated environments for applications using containers, offering a lightweight alternative to full VMs.
+        \end{itemize}
+    
+    Understanding the types of virtual machines and their implementations is critical for selecting the appropriate virtualization solution based on performance, isolation, and resource efficiency.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 18.6: Virtualization And Operating-System Components}.
+
+\begin{notes}{Section 18.6: Virtualization And Operating-System Components}
+    \subsection*{Overview}
+
+    This section explores how virtual machine managers (VMMs) provide core operating-system functions such as CPU scheduling, memory management, I/O, and storage management. These aspects are critical 
+    for ensuring that virtual machines (VMs) can function effectively on shared physical resources, while maintaining the illusion that each VM has dedicated hardware.
+    
+    \subsubsection*{CPU Scheduling}
+    
+    In virtualized systems, a single physical CPU may need to be shared across multiple VMs. The VMM handles CPU scheduling by allocating virtual CPUs (vCPUs) to each guest and mapping them to physical 
+    CPUs. When the number of physical CPUs is insufficient to meet the demands of all guests, the VMM can use standard scheduling algorithms to distribute CPU time proportionally among the guests.
+    
+    \begin{highlight}[CPU Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{vCPU Allocation}: Each guest is assigned virtual CPUs, which are mapped to physical CPUs by the VMM.
+            \item \textbf{Overcommitment}: The VMM can allocate more vCPUs than there are physical CPUs. In such cases, CPU resources are divided proportionally among guests.
+            \item \textbf{Clock Drift}: Scheduling delays in VMs can cause timers and time-of-day clocks to drift, leading to inaccurate timekeeping.
+            \item \textbf{Fairness}: The VMM can implement fairness in CPU scheduling to ensure equitable distribution of CPU time among guests.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Memory Management}
+    
+    Memory management in a virtualized environment is more complex due to the increased demand from multiple VMs and the possibility of memory overcommitment. VMMs use several techniques to optimize 
+    memory allocation and reclaim memory when necessary.
+    
+    \begin{highlight}[Memory Management]
+    
+        \begin{itemize}
+            \item \textbf{Nested Page Tables}: The VMM manages guest memory via nested page tables, translating guest page tables to physical memory.
+            \item \textbf{Ballooning}: A pseudo-device driver, called a balloon, is installed in the guest OS to allocate or deallocate memory based on VMM requirements. This allows the VMM to reclaim 
+            memory without the guest's awareness.
+            \item \textbf{Memory Deduplication}: The VMM can detect identical memory pages across multiple guests and merge them into a single shared page to free up memory.
+            \item \textbf{Double Paging}: In extreme cases, the VMM handles paging for the guest OS, although this is less efficient than the guest managing its own paging.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{I/O Management}
+    
+    The VMM manages I/O operations for virtual machines by providing virtualized devices to each guest. I/O virtualization can be implemented through shared devices, idealized device drivers, or direct 
+    access to physical devices, depending on the VMM's configuration.
+    
+    \begin{highlight}[I/O Management]
+    
+        \begin{itemize}
+            \item \textbf{Virtual Devices}: VMMs provide guests with virtualized versions of physical devices, often using simplified device drivers.
+            \item \textbf{Direct Device Access}: Some hypervisors allow guests direct access to physical devices to improve I/O performance, but this limits device sharing among guests.
+            \item \textbf{Networking}: VMMs manage network communication for guests by assigning IP addresses and routing traffic through virtual switches. Network address translation (NAT) and bridging 
+            are used for connecting guests to external networks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Storage Management}
+    
+    In virtualized environments, storage is managed differently from native systems. VMMs often use disk images to store guest operating systems and data, allowing for easy duplication, migration, and scaling.
+    
+    \begin{highlight}[Storage Management]
+    
+        \begin{itemize}
+            \item \textbf{Disk Images}: Guest operating systems and data are stored in disk images, which simplify copying and moving VMs between physical systems.
+            \item \textbf{Boot Disk}: Type 1 and Type 2 hypervisors store the guest's root disk and configuration in files, allowing the VMM to manage the guest's storage.
+            \item \textbf{Physical-to-Virtual (P-to-V) Conversion}: Physical machines can be converted into virtual machines by capturing the disk contents and storing them as a disk image.
+            \item \textbf{Virtual-to-Physical (V-to-P) Conversion}: Virtual machines can be converted back into physical machines by recreating the guest OS and applications on a physical system.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Live Migration}
+    
+    Live migration allows a running VM to be moved from one host to another with minimal interruption to services. This feature is essential for resource management and load balancing in data centers.
+    
+    \begin{highlight}[Live Migration]
+    
+        \begin{itemize}
+            \item \textbf{Migration Process}: The source VMM sends the VM's memory pages and state to the target VMM. Once all critical data is transferred, the VM starts running on the new host.
+            \item \textbf{MAC Address Mobility}: To ensure continuous network connectivity, the guest's MAC address must move seamlessly with the VM.
+            \item \textbf{Limitations}: Live migration does not include disk state, so the guest's disk must be remotely accessible during migration.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{CPU Scheduling}: Virtual CPUs are mapped to physical CPUs, and overcommitment can lead to reduced performance.
+            \item \textbf{Memory Management}: Techniques like ballooning, memory deduplication, and nested page tables are used to optimize memory allocation for guests.
+            \item \textbf{I/O Management}: VMMs handle virtualized I/O devices, enabling efficient resource sharing while maintaining isolation between guests.
+            \item \textbf{Storage Management}: Disk images are used for guest storage, simplifying VM duplication and migration.
+            \item \textbf{Live Migration}: Allows VMs to be moved between hosts with minimal downtime, essential for dynamic resource management in data centers.
+        \end{itemize}
+    
+    Understanding how virtualization interacts with core operating-system components is crucial for optimizing performance and resource utilization in virtualized environments.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 18.7: Examples}.
+
+\begin{notes}{Section 18.7: Examples}
+    \subsection*{Overview}
+
+    This section discusses two widely-used examples of virtual machines: VMware Workstation and the Java Virtual Machine (JVM). These examples demonstrate how virtualization is applied in different 
+    contexts—VMware for system virtualization and the JVM for programming-environment virtualization.
+    
+    \subsubsection*{VMware Workstation}
+    
+    VMware Workstation is a popular Type 2 hypervisor that abstracts Intel x86 and compatible hardware into virtual machines. It runs as an application on a host operating system such as Windows or 
+    Linux and allows multiple guest operating systems to run concurrently as independent VMs. VMware Workstation provides each VM with its own virtual CPU, memory, disk drives, and network interfaces, 
+    creating isolated virtual environments.
+    
+    \begin{highlight}[VMware Workstation]
+    
+        \begin{itemize}
+            \item \textbf{Type 2 Hypervisor}: VMware Workstation runs as a user application on top of a host operating system.
+            \item \textbf{Guest Operating Systems}: Multiple guest OSs, such as FreeBSD, Windows NT, and Windows XP, can run concurrently on a single host machine.
+            \item \textbf{Virtualization Layer}: Abstracts the physical hardware, providing virtual CPUs, memory, disks, and network interfaces for each VM.
+            \item \textbf{Disk Management}: The guest operating system's disk is managed as a file within the host file system. This allows easy duplication, migration, and backup of the entire virtual 
+            machine by copying the file.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Java Virtual Machine (JVM)}
+    
+    The Java Virtual Machine (JVM) is a programming-environment virtual machine that provides a platform-independent runtime environment for executing Java bytecode. Java programs are compiled into 
+    architecture-neutral bytecode, which can be executed on any system that implements the JVM. The JVM includes components such as a class loader and a Java interpreter to handle the execution of Java bytecode.
+    
+    \begin{highlight}[Java Virtual Machine (JVM)]
+    
+        \begin{itemize}
+            \item \textbf{Architecture-Neutral Bytecode}: Java programs are compiled into bytecode that can run on any JVM, regardless of the underlying hardware architecture.
+            \item \textbf{Class Loader}: Loads compiled \texttt{.class} files for execution by the JVM.
+            \item \textbf{Java Interpreter}: Executes the Java bytecode, handling memory management via garbage collection to reclaim unused memory.
+            \item \textbf{Just-in-Time (JIT) Compilation}: To improve performance, the JVM can use JIT compilation, converting bytecode into native machine code at runtime, which is then cached for future use.
+            \item \textbf{Hardware Implementation}: The JVM can be implemented in software on top of host operating systems or as hardware on Java-specific chips for faster execution.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{VMware Workstation}: A Type 2 hypervisor that allows multiple guest operating systems to run on a single host system, each with its own virtual hardware.
+            \item \textbf{Java Virtual Machine (JVM)}: Provides a platform-independent runtime for executing Java bytecode, with support for garbage collection and JIT compilation to enhance performance.
+            \item \textbf{Virtualization Flexibility}: Both VMware and the JVM demonstrate how virtualization can solve compatibility issues and optimize resource management.
+        \end{itemize}
+    
+    VMware Workstation and the JVM exemplify the versatility of virtual machines, with VMware enabling system-level virtualization and the JVM enabling application portability across different hardware platforms.
+    
+    \end{highlight}
+\end{notes}
+
+The last section that will be covered from this chapter this week is \textbf{Section 18.8: Virtualization Research}.
+
+\begin{notes}{Section 18.8: Virtualization Research}
+    \subsection*{Overview}
+
+    This section covers recent research developments in virtualization, particularly focusing on the growing use of virtualization in cloud computing, microservices, and embedded systems. Virtualization 
+    has moved beyond merely solving system compatibility problems and is now a key tool in optimizing efficiency, security, and resource management in various computing environments.
+    
+    \subsubsection*{Unikernels and Library Operating Systems}
+    
+    Unikernels are specialized machine images that compile an application, the system libraries it uses, and the necessary kernel services into a single binary. By operating in a single address space, 
+    unikernels reduce the attack surface, optimize resource usage, and improve efficiency. They are used in cloud computing environments to shrink the execution stack and simplify deployments.
+    
+    \begin{highlight}[Unikernels and Library Operating Systems]
+    
+        \begin{itemize}
+            \item \textbf{Unikernels}: Specialized machine images that combine the application, system libraries, and kernel services into a single binary. They operate within one address space, reducing 
+            resource usage and security vulnerabilities.
+            \item \textbf{Library Operating Systems}: Unikernels are based on library operating systems, where only the required OS components are included in the image, further minimizing overhead.
+            \item \textbf{Cloud Computing Use Case}: Unikernels are designed for cloud environments where thousands of instances of the same application are deployed. By shrinking the attack surface, they 
+            increase security and efficiency.
+            \item \textbf{Efficiency}: Unikernels reduce the overall resource footprint and streamline execution within virtual or physical environments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Partitioning Hypervisors}
+    
+    A new area of research focuses on partitioning hypervisors, which divide physical resources among guest systems without overcommitting them. These hypervisors can extend the functionality of existing 
+    operating systems by running real-time or secure systems in separate virtual machines, each with dedicated resources. Partitioning hypervisors improve security and reduce overhead compared to traditional hypervisors.
+    
+    \begin{highlight}[Partitioning Hypervisors]
+    
+        \begin{itemize}
+            \item \textbf{Dedicated Resource Allocation}: Partitioning hypervisors commit physical resources (e.g., CPUs, memory) to guests, avoiding the overhead associated with resource overcommitment.
+            \item \textbf{Extending Operating Systems}: They allow non-real-time operating systems, such as Linux, to be extended with real-time capabilities by running a lightweight real-time OS in a separate VM.
+            \item \textbf{Examples}: Research projects like Quest-V, eVM, Xtratum, and Siemens Jailhouse explore partitioning hypervisors. These systems securely partition resources and use hardware-extended 
+            page tables for communication between guests.
+            \item \textbf{Applications}: These hypervisors target areas like robotics, self-driving cars, and the Internet of Things (IoT), where security and real-time execution are critical.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Separation Hypervisors}
+    
+    Separation hypervisors, a subset of partitioning hypervisors, focus on isolating system components into a chip-level distributed system. These systems provide secure shared memory channels between 
+    sandboxed guests, enabling secure communication. Research in this area emphasizes reducing hypervisor overhead while maintaining isolation between tasks.
+    
+    \begin{highlight}[Separation Hypervisors]
+    
+        \begin{itemize}
+            \item \textbf{Secure Partitioning}: Separate system components are isolated into distinct partitions, each operating in a secure, sandboxed environment.
+            \item \textbf{Communication via Shared Memory}: Secure shared memory channels are implemented using hardware-extended page tables, allowing safe communication between isolated guests.
+            \item \textbf{Use Cases}: Applied in areas requiring high security, such as embedded systems, industrial control systems, and autonomous vehicles.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Unikernels}: Provide a lightweight, efficient virtualization approach by combining the application, libraries, and kernel into a single executable binary.
+            \item \textbf{Partitioning Hypervisors}: Allocate dedicated physical resources to guests, enhancing security and performance without resource overcommitment.
+            \item \textbf{Separation Hypervisors}: Partition system components into isolated environments, with secure communication between them via hardware-assisted methods.
+            \item \textbf{Applications}: These advanced virtualization techniques are critical for environments like cloud computing, IoT, robotics, and self-driving cars, where efficiency, security, 
+            and real-time performance are paramount.
+        \end{itemize}
+    
+    Virtualization research continues to evolve, with a focus on more efficient, secure, and specialized use cases in embedded systems, cloud computing, and beyond.
+    
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 19: Networks And Distributed Systems}. The first section that is being covered from this chapter this week is 
+\textbf{Section 19.1: Advantages Of Distributed Systems}.
+
+\begin{notes}{Section 19.1: Advantages Of Distributed Systems}
+    \subsection*{Overview}
+
+    This section introduces the concept of distributed systems, where processors do not share memory or a clock and communicate through networks like high-speed buses. Distributed systems are commonly 
+    used in modern applications, ranging from cloud storage to parallel processing of scientific data. The Internet itself is an example of a distributed system. This section explores the advantages 
+    of distributed systems, including resource sharing, computational speedup, and reliability.
+    
+    \subsubsection*{Resource Sharing}
+    
+    Distributed systems allow multiple sites with different resources to share information and services. For example, a user at one site can query a database at another, or use specialized hardware, 
+    such as a graphics processing unit (GPU), located at a remote site.
+    
+    \begin{highlight}[Resource Sharing]
+    
+        \begin{itemize}
+            \item \textbf{Shared Resources}: Sites can share files, access remote databases, and use remote hardware.
+            \item \textbf{Examples}: Distributed systems enable operations such as remote file printing, access to remote databases, and use of remote specialized hardware like supercomputers.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Computation Speedup}
+    
+    Distributed systems enable the partitioning of computations into smaller subcomputations that can be executed concurrently across multiple sites. This parallel execution results in significant 
+    computation speedup. Additionally, load balancing techniques help distribute jobs across different nodes, preventing any single site from becoming overwhelmed with tasks.
+    
+    \begin{highlight}[Computation Speedup]
+    
+        \begin{itemize}
+            \item \textbf{Parallel Processing}: Tasks can be split and executed concurrently across multiple sites.
+            \item \textbf{Load Balancing}: Overloaded sites can offload tasks to less busy sites, balancing the computational workload.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Reliability}
+    
+    Distributed systems increase system reliability by ensuring that the failure of one site does not halt the operation of the entire system. With proper redundancy in both hardware and data, 
+    distributed systems can continue functioning even if some nodes fail. The system must detect failures, recover from them, and reintegrate repaired nodes when they are back online.
+    
+    \begin{highlight}[Reliability]
+    
+        \begin{itemize}
+            \item \textbf{Fault Tolerance}: If a node fails, the remaining nodes can continue operating, maintaining system functionality.
+            \item \textbf{Redundancy}: Hardware and data redundancy improve the overall reliability of the system, allowing it to withstand failures.
+            \item \textbf{Failure Detection and Recovery}: The system must detect failures and ensure that other sites take over the failed node's responsibilities.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Resource Sharing}: Distributed systems allow sharing of resources, including files, databases, and specialized hardware, across multiple sites.
+            \item \textbf{Computation Speedup}: Tasks can be split into smaller parts and processed in parallel across different nodes to improve speed.
+            \item \textbf{Reliability}: With enough redundancy, distributed systems can continue functioning even when individual nodes fail.
+        \end{itemize}
+    
+    Distributed systems offer significant advantages in resource sharing, computational efficiency, and reliability, making them an essential part of modern computing infrastructure.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 19.2: Network Structure}.
+
+\begin{notes}{Section 19.2: Network Structure}
+    \subsection*{Overview}
+
+    This section introduces basic networking concepts relevant to distributed systems, focusing on two main types of networks: local-area networks (LANs) and wide-area networks (WANs). The section 
+    explains how these networks are structured and highlights the differences in speed, reliability, and design implications for distributed systems.
+    
+    \subsubsection*{Local-Area Networks (LANs)}
+    
+    Local-area networks (LANs) are networks that connect hosts in a small geographic area, such as a building or campus. LANs emerged in the 1970s as an alternative to mainframe systems, enabling 
+    small computers to share resources and communicate within a localized area. LANs are commonly used in office and home environments and are characterized by high-speed, low-error communication links.
+    
+    \begin{highlight}[Local-Area Networks (LANs)]
+    
+        \begin{itemize}
+            \item \textbf{Geographic Scope}: LANs cover small areas such as offices, buildings, or campuses.
+            \item \textbf{Common Technologies}: Ethernet (IEEE 802.3) and WiFi (IEEE 802.11) are the most common technologies used to build LANs.
+            \item \textbf{Ethernet}: Uses coaxial, twisted pair, or fiber-optic cables to connect non-mobile devices. Speeds range from 10 Mbps to 100 Gbps depending on the cabling.
+            \item \textbf{WiFi}: Provides wireless networking via radio waves, allowing devices like smartphones and laptops to connect to the LAN without cables. WiFi speeds can vary from 11 Mbps to over 400 Mbps.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Wide-Area Networks (WANs)}
+    
+    Wide-area networks (WANs) connect systems distributed over a large geographic area, such as cities or countries. WANs originated in the late 1960s as a way to provide efficient communication between 
+    remote sites. The ARPANET, an early WAN, grew into the modern Internet. WANs often interconnect multiple LANs, allowing geographically distant systems to communicate.
+    
+    \begin{highlight}[Wide-Area Networks (WANs)]
+    
+        \begin{itemize}
+            \item \textbf{Geographic Scope}: WANs cover large areas, such as cities, countries, or even the entire globe (e.g., the Internet).
+            \item \textbf{Common Technologies}: WANs use telephone lines, fiber-optic cables, microwave links, and satellite channels for communication.
+            \item \textbf{Internet as a WAN}: The Internet is a global WAN interconnecting millions of systems, with regional networks and routers directing traffic.
+            \item \textbf{Speed and Latency}: WANs are typically slower than LANs due to the longer distances and more complex routing involved. However, backbone links between major cities can achieve 
+            high speeds using fiber optics.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{LANs and WANs Interconnected}
+    
+    Frequently, LANs and WANs interconnect to form larger, more complex network structures. For example, home users connect to the Internet (a WAN) via routers that link their local LAN to their Internet 
+    service provider (ISP). Similarly, cellular networks combine LAN-like radio links with WAN backbones to enable mobile communications.
+    
+    \begin{highlight}[LANs and WANs Interconnected]
+    
+        \begin{itemize}
+            \item \textbf{Cellular Networks}: Cell phones connect to local towers via radio waves, similar to LANs, but the towers are interconnected via WAN-like systems to route calls and data.
+            \item \textbf{Home Networking}: Residences connect to the Internet via routers that bridge LANs to ISPs, linking local devices to the global Internet.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{LANs}: Connect devices within a small area, using technologies like Ethernet and WiFi, and are known for high speed and reliability.
+            \item \textbf{WANs}: Connect systems over large geographic areas, using technologies like fiber optics and satellite links, often interconnecting LANs.
+            \item \textbf{Interconnected Networks}: LANs and WANs often connect, forming complex network structures like the Internet and cellular networks.
+        \end{itemize}
+    
+    Understanding the structure and function of LANs and WANs is crucial for designing and managing distributed systems that span multiple geographic locations.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 19.3: Communication Structure}.
+
+\begin{notes}{Section 19.3: Communication Structure}
+    \subsection*{Overview}
+
+    This section discusses the internal workings of network communication in distributed systems, focusing on naming, name resolution, and communication protocols. For processes on different hosts to 
+    communicate, each must be able to identify the other through a unique combination of a host name and process identifier. Protocols like the domain name system (DNS) are used to resolve host names 
+    into numeric addresses.
+    
+    \subsubsection*{Naming and Name Resolution}
+    
+    In distributed systems, processes on different hosts are identified by a pair \texttt{<host name, identifier>}. The host name is an alphanumeric label for the machine, while the identifier is 
+    usually a numeric process ID. Names are convenient for humans, but computers prefer numbers for efficiency. Therefore, a system must resolve host names into host-ids, much like address resolution 
+    in program compilation.
+    
+    \begin{highlight}[Naming and Name Resolution]
+    
+        \begin{itemize}
+            \item \textbf{Host Names}: Human-readable identifiers (e.g., \texttt{eric.cs.yale.edu}) that are mapped to numeric host-ids (e.g., \texttt{128.148.31.100}).
+            \item \textbf{DNS (Domain Name System)}: A hierarchical system that resolves host names into IP addresses. DNS queries start at a top-level domain (e.g., \texttt{.edu}), progressing downward 
+            to resolve the specific host.
+            \item \textbf{Efficiency}: Systems cache resolved IP addresses to speed up future communications, though these caches must be refreshed periodically.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Communication Protocols}
+    
+    Networking systems must agree on protocols to manage host identification, message routing, and reliable data transmission. The OSI (Open Systems Interconnection) model divides communication into 
+    layers, each responsible for specific functions. While not widely implemented, the OSI model helps to understand networking logically. A more common model is the TCP/IP stack, which underpins the Internet.
+    
+    \begin{highlight}[Communication Protocols]
+    
+        \begin{itemize}
+            \item \textbf{OSI Model}: A conceptual framework of seven layers:
+                \begin{itemize}
+                    \item \textbf{Layer 1}: Physical layer—transmits raw bits over a communication channel.
+                    \item \textbf{Layer 2}: Data-link layer—handles error detection and framing for physical addresses.
+                    \item \textbf{Layer 3}: Network layer—routes packets and manages logical addresses.
+                    \item \textbf{Layer 4}: Transport layer—provides reliable message transfer between nodes.
+                    \item \textbf{Layer 5}: Session layer—manages process-to-process communication.
+                    \item \textbf{Layer 6}: Presentation layer—handles format differences (e.g., character encoding).
+                    \item \textbf{Layer 7}: Application layer—directly interacts with users for file transfers, email, etc.
+                \end{itemize}
+            \item \textbf{TCP/IP Model}: Simplifies the OSI model by combining functions across fewer layers, focusing on practical Internet communication protocols like HTTP, FTP, and DNS.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Transport Protocols: TCP and UDP}
+    
+    TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two primary transport protocols used in networking. TCP is connection-oriented and ensures reliable, in-order delivery 
+    of data, while UDP is connectionless and focuses on low-latency communication without guaranteeing delivery.
+    
+    \begin{highlight}[Transport Protocols: TCP and UDP]
+    
+        \begin{itemize}
+            \item \textbf{TCP}: Provides reliable communication through packet acknowledgments (ACKs) and sequence numbers, ensuring that data arrives in the correct order. It also implements flow 
+            control and congestion control to manage network traffic.
+            \item \textbf{UDP}: A simpler, connectionless protocol with low overhead, but lacks reliability. Applications using UDP must handle lost or out-of-order packets themselves.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Naming and Resolution}: Distributed systems rely on host names and identifiers to locate and communicate with remote processes, using DNS to resolve names to numeric IP addresses.
+            \item \textbf{OSI and TCP/IP Models}: Both models explain how communication layers interact, with the TCP/IP model being more commonly used in practice.
+            \item \textbf{Transport Protocols}: TCP offers reliable, ordered delivery with flow control, while UDP provides fast, connectionless communication with minimal overhead.
+        \end{itemize}
+    
+    Understanding how distributed systems communicate requires a grasp of naming, name resolution, and the protocols governing reliable and efficient data exchange.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 19.4: Network And Distributed Operating Systems}.
+
+\begin{notes}{Section 19.4: Network And Distributed Operating Systems}
+    \subsection*{Overview}
+
+    This section explores two general categories of network-oriented operating systems: network operating systems and distributed operating systems. Network operating systems provide users with access 
+    to remote resources through mechanisms like remote login and file transfer. Distributed operating systems extend this concept by making access to remote resources as seamless as local resources, 
+    implementing features like data, computation, and process migration.
+    
+    \subsubsection*{Network Operating Systems}
+    
+    Network operating systems allow users to access resources on remote machines either by logging in to the remote system or by transferring data between machines. These systems require the user to 
+    explicitly perform actions such as remote login or file transfer, using protocols like SSH and FTP. Common general-purpose operating systems, including mobile systems like Android and iOS, are 
+    network operating systems.
+    
+    \begin{highlight}[Network Operating Systems]
+    
+        \begin{itemize}
+            \item \textbf{Remote Login}: Allows users to log in remotely to another machine and interact with it as if it were local. For example, SSH is used to securely log in to a remote system.
+            \item \textbf{Remote File Transfer}: Enables users to transfer files between local and remote machines using protocols like FTP or SFTP.
+            \item \textbf{Cloud Storage}: Cloud-based services (e.g., Dropbox, Google Drive) allow users to upload, download, and share files through web-based interfaces.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Distributed Operating Systems}
+    
+    In a distributed operating system, users access remote resources in the same way as local resources. The system can manage data, computation, and process migration across multiple sites, making 
+    these operations seamless for users. The operating system abstracts resource location, making the distributed nature of the system invisible to the user.
+    
+    \begin{highlight}[Distributed Operating Systems]
+    
+        \begin{itemize}
+            \item \textbf{Data Migration}: Files or portions of files are transferred to the local system only as needed. This is more efficient than copying entire files.
+            \item \textbf{Computation Migration}: Tasks are transferred to remote sites for execution, reducing the need to transfer large datasets.
+            \item \textbf{Process Migration}: Processes can move across different sites for load balancing, hardware or software preferences, and computation speedup.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Data, Computation, and Process Migration}
+    
+    Migration techniques help optimize resource usage in distributed systems. Data migration moves files or parts of files between sites, while computation migration allows tasks to execute where the 
+    required data resides. Process migration extends this concept by allowing entire processes or subprocesses to move across sites for load balancing, speedup, or hardware preference.
+    
+    \begin{highlight}[Data, Computation, and Process Migration]
+    
+        \begin{itemize}
+            \item \textbf{Data Migration}: Transfers entire files or necessary file portions between sites. Modern systems use demand-based transfers, similar to demand paging.
+            \item \textbf{Computation Migration}: The computation moves to the site where the data resides, avoiding data transfer. This can be done using RPC (Remote Procedure Call) or by creating 
+            new processes at the remote site.
+            \item \textbf{Process Migration}: Processes can be moved between sites for reasons like load balancing, hardware preferences, or improving execution speed.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Network Operating Systems}: Allow users to access remote resources using explicit mechanisms like remote login and file transfer.
+            \item \textbf{Distributed Operating Systems}: Provide seamless access to remote resources by managing data, computation, and process migration between sites.
+            \item \textbf{Migration Techniques}: Include data, computation, and process migration to optimize system efficiency and resource utilization across multiple sites.
+        \end{itemize}
+    
+    Network and distributed operating systems differ in their approach to resource sharing, with distributed systems offering a more seamless and automated experience for users.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 19.5: Design Issues In Distributed Systems}.
+
+\begin{notes}{Section 19.5: Design Issues In Distributed Systems}
+    \subsection*{Overview}
+
+    This section outlines several key design challenges in distributed systems, including robustness, transparency, and scalability. A distributed system must be able to tolerate failures, provide 
+    seamless resource access for users, and scale efficiently to handle additional users, computation power, and storage needs.
+    
+    \subsubsection*{Robustness}
+    
+    Robustness refers to a system's ability to withstand various types of failures, such as link, host, site, or message failures. To ensure robustness, the system must detect failures, reconfigure 
+    to continue functioning, and recover once the failure is repaired. Fault tolerance is crucial for maintaining functionality despite hardware or communication issues.
+    
+    \begin{highlight}[Robustness]
+    
+        \begin{itemize}
+            \item \textbf{Fault Tolerance}: The system should continue to operate, perhaps in a degraded mode, when a failure occurs.
+            \item \textbf{Types of Failures}: Common failures include communication faults, machine failures, storage crashes, and message losses.
+            \item \textbf{Implementation}: Fault tolerance is challenging and expensive to implement, often requiring redundancy in communication paths, storage units, and hardware components.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Failure Detection and Recovery}
+    
+    Failure detection in distributed systems often uses a "heartbeat" mechanism where sites send periodic "I-am-up" messages to each other. If a site does not receive a message within a specific time 
+    frame, it concludes that a failure may have occurred. Recovery involves reconfiguring the system and informing other sites when a failed link or site is restored.
+    
+    \begin{highlight}[Failure Detection and Recovery]
+    
+        \begin{itemize}
+            \item \textbf{Heartbeat Procedure}: Sites exchange periodic signals to confirm that they are operational.
+            \item \textbf{Failure Types}: The system can only detect that a failure occurred but may not know whether it is a link, site, or message failure.
+            \item \textbf{Recovery}: Once a failed link or site is restored, the system must reintegrate it smoothly, updating routing tables and other necessary information.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Transparency}
+    
+    Transparency is the degree to which a distributed system hides its complexity from users. Ideally, the system should behave as a single cohesive entity, allowing users to access remote resources 
+    as if they were local. Transparency also includes user mobility, allowing users to access their environments from different locations.
+    
+    \begin{highlight}[Transparency]
+    
+        \begin{itemize}
+            \item \textbf{Resource Transparency}: Users access resources without knowing whether they are local or remote.
+            \item \textbf{User Mobility}: Users can log in to any machine within the system, with their environment following them.
+            \item \textbf{Protocols}: Technologies like LDAP and desktop virtualization support transparency by ensuring seamless authentication and access to personal environments.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Scalability}
+    
+    Scalability is the system's ability to handle growth, whether by adding more users, increasing computation power, or expanding storage. A scalable system continues to function smoothly under 
+    higher loads, without requiring significant design changes. Scalability is often linked to fault tolerance, as overloaded components can fail, necessitating load balancing and resource management.
+    
+    \begin{highlight}[Scalability]
+    
+        \begin{itemize}
+            \item \textbf{Handling Increased Load}: A scalable system degrades performance more gradually and reaches saturation later than a nonscalable system.
+            \item \textbf{Challenges}: Expanding a system can add indirect loads, such as network congestion, and may require design modifications.
+            \item \textbf{Efficient Storage}: Techniques like compression and deduplication can reduce storage requirements and network traffic, enhancing scalability.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Robustness}: Ensures the system can tolerate failures and continue functioning, possibly in a degraded state.
+            \item \textbf{Failure Detection and Recovery}: Uses heartbeat mechanisms to detect failures and recovery procedures to reintegrate restored components.
+            \item \textbf{Transparency}: Makes distributed resources and services appear local to the user, supporting seamless access and user mobility.
+            \item \textbf{Scalability}: Allows the system to handle increased load efficiently without major redesigns, using techniques like load balancing and storage optimization.
+        \end{itemize}
+    
+    Designing distributed systems requires addressing these challenges to ensure fault tolerance, seamless resource access, and the ability to scale up as needed.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 19.6: Distributed File Systems}.
+
+\begin{notes}{Section 19.6: Distributed File Systems}
+    \subsection*{Overview}
+
+    This section explores distributed file systems (DFS), focusing on how they allow multiple machines to share files and storage resources across a network. Unlike centralized file systems, DFS 
+    distributes clients, servers, and storage devices across different machines in a network. The section discusses two common architectural models for DFS: the client-server model and the cluster-based model.
+    
+    \subsubsection*{Client-Server DFS Model}
+    
+    The client-server model is a traditional approach where the server stores both files and metadata on local storage devices, and clients request file access over a network. When a client requests 
+    a file, the server handles the request, checks file permissions, and delivers the file to the client. Popular examples include the Network File System (NFS) and the Andrew File System (OpenAFS).
+    
+    \begin{highlight}[Client-Server DFS Model]
+    
+        \begin{itemize}
+            \item \textbf{Server}: Stores files and metadata on local storage devices.
+            \item \textbf{Client}: Requests access to files via network communication.
+            \item \textbf{NFS (Network File System)}: A widely used UNIX-based DFS that provides a stateless server, ensuring resilience against server crashes.
+            \item \textbf{OpenAFS}: A DFS designed for scalability, caching files locally on the client to reduce traffic to the server.
+            \item \textbf{Challenges}: This model can suffer from single points of failure and server bottlenecks, impacting scalability and performance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Cluster-Based DFS Model}
+    
+    The cluster-based DFS model was designed to handle large-scale data processing and high availability. It uses a network of data servers and a metadata server to store and manage file chunks. This 
+    model distributes file chunks across multiple data servers, allowing clients to access files in parallel. Examples include the Google File System (GFS) and Hadoop Distributed File System (HDFS).
+    
+    \begin{highlight}[Cluster-Based DFS Model]
+    
+        \begin{itemize}
+            \item \textbf{Metadata Server}: Stores the mapping of file chunks and directories to data servers.
+            \item \textbf{Data Servers}: Store chunks of files, typically with replication for fault tolerance.
+            \item \textbf{GFS (Google File System)}: Designed for handling large distributed data sets with high fault tolerance.
+            \item \textbf{HDFS (Hadoop Distributed File System)}: Based on GFS, used for big data applications, and works with frameworks like Hadoop and MapReduce.
+            \item \textbf{Benefits}: Allows for parallel access to different file chunks, improving scalability and reducing bottlenecks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{DFS Performance and Transparency}
+    
+    The performance of a DFS is often measured by the time taken to fulfill client requests. DFS performance can be hindered by network latency and the overhead of communication protocols. Ideally, a 
+    DFS should be transparent to users, providing the same experience as a local file system regardless of file location or network delays.
+    
+    \begin{highlight}[DFS Performance and Transparency]
+    
+        \begin{itemize}
+            \item \textbf{Performance Factors}: Includes network latency, server processing time, and protocol overhead.
+            \item \textbf{Transparency}: A DFS should appear as a conventional local file system to the user, hiding the complexity of file location and network communication.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Client-Server Model}: Provides remote file access where servers handle requests and deliver files to clients, with systems like NFS and OpenAFS as examples.
+            \item \textbf{Cluster-Based Model}: Designed for large-scale data processing, distributing file chunks across data servers for parallel access and fault tolerance (e.g., GFS and HDFS).
+            \item \textbf{DFS Transparency}: Aims to make remote file access as seamless and transparent as local file access, with minimal performance impact from network delays.
+        \end{itemize}
+    
+    Distributed file systems enable resource sharing and scalability in networked environments but face challenges in managing performance, fault tolerance, and transparency.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 19.7: DFS Naming And Transparency}.
+
+\begin{notes}{Section 19.7: DFS Naming And Transparency}
+    \subsection*{Overview}
+
+    This section explores naming and transparency in Distributed File Systems (DFS). In DFS, naming refers to the mapping between logical and physical objects, such as file names and disk blocks. A 
+    key goal of DFS is to hide the location of files, making the system appear as if files are local, regardless of where they are stored in the network. This concept is known as transparency. The 
+    section also examines different naming schemes, including location transparency and location independence.
+    
+    \subsubsection*{Naming and Transparency}
+    
+    Naming in a DFS involves mapping user-level file names to lower-level identifiers, which are further mapped to physical disk locations. In a transparent DFS, this abstraction is extended to hide 
+    the physical location of files in the network, making them appear local to users. This level of abstraction can also enable file replication, where the system returns multiple locations for a 
+    file's replicas without the user knowing.
+    
+    \begin{highlight}[Naming and Transparency]
+    
+        \begin{itemize}
+            \item \textbf{Logical to Physical Mapping}: Maps user file names to system-level numerical identifiers, which are then mapped to physical storage blocks.
+            \item \textbf{Location Transparency}: Hides the physical location of a file, giving the user the impression that the file is stored locally.
+            \item \textbf{File Replication}: Allows a file name to return multiple locations of file replicas, with both replication and location details hidden from the user.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Location Transparency vs. Location Independence}
+    
+    Location transparency ensures that the name of a file does not reveal its physical storage location, while location independence allows a file's physical storage location to change without requiring 
+    a change in its name. Location independence is a stronger property, offering more flexibility by separating the naming hierarchy from the physical storage structure.
+    
+    \begin{highlight}[Location Transparency vs. Location Independence]
+    
+        \begin{itemize}
+            \item \textbf{Location Transparency}: The file name does not indicate where the file is stored physically, though its location remains fixed.
+            \item \textbf{Location Independence}: The file name remains unchanged even if the file's physical location changes, supporting file migration.
+            \item \textbf{Example}: OpenAFS supports location independence, while systems like HDFS hide the location of files and automatically migrate them as needed.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Naming Schemes in DFS}
+    
+    Different DFS architectures implement naming in various ways. One approach, used by systems like Ibis and URLs, combines host names with local file names to ensure unique system-wide identifiers. 
+    Another approach, popularized by NFS, allows remote directories to be attached to local directories, creating a unified directory structure. Some systems, such as OpenAFS, provide a global namespace 
+    for all files, further enhancing transparency and ease of use.
+    
+    \begin{highlight}[Naming Schemes in DFS]
+    
+        \begin{itemize}
+            \item \textbf{Host-Based Naming}: Combines host names with local file names, ensuring globally unique identifiers (e.g., Ibis or URL system).
+            \item \textbf{NFS Approach}: Attaches remote directories to local directories to create a coherent directory tree.
+            \item \textbf{Global Namespace}: Systems like OpenAFS provide a single global namespace, allowing users to access files seamlessly across different machines.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implementation Techniques}
+    
+    To implement transparent naming, DFS systems often use a hierarchical directory tree to aggregate files and map them to locations. Additionally, systems may use replication or caching to enhance 
+    availability. Location independence can be achieved by introducing low-level, location-independent identifiers, which are mapped to physical locations. This allows files to be migrated without 
+    invalidating the file name.
+    
+    \begin{highlight}[Implementation Techniques]
+    
+        \begin{itemize}
+            \item \textbf{Hierarchical Directory Tree}: Aggregates files into directories, providing a name-to-location mapping.
+            \item \textbf{Replication and Caching}: Improves availability by replicating or caching file location mappings.
+            \item \textbf{Location-Independent Identifiers}: Maps file names to location-independent identifiers, enabling file migration without changing the name.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Naming}: Involves mapping logical file names to physical storage locations.
+            \item \textbf{Location Transparency}: Hides the physical location of files, making them appear local to the user.
+            \item \textbf{Location Independence}: Ensures that file names do not change even when their physical location changes, allowing file migration.
+            \item \textbf{Naming Schemes}: Include host-based naming, the NFS approach of attaching remote directories, and global namespaces as seen in OpenAFS.
+        \end{itemize}
+    
+    DFS naming schemes and transparency enhance user experience by hiding the complexity of physical file locations, supporting efficient file sharing and migration across distributed systems.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 19.8: Remote File Access}.
+
+\begin{notes}{Section 19.8: Remote File Access}
+    \subsection*{Overview}
+
+    This section focuses on remote file access in Distributed File Systems (DFS), detailing how data is transferred once a user requests access to a remote file. Two major mechanisms for implementing 
+    remote file access are discussed: remote-service mechanisms and caching. These approaches help balance network traffic and system performance by managing where and how file data is accessed and stored.
+    
+    \subsubsection*{Remote-Service Mechanism}
+    
+    In a remote-service mechanism, client requests for file accesses are sent to the server that stores the file. The server performs the access and forwards the result back to the client. This method 
+    is similar to performing disk access in conventional file systems but operates over a network. One common implementation is through Remote Procedure Call (RPC), which was discussed in earlier sections.
+    
+    \begin{highlight}[Remote-Service Mechanism]
+    
+        \begin{itemize}
+            \item \textbf{File Accesses}: Requests are sent to the server, which performs the access and returns the result to the client.
+            \item \textbf{RPC}: A common method used to implement remote-service mechanisms, where requests and responses resemble local procedure calls.
+            \item \textbf{Drawback}: Remote service can lead to high network traffic, especially for frequent access requests, similar to multiple disk I/O operations.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{DFS Caching}
+    
+    Caching in a DFS brings data from the server to the client system, allowing subsequent accesses to be handled locally, reducing network traffic. Cached copies are stored in memory or on disk, and 
+    a replacement policy like least-recently-used (LRU) keeps cache size manageable. However, ensuring consistency between cached data and the main copy on the server introduces complexity.
+    
+    \begin{highlight}[DFS Caching]
+    
+        \begin{itemize}
+            \item \textbf{Local Caching}: A copy of data is stored on the client to reduce network access for repeated file accesses.
+            \item \textbf{Cache Consistency}: Ensures that cached copies remain consistent with the main file on the server.
+            \item \textbf{Cache Granularity}: Can vary from blocks of a file to entire files. Larger caching units increase hit ratios but can increase consistency issues and network transfer size.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Cache Update Policies}
+    
+    Cache update policies determine when and how modified data in the cache is written back to the server. The two primary strategies are write-through and delayed-write policies.
+    
+    \begin{highlight}[Cache Update Policies]
+    
+        \begin{itemize}
+            \item \textbf{Write-Through}: Data is written immediately to the server when modified in the cache. This method improves reliability but leads to lower performance due to constant network writes.
+            \item \textbf{Delayed-Write (Write-Back Caching)}: Modifications are cached and written back to the server later, improving write performance but introducing reliability risks if data is 
+            lost before syncing with the server.
+            \item \textbf{Write-on-Close}: A variation of delayed-write where the file is written back to the server only when it is closed. Used in systems like OpenAFS.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Consistency}
+    
+    Consistency ensures that cached copies reflect the most recent version of the data. There are two main approaches to maintaining consistency: client-initiated and server-initiated.
+    
+    \begin{highlight}[Consistency]
+    
+        \begin{itemize}
+            \item \textbf{Client-Initiated Approach}: The client checks the validity of its cached data by contacting the server. This can happen before every access or at fixed intervals.
+            \item \textbf{Server-Initiated Approach}: The server tracks which clients cache parts of a file. If a potential inconsistency is detected (e.g., conflicting modes on different clients), 
+            the server disables caching for that file and switches to remote-service mode.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Remote-Service Mechanism}: Clients send file requests to the server, which performs the access and returns the result, often using RPC.
+            \item \textbf{DFS Caching}: Reduces network traffic by locally caching file data on the client, with complexities in maintaining cache consistency.
+            \item \textbf{Cache Update Policies}: Write-through ensures immediate consistency, while delayed-write improves performance but risks data loss.
+            \item \textbf{Consistency Approaches}: Client-initiated and server-initiated methods ensure cached data remains consistent with the main copy on the server.
+        \end{itemize}
+    
+    Managing remote file access in a DFS involves balancing network efficiency, system performance, and data consistency, with caching and update policies playing key roles.
+    
+    \end{highlight}
+\end{notes}
+

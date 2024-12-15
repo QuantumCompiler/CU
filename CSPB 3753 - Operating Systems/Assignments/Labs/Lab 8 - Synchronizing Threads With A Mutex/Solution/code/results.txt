@@ -1,0 +1,5 @@
+Results file: first line
+Results file: second line
+Here is another result line.
+This is the fourth line in results.txt
+End of results.txt

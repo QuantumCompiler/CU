@@ -1,0 +1,847 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Mass Storage}
+\renewcommand{\SectionTitle}{Mass Storage}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from the \href{https://learn.zybooks.com/zybook/COLORADOCSPB3753KnoxFall2024}{Zybooks} for the week is:
+
+\begin{itemize}
+    \item \textbf{Chapter 11: Mass Storage}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for the week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=XcjFVB8K4wY}{Storage Management}{14}
+    \item \lecture{https://www.youtube.com/watch?v=9QaTG7R78Q8}{Disk Scheduling}{25}
+    \item \lecture{https://www.youtube.com/watch?v=7c-TFb_9Rxk}{RAID}{19}
+    \item \lecture{https://www.youtube.com/watch?v=9ADdIh5SPKs}{FLASH}{28}
+\end{itemize}
+
+\noindent The lecture notes for the week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir File Allocation Lecture Notes.pdf}{File Allocation Lecture Notes}
+    \item \pdflink{\LecNoteDir File System Implementation Lecture Notes.pdf}{File System Implementation Lecture Notes}
+    \item \pdflink{\LecNoteDir File System Lecture Notes.pdf}{File System Lecture Notes}
+    \item \pdflink{\LecNoteDir Flash Memory Lecture Notes.pdf}{Flash Memory Lecture Notes}
+    \item \pdflink{\LecNoteDir Performance Reliability Fault Recovery Lecture Notes.pdf}{Performance Reliability Fault Recovery Lecture Notes}
+    \item \pdflink{\LecNoteDir RAID Lecture Notes.pdf}{RAID Lecture Notes}
+    \item \pdflink{\LecNoteDir Storage Management And Disk Scheduling Lecture Notes.pdf}{Storage Management And Disk Scheduling Lecture Notes}
+    \item \pdflink{\LecNoteDir Virtual File System Lecture Notes.pdf}{Virtual File System Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3753-fall-2024/lab-6-QuantumCompiler}{Lab 6 - Using Rangom I/O}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for the week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 6 - Mass Storage.pdf}{Quiz 6 - Mass Storage}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 11: Mass Storage}. The first section that is being covered from this chapter this week is \textbf{Section 11.1: Overview Of Mass-Storage Structure}
+
+\begin{notes}{Section 11.1: Overview Of Mass-Storage Structure}
+    
+    \subsection*{Overview}
+    
+    This section introduces the structure and functionality of mass-storage devices, which are essential for storing files and data in a computer system. Modern computer systems primarily use secondary 
+    storage devices, such as hard disk drives (HDDs) and nonvolatile memory (NVM) devices, to store data persistently. Secondary storage devices vary in access methods, transfer rates, and performance 
+    characteristics, leading to a variety of design considerations for operating systems.
+    
+    Secondary storage is a critical component of any computer system, providing the nonvolatile storage required for long-term data retention. HDDs and NVM devices dominate modern storage technology, 
+    but older tertiary storage solutions, such as magnetic tapes, remain relevant for certain use cases. This section covers the physical structure of storage devices, explores scheduling algorithms 
+    to improve performance, and explains formatting techniques for handling boot blocks, damaged sectors, and swap space.
+
+    \subsubsection*{Hard Disk Drives (HDDs)}
+    
+    Hard disk drives (HDDs) use magnetic platters to store data. Each platter consists of circular tracks subdivided into sectors, with a read-write head positioned above the platters to access data. The 
+    head moves in unison across all platters, forming a cylinder at each track level. HDD performance is determined by factors like seek time (time to position the head over the correct track), rotational 
+    latency (time for the desired sector to rotate under the head), and data transfer rate. HDDs use DRAM buffers to improve transfer performance.
+    
+    \begin{highlight}[HDD Performance Characteristics]
+    
+        \begin{itemize}
+            \item \textbf{Seek Time}: The time it takes for the disk arm to move to the desired cylinder.
+            \item \textbf{Rotational Latency}: The time required for the desired sector to rotate under the read-write head.
+            \item \textbf{Transfer Rate}: The speed at which data is transferred from the platter to the computer system.
+        \end{itemize}
+    
+    \end{highlight}
+
+    \subsubsection*{Nonvolatile Memory (NVM) Devices}
+    
+    NVM devices, such as solid-state drives (SSDs), use electrical signals instead of mechanical parts, making them faster and more reliable than HDDs. SSDs are made of NAND flash memory and are 
+    capable of parallel operations due to multiple data paths. Unlike HDDs, NVM devices have no seek time or rotational latency, leading to higher performance. However, NVM devices are more expensive 
+    per megabyte and have limited write endurance due to wear on NAND cells.
+    
+    \begin{highlight}[NVM Device Characteristics]
+    
+        \begin{itemize}
+            \item \textbf{No Moving Parts}: Improves reliability and eliminates seek time and rotational latency.
+            \item \textbf{Wear Leveling}: An algorithm used to extend the lifespan of NAND cells by distributing write and erase cycles evenly across the memory blocks.
+            \item \textbf{Over-Provisioning}: Reserves extra space to manage data and ensure better write performance and reliability.
+        \end{itemize}
+    
+    \end{highlight}
+
+    \subsubsection*{Magnetic Tapes}
+    
+    Magnetic tapes were an early form of nonvolatile secondary storage, primarily used for backups and archival purposes. While they offer large storage capacity, they are significantly slower than HDDs 
+    and NVM devices, with extremely high random-access times. Despite their limitations, magnetic tapes are still used in environments where cost-effective, high-capacity storage is needed for infrequently 
+    accessed data.
+    
+    \begin{highlight}[Magnetic Tape Usage]
+    
+        \begin{itemize}
+            \item \textbf{Slow Access Time}: Random access is much slower compared to HDDs and NVM devices.
+            \item \textbf{Large Capacity}: Suitable for backup and archival storage due to high storage density.
+        \end{itemize}
+    
+    \end{highlight}
+
+    \subsubsection*{Address Mapping and Logical Blocks}
+    
+    Storage devices are addressed using logical block addresses (LBAs), which map directly to physical sectors on the device. In HDDs, the mapping proceeds sequentially through the sectors of a track, 
+    across tracks, and then across cylinders. NVM devices use a similar mapping approach, although they rely on flash translation layers (FTLs) to manage block-level wear and invalidation of old data. 
+    Logical block addressing simplifies interactions with storage devices, allowing the operating system to handle data transfer independently of physical device specifics.
+    
+    \begin{highlight}[Logical Block Addressing (LBA)]
+    
+        \begin{itemize}
+            \item \textbf{LBA Mapping}: Maps logical block numbers to physical sectors on the disk.
+            \item \textbf{Sector Management}: Manages defective sectors through substitution, ensuring seamless logical addressing.
+        \end{itemize}
+    
+    \end{highlight}
+
+    \subsubsection*{Bus Interfaces and Storage Controllers}
+    
+    Secondary storage devices connect to the system via bus interfaces, such as SATA, USB, or NVMe. Controllers, also known as host bus adapters (HBAs), manage data transfers between the storage device 
+    and the host system. Controllers use techniques like Direct Memory Access (DMA) to minimize CPU involvement in data transfers, improving performance by reducing CPU overhead and increasing throughput.
+    
+    \begin{highlight}[Bus Interfaces and DMA]
+    
+        \begin{itemize}
+            \item \textbf{SATA and NVMe}: Common interfaces for connecting HDDs and NVM devices to the system.
+            \item \textbf{DMA}: Allows data transfers between the storage device and system memory without CPU intervention.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{HDDs}: Use mechanical components to read and write data, with performance determined by seek time, rotational latency, and transfer rate.
+            \item \textbf{NVM Devices}: Provide faster access times due to their electrical nature, but are more expensive and have a limited lifespan.
+            \item \textbf{Magnetic Tapes}: Primarily used for backup storage, offering large capacity but slow access times.
+            \item \textbf{Bus Interfaces}: Devices are connected via interfaces like SATA, USB, and NVMe, with DMA used to offload data transfer tasks from the CPU.
+        \end{itemize}
+    
+    Mass-storage devices, from HDDs to NVM, play a vital role in modern computing systems. Each type of storage device offers unique performance characteristics, and proper bus interfaces and 
+    address mapping techniques are critical for maximizing storage efficiency and reliability.
+    
+    \end{highlight}
+
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 11.2: HDD Scheduling}
+
+\begin{notes}{Section 11.2: HDD Scheduling}
+
+    \subsection*{Overview}
+    
+    This section focuses on hard disk drive (HDD) scheduling algorithms, which aim to optimize performance by minimizing access time and maximizing data transfer bandwidth. Access time for HDDs consists 
+    of two main components: seek time (time to move the disk arm to the correct cylinder) and rotational latency (time for the desired sector to rotate under the head). Device bandwidth is the total data 
+    transferred divided by the time taken to complete all requests. The operating system can improve both access time and bandwidth by managing the order in which I/O requests are processed. 
+    
+    When a process requests I/O operations, the OS must decide the most efficient order for handling the queue of requests, especially in systems with heavy disk usage. While modern drives abstract the 
+    physical track and head information using logical block addressing (LBA), disk scheduling remains important for ensuring fairness, reducing seek time, and handling a large number of requests.
+    
+    \subsubsection*{FCFS Scheduling}
+    
+    First-Come, First-Served (FCFS) is the simplest form of disk scheduling, processing I/O requests in the order they arrive. This method is fair but inefficient, as it can cause unnecessary head movements 
+    across the disk, resulting in poor performance. For example, servicing a queue in FCFS order might lead to long jumps between distant cylinders, which increases the total seek time.
+    
+    \begin{highlight}[FCFS Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Fairness}: Each request is serviced in the order it arrives, without preference.
+            \item \textbf{Inefficiency}: Large head movements result in higher seek time, reducing overall efficiency.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{SCAN Scheduling}
+    
+    SCAN scheduling, also known as the elevator algorithm, improves performance by moving the disk head in one direction, servicing requests as it reaches each cylinder, and then reversing direction at the 
+    end of the disk. This algorithm reduces the total head movement compared to FCFS, especially for workloads where requests are clustered together.
+    
+    \begin{highlight}[SCAN Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Bidirectional Movement}: The head moves in one direction across the disk, servicing requests, then reverses direction at the disk's edge.
+            \item \textbf{Reduced Seek Time}: By servicing requests in order as the head moves across the disk, SCAN reduces unnecessary movement.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{C-SCAN Scheduling}
+    
+    Circular SCAN (C-SCAN) scheduling is a variation of SCAN designed to provide more uniform wait times. Instead of reversing direction at the end of the disk, the disk head returns immediately to the 
+    start without servicing any requests during the return trip. This ensures that all requests are treated equally, regardless of their position on the disk, avoiding the starvation that can occur when 
+    requests near the disk's edge are delayed for long periods.
+    
+    \begin{highlight}[C-SCAN Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Uniform Wait Times}: Ensures that requests are treated equally, as the head does not service any requests on its return trip.
+            \item \textbf{Circular Movement}: The head continuously moves in one direction, wrapping around to the beginning of the disk after reaching the end.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Deadline Scheduler}
+    
+    The deadline scheduler is used to prevent starvation and ensure that requests are handled within a reasonable time frame. This algorithm maintains separate read and write queues, prioritizing reads, 
+    as processes are more likely to block on reads than writes. It sorts requests in LBA order but also checks for older requests in an FCFS queue to prevent starvation. If a request in the FCFS queue 
+    exceeds a certain age (500 ms by default), it is prioritized for the next batch of I/O operations.
+    
+    \begin{highlight}[Deadline Scheduler]
+    
+        \begin{itemize}
+            \item \textbf{Starvation Prevention}: By checking the FCFS queue for old requests, the deadline scheduler ensures that no request is delayed indefinitely.
+            \item \textbf{LBA Order}: Requests are generally serviced in logical block address order for efficiency.
+            \item \textbf{Read Priority}: Reads are prioritized over writes to avoid process blocking.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{NOOP Scheduler}
+    
+    The NOOP scheduler is a simple algorithm that performs minimal request reordering, primarily suited for systems with fast storage devices like NVM. It is ideal for CPU-bound systems where the overhead 
+    of complex scheduling algorithms outweighs the benefits of disk optimization.
+    
+    \begin{highlight}[NOOP Scheduler]
+    
+        \begin{itemize}
+            \item \textbf{Minimal Overhead}: Ideal for systems where the storage device is fast, and complex scheduling provides little benefit.
+            \item \textbf{CPU Efficiency}: Reduces CPU usage by avoiding unnecessary reordering of requests.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Completely Fair Queueing (CFQ)}
+    
+    Completely Fair Queueing (CFQ) is the default scheduler for SATA drives in many Linux distributions. CFQ maintains multiple queues sorted by LBA and uses historical data to anticipate whether a 
+    process will issue more I/O requests soon. It attempts to minimize seek time by waiting for additional I/O requests from the same process, assuming locality of reference.
+    
+    \begin{highlight}[CFQ Scheduler]
+    
+        \begin{itemize}
+            \item \textbf{Multiple Queues}: Maintains separate real-time, best-effort, and idle queues for prioritizing requests.
+            \item \textbf{Process Locality}: Attempts to group requests from the same process to reduce seek time.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{FCFS Scheduling}: Simple and fair, but can lead to inefficient head movement.
+            \item \textbf{SCAN and C-SCAN}: Reduce seek time by servicing requests in a more efficient order, with C-SCAN offering more uniform wait times.
+            \item \textbf{Deadline Scheduler}: Prioritizes old requests to prevent starvation and ensures timely service.
+            \item \textbf{NOOP Scheduler}: Suitable for fast storage devices, minimizing CPU overhead.
+            \item \textbf{CFQ Scheduler}: Groups requests by process to improve performance, particularly for systems using SATA drives.
+        \end{itemize}
+    
+    Disk scheduling plays a vital role in optimizing the performance of HDDs. Various algorithms, from simple FCFS to more sophisticated schedulers like CFQ, balance fairness, efficiency, and CPU 
+    utilization to meet different system requirements.
+    
+    \end{highlight}
+
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 11.3: NVM Scheduling}
+
+\begin{notes}{Section 11.3: NVM Scheduling}
+
+    \subsection*{Overview}
+    
+    Unlike mechanical HDDs, Nonvolatile Memory (NVM) devices, such as solid-state drives (SSDs), do not rely on moving parts, making traditional disk scheduling algorithms less relevant. NVM devices 
+    typically use simpler scheduling approaches, such as First-Come, First-Served (FCFS), because they do not suffer from mechanical delays like seek time or rotational latency. However, NVM devices face 
+    unique challenges related to write performance and the need for garbage collection, which can introduce inefficiencies like write amplification.
+    
+    NVM devices excel in random access I/O operations, measured in input/output operations per second (IOPS), vastly outperforming HDDs. While NVM offers much faster performance for random access 
+    operations, its advantage in sequential access is less pronounced, as HDDs also perform well under sequential workloads. NVM write performance, however, degrades over time as the device nears its 
+    end of life due to wear from erase cycles and the need for garbage collection.
+    
+    \subsubsection*{FCFS Scheduling for NVM}
+    
+    NVM devices commonly use FCFS scheduling, which processes I/O requests in the order they are received. The simplicity of FCFS is well-suited for NVM devices, which do not need to optimize head 
+    movement like HDDs. In some cases, adjacent requests can be merged to improve efficiency, but this mainly applies to write operations, as read performance is relatively uniform.
+    
+    \begin{highlight}[FCFS Scheduling for NVM]
+    
+        \begin{itemize}
+            \item \textbf{Simple Scheduling}: NVMs use FCFS because they lack mechanical delays such as seek time and rotational latency.
+            \item \textbf{Merging Requests}: Adjacent write requests may be merged to improve write efficiency.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Performance of Sequential vs. Random Access}
+    
+    NVM devices shine in random access I/O, capable of hundreds of thousands of IOPS compared to the few hundred IOPS that HDDs can deliver. Sequential access shows less of a performance gap between 
+    NVM and HDDs, as HDDs can optimize head movement to deliver similar throughput. NVM write performance varies more than HDDs, as the state of the device (how full it is and how worn its cells are) 
+    impacts its ability to handle writes efficiently.
+    
+    \begin{highlight}[Sequential vs. Random Access]
+    
+        \begin{itemize}
+            \item \textbf{Random Access}: NVM devices provide significantly higher IOPS compared to HDDs due to their lack of mechanical parts.
+            \item \textbf{Sequential Access}: The performance difference between NVM and HDD is less pronounced for sequential reads and writes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Garbage Collection and Write Amplification}
+    
+    NVM devices require garbage collection to manage the limited lifespan of flash memory cells, which wear out after repeated write-erase cycles. When a block of data becomes invalid, garbage collection 
+    reclaims the space by erasing and rewriting blocks. This process, called write amplification, occurs when a single write request triggers multiple read and write operations, significantly impacting 
+    performance. Write amplification increases over time as the device fills up, reducing write efficiency and slowing down the system.
+    
+    \begin{highlight}[Write Amplification]
+    
+        \begin{itemize}
+            \item \textbf{Garbage Collection}: Involves reading valid data from a block, writing it to a new location, and erasing the block to free up space.
+            \item \textbf{Performance Impact}: Write amplification can degrade write performance, especially when a device is nearing capacity or end of life.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{TRIMing Unused Blocks}
+    
+    The TRIM command allows the operating system to notify the NVM device when blocks are no longer in use, enabling the device to erase those blocks ahead of time. This proactive approach improves 
+    performance by reducing the need for immediate garbage collection during write operations. TRIM helps maintain the lifespan of NVM devices by minimizing unnecessary write amplification.
+    
+    \begin{highlight}[TRIM Command]
+    
+        \begin{itemize}
+            \item \textbf{Proactive Deletion}: TRIM informs the NVM device of unused blocks, allowing it to erase them in advance.
+            \item \textbf{Performance Benefit}: Reduces the need for on-the-fly garbage collection, improving write performance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Wear Leveling}
+    
+    To extend the lifespan of NVM devices, wear leveling algorithms are employed to distribute write and erase cycles evenly across all memory blocks. By ensuring that no single block wears out faster than 
+    others, wear leveling helps maintain performance and prevent premature device failure. This process is crucial for devices that store frequently modified data.
+    
+    \begin{highlight}[Wear Leveling]
+    
+        \begin{itemize}
+            \item \textbf{Even Distribution}: Write and erase cycles are distributed evenly to prevent early failure of specific blocks.
+            \item \textbf{Lifespan Extension}: Helps NVM devices maintain performance and reliability over time.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{FCFS Scheduling}: Commonly used in NVM due to its simplicity and the absence of mechanical delays.
+            \item \textbf{Random Access Advantage}: NVM devices excel in random access I/O, delivering far higher IOPS than HDDs.
+            \item \textbf{Write Amplification}: Garbage collection can negatively impact write performance by generating additional read/write operations.
+            \item \textbf{TRIM and Wear Leveling}: Both techniques help maintain the performance and longevity of NVM devices by reducing write amplification and distributing wear.
+        \end{itemize}
+    
+    Efficient NVM scheduling requires balancing the need for performance with the constraints of flash memory, particularly its limited write endurance. Techniques like TRIM and wear leveling are crucial 
+    for sustaining performance over the lifetime of the device.
+    
+    \end{highlight}
+
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 11.4: Error Detection And Correction}
+
+\begin{notes}{Section 11.4: Error Detection And Correction}
+
+    \subsection*{Overview}
+    
+    Error detection and correction are essential mechanisms across various computing areas, including memory, networking, and storage. Error detection identifies problems such as data corruption 
+    during transmission or storage, while error correction aims to fix the errors. Commonly, errors arise when a bit spontaneously flips, for instance from 0 to 1, and these issues can lead to system 
+    failures if not properly managed. By detecting errors, systems can either stop operations to prevent error propagation or notify users of potential hardware failures.
+    
+    These mechanisms are especially important in environments where data integrity is critical, such as enterprise-level storage or networking. The simplest form of error detection is parity checking, 
+    which uses a parity bit to detect single-bit errors. More advanced techniques like cyclic redundancy checks (CRC) and error-correcting codes (ECC) not only detect errors but also correct them, 
+    making them suitable for high-reliability environments like enterprise storage systems.
+
+    \subsubsection*{Parity and Checksums}
+    
+    Parity bits are a basic form of error detection used in memory systems. Each byte of data is accompanied by a parity bit, which indicates whether the number of bits set to 1 in the byte is odd or 
+    even. If a single bit is altered, the parity will no longer match, indicating an error. Parity checks are efficient for detecting single-bit errors but may fail to detect multiple bit errors. Parity 
+    is calculated using an XOR operation across the bits, and while it requires minimal overhead (one bit per byte), it is limited in its error correction capabilities.
+    
+    Checksums, another form of error detection, use modular arithmetic to compute and compare values across fixed-length words. This method is commonly used in networking to ensure data integrity 
+    during transmission.
+
+    \begin{highlight}[Parity and Checksums]
+    
+        \begin{itemize}
+            \item \textbf{Parity Bit}: Detects single-bit errors by checking the parity of each byte in memory.
+            \item \textbf{Checksum}: Uses modular arithmetic to detect multiple-bit errors, commonly applied in networking.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Error-Correcting Codes (ECC)}
+    
+    Error-correcting codes (ECC) go beyond error detection by allowing systems to correct detected errors. ECC is commonly used in storage devices like HDDs and SSDs, where a code is calculated 
+    and written alongside the data. When the data is read, the ECC is recalculated and compared to the stored code. If there are discrepancies, ECC can identify which bits have been altered and 
+    restore the correct values. This correction process can handle a small number of corrupted bits, but if the errors exceed the ECC’s capacity, a hard error is signaled, and data recovery may not 
+    be possible.
+    
+    \begin{highlight}[Error-Correcting Codes (ECC)]
+    
+        \begin{itemize}
+            \item \textbf{Per-Sector ECC}: Applied in storage devices to detect and correct bit-level errors during reads and writes.
+            \item \textbf{Soft Error vs. Hard Error}: Soft errors are recoverable, whereas hard errors involve unrecoverable data loss.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Write Amplification}
+    
+    Write amplification is a phenomenon in flash memory where a single write operation results in multiple internal write and erase cycles due to the way data is stored and garbage collection is 
+    performed. This issue is especially pronounced in SSDs, where blocks must be erased before being written to. When data is modified, the controller must copy valid data from affected pages, 
+    erase the block, and then write both the new and old data back. This can significantly impact the performance and lifespan of flash memory devices, as the number of internal writes far exceeds 
+    the number of external writes requested by the system.
+    
+    \begin{highlight}[Write Amplification]
+    
+        \begin{itemize}
+            \item \textbf{Garbage Collection}: Involves multiple page reads and writes during block erasure, causing additional I/O operations.
+            \item \textbf{Impact on Performance}: Write amplification reduces write efficiency and shortens the lifespan of NVM devices.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{ECC in DRAM and Storage Devices}
+    
+    ECC is commonly used in both DRAM and storage devices to protect against bit flips and other forms of data corruption. In DRAM, ECC can detect and correct single-bit errors, ensuring the integrity 
+    of memory. In storage systems, ECC is applied on a per-sector or per-page basis, ensuring that corrupted data can be recovered without user intervention. The automatic nature of ECC allows for 
+    continuous error correction during read and write operations.
+    
+    \begin{highlight}[ECC in DRAM and Storage]
+    
+        \begin{itemize}
+            \item \textbf{DRAM ECC}: Detects and corrects single-bit errors in memory, commonly used in enterprise systems.
+            \item \textbf{Storage ECC}: Ensures data integrity during reads and writes in storage devices like SSDs and HDDs.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Error Detection}: Mechanisms like parity and checksums detect errors by verifying data integrity.
+            \item \textbf{Error Correction}: ECC corrects bit-level errors and is widely used in storage and memory systems to prevent data corruption.
+            \item \textbf{Write Amplification}: A phenomenon in flash storage where write operations cause additional internal I/O due to garbage collection.
+            \item \textbf{Soft and Hard Errors}: Soft errors can be corrected, while hard errors may result in data loss.
+        \end{itemize}
+    
+    Error detection and correction are fundamental to maintaining data integrity in modern computing systems. Techniques like ECC and parity ensure that errors are identified and corrected before 
+    they can cause system failures or data corruption.
+    
+    \end{highlight}
+
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 11.5: Storage Device Management}
+
+\begin{notes}{Section 11.5: Storage Device Management}
+
+    \subsection*{Overview}
+    
+    Storage device management encompasses several key tasks performed by the operating system, including drive initialization, booting from storage devices, and managing defective blocks. A new storage 
+    device is typically a blank medium that requires low-level formatting before it can be used. This process divides the device into sectors or pages, enabling the controller to read and write data. After 
+    low-level formatting, the operating system creates partitions, volumes, and file systems to organize and manage data efficiently.
+    
+    The initialization process ensures that the storage device is ready to hold files, while partitioning and logical formatting create the file system structure that allows the operating system to store and 
+    retrieve data. This section also covers boot processes and bad-block recovery techniques for managing defective sectors.
+
+    \subsubsection*{Drive Formatting, Partitions, and Volumes}
+    
+    Drive formatting is divided into two types: low-level formatting and logical formatting. Low-level formatting prepares the storage device by dividing it into sectors or pages. It writes a special data 
+    structure at each location, including a header, data area, and trailer, which may contain error detection and correction codes. This formatting is often done at the factory and prepares the device for 
+    logical block addressing (LBA). Logical formatting follows low-level formatting and involves creating a file system, organizing blocks into directories, and preparing the device for use.
+    
+    Partitions divide the storage device into independent sections, which the operating system can treat as separate logical drives. Volumes can span multiple partitions, and modern systems, like Linux, 
+    provide tools like LVM to manage these partitions and volumes dynamically.
+
+    \begin{highlight}[Drive Formatting and Partitions]
+    
+        \begin{itemize}
+            \item \textbf{Low-Level Formatting}: Prepares the device by creating sectors and initializing headers and trailers.
+            \item \textbf{Partitioning}: Divides the device into logical sections for file systems, swap space, and other uses.
+            \item \textbf{Volume Management}: Allows multiple partitions to be combined and managed as a single volume.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Boot Block and Booting Process}
+    
+    The boot block is crucial for initializing a system from a storage device. During booting, the computer first runs a small program stored in non-volatile memory, known as the bootstrap loader, which 
+    loads the main bootloader from the boot block. The boot block contains minimal code, sufficient to load the operating system's kernel into memory and start the boot sequence.
+    
+    In systems like Windows, the Master Boot Record (MBR) contains the boot code and partition information, including the location of the boot partition. Once the boot partition is located, the system 
+    reads the boot sector and continues loading the OS kernel and necessary services.
+
+    \begin{highlight}[Boot Block and MBR]
+    
+        \begin{itemize}
+            \item \textbf{Master Boot Record (MBR)}: Contains boot code and partition information for identifying the bootable partition.
+            \item \textbf{Boot Block}: Loads the operating system kernel and starts the boot sequence.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Bad-Block Recovery}
+    
+    Bad blocks are defective sectors on a disk that can no longer reliably store data. Modern disk controllers handle bad-block recovery using techniques like sector sparing and sector slipping. In sector 
+    sparing, a bad sector is replaced with a spare sector from a preallocated pool. Alternatively, sector slipping shifts all sectors down by one, allowing the bad sector to be skipped.
+    
+    For NVM devices, bad-block management is simpler than for HDDs since there is no need to avoid mechanical seek time penalties. Controllers can mark defective pages and use over-provisioned areas 
+    to replace bad blocks.
+
+    \begin{highlight}[Bad-Block Recovery]
+    
+        \begin{itemize}
+            \item \textbf{Sector Sparing}: Replaces a bad sector with a spare sector from the same cylinder or elsewhere on the disk.
+            \item \textbf{Sector Slipping}: Moves all sectors down by one, skipping the bad sector to maintain a contiguous data layout.
+            \item \textbf{NVM Devices}: Use over-provisioning to handle bad blocks by setting aside extra pages as replacements.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Drive Formatting}: Prepares storage devices for use by creating sectors and initializing data structures.
+            \item \textbf{Partitioning and Volumes}: Partitions divide devices into logical units, while volumes can span multiple partitions for more flexible management.
+            \item \textbf{Boot Block}: Contains the initial code to load the operating system's kernel during the boot process.
+            \item \textbf{Bad-Block Recovery}: Techniques like sector sparing and slipping handle defective sectors on both HDDs and NVM devices.
+        \end{itemize}
+    
+    Storage device management is essential for organizing data, booting the system, and handling defective blocks. Techniques like partitioning, boot blocks, and bad-block recovery ensure that storage 
+    devices operate efficiently and reliably.
+    
+    \end{highlight}
+
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 11.6: Swap-Space Management}
+
+\begin{notes}{Section 11.6: Swap-Space Management}
+
+    \subsection*{Overview}
+    
+    Swap-space management is a low-level task of the operating system that uses secondary storage as an extension of main memory. Swap space is essential for virtual memory systems, which use it to 
+    store pages of data that cannot fit into physical memory. While modern systems no longer swap entire processes between memory and storage, swap space is still used extensively for paging. The 
+    goal of swap-space management is to provide efficient throughput for the virtual memory system by optimizing how swap space is allocated and used.
+    
+    Swap space is located either in a file within the regular file system or in a dedicated raw partition on the storage device. Each approach has its advantages: file-based swap space is easier to manage 
+    and allocate, while raw partitions offer better performance due to lower overhead. Systems like Linux allow administrators to choose between these approaches, offering flexibility based on the 
+    specific performance needs of the system.
+
+    \subsubsection*{Swap-Space Use}
+    
+    Swap space usage varies depending on the operating system and its memory management algorithms. Some systems, such as older UNIX versions, use swap space to store entire process images, including 
+    code, data, and stack segments. In contrast, modern paging systems like Linux only store individual pages that are evicted from main memory. The amount of swap space required is influenced by the 
+    system's memory load, and some systems suggest allocating more swap space than is needed to prevent system crashes or aborted processes.
+    
+    \begin{highlight}[Swap-Space Use]
+    
+        \begin{itemize}
+            \item \textbf{Process Image Storage}: Older systems used swap space to store entire process images.
+            \item \textbf{Paging Systems}: Modern systems use swap space for paging individual memory pages, rather than entire processes.
+            \item \textbf{Swap Size}: Allocating excess swap space is safer to prevent crashes or out-of-memory errors.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Swap-Space Location}
+    
+    Swap space can be placed in either the regular file system or a dedicated raw partition. If swap space is part of the file system, standard file management routines handle its allocation and management, 
+    which is convenient but slower. Raw partitions, in contrast, have no file system overhead, leading to better performance. However, raw partitions are less flexible, as they are preallocated during disk 
+    partitioning and cannot be resized without significant effort. Some operating systems, such as Linux, support both methods, allowing administrators to choose based on system requirements.
+    
+    \begin{highlight}[Swap-Space Location]
+    
+        \begin{itemize}
+            \item \textbf{File System Swap}: Easier to allocate and manage but suffers from file system overhead.
+            \item \textbf{Raw Partition Swap}: Offers better performance but is less flexible in terms of allocation.
+            \item \textbf{Linux Flexibility}: Linux supports both swap partitions and file-based swap spaces.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Swap-Space Management in Linux}
+    
+    Linux allows the use of multiple swap spaces, including both file-based swap areas and dedicated swap partitions. Each swap space is divided into 4 KB page slots, which store swapped-out pages from 
+    memory. Linux maintains a swap map that tracks the usage of each page slot, with counters indicating how many processes are mapped to each swapped page. This system allows Linux to handle shared 
+    memory pages, which may be used by multiple processes simultaneously.
+    
+    \begin{highlight}[Swap-Space Management in Linux]
+    
+        \begin{itemize}
+            \item \textbf{Multiple Swap Spaces}: Linux supports multiple swap areas across different disks or partitions.
+            \item \textbf{Page Slots}: Each swap space is divided into 4 KB page slots to store swapped-out memory pages.
+            \item \textbf{Swap Map}: Tracks the usage of page slots, indicating how many processes are using a given swapped page.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Solaris Swap-Space Evolution}
+    
+    In early versions of UNIX, the swap space was used to store entire process images. Over time, as paging hardware became more common, UNIX evolved to combine swapping with paging, allowing only 
+    pages of memory to be swapped. Solaris, for example, allocates swap space only when pages are forced out of memory, rather than pre-allocating it when virtual memory is created. This approach 
+    reduces the amount of swap space needed while improving performance on systems with large amounts of physical memory.
+    
+    \begin{highlight}[Solaris Swap-Space Management]
+    
+        \begin{itemize}
+            \item \textbf{Process Image Swapping}: Early UNIX systems swapped entire processes between memory and disk.
+            \item \textbf{Paging-Only Approach}: Modern Solaris versions only swap pages of memory as needed, optimizing memory usage.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Swap-Space Use}: Modern systems use swap space primarily for paging, rather than swapping entire processes.
+            \item \textbf{Location Options}: Swap space can be located in the file system or a dedicated raw partition, each with its own trade-offs.
+            \item \textbf{Linux Swap Map}: Tracks the usage of page slots in swap space, enabling efficient management of shared memory.
+            \item \textbf{Solaris Evolution}: Solaris has optimized swap-space usage by only allocating swap space for pages that are evicted from memory.
+        \end{itemize}
+    
+    Swap-space management plays a crucial role in virtual memory systems by providing additional storage when physical memory is insufficient. Efficient swap-space allocation and management ensure 
+    better system performance and reliability.
+    
+    \end{highlight}
+
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 11.7: Storage Attachment}
+
+\begin{notes}{Section 11.7: Storage Attachment}
+
+    \subsection*{Overview}
+    
+    Computers access secondary storage using three main methods: host-attached storage, network-attached storage (NAS), and cloud storage. Each method has different performance characteristics, 
+    access protocols, and use cases. Host-attached storage is typically connected directly to the local system via ports like SATA or USB, while NAS provides storage over a local-area network (LAN). 
+    Cloud storage, on the other hand, is accessed over the internet or a wide-area network (WAN), allowing users to store and retrieve data from remote servers.
+    
+    Storage attachment technologies are critical for managing large data volumes and ensuring efficient, scalable storage solutions. High-end systems use specialized architectures such as storage-area 
+    networks (SANs) for enhanced performance, flexibility, and storage management. These systems can dynamically allocate storage and support advanced features like RAID, replication, and data 
+    deduplication.
+
+    \subsubsection*{Host-Attached Storage}
+    
+    Host-attached storage refers to storage devices directly connected to a computer via local I/O ports, such as SATA, USB, FireWire, or Thunderbolt. High-end servers and workstations often use 
+    sophisticated I/O architectures, such as Fibre Channel (FC), to connect to storage. These connections allow systems to access more storage or share storage across multiple devices. Host-attached 
+    storage is most commonly used for direct-attached devices like HDDs, NVM devices, and optical drives, with I/O operations performed by reading and writing logical data blocks.
+    
+    \begin{highlight}[Host-Attached Storage]
+    
+        \begin{itemize}
+            \item \textbf{Local I/O Ports}: Devices are attached using local ports like SATA, USB, or Thunderbolt.
+            \item \textbf{Fibre Channel (FC)}: High-speed storage architecture used in enterprise systems for better flexibility and scalability.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Network-Attached Storage (NAS)}
+    
+    NAS provides storage access over a network, allowing multiple computers to share a common storage pool. NAS devices can be specialized storage systems or general-purpose computers that share 
+    their storage across the network. Access to NAS is managed via protocols such as NFS for UNIX/Linux systems and CIFS for Windows. These protocols are used to present storage to users as a file 
+    system or raw block device.
+    
+    While NAS is convenient for sharing storage across a network, it is typically less efficient and slower than direct-attached storage due to network latency and the overhead of managing file systems 
+    remotely. Newer protocols like iSCSI improve performance by transmitting logical blocks over the network, allowing storage to be treated as if it were locally attached.
+    
+    \begin{highlight}[Network-Attached Storage (NAS)]
+    
+        \begin{itemize}
+            \item \textbf{Remote Access}: NAS allows multiple systems to access shared storage across a network using protocols like NFS or CIFS.
+            \item \textbf{iSCSI Protocol}: Provides better performance by using IP networks to send logical blocks instead of file system data.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Cloud Storage}
+    
+    Cloud storage provides storage access over the internet or another WAN to a remote data center. Unlike NAS, cloud storage typically relies on APIs for accessing data, such as Amazon S3 or Dropbox 
+    services, instead of standard file system protocols like NFS or CIFS. The use of APIs enables applications to access cloud storage seamlessly, despite the increased latency and potential failures that 
+    can occur over WAN connections.
+    
+    Cloud storage offers scalability and the ability to store large amounts of data at lower costs compared to local storage. However, it requires robust handling of network outages and latency issues, 
+    making it less suitable for performance-critical applications compared to host-attached or NAS storage.
+    
+    \begin{highlight}[Cloud Storage]
+    
+        \begin{itemize}
+            \item \textbf{API-Based Access}: Applications access cloud storage through APIs rather than traditional file system protocols.
+            \item \textbf{Remote Data Center}: Storage is managed remotely over WANs, allowing for large-scale storage solutions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Storage-Area Networks (SANs)}
+    
+    SANs are private networks that connect servers and storage units directly, using specialized storage protocols. SANs provide higher performance and scalability by isolating storage traffic from the 
+    main network, reducing the competition for bandwidth between servers and clients. SAN configurations allow multiple servers to access shared storage arrays, enabling dynamic allocation and 
+    high-availability features such as RAID protection and snapshots.
+    
+    SANs typically use Fibre Channel or iSCSI to connect storage arrays and servers. SAN switches manage connectivity between hosts and storage, allowing for flexible storage management and resource 
+    allocation. SANs are often employed in enterprise environments where performance and reliability are critical.
+    
+    \begin{highlight}[Storage-Area Networks (SANs)]
+    
+        \begin{itemize}
+            \item \textbf{Private Storage Network}: SANs use specialized protocols to provide high-performance, scalable storage connections.
+            \item \textbf{Shared Storage}: SANs allow multiple servers to access shared storage arrays, with dynamic allocation of storage resources.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Host-Attached Storage}: Directly connects storage devices via local I/O ports, such as SATA or USB.
+            \item \textbf{NAS}: Provides storage over a network using protocols like NFS and CIFS, though with higher latency compared to local storage.
+            \item \textbf{Cloud Storage}: Enables storage access over the internet through APIs, offering scalable and cost-effective solutions.
+            \item \textbf{SANs}: Use specialized storage protocols for high-performance, scalable storage networks, primarily used in enterprise environments.
+        \end{itemize}
+    
+    Storage attachment technologies provide flexibility and scalability for both personal and enterprise environments. Whether through local connections, network access, or cloud storage, each 
+    approach offers distinct advantages based on performance and resource needs.
+    
+    \end{highlight}
+
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 11.8: RAID Structure}
+
+\begin{notes}{Section 11.8: RAID Structure}
+
+    \subsection*{Overview}
+    
+    RAID (Redundant Arrays of Independent Disks) is a disk organization technique that improves storage reliability and performance by using multiple drives in combination. Initially, RAID was developed 
+    to provide a cost-effective alternative to large, expensive disks. However, RAID is now used primarily to enhance data reliability and transfer rates, not for economic reasons. RAID achieves reliability 
+    by introducing redundancy, which stores extra information on multiple drives to protect against data loss in case of drive failure. RAID can also improve performance by enabling parallel access to 
+    multiple disks.
+
+    RAID systems can be implemented in hardware or software, with the RAID functionality managed either by the operating system, a dedicated RAID controller, or the storage array itself. These various 
+    methods allow for flexible and scalable storage management, especially for large-scale enterprise environments.
+
+    \subsubsection*{Reliability and Redundancy}
+    
+    Redundancy is key to RAID’s reliability. By duplicating data across multiple drives or storing parity information, RAID can rebuild lost data in the event of a drive failure. Mirroring, or RAID level 1, 
+    is the simplest method of achieving redundancy, where every write operation is carried out on two drives. If one drive fails, the data can be retrieved from the other. More advanced RAID levels, such 
+    as RAID 4, 5, and 6, use parity bits for error detection and correction, allowing for greater storage efficiency with high reliability.
+
+    \begin{highlight}[RAID Redundancy and Reliability]
+    
+        \begin{itemize}
+            \item \textbf{Mirroring (RAID 1)}: Duplicates data across two drives for full redundancy.
+            \item \textbf{Parity-Based RAID (RAID 4, 5, 6)}: Uses parity bits to detect and correct errors, offering a more storage-efficient redundancy mechanism.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Performance via Parallelism}
+    
+    RAID also improves performance by enabling parallelism through striping, where data is split across multiple drives. For example, RAID 0 uses block-level striping to improve read and write speeds, 
+    but it lacks redundancy. RAID 5 and 6 distribute both data and parity across multiple drives, which not only provides fault tolerance but also enhances the read and write performance by allowing 
+    simultaneous access to multiple disks. Striping can occur at different levels, including bit-level and block-level striping, depending on the RAID configuration.
+    
+    \begin{highlight}[Performance Improvement via Striping]
+    
+        \begin{itemize}
+            \item \textbf{RAID 0}: Uses block-level striping to increase data transfer rates but lacks redundancy.
+            \item \textbf{RAID 5 and 6}: Combine block-level striping with distributed parity, offering both performance improvements and fault tolerance.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{RAID Levels}
+    
+    RAID is classified into multiple levels, each providing different trade-offs between performance, storage efficiency, and redundancy. RAID 0 provides the highest performance by using striping but offers 
+    no fault tolerance. RAID 1 offers full redundancy through mirroring. RAID 5 and 6 use distributed parity to provide a balance of performance and reliability, with RAID 6 able to tolerate multiple drive 
+    failures. Multidimensional RAID level 6 is used in advanced storage systems where data is striped across rows and columns for added protection against multiple failures.
+
+    \begin{highlight}[Common RAID Levels]
+    
+        \begin{itemize}
+            \item \textbf{RAID 0}: Block-level striping without redundancy, best for high-performance applications.
+            \item \textbf{RAID 1}: Full redundancy through mirroring, ensuring high reliability.
+            \item \textbf{RAID 5}: Distributed parity with block-level striping, offering a balance of reliability and performance.
+            \item \textbf{RAID 6}: Similar to RAID 5 but with double parity, protecting against multiple drive failures.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implementation and Extensions}
+    
+    RAID can be implemented in various ways, including through the operating system, hardware controllers, or even at the SAN (Storage Area Network) level. Advanced features such as hot spares, 
+    snapshots, and replication can enhance RAID's functionality by automating the recovery process and enabling disaster recovery. For example, a hot spare drive is preconfigured to take over in case 
+    of drive failure, allowing for automatic rebuilding of data without human intervention.
+
+    \begin{highlight}[RAID Implementation and Features]
+    
+        \begin{itemize}
+            \item \textbf{Hot Spares}: Unused drives automatically take over for failed drives, ensuring uninterrupted service.
+            \item \textbf{Snapshots and Replication}: Allow for backup and recovery, with replication used for redundancy across remote locations.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{RAID Redundancy}: RAID improves reliability by duplicating data (mirroring) or storing parity bits for error correction.
+            \item \textbf{RAID Parallelism}: Striping data across drives improves read/write performance by allowing parallel access to multiple drives.
+            \item \textbf{RAID Levels}: Different RAID levels offer various combinations of performance, reliability, and storage efficiency, from RAID 0 (high performance) to RAID 6 (high redundancy).
+            \item \textbf{Advanced Features}: Hot spares, snapshots, and replication enhance RAID’s fault tolerance and disaster recovery capabilities.
+        \end{itemize}
+    
+    RAID systems balance performance and reliability, making them essential in both enterprise and personal storage environments. By leveraging redundancy and parallelism, RAID improves data 
+    availability while maintaining high transfer speeds.
+    
+    \end{highlight}
+
+\end{notes}

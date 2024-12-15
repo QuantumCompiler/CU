@@ -1,0 +1,116 @@
+CPU Information:
+CPU 0:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 1:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 2:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 3:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 4:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 5:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 6:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 7:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 8:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 9:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 10:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 11:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 12:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 13:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 14:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 15:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 16:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 17:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 18:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 19:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 20:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 21:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 22:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 23:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 24:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 25:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 26:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 27:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 28:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 29:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 30:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+CPU 31:
+    Clock Speed: 2900.00 MHz
+    Number of Cores: 32
+Linux Version: Linux version 5.15.0-97-generic (buildd@lcy02-amd64-033) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #107-Ubuntu SMP Wed Feb 7 13:26:48 UTC 2024
+
+System Uptime: 48 days 2 hours 14 minutes 15 seconds
+Average load on system over the past 15 minutes: 0.53
+Memory inforation:
+MemTotal: 65830876 kB
+MemFree: 7966084 kB
+MemAvailable: 41438056 kB
+Buffers: 110788 kB
+Cached: 32485804 kB
+SwapTotal: 0 kB
+SwapFree: 0 kB
+
+No swaps currently on system.
+CPU Usage Information:
+CPU Time Spent in User Mode: 2496511.96 seconds
+CPU Time Spent in Kernel Mode: 879393.04 seconds
+
+Number of context switches on system: 82588214677

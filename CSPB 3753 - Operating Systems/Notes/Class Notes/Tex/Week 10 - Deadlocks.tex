@@ -1,0 +1,615 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Deadlocks}
+\renewcommand{\SectionTitle}{Deadlocks}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from the \href{https://learn.zybooks.com/zybook/COLORADOCSPB3753KnoxFall2024}{Zybooks} for the week is:
+
+\begin{itemize}
+    \item \textbf{Chapter 8: Deadlocks}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for the week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=vWtu5LIUOG0}{Dining Philosophers Problem}{23}
+    \item \lecture{https://www.youtube.com/watch?v=eF80Gmteocw}{Modeling Deadlock}{26}
+    \item \lecture{https://www.youtube.com/watch?v=5vZzGAagbzc}{Deadlock Avoidance}{33}
+    \item \lecture{https://www.youtube.com/watch?v=mNKCrkzmdKM}{Banker's Algorithm Example}{17}
+\end{itemize}
+
+\noindent The lecture notes for the week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Banker's Algorithm Example Lecture Notes.pdf}{Banker's Algorithm Example Lecture Notes}
+    \item \pdflink{\LecNoteDir Deadlock Avoidance Lecture Notes.pdf}{Deadlock Avoidance Lecture Notes}
+    \item \pdflink{\LecNoteDir Dining Philosophers Problem Lecture Notes.pdf}{Dining Philosophers Problem Lecture Notes}
+    \item \pdflink{\LecNoteDir Modeling Deadlock Lecture Notes.pdf}{Modeling Deadlock Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3753-fall-2024/pa3-QuantumCompiler}{Lab 10 - PA3 Update}
+    \item \href{https://applied.cs.colorado.edu/mod/scheduler/view.php?id=64704}{Programming Assingment 3 Interview}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for the week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 10 - Deadlocks.pdf}{Quiz 10 - Deadlocks}
+\end{itemize}
+
+\subsection{Exam}
+
+The exam for this week is:
+
+\begin{itemize}
+    \item \pdflink{\ExamNoteDir Unit 3 Exam Notes.pdf}{Unit 3 Exam Notes}
+    \item \pdflink{\ExamsDir Unit 3 Exam.pdf}{Unit 3 Exam}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The first section that is being covered from the chapter this week is \textbf{Section 8.1: System Model}.
+
+\begin{notes}{Section 8.1: System Model}
+    \subsection*{Overview}
+
+    This section introduces a system model for understanding resource allocation and potential deadlocks in a multiprogramming environment. In this model, several threads may request access to a 
+    limited number of system resources. Resources are classified into types, each with one or more identical instances (such as CPUs, files, or I/O devices). Threads request these resources to 
+    execute tasks and, if unavailable, may enter a waiting state until the resources are released. Deadlocks can occur if a thread indefinitely waits for resources held by others.
+    
+    \subsubsection*{Resource Classes and Allocation}
+    
+    Resources in a system are divided into types, each containing a specific number of instances. When a thread requests a resource, any instance of that type can fulfill the request, ensuring 
+    identical resources in each class. For example, if a system has four CPUs, they form one resource class with four instances. A resource class becomes non-identical if instances cannot be 
+    freely interchanged, indicating a need for clearer definitions of these classes.
+    
+    \begin{highlight}[Resource Classes and Allocation]
+    
+        \begin{itemize}
+            \item \textbf{Resource Types}: Represented by classes such as CPU cycles, files, or network interfaces.
+            \item \textbf{Instances in Classes}: Each resource type may have multiple identical instances (e.g., four CPUs).
+            \item \textbf{Class Requirements}: Instances should be freely interchangeable; otherwise, resource classes must be redefined.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Deadlock-Prone Resources and Usage Sequence}
+    
+    The section highlights that synchronization tools, like mutexes and semaphores, can become sources of deadlock on modern systems due to their inherent exclusivity in critical sections. To 
+    avoid deadlock, a thread must request a resource before usage and release it afterward. This typical sequence consists of three stages:
+
+    \begin{enumerate}
+        \item \textbf{Request}: The thread requests the resource; if unavailable, it waits.
+        \item \textbf{Use}: The thread operates on the resource.
+        \item \textbf{Release}: The thread releases the resource once done.
+    \end{enumerate}
+    
+    \begin{highlight}[Deadlock-Prone Resources and Usage Sequence]
+    
+        \begin{itemize}
+            \item \textbf{Request}: Initiates resource access; if unavailable, the thread waits.
+            \item \textbf{Use}: The thread operates within the resource (e.g., critical section).
+            \item \textbf{Release}: The resource is freed for other threads.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{System Model}: Defines a framework where threads request and use resources with potential for deadlock.
+            \item \textbf{Resource Classes}: Identical instances grouped into types; each class serves as a unique type.
+            \item \textbf{Deadlock-Prone Resources}: Mutexes and semaphores can cause deadlocks, requiring careful request, use, and release processes.
+        \end{itemize}
+    
+    This system model forms a basis for understanding and addressing deadlocks by highlighting critical factors like resource classification, allocation rules, and structured request-use-release sequences.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 8.2: Deadlock In Multi-Threaded Applications}.
+
+\begin{notes}{Section 8.2: Deadlock In Multi-Threaded Applications}
+    \subsection*{Overview}
+
+    This section examines deadlock scenarios specific to multithreaded applications, highlighting how deadlock can arise when threads acquire resources in different orders. A classic example is provided 
+    using POSIX threads (Pthreads) and mutex locks. In this scenario, two threads attempt to acquire two shared mutex locks in reverse order, creating the potential for deadlock.
+    
+    \subsubsection*{Deadlock Example with Pthreads}
+    
+    The code example demonstrates deadlock by initializing two mutex locks and creating two threads, each of which tries to acquire the locks in a different order. The example uses the \texttt{pthread\_mutex\_init()} 
+    function to initialize two mutexes, \texttt{first\_mutex} and \texttt{second\_mutex}. Thread 1 attempts to lock \texttt{first\_mutex} followed by \texttt{second\_mutex}, whereas Thread 2 locks \texttt{second\_mutex} 
+    first and then \texttt{first\_mutex}. If each thread acquires the first mutex successfully but blocks on the second, a deadlock results, as neither thread can proceed without the mutex held by the other.
+    
+    \begin{highlight}[Deadlock Example with Pthreads]
+    
+        \begin{itemize}
+            \item \textbf{Mutex Initialization}: Two mutexes, \texttt{first\_mutex} and \texttt{second\_mutex}, are created and initialized.
+            \item \textbf{Lock Order Conflict}: Threads attempt to acquire the two mutexes in opposite orders, resulting in the potential for deadlock if both hold one mutex and await the other.
+            \item \textbf{Deadlock Dependency}: This conflict arises because each thread holds one mutex while waiting for the other, satisfying conditions necessary for deadlock.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Livelock in Multithreaded Applications}
+    
+    Livelock, similar to deadlock, is a liveness issue where threads continuously try but fail to acquire the resources they need, resulting in a state where threads are active but make no progress. 
+    Unlike deadlock, where threads are blocked, livelock involves threads actively adjusting their actions in response to the conflict, but due to simultaneous retries, they cannot make progress. Randomized backoff strategies, like those used in Ethernet protocols to avoid packet collision, can prevent livelock by staggering retry attempts.
+    
+    \begin{highlight}[Livelock in Multithreaded Applications]
+    
+        \begin{itemize}
+            \item \textbf{Continuous Retrying}: Threads continuously attempt a failing operation without progress, blocking each other through active but unsuccessful actions.
+            \item \textbf{Backoff Strategy}: Introducing random delays before retrying, which can reduce the chance of simultaneous conflict, is a common strategy to avoid livelock.
+            \item \textbf{Application Example}: Ethernet protocols use randomized backoff to manage transmission retries following network collisions.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Deadlock in Multithreading}: Deadlock can occur when threads acquire shared resources in conflicting orders, blocking each other indefinitely.
+            \item \textbf{Livelock}: Threads continuously retry operations without making progress, often mitigated by backoff strategies to randomize retry attempts.
+        \end{itemize}
+    
+    This section emphasizes the importance of careful resource acquisition order and backoff strategies to prevent deadlock and livelock in multithreaded applications.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 8.3: Deadlock Characterization}.
+
+\begin{notes}{Section 8.3: Deadlock Characterization}
+    \subsection*{Overview}
+
+    This section examines deadlock characterization, outlining the essential conditions that must be present for deadlock to occur and introducing resource-allocation graphs as a tool to visualize deadlocks. Understanding these conditions and visual representations helps in recognizing and preventing deadlocks within a system.
+    
+    \subsubsection*{Necessary Conditions for Deadlock}
+    
+    For deadlock to occur, four conditions must be met simultaneously:
+
+    \begin{enumerate}
+        \item \textbf{Mutual Exclusion}: At least one resource must be held in a non-sharable mode, meaning only one thread can access it at a time. If another thread requests this resource, it must wait until the resource is released.
+        \item \textbf{Hold and Wait}: A thread holding at least one resource is also waiting to acquire additional resources currently held by other threads. This condition creates dependencies among threads.
+        \item \textbf{No Preemption}: Resources cannot be forcibly removed from a thread; instead, a resource is released only when the thread holding it voluntarily relinquishes it after completing its task.
+        \item \textbf{Circular Wait}: A cycle of threads exists such that each thread is waiting for a resource held by the next thread in the cycle. This dependency chain creates a closed loop, trapping all involved threads in a deadlock.
+    \end{enumerate}
+    
+    If all these conditions are present, a deadlock may occur. However, eliminating any one of these conditions is sufficient to prevent deadlock.
+    
+    \begin{highlight}[Necessary Conditions for Deadlock]
+    
+        \begin{itemize}
+            \item \textbf{Mutual Exclusion}: Only one thread can use a resource at a time.
+            \item \textbf{Hold and Wait}: Threads hold resources while waiting for additional ones.
+            \item \textbf{No Preemption}: Resources cannot be forcibly taken from threads.
+            \item \textbf{Circular Wait}: A circular dependency among threads exists, creating a closed wait loop.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Resource-Allocation Graphs}
+    
+    Resource-allocation graphs offer a visual way to detect potential deadlocks in a system. These directed graphs include two types of nodes—threads and resources—and two types of directed edges:
+
+    \begin{itemize}
+        \item \textbf{Request Edges}: Directed from a thread to a resource, indicating that the thread is waiting for that resource.
+        \item \textbf{Assignment Edges}: Directed from a resource to a thread, showing that the resource is allocated to the thread.
+    \end{itemize}
+    
+    If a cycle exists in the graph, a deadlock may be present. When each resource has only one instance, a cycle implies deadlock. However, if resources have multiple instances, a cycle suggests only a potential deadlock, not a certainty.
+    
+    \begin{highlight}[Resource-Allocation Graphs]
+    
+        \begin{itemize}
+            \item \textbf{Threads and Resources Nodes}: Represent active threads and available resources in the system.
+            \item \textbf{Request Edge}: Indicates a thread's request for a resource.
+            \item \textbf{Assignment Edge}: Indicates a resource's allocation to a thread.
+            \item \textbf{Cycle Detection}: In graphs where each resource has one instance, a cycle indicates a deadlock; with multiple instances, a cycle implies the possibility of deadlock.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Necessary Conditions}: Deadlock can only occur if all four conditions—mutual exclusion, hold and wait, no preemption, and circular wait—are met.
+            \item \textbf{Resource-Allocation Graphs}: Useful tools for detecting cycles and potential deadlocks in systems.
+            \item \textbf{Cycle Detection and Deadlock}: A cycle in a resource-allocation graph confirms deadlock in single-instance resource systems and suggests a risk of deadlock in multi-instance systems.
+        \end{itemize}
+    
+    Characterizing deadlock through these conditions and visual tools like resource-allocation graphs enables system designers to diagnose and mitigate potential deadlocks.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 8.4: Methods For Handling Deadlocks}.
+
+\begin{notes}{Section 8.4: Methods For Handling Deadlocks}
+    \subsection*{Overview}
+
+    This section outlines three primary methods for handling deadlocks: ignoring the problem, prevention and avoidance protocols, and detection and recovery. Each approach has advantages and limitations 
+    in terms of system complexity, efficiency, and practicality. These methods enable systems to address deadlocks in ways that best suit their specific operational needs and resources.
+    
+    \subsubsection*{Ignoring Deadlocks}
+    
+    The simplest method to address deadlocks is to ignore them entirely, as done in many operating systems like Linux and Windows. This approach assumes that deadlocks are rare and that the cost of 
+    prevention or detection outweighs the frequency of occurrence. Although ignoring deadlocks is not an active solution, it remains popular because it avoids the performance overhead associated with 
+    the more complex deadlock-management protocols.
+    
+    \begin{highlight}[Ignoring Deadlocks]
+    
+        \begin{itemize}
+            \item \textbf{Cost-Efficiency}: Avoids the computational cost of continuous deadlock prevention, detection, or recovery.
+            \item \textbf{Assumption of Rarity}: Relies on the infrequency of deadlocks in typical system usage.
+            \item \textbf{Fallback on Manual Intervention}: Deadlocks are resolved manually, such as by restarting the system if it becomes unresponsive.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Deadlock Prevention and Avoidance}
+    
+    For systems requiring strict deadlock avoidance, two methods—prevention and avoidance—are employed. Deadlock prevention techniques ensure that at least one of the necessary conditions for deadlock 
+    (mutual exclusion, hold and wait, no preemption, and circular wait) is violated, which prevents deadlocks from forming. Deadlock avoidance, by contrast, requires knowledge of future resource requests, 
+    enabling the system to assess the safety of granting each request based on current allocations and needs.
+    
+    \begin{highlight}[Deadlock Prevention and Avoidance]
+    
+        \begin{itemize}
+            \item \textbf{Prevention}: Alters request and allocation patterns to negate at least one deadlock condition. 
+                \begin{itemize}
+                    \item Methods include holding resources only while needed or forcing a strict order in which resources are requested.
+                \end{itemize}
+            \item \textbf{Avoidance}: Uses additional information, such as the maximum required resources of each process, to avoid unsafe resource-allocation states.
+                \begin{itemize}
+                    \item \textbf{Banker's Algorithm}: Calculates safe states to determine if a resource request can proceed without risking deadlock.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Deadlock Detection and Recovery}
+    
+    Systems that allow deadlocks to occur may employ detection and recovery mechanisms. Detection algorithms monitor resource allocation states and periodically check for deadlock cycles, using structures 
+    such as wait-for graphs. Once a deadlock is detected, the system can recover by terminating one or more processes involved in the deadlock or by preempting resources held by deadlocked processes. The 
+    selection of processes or resources to preempt is generally based on criteria like priority or resource usage, to minimize disruption.
+    
+    \begin{highlight}[Deadlock Detection and Recovery]
+    
+        \begin{itemize}
+            \item \textbf{Detection Algorithms}: Periodically examine the system's resource allocation state to identify deadlock conditions.
+                \begin{itemize}
+                    \item \textbf{Wait-For Graphs}: Represent dependencies among processes and detect cycles indicating deadlock.
+                \end{itemize}
+            \item \textbf{Recovery Options}: 
+                \begin{itemize}
+                    \item \textbf{Process Termination}: Ends deadlocked processes either all at once or one at a time until the deadlock cycle is broken.
+                    \item \textbf{Resource Preemption}: Temporarily removes resources from deadlocked processes to free dependencies.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Ignoring Deadlocks}: Common in many operating systems; cost-effective and relies on deadlocks being rare.
+            \item \textbf{Prevention and Avoidance}: Prevention eliminates one of the necessary conditions; avoidance requires additional information for safe allocation.
+            \item \textbf{Detection and Recovery}: Actively identifies deadlock states and resolves them by process termination or resource preemption.
+        \end{itemize}
+    
+    These methods provide diverse options for managing deadlocks, balancing performance costs and reliability to best fit system requirements.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 8.5: Deadlock Prevention}.
+
+\begin{notes}{Section 8.5: Deadlock Prevention}
+    \subsection*{Overview}
+
+    This section outlines methods for preventing deadlock by invalidating at least one of the four necessary conditions that allow deadlock to occur. The strategies discussed include ensuring mutual 
+    exclusion for non-sharable resources only, eliminating the hold-and-wait condition, allowing resource preemption, and preventing circular wait through a resource hierarchy.
+    
+    \subsubsection*{Mutual Exclusion}
+    
+    To avoid deadlock, systems may allow multiple threads to share resources whenever feasible. Only non-sharable resources, like mutex locks, retain mutual exclusion. However, since some resources 
+    are inherently non-sharable, preventing deadlock by eliminating mutual exclusion alone is generally impractical.
+    
+    \begin{highlight}[Mutual Exclusion]
+    
+        \begin{itemize}
+            \item \textbf{Sharable Resources}: Resources such as read-only files can be shared by multiple threads without leading to deadlock.
+            \item \textbf{Non-Sharable Resources}: Certain resources, like mutex locks, cannot be shared and inherently require mutual exclusion.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Hold and Wait}
+    
+    To prevent the hold-and-wait condition, protocols may require that a thread request all required resources at once, or release all currently held resources before requesting additional ones. While 
+    effective, these methods have limitations, including reduced resource utilization and potential starvation if threads frequently wait for multiple resources.
+    
+    \begin{highlight}[Hold and Wait]
+    
+        \begin{itemize}
+            \item \textbf{Request All Resources at Start}: Threads must request all necessary resources at the beginning of execution.
+            \item \textbf{Release Before Requesting More}: Threads must release current resources before making new requests, which may reduce efficiency and lead to starvation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{No Preemption}
+    
+    For systems to satisfy the no-preemption condition, threads may be forced to release resources if they cannot acquire additional requested resources. This approach enables resource reallocation 
+    to other threads and prevents deadlock in scenarios where resources can be temporarily revoked without loss of progress.
+    
+    \begin{highlight}[No Preemption]
+    
+        \begin{itemize}
+            \item \textbf{Temporary Resource Release}: If a resource request cannot be fulfilled, the requesting thread releases all held resources.
+            \item \textbf{Reallocation}: Resources are reassigned to other threads to avoid deadlock and are re-granted to the initial thread when available.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Circular Wait}
+    
+    The circular-wait condition can be avoided by imposing a strict ordering on resources, requiring threads to request resources in a predefined sequence. By adhering to this resource hierarchy, 
+    circular dependencies are eliminated, thus preventing deadlock.
+    
+    \begin{highlight}[Circular Wait]
+    
+        \begin{itemize}
+            \item \textbf{Resource Ordering}: Resources are assigned a priority, and threads may only request resources in ascending order.
+            \item \textbf{Hierarchical Requesting}: Threads must adhere to the hierarchy when requesting resources, thus avoiding circular waiting patterns.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Mutual Exclusion}: Only non-sharable resources must enforce mutual exclusion.
+            \item \textbf{Hold and Wait Prevention}: Threads either request all resources upfront or release held resources before further requests.
+            \item \textbf{Resource Preemption}: Allows resource reallocation by forcing threads to release resources under specific conditions.
+            \item \textbf{Circular Wait Prevention}: Enforces a resource hierarchy to prevent circular dependencies.
+        \end{itemize}
+    
+    By targeting the four necessary conditions for deadlock, these prevention methods minimize the risk of deadlock in concurrent systems.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 8.6: Deadlock Avoidance}.
+
+\begin{notes}{Section 8.6: Deadlock Avoidance}
+    \subsection*{Overview}
+
+    This section introduces deadlock avoidance, a strategy that ensures a system remains in a "safe state" where deadlock cannot occur. Deadlock avoidance requires the system to have prior knowledge 
+    of the maximum potential requests for each resource by all threads. This proactive approach helps the system decide whether to grant resource requests or delay them to maintain safety, thus 
+    preventing the formation of deadlocks.
+    
+    \subsubsection*{Concept of Safe State}
+    
+    A system is in a "safe state" when there is at least one sequence in which all threads can complete without leading to deadlock. In this approach, before granting any resource requests, the system 
+    assesses whether fulfilling it would still leave the system in a safe state. If fulfilling a request risks deadlock, the request is delayed until it can be satisfied without jeopardizing safety. 
+    The concept of safe and unsafe states forms the basis for deadlock avoidance.
+    
+    \begin{highlight}[Safe State in Deadlock Avoidance]
+    
+        \begin{itemize}
+            \item \textbf{Safe State}: A state where it is possible to allocate resources in such a way that all threads can complete without deadlock.
+            \item \textbf{Unsafe State}: A state that, while not yet deadlocked, may lead to deadlock as threads proceed.
+            \item \textbf{Proactive Resource Allocation}: Only grants requests that leave the system in a safe state.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Resource-Allocation Graph Algorithm}
+    
+    This algorithm is used when there is only one instance of each resource type. It enhances the standard resource-allocation graph by introducing "claim edges," which represent the maximum resources 
+    a thread might request in the future. Claim edges help the system preemptively avoid cycles in the graph, which would indicate a risk of deadlock.
+    
+    \begin{highlight}[Resource-Allocation Graph Algorithm]
+    
+        \begin{itemize}
+            \item \textbf{Claim Edge}: Represents potential future requests by threads and helps prevent unsafe resource allocations.
+            \item \textbf{Cycle Detection}: A cycle in the graph signals an unsafe state, leading the system to delay allocations that could introduce cycles.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Banker's Algorithm}
+    
+    The Banker's Algorithm is suited for systems with multiple instances of each resource type. Each thread must declare in advance its maximum resource needs. Before allocating resources, the system 
+    checks if fulfilling the request would leave it in a safe state. This algorithm ensures that resources are allocated only if the system can guarantee completion for all threads.
+    
+    \begin{highlight}[Banker's Algorithm]
+    
+        \begin{itemize}
+            \item \textbf{Maximum Demand Declaration}: Threads declare maximum resource needs to allow safe allocation assessment.
+            \item \textbf{Dynamic Safety Checks}: The system continuously monitors and decides whether to grant or delay requests based on potential impacts on system safety.
+            \item \textbf{Safety Sequence}: Determines an order of thread execution ensuring that all can complete without deadlock.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Safe State}: The foundation of deadlock avoidance, ensuring a path to completion exists for all threads.
+            \item \textbf{Resource-Allocation Graph}: Visual tool for deadlock avoidance with single-resource instances, avoiding cycles that signal unsafe states.
+            \item \textbf{Banker's Algorithm}: Deadlock avoidance for multiple-instance resources, requiring advance knowledge of thread demands.
+        \end{itemize}
+    
+    By ensuring the system remains in a safe state, deadlock avoidance effectively prevents deadlocks while dynamically adjusting resource allocations as requests are made.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 8.7: Deadlock Detection}.
+
+\begin{notes}{Section 8.7: Deadlock Detection}
+    \subsection*{Overview}
+
+    This section explores deadlock detection strategies, particularly in systems where deadlock prevention or avoidance algorithms are not in use. When deadlocks occur in such systems, algorithms must 
+    be employed to detect and subsequently recover from these situations. The section explains approaches to detection for single-instance resources, multi-instance resources, and highlights practical 
+    applications such as deadlock detection in database management.
+    
+    \subsubsection*{Deadlock Detection with Single Resource Instances}
+    
+    In cases where each resource type has only a single instance, deadlock detection can leverage a specialized resource-allocation graph called the wait-for graph. This graph collapses resource nodes, 
+    leaving only process nodes and indicating dependencies directly. The system is deadlocked if a cycle is present in the wait-for graph. Regular cycle-checking in the wait-for graph allows the system 
+    to promptly detect deadlock conditions.
+    
+    \begin{highlight}[Deadlock Detection with Single Resource Instances]
+    
+        \begin{itemize}
+            \item \textbf{Wait-for Graph}: Formed by collapsing resource nodes from the resource-allocation graph, it shows dependencies between processes.
+            \item \textbf{Cycle Detection}: A cycle in the wait-for graph indicates a deadlock.
+            \item \textbf{Overhead Consideration}: Detection algorithms run periodically due to the computational overhead of cycle detection.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Deadlock Detection with Multiple Resource Instances}
+    
+    For systems with multiple instances of each resource, a matrix-based detection algorithm similar to the Banker's algorithm is employed. This approach uses matrices to represent resource availability, 
+    allocations, and current requests. The detection algorithm iteratively checks the system state to identify if any safe sequence exists. If no safe sequence is found, a deadlock is present.
+    
+    \begin{highlight}[Deadlock Detection with Multiple Resource Instances]
+    
+        \begin{itemize}
+            \item \textbf{Matrices for System State}: Uses matrices for available resources, allocations, and requests.
+            \item \textbf{Safe Sequence Check}: Ensures resources are allocated safely by investigating possible completion orders.
+            \item \textbf{Computational Complexity}: More complex than single-instance detection due to matrix operations and iterative checks.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Detection Algorithm Usage and Frequency}
+    
+    The frequency of invoking a deadlock-detection algorithm depends on system needs and deadlock occurrence rates. Frequent invocations can incur significant computational costs. Alternatively, systems 
+    may invoke detection algorithms periodically or when certain conditions, like CPU utilization dropping below a threshold, suggest a deadlock.
+    
+    \begin{highlight}[Detection Algorithm Usage and Frequency]
+    
+        \begin{itemize}
+            \item \textbf{Frequency Considerations}: Frequent detection is ideal but computationally expensive; less frequent checks are common.
+            \item \textbf{Threshold-Based Invocation}: For efficiency, algorithms can be triggered by conditions such as low CPU utilization.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Database Deadlock Detection}
+    
+    In database systems, deadlock detection is vital to maintaining transaction integrity. Databases often use cycles in wait-for graphs to detect deadlocks among transactions. Upon detection, a 
+    “victim” transaction is aborted, releasing its locks and allowing other transactions to proceed. The choice of victim often minimizes the loss of computational progress.
+    
+    \begin{highlight}[Database Deadlock Detection]
+    
+        \begin{itemize}
+            \item \textbf{Wait-for Graph in Databases}: Used to detect cycles and identify deadlocked transactions.
+            \item \textbf{Victim Selection}: Aborts the transaction with minimal impact on computational resources, freeing other transactions.
+            \item \textbf{Transaction Integrity}: Ensures deadlocked transactions do not compromise data consistency.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Single-Instance Detection}: Uses wait-for graphs and cycle detection.
+            \item \textbf{Multi-Instance Detection}: Relies on matrix-based approaches similar to the Banker's algorithm.
+            \item \textbf{Invocation Frequency}: Detection algorithms are typically run periodically or conditionally.
+            \item \textbf{Database Applications}: Detects deadlocks in transactions and selectively aborts to maintain consistency.
+        \end{itemize}
+    
+    Deadlock detection strategies are critical in systems that do not use prevention or avoidance techniques, providing the ability to handle deadlocks reactively rather than proactively.
+    
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 8.8: Recovery From Deadlock}.
+
+\begin{notes}{Section 8.8: Recovery From Deadlock}
+    \subsection*{Overview}
+
+    This section outlines methods for recovering from a deadlock when it has been detected. Recovery can be handled either manually by an operator or automatically by the system. The two main methods 
+    for deadlock resolution are process and thread termination, and resource preemption.
+    
+    \subsubsection*{Process and Thread Termination}
+    
+    One way to break a deadlock is by terminating one or more processes or threads involved in the deadlock. Two approaches exist:
+
+    \begin{itemize}
+        \item \textbf{Abort all deadlocked processes}: This guarantees the removal of the deadlock but can result in significant resource and computational losses.
+        \item \textbf{Abort one process at a time}: This approach incrementally removes processes, each time checking if the deadlock persists. While this method avoids excessive resource loss, it 
+        incurs overhead as the deadlock-detection algorithm must run repeatedly after each termination.
+    \end{itemize}
+    
+    Terminating processes can lead to complications, such as leaving files or shared data in an inconsistent state. Additional cleanup actions, like restoring file states or mutex availability, may 
+    be needed. To determine which process to terminate, factors like priority, execution time, resource usage, and process stage are considered to minimize overall impact.
+    
+    \begin{highlight}[Process and Thread Termination]
+    
+        \begin{itemize}
+            \item \textbf{Abort All Deadlocked Processes}: Effective but resource-intensive, as all work performed by these processes is lost.
+            \item \textbf{Incremental Termination}: Terminates one process at a time, continuously checking for deadlock resolution.
+            \item \textbf{Termination Criteria}: Process selection may depend on factors such as priority, completion status, resources used, and the likelihood of quick completion.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Resource Preemption}
+    
+    An alternative recovery method is preempting resources from some deadlocked processes to break the deadlock cycle. Key considerations include:
+
+    \begin{itemize}
+        \item \textbf{Selecting a Victim}: The system determines which processes and resources to preempt, based on factors like resource usage and process duration, aiming to minimize the preemption cost.
+        \item \textbf{Rollback}: Once resources are preempted, the process may need to be rolled back to a safe state. A full rollback (restarting the process) is often used, although partial rollbacks 
+        are feasible but require detailed process state tracking.
+        \item \textbf{Starvation Prevention}: A process repeatedly selected as a preemption victim may never complete, leading to starvation. To prevent this, a limit on the number of rollbacks or 
+        process interruptions is maintained, often by factoring in the rollback count when selecting future victims.
+    \end{itemize}
+    
+    \begin{highlight}[Resource Preemption]
+    
+        \begin{itemize}
+            \item \textbf{Victim Selection}: Preempt resources from processes with minimal preemption cost.
+            \item \textbf{Rollback Strategy}: Typically a full rollback, though partial rollbacks are possible for systems tracking detailed state.
+            \item \textbf{Starvation Prevention}: Limits the number of rollbacks to avoid indefinite delays for any single process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Process Termination}: Aborts processes, either all at once or incrementally, to resolve deadlocks.
+            \item \textbf{Resource Preemption}: Relinquishes resources from processes to break deadlock cycles, with safeguards against starvation.
+        \end{itemize}
+    
+    Both termination and preemption offer means to resolve deadlocks, with system requirements and process impact guiding the best choice.
+    
+    \end{highlight}
+\end{notes}

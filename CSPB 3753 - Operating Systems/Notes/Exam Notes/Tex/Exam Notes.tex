@@ -1,0 +1,1202 @@
+\begin{examnotes}{Exam 1 Notes}
+    \subsection*{Operating System Components}
+
+    An operating system (OS) is a crucial component of any computer system, acting as an intermediary between hardware and application software. Its primary function is to manage the system's 
+    resources, ensuring that hardware is utilized efficiently while providing an interface for user programs to execute. The OS abstracts the complexities of hardware components, such as the CPU, 
+    memory, and I/O devices, allowing applications to perform tasks without needing to interact with the hardware directly. By providing a controlled environment, it ensures the smooth execution 
+    of multiple applications, manages hardware resources, and prevents conflicts between programs. 
+    
+    The key goals of an operating system include abstraction, protection, and arbitration. Abstraction simplifies hardware interactions, protection ensures security and stability between processes, 
+    and arbitration manages shared resources. The OS is responsible for critical functions such as process management, memory management, file systems, and device management. These functions enable 
+    the system to handle multiple tasks concurrently, efficiently allocate memory, and manage input/output operations, thereby ensuring the smooth operation of both hardware and software components. 
+    In modern systems, the OS also plays a role in security, ensuring that only authorized programs can access sensitive system resources.
+    
+    \begin{highlight}[Goals of an OS]
+        The operating system has several important goals to ensure the efficient and secure functioning of a computer system. Abstraction provides applications with a simplified view of complex hardware, 
+        allowing developers to focus on functionality without dealing with hardware intricacies. Protection ensures that different processes are isolated from one another, preventing accidental or 
+        malicious interference. Arbitration deals with managing shared resources, ensuring fair access and preventing resource conflicts. These goals collectively enhance the stability and performance 
+        of a system, especially in multi-tasking environments.
+        \begin{itemize}
+            \item \textbf{Abstraction}: Simplifying complex hardware details for applications.
+            \item \textbf{Protection}: Ensuring different processes do not interfere with each other.
+            \item \textbf{Arbitration}: Managing access to shared resources.
+        \end{itemize}
+        \textit{Note: Connection is not a direct goal of an OS.}
+    \end{highlight}
+    
+    \begin{highlight}[OS Responsibilities]
+        The OS is responsible for managing various system resources efficiently. Memory management involves allocating and freeing memory as required by applications. Process management includes creating, 
+        scheduling, and terminating processes, as well as ensuring synchronization and communication between them. File system management is responsible for storing, retrieving, and organizing files, 
+        while device management ensures the smooth functioning of input/output devices like keyboards, printers, and disks. By handling these tasks, the OS ensures that hardware and software can work together seamlessly.
+        \begin{itemize}
+            \item \textbf{Memory Management}: Allocation and deallocation of memory.
+            \item \textbf{Process Management}: Scheduling, synchronization, and creation/deletion of processes.
+            \item \textbf{File System Management}: Handling file storage, retrieval, and organization.
+            \item \textbf{Device Management}: Managing device input/output operations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{System Calls}
+    
+    System calls are the primary mechanism by which user-level applications access OS services. These calls allow user applications to request various low-level services provided by the OS, such as 
+    file access, process control, and communication with devices. System calls provide a controlled way for applications to switch from user mode to kernel mode, ensuring that the OS can mediate 
+    access to critical resources, and enforce security and stability.
+    
+    \begin{highlight}[System Call Parameter Passing]
+        When a system call is made, parameters are passed from the user program to the OS in various ways. Common methods include placing a pointer to the data in a register, using the stack, or directly 
+        placing the value in a register. The system then processes these parameters in kernel mode, performing the requested action before returning control to the user program.
+        \begin{itemize}
+            \item \textbf{Pointer placed in a register}
+            \item \textbf{Value placed on stack}
+            \item \textbf{Value placed in a register}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Interrupts and Traps}
+    
+    Interrupts and traps are mechanisms used by the OS to respond to events that require immediate attention. An interrupt is a signal to the processor indicating an event, such as input/output completion, 
+    requiring the processor to pause its current task and handle the interrupt. Traps are similar, but they occur when a program deliberately switches to kernel mode, often to execute privileged instructions 
+    via system calls. These mechanisms are crucial in multitasking systems, allowing the OS to efficiently manage time-sensitive operations.
+    
+    \begin{highlight}[Definition of Interrupts]
+        Interrupts are signals that cause the CPU to stop the current instruction and switch to a different task. These are used for:
+        \begin{itemize}
+            \item \textbf{Handling events}: E.g., I/O completion.
+            \item \textbf{Switching to kernel mode}: A trap instruction switches the CPU into kernel mode for system calls.
+        \end{itemize}
+    \end{highlight}
+    
+    The mode bit distinguishes user mode from kernel mode. \textbf{Mode bit = 1} indicates user mode, whereas kernel mode allows the OS to execute privileged operations.
+    
+    \subsubsection*{Context Switches}
+    
+    A context switch occurs when the CPU changes from executing one process to another. This involves saving the state of the current process, including the program counter and register values, and 
+    loading the state of the next process. Context switching is essential for multitasking, allowing the OS to share the CPU among multiple processes, improving overall system efficiency. While 
+    context switches allow multiple processes to appear as if they are running simultaneously, they also add overhead to the system.
+    
+    \begin{highlight}[Definition of Context Switch]
+        A context switch refers to the act of switching the active Process Control Block (PCB) from one process to another. This operation is critical in multitasking operating systems and is managed 
+        by the process scheduler.
+    \end{highlight}
+    
+    \subsubsection*{Memory Management and Segmentation}
+    
+    Memory is divided into various segments, with different types of variables stored in different sections. Local variables are typically stored in the stack, which grows and shrinks as functions are 
+    called and return. Dynamically allocated variables are stored in the heap, allowing memory to be allocated and deallocated during runtime. Global variables reside in the data segment, and their 
+    values persist throughout the program's execution. Effective memory management is crucial for preventing issues such as memory leaks and buffer overflows.
+    
+    \begin{highlight}[Memory Segments]
+        Different types of variables are stored in various memory segments:
+        \begin{itemize}
+            \item \textbf{Local variables}: Stored in the stack.
+            \item \textbf{Dynamically allocated variables}: Stored in the heap.
+            \item \textbf{Global variables}: Stored in the data segment.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Lab Assignment Overview}
+    
+    In the lab assignment, students are tasked with implementing unbounded data structures that can dynamically handle an unknown amount of data. This requires efficient memory management using dynamic 
+    allocation functions like `malloc()' and `realloc()'. The primary goal is to minimize memory usage by only allocating memory when needed and ensuring that all allocated memory is properly freed to 
+    prevent memory leaks.
+    
+    \begin{highlight}[Dynamic Memory Allocation]
+        You will use the heap for dynamically allocating space as needed. The functions to implement include:
+        \begin{itemize}
+            \item \textbf{get\_unbounded\_line()}: Dynamically reads a line of text from the user.
+            \item \textbf{get\_value\_table()}: Parses the line into a set of integer values and dynamically allocates space for them.
+        \end{itemize}
+        These functions use \texttt{malloc()}, \texttt{realloc()}, and \texttt{free()} for memory management, ensuring no memory leaks.
+    \end{highlight}
+    
+    \subsubsection*{Lab Objectives and Implementation Steps}
+    
+    The lab aims to teach students how to handle dynamically allocated memory in a way that is both space-efficient and error-free. By following a step-by-step approach to implementing the required 
+    functions, students will gain hands-on experience in managing heap memory. This includes checking return values, reallocating memory as needed, and using debugging tools to verify the correctness 
+    of their implementation.
+    
+    \begin{highlight}[Objectives of the Lab]
+        \begin{itemize}
+            \item Efficiently allocate memory for unknown quantities of data.
+            \item Use \texttt{malloc} and \texttt{realloc} for dynamic memory management.
+            \item Implement memory leak checks.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Step-by-Step Implementation]
+        \begin{enumerate}
+            \item Start by creating a basic structure for the \texttt{main()} function.
+            \item Use stub functions to test various components.
+            \item Implement dynamic allocation in small increments, testing each step.
+        \end{enumerate}
+    \end{highlight}
+
+    \subsection*{Process Management in Operating Systems}
+
+    Process management is a core function of operating systems, responsible for handling the lifecycle of processes. A process is an instance of a program in execution, and the OS manages the creation, 
+    execution, and termination of processes. This also includes handling multiple processes simultaneously, managing resources for each, and ensuring efficient communication between them. The OS allocates 
+    CPU time, memory, and I/O devices to processes, which allows multiple applications to run concurrently without interference.
+    
+    Effective process management allows for multitasking, wherein multiple processes share system resources without degrading system performance. It also ensures security by isolating processes, so 
+    they do not interfere with each other. To achieve this, the OS maintains a process control block (PCB) for each process, which stores important information about the process, such as its process 
+    ID (PID), state, and allocated resources. Overall, process management is essential for modern computing, enabling the system to run multiple applications smoothly and efficiently.
+    
+    \begin{highlight}[Process Control Block (PCB)]
+        Every process in an OS is represented by a \textbf{Process Control Block (PCB)}, which contains information such as the process ID, program counter, CPU registers, memory limits, and open files. 
+        The PCB is used by the OS to track and manage processes, especially during context switching. The PCB plays a crucial role in maintaining the state of a process when it is not running, ensuring 
+        that it can resume seamlessly.
+        \begin{itemize}
+            \item \textbf{Process ID (PID)}: A unique identifier for each process.
+            \item \textbf{Process State}: Current status, such as running, waiting, or terminated.
+            \item \textbf{CPU Registers}: Contents of the CPU registers when the process is not executing.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Context Switching}
+    
+    Context switching is a mechanism that allows the CPU to switch between processes by saving the current state of a process and loading the saved state of another process. This is essential for 
+    multitasking, as it allows multiple processes to share the CPU without interfering with one another. A context switch occurs when the OS scheduler decides to allocate CPU time to a different 
+    process, saving the current process's state in its PCB and loading the new process's state.
+    
+    \begin{highlight}[Definition of Context Switch]
+        A context switch involves switching the CPU from one process to another. The state of the old process is saved in its PCB, and the state of the new process is loaded from its PCB. This allows 
+        the system to maintain multiple processes and run them efficiently by allocating CPU time fairly. The process scheduler determines when a context switch should occur.
+        \begin{itemize}
+            \item \textbf{CPU Registers}: Contents saved to the PCB for restoration.
+            \item \textbf{Process Control}: Switching between processes using the PCB.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Process Creation and Termination}
+    
+    In most operating systems, processes are created using the \texttt{fork()} system call, which creates a new process by duplicating an existing one. The new process, called the child, inherits many 
+    of the attributes of the parent process but has its own unique process ID. After creation, the child process can either execute the same program or replace itself with a new program using the 
+    \texttt{exec()} family of system calls. Processes may terminate voluntarily using \texttt{exit()} or may be terminated by the OS due to errors or policy violations.
+    
+    \begin{highlight}[Process Creation]
+        The operating system creates a new process using the \texttt{fork()} system call, which duplicates an existing process. This creates two nearly identical processes that run concurrently, one 
+        being the parent and the other the child. Once the fork is successful, the child process may replace its program with a new one using \texttt{exec()}.
+        \begin{itemize}
+            \item \textbf{\texttt{fork()}}: Creates a child process by duplicating the parent process.
+            \item \textbf{\texttt{exec()}}: Replaces the process's memory space with a new program.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Process Termination]
+        Processes terminate either voluntarily, through the \texttt{exit()} system call, or involuntarily, by the operating system due to errors or policy violations. When a process terminates, it 
+        sends an exit status to its parent process, which can retrieve this status using the \texttt{wait()} system call. The parent may then clean up resources associated with the child process.
+        \begin{itemize}
+            \item \textbf{\texttt{exit()}}: Terminates the calling process and returns an exit status.
+            \item \textbf{\texttt{wait()}}: Parent process waits for the termination of a child process.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Inter-Process Communication (IPC)}
+    
+    Processes often need to communicate with each other during execution, especially in multitasking environments. Operating systems provide mechanisms for Inter-Process Communication (IPC) to facilitate 
+    this. IPC mechanisms include pipes, shared memory, message queues, and sockets. These allow processes to exchange data, synchronize actions, and coordinate the use of shared resources. IPC is vital 
+    for applications that involve multiple processes working on related tasks, such as client-server models.
+    
+    \begin{highlight}[IPC Mechanisms]
+        There are several mechanisms provided by the OS for inter-process communication, enabling processes to share data or signals. These mechanisms allow processes to synchronize or exchange information 
+        efficiently. Some commonly used IPC techniques include:
+        \begin{itemize}
+            \item \textbf{Pipes}: Unidirectional communication channels between processes.
+            \item \textbf{Shared Memory}: A region of memory accessible to multiple processes.
+            \item \textbf{Message Queues}: Allow processes to exchange messages.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Lab Assignment Overview}
+    
+    In this lab, you will implement a program that demonstrates process creation and management using system calls like \texttt{fork()}, \texttt{exec()}, and \texttt{wait()}. You will create multiple 
+    processes, each running a different executable, and the parent process will wait for each child to terminate, reporting their exit statuses. This lab provides practical experience in understanding 
+    how processes are created and how they interact with the OS during their lifecycle.
+    
+    \begin{highlight}[Lab Objectives]
+        The lab requires you to create child processes using \texttt{fork()}, execute new programs using \texttt{exec()}, and synchronize the parent with the child processes using \texttt{wait()}. 
+        These objectives will help you gain a deeper understanding of how operating systems manage process execution and termination.
+        \begin{itemize}
+            \item \textbf{Use \texttt{fork()}}: To create child processes.
+            \item \textbf{Use \texttt{exec()}}: To execute new programs within child processes.
+            \item \textbf{Use \texttt{wait()}}: To synchronize the parent and child processes.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Step-by-Step Implementation]
+        \begin{enumerate}
+            \item Create a basic program that uses \texttt{fork()} to create child processes.
+            \item Modify the child process to execute new programs using \texttt{exec()}.
+            \item Use \texttt{wait()} in the parent process to wait for each child to terminate.
+            \item Report the exit status of each child process in the parent process.
+        \end{enumerate}
+    \end{highlight}
+
+    \subsection*{Multi-Threaded Computer Systems}
+
+    Multi-threaded computer systems allow multiple threads to be executed within the same process. Threads, often referred to as "lightweight processes," share the same address space, code, and data of 
+    the parent process, making them more resource-efficient than separate processes. This efficiency is because threads use less memory and have faster context switching, as they do not require as many 
+    system resources as full processes. However, the use of threads introduces complexities like race conditions, synchronization issues, and the need for thread-safe code to avoid errors in shared data.
+    
+    Threads are used in applications that require parallelism or concurrent processing of tasks. Multi-threading is particularly beneficial when a program has tasks that can be divided into independent 
+    units of work that run simultaneously. This can significantly reduce execution time and improve system responsiveness. However, unlike processes, threads lack isolation, meaning a bug in one thread 
+    can potentially impact the entire process, making fault tolerance a concern.
+    
+    \begin{highlight}[Threads vs. Processes]
+        Threads and processes are different in terms of how they share resources. While multiple processes have separate memory spaces and offer fault isolation, threads within the same process share 
+        memory and data, allowing for easier communication. This shared memory space is ideal for tasks that require frequent data exchange. However, since threads share memory, they must be carefully 
+        synchronized to prevent race conditions.
+        \begin{itemize}
+            \item \textbf{Threads}: Share code, data, and heap; less resource-intensive.
+            \item \textbf{Processes}: Have separate address spaces; offer fault isolation.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Thread Safety and Synchronization}
+    
+    Thread safety refers to the property of a block of code that ensures it functions correctly during concurrent execution by multiple threads. When multiple threads access shared resources like variables 
+    or data structures, thread safety is crucial to prevent race conditions. A race condition occurs when two or more threads attempt to access and modify shared data simultaneously, leading to unpredictable 
+    outcomes. Synchronization mechanisms, such as mutexes, semaphores, and condition variables, are used to control thread access to shared resources and ensure safe execution.
+    
+    \begin{highlight}[Definition of Thread Safety]
+        Thread safety is achieved when a piece of code can be executed by multiple threads concurrently without causing data corruption or inconsistency. Common methods for ensuring thread safety include 
+        using synchronization primitives to serialize access to critical sections of the code.
+        \begin{itemize}
+            \item \textbf{Mutexes}: Locks that allow only one thread to access a section of code.
+            \item \textbf{Semaphores}: Synchronization tools that control access to resources.
+            \item \textbf{Condition Variables}: Used to signal state changes to other threads.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Race Conditions and Reentrant Code}
+    
+    A race condition is a type of concurrency issue where the outcome of a program depends on the timing of uncontrollable events such as thread scheduling. Race conditions occur when multiple threads 
+    access shared data without proper synchronization, leading to unexpected results. Reentrant code, on the other hand, is a block of code that can be interrupted in the middle of its execution and 
+    safely called again. Such code does not rely on shared or static data and can be safely used by multiple threads without synchronization.
+    
+    \begin{highlight}[Definition of Race Conditions]
+        Race conditions arise when the correctness of a program depends on the relative timing of threads. Proper use of synchronization primitives is essential to prevent race conditions, ensuring that 
+        shared data is accessed in a safe and predictable manner.
+        \begin{itemize}
+            \item \textbf{Critical Section}: A section of code where shared resources are accessed.
+            \item \textbf{Race Condition}: Anomalous behavior due to unexpected timing of events.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Definition of Reentrant Code]
+        Reentrant code can be interrupted and safely executed again without adverse effects. Reentrant functions do not modify shared variables and only rely on local variables, making them inherently 
+        safe for concurrent execution.
+        \begin{itemize}
+            \item \textbf{Local Variables}: Used in reentrant code to avoid shared state issues.
+            \item \textbf{No Static Data}: Reentrant code avoids using static or global variables.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Inter-Process Communication (IPC)}
+    
+    Inter-process communication (IPC) mechanisms allow multiple processes to exchange data and synchronize their actions. IPC is used in scenarios where separate processes need to share information, 
+    synchronize actions, or coordinate tasks. Some common IPC mechanisms include shared memory, pipes, message queues, and sockets. IPC plays a crucial role in systems that require processes to work 
+    together while maintaining isolation.
+    
+    \begin{highlight}[IPC Mechanisms]
+        IPC provides the means for processes to communicate and share data safely. Some commonly used IPC techniques include:
+        \begin{itemize}
+            \item \textbf{Pipes}: Unidirectional communication channels.
+            \item \textbf{Sockets}: Allow for two-way communication across machines.
+            \item \textbf{Shared Memory}: Enables fast communication by sharing a region of memory.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Lab Assignment Overview}
+    
+    In this lab, you will implement a program using pipes to redirect the output of one process as the input to another. Pipes are a form of IPC that allows the flow of data between processes in a 
+    unidirectional manner. You will create a parent process that starts one or more child processes, connecting them with pipes to enable communication. This lab provides hands-on experience with process 
+    creation, file descriptor manipulation, and basic IPC using pipes.
+    
+    \begin{highlight}[Objectives of the Lab]
+        The lab involves understanding how to use pipes and system calls like \texttt{fork()}, \texttt{dup2()}, and \texttt{pipe()}. By implementing these techniques, you will gain practical experience 
+        in managing data flow between processes and redirecting input/output streams.
+        \begin{itemize}
+            \item \textbf{Use \texttt{pipe()}}: Create a pipe for communication between processes.
+            \item \textbf{Use \texttt{fork()}}: Create child processes that can communicate using pipes.
+            \item \textbf{Use \texttt{dup2()}}: Redirect file descriptors to control the flow of data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Step-by-Step Lab Implementation}
+    
+    This lab focuses on creating a pipeline of processes using pipes. The first step involves creating a child process that executes a command and redirects its output to a pipe. In the second step, 
+    another child process is created to read from this pipe, completing a simple pipeline of two commands connected by a pipe. In the final step, implement synchronization mechanisms to ensure proper 
+    execution and termination of each process.
+    
+    \begin{highlight}[Step-by-Step Implementation]
+        \begin{enumerate}
+            \item Create a pipe using the \texttt{pipe()} system call.
+            \item Use \texttt{fork()} to create the first child process and redirect its \texttt{stdout} to the write end of the pipe.
+            \item Use \texttt{fork()} again to create the second child process and redirect its \texttt{stdin} to the read end of the pipe.
+            \item Close unnecessary file descriptors in both parent and child processes.
+            \item Implement \texttt{wait()} to synchronize the parent process with its children.
+        \end{enumerate}
+    \end{highlight}
+
+    \subsection*{Virtual Machines and Distributed Systems}
+
+    Virtual machines (VMs) are a key technology in modern computing, allowing multiple operating systems to run simultaneously on a single physical machine. VMs are created by a software layer called 
+    the hypervisor, which abstracts the hardware resources and allows each VM to act like a fully independent computer. This separation provides strong isolation between different VMs, making virtual 
+    machines useful for cloud computing, testing environments, and resource allocation. Additionally, VMs offer benefits like fault isolation, resource efficiency, and the ability to easily migrate 
+    between physical machines using techniques like live migration.
+    
+    Distributed systems, on the other hand, refer to a collection of independent computers that work together as a unified system. In such systems, communication occurs across a network, and resources 
+    are shared between machines. This allows for improved fault tolerance, scalability, and performance, but introduces challenges in synchronization, message passing, and ensuring consistency between 
+    nodes. Distributed systems are commonly used in large-scale applications, cloud infrastructure, and internet services.
+    
+    \begin{highlight}[Virtual Machines Overview]
+        Virtual machines provide a way to run multiple operating systems on the same hardware by using a hypervisor to manage the system's resources. The hypervisor is responsible for allocating CPU, 
+        memory, and storage to each VM, ensuring that each VM remains isolated from others. The host OS is the operating system that runs directly on the hardware, while the guest OS refers to the 
+        operating system running inside a VM.
+        \begin{itemize}
+            \item \textbf{Hypervisor}: Software that creates and manages virtual machines.
+            \item \textbf{Host OS}: The underlying operating system that supports the hypervisor.
+            \item \textbf{Guest OS}: The operating system running within a virtual machine.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Live Migration of VMs}
+    
+    Live migration is a feature of virtual machines that allows the transfer of a running VM from one physical host to another without interrupting its execution. This capability is crucial for load 
+    balancing, system maintenance, and minimizing downtime. During live migration, the state of the VM, including its memory, CPU state, and storage, is transferred to the new host while the VM 
+    continues to run with minimal interruption to services.
+    
+    \begin{highlight}[Definition of Live Migration]
+        Live migration refers to moving a running virtual machine from one physical machine to another without stopping the VM. This feature is used for dynamic load balancing, hardware maintenance, 
+        and improving system availability by allowing administrators to move workloads without downtime.
+        \begin{itemize}
+            \item \textbf{Minimal Downtime}: The VM continues running during the migration process.
+            \item \textbf{Load Balancing}: VMs can be moved to underutilized hosts to optimize resource use.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{OSI Model}
+    
+    The OSI (Open Systems Interconnection) model is a 7-layer framework used to understand and design network communication. Each layer is responsible for a specific aspect of network communication, 
+    from physical data transmission to application-level interactions. The OSI model helps standardize communication between different systems and ensures interoperability across various networking 
+    technologies and protocols.
+    
+    \begin{highlight}[OSI Model Layers]
+        The OSI model divides network communication into seven layers, each with distinct responsibilities:
+        \begin{itemize}
+            \item \textbf{Layer 1 (Physical)}: Manages the physical transmission of data.
+            \item \textbf{Layer 2 (Data Link)}: Handles error detection and frames for data transmission.
+            \item \textbf{Layer 3 (Network)}: Manages routing and forwarding of packets.
+            \item \textbf{Layer 4 (Transport)}: Ensures end-to-end communication and error recovery.
+            \item \textbf{Layer 5 (Session)}: Manages connections between systems.
+            \item \textbf{Layer 6 (Presentation)}: Ensures data is in a usable format.
+            \item \textbf{Layer 7 (Application)}: Supports application-level protocols like HTTP and FTP.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Packetization and Routing}
+    
+    In network communication, large messages are often broken down into smaller packets, a process known as packetization. This makes transmission more reliable, as smaller units of data are easier 
+    to manage and resend in case of errors. Once the packets are created, they are sent through the network, potentially traveling across multiple paths before being reassembled at their destination. 
+    Routing is the process of determining the best path for packets to take across a network to ensure timely and efficient delivery.
+    
+    \begin{highlight}[Definition of Packetization]
+        Packetization refers to the process of breaking down large messages into smaller packets for easier transmission over a network. Each packet contains a portion of the data, as well as metadata 
+        like the source and destination addresses, to ensure it reaches its intended destination.
+        \begin{itemize}
+            \item \textbf{Packets}: Small units of data that are transmitted over a network.
+            \item \textbf{Metadata}: Information that helps identify the source, destination, and sequence of the packets.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Definition of Routing]
+        Routing is the process of determining the best path for sending packets from one machine to another across a network. Routers use routing tables and algorithms to make decisions about where to 
+        forward packets, optimizing for speed, reliability, and load balancing.
+        \begin{itemize}
+            \item \textbf{Routing Algorithms}: Techniques for finding the best path in a network.
+            \item \textbf{Routing Table}: A database in routers that stores the best routes for packet delivery.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Lab Assignment Overview}
+    
+    In this lab, you will explore the functionality of virtual machines and their interaction with the underlying hardware. You will configure and manage multiple VMs, ensuring resource allocation and 
+    isolation using hypervisor-based virtualization. Additionally, the lab will cover distributed system concepts such as message passing, routing, and packetization, which are essential for understanding 
+    how VMs and distributed systems interact in cloud computing environments.
+    
+    \begin{highlight}[Lab Objectives]
+        The goal of the lab is to understand the creation and management of virtual machines, as well as to explore the fundamentals of distributed systems, such as message passing and network communication. 
+        This lab will also provide hands-on experience with live migration of VMs and managing communication between distributed systems.
+        \begin{itemize}
+            \item \textbf{Create and Manage VMs}: Use hypervisor tools to create, configure, and monitor virtual machines.
+            \item \textbf{Live Migration}: Move VMs between hosts to maintain system availability.
+            \item \textbf{Distributed Systems}: Set up communication between distributed machines.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Step-by-Step Implementation]
+        \begin{enumerate}
+            \item Set up a hypervisor and configure virtual machines with specific resource allocations.
+            \item Experiment with live migration by moving VMs between physical hosts.
+            \item Implement message passing between distributed systems using standard protocols.
+            \item Use network packetization and routing techniques to ensure efficient communication between VMs.
+        \end{enumerate}
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 2 Notes}
+    \subsection*{I/O Systems and Device Management}
+
+    Input/Output (I/O) systems are a critical component of any operating system, managing communication between the CPU and peripheral devices such as keyboards, USB drives, and monitors. The operating 
+    system interacts with devices through device drivers, which handle the details of device control and communication. Devices are classified as either block or character devices, depending on how they 
+    transfer data. Character devices, like keyboards, transfer data one character at a time, while block devices, like USB drives, transfer data in blocks.
+    
+    Efficient I/O management is crucial for system performance, as it reduces the amount of time the CPU spends waiting for data transfers. I/O operations can be handled using various techniques such as 
+    polling, interrupt-driven I/O, or Direct Memory Access (DMA), each offering different performance characteristics based on the frequency and nature of I/O requests. Additionally, device files are 
+    identified using major and minor numbers, which allow the kernel to map device files to the correct device drivers.
+    
+    \begin{highlight}[Device Controller and Device Driver]
+        To start an I/O operation, the operating system uses the device driver to load the appropriate registers within the device controller, which handles communication with the physical device. Each 
+        device controller can manage multiple devices and raises interrupts to signal the completion of an I/O operation. Device files are represented by a combination of major and minor numbers, where:
+        \begin{itemize}
+            \item \textbf{Major Number}: Identifies the driver associated with the device.
+            \item \textbf{Minor Number}: Identifies the specific device handled by the driver.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{I/O Operation Methods}
+    
+    There are several methods for performing I/O operations, each with its own advantages and limitations. Polling, interrupt-driven I/O, and DMA are the most common techniques. Polling involves the CPU 
+    constantly checking the status of a device, which can waste CPU cycles. Interrupt-driven I/O, in contrast, allows the device controller to raise an interrupt when the device is ready, freeing the CPU 
+    for other tasks in the meantime. Direct Memory Access (DMA) allows devices to transfer data directly to and from memory without involving the CPU, making it the most efficient method for large data transfers.
+    
+    \begin{highlight}[Interrupt-Driven I/O]
+        Interrupt-driven I/O allows the CPU to perform other tasks while waiting for an I/O operation to complete. When a device is ready, the device controller raises an interrupt by asserting a signal 
+        on the interrupt request line, causing the CPU to pause its current task and handle the I/O operation. This method is especially efficient for devices that rarely need to be serviced.
+        \begin{itemize}
+            \item \textbf{Device Controller}: Raises an interrupt when the device is ready.
+            \item \textbf{Interrupt Request Line}: The line used to signal the CPU to handle I/O.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Direct Memory Access (DMA)]
+        DMA is used for high-speed data transfer between I/O devices and memory, allowing the CPU to be free during the transfer. The device initiates the transfer, and once the data is copied, the DMA 
+        controller sends an interrupt to notify the CPU that the transfer is complete. However, DMA is not automatically invoked for every I/O transfer; it requires specific hardware support and is 
+        typically used for large, continuous data transfers.
+        \begin{itemize}
+            \item \textbf{DMA Controller}: Handles data transfer between devices and memory.
+            \item \textbf{CPU Involvement}: The CPU is only involved when the transfer completes.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Concurrency and Scheduling}
+    
+    Concurrency refers to the interleaving of processes to simulate parallelism, allowing multiple processes to progress at once. This is crucial in managing multiple I/O operations and ensuring that the 
+    system remains responsive. Concurrency allows for better system utilization by keeping the CPU busy while waiting for I/O operations to complete.
+    
+    \begin{highlight}[Definition of Concurrency]
+        Concurrency is the process of interleaving execution of tasks to make progress simultaneously. In operating systems, concurrency is achieved by switching between processes or threads, allowing the 
+        system to handle multiple tasks efficiently, even on a single CPU.
+        \begin{itemize}
+            \item \textbf{Parallelism}: True simultaneous execution of tasks (on multi-core systems).
+            \item \textbf{Interleaving}: Simulating parallelism by switching between processes.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Loadable Kernel Modules (LKMs)}
+    
+    Loadable Kernel Modules (LKMs) provide a way to dynamically add or remove functionality from the kernel without needing to reboot the system. LKMs are particularly useful for adding device drivers, 
+    file systems, or other kernel features on the fly. This flexibility allows for more efficient memory use and simplifies the development and testing of kernel-level components. One of the key advantages 
+    of LKMs is that they can be loaded into or removed from the kernel without requiring a total system recompile or reboot.
+    
+    \begin{highlight}[Advantages of LKMs]
+        LKMs offer several benefits, including the ability to add or remove features from the kernel dynamically. This modularity allows for more efficient use of system resources and makes it easier to 
+        update or test kernel components.
+        \begin{itemize}
+            \item \textbf{Modularity}: Add or remove kernel functionality without rebooting.
+            \item \textbf{Efficiency}: Only load necessary modules, reducing memory usage.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Lab Assignment Overview}
+    
+    In this lab, you will implement a loadable kernel module and interact with the I/O system. The lab will cover the process of writing a simple kernel module, compiling it, and loading it into the kernel. 
+    You will also explore the interaction between the kernel and devices, particularly how to handle I/O operations using device drivers and DMA.
+    
+    \begin{highlight}[Lab Objectives]
+        The objectives of the lab are to understand how to write and manage loadable kernel modules and to explore the I/O system. By the end of the lab, you will have experience with creating a kernel module, 
+        loading it into the system, and interacting with device drivers for I/O operations.
+        \begin{itemize}
+            \item \textbf{Create a Kernel Module}: Write and load a simple kernel module.
+            \item \textbf{I/O Interaction}: Use the module to interact with the I/O system.
+            \item \textbf{Device Driver Management}: Manage device files using major and minor numbers.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Step-by-Step Lab Implementation]
+        \begin{enumerate}
+            \item Write a simple kernel module that performs a basic function.
+            \item Compile the module and load it into the running kernel using \texttt{insmod}.
+            \item Interact with the I/O system by writing a device driver that handles I/O requests.
+            \item Use major and minor numbers to identify the device files associated with your module.
+            \item Unload the module from the kernel using \texttt{rmmod} and verify that it is correctly removed.
+        \end{enumerate}
+    \end{highlight}
+
+    \subsection*{Mass Storage Concepts}
+
+    Mass storage is a vital component of computer systems, allowing for long-term data storage and retrieval. Devices such as hard disk drives (HDDs) and solid-state drives (SSDs) are commonly used for this purpose. Key factors that affect mass storage performance include seek time, rotational latency, and the effectiveness of disk scheduling algorithms. RAID configurations are also essential for ensuring data reliability and improving storage performance.
+    
+    Understanding how data is managed on physical storage devices is crucial for optimizing both performance and reliability in modern computer systems. Disk scheduling algorithms help minimize wait times by controlling the order in which data is accessed, while RAID configurations introduce redundancy to protect against data loss.
+    
+    \begin{highlight}[Seek Time and Rotational Latency]
+    Seek time refers to the time it takes for the read/write head of a hard drive to move to the correct track on the disk. This process is a major factor in overall disk access time. Rotational latency, on the other hand, is the time taken for the desired disk sector to rotate under the read/write head. Both factors significantly affect the performance of mechanical hard drives.
+    
+    \begin{itemize}
+        \item \textbf{Seek Time}: The time required for the read/write head to reach the correct track.
+        \item \textbf{Rotational Latency}: The time needed for the sector to rotate into position under the read/write head.
+    \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Disk Scheduling Algorithms}
+    
+    Disk scheduling algorithms optimize the order in which disk requests are handled, reducing seek time and improving overall performance. Without proper scheduling, disk heads may move inefficiently across the disk surface, resulting in longer access times. Algorithms like First-Come, First-Served (FCFS), Shortest Seek Time First (SSTF), and SCAN offer different approaches to managing I/O requests.
+    
+    \begin{highlight}[Disk Scheduling Techniques]
+        \begin{itemize}
+            \item \textbf{FCFS}: Handles requests in the order they arrive, but can lead to inefficient head movements.
+            \item \textbf{SSTF}: Prioritizes the request closest to the current head position, minimizing seek time.
+            \item \textbf{SCAN}: Moves the read/write head in one direction, servicing requests along the way, then reverses direction.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{RAID Arrays}
+    
+    RAID (Redundant Arrays of Independent Disks) enhances data reliability and performance by distributing data across multiple disks. RAID configurations such as RAID 1 (mirroring) and RAID 5 (distributed parity) ensure that data can be recovered in case of drive failure, while also improving read and write speeds through parallel access to disks.
+    
+    \begin{highlight}[RAID Levels]
+        \begin{itemize}
+            \item \textbf{RAID 1}: Uses mirroring to duplicate data across two or more disks, providing full redundancy.
+            \item \textbf{RAID 5}: Distributes both data and parity across multiple disks, offering a balance between redundancy and storage efficiency.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Disk Scheduling Performance Example}
+    
+    When comparing disk scheduling algorithms in practice, the differences in efficiency become clear. For example, consider a disk head initially positioned at cylinder 250, with requests at cylinders 260, 350, 100, 10, and 410. Depending on the scheduling algorithm, the total movement of the disk head can vary:
+    
+    \begin{highlight}[Scheduling Algorithm Comparison]
+        \begin{itemize}
+            \item \textbf{FCFS}: Traverses 1240 cylinders to complete all requests.
+            \item \textbf{SSTF}: Optimizes head movement to only 560 cylinders by choosing the closest request.
+            \item \textbf{SCAN}: Traverses 560 cylinders by sweeping in one direction before reversing.
+            \item \textbf{C-SCAN}: Scans in one direction and resets, traversing 350 cylinders actively.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Key Concepts Summary}
+    
+    \begin{highlight}[Summary of Key Concepts]
+        \begin{itemize}
+            \item \textbf{Seek Time and Rotational Latency}: Major factors in disk performance, particularly in mechanical drives.
+            \item \textbf{Disk Scheduling}: Optimizes data access by controlling the order in which disk requests are serviced.
+            \item \textbf{RAID}: Provides redundancy and performance benefits through data distribution across multiple drives.
+            \item \textbf{Algorithm Efficiency}: Different scheduling algorithms lead to varied head movement and access times.
+        \end{itemize}
+    \end{highlight}
+    
+    Mass storage systems are essential for both performance and data reliability. Disk scheduling algorithms and RAID configurations help optimize storage efficiency, reduce access times, and protect against data loss.
+
+    \subsection*{File System Organization}
+
+    A file system is essential for organizing and managing data on storage devices. Humans organize files using a directory structure, which helps in locating and managing files. The directory structure 
+    provides a logical organization that abstracts the underlying hardware details.
+    
+    File systems typically consist of files and directories, with each file containing its data and metadata. Metadata includes information like file size, file type, access permissions, and timestamps, 
+    which are critical for managing file operations efficiently.
+    
+    \begin{highlight}[File Operations and Metadata]
+        \begin{itemize}
+            \item \textbf{File Operations}: Include actions like opening, reading, writing, and seeking within files.
+            \item \textbf{Metadata}: Includes file size, type, access rights, and time created/modified.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{File Access Methods}
+    
+    Files can be accessed sequentially or directly. Sequential access reads data from the beginning of the file to the end in order, while direct access allows reading or writing at any location within 
+    the file. Direct access requires a seek operation to move the file pointer to the desired position.
+    
+    \begin{highlight}[Sequential vs. Direct Access]
+        \begin{itemize}
+            \item \textbf{Sequential Access}: Reads data in order from start to end.
+            \item \textbf{Direct Access}: Allows reading/writing at any location in the file using \texttt{seek()}.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{File Sharing and Access Control}
+    
+    File sharing among processes and users is controlled through access permissions. File access control defines the rights for each user, such as read, write, or execute permissions. Additionally, 
+    the kernel keeps track of files opened by a process.
+    
+    \begin{highlight}[File Access Control]
+        \begin{itemize}
+            \item \textbf{Access Rights}: Define how users can interact with a file (read, write, execute).
+            \item \textbf{Kernel Management}: The kernel maintains information about open files per process.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Symbolic Links and File Mounting}
+    
+    Symbolic links are shortcuts that point to other files or directories, and they can create loops, which the system must manage. When mounting, files and directories from different devices (e.g., DISK2) 
+    can logically appear as part of another device's file system (e.g., DISK1).
+    
+    \begin{highlight}[Symbolic Links and Mounting]
+        \begin{itemize}
+            \item \textbf{Symbolic Links}: Can create loops, but are distinguishable from regular files.
+            \item \textbf{File Mounting}: Files from different devices can appear unified in a single file system.
+        \end{itemize}
+    \end{highlight}
+
+    \subsection*{Virtual File Systems (VFS)}
+
+    A Virtual File System (VFS) provides an abstraction layer over different file systems, translating file operations from the OS to the mounted file systems. VFS allows the system to support various file 
+    system types seamlessly.
+    
+    \begin{highlight}[Virtual File System (VFS)]
+        \begin{itemize}
+            \item \textbf{VFS Role}: Abstracts different file systems and translates file operations to each.
+            \item \textbf{System Flexibility}: Allows different file systems to coexist on the same machine.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{File Allocation Methods}
+    
+    Contiguous file allocation requires files to be stored in consecutive blocks, which causes external fragmentation and requires knowing the file size beforehand. Linked-list allocation solves this, but 
+    suffers from high overhead for random access.
+    
+    \begin{highlight}[File Allocation Disadvantages]
+        \begin{itemize}
+            \item \textbf{Contiguous Allocation}: Causes external fragmentation and requires prior knowledge of file size.
+            \item \textbf{Linked-List Allocation}: Has high overhead for random access due to traversal.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Inode and Indexed Allocation}
+    
+    In UNIX-based file systems, the inode structure uses direct, indirect, double indirect, and triple indirect blocks for block allocation. FAT (File Allocation Table) is another indexed allocation method, 
+    but both FAT and linked-list allocations suffer from traversal latency.
+    
+    \begin{highlight}[Inode Block Allocation]
+        \begin{itemize}
+            \item \textbf{Direct Blocks}: Store data directly in blocks.
+            \item \textbf{Indirect Blocks}: Use pointers to data blocks, supporting larger files.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Free Space and File System Optimization}
+    
+    Free space management keeps track of unallocated blocks within the file system. File caching is a common method to enhance file system performance by reducing the number of accesses to slower storage.
+    
+    \begin{highlight}[Free Space and Optimization]
+        \begin{itemize}
+            \item \textbf{Free Space Management}: Tracks unallocated blocks in the file system.
+            \item \textbf{File Caching}: Improves performance by storing frequently accessed data in faster memory.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{File System Consistency}
+    
+    To maintain file system consistency, log-based transaction file systems are used to track changes, ensuring that if the system crashes, the file system can recover to a consistent state.
+    
+    \begin{highlight}[Consistency Maintenance]
+        \begin{itemize}
+            \item \textbf{Log-Based Transaction Systems}: Ensure file system integrity and recovery after crashes.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Network File Systems (NFS)}
+    
+    NFS (Network File System) is both a specification and an implementation of a protocol that allows files to be accessed over a network, making remote file systems appear as if they are local.
+    
+    \begin{highlight}[NFS Overview]
+        \begin{itemize}
+            \item \textbf{NFS}: Allows remote file systems to be mounted and accessed over a network.
+        \end{itemize}
+    \end{highlight}
+\end{examnotes}
+
+\begin{examnotes}{Exam 3 Notes}
+    \subsection*{CPU Scheduling Overview}
+
+    CPU scheduling is essential for managing how processes are assigned to the CPU. The main goal is to optimize various performance metrics, such as response time, wait time, and throughput, by selecting which process should run next. Different scheduling algorithms prioritize tasks based on specific criteria, balancing efficiency and fairness among processes.
+    
+    Schedulers determine how CPU time is distributed, and various strategies impact how long processes wait and how quickly they are completed. Understanding these strategies is critical for improving system performance, especially in multi-tasking environments.
+    
+    \begin{highlight}[Response Time and Wait Time]
+        \begin{itemize}
+            \item \textbf{Response Time}: The time from a process's first entry into the ready queue to its first scheduling on the CPU.
+            \item \textbf{Wait Time}: The sum of gaps between time slices given to a process while it waits to execute on the CPU.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{CPU Scheduling Algorithms}
+    
+    Different scheduling algorithms are used to optimize various aspects of CPU performance. These include First-Come, First-Served (FCFS), Shortest Job First (SJF), Round Robin (RR), and Earliest Deadline First (EDF). Each has its strengths and trade-offs depending on the system's requirements.
+    
+    \begin{highlight}[Scheduling Algorithms]
+        \begin{itemize}
+            \item \textbf{FCFS}: Simple but can lead to long wait times for processes arriving later.
+            \item \textbf{SJF}: Reduces average wait time by prioritizing shorter processes, providing better overall performance.
+            \item \textbf{RR}: Allocates CPU time slices to processes, cycling through them to ensure all receive processing time.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Multi-Level Feedback Queue Scheduling}
+    
+    Multi-level feedback queues are more flexible than simple multi-level queue scheduling. They allow processes to move between queues based on their CPU usage, ensuring dynamic adjustments in priority based on their behavior.
+    
+    \begin{highlight}[Multi-Level Feedback Queues]
+        \begin{itemize}
+            \item \textbf{Dynamic Priority}: Processes move between priority queues based on their CPU usage, providing better adaptability.
+            \item \textbf{Efficiency}: Prevents starvation by allowing lower-priority processes to eventually receive CPU time.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Completely Fair Scheduler (CFS)}
+    
+    The Completely Fair Scheduler (CFS) used in Linux systems focuses on fairness by using a virtual runtime (vruntime) to prioritize processes. Instead of actual run time, vruntime accounts for CPU usage, giving processes that use less CPU more favorable scheduling.
+    
+    \begin{highlight}[Completely Fair Scheduler (CFS)]
+        \begin{itemize}
+            \item \textbf{vruntime}: Ensures fairness by favoring processes that have used less CPU time.
+            \item \textbf{Red-Black Tree}: CFS uses a self-balancing red-black tree to select the next process, ensuring efficient scheduling.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Symmetric Multi-Processing (SMP)}
+    
+    In symmetric multi-processing (SMP) systems, all CPU cores are self-scheduling, and each can execute processes independently. This model balances the load across all processors and optimizes overall performance by reducing CPU idle time.
+    
+    \begin{highlight}[Symmetric Multi-Processing (SMP)]
+        \begin{itemize}
+            \item \textbf{Self-Scheduling Cores}: Each CPU core schedules itself, contributing to more efficient process management.
+            \item \textbf{Load Balancing}: Distributes processes evenly across CPU cores to avoid overloading any single core.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Key Concepts Summary]
+        \begin{itemize}
+            \item \textbf{Response and Wait Times}: Crucial for measuring scheduling effectiveness.
+            \item \textbf{Scheduling Algorithms}: SJF reduces wait times, while RR ensures fairness.
+            \item \textbf{Multi-Level Feedback Queues}: Adjust priorities dynamically based on CPU usage.
+            \item \textbf{CFS}: Focuses on fairness using vruntime and red-black tree structures.
+            \item \textbf{SMP}: Balances the workload across CPU cores to enhance multi-processing performance.
+        \end{itemize}
+    \end{highlight}
+    
+    CPU scheduling techniques balance efficiency, fairness, and system performance. Choosing the right algorithm depends on system requirements, process behavior, and hardware capabilities.
+
+    \subsection*{Process Synchronization Overview}
+
+    Process synchronization ensures orderly execution when multiple threads or processes share resources. Synchronization mechanisms prevent race conditions, where concurrent processes attempt to modify 
+    shared data simultaneously, leading to unpredictable outcomes. Critical sections in the code are areas where processes access shared resources, and synchronization tools ensure only one process can 
+    access these resources at a time.
+    
+    Understanding synchronization is essential for safe and efficient multi-threaded applications, especially when handling shared resources that could otherwise lead to data corruption or deadlock.
+    
+    \begin{highlight}[Key Terms in Synchronization]
+        \begin{itemize}
+            \item \textbf{Race Condition}: Occurs when multiple threads attempt to modify shared data concurrently.
+            \item \textbf{Concurrency}: Execution of multiple processes to simulate parallelism.
+            \item \textbf{Synchronization}: Mechanisms to control the order of execution in concurrent systems.
+            \item \textbf{Critical Section}: Code section where shared resources are accessed.
+            \item \textbf{Mutual Exclusion}: Prevents more than one process from accessing a critical section simultaneously.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Atomic Operations and Test-and-Set}
+    
+    Atomic operations execute as a single, indivisible step, critical for ensuring synchronization without interference. The Test-and-Set operation is one example, providing mutual exclusion by atomically 
+    setting a variable and returning its old value. However, Test-and-Set does not block processes and thus is unsuitable for directly handling mutual exclusion under all circumstances.
+    
+    \begin{highlight}[Test-and-Set Properties]
+        \begin{itemize}
+            \item \textbf{Atomic Operation}: Executes without interference from other processes.
+            \item \textbf{Mutex Mechanism}: Ensures mutual exclusion, but does not block processes.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Condition Variables and Monitors}
+    
+    Condition variables provide synchronization by allowing threads to wait for certain conditions before proceeding. They keep track of waiting threads and impose an ordering on thread access. Monitors 
+    are high-level constructs that bundle condition variables with mutual exclusion, providing a structured way to handle synchronization.
+    
+    \begin{highlight}[Condition Variables and Monitors]
+        \begin{itemize}
+            \item \textbf{Condition Variables}: Block threads until specific conditions are met and manage thread access order.
+            \item \textbf{Monitors}: Implicitly provide mutual exclusion, allowing only one thread to execute within the monitor at any time.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Mutexes and Semaphores}
+    
+    Mutexes and semaphores are used to manage access to shared resources. A binary semaphore behaves like a mutex, allowing mutual exclusion for a single resource, while counting semaphores handle multiple 
+    resources. Semaphore operations, typically called P() and V(), are equivalent to wait() and signal(), controlling access to resources in an atomic manner.
+    
+    \begin{highlight}[Comparison of Mutexes and Semaphores]
+        \begin{itemize}
+            \item \textbf{Mutex vs Binary Semaphore}: Both provide mutual exclusion, but semaphores can manage multiple threads.
+            \item \textbf{Counting Semaphore}: Tracks the availability of multiple resources, unlike mutexes, which are binary.
+            \item \textbf{P() and V() Operations}: Also known as wait() and signal(), used for atomic resource control.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Deadlocks and Semaphore Challenges}
+    
+    Deadlock is a potential problem with semaphores, occurring when processes are stuck waiting indefinitely for resources. This can happen if synchronization is improperly implemented, allowing processes 
+    to lock resources in an unsolvable cycle. Effective use of semaphores and careful resource management can mitigate the risk of deadlocks.
+    
+    \begin{highlight}[Deadlock in Synchronization]
+        \begin{itemize}
+            \item \textbf{Deadlock Risk}: Processes can be stuck waiting for resources held by each other, creating a deadlock cycle.
+            \item \textbf{Avoiding Deadlock}: Implement careful resource allocation and release practices to prevent deadlock.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+        \begin{itemize}
+            \item \textbf{Race Conditions}: Occur when multiple threads modify shared data simultaneously without proper synchronization.
+            \item \textbf{Condition Variables and Monitors}: Manage thread access to resources, preventing race conditions.
+            \item \textbf{Mutexes vs Semaphores}: Mutexes are simpler, while semaphores allow complex resource management.
+            \item \textbf{Deadlock Prevention}: Essential to ensure processes do not lock resources in an unsolvable cycle.
+        \end{itemize}
+    \end{highlight}
+    
+    Process synchronization tools like mutexes, semaphores, and condition variables are critical for maintaining data integrity and ensuring smooth operation in concurrent systems. Properly implemented, 
+    they prevent race conditions and deadlocks, enhancing system reliability and efficiency.
+
+    \subsection*{Deadlock Concepts Overview}
+
+    Deadlocks occur when processes are permanently blocked because they are each holding a resource and waiting for resources held by other processes. Four necessary and sufficient conditions must hold 
+    simultaneously for deadlock to occur: mutual exclusion, hold-and-wait, no preemption, and circular wait. Deadlock prevention, avoidance, and detection are strategies to manage deadlocks, ensuring 
+    system resources are effectively allocated without causing indefinite blocking.
+    
+    Properly managing resources in a multi-process environment is essential to prevent deadlocks and to maintain system stability.
+    
+    \begin{highlight}[Necessary Conditions for Deadlock]
+        \begin{itemize}
+            \item \textbf{Mutual Exclusion}: At least one resource must be held in a non-shareable mode.
+            \item \textbf{Hold-and-Wait}: Processes must hold at least one resource and wait to acquire additional resources.
+            \item \textbf{No Preemption}: Resources cannot be forcibly removed; they must be released voluntarily.
+            \item \textbf{Circular Wait}: A circular chain of processes exists, each waiting for a resource held by the next.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Deadlock Prevention, Avoidance, and Detection}
+    
+    Deadlock management includes three main strategies. Prevention techniques alter the system's conditions to ensure that at least one of the four necessary deadlock conditions cannot hold. Deadlock 
+    avoidance uses algorithms, such as the Banker's algorithm, to ensure the system remains in a safe state by checking if a resource request might lead to an unsafe state. Detection allows deadlocks 
+    to occur and periodically checks for them to resolve any cycles of waiting processes.
+    
+    \begin{highlight}[Deadlock Strategies]
+        \begin{itemize}
+            \item \textbf{Deadlock Prevention}: Ensures at least one deadlock condition does not hold.
+            \item \textbf{Deadlock Avoidance}: Dynamically checks requests using algorithms like Banker's to avoid unsafe states.
+            \item \textbf{Deadlock Detection}: Allows deadlocks but detects them periodically for correction.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Banker's Algorithm}
+    
+    The Banker's algorithm is a deadlock avoidance method that evaluates each resource request to determine if fulfilling it would leave the system in a safe state. By simulating allocations, the 
+    algorithm ensures there are enough resources for all processes to complete without leading to deadlock.
+    
+    \begin{highlight}[Banker's Algorithm]
+        \begin{itemize}
+            \item \textbf{Safe State}: The system can allocate resources such that all processes can eventually complete.
+            \item \textbf{Resource Allocation Simulation}: Determines if granting a request maintains a safe state.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Common Deadlock Prevention Techniques}
+    
+    Preventing deadlock can involve numbering resources and requesting them in a specific order or ensuring a process releases all resources before requesting new ones. By carefully managing resource 
+    requests and releases, the system avoids conditions that lead to circular waits and resource contention.
+    
+    \begin{highlight}[Deadlock Prevention Techniques]
+        \begin{itemize}
+            \item \textbf{Ordered Resource Requests}: Processes only request resources in a predetermined order.
+            \item \textbf{Resource Release Before Request}: Processes must release all resources before requesting new ones.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+        \begin{itemize}
+            \item \textbf{Necessary Deadlock Conditions}: Mutual exclusion, hold-and-wait, no preemption, and circular wait.
+            \item \textbf{Deadlock Prevention, Avoidance, Detection}: Strategies to manage resource allocation and prevent indefinite blocking.
+            \item \textbf{Banker's Algorithm}: A method to ensure safe resource allocation by simulating requests.
+            \item \textbf{Prevention Techniques}: Ordered requests and resource release practices reduce deadlock risks.
+        \end{itemize}
+    \end{highlight}
+    
+    Deadlock management is critical in multi-process systems to maintain efficient resource allocation and prevent processes from becoming permanently blocked.
+\end{examnotes}
+
+\begin{examnotes}{Exam 4 Notes}
+    \subsection*{Memory Management Overview}
+
+    Memory management is a crucial function of an operating system, enabling efficient allocation, deallocation, and retrieval of memory for processes. It ensures optimal utilization of available 
+    memory while minimizing fragmentation and improving access speed. Concepts such as paging, fragmentation, and the use of translation look-aside buffers (TLBs) play significant roles in modern 
+    memory systems.
+    
+    By effectively managing memory, operating systems support multi-programming, reduce access delays, and ensure processes can execute without interference, even in systems with limited resources.
+    
+    \begin{highlight}[Key Concepts in Memory Management]
+        \begin{itemize}
+            \item \textbf{Paging}: Divides memory into fixed-size blocks to eliminate external fragmentation.
+            \item \textbf{Fragmentation Types}: Includes internal and external fragmentation.
+            \item \textbf{TLB}: Reduces the number of direct memory references.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Fragmentation}
+    
+    Fragmentation occurs when memory is inefficiently utilized. Internal fragmentation happens when allocated memory exceeds process requirements, leaving unused space within a block. External 
+    fragmentation arises when free memory exists but is non-contiguous, preventing its use for large processes.
+    
+    \begin{highlight}[Internal vs. External Fragmentation]
+        \begin{itemize}
+            \item \textbf{Internal Fragmentation}: Unused memory within an allocated block.
+            \item \textbf{External Fragmentation}: Non-contiguous free blocks prevent allocation for large processes.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Page Faults and TLBs}
+    
+    Page faults occur when a requested memory page is not found in the physical memory and must be retrieved from disk. Translation look-aside buffers (TLBs) improve performance by caching frequently 
+    accessed page table entries, minimizing memory lookup times.
+    
+    \begin{highlight}[Page Faults and TLBs]
+        \begin{itemize}
+            \item \textbf{Page Faults}: Occur when memory pages are absent in RAM.
+            \item \textbf{TLBs}: Cache page table entries to reduce memory reference delays.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Storage Types and Volatility}
+    
+    Memory technologies vary in speed, volatility, and purpose. Registers and main memory are volatile storage types that lose data when powered off, whereas secondary storage retains data persistently.
+    
+    \begin{highlight}[Volatile vs. Non-Volatile Storage]
+        \begin{itemize}
+            \item \textbf{Volatile Storage}: Includes registers and main memory; data is lost without power.
+            \item \textbf{Non-Volatile Storage}: Includes secondary storage; retains data persistently.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Paging and Fragmentation Solutions}
+    
+    Paging solves external fragmentation by dividing memory into fixed-size blocks called pages. This method ensures that free memory blocks can be used efficiently, regardless of their physical location. 
+    However, internal fragmentation can still occur if a process does not fully utilize a page.
+    
+    \begin{highlight}[Paging and Fragmentation]
+        \begin{itemize}
+            \item \textbf{Paging Solves External Fragmentation}: Allocates memory in fixed-size pages, making contiguous blocks unnecessary.
+            \item \textbf{Internal Fragmentation}: Still possible when processes leave unused space within a page.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Shared Pages and Memory Optimization}
+    
+    Shared pages enable multiple processes to access the same memory regions, such as libraries, without duplication. These pages must be thread-safe and reentrant to prevent data corruption. While 
+    sharing pages optimizes memory usage, it does not directly improve memory access times.
+    
+    \begin{highlight}[Shared Pages]
+        \begin{itemize}
+            \item \textbf{Shared Code}: Must be reentrant and thread-safe for safe use by multiple processes.
+            \item \textbf{Library Sharing}: Allows memory efficiency by avoiding redundant code duplication.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Inverted Page Tables}
+    
+    Inverted page tables address the problem of sparse page tables by maintaining a single entry for each physical memory page. This reduces memory overhead for large virtual address spaces and ensures 
+    efficient memory mapping.
+    
+    \begin{highlight}[Inverted Page Tables]
+        \begin{itemize}
+            \item \textbf{Sparse Page Table Solution}: Maps physical pages directly, reducing table size.
+            \item \textbf{Efficiency}: Optimizes memory mapping for large address spaces.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+        \begin{itemize}
+            \item \textbf{Fragmentation}: Internal fragmentation wastes memory within blocks; external fragmentation arises from non-contiguous free blocks.
+            \item \textbf{Paging}: Resolves external fragmentation by using fixed-size memory blocks.
+            \item \textbf{TLBs and Page Faults}: Improve memory performance by caching page table entries and handling absent pages.
+            \item \textbf{Volatile vs. Non-Volatile Memory}: Differentiates storage based on data retention without power.
+            \item \textbf{Inverted Page Tables}: Optimize memory for sparse page table scenarios.
+        \end{itemize}
+    \end{highlight}
+    
+    Effective memory management ensures optimal system performance, minimizing fragmentation and improving resource utilization through paging, TLBs, and shared pages.
+
+    \subsection*{Virtual Memory Overview}
+
+    Virtual memory is a memory management technique that enables systems to execute processes larger than the available physical memory. By dividing programs into pages and mapping them to frames in physical 
+    memory, virtual memory allows for efficient use of limited resources and provides the illusion of a large contiguous address space. Key concepts such as page faults, page replacement algorithms, and working 
+    sets are crucial to understanding how virtual memory operates.
+    
+    Virtual memory reduces the need for complete program loading into physical memory, enabling multitasking and enhancing overall system performance.
+    
+    \begin{highlight}[Key Concepts in Virtual Memory]
+        \begin{itemize}
+            \item \textbf{Page Fault}: Occurs when a requested page is not in physical memory.
+            \item \textbf{Page Replacement Algorithms}: Determine which pages to evict when physical memory is full.
+            \item \textbf{Working Set}: The set of pages a process accesses within a given timeframe.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Page Replacement Algorithms}
+    
+    Page replacement algorithms manage which pages are removed from physical memory when a page fault occurs. Common algorithms include FIFO (First-In, First-Out), LRU (Least Recently Used), and OPTIMAL. 
+    Each algorithm has unique trade-offs in terms of complexity and efficiency.
+    
+    \begin{highlight}[Comparison of Page Replacement Algorithms]
+        \begin{itemize}
+            \item \textbf{FIFO}: Evicts the oldest page in memory; simple but prone to Belady's anomaly.
+            \item \textbf{LRU}: Evicts the least recently accessed page; avoids Belady's anomaly but requires tracking usage history.
+            \item \textbf{OPTIMAL}: Evicts the page that will not be used for the longest time in the future; ideal but impractical to implement.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Belady's Anomaly}
+    
+    Belady's anomaly describes a counterintuitive scenario where increasing the number of available page frames leads to more page faults. This anomaly occurs in algorithms like FIFO but not in stack-based 
+    algorithms like LRU.
+    
+    \begin{highlight}[Belady's Anomaly]
+        \begin{itemize}
+            \item \textbf{Definition}: Increasing the number of frames increases page faults.
+            \item \textbf{Impact}: Highlights inefficiencies in certain algorithms like FIFO.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Global and Local Page Replacement}
+    
+    Global page replacement algorithms select a page to evict from any process, while local algorithms restrict eviction to pages belonging to the current process. Global replacement can improve system-wide 
+    performance but may lead to issues like process starvation.
+    
+    \begin{highlight}[Global vs. Local Page Replacement]
+        \begin{itemize}
+            \item \textbf{Global Replacement}: Evicts any page in memory; improves overall utilization.
+            \item \textbf{Local Replacement}: Limits eviction to pages of the requesting process; ensures fairness.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Working Sets and Thrashing}
+    
+    The working set model identifies the set of pages a process accesses during a timeframe. Proper management of working sets reduces page faults and avoids thrashing, where excessive paging dominates 
+    CPU cycles, reducing system efficiency.
+    
+    \begin{highlight}[Working Sets and Thrashing]
+        \begin{itemize}
+            \item \textbf{Working Set}: Pages accessed within a defined timeframe; determines resource needs.
+            \item \textbf{Thrashing}: Excessive paging due to insufficient memory allocation.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Page Fault Metrics for Example Sequences}
+    
+    Calculations under different algorithms reveal their efficiency. For a sequence of page references \{1, 2, 3, 1, 4, 1, 2, 4, 2, 4, 3\} with 3 frames:
+    \begin{itemize}
+        \item FIFO: 7 page faults.
+        \item OPTIMAL: 5 page faults.
+        \item LRU: 6 page faults.
+    \end{itemize}
+    
+    \begin{highlight}[Performance Analysis]
+        \begin{itemize}
+            \item \textbf{FIFO}: High fault rate; prone to Belady's anomaly.
+            \item \textbf{OPTIMAL}: Ideal fault rate; requires future knowledge.
+            \item \textbf{LRU}: Balances complexity and efficiency; avoids Belady's anomaly.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+        \begin{itemize}
+            \item \textbf{Virtual Memory Benefits}: Supports larger processes than physical memory.
+            \item \textbf{Page Replacement}: FIFO, LRU, and OPTIMAL manage memory efficiently.
+            \item \textbf{Belady's Anomaly}: Demonstrates inefficiencies in specific algorithms.
+            \item \textbf{Working Sets}: Aid in memory allocation and reduce thrashing risks.
+        \end{itemize}
+    \end{highlight}
+    
+    Virtual memory is a cornerstone of modern operating systems, enabling multitasking and efficient memory usage. Understanding page replacement, working sets, and anomaly detection helps optimize performance 
+    in complex environments.
+
+    \subsection*{Protection and Security Overview}
+
+    Protection and security are fundamental aspects of operating systems, ensuring controlled access to resources and safeguarding data from unauthorized actions. Protection mechanisms define how resources 
+    are accessed and by whom, while security mechanisms focus on detecting and preventing unauthorized access or data breaches. Together, these mechanisms maintain system integrity, confidentiality, and availability.
+    
+    By establishing clear access control policies and leveraging encryption techniques, operating systems provide a robust framework for secure and reliable operation.
+    
+    \begin{highlight}[Key Protection Concepts]
+        \begin{itemize}
+            \item \textbf{Protection}: Mechanisms controlling access to resources by users or programs.
+            \item \textbf{Security}: Activities aimed at detecting and deterring unauthorized intrusions.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Protection Domains and Access Control}
+    
+    A protection domain defines a set of objects and the operations that can be performed on them. This concept is central to access control, which determines the permissions assigned to users or processes. 
+    The access matrix is a model used to represent the relationship between domains, objects, and permissible actions.
+    
+    \begin{highlight}[Protection Domains]
+        \begin{itemize}
+            \item \textbf{Definition}: A set of objects and operations allowed on them.
+            \item \textbf{Access Matrix}: Represents the mapping of domains to objects and their permissible operations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Breaches of Security}
+    
+    Breaches in security occur when unauthorized actions are performed on system resources or data. Common types of breaches include theft of service, unauthorized data modification, and denial of service 
+    (DoS) attacks. A breach of integrity refers specifically to unauthorized modifications of data, compromising its correctness or trustworthiness.
+    
+    \begin{highlight}[Types of Security Breaches]
+        \begin{itemize}
+            \item \textbf{Theft of Service}: Unauthorized use of system resources.
+            \item \textbf{Breach of Integrity}: Unauthorized modification of data.
+            \item \textbf{Denial of Service (DoS)}: Preventing legitimate use of a system.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsection*{Encryption Techniques}
+    
+    Encryption is critical for ensuring the confidentiality of data, especially during transmission. Symmetric encryption uses the same key for both encryption and decryption, while asymmetric encryption 
+    employs a pair of keys—one for encryption and another for decryption. Asymmetric encryption extends symmetric methods by enabling secure key distribution and authentication.
+    
+    \begin{highlight}[Symmetric vs. Asymmetric Encryption]
+        \begin{itemize}
+            \item \textbf{Symmetric Encryption}: Uses a single key for both encryption and decryption.
+            \item \textbf{Asymmetric Encryption}: Employs a pair of keys—one for encryption and another for decryption.
+        \end{itemize}
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+        \begin{itemize}
+            \item \textbf{Protection Domains}: Define resource access control and permissible operations.
+            \item \textbf{Security Breaches}: Include theft of service, integrity breaches, and denial of service.
+            \item \textbf{Encryption Methods}: Symmetric encryption is efficient but requires secure key distribution, while asymmetric encryption provides better security through key pairs.
+        \end{itemize}
+    \end{highlight}
+    
+    Protection and security mechanisms are essential for maintaining a system's reliability, confidentiality, and integrity. Understanding these concepts ensures that resources are used appropriately 
+    and safeguarded against threats.
+\end{examnotes}

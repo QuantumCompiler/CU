@@ -1,0 +1,681 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Process Management}
+\renewcommand{\SectionTitle}{Process Management}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from the \href{https://learn.zybooks.com/zybook/COLORADOCSPB3753KnoxFall2024}{Zybooks} for the week is:
+
+\begin{itemize}
+    \item \textbf{Chapter 3: Process Management}
+\end{itemize}
+
+\subsection{Lectures}
+
+The lecture videos for the week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=qzi7R0D4cL8}{Task Scheduling}{15}
+    \item \lecture{https://www.youtube.com/watch?v=fLfRyIKxqcI}{Task Scheduling Example}{17}
+    \item \lecture{https://www.youtube.com/watch?v=CsOHnNYYf54}{Process Descriptors}{22}
+    \item \lecture{https://www.youtube.com/watch?v=NDVi-XhC_tM}{Lab 2 - Recitation}{10}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-3753-fall-2024/lab-2-QuantumCompiler}{Lab 2 - Fork}
+    \item \href{https://github.com/cu-cspb-3753-fall-2024/pa-shell-QuantumCompiler}{Programming Assignment 1 - Shell}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for the week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 2 - Process Management.pdf}{Quiz 2 - Process Management}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 3: Process Management}. The first topic that is being covered this week is \textbf{Section 3.1 - Process Concept}.
+
+\begin{notes}{Section 3.1 - Process Concept}
+    \subsection*{Overview}
+
+    This section introduces the concept of a process, which is a program in execution. A process requires various resources, such as CPU time, memory, and I/O devices, to accomplish its task. Processes 
+    are the fundamental unit of work in modern operating systems, which can support multiple processes executing concurrently. Each process can consist of multiple threads, especially in multi-core 
+    systems, allowing for parallel execution.
+    
+    \subsubsection*{What is a Process?}
+    
+    A process is more than just a program—it is an active entity with its own state and resources. While a program is a static set of instructions stored on disk, a process represents a program in execution.
+    
+    \begin{highlight}[What is a Process?]
+    
+        \begin{itemize}
+            \item \textbf{Program vs. Process}: A program is a passive file, while a process is an active entity with resources such as a program counter and registers.
+            \item \textbf{Components of a Process}: Includes the text section (code), data section (global variables), heap (dynamic memory), and stack (temporary data like function parameters).
+            \item \textbf{Process Creation}: A program becomes a process when it is loaded into memory and begins execution.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Process States}
+    
+    A process goes through various states during its lifecycle. These states reflect its current activity and are represented by a state diagram.
+    
+    \begin{highlight}[Process States]
+    
+        \begin{itemize}
+            \item \textbf{New}: The process is being created.
+            \item \textbf{Running}: Instructions are being executed on a CPU.
+            \item \textbf{Waiting}: The process is waiting for some event (e.g., I/O completion).
+            \item \textbf{Ready}: The process is ready to run but is waiting for CPU availability.
+            \item \textbf{Terminated}: The process has finished execution.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Process Control Block (PCB)}
+    
+    The process control block (PCB) is a data structure maintained by the operating system to track process information. It contains several key pieces of data that define a process's execution state.
+    
+    \begin{highlight}[Process Control Block (PCB)]
+    
+        \begin{itemize}
+            \item \textbf{Process State}: Information about the current state (e.g., running, waiting).
+            \item \textbf{Program Counter}: Indicates the address of the next instruction to be executed.
+            \item \textbf{CPU Registers}: Stores the values of registers for the process, including stack pointers and condition codes.
+            \item \textbf{Memory Management}: Includes base and limit registers, or page tables, to manage memory usage.
+            \item \textbf{I/O and File Information}: Tracks I/O devices allocated to the process and open files.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Threads and Multithreading}
+    
+    A process may consist of multiple threads of execution, allowing it to perform more than one task at a time. Threads share the process's resources but maintain their own program counters and registers.
+    
+    \begin{highlight}[Threads and Multithreading]
+    
+        \begin{itemize}
+            \item \textbf{Single-Threaded Process}: Executes only one task at a time.
+            \item \textbf{Multithreaded Process}: Can execute multiple tasks concurrently, improving performance on multi-core systems.
+            \item \textbf{Thread Management}: Modern operating systems extend the PCB to include thread information for processes with multiple threads.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Process Concept}: A process is a program in execution, requiring resources like CPU and memory.
+            \item \textbf{Process States}: A process moves through different states during its execution, from creation to termination.
+            \item \textbf{PCB}: Stores all information necessary for the OS to manage processes.
+            \item \textbf{Multithreading}: Enhances the capability of a process by allowing concurrent execution of multiple threads.
+        \end{itemize}
+    
+    Processes are the foundation of modern operating systems, providing the necessary structure for program execution and resource management.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Section 3.2 - Process Scheduling}.
+
+\begin{notes}{Section 3.2 - Process Scheduling}
+    \subsection*{Overview}
+
+    This section explains the fundamentals of process scheduling, a key component in multiprogramming and time-sharing systems. The process scheduler selects processes for execution on the CPU, ensuring 
+    efficient CPU utilization and responsiveness. For systems with a single core, only one process can run at a time, while multicore systems can execute multiple processes concurrently.
+    
+    \subsubsection*{Objectives of Process Scheduling}
+    
+    The primary objective of multiprogramming is to ensure that the CPU is always busy. In time-sharing systems, the goal is to switch between processes quickly to allow users to interact with each 
+    program. The process scheduler must manage multiple processes efficiently, selecting which process to run next and ensuring fair CPU allocation.
+    
+    \begin{highlight}[Objectives of Process Scheduling]
+    
+        \begin{itemize}
+            \item \textbf{Maximizing CPU Utilization}: Ensures that a process is always running on the CPU.
+            \item \textbf{Time-Sharing}: Rapidly switches between processes so that users can interact with multiple applications simultaneously.
+            \item \textbf{Multiprogramming}: Increases the degree of multiprogramming by keeping more processes in memory, maximizing resource utilization.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Scheduling Queues}
+    
+    Processes move through various queues during their lifecycle. The primary queues are the ready queue and the wait queue, which manage processes waiting for CPU time and those waiting for an event to complete, respectively.
+    
+    \begin{highlight}[Scheduling Queues]
+    
+        \begin{itemize}
+            \item \textbf{Ready Queue}: Stores processes that are ready to execute but are waiting for CPU allocation. 
+            \item \textbf{Wait Queue}: Stores processes waiting for an event, such as I/O completion.
+            \item \textbf{Queue Management}: The ready and wait queues are typically represented as linked lists, with each process's PCB (Process Control Block) containing pointers to the next process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{CPU Scheduling and Context Switching}
+    
+    The CPU scheduler selects a process from the ready queue for execution. In many systems, the CPU is periodically taken away from the running process to ensure fairness. A context switch is
+    performed when the system saves the state of the current process and restores the state of the next process to run.
+    
+    \begin{highlight}[CPU Scheduling and Context Switching]
+    
+        \begin{itemize}
+            \item \textbf{Context Switch}: Involves saving the current process's context (e.g., register values, process state) and restoring the next process's context from its PCB.
+            \item \textbf{CPU-Bound vs. I/O-Bound Processes}: The scheduler must balance between CPU-bound processes, which perform heavy computations, and I/O-bound processes, which frequently wait for I/O operations.
+            \item \textbf{Overhead}: Context switching introduces overhead because no useful work is performed while switching between processes.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Multitasking in Mobile Systems}
+    
+    Mobile operating systems like iOS and Android implement multitasking differently. Early versions of iOS supported limited multitasking, while Android has long allowed multiple background services.
+    Modern iOS and Android versions provide more advanced multitasking, allowing background applications to continue functioning efficiently.
+    
+    \begin{highlight}[Multitasking in Mobile Systems]
+    
+        \begin{itemize}
+            \item \textbf{iOS Multitasking}: Initially supported only limited multitasking, allowing only one foreground application with restricted background processing.
+            \item \textbf{Android Multitasking}: Provides more extensive multitasking capabilities, allowing services to run in the background independently of the main application.
+            \item \textbf{Efficiency Considerations}: Mobile systems optimize multitasking to preserve battery life and resource usage.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Process Scheduling}: Ensures efficient CPU utilization by selecting processes for execution.
+            \item \textbf{Queues}: Processes are managed in ready and wait queues, depending on their state.
+            \item \textbf{Context Switching}: Saves and restores the state of processes, allowing the CPU to switch between tasks.
+            \item \textbf{Multitasking}: Different approaches to multitasking exist in mobile systems, with varying levels of background task support.
+        \end{itemize}
+    
+    Process scheduling is critical for balancing CPU usage and ensuring that processes are executed fairly and efficiently, especially in multitasking environments.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Section 3.3 - Operations on Processes}.
+
+\begin{notes}{Section 3.3 - Operations on Processes}
+    \subsection*{Overview}
+
+    This section discusses the operations performed on processes, focusing on process creation and termination. Processes in an operating system can execute concurrently, and they are dynamically 
+    created and terminated. The operating system provides mechanisms to manage these operations, allowing processes to create new processes (child processes) and terminate when their execution is complete.
+    
+    \subsubsection*{Process Creation}
+    
+    Processes may create several new processes during their execution. The creating process is known as the parent process, and the new processes are called child processes. A hierarchy or tree of 
+    processes is formed as processes create other processes.
+    
+    \begin{highlight}[Process Creation]
+    
+        \begin{itemize}
+            \item \textbf{Parent and Child Relationship}: A parent process creates a child process, which may in turn create its own child processes, forming a tree structure.
+            \item \textbf{Unique Process Identifiers (pid)}: Each process is assigned a unique integer called the process identifier (pid), which the operating system uses to manage and access process attributes.
+            \item \textbf{Resource Allocation}: A child process typically inherits resources from its parent, such as memory and open files. The parent may share or partition resources among its children.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Process Termination}
+    
+    A process terminates when it finishes executing its final statement and asks the operating system to delete it. Termination can also be initiated by a parent process or in response to an error. 
+    The operating system reclaims all resources used by the terminated process.
+    
+    \begin{highlight}[Process Termination]
+    
+        \begin{itemize}
+            \item \textbf{Exit System Call}: The process calls \texttt{exit()} to terminate and may return a status value to its parent.
+            \item \textbf{Parent Wait}: The parent process can use the \texttt{wait()} system call to wait for the child process to finish and retrieve its exit status.
+            \item \textbf{Zombie Processes}: When a process terminates but its parent has not yet called \texttt{wait()}, the process remains in a "zombie" state until the wait call is made.
+            \item \textbf{Orphan Processes}: A child process becomes an orphan if its parent terminates without calling \texttt{wait()}. In UNIX, orphan processes are adopted by the \texttt{systemd} process.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{UNIX and Windows Process Creation}
+    
+    The process creation mechanisms differ between UNIX/Linux and Windows systems. In UNIX, a process is created using the \texttt{fork()} system call, which duplicates the parent process. The child 
+    process can then execute a different program using the \texttt{exec()} system call. In Windows, processes are created using the \texttt{CreateProcess()} function, which loads a new program into 
+    the child's memory space at creation.
+    
+    \begin{highlight}[UNIX and Windows Process Creation]
+    
+        \begin{itemize}
+            \item \textbf{UNIX \texttt{fork()} and \texttt{exec()}}: The \texttt{fork()} system call creates a child process that is a copy of the parent. The child may then use \texttt{exec()} to 
+            replace its address space with a new program.
+            \item \textbf{Windows \texttt{CreateProcess()}}: This function creates a child process and loads a new program into its memory space immediately. It requires passing multiple parameters.
+            \item \textbf{Parent and Child Execution}: The parent process may continue to execute concurrently with its children, or it may wait for the child to terminate before proceeding.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Process Creation}: Processes create other processes dynamically, forming a hierarchy of parent and child processes.
+            \item \textbf{Process Termination}: Processes terminate either upon completing execution or in response to external signals, with resources reclaimed by the OS.
+            \item \textbf{UNIX vs. Windows}: The mechanisms for creating and managing processes vary across operating systems, such as the use of \texttt{fork()} in UNIX and \texttt{CreateProcess()} in Windows.
+            \item \textbf{Zombie and Orphan Processes}: Special process states like zombies and orphans arise when processes terminate but their parents do not handle their termination properly.
+        \end{itemize}
+    
+    Understanding process creation and termination is essential for managing system resources and ensuring proper process coordination within an operating system.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Section 3.4 - Interprocess Communication}.
+
+\begin{notes}{Section 3.4 - Interprocess Communication}
+    \subsection*{Overview}
+
+    This section explores interprocess communication (IPC), which is essential for processes that cooperate with each other. Processes can be classified as independent or cooperating. Independent processes 
+    do not share data, whereas cooperating processes interact through data sharing. IPC mechanisms allow cooperating processes to exchange information, either through shared memory or message passing.
+    
+    \subsubsection*{Reasons for Process Cooperation}
+    
+    There are several benefits to process cooperation. These include information sharing, computation speedup, modularity, and convenience. Cooperation allows processes to work together efficiently to 
+    achieve complex tasks.
+    
+    \begin{highlight}[Reasons for Process Cooperation]
+    
+        \begin{itemize}
+            \item \textbf{Information Sharing}: Several applications may need access to the same data (e.g., copying and pasting between programs).
+            \item \textbf{Computation Speedup}: By breaking a task into subtasks that run in parallel, the overall computation can be sped up, especially on multi-core systems.
+            \item \textbf{Modularity}: System functions can be divided into separate processes or threads, promoting modular design.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{IPC Models: Shared Memory and Message Passing}
+    
+    There are two fundamental models for IPC: shared memory and message passing. Each model has its own use cases, advantages, and trade-offs. 
+    
+    \begin{highlight}[IPC Models: Shared Memory and Message Passing]
+    
+        \begin{itemize}
+            \item \textbf{Shared Memory}: A region of memory is shared among processes, allowing them to communicate by reading and writing to this memory. Once shared memory is established, communication 
+            occurs without kernel intervention, making it fast but requiring synchronization to prevent data conflicts.
+            \item \textbf{Message Passing}: Processes exchange information by sending and receiving messages, which are handled by the kernel. This model is simpler to implement in distributed systems 
+            but slower due to the overhead of kernel involvement.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Example: Chrome Browser Architecture}
+    
+    An example of IPC in action is Google Chrome's multiprocess architecture. Chrome uses three types of processes—browser, renderers, and plug-ins—to isolate different tasks and ensure that failures 
+    in one process do not affect the others. Communication between these processes occurs via message passing.
+    
+    \begin{highlight}[Example: Chrome Browser Architecture]
+    
+        \begin{itemize}
+            \item \textbf{Browser Process}: Manages the user interface, disk I/O, and network I/O. It is the central process responsible for launching and communicating with other processes.
+            \item \textbf{Renderer Processes}: Handle the rendering of web pages. Each website opened in a new tab creates a new renderer process, ensuring that crashes in one tab do not affect others.
+            \item \textbf{Plug-in Processes}: Used for plug-ins or extensions, enabling them to run independently from the browser and renderer processes, improving stability.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Shared Memory vs. Message Passing}
+    
+    Both IPC models are widely used, with shared memory being faster for large data transfers since kernel intervention is minimal after the shared memory is established. However, message passing is 
+    more flexible and easier to implement in distributed systems, where processes may run on different machines.
+    
+    \begin{highlight}[Advantages of Shared Memory vs. Message Passing]
+    
+        \begin{itemize}
+            \item \textbf{Shared Memory}: Faster for large data transfers as it avoids frequent kernel calls. Suitable for systems where processes are on the same machine.
+            \item \textbf{Message Passing}: More suitable for distributed systems and smaller data transfers, as it is easier to synchronize without shared memory conflicts.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Cooperating Processes}: Processes that can affect or be affected by other processes, requiring interprocess communication.
+            \item \textbf{IPC Models}: Shared memory and message passing are the two primary models for interprocess communication.
+            \item \textbf{Chrome Architecture}: A practical example of multiprocess architecture using message passing to enhance stability and isolation.
+            \item \textbf{Performance Considerations}: Shared memory is faster for large data transfers, while message passing is simpler and more scalable in distributed environments.
+        \end{itemize}
+    
+    Interprocess communication is critical for ensuring efficient cooperation between processes, particularly in multiprocessor and distributed systems.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Section 3.5 - IPC In Shared-Memory Systems}.
+
+\begin{notes}{Section 3.5 - IPC In Shared-Memory Systems}
+    \subsection*{Overview}
+
+    This section discusses interprocess communication (IPC) in shared-memory systems, where processes communicate by establishing a region of memory that they can both access. Shared memory allows for 
+    efficient data exchange between cooperating processes, but it also requires synchronization mechanisms to prevent concurrent access to the same memory location.
+    
+    \subsubsection*{Shared Memory in IPC}
+    
+    Shared memory provides a mechanism for processes to exchange data by sharing a designated memory region. The operating system typically restricts one process from accessing another's memory, but 
+    shared memory allows processes to agree to bypass this restriction.
+    
+    \begin{highlight}[Shared Memory in IPC]
+    
+        \begin{itemize}
+            \item \textbf{Establishing Shared Memory}: One process creates the shared-memory segment, and other processes attach the segment to their address space.
+            \item \textbf{Communication}: Processes communicate by reading from and writing to this shared memory region, outside the direct control of the operating system.
+            \item \textbf{Synchronization}: Processes are responsible for ensuring that they do not overwrite each other's data, requiring synchronization techniques to prevent concurrent access.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{The Producer-Consumer Problem}
+    
+    A classic example of shared-memory IPC is the producer-consumer problem. In this problem, the producer generates data that the consumer retrieves and processes. The shared buffer between the two 
+    processes must be managed to avoid overwriting or reading unproduced data.
+    
+    \begin{highlight}[Producer-Consumer Problem]
+    
+        \begin{itemize}
+            \item \textbf{Producer}: A process that generates data and places it into a shared buffer.
+            \item \textbf{Consumer}: A process that retrieves data from the shared buffer for processing.
+            \item \textbf{Buffer Synchronization}: The producer must wait if the buffer is full, and the consumer must wait if the buffer is empty. Two types of buffers are used:
+                \begin{itemize}
+                    \item \textbf{Unbounded Buffer}: No limit on the size of the buffer.
+                    \item \textbf{Bounded Buffer}: A fixed-size buffer where producers must wait when the buffer is full, and consumers must wait when the buffer is empty.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Implementation of Shared Memory}
+    
+    The implementation of shared memory in a producer-consumer system typically involves a buffer, implemented as a circular array, with two pointers: \texttt{in} and \texttt{out}. The producer writes 
+    to the buffer at the position indicated by \texttt{in}, and the consumer reads from the position indicated by \texttt{out}.
+    
+    \begin{highlight}[Implementation of Shared Memory]
+    
+        \begin{itemize}
+            \item \textbf{Circular Buffer}: The buffer is implemented as a circular array with the \texttt{in} and \texttt{out} pointers.
+            \item \textbf{Buffer Management}: 
+                \begin{itemize}
+                    \item The buffer is empty when \texttt{in == out}.
+                    \item The buffer is full when \texttt{(in + 1) \% BUFFER\_SIZE == out}.
+                \end{itemize}
+            \item \textbf{Producer Code}: The producer writes data to the buffer at the position indicated by \texttt{in} and increments it.
+            \item \textbf{Consumer Code}: The consumer reads data from the position indicated by \texttt{out} and increments it.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Shared Memory in IPC}: Allows processes to communicate efficiently by sharing a memory region but requires explicit synchronization.
+            \item \textbf{Producer-Consumer Problem}: Demonstrates how cooperating processes can use shared memory to exchange data, with synchronization mechanisms to manage buffer use.
+            \item \textbf{Buffer Implementation}: The use of a circular buffer with \texttt{in} and \texttt{out} pointers enables efficient data management in shared memory.
+            \item \textbf{Synchronization}: Essential to avoid race conditions where multiple processes access the shared buffer concurrently.
+        \end{itemize}
+    
+    Interprocess communication using shared memory is powerful but requires careful management of memory access and synchronization to ensure consistency and avoid conflicts.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Section 3.6 - IPC In Message-Passing Systems}.
+
+\begin{notes}{Section 3.6 - IPC In Message-Passing Systems}
+    \subsection*{Overview}
+
+    This section explores interprocess communication (IPC) in message-passing systems, where processes exchange data without sharing memory. Message passing is particularly useful in distributed environments, 
+    where processes may reside on different machines connected via a network. The system provides mechanisms for sending and receiving messages, and communication can be synchronous or asynchronous, direct or indirect.
+    
+    \subsubsection*{Message Passing Operations}
+    
+    Message-passing systems provide two basic operations for communication: sending and receiving messages. These operations facilitate communication between processes without shared memory, which is 
+    essential for distributed systems.
+    
+    \begin{highlight}[Message Passing Operations]
+    
+        \begin{itemize}
+            \item \textbf{Send Operation}: Sends a message from one process to another using \texttt{send(message)}.
+            \item \textbf{Receive Operation}: Retrieves a message using \texttt{receive(message)}.
+            \item \textbf{Message Size}: Messages can be fixed or variable in size. Fixed-size messages simplify system-level implementation, while variable-sized messages offer more flexibility for programmers.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Direct vs. Indirect Communication}
+    
+    Processes can communicate either directly or indirectly. Direct communication requires each process to explicitly name the recipient or sender, while indirect communication allows messages to be 
+    sent to and received from mailboxes.
+    
+    \begin{highlight}[Direct vs. Indirect Communication]
+    
+        \begin{itemize}
+            \item \textbf{Direct Communication}: Requires both the sender and receiver to name each other. Example: \texttt{send(P, message)} sends a message to process P.
+            \item \textbf{Indirect Communication}: Involves the use of mailboxes or ports. Messages are sent to a mailbox, from which they can be retrieved. Example: \texttt{send(A, message)} sends a 
+            message to mailbox A, and \texttt{receive(A, message)} retrieves it.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Synchronous vs. Asynchronous Communication}
+    
+    Message passing can be synchronous (blocking) or asynchronous (nonblocking). Synchronous communication blocks the sender until the message is received, while asynchronous communication allows the 
+    sender to continue without waiting for the receiver.
+    
+    \begin{highlight}[Synchronous vs. Asynchronous Communication]
+    
+        \begin{itemize}
+            \item \textbf{Synchronous (Blocking) Send/Receive}: Both sender and receiver block until the message has been delivered and received, creating a rendezvous point.
+            \item \textbf{Asynchronous (Nonblocking) Send/Receive}: The sender sends the message and continues execution, while the receiver retrieves the message when available or returns immediately 
+            if no message is present.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Buffering}
+    
+    Messages exchanged between processes are stored in a queue. The capacity of this queue determines whether the system has zero capacity (no buffering), bounded capacity (limited queue length), or 
+    unbounded capacity (infinite queue length).
+    
+    \begin{highlight}[Buffering]
+    
+        \begin{itemize}
+            \item \textbf{Zero Capacity}: No buffering; the sender must wait until the recipient receives the message.
+            \item \textbf{Bounded Capacity}: The queue has a finite length. If the queue is full, the sender blocks until space is available.
+            \item \textbf{Unbounded Capacity}: The queue has no fixed length, allowing any number of messages to be stored without blocking the sender.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Message Passing}: Provides a mechanism for processes to communicate without sharing memory, especially useful in distributed environments.
+            \item \textbf{Direct and Indirect Communication}: Processes can communicate directly by naming each other or indirectly using mailboxes.
+            \item \textbf{Synchronous vs. Asynchronous Communication}: Message passing can either block the sender and receiver or allow them to continue execution without waiting.
+            \item \textbf{Buffering}: Messages are queued in a buffer with varying capacities, which affects whether the sender needs to wait for the message to be received.
+        \end{itemize}
+    
+    Message-passing systems provide an efficient method for processes to communicate, especially in environments where shared memory is impractical or impossible.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Section 3.7 - Examples Of IPC Systems}.
+
+\begin{notes}{Section 3.7 - Examples Of IPC Systems}
+    \subsection*{Overview}
+
+    This section provides examples of interprocess communication (IPC) systems, highlighting different approaches in various operating systems. It explores the POSIX API for shared memory, Mach message 
+    passing, Windows IPC with advanced local procedure calls (ALPC), and the use of pipes in UNIX and Windows systems.
+    
+    \subsubsection*{POSIX Shared Memory}
+    
+    POSIX systems offer multiple IPC mechanisms, including shared memory. Shared memory in POSIX is organized using memory-mapped files. The \texttt{shm\_open()} system call creates a shared-memory 
+    object, which processes can access by name. After creating the object, processes use \texttt{ftruncate()} to set the size of the memory and \texttt{mmap()} to map the shared memory into their address space.
+    
+    \begin{highlight}[POSIX Shared Memory]
+    
+        \begin{itemize}
+            \item \textbf{\texttt{shm\_open()}}: Creates a shared memory object. Example: \texttt{fd = shm\_open(name, O\_CREAT | O\_RDWR, 0666)}.
+            \item \textbf{\texttt{ftruncate()}}: Configures the size of the shared-memory object.
+            \item \textbf{\texttt{mmap()}}: Maps the shared memory to the process's address space, allowing it to read and write data.
+            \item \textbf{Producer-Consumer Example}: The producer writes data to the shared memory, while the consumer reads from it.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Mach Message Passing}
+    
+    Mach is designed for distributed systems and uses message passing between tasks, where communication occurs through unidirectional mailboxes called ports. Each task has associated port rights, 
+    which define its ability to send or receive messages. Mach guarantees reliable message delivery with first-in, first-out (FIFO) ordering for messages from the same sender.
+    
+    \begin{highlight}[Mach Message Passing]
+    
+        \begin{itemize}
+            \item \textbf{Ports}: Unidirectional mailboxes used for sending and receiving messages. Multiple senders can send to the same port, but only one receiver is allowed.
+            \item \textbf{Port Rights}: Control the ability to send or receive messages from a port (e.g., \texttt{MACH\_PORT\_RIGHT\_RECEIVE}).
+            \item \textbf{Message Structure}: Messages contain a fixed-size header and a variable-sized body, which can hold data or references to memory locations (out-of-line data).
+            \item \textbf{Kernel Interaction}: The \texttt{mach\_msg()} API is used to send and receive messages, interacting with the kernel to manage the transfer.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Windows IPC with ALPC}
+    
+    In Windows, IPC is handled through advanced local procedure calls (ALPC), allowing communication between processes on the same machine. ALPC uses ports, similar to Mach, and can transfer small 
+    messages through message queues or larger data through shared memory using section objects.
+    
+    \begin{highlight}[Windows IPC with ALPC]
+    
+        \begin{itemize}
+            \item \textbf{Connection Ports}: Used by server processes to accept connection requests from clients.
+            \item \textbf{Communication Ports}: After connection, a pair of communication ports is created for bidirectional communication between client and server.
+            \item \textbf{Message Passing}: Small messages are transferred via message queues, while larger messages use shared memory regions (section objects).
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Pipes}
+    
+    Pipes are one of the earliest IPC mechanisms in UNIX and Windows. Pipes act as conduits for data flow between two processes, typically in a producer-consumer fashion. UNIX pipes are unidirectional, 
+    while Windows supports both unidirectional and bidirectional pipes.
+    
+    \begin{highlight}[Pipes]
+    
+        \begin{itemize}
+            \item \textbf{Ordinary Pipes (UNIX)}: Unidirectional communication where the producer writes to one end, and the consumer reads from the other. Typically used between parent and child processes.
+            \item \textbf{Anonymous Pipes (Windows)}: Behave similarly to UNIX pipes, allowing unidirectional communication between parent and child processes.
+            \item \textbf{Named Pipes}: Provide more advanced functionality, including bidirectional communication and the ability to persist after process termination. Named pipes are available on 
+            both UNIX (as FIFOs) and Windows.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{POSIX Shared Memory}: Uses memory-mapped files to allow fast data sharing between processes.
+            \item \textbf{Mach Message Passing}: A distributed system-oriented IPC method that uses ports and messages for task communication.
+            \item \textbf{Windows ALPC}: Provides a flexible IPC mechanism with support for both small message passing and large data transfers via shared memory.
+            \item \textbf{Pipes}: A simple and efficient IPC mechanism for unidirectional or bidirectional communication, available in both UNIX and Windows systems.
+        \end{itemize}
+    
+    These examples illustrate the diversity of IPC systems across different operating systems, each tailored to the system's architecture and design philosophy.
+    
+    \end{highlight}
+\end{notes}
+
+The next topic that is being covered this week is \textbf{Section 3.8 - Communication In Client-Server Systems}.
+
+\begin{notes}{Section 3.8 - Communication In Client-Server Systems}
+    \subsection*{Overview}
+
+    This section explores communication in client-server systems, focusing on two primary methods: sockets and remote procedure calls (RPCs). These mechanisms allow processes to communicate across network 
+    boundaries, enabling client-server interactions in distributed systems.
+    
+    \subsubsection*{Sockets}
+    
+    A socket is an endpoint for communication between processes over a network. Sockets typically use a client-server model, where the server listens on a specified port, and clients request connections.
+    
+    \begin{highlight}[Sockets]
+    
+        \begin{itemize}
+            \item \textbf{Client-Server Communication}: A server waits for incoming client requests by listening to a specified port (e.g., SSH listens on port 22, HTTP on port 80). The server then 
+            accepts the client's connection request.
+            \item \textbf{Socket Pairs}: Communication occurs through a pair of sockets—one on the client and one on the server. Each socket is identified by an IP address and port number 
+            (e.g., 146.86.5.20:1625 on a client and 161.25.19.8:80 on a web server).
+            \item \textbf{Java Sockets Example}: Java provides an easy-to-use interface for socket programming, with classes like \texttt{Socket} for TCP (connection-oriented) and \texttt{DatagramSocket} 
+            for UDP (connectionless) communication.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Remote Procedure Calls (RPCs)}
+    
+    RPCs abstract the procedure call mechanism for networked systems, allowing a process to invoke a procedure on a remote server as if it were local. Unlike sockets, RPC messages are structured, 
+    containing identifiers for functions and parameters.
+    
+    \begin{highlight}[Remote Procedure Calls (RPCs)]
+    
+        \begin{itemize}
+            \item \textbf{Client-Server Interaction}: A client calls a procedure on a remote server by sending a message to the server's RPC daemon, which listens on a specific port. The server executes 
+            the function and returns the result to the client.
+            \item \textbf{Parameter Marshalling}: Involves converting data into a machine-independent format, such as external data representation (XDR), to resolve differences between systems with 
+            different data formats (e.g., big-endian vs. little-endian).
+            \item \textbf{Failure Handling}: RPCs can fail due to network issues. Two common strategies are:
+                \begin{itemize}
+                    \item \textbf{At Most Once}: Ensures the function is executed at most one time by using timestamps and discarding duplicate messages.
+                    \item \textbf{Exactly Once}: Guarantees the function is executed once by requiring the server to send an acknowledgment (ACK) upon successful execution.
+                \end{itemize}
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \subsubsection*{Android RPC}
+    
+    Android uses a variation of RPC for interprocess communication within the same system, called the binder framework. Services in Android use RPC to communicate between components such as background 
+    services and client applications.
+    
+    \begin{highlight}[Android RPC]
+    
+        \begin{itemize}
+            \item \textbf{Services}: In Android, services are components that perform long-running operations in the background. When a client invokes \texttt{bindService()}, the client can use RPC to 
+            call methods on the service.
+            \item \textbf{Binder Framework}: Handles parameter marshalling and communication between processes. Clients use the \texttt{AIDL} (Android Interface Definition Language) to define the interface 
+            for remote method invocation.
+        \end{itemize}
+    
+    \end{highlight}
+    
+    \begin{highlight}[Summary of Key Concepts]
+    
+        \begin{itemize}
+            \item \textbf{Sockets}: Provide a low-level communication mechanism using endpoints identified by IP addresses and port numbers.
+            \item \textbf{RPCs}: Abstract the procedure call mechanism to enable communication between distributed processes, with support for parameter marshalling and error handling.
+            \item \textbf{Android RPC}: Extends the RPC model for interprocess communication within the Android operating system using the binder framework.
+        \end{itemize}
+    
+    Sockets and RPCs are fundamental for enabling client-server communication, allowing processes to interact across networks or within the same system.
+    
+    \end{highlight}
+\end{notes}
