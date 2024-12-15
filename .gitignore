@@ -13,5 +13,5 @@
 *.toc
 
 # ML Stuff
-*/"CSPB 4622 - Machine Learning"/.csv
-*/"CSPB 4622 - Machine Learning"/.pkl
+*.pkl
+*.csv
