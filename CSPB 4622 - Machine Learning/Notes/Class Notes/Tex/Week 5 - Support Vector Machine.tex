@@ -1,0 +1,340 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Support Vector Machine}
+\renewcommand{\SectionTitle}{Support Vector Machine}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 9.1: Maximal Margin Classifier}
+    \item \textbf{ISLR Chapter 9.2: Support Vector Classifier}
+    \item \textbf{ISLR Chapter 9.3: Support Vector Machine}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=If0EXgxCa8I}{SVM Intro, Hard Margin Classifier}{17}
+    \item \lecture{https://www.youtube.com/watch?v=xQ9OqS0OZ24}{Soft Margin Classifier}{16}
+    \item \lecture{https://applied.cs.colorado.edu/mod/hvp/view.php?id=67110}{SVM-Kernels}{10}
+    \item \lecture{https://www.youtube.com/watch?v=TYurCRIyfPE}{SVM-Performance}{18}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Soft Margin Classifier Lecture Notes.pdf}{Soft Margin Classifier Lecture Notes}
+    \item \pdflink{\LecNoteDir SVM Intro, Hard Margin Classifier Lecture Notes.pdf}{SVM Intro, Hard Margin Classifier Lecture Notes}
+    \item \pdflink{\LecNoteDir SVM-Kernels Lecture Notes.pdf}{SVM-Kernels Lecture Notes}
+    \item \pdflink{\LecNoteDir SVM-Performance Comparison Lecture Notes.pdf}{SVM-Performance Comparison Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \textbf{Assignment 5 - Support Vector Machine}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 5 - Support Vector Machine.pdf}{Quiz 5 - Support Vector Machine}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 9: Support Vector Machines}. The first section that is being covered from this chapter this week is \textbf{Section 9.1: Maximal Margin Classifier}.
+
+\begin{notes}{Section 9.1: Maximal Margin Classifier}
+    \subsection*{Overview}
+
+    The maximal margin classifier is a fundamental method in the field of classification, particularly when data can be perfectly separated by a hyperplane. The goal of this classifier is to find the hyperplane 
+    that maximizes the margin, which is the minimum distance between the hyperplane and any of the training observations. This section introduces the concept of a hyperplane, explains how it can be used for 
+    classification, and discusses the importance of the maximal margin classifier in achieving robust and confident predictions.
+    
+    \subsubsection*{What Is a Hyperplane?}
+    
+    In a p-dimensional space, a hyperplane is a flat affine subspace with dimension $p-1$. In two dimensions, this corresponds to a line, while in three dimensions, it corresponds to a plane. A hyperplane 
+    divides the space into two halves, with points lying on either side of the hyperplane based on the sign of the expression:
+    \[
+    \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p = 0.
+    \]
+    This equation defines a hyperplane, and the sign of the left-hand side determines on which side of the hyperplane a point lies.
+    
+    \begin{highlight}[Properties of a Hyperplane]
+        \begin{itemize}
+            \item \textbf{Dimension}: In $p$-dimensional space, a hyperplane has dimension $p-1$.
+            \item \textbf{Division of Space}: The hyperplane divides the space into two halves, with points lying on either side depending on the sign of the linear equation.
+            \item \textbf{Classification Boundary}: Hyperplanes can be used to separate data points into different classes based on their location relative to the hyperplane.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Classification Using a Separating Hyperplane}
+    
+    Given a set of training observations $\{x_1, x_2, \dots, x_n\}$ and corresponding class labels $\{y_1, y_2, \dots, y_n\} \in \{-1, 1\}$, a separating hyperplane can be used to classify observations by 
+    assigning them to one of two classes. The goal is to find a hyperplane such that:
+    \[
+    y_i (\beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip}) > 0 \quad \text{for all } i = 1, \dots, n.
+    \]
+    This ensures that all points from one class lie on one side of the hyperplane, while points from the other class lie on the opposite side. Once a separating hyperplane is found, it can be used to classify 
+    new test observations based on their position relative to the hyperplane.
+    
+    \begin{highlight}[Hyperplane-Based Classifier]
+        \begin{itemize}
+            \item \textbf{Separation of Classes}: A separating hyperplane divides the observations into two classes, ensuring that all points from each class are on the correct side of the hyperplane.
+            \item \textbf{Decision Rule}: A test observation is classified based on the sign of $f(x^*) = \beta_0 + \beta_1 x^*_1 + \dots + \beta_p x^*_p$.
+            \item \textbf{Confidence Measure}: The magnitude of $f(x^*)$ indicates the confidence in the classification, with values farther from zero corresponding to higher confidence.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{The Maximal Margin Classifier}
+    
+    When there are multiple separating hyperplanes, the maximal margin classifier selects the one that maximizes the margin, which is the minimum distance between the hyperplane and any of the training 
+    observations. The hyperplane with the largest margin is less sensitive to variations in the training data and tends to generalize better to unseen data. The margin is defined as the distance between the 
+    hyperplane and the closest training points, which are known as support vectors.
+    
+    \begin{highlight}[Maximal Margin Classifier]
+        \begin{itemize}
+            \item \textbf{Margin}: The distance from the hyperplane to the closest training observations, which is maximized to create the most robust classifier.
+            \item \textbf{Support Vectors}: The training observations that lie closest to the hyperplane and define the margin.
+            \item \textbf{Generalization}: A larger margin is expected to result in better generalization to test data, as it reduces the risk of overfitting.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Construction of the Maximal Margin Classifier}
+    
+    The maximal margin hyperplane is found by solving an optimization problem that maximizes the margin $M$, subject to the constraints that ensure all training points are correctly classified:
+    \[
+    \max_{\beta_0, \beta_1, \dots, \beta_p, M} M,
+    \]
+    subject to
+    \[
+    \sum_{j=1}^{p} \beta_j^2 = 1 \quad \text{and} \quad y_i (\beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip}) \geq M \quad \text{for all } i.
+    \]
+    This problem can be solved efficiently using optimization techniques, and the resulting hyperplane maximizes the margin while ensuring correct classification.
+    
+    \begin{highlight}[Optimization Problem]
+        \begin{itemize}
+            \item \textbf{Maximizing the Margin}: The goal is to find the hyperplane that maximizes the margin $M$.
+            \item \textbf{Correct Classification}: Constraints ensure that all training observations are on the correct side of the hyperplane, with a margin of at least $M$.
+            \item \textbf{Efficient Solution}: The optimization problem can be solved using standard methods, making the maximal margin classifier computationally feasible.
+        \end{itemize}
+        \end{highlight}
+    
+    \subsubsection*{The Non-Separable Case}
+    
+    In many real-world scenarios, a separating hyperplane may not exist because the classes overlap. In such cases, the maximal margin classifier cannot be used. However, the concept of a hyperplane can 
+    be extended to handle non-separable cases using the support vector classifier, which allows for some misclassification while still aiming to maximize the margin. This extension is discussed in the next section.
+    
+    \begin{highlight}[Non-Separable Data]
+        \begin{itemize}
+            \item \textbf{No Separating Hyperplane}: When the classes cannot be perfectly separated, the maximal margin classifier does not apply.
+            \item \textbf{Support Vector Classifier}: A generalization of the maximal margin classifier that allows for some misclassified points while maximizing the margin.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter is this week is \textbf{Section 9.2: Support Vector Classifier}.
+
+\begin{notes}{Section 9.2: Support Vector Classifier}
+    \subsection*{Overview}
+
+    The support vector classifier is an extension of the maximal margin classifier designed to handle situations where classes are not perfectly separable by a hyperplane. It allows for some misclassifications 
+    in order to find a hyperplane that maximizes the margin while minimizing the overall error. This section introduces the concept of a soft margin, explains how the support vector classifier works, and discusses 
+    the role of the tuning parameter $C$ in balancing the trade-off between margin width and classification accuracy.
+    
+    \subsubsection*{Why Use a Support Vector Classifier?}
+    
+    In many real-world situations, classes are not perfectly separable, and attempting to find a hyperplane that perfectly divides the classes can result in overfitting. For example, adding a single new observation 
+    can dramatically change the position of the maximal margin hyperplane, leading to a very narrow margin and potentially poor generalization. The support vector classifier addresses this issue by allowing some 
+    observations to fall on the wrong side of the margin or even the wrong side of the hyperplane, thereby increasing the robustness of the model.
+    
+    \begin{highlight}[Benefits of the Support Vector Classifier]
+        \begin{itemize}
+            \item \textbf{Robustness}: Allows for some misclassified observations to improve the overall classification of the remaining data points.
+            \item \textbf{Reduced Sensitivity}: Less sensitive to individual observations compared to the maximal margin classifier.
+            \item \textbf{Improved Generalization}: The wider margin resulting from the support vector classifier tends to generalize better to unseen data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{The Soft Margin Classifier}
+    
+    The support vector classifier, also known as a soft margin classifier, allows certain training points to violate the margin constraints in exchange for a larger margin. The objective is to find a hyperplane 
+    that correctly classifies most of the observations, while allowing for some margin violations. These violations are quantified using slack variables $\epsilon_i$, which measure how far an observation is 
+    from its correct position relative to the margin or hyperplane.
+    
+    \begin{highlight}[Soft Margin Classifier]
+        \begin{itemize}
+            \item \textbf{Slack Variables $\epsilon_i$}: Allow some observations to be misclassified or fall within the margin, giving the model flexibility.
+            \item \textbf{Margin Violations}: Observations can be on the wrong side of the margin, or even on the wrong side of the hyperplane, if necessary to improve the overall classification.
+            \item \textbf{Soft Margin}: The margin is called "soft" because it can be violated by some observations without compromising the entire model.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Optimization Problem}
+    
+    The support vector classifier is formulated as an optimization problem that seeks to maximize the margin $M$, subject to constraints that allow for some misclassification. The optimization problem can 
+    be expressed as:
+    \[
+    \max_{\beta_0, \beta_1, \dots, \beta_p, \epsilon_1, \dots, \epsilon_n, M} M,
+    \]
+    subject to:
+    \[
+    \sum_{j=1}^{p} \beta_j^2 = 1 \quad \text{and} \quad y_i (\beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip}) \geq M(1 - \epsilon_i) \quad \text{for all } i,
+    \]
+    \[
+    \epsilon_i \geq 0, \quad \sum_{i=1}^{n} \epsilon_i \leq C.
+    \]
+    Here, $C$ is a tuning parameter that controls the trade-off between margin width and misclassification error.
+    
+    \begin{highlight}[Optimization Problem for the Support Vector Classifier]
+        \begin{itemize}
+            \item \textbf{Maximizing the Margin}: The goal is to maximize $M$, the width of the margin, while allowing some observations to violate the margin.
+            \item \textbf{Slack Variables}: The slack variables $\epsilon_i$ measure how much each observation violates the margin or hyperplane.
+            \item \textbf{Tuning Parameter $C$}: Controls the amount of allowable margin violations, balancing flexibility and accuracy.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{The Role of the Tuning Parameter $C$}
+    
+    The tuning parameter $C$ plays a crucial role in determining the behavior of the support vector classifier. A small value of $C$ results in a narrow margin with fewer violations, but at the cost of 
+    potential overfitting. A larger value of $C$ allows for a wider margin and more violations, leading to a more flexible model with potentially lower variance. Choosing the right value of $C$ is important 
+    for balancing the bias-variance trade-off.
+    
+    \begin{highlight}[Tuning Parameter $C$]
+        \begin{itemize}
+            \item \textbf{Small $C$}: Results in a narrow margin and fewer violations, which can lead to a highly accurate but potentially overfit model.
+            \item \textbf{Large $C$}: Allows more margin violations and results in a wider margin, improving generalization but possibly introducing bias.
+            \item \textbf{Bias-Variance Trade-Off}: The value of $C$ controls the balance between bias and variance, with larger values of $C$ reducing variance at the cost of increased bias.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Support Vectors and Classification}
+    
+    Only the observations that either lie on the margin or violate it (i.e., those with $\epsilon_i > 0$) affect the final classifier. These observations are known as support vectors. The support vectors 
+    define the hyperplane, while other observations that lie far from the margin do not affect the classifier.
+    
+    \begin{highlight}[Support Vectors]
+        \begin{itemize}
+            \item \textbf{Defining the Hyperplane}: The support vectors are the only observations that directly influence the position of the hyperplane.
+            \item \textbf{Robustness}: The classifier is robust to observations that are far from the decision boundary, as they do not affect the hyperplane.
+            \item \textbf{Impact of $C$}: As $C$ increases, more observations become support vectors, making the classifier more robust but potentially increasing bias.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    The support vector classifier offers a flexible approach to classification by allowing for some misclassification in order to maximize the margin. The use of slack variables and the tuning parameter $C$ 
+    enables the classifier to handle non-separable data while maintaining a balance between accuracy and generalization. By relying only on the support vectors to define the hyperplane, the classifier is robust 
+    to outliers and observations far from the decision boundary.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item The support vector classifier generalizes the maximal margin classifier by allowing for margin violations in exchange for a wider margin.
+            \item The tuning parameter $C$ controls the trade-off between margin width and classification accuracy, impacting the bias-variance trade-off.
+            \item Only support vectors influence the hyperplane, making the classifier robust to irrelevant observations.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 9.3: Support Vector Machine}.
+
+\begin{notes}{Section 9.3: Support Vector Machine}
+    \subsection*{Overview}
+
+    Support vector machines (SVMs) extend the concept of support vector classifiers to handle more complex decision boundaries, especially in cases where the relationship between the classes is non-linear. 
+    SVMs accomplish this by enlarging the feature space, transforming the data so that a linear boundary can be found in this higher-dimensional space. This section discusses the motivation for using 
+    SVMs, the role of kernels in SVMs, and the types of kernels that can be applied to achieve non-linear decision boundaries.
+    
+    \subsubsection*{Classification with Non-Linear Decision Boundaries}
+    
+    The support vector classifier works well when the boundary between the two classes is approximately linear. However, many real-world problems involve non-linear boundaries, where a linear classifier 
+    performs poorly. In such cases, we need to find more flexible decision boundaries. As shown in Figure 9.8, when the class boundary is non-linear, a linear classifier such as the support vector classifier 
+    fails to separate the classes effectively.
+    
+    To address this problem, we can enlarge the feature space by including higher-order polynomial terms of the predictors. For example, instead of using only the original features \(X_1, X_2, \dots, X_p\), 
+    we can include quadratic terms \(X_1^2, X_2^2, \dots, X_p^2\) and even higher-order polynomials. This allows the decision boundary to become non-linear in the original feature space while remaining 
+    linear in the expanded feature space.
+    
+    \begin{highlight}[Non-Linear Boundaries with Enlarged Feature Space]
+        \begin{itemize}
+            \item \textbf{Linear Classifier in Enlarged Space}: In the expanded feature space, the decision boundary is linear, but it appears non-linear in the original feature space.
+            \item \textbf{Higher-Order Terms}: By including polynomial terms and interactions between variables, the decision boundary can accommodate more complex relationships between the classes.
+            \item \textbf{Flexibility}: Enlarging the feature space provides greater flexibility, but it can lead to a large number of features, making computations challenging.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{The Support Vector Machine (SVM)}
+    
+    Support vector machines (SVMs) build on the idea of the support vector classifier by using kernels to efficiently enlarge the feature space. The kernel approach allows us to fit non-linear decision boundaries 
+    without explicitly computing the expanded feature space. This enables SVMs to handle complex, non-linear class boundaries while remaining computationally feasible.
+    
+    The SVM uses the same principle as the support vector classifier but operates in a transformed feature space. By applying a kernel function, the SVM constructs a decision boundary that is linear in this 
+    higher-dimensional space but non-linear in the original feature space.
+    
+    \begin{highlight}[Support Vector Machines]
+        \begin{itemize}
+            \item \textbf{Kernel Trick}: SVMs use kernels to implicitly map the data into a higher-dimensional space, allowing the algorithm to fit a linear decision boundary in this space.
+            \item \textbf{Non-Linear Boundaries}: In the original feature space, the decision boundary is non-linear, which allows the SVM to handle complex classification tasks.
+            \item \textbf{Efficient Computation}: The kernel approach enables the SVM to operate efficiently, even in very high-dimensional spaces.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Kernels in SVMs}
+    
+    A kernel is a function that quantifies the similarity between two observations. By replacing the inner product in the support vector classifier with a kernel function, we can transform the data into a higher-dimensional 
+    space without explicitly computing the coordinates in this space. Commonly used kernels include the linear kernel, polynomial kernel, and radial basis function (RBF) kernel.
+    
+    \begin{highlight}[Common Kernels in SVMs]
+        \begin{itemize}
+            \item \textbf{Linear Kernel}: $K(x_i, x_j) = x_i^T x_j$ — This is equivalent to the support vector classifier, where the decision boundary is linear.
+            \item \textbf{Polynomial Kernel}: $K(x_i, x_j) = (1 + x_i^T x_j)^d$ — This kernel allows for non-linear decision boundaries by introducing polynomial terms of degree $d$.
+            \item \textbf{Radial Basis Function (RBF) Kernel}: $K(x_i, x_j) = \exp(-\gamma \| x_i - x_j \|^2)$ — The RBF kernel introduces highly flexible, non-linear decision boundaries by measuring the Euclidean distance between points.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{An Example of SVM with Non-Linear Kernels}
+    
+    Figure 9.9 demonstrates the effectiveness of SVMs with non-linear kernels. In the left panel, a polynomial kernel of degree 3 is applied to the non-linear data, resulting in a significantly improved 
+    decision boundary compared to the linear support vector classifier. The right panel shows an SVM with a radial kernel, which also successfully captures the non-linear boundary between the classes.
+    
+    \begin{highlight}[Non-Linear Kernel Example]
+        \begin{itemize}
+            \item \textbf{Polynomial Kernel}: Allows the SVM to fit non-linear boundaries by using higher-degree polynomials of the input features.
+            \item \textbf{Radial Kernel}: Provides even more flexibility, capturing local patterns in the data by considering the distance between observations.
+            \item \textbf{Improved Fit}: Both kernels produce much more appropriate decision boundaries compared to the linear support vector classifier.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    Support vector machines extend the support vector classifier by incorporating kernel functions to handle non-linear decision boundaries. By using kernels, SVMs are able to map data into higher-dimensional 
+    spaces efficiently, enabling them to fit complex boundaries that would be infeasible with a linear classifier. SVMs with kernels, such as polynomial and radial basis function kernels, offer powerful solutions 
+    to a wide range of classification problems, particularly when the boundary between classes is not linear.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item SVMs use kernels to efficiently compute non-linear decision boundaries without explicitly transforming the feature space.
+            \item Polynomial and radial kernels are common choices for capturing non-linear relationships between classes.
+            \item The flexibility of SVMs allows them to achieve high performance on complex classification tasks with non-linear class boundaries.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

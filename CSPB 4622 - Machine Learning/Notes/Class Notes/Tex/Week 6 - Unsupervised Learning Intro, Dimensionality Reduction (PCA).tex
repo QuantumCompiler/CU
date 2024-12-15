@@ -1,0 +1,299 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{ Unsupervised Learning Intro, Dimensionality Reduction (PCA)}
+\renewcommand{\SectionTitle}{ Unsupervised Learning Intro, Dimensionality Reduction (PCA)}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 6.3: Dimension Reduction Methods}
+    \item \textbf{ISLR Chapter 12.1: The Challenge Of Unsupervised Learning}
+    \item \textbf{ISLR Chapter 12.2: Principal Components Analysis}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=xWh5gPmOxqw}{Unsupervised Learning Introduction}{15}
+    \item \lecture{https://www.youtube.com/watch?v=JGbtraaCxGs}{PCA Intuition}{8}
+    \item \lecture{https://www.youtube.com/watch?v=ZTvIXg2tg7o}{PCA, How It Works}{11}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Unsupervised Learning Lecture Notes.pdf}{Unsupervised Learning Lecture Notes}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 6 - PCA.pdf}{Quiz 6 - PCA}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 6: Linear Model Selection And Regularization} and the section that is being covered out of this chapter this week is \textbf{Section 6.3: Dimension Reduction Methods}.
+
+\begin{notes}{Section 6.3: Dimension Reduction Methods}
+    \subsection*{Overview}
+
+    Dimension reduction methods are used to reduce the number of predictors in a regression model by transforming the original variables into a smaller set of new features. These methods aim to summarize 
+    the original data with fewer variables while retaining most of the information. This section introduces dimension reduction approaches that create linear combinations of the original predictors and use these 
+    combinations to fit a least squares model. By reducing the dimensionality of the data, these methods help to improve model interpretability and performance, particularly when the number of predictors is 
+    large relative to the number of observations.
+    
+    \subsubsection*{Transforming Predictors}
+    
+    Dimension reduction methods start by transforming the original predictors \(X_1, X_2, \dots, X_p\) into \(M < p\) linear combinations of the predictors, denoted as \(Z_1, Z_2, \dots, Z_M\). Each new variable 
+    is a linear combination of the original predictors:
+    \[
+    Z_m = \sum_{j=1}^{p} \phi_{jm} X_j, \quad m = 1, \dots, M.
+    \]
+    The model is then fit using the new predictors \(Z_1, Z_2, \dots, Z_M\) rather than the original variables. This approach reduces the complexity of the problem by fitting a regression model on fewer variables, 
+    thereby controlling variance and potentially improving prediction accuracy.
+    
+    \begin{highlight}[Key Concepts in Dimension Reduction]
+        \begin{itemize}
+            \item \textbf{Linear Combinations}: The original predictors are transformed into new variables, each of which is a linear combination of the original features.
+            \item \textbf{Reduced Dimensionality}: The number of new variables \(M\) is smaller than the number of original predictors \(p\), simplifying the regression model.
+            \item \textbf{Improved Performance}: By reducing the number of variables, dimension reduction methods help control overfitting and reduce variance, especially when \(p\) is large relative to \(n\).
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Principal Components Regression (PCR)}
+    
+    Principal components analysis (PCA) is a popular method for dimension reduction. In principal components regression (PCR), the principal components of the predictor matrix \(X\) are computed and then used 
+    as predictors in a linear regression model. The first principal component \(Z_1\) is the linear combination of the predictors that explains the largest variance in the data, while the second principal component 
+    \(Z_2\) explains the next largest variance, and so on. PCR involves fitting a regression model to the first \(M\) principal components, where \(M\) is chosen to balance model complexity and prediction accuracy.
+    
+    \begin{highlight}[Principal Components Regression (PCR)]
+        \begin{itemize}
+            \item \textbf{Principal Components}: Linear combinations of the original predictors that capture the maximum variance in the data.
+            \item \textbf{Dimensionality Reduction}: A subset of the principal components is used as predictors in the regression model, reducing the number of variables.
+            \item \textbf{Model Simplicity}: By using only the first few principal components, PCR simplifies the model while retaining most of the information in the data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Partial Least Squares (PLS)}
+    
+    Partial least squares (PLS) is another dimension reduction method, similar to PCR, but with a key difference: PLS takes the response \(Y\) into account when constructing the new predictors. PLS constructs 
+    linear combinations of the original predictors that both explain the variation in the predictors and have the strongest relationship with the response. In this way, PLS finds directions in the predictor space 
+    that are most relevant for predicting the response.
+    
+    \begin{highlight}[Partial Least Squares (PLS)]
+        \begin{itemize}
+            \item \textbf{Supervised Approach}: Unlike PCR, PLS considers the response variable when constructing the new predictors, improving the model's predictive power.
+            \item \textbf{Dimensionality Reduction}: PLS reduces the number of predictors by creating linear combinations that are relevant for explaining both the predictors and the response.
+            \item \textbf{Better Fit}: By focusing on directions that are predictive of the response, PLS often leads to better model performance than PCR.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Choosing the Number of Components}
+    
+    For both PCR and PLS, the number of components \(M\) is a tuning parameter that controls the complexity of the model. Choosing too few components may result in underfitting, while choosing too many can 
+    lead to overfitting. Cross-validation is typically used to determine the optimal number of components, balancing bias and variance.
+    
+    \begin{highlight}[Choosing the Number of Components]
+        \begin{itemize}
+            \item \textbf{Trade-Off}: A smaller \(M\) reduces the complexity of the model, but may result in underfitting. A larger \(M\) captures more variation, but increases the risk of overfitting.
+            \item \textbf{Cross-Validation}: Cross-validation is used to select the optimal number of components that minimize the prediction error on test data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    Dimension reduction methods like PCR and PLS offer a powerful approach to handling large numbers of predictors by reducing the dimensionality of the data. PCR focuses on directions that capture the most 
+    variance in the predictors, while PLS focuses on directions that are most predictive of the response. Both methods help to mitigate the risk of overfitting in high-dimensional data and improve the interpretability 
+    of the model.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Dimension reduction transforms the predictors into a smaller set of new variables, simplifying the regression problem.
+            \item PCR uses principal components to capture the most variance in the data, while PLS uses directions that are most predictive of the response.
+            \item Cross-validation is essential for selecting the appropriate number of components, ensuring a balance between bias and variance.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The second chapter that is being covered this week is \textbf{Chapter 12: Unsupervised Learning} and the first section that is being covered from this chapter this week is \textbf{Section 12.1: The Challenge Of Unsupervised Learning}.
+
+\begin{notes}{Section 12.1: The Challenge Of Unsupervised Learning}
+    \subsection*{Overview}
+
+    Unsupervised learning refers to a set of statistical techniques designed to analyze data where we only have access to features \(X_1, X_2, \dots, X_p\) measured on \(n\) observations, without any associated 
+    response variable \(Y\). The goal of unsupervised learning is not prediction but rather to explore and understand the structure within the data. Common tasks include visualizing the data and identifying 
+    subgroups or patterns among the features or observations. This section introduces the core challenges of unsupervised learning and highlights how these methods differ from the more familiar supervised 
+    learning approaches.
+    
+    \subsubsection*{Understanding Supervised vs. Unsupervised Learning}
+    
+    In supervised learning, we typically have access to both the predictor variables and a response variable. The objective is clear: we aim to predict \(Y\) using the features \(X_1, X_2, \dots, X_p\). There 
+    are many well-established tools for accomplishing this, including logistic regression, classification trees, support vector machines, and more. Additionally, there are robust mechanisms to assess the quality 
+    of the models we fit, such as cross-validation and evaluation on test sets.
+    
+    In contrast, unsupervised learning is more challenging because there is no response variable to guide the analysis. Instead, unsupervised learning is often used for exploratory data analysis, aiming to discover 
+    patterns or subgroups without a clear, predefined objective. Without the ability to validate predictions, the results of unsupervised learning can be subjective, and there is no universally accepted method for 
+    assessing the quality of the outcomes.
+    
+    \begin{highlight}[Differences Between Supervised and Unsupervised Learning]
+        \begin{itemize}
+            \item \textbf{Supervised Learning}: Involves both features and a response variable \(Y\), with the goal of predicting \(Y\) based on \(X_1, X_2, \dots, X_p\).
+            \item \textbf{Unsupervised Learning}: Involves only the features \(X_1, X_2, \dots, X_p\), with the goal of uncovering patterns or subgroups without a response variable.
+            \item \textbf{Assessment}: Supervised methods can be assessed using cross-validation or test set performance, but unsupervised methods lack a clear mechanism for validating results.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Challenges in Unsupervised Learning}
+    
+    One of the primary difficulties in unsupervised learning is the lack of a clear objective or response variable. Without a known output, it is hard to assess whether the results of the analysis are correct 
+    or meaningful. For example, when using a supervised model, we can check its accuracy by comparing predicted values to actual outcomes. In unsupervised learning, there is no such benchmark since we don’t 
+    know the "true" answer.
+    
+    Additionally, unsupervised learning is often more subjective. Since there is no predefined goal, the results can depend heavily on the assumptions or choices made during the analysis, such as the specific 
+    algorithm used or how the data is pre-processed. This subjectivity can make it difficult to compare different analyses or to validate findings.
+    
+    \begin{highlight}[Key Challenges of Unsupervised Learning]
+        \begin{itemize}
+            \item \textbf{No Response Variable}: Without a response variable, it is challenging to determine whether the results are meaningful or accurate.
+            \item \textbf{Subjectivity}: The outcomes of unsupervised learning often depend on subjective choices made by the analyst, such as the algorithm or parameters used.
+            \item \textbf{No Benchmark for Validation}: Unlike in supervised learning, there is no clear way to validate the results or check for accuracy.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications of Unsupervised Learning}
+    
+    Despite its challenges, unsupervised learning is crucial in many fields. For instance, in medical research, a scientist might use unsupervised methods to identify subgroups of patients based on gene expression 
+    data, which could lead to new insights into disease mechanisms. In online shopping, companies might group users with similar browsing and purchasing behaviors to personalize recommendations. Search engines 
+    can also use unsupervised learning to tailor search results based on the click patterns of similar users. These examples illustrate the growing importance of unsupervised learning in modern data analysis.
+    
+    \begin{highlight}[Real-World Applications of Unsupervised Learning]
+        \begin{itemize}
+            \item \textbf{Medical Research}: Identifying subgroups of patients or genes to better understand diseases like cancer.
+            \item \textbf{E-Commerce}: Grouping customers with similar behaviors for personalized product recommendations.
+            \item \textbf{Search Engines}: Customizing search results based on patterns of similar users’ click histories.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    Unsupervised learning represents a diverse set of tools that are increasingly important in data analysis, especially in fields where the relationships between observations or variables are not well understood. 
+    However, the lack of a response variable makes it more difficult to assess the quality of the results, and much of the analysis depends on subjective decisions made by the analyst. Despite these challenges, 
+    unsupervised learning techniques like clustering and principal components analysis offer powerful insights into the structure of complex datasets.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Unsupervised learning methods are essential for exploring data when no response variable is available.
+            \item The lack of a clear goal and validation benchmark makes unsupervised learning more subjective and challenging compared to supervised methods.
+            \item These techniques are widely used in fields like medicine, e-commerce, and search engines, where discovering patterns or subgroups can lead to valuable insights.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 12.2: Principal Components Analysis}.
+
+\begin{notes}{Section 12.2: Principal Components Analysis}
+    \subsection*{Overview}
+
+    Principal Components Analysis (PCA) is a widely used method in unsupervised learning for reducing the dimensionality of data. It transforms a large set of correlated variables into a smaller set of uncorrelated 
+    variables, called principal components, which capture the most variance in the original data. PCA is particularly useful when there are many features in the data, and we want to summarize the information 
+    using fewer dimensions. This section explores PCA in detail, focusing on its application to unsupervised data analysis and its utility in visualizing high-dimensional datasets.
+    
+    \subsubsection*{What Are Principal Components?}
+    
+    Principal components are linear combinations of the original features that maximize the variance in the data. The first principal component \(Z_1\) is the normalized linear combination of the features that 
+    has the largest variance. Each subsequent principal component is orthogonal to the previous ones and captures the maximum remaining variance. These components provide a low-dimensional representation 
+    of the data, which is especially useful for visualization or simplifying complex datasets.
+    
+    \[
+    Z_1 = \phi_{11} X_1 + \phi_{21} X_2 + \dots + \phi_{p1} X_p
+    \]
+    where the loadings $\phi_{11}, \phi_{21}, \dots, \phi_{p1}$ are constrained such that the sum of their squares equals one, ensuring normalization.
+    
+    \begin{highlight}[Principal Components]
+        \begin{itemize}
+            \item \textbf{First Principal Component}: The linear combination of features that captures the greatest variance in the data.
+            \item \textbf{Orthogonality}: Each subsequent component is uncorrelated with (i.e., orthogonal to) the previous ones.
+            \item \textbf{Loadings}: The coefficients $\phi_{jm}$ are called loadings and determine how much each feature contributes to a given principal component.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Geometric Interpretation of Principal Components}
+    
+    Principal components can be understood geometrically. The first principal component defines a direction in feature space along which the data varies the most. If we project the data points onto this direction, 
+    the variance of the projections is maximized. The second principal component defines a direction orthogonal to the first that captures the next largest amount of variance, and so on.
+    
+    In a dataset with $p = 2$ features, the first principal component is a line that best fits the data in terms of minimizing the sum of squared distances between the data points and the line. In higher dimensions, 
+    the principal components span a hyperplane that best fits the data, minimizing the distance between the data points and the plane.
+    
+    \begin{highlight}[Geometric Interpretation]
+        \begin{itemize}
+            \item \textbf{Direction of Maximum Variance}: The first principal component points in the direction of greatest variability in the data.
+            \item \textbf{Orthogonal Projections}: Subsequent components are orthogonal to each other and project the data onto lower-dimensional spaces.
+            \item \textbf{Low-Dimensional Representation}: The principal components define a subspace that minimizes the distance to the original data points.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Proportion of Variance Explained (PVE)}
+    
+    The proportion of variance explained (PVE) by a principal component measures how much of the total variance in the data is captured by that component. The first principal component explains the most variance, 
+    with each subsequent component explaining less. The PVE is a key metric for determining how many components are needed to summarize the data effectively.
+    
+    The PVE of the \(m\)-th principal component is given by:
+    \[
+    \text{PVE}_m = \frac{\sum_{i=1}^{n} z_{im}^2}{\sum_{j=1}^{p} \sum_{i=1}^{n} x_{ij}^2}
+    \]
+    where $z_{im}$ is the score of the \(i\)-th observation on the \(m\)-th principal component, and $x_{ij}$ is the \(i\)-th observation of the \(j\)-th feature.
+    
+    \begin{highlight}[Proportion of Variance Explained (PVE)]
+        \begin{itemize}
+            \item \textbf{PVE}: The fraction of the total variance captured by each principal component.
+            \item \textbf{Cumulative PVE}: Summing the PVEs of the first \(M\) components gives the cumulative proportion of variance explained, helping to decide how many components are needed.
+            \item \textbf{Interpretation}: A high PVE means the component captures a significant amount of the data’s structure.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Choosing the Number of Components}
+    
+    One of the key decisions when applying PCA is determining how many principal components to retain. In practice, this decision is often made using a scree plot, which visualizes the proportion of variance explained 
+    by each component. The “elbow” in the scree plot indicates the point where the marginal benefit of adding more components begins to diminish. In most cases, only the first few components are necessary to capture 
+    the majority of the information in the data.
+    
+    \begin{highlight}[Choosing the Number of Components]
+        \begin{itemize}
+            \item \textbf{Scree Plot}: A graphical tool that shows the proportion of variance explained by each component; the elbow suggests the optimal number of components.
+            \item \textbf{Cumulative PVE}: Select the smallest number of components that capture a large percentage (e.g., 90%) of the variance in the data.
+            \item \textbf{Trade-Off}: Too few components may lead to underfitting, while too many components may overcomplicate the model without adding significant value.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    PCA is a powerful method for reducing the dimensionality of high-dimensional datasets, making it easier to visualize and interpret the data. By transforming the original features into uncorrelated principal components, 
+    PCA allows for a simplified representation that retains most of the variance. The number of components to retain can be determined by examining the proportion of variance explained by each component, ensuring that 
+    the reduced-dimensional model still captures the key structure in the data.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Principal components are linear combinations of the original features that maximize the variance in the data.
+            \item PCA provides a low-dimensional representation of high-dimensional data, useful for both visualization and simplifying models.
+            \item The number of components to retain is determined by balancing the need to capture variance with the simplicity of the model.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

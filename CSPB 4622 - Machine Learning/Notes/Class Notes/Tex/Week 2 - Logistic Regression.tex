@@ -1,0 +1,249 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Logistic Regression}
+\renewcommand{\SectionTitle}{Logistic Regression}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 4.1: An Overview Of Classification}
+    \item \textbf{ISLR Chapter 4.2: Why Not Linear Regression?}
+    \item \textbf{ISLR Chapter 4.3: Logistic Regression}
+    \item \href{https://en.wikipedia.org/wiki/Confusion_matrix}{Confusion Matrix}
+    \item \href{https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html}{Logistic Regression}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=Gr_y-C3U_O8}{Logistic Regression Intro - Examples, Logistic Function And Softmax Function}{15}
+    \item \lecture{https://www.youtube.com/watch?v=_qQsvyDZh3E}{Logistic Regression Optimization}{20}
+    \item \lecture{https://www.youtube.com/watch?v=fdJ6DcrZYu4}{Performance Metrics In Classification}{14}
+    \item \lecture{https://www.youtube.com/watch?v=Uj3V1G2YYfA}{SKlearn Library Usage And Examples}{15}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Logistic Regression Introduction Lecture Notes.pdf}{Logistic Regression Introduction Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \textbf{Assignment 2 - Logistic Regression}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \href{https://applied.cs.colorado.edu/mod/quiz/view.php?id=67076}{Quiz 2 - Logistic Regression}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The first section that is being covered from the chapter this week is \textbf{Section 4.1: An Overview Of Classification}. 
+
+\begin{notes}{Section 4.1: An Overview Of Classification}
+    \subsection*{Overview}
+
+    This section introduces classification, a predictive modeling technique used when the response variable is qualitative (categorical). Unlike linear regression, which predicts a continuous outcome, 
+    classification assigns an observation to a discrete category or class. Classification methods predict the probability of an observation belonging to each class, and the observation is then assigned 
+    to the class with the highest probability.
+    
+    \subsubsection*{Examples of Classification Problems}
+    
+    Classification problems arise in many real-world situations, such as:
+    \begin{itemize}
+        \item Diagnosing a medical condition based on a patient’s symptoms.
+        \item Detecting fraudulent transactions in online banking.
+        \item Identifying deleterious DNA mutations based on genetic data.
+    \end{itemize}
+    
+    \begin{highlight}[Key Concepts in Classification]
+        \begin{itemize}
+            \item \textbf{Qualitative Response}: The response variable represents categories or classes (e.g., default or no default).
+            \item \textbf{Classifier}: A method or algorithm used to assign a class label to an observation.
+            \item \textbf{Training Data}: Used to build a classification model, which generalizes to unseen test data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Common Classification Methods}
+    
+    Several widely used classifiers include:
+    \begin{itemize}
+        \item \textbf{Logistic Regression}: Estimates the probability of a binary outcome.
+        \item \textbf{Linear Discriminant Analysis (LDA)}: A method that finds a linear combination of predictors that best separates two or more classes.
+        \item \textbf{Quadratic Discriminant Analysis (QDA)}: Similar to LDA but allows for non-linear boundaries.
+        \item \textbf{Naive Bayes}: Assumes independence between predictors to compute class probabilities.
+        \item \textbf{K-Nearest Neighbors (KNN)}: Classifies an observation based on the majority class of its nearest neighbors.
+    \end{itemize}
+    
+    \subsubsection*{Example: Default Data Set}
+    
+    The Default data set demonstrates how classification can be applied to predict whether a person will default on a credit card payment. The predictors are annual income and monthly credit card balance. 
+    The response is binary (default or no default).
+    
+    \begin{highlight}[Key Takeaways from Default Data Set]
+        \begin{itemize}
+            \item \textbf{Predictors}: Income and balance are used to predict default.
+            \item \textbf{Visualizations}: Boxplots show the distribution of balance and income for defaulters and non-defaulters, indicating a relationship between balance and default status.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Why Not Use Linear Regression for Classification?}
+    
+    Linear regression is unsuitable for qualitative responses for several reasons:
+    \begin{itemize}
+        \item \textbf{Unbounded Predictions}: Linear regression can predict values outside the [0, 1] range, which are not valid probabilities.
+        \item \textbf{Non-linear Boundaries}: Linear regression assumes a linear relationship, which may not effectively separate classes.
+        \item \textbf{Interpretation Issues}: Assigning probabilities or classifications based on continuous outputs from a regression model is conceptually flawed for qualitative data.
+    \end{itemize}
+    
+    \begin{highlight}[Reasons to Avoid Linear Regression for Classification]
+        \begin{itemize}
+            \item Linear models are not designed to handle categorical responses and can lead to invalid predictions.
+            \item Classification methods provide better accuracy and interpretability for qualitative outcomes.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from the chapter this week is \textbf{Section 4.2: Why Not Linear Regression?}.
+
+\begin{notes}{Section 4.2: Why Not Linear Regression?}
+    \subsection*{Overview}
+
+    This section discusses why linear regression is not suitable for classification problems, particularly when the response variable is qualitative (categorical). While linear regression can be applied 
+    to binary classification, it has limitations that make it inappropriate for classification tasks with more than two classes or where probabilities are required.
+    
+    \subsubsection*{Why Linear Regression Fails for Classification}
+    
+    Linear regression assumes that the response variable is quantitative and continuous. For classification tasks, where the response variable is categorical, linear regression presents several problems:
+    
+    \begin{highlight}[Key Limitations of Linear Regression for Classification]
+        \begin{itemize}
+            \item \textbf{Arbitrary Ordering for Multi-Class Problems}: Encoding categorical classes with numbers (e.g., 1 for stroke, 2 for drug overdose, 3 for seizure) imposes an artificial order, 
+            which may not exist in reality.
+            \item \textbf{No Natural Way to Handle Multiple Classes}: There is no general method to map qualitative responses with more than two levels to numerical values suitable for linear regression.
+            \item \textbf{Non-Probabilistic Predictions}: Linear regression can produce predicted values outside the range of valid probabilities (0 and 1), making it hard to interpret these predictions as probabilities.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Binary Classification and Linear Regression}
+    
+    For binary classification, linear regression can still be applied by coding the response variable as 0 or 1 (e.g., 0 for stroke, 1 for drug overdose). The least squares solution estimates the 
+    probability of a given class as $P(Y = 1 | X)$. However, even in this case, linear regression has notable limitations:
+    \begin{itemize}
+        \item Predicted probabilities can exceed the valid range of [0, 1].
+        \item It assumes a linear relationship between the predictors and the response, which may not hold in practice.
+    \end{itemize}
+    
+    \begin{highlight}[Issues with Binary Classification Using Linear Regression]
+        \begin{itemize}
+            \item \textbf{Probability Estimates}: While the method produces estimates of class probabilities, the estimates can be unreliable, with values outside the [0, 1] range.
+            \item \textbf{Non-Linear Boundaries}: Linear regression does not model non-linear decision boundaries, which are often needed in classification tasks.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    There are two main reasons not to use linear regression for classification:
+    \begin{itemize}
+        \item Linear regression cannot handle multi-class qualitative responses effectively.
+        \item It does not provide meaningful or valid probability estimates, even for binary responses.
+    \end{itemize}
+    
+    \begin{highlight}[Summary of Key Points]
+        \begin{itemize}
+            \item Linear regression is not well-suited for categorical response variables.
+            \item For classification, it is better to use methods specifically designed for qualitative responses, such as logistic regression or linear discriminant analysis.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from the chapter this week is \textbf{Section 4.3: Logistic Regression}.
+
+\begin{notes}{Section 4.3: Logistic Regression}
+    \subsection*{Overview}
+
+    This section introduces logistic regression, a classification method used for predicting a binary outcome. Unlike linear regression, which predicts a continuous response, logistic regression models 
+    the probability that a given observation belongs to a particular class. The method is widely used when the response variable is qualitative, and it is particularly suited for binary classification problems.
+    
+    \subsubsection*{The Logistic Model}
+    
+    Logistic regression models the probability that the response variable $Y$ belongs to a class (e.g., default = Yes) based on the predictor variables $X$. The probability is modeled using the logistic function:
+    \[
+    p(X) = \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}},
+    \]
+    where $p(X)$ is the probability that $Y = 1$. The logistic function ensures that the predicted probabilities fall between 0 and 1.
+    
+    \begin{highlight}[Key Features of the Logistic Model]
+        \begin{itemize}
+            \item \textbf{Log Odds}: The log odds of the probability are modeled as a linear function of the predictors:
+            \[
+            \log\left(\frac{p(X)}{1 - p(X)}\right) = \beta_0 + \beta_1 X.
+            \]
+            \item \textbf{Non-Linearity}: Unlike linear regression, logistic regression captures non-linear relationships between the predictors and the response.
+            \item \textbf{Odds and Probability}: The odds $p(X)/(1 - p(X))$ can range from 0 to infinity, while the probability remains bounded between 0 and 1.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Coefficient Estimation}
+    
+    The logistic regression coefficients $\beta_0$ and $\beta_1$ are estimated using the method of maximum likelihood. This approach finds the parameter values that maximize the likelihood of the 
+    observed data. The likelihood function for logistic regression is given by:
+    \[
+    \ell(\beta_0, \beta_1) = \prod_{i:y_i=1} p(x_i) \prod_{i':y_{i'}=0} (1 - p(x_{i'})).
+    \]
+    The coefficients are chosen to maximize this likelihood.
+    
+    \begin{highlight}[Coefficient Estimation]
+        \begin{itemize}
+            \item \textbf{Maximum Likelihood Estimation (MLE)}: Used to estimate the parameters that make the observed outcomes most probable.
+            \item \textbf{Standard Errors and $z$-statistics}: These are computed to assess the significance of the coefficients, similar to $t$-statistics in linear regression.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Making Predictions}
+    
+    Once the coefficients are estimated, logistic regression can be used to compute the probability of an outcome for any new observation. For example, given a balance of \$1,000 in the Default data 
+    set, the predicted probability of default is:
+    \[
+    p(\text{balance} = 1000) = \frac{e^{\beta_0 + \beta_1 \times 1000}}{1 + e^{\beta_0 + \beta_1 \times 1000}}.
+    \]
+    Logistic regression is particularly effective for binary outcomes, but it can also handle qualitative predictors by coding them as dummy variables.
+    
+    \subsubsection*{Multiple Logistic Regression}
+    
+    Multiple logistic regression extends the basic model to include multiple predictors. The generalized model is:
+    \[
+    \log\left(\frac{p(X)}{1 - p(X)}\right) = \beta_0 + \beta_1 X_1 + \cdots + \beta_p X_p,
+    \]
+    where $X_1, \dots, X_p$ are the predictor variables. The coefficients can be interpreted similarly to those in simple logistic regression, where each $\beta_j$ represents the change in the log 
+    odds of the outcome for a one-unit change in $X_j$, holding all other variables constant.
+    
+    \begin{highlight}[Multiple Logistic Regression]
+        \begin{itemize}
+            \item Allows for the inclusion of multiple predictors to improve the accuracy of the model.
+            \item The interpretation of coefficients remains focused on the log odds, with each $\beta_j$ indicating the effect of the corresponding predictor on the likelihood of the outcome.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

@@ -1,0 +1,763 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Tree Ensembles}
+\renewcommand{\SectionTitle}{Tree Ensembles}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 8.2: Bagging, Random Forests, Boosting, And Bayesian Additive Regression Trees}
+    \item \textbf{ESLII Chapter 10.1: Boosting Methods}
+    \item \textbf{ESLII Chapter 10.2: Boosting Fits An Additive Model}
+    \item \textbf{ESLII Chapter 10.3: Forward Stagewise Additive Modeling}
+    \item \textbf{ESLII Chapter 10.4: Exponential Loss and AdaBoost}
+    \item \textbf{ESLII Chapter 10.10: Numerical Optimization Via Gradient Boosting}
+    \item \textbf{ESLII Chapter 10.11: Right-Sized Trees For Boosting}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=7YUSp6HdAps}{Ensemble Method Intro, Random Forest}{9}
+    \item \lecture{https://www.youtube.com/watch?v=oS_YieWreug}{Boosting Introduction}{9}
+    \item \lecture{https://www.youtube.com/watch?v=KvLGi3hgNRg}{AdaBoost Algorithm}{9}
+    \item \lecture{https://www.youtube.com/watch?v=ebCeiDo90-0}{Gradient Boosting}{16}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir AdaBoost Algorithm Lecture Notes.pdf}{AdaBoost Algorithm Lecture Notes}
+    \item \pdflink{\LecNoteDir Boosting Introduction Lecture Notes.pdf}{Boosting Introduction Lecture Notes}
+    \item \pdflink{\LecNoteDir Ensemble Method Intro, Random Forest Lecture Notes.pdf}{Ensemble Method Intro, Random Forest Lecture Notes}
+    \item \pdflink{\LecNoteDir Gradient Boosting Lecture Notes.pdf}{Gradient Boosting Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \textbf{Assignment 4 - Tree Ensembles}
+    \item \textbf{Mini Project 1 - Supervised Learning}
+    \begin{itemize}
+        \item \pdflink{\LecNoteDir Project 1 Rubric.pdf}{Project 1 Rubric}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 4 - Tree Ensembles.pdf}{Quiz 4 - Tree Ensembles}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week comes from \textbf{An Introduction To Statistical Learning With Applications In Python} is \textbf{Chapter 8: Tree-Based Methods}. The section
+that is being covered from this chapter this week is \textbf{Section 8.2: Bagging, Random Forests, Boosting, And Bayesian Additive Regression Trees}.
+
+\begin{notes}{Section 8.2: Bagging, Random Forests, Boosting, And Bayesian Additive Regression Trees}
+    \subsection*{Overview}
+
+    This section covers several powerful ensemble methods for improving the prediction accuracy of decision trees: bagging, random forests, boosting, and Bayesian additive regression trees (BART). 
+    Ensemble methods combine many weak learners (typically decision trees) to create a more accurate model. These methods are widely used because they reduce variance, improve prediction, and in some 
+    cases, prevent overfitting.
+    
+    \subsubsection*{Bagging}
+    
+    Bootstrap aggregation, or bagging, is a method for reducing the variance of statistical learning models, particularly decision trees. Bagging involves generating multiple bootstrapped training 
+    sets and training a separate model on each. The final prediction is made by averaging the outputs (for regression) or taking a majority vote (for classification) across all models.
+    
+    \begin{highlight}[Key Concepts in Bagging]
+        \begin{itemize}
+            \item \textbf{Bootstrap Samples}: Bootstrapping creates multiple subsets of the training data by sampling with replacement.
+            \item \textbf{Averaging Predictions}: For regression, the final prediction is the average of predictions across all models. For classification, a majority vote is used.
+            \item \textbf{Variance Reduction}: Bagging significantly reduces model variance, especially for high-variance models like decision trees.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Out-of-Bag Error Estimation}
+    
+    Bagging also offers a convenient method for estimating test error without the need for cross-validation. For each bootstrapped model, roughly one-third of the training data is left out (out-of-bag data). 
+    The out-of-bag (OOB) error is calculated using this left-out data, providing a reliable estimate of the test error.
+    
+    \begin{highlight}[Out-of-Bag Error Estimation]
+        \begin{itemize}
+            \item \textbf{Out-of-Bag (OOB) Data}: On average, one-third of the data is not used for training in each bootstrapped sample.
+            \item \textbf{OOB Error}: The OOB error is calculated by predicting the OOB data using the model trained on the rest, providing a test error estimate.
+            \item \textbf{Efficiency}: OOB error is as effective as cross-validation but computationally simpler, making it ideal for large datasets.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Random Forests}
+    
+    Random forests are an extension of bagging that reduces the correlation between individual trees. While bagging uses all predictors at every split, random forests only consider a random subset of 
+    predictors at each split, which helps to reduce overfitting and improve performance, especially when predictors are correlated.
+    
+    \begin{highlight}[Key Concepts in Random Forests]
+        \begin{itemize}
+            \item \textbf{Random Subset of Predictors}: At each split, a random subset of the predictors is chosen. Typically, this subset size is the square root of the total number of predictors.
+            \item \textbf{Variance Reduction}: Random forests reduce the correlation between trees, leading to lower variance compared to bagging.
+            \item \textbf{Improvements Over Bagging}: Random forests generally achieve better performance than bagging by reducing overfitting.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Boosting}
+    
+    Boosting is a sequential ensemble method that improves model performance by iteratively fitting models to the residuals of the previous model. Each subsequent model focuses on the errors made by 
+    its predecessor, gradually improving the overall model's accuracy. Unlike bagging, boosting does not use bootstrapped samples and builds trees sequentially rather than independently.
+    
+    \begin{highlight}[Key Concepts in Boosting]
+        \begin{itemize}
+            \item \textbf{Sequential Learning}: Models are trained sequentially, with each new model attempting to correct the errors of the previous one.
+            \item \textbf{Residual Fitting}: Each tree is fit to the residuals (errors) of the current model, improving the fit in areas where the previous models performed poorly.
+            \item \textbf{Shrinkage Parameter}: A shrinkage parameter \(\lambda\) controls the learning rate, with smaller values making learning slower but more accurate.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Bayesian Additive Regression Trees (BART)}
+    
+    BART is a more recent ensemble method that combines ideas from bagging and boosting. It builds multiple trees, each contributing a small part to the final prediction. BART updates the trees iteratively, 
+    using Bayesian inference to improve predictions by capturing the uncertainty in the model's residuals.
+    
+    \begin{highlight}[Key Concepts in BART]
+        \begin{itemize}
+            \item \textbf{Bayesian Framework}: BART uses a Bayesian approach to iteratively refine trees, focusing on areas where the model's residuals are large.
+            \item \textbf{Tree Perturbations}: Instead of fitting entirely new trees, BART modifies existing trees slightly at each iteration to avoid overfitting.
+            \item \textbf{Burn-in Period}: The first few iterations of BART are typically discarded as a burn-in period, after which the predictions stabilize.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Tree Ensemble Methods}
+    
+    Each ensemble method improves on the basic decision tree by combining multiple trees to reduce variance, improve accuracy, and minimize overfitting. Bagging and random forests are highly effective 
+    for reducing variance, while boosting focuses on reducing bias by sequentially learning from errors. BART adds a Bayesian layer to handle uncertainty in predictions, offering a robust method for 
+    regression and classification tasks.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item \textbf{Bagging}: Reduces variance by averaging many trees.
+            \item \textbf{Random Forests}: Further reduces variance by decorrelating trees.
+            \item \textbf{Boosting}: Focuses on reducing bias by iteratively improving predictions.
+            \item \textbf{BART}: Combines Bayesian inference with ensemble learning to address uncertainty and prevent overfitting.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The second chapter that is being covered this week comes from \textbf{The Elements Of Statistical Learning} is \textbf{Chapter 10: Boosting And Additive Trees}. The first section that is being covered
+from this chapter this week is \textbf{Section 10.1: Boosting Methods}.
+
+\begin{notes}{Section 10.1: Boosting Methods}
+    \subsection*{Overview}
+
+    Boosting is one of the most impactful advancements in machine learning over the last few decades. Originally developed for classification, boosting has since been extended to regression tasks. 
+    The primary idea behind boosting is to sequentially combine many weak learners—models that perform only slightly better than random guessing—into a strong ensemble model. Boosting is related to other 
+    ensemble methods like bagging but is fundamentally different in how it adjusts and weights models based on their performance.
+    
+    \subsubsection*{AdaBoost Algorithm}
+    
+    AdaBoost is a popular and foundational boosting algorithm developed by Freund and Schapire. The algorithm focuses on classification problems by iteratively adjusting the weights of training 
+    observations based on whether they are correctly classified. In each iteration, a weak classifier is fit to a weighted version of the data, and a final strong classifier is formed by taking a 
+    weighted majority vote of all weak classifiers.
+    
+    \begin{highlight}[Key Concepts of AdaBoost]
+        \begin{itemize}
+            \item \textbf{Weak Learner}: A weak learner is a model with an accuracy only slightly better than random guessing.
+            \item \textbf{Weighted Training Data}: After each iteration, the weights of misclassified observations are increased, forcing subsequent classifiers to focus more on difficult cases.
+            \item \textbf{Final Classifier}: The final classifier \(G(x)\) is a weighted majority vote of all the weak classifiers:
+            \[
+            G(x) = \text{sign} \left( \sum_{m=1}^{M} \omega_m G_m(x) \right)
+            \]
+            where \(\omega_m\) is the weight given to each weak classifier \(G_m(x)\).
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Boosting Iterations and Classifier Weights}
+    
+    At each step, the AdaBoost algorithm fits a classifier to the training data and computes the weighted error rate. The weight for the classifier is computed based on its error rate, with more 
+    accurate classifiers receiving higher weights. Observations that were misclassified in previous iterations are given greater weight in subsequent rounds, forcing the algorithm to focus on the 
+    hardest-to-classify examples.
+    
+    \begin{highlight}[Boosting Algorithm]
+        \begin{itemize}
+            \item \textbf{Observation Weights}: The weight \(w_i\) for each observation is updated in each round based on whether the observation was correctly classified. Misclassified points receive higher weights.
+            \item \textbf{Classifier Weight}: The weight of each weak classifier $\omega_m$ is computed as:
+            \[
+            \omega_m = \log \left( \frac{1 - \text{err}_m}{\text{err}_m} \right)
+            \]
+            where \(\text{err}_m\) is the error rate of the \(m\)-th classifier.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Boosting}
+    
+    Boosting dramatically improves the performance of weak classifiers. Even very simple models, like stumps (decision trees with only one split), can achieve high accuracy when combined through 
+    boosting. Figure 10.2 in the text shows how a weak classifier with a test error rate of 45.8\% is improved to 5.8\% after 400 boosting iterations, outperforming a much more complex 244-node classification tree.
+    
+    \begin{highlight}[Advantages of Boosting]
+        \begin{itemize}
+            \item \textbf{Improvement Over Weak Learners}: Boosting can transform weak classifiers into highly accurate models.
+            \item \textbf{Focus on Hard-to-Classify Points}: By increasing the focus on misclassified observations, boosting addresses cases that are typically harder for other models to handle.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{General Framework of Boosting}
+    
+    Boosting fits an additive model where each term is a simple basis function representing a weak classifier. This framework can be generalized to other learning tasks beyond classification, such 
+    as regression. Each classifier is viewed as a basis function, and the boosting algorithm sequentially fits each classifier to improve the model by minimizing a loss function.
+    
+    \begin{highlight}[Additive Model in Boosting]
+        \begin{itemize}
+            \item \textbf{Additive Model}: Boosting fits a model of the form:
+            \[
+            f(x) = \sum_{m=1}^{M} \beta_m b(x; \gamma_m)
+            \]
+            where \(b(x; \gamma)\) are basis functions, and \(\beta_m\) are coefficients.
+            \item \textbf{Loss Minimization}: Boosting can be viewed as minimizing a loss function (e.g., exponential loss in the case of AdaBoost).
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications of Boosting}
+    
+    Boosting, especially using decision trees as base learners, has been regarded as one of the most effective off-the-shelf classifiers for many practical applications, particularly in data mining. 
+    Decision trees, when used as base learners in boosting, offer a flexible and powerful approach to handling complex and large datasets.
+    
+    \begin{highlight}[Applications and Use Cases]
+        \begin{itemize}
+            \item \textbf{Decision Trees as Base Learners}: Decision trees are commonly used as weak learners in boosting, making the method highly effective for classification tasks.
+            \item \textbf{Data Mining}: Boosting is particularly well-suited for large, complex datasets typical in data mining applications.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Key Concepts in Boosting}
+    
+    Boosting has emerged as a powerful method in machine learning due to its ability to enhance weak classifiers and its flexibility in handling various learning tasks. By iteratively adjusting the 
+    weights of misclassified observations and combining classifiers through weighted voting, boosting significantly improves predictive accuracy. Its general framework as an additive model opens up 
+    opportunities for extensions to other tasks, including regression and multi-class problems.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Boosting converts weak learners into a strong ensemble model by focusing on misclassified observations and iteratively refining the model.
+            \item AdaBoost, one of the most famous boosting algorithms, demonstrates the power of boosting even with simple classifiers like decision stumps.
+            \item Boosting fits an additive model, making it adaptable to a variety of learning tasks beyond classification.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 10.2: Boosting Fits An Additive Model}.
+
+\begin{notes}{Section 10.2: Boosting Fits An Additive Model}
+    \subsection*{Overview}
+
+    Boosting can be understood as fitting an additive model by combining a set of weak learners, typically decision trees, into a strong predictive model. The success of boosting lies in its ability 
+    to sequentially fit simple models—called "basis functions"—to minimize a loss function over the training data. Each weak learner focuses on the errors made by the previous ones, thus improving 
+    the overall prediction accuracy as new learners are added.
+    
+    \subsubsection*{Additive Expansion of Models}
+    
+    Boosting constructs a model as an additive expansion of weak learners. Each weak learner, denoted $G_m(x)$, serves as a basis function that is added to the model. The general form of the additive model is:
+    \[
+    f(x) = \sum_{m=1}^{M} \omega_m b(x; \epsilon_m),
+    \]
+    where $\omega_m$ are the expansion coefficients and $b(x; \epsilon_m)$ are the basis functions parameterized by $\epsilon_m$. This framework allows boosting to apply to various 
+    learning tasks by appropriately choosing the loss function and basis functions.
+    
+    \begin{highlight}[Key Concepts in Additive Models]
+        \begin{itemize}
+            \item \textbf{Basis Functions}: The weak learners $G_m(x)$ serve as simple basis functions that, when combined, form a strong model.
+            \item \textbf{Additive Expansion}: The model is built by sequentially adding new basis functions, each weighted by a coefficient $\omega_m$.
+            \item \textbf{Parameterization}: The basis functions are characterized by a set of parameters $\epsilon_m$, which define the specific nature of the weak learner.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Basis Functions in Machine Learning}
+    
+    Additive expansions are a central component in many machine learning models. For example:
+    \begin{itemize}
+        \item \textbf{Neural Networks}: The basis functions are sigmoid functions $\sigma(\epsilon_0 + \epsilon_1^T x)$, where the parameters $\epsilon$ represent a linear combination of input variables.
+        \item \textbf{Wavelets}: In signal processing, wavelets are used as basis functions, where $\epsilon$ controls shifts in location and scale.
+        \item \textbf{Multivariate Adaptive Regression Splines (MARS)}: MARS uses truncated spline basis functions, with $\epsilon$ representing the variables and the knots' positions.
+    \end{itemize}
+    
+    \subsubsection*{Fitting the Additive Model}
+    
+    Boosting fits the additive model by minimizing a loss function $L(y, f(x))$ averaged over the training data. The general optimization problem is:
+    \[
+    \min_{\{ \omega_m, \epsilon_m \}_{m=1}^M} \sum_{i=1}^{N} L\left( y_i, \sum_{m=1}^{M} \omega_m b(x_i; \epsilon_m) \right).
+    \]
+    For certain loss functions, this optimization can be computationally expensive, requiring numerical methods. However, a simpler approach involves solving for one basis function at a time.
+    
+    \begin{highlight}[Fitting the Additive Model]
+        \begin{itemize}
+            \item \textbf{Loss Minimization}: The model minimizes a loss function (e.g., squared error or likelihood-based loss) by fitting basis functions sequentially.
+            \item \textbf{Sequential Fitting}: Instead of fitting all basis functions at once, boosting fits one basis function at a time by solving:
+            \[
+            \min_{\omega, \epsilon} \sum_{i=1}^{N} L\left( y_i, \omega b(x_i; \epsilon) \right).
+            \]
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Forward Stagewise Additive Modeling}
+    
+    Forward stagewise modeling is a simplified approach to fitting additive models, where basis functions are added sequentially without revisiting or adjusting the parameters of previously added 
+    functions. At each iteration, the algorithm selects the best basis function and its corresponding coefficient to add to the model. This approach is less computationally intensive than fitting the 
+    full model at once.
+    
+    \begin{highlight}[Forward Stagewise Additive Modeling]
+        \begin{itemize}
+            \item \textbf{Sequential Addition}: At each iteration, a new basis function is selected and added to the model.
+            \item \textbf{No Revisiting}: Once a basis function is added, its parameters are not adjusted in later iterations.
+            \item \textbf{Algorithm}: The process can be summarized as:
+            \begin{enumerate}
+                \item Initialize the model $f_0(x) = 0$.
+                \item For each iteration $m = 1, \dots, M$:
+                \[
+                (\omega_m, \epsilon_m) = \arg\min_{\omega, \epsilon} \sum_{i=1}^{N} L(y_i, f_{m-1}(x_i) + \omega b(x_i; \epsilon)).
+                \]
+                \item Update the model: $f_m(x) = f_{m-1}(x) + \omega_m b(x; \epsilon_m)$.
+            \end{enumerate}
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary Of Key Concepts}
+    
+    Boosting's effectiveness stems from its ability to iteratively fit simple models that correct the mistakes of previous iterations. By treating weak learners as basis functions in an additive model, 
+    boosting can minimize a wide range of loss functions, making it highly versatile across different machine learning tasks. The forward stagewise approach simplifies the optimization process by 
+    focusing on one basis function at a time.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Boosting fits an additive model by combining weak learners as basis functions.
+            \item Forward stagewise modeling is an efficient method for fitting additive models, particularly in the context of boosting.
+            \item The flexibility of boosting allows it to be applied to various machine learning tasks with different loss functions.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 10.3: Forward Stagewise Additive Modeling}.
+
+\begin{notes}{Section 10.3: Forward Stagewise Additive Modeling}
+    \subsection*{Overview}
+
+    Forward stagewise additive modeling is a powerful approach for fitting additive models by sequentially adding new terms to the model without modifying previously added ones. This method is 
+    computationally efficient, as it focuses on fitting one term (or basis function) at a time. Forward stagewise modeling approximates the solution to a more complex optimization problem, simplifying 
+    the process while maintaining flexibility in handling different types of loss functions.
+    
+    \subsubsection*{Forward Stagewise Additive Modeling Process}
+    
+    The forward stagewise modeling approach builds an additive model by fitting new basis functions in each iteration. Unlike standard additive models, which refit the entire model at each step, forward 
+    stagewise models add new terms while leaving existing terms unchanged.
+    
+    \begin{highlight}[Forward Stagewise Additive Modeling Algorithm]
+        \begin{enumerate}
+            \item \textbf{Initialization}: Start with an initial model $f_0(x) = 0$.
+            \item \textbf{Iteration}: For each step $m = 1, \dots, M$, perform the following:
+            \begin{itemize}
+                \item Find the optimal basis function $b(x; \epsilon_m)$ and coefficient $\omega_m$ by minimizing the loss function $L(y, f(x))$:
+                \[
+                (\omega_m, \epsilon_m) = \arg\min_{\omega, \epsilon} \sum_{i=1}^{N} L\left( y_i, f_{m-1}(x_i) + \omega b(x_i; \epsilon) \right).
+                \]
+                \item Update the model by adding the new term:
+                \[
+                f_m(x) = f_{m-1}(x) + \omega_m b(x; \epsilon_m).
+                \]
+            \end{itemize}
+            \item Repeat the process until $M$ terms have been added to the model.
+        \end{enumerate}
+    \end{highlight}
+    
+    \subsubsection*{Loss Function and Optimization}
+    
+    The forward stagewise algorithm works by iteratively minimizing a chosen loss function, such as squared-error loss or likelihood-based loss, over the training data. The overall objective is to 
+    find the optimal basis functions and coefficients that minimize the average loss across the dataset.
+    
+    \begin{highlight}[Optimization Objective]
+        \[
+        \min_{\{ \omega_m, \epsilon_m \}_{m=1}^{M}} \sum_{i=1}^{N} L\left( y_i, \sum_{m=1}^{M} \omega_m b(x_i; \epsilon_m) \right).
+        \]
+        Instead of solving this entire problem at once, forward stagewise modeling approximates it by solving for one basis function at a time, as shown in:
+        \[
+        \min_{\omega, \epsilon} \sum_{i=1}^{N} L( y_i, \omega b(x_i; \epsilon)).
+        \]
+    \end{highlight}
+    
+    \subsubsection*{Example: Squared-Error Loss}
+    
+    For squared-error loss, the objective becomes:
+    \[
+    L(y, f(x)) = (y - f(x))^2.
+    \]
+    At each iteration, the algorithm computes the residuals of the current model:
+    \[
+    r_i^m = y_i - f_{m-1}(x_i),
+    \]
+    and fits a new basis function $\omega_m b(x; \epsilon_m)$ that best matches the residuals. This approach forms the foundation for least squares boosting, where each new term is chosen to minimize 
+    the squared error with respect to the residuals of the current model.
+    
+    \begin{highlight}[Least Squares Boosting]
+        \begin{itemize}
+            \item \textbf{Residual Fitting}: At each step, the residuals of the current model are computed, and the next basis function is fit to minimize the squared error of these residuals.
+            \item \textbf{Squared-Error Loss}: The new term added to the model is selected to minimize the squared difference between the predicted and true values.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Flexibility in Loss Functions}
+    
+    While squared-error loss is commonly used in regression problems, forward stagewise additive modeling can be applied to various loss functions. Different loss functions are better suited for different 
+    tasks (e.g., exponential loss for classification problems like AdaBoost). The flexibility of the forward stagewise approach makes it adaptable to both regression and classification tasks.
+    
+    \begin{highlight}[Flexibility in Loss Functions]
+        \begin{itemize}
+            \item \textbf{Squared-Error Loss}: Suitable for regression tasks.
+            \item \textbf{Exponential Loss}: Often used in classification tasks, such as in AdaBoost, where it emphasizes minimizing classification errors.
+            \item \textbf{Other Loss Functions}: The framework is general enough to incorporate other loss functions, such as Huber loss for robust regression or logistic loss for classification.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary Of Key Concepts}
+    
+    Forward stagewise additive modeling offers a flexible and computationally efficient method for fitting complex additive models. By sequentially adding new terms to the model, it can handle a wide variety 
+    of loss functions, making it well-suited for both regression and classification tasks. Its iterative approach to fitting models by focusing on one term at a time ensures that the method remains 
+    computationally manageable, even for large datasets.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Forward stagewise modeling builds an additive model by fitting new terms iteratively without revisiting previously added terms.
+            \item The method is adaptable to different loss functions, making it suitable for a wide range of machine learning tasks, including regression and classification.
+            \item By focusing on fitting one basis function at a time, forward stagewise modeling simplifies the optimization process, improving computational efficiency.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 10.4: Exponential Loss And AdaBoost}.
+
+\begin{notes}{Section 10.4: Exponential Loss And AdaBoost}
+    \subsection*{Overview}
+
+    AdaBoost is one of the most widely used boosting algorithms, and it can be understood as an implementation of forward stagewise additive modeling with an exponential loss function. In each iteration, 
+    AdaBoost fits a weak classifier to a weighted version of the training data, adjusts the weights based on misclassification, and updates the final model. The exponential loss function used in AdaBoost 
+    emphasizes misclassified points, enabling the algorithm to improve accuracy with each iteration.
+    
+    \subsubsection*{Exponential Loss and Residuals}
+    
+    In forward stagewise modeling, the algorithm adds new terms to the model by fitting a weak learner to the residuals of the current model. The residuals represent the difference between the true values 
+    and the model's predictions at each iteration. When squared-error loss is used, the residuals are calculated as:
+    \[
+    r_i^m = y_i - f_{m-1}(x_i),
+    \]
+    where $f_{m-1}(x)$ is the current model, and the next term is fit to the residuals. However, squared-error loss is not ideal for classification, motivating the need for alternative loss functions, 
+    such as exponential loss.
+    
+    \begin{highlight}[Exponential Loss Function]
+        \begin{itemize}
+            \item The exponential loss function used in AdaBoost is:
+            \[
+            L(y, f(x)) = \exp(-y f(x)),
+            \]
+            where $y \in \{-1, 1\}$ and $f(x)$ is the predicted class.
+            \item This loss function penalizes misclassified points more heavily, focusing the algorithm on improving accuracy where errors occur.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{AdaBoost as Forward Stagewise Additive Modeling}
+    
+    AdaBoost can be understood as performing forward stagewise additive modeling using the exponential loss function. At each iteration $m$, AdaBoost fits a weak classifier $G_m(x)$ and assigns it 
+    a weight $\omega_m$ based on its classification error. The final model is constructed by combining all weak classifiers through a weighted sum:
+    \[
+    f_M(x) = \sum_{m=1}^{M} \omega_m G_m(x).
+    \]
+    
+    The algorithm updates the weights for each observation based on the classification accuracy. Misclassified observations are given higher weights in subsequent iterations, forcing the algorithm to focus 
+    on difficult examples.
+    
+    \begin{highlight}[AdaBoost Algorithm Steps]
+        \begin{enumerate}
+            \item Fit a weak classifier $G_m(x)$ to the weighted training data.
+            \item Calculate the weighted error $\text{err}_m$:
+            \[
+            \text{err}_m = \frac{\sum_{i=1}^{N} w_i I(y_i \neq G_m(x_i))}{\sum_{i=1}^{N} w_i}.
+            \]
+            \item Compute the weight of the classifier:
+            \[
+            \omega_m = \frac{1}{2} \log \left( \frac{1 - \text{err}_m}{\text{err}_m} \right).
+            \]
+            \item Update the weights of the observations:
+            \[
+            w_{i}^{(m+1)} = w_i^{(m)} \exp(-\omega_m y_i G_m(x_i)).
+            \]
+        \end{enumerate}
+    \end{highlight}
+    
+    \subsubsection*{Minimizing Weighted Error}
+    
+    At each iteration, AdaBoost adjusts the weights of misclassified observations, making them more influential in the next iteration. The weak classifier $G_m(x)$ is chosen to minimize the weighted 
+    error, which leads to solving the following optimization problem:
+    \[
+    G_m = \arg\min_G \sum_{i=1}^{N} w_i I(y_i \neq G(x_i)),
+    \]
+    where $I(\cdot)$ is the indicator function. The classifier that minimizes the weighted error is selected and assigned a weight $\omega_m$ based on its accuracy.
+    
+    \begin{highlight}[Weighted Error Minimization]
+        \begin{itemize}
+            \item The weak classifier at each step is selected to minimize the weighted misclassification error, focusing on improving the model where it struggles most.
+            \item The weight assigned to the classifier is proportional to its accuracy, ensuring that more accurate classifiers have a greater influence on the final model.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Training Error vs. Exponential Loss}
+    
+    As AdaBoost iterates, it continues to reduce the training error by refining the model. However, the algorithm minimizes the exponential loss, which is more sensitive to changes in the class probabilities 
+    than simple misclassification error. Figure 10.3 in the text shows that even after the training error reaches zero, the exponential loss continues to decrease, allowing AdaBoost to improve performance 
+    on unseen data.
+    
+    \begin{highlight}[Exponential Loss vs. Misclassification Error]
+        \begin{itemize}
+            \item \textbf{Training Error}: AdaBoost can drive the training error to zero after several iterations.
+            \item \textbf{Exponential Loss}: The exponential loss keeps decreasing even when the training error is zero, indicating continued improvement in the model's probability estimates.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary Of Key Concepts}
+    
+    AdaBoost is a powerful method for classification problems, and its success can be attributed to its use of exponential loss and its focus on misclassified observations. By iteratively adjusting the model 
+    to minimize exponential loss, AdaBoost improves both classification accuracy and the robustness of the model. The algorithm's flexibility, simplicity, and effectiveness have made it a widely adopted 
+    approach in machine learning.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item AdaBoost minimizes exponential loss, emphasizing the improvement of misclassified points.
+            \item The algorithm builds an additive model by iteratively adding weak classifiers, each weighted based on its accuracy.
+            \item The exponential loss function used in AdaBoost allows the model to continue improving even after the training error reaches zero.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 10.5: Numerical Optimization Via Gradient Boosting}.
+
+\begin{notes}{Section 10.5: Numerical Optimization Via Gradient Boosting}
+    \subsection*{Overview}
+
+    Gradient boosting is a powerful method for fitting predictive models by minimizing a loss function through numerical optimization. By iteratively adding weak learners (typically decision trees), 
+    gradient boosting refines the model to minimize the loss function in a stagewise manner. The method is highly adaptable, allowing it to work with a wide range of differentiable loss functions 
+    for both regression and classification problems.
+    
+    \subsubsection*{Loss Function Minimization}
+    
+    The objective of gradient boosting is to minimize the total loss $L(f)$ across the training data. Given a set of data points $\{x_i, y_i\}_{i=1}^{N}$, the goal is to find the model $f(x)$ 
+    that minimizes the sum of losses:
+    \[
+    L(f) = \sum_{i=1}^{N} L(y_i, f(x_i)),
+    \]
+    where $L(y_i, f(x_i))$ is the loss function that measures how far the model's prediction $f(x_i)$ is from the true value $y_i$.
+    
+    \begin{highlight}[Key Concepts in Loss Minimization]
+        \begin{itemize}
+            \item \textbf{Numerical Optimization}: Gradient boosting can be seen as a numerical optimization problem, where the model is refined iteratively to reduce the loss.
+            \item \textbf{Gradient Descent}: The approach uses the gradient of the loss function to determine the direction in which the model should be adjusted at each iteration.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Steepest Descent and Gradient Boosting}
+    
+    Gradient boosting is closely related to the steepest descent method in numerical optimization. In steepest descent, the gradient of the loss function $\nabla L(f)$ is computed, and the model 
+    is updated in the direction that most rapidly decreases the loss:
+    \[
+    f_m = f_{m-1} + \omega_m \nabla L(f_{m-1}),
+    \]
+    where $\omega_m$ is the step size. The gradient represents the local direction in which the loss decreases the fastest.
+    
+    \begin{highlight}[Steepest Descent in Gradient Boosting]
+        \begin{itemize}
+            \item \textbf{Gradient Calculation}: At each iteration, the gradient of the loss function is calculated to determine how the model should be updated.
+            \item \textbf{Step Size}: The step size $\omega_m$ controls how far the model moves in the direction of the gradient to minimize the loss.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Gradient Boosting with Decision Trees}
+    
+    In gradient boosting, instead of directly using the gradient vector, a decision tree is fit to the negative gradient of the loss function at each iteration. The tree $T(x; \Theta_m)$ is selected 
+    to approximate the negative gradient, and its predictions are used to update the model:
+    \[
+    f_m(x) = f_{m-1}(x) + \omega_m T(x; \Theta_m),
+    \]
+    where $\omega_m$ is the weight for the tree at iteration $m$. The tree's structure is designed to approximate the direction of steepest descent.
+    
+    \begin{highlight}[Tree-Based Gradient Boosting]
+        \begin{itemize}
+            \item \textbf{Tree Fitting}: At each iteration, a decision tree is fit to the residuals (negative gradient) to reduce the loss.
+            \item \textbf{Tree Predictions}: The tree $T(x; \Theta_m)$ produces predictions that approximate the steepest descent direction, updating the model in a way that minimizes the loss.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Loss Functions and Gradients}
+    
+    Gradient boosting can handle various loss functions. The gradient (or negative gradient) used at each step depends on the loss function selected. For example:
+    \begin{itemize}
+        \item \textbf{Squared Error Loss (Regression)}: The gradient is the residual $r_i = y_i - f(x_i)$, and the algorithm fits a tree to the residuals at each step.
+        \item \textbf{Absolute Error Loss (Regression)}: The gradient is the sign of the residual $\text{sign}(y_i - f(x_i))$.
+        \item \textbf{Huber Loss}: A combination of squared error and absolute error, used for robust regression.
+        \item \textbf{Deviance (Classification)}: The gradient is based on the multinomial deviance for classification tasks, which leads to the fitting of multiple trees (one for each class) at each iteration.
+    \end{itemize}
+    
+    \begin{highlight}[Common Loss Functions and Gradients]
+        \begin{itemize}
+            \item \textbf{Squared Error Loss}: The negative gradient is the ordinary residual.
+            \item \textbf{Absolute Error Loss}: The negative gradient is the sign of the residual.
+            \item \textbf{Huber Loss}: A compromise between squared error and absolute error, depending on the magnitude of the residual.
+            \item \textbf{Multinomial Deviance (Classification)}: The negative gradient relates to the predicted class probabilities.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Gradient Boosting Algorithm}
+    
+    The gradient boosting algorithm iteratively refines the model by fitting decision trees to the negative gradient. The general steps are as follows:
+    
+    \begin{highlight}[Gradient Boosting Algorithm]
+        \begin{enumerate}
+            \item \textbf{Initialization}: Start with an initial model $f_0(x)$, often set to a constant that minimizes the loss function.
+            \item \textbf{Iteration}: For each iteration $m = 1, \dots, M$:
+            \begin{itemize}
+                \item Compute the residuals (negative gradient) $r_i^m$ for each data point:
+                \[
+                r_i^m = -\left[ \frac{\partial L(y_i, f(x_i))}{\partial f(x_i)} \right]_{f = f_{m-1}}.
+                \]
+                \item Fit a decision tree $T(x; \Theta_m)$ to the residuals.
+                \item Compute the step size $\omega_m$ by minimizing the loss over the tree predictions.
+                \item Update the model: 
+                \[
+                f_m(x) = f_{m-1}(x) + \omega_m T(x; \Theta_m).
+                \]
+            \end{itemize}
+            \item \textbf{Final Model}: After $M$ iterations, the final model is:
+            \[
+            f_M(x) = f_0(x) + \sum_{m=1}^{M} \omega_m T(x; \Theta_m).
+            \]
+        \end{enumerate}
+    \end{highlight}
+    
+    \subsubsection*{Summary Of Key Concepts}
+    
+    Gradient boosting is a flexible and powerful method for both regression and classification tasks. By fitting decision trees to the gradient of the loss function at each iteration, the algorithm 
+    builds a strong model through incremental improvements. Its ability to handle a variety of loss functions makes gradient boosting widely applicable across different domains.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Gradient boosting fits decision trees to the negative gradient of the loss function, updating the model iteratively to minimize the loss.
+            \item The method is highly flexible and can handle different types of loss functions, making it suitable for both regression and classification.
+            \item The gradient boosting algorithm builds a strong predictive model by incrementally refining the model with weak learners at each step.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The final section that is being covered from this chapter this week is \textbf{Section 10.11: Right-Sized Trees For Boosting}.
+
+\begin{notes}{Section 10.11: Right-Sized Trees For Boosting}
+    \subsection*{Overview}
+
+    Choosing the appropriate size for the decision trees used in boosting is critical for achieving good performance. Historically, boosting was considered a technique for combining fully grown trees, 
+    but this approach often results in overly large trees that degrade performance. Instead, a strategy of using trees with a fixed, smaller size at each boosting iteration has proven more effective. 
+    This section discusses how tree size affects the interaction terms captured by the model and provides guidelines for selecting the right-sized trees for boosting.
+    
+    \subsubsection*{The Problem with Large Trees}
+    
+    In traditional tree-based models, the tree size is determined by first growing a large tree and then pruning it to the optimal size. However, in the context of boosting, this approach is flawed 
+    because it assumes that each tree is the final model. Since boosting involves combining many trees, using oversized trees early in the process introduces unnecessary complexity and increases 
+    variance, which can lead to poorer performance and longer computation times.
+    
+    \begin{highlight}[Challenges of Using Large Trees]
+        \begin{itemize}
+            \item \textbf{Overfitting}: Large trees tend to overfit the data, especially in the early stages of boosting, where the model is far from complete.
+            \item \textbf{Increased Computation}: Bigger trees require more computation, slowing down the boosting process without significant benefits in performance.
+            \item \textbf{Variance Increase}: Larger trees capture higher-order interactions, but this can introduce excessive variance when only lower-order interactions are needed.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Fixed Tree Size in Boosting}
+    
+    A more effective approach is to restrict all trees to be of the same size. The size of each tree is controlled by a parameter $J$, which represents the number of terminal nodes (or leaves) in the 
+    tree. This size becomes a meta-parameter of the boosting procedure. Adjusting $J$ allows control over the complexity of each tree and the types of interaction effects captured by the model.
+    
+    \begin{highlight}[Fixed Tree Size in Boosting]
+        \begin{itemize}
+            \item \textbf{Tree Size Parameter $J$}: All trees in the boosting process are grown to a fixed size, with $J$ determining the number of terminal nodes.
+            \item \textbf{Interaction Control}: The parameter $J$ controls the level of interaction effects the model can capture. Larger values of $J$ allow for more complex interactions, while smaller 
+            values restrict the model to simpler patterns.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Tree Size and Interaction Effects}
+    
+    The interaction level of a boosted model is limited by the size of the trees. Smaller trees (e.g., stumps with $J = 2$) capture only main effects (individual predictors), while larger trees capture 
+    higher-order interactions between variables. The ANOVA decomposition of the target function $\eta(X)$ shows that the complexity of interaction effects increases with tree size.
+    
+    \[
+    \eta(X) = \sum_j \eta_j(X_j) + \sum_{jk} \eta_{jk}(X_j, X_k) + \sum_{jkl} \eta_{jkl}(X_j, X_k, X_l) + \dots
+    \]
+    
+    Boosted models with small trees capture mostly main effects and simple two-variable interactions, while larger trees capture more complex relationships. However, higher-order interactions are often 
+    unnecessary and can introduce variance, particularly when they are not dominant in the data.
+    
+    \begin{highlight}[Effect of Tree Size on Interaction Levels]
+        \begin{itemize}
+            \item \textbf{Main Effects and Low-Order Interactions}: With $J = 2$, only main effects (individual predictors) are modeled, while $J = 3$ allows two-variable interactions.
+            \item \textbf{Higher-Order Interactions}: Larger trees allow for higher-order interactions, but these are rarely needed and can degrade performance by increasing variance.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Choosing the Right Tree Size}
+    
+    The choice of $J$ should reflect the dominant interactions in the data. In practice, lower-order interactions tend to dominate, meaning that overly large trees are often unnecessary. Experience suggests 
+    that tree sizes in the range $4 \leq J \leq 8$ work well for most applications of boosting, and performance is usually not very sensitive to the exact value within this range. Fine-tuning $J$ using 
+    a validation set can provide further improvement, but the gains are often small.
+    
+    \begin{highlight}[Guidelines for Choosing $J$]
+        \begin{itemize}
+            \item \textbf{Low $J$}: Smaller tree sizes are preferred when the data contains mostly main effects or simple interactions.
+            \item \textbf{Recommended Range}: In practice, tree sizes in the range $4 \leq J \leq 8$ tend to work well in most applications.
+            \item \textbf{Fine-Tuning}: While it is possible to fine-tune $J$ using a validation set, the benefits are often marginal compared to simply choosing a value around 6.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Empirical Results}
+    
+    Figure 10.9 illustrates the effect of different tree sizes on the test error for a simulated example. In this case, the true generative model is additive, meaning that boosting with small trees 
+    (e.g., stumps) performs best. Larger trees lead to increased variance and higher test errors. Figure 10.10 shows the coordinate functions estimated by boosted stumps, which closely match the true 
+    quadratic functions of the underlying data.
+    
+    \begin{highlight}[Empirical Insights]
+        \begin{itemize}
+            \item \textbf{Boosting with Small Trees}: In situations where the underlying data is additive or has simple interactions, smaller trees (e.g., stumps) yield the best results by avoiding unnecessary complexity.
+            \item \textbf{Variance Trade-Off}: Larger trees capture higher-order interactions but introduce more variance, which can increase the test error when these interactions are not present in the data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary Of Key Concepts}
+    
+    The size of the trees used in boosting is a key parameter that controls the complexity of the model. While larger trees allow for more complex interactions, they often introduce unnecessary variance 
+    and lead to overfitting. For most applications, smaller trees (with $J$ between 4 and 8) provide a good balance between complexity and performance, allowing the model to capture meaningful interactions 
+    without overfitting.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Boosting models benefit from using trees of a fixed, moderate size, rather than fully grown trees, which tend to overfit.
+            \item The parameter $J$ controls the interaction complexity of the model, with lower values favoring simple main effects and higher values capturing more complex interactions.
+            \item Empirical evidence suggests that tree sizes in the range $4 \leq J \leq 8$ work well across a variety of applications, with minimal sensitivity to the exact value.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

@@ -1,0 +1,299 @@
+\clearpage
+
+\newcommand{\ChapTitle}{Introduction To Machine Learning, Linear Regression Refresher}
+\newcommand{\SectionTitle}{Introduction To Machine Learning, Linear Regression Refresher}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 3.1: Simple Linear Regression}
+    \item \textbf{ISLR Chapter 3.2: Multiple Linear Regression}
+    \item \textbf{ISLR Chapter 3.3: Other Considerations In The Regression Model}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=zbBpXm08Kkw}{Introduction To Linear Regression}{16}
+    \item \lecture{https://www.youtube.com/watch?v=VeGfteEw688}{Intuition Of Linear Regression}{12}
+    \item \lecture{https://www.youtube.com/watch?v=xq3XNoQL4cw}{Least Squared Method}{12}
+    \item \lecture{https://www.youtube.com/watch?v=wzA6oS6Ra60}{Model Fitness And R-Squared}{9}
+    \item \lecture{https://www.youtube.com/watch?v=bnjSNl_iukY}{Coefficient Significance And Test Error}{19}
+    \item \lecture{https://www.youtube.com/watch?v=ncCAR5N1hMA}{Linear Regression With Higher-Order Terms: Polynomial Regression}{13}
+    \item \lecture{https://www.youtube.com/watch?v=EHuz9yZxLPc}{Bias-Variance Trade-Off}{7}
+    \item \lecture{https://www.youtube.com/watch?v=z7gncX0TwFY}{Linear Regression With Multiple Features}{11}
+    \item \lecture{https://www.youtube.com/watch?v=nAQIkJOqzXg}{Feature Selection, Correlation And Interactions}{14}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Introduction To Linear Regression Lecture Notes.pdf}{Introduction To Linear Regression Lecture Notes}
+    \item \pdflink{\LecNoteDir Multi-Linear Regression Lecture Notes.pdf}{Multi-Linear Regression Lecture Notes}
+    \item \pdflink{\LecNoteDir Simple Linear Regression Lecture Notes.pdf}{Simple Linear Regression Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \textbf{Assignment 1 - Introduction To ML, Linear Regression Refresher}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 1.1 - Linear Regression.pdf}{Quiz 1.1 - Linear Regression}
+    \item \pdflink{\QuizDir Quiz 1.2 - Multilinear Regression.pdf}{Quiz 1.2 - Multilinear Regression}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 3: Linear Regression}. The first section that is being covered from this chapter this week is
+\textbf{Section 3.1: Simple Linear Regression}.
+
+\begin{notes}{Section 3.1: Simple Linear Regression}
+    \subsection*{Overview}
+
+    This section introduces simple linear regression, a fundamental supervised learning method for predicting a quantitative response using a single predictor variable. Linear regression assumes a 
+    linear relationship between the predictor and the response, making it a widely used statistical learning method. Though more advanced methods exist, linear regression remains essential, as many 
+    complex models are extensions of it.
+    
+    \subsubsection*{Core Concepts of Simple Linear Regression}
+    
+    Simple linear regression predicts a response $Y$ based on a predictor $X$, assuming a linear relationship of the form:
+    \[
+    Y \approx \beta_0 + \beta_1 X
+    \]
+    where $\beta_0$ is the intercept, and $\beta_1$ is the slope, representing the model’s coefficients. These coefficients are estimated using training data to minimize the residual sum of squares (RSS).
+    
+    \begin{highlight}[Core Concepts of Simple Linear Regression]
+        \begin{itemize}
+            \item \textbf{Predictor and Response}: The predictor variable $X$ is used to estimate the response variable $Y$.
+            \item \textbf{Model Coefficients}: $\beta_0$ (intercept) and $\beta_1$ (slope) represent the regression line, determining how changes in $X$ affect $Y$.
+            \item \textbf{Residual Sum of Squares (RSS)}: The difference between observed and predicted values, minimized to find the best-fit line.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Coefficient Estimation}
+    
+    The coefficients $\beta_0$ and $\beta_1$ are estimated using the least squares method, which minimizes the RSS:
+    \[
+    RSS = \sum_{i=1}^n (y_i - \hat{y}_i)^2
+    \]
+    where $\hat{y}_i$ is the predicted value of $Y$ based on the $i$-th value of $X$. The formulas for the estimates are:
+    \[
+    \hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}, \quad \hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}
+    \]
+    where $\bar{x}$ and $\bar{y}$ are the sample means of $X$ and $Y$, respectively.
+    
+    \subsubsection*{Assessing Model Accuracy}
+    
+    The accuracy of the regression model can be evaluated using:
+    \begin{itemize}
+        \item \textbf{Residual Standard Error (RSE)}: Measures the average deviation of the predicted values from the true values.
+        \item \textbf{R-squared ($R^2$)}: Represents the proportion of the variance in $Y$ explained by $X$. An $R^2$ value close to 1 indicates a strong linear relationship.
+    \end{itemize}
+    
+    \begin{highlight}[Assessing Model Accuracy]
+        \begin{itemize}
+            \item \textbf{RSE}: Provides an absolute measure of the model's error.
+            \item \textbf{R-squared}: A measure between 0 and 1 indicating how well the model explains the variation in the response.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Hypothesis Testing}
+    
+    In simple linear regression, hypothesis tests determine if there is a significant relationship between $X$ and $Y$. The null hypothesis ($H_0$) posits no relationship, while the alternative 
+    hypothesis ($H_a$) suggests a relationship exists. This is tested using the $t$-statistic:
+    \[
+    t = \frac{\hat{\beta}_1 - 0}{SE(\hat{\beta}_1)}
+    \]
+    where $SE(\hat{\beta}_1)$ is the standard error of the slope estimate. A small $p$-value indicates a significant relationship.
+    
+    \begin{highlight}[Key Concepts in Hypothesis Testing]
+        \begin{itemize}
+            \item \textbf{Null Hypothesis ($H_0$)}: Assumes no relationship between $X$ and $Y$.
+            \item \textbf{Alternative Hypothesis ($H_a$)}: Suggests a relationship between $X$ and $Y$.
+            \item \textbf{$t$-statistic and $p$-value}: Used to determine if the slope is significantly different from zero.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 3.2: Multiple Linear Regression}.
+
+\begin{notes}{Section 3.2: Multiple Linear Regression}
+    \subsection*{Overview}
+
+    This section introduces multiple linear regression, an extension of simple linear regression that allows for multiple predictor variables. Instead of fitting separate models for each predictor, 
+    multiple linear regression incorporates all predictors in a single model, enabling more accurate predictions when variables are correlated.
+    
+    \subsubsection*{Core Concepts of Multiple Linear Regression}
+    
+    The multiple linear regression model predicts the response $Y$ using $p$ predictors, each with its own slope coefficient:
+    \[
+    Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p + \epsilon
+    \]
+    where $\beta_j$ represents the association between the $j$-th predictor and the response, holding all other predictors fixed.
+    
+    \begin{highlight}[Core Concepts of Multiple Linear Regression]
+        \begin{itemize}
+            \item \textbf{Model Coefficients}: The $\beta_j$'s represent the change in $Y$ for a one-unit change in $X_j$, with other predictors held constant.
+            \item \textbf{Least Squares}: The coefficients are estimated by minimizing the residual sum of squares (RSS), just like in simple linear regression.
+            \item \textbf{Prediction}: Given the estimated coefficients, predictions for $Y$ can be made using:
+            \[
+            \hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \dots + \hat{\beta}_p x_p
+            \]
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Assessing the Model}
+    
+    Multiple linear regression models are evaluated using:
+    \begin{itemize}
+        \item \textbf{R-squared ($R^2$)}: Measures the proportion of variance in $Y$ explained by the predictors. It increases as more predictors are added, even if the predictors have weak associations.
+        \item \textbf{Residual Standard Error (RSE)}: Estimates the average distance between observed and predicted values.
+    \end{itemize}
+    
+    \begin{highlight}[Assessing the Model]
+        \begin{itemize}
+            \item \textbf{R-squared}: A higher $R^2$ indicates better model fit, but adding variables always increases $R^2$, even when they do not improve predictions.
+            \item \textbf{RSE}: Provides an absolute measure of model error. Lower RSE means better fit.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Hypothesis Testing}
+    
+    To evaluate the overall relationship between the response and the predictors, the null hypothesis that all coefficients are zero is tested using the $F$-statistic:
+    \[
+    F = \frac{(TSS - RSS)/p}{RSS/(n - p - 1)}
+    \]
+    If the $F$-statistic is significantly greater than 1, it indicates that at least one predictor is associated with the response.
+    
+    \begin{highlight}[Key Concepts in Hypothesis Testing]
+        \begin{itemize}
+            \item \textbf{Null Hypothesis ($H_0$)}: All predictors are unrelated to the response ($\beta_1 = \beta_2 = \dots = \beta_p = 0$).
+            \item \textbf{Alternative Hypothesis ($H_a$)}: At least one predictor is related to the response.
+            \item \textbf{$F$-statistic}: Used to test the overall significance of the model. A large $F$-statistic suggests rejecting $H_0$.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Variable Selection}
+    
+    In multiple linear regression, not all predictors may be useful. Methods like forward selection, backward selection, and mixed selection are used to select the most important variables.
+    
+    \begin{highlight}[Variable Selection Methods]
+        \begin{itemize}
+            \item \textbf{Forward Selection}: Starts with no predictors and adds variables one by one based on their contribution to model fit.
+            \item \textbf{Backward Selection}: Starts with all predictors and removes the least significant one at each step.
+            \item \textbf{Mixed Selection}: A combination of forward and backward selection.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Model Fit and Interaction Effects}
+    
+    While $R^2$ and RSE provide measures of fit, graphical analysis can reveal non-linear patterns in the data. For instance, interactions between predictors (e.g., TV and radio advertising) may 
+    enhance predictions, which can be captured by including interaction terms in the model.
+    
+    \subsubsection*{Prediction}
+    
+    Once the model is fit, predictions for the response can be made. There are two types of intervals used to quantify uncertainty:
+    \begin{itemize}
+        \item \textbf{Confidence Interval}: Estimates the uncertainty around the average prediction.
+        \item \textbf{Prediction Interval}: Estimates the uncertainty for an individual observation, which is always wider due to additional variability from irreducible error.
+    \end{itemize}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 3.3: Other Considerations In The Regression Model}.
+
+\begin{notes}{Section 3.3: Other Considerations In The Regression Model}
+    \subsection*{Overview}
+
+    This section explores additional considerations in the linear regression model, particularly focusing on qualitative predictors, interaction terms, and non-linear relationships. It also addresses 
+    common problems like collinearity, non-constant variance of error terms, and outliers that may affect the regression model.
+    
+    \subsubsection*{Qualitative Predictors}
+    
+    Linear regression can handle qualitative predictors by introducing dummy variables, which represent the qualitative levels numerically.
+    
+    \begin{highlight}[Handling Qualitative Predictors]
+        \begin{itemize}
+            \item \textbf{Binary Qualitative Predictors}: For predictors with two levels (e.g., house ownership), a dummy variable can be created:
+            \[
+            x_i = 
+            \begin{cases}
+                1 & \text{if the individual owns a house} \\
+                0 & \text{if not}
+            \end{cases}
+            \]
+            \item \textbf{Qualitative Predictors with Multiple Levels}: For predictors with more than two levels (e.g., region), multiple dummy variables are created. The baseline category (e.g., East) 
+            has no dummy, and other levels are compared to it.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Interaction Terms and Non-linear Effects}
+    
+    Linear regression models can be extended to include interaction terms, allowing for non-additive effects between predictors. Interaction terms can be written as the product of two variables:
+    \[
+    Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_1 X_2 + \epsilon
+    \]
+    This models the effect of \(X_1\) on \(Y\) as depending on the value of \(X_2\).
+    
+    \begin{highlight}[Interaction Terms]
+        \begin{itemize}
+            \item \textbf{Interaction Between Quantitative Variables}: Interaction terms, such as $\text{TV} \times \text{radio}$, allow the effect of one variable to vary depending on the level of another.
+            \item \textbf{Interaction Between Qualitative and Quantitative Variables}: For example, income and student status can interact, indicating different effects of income based on whether someone is a student.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Non-linear Relationships}
+    
+    Linear models can be extended to capture non-linear relationships by transforming predictors, e.g., using polynomial terms:
+    \[
+    Y = \beta_0 + \beta_1 X + \beta_2 X^2 + \epsilon
+    \]
+    This is still a linear model, but it accounts for curvature in the relationship between \(X\) and \(Y\).
+    
+    \subsubsection*{Potential Problems in Regression Models}
+    
+    Several common issues can arise when fitting regression models, including:
+    
+    \begin{highlight}[Key Regression Problems]
+        \begin{itemize}
+            \item \textbf{Non-linearity of Predictors}: Residual plots can help detect when linearity assumptions are violated, and transformations like $\log X$ or $X^2$ may be needed.
+            \item \textbf{Correlation of Error Terms}: In time series data, residuals may be correlated, leading to underestimated standard errors.
+            \item \textbf{Non-constant Variance (Heteroscedasticity)}: When error variances increase with the fitted values, a transformation (e.g., $\log Y$) can stabilize variance.
+            \item \textbf{Outliers}: Observations with large residuals can distort the model, and studentized residuals help identify these points.
+            \item \textbf{High Leverage Points}: Data points with extreme predictor values can disproportionately influence the model.
+            \item \textbf{Collinearity}: When predictor variables are highly correlated, it becomes difficult to estimate their individual effects. This can inflate standard errors and reduce the model’s accuracy.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Collinearity and Multicollinearity}
+    
+    Collinearity occurs when two or more predictor variables are highly correlated. This makes it difficult to determine the individual effect of each predictor on the response variable.
+    
+    \begin{highlight}[Addressing Collinearity]
+        \begin{itemize}
+            \item \textbf{Detecting Collinearity}: High correlations in the predictor matrix or a large variance inflation factor (VIF) indicate collinearity.
+            \item \textbf{Solutions}: Drop one of the collinear variables or combine them into a single predictor.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

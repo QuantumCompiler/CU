@@ -1,0 +1,166 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Clustering}
+\renewcommand{\SectionTitle}{Clustering}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 12.4: Clustering Methods}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=XTesXKKoH8k}{Clustering Intro, K-Means Clustering}{10}
+    \item \lecture{https://www.youtube.com/watch?v=b-BiIsbL1mg}{Hierarchical Clustering}{13}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Clustering Lecture Notes.pdf}{Clustering Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \textbf{Assignment 6 - Recommender Systems}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 7 - Clustering.pdf}{Quiz 7 - Clustering}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Chapter 12: Unsupervised Learning}. The section that is being covered from this chapter this week is \textbf{Section 12.4: Clustering Methods}.
+
+\begin{notes}{Section 12.4: Clustering Methods}
+    \subsection*{Overview}
+
+    Clustering refers to a broad set of techniques for finding subgroups, or clusters, in a dataset. The goal is to partition observations into distinct groups so that the observations within each group 
+    are quite similar to each other, while those in different groups are dissimilar. Clustering is an unsupervised learning method, meaning there is no response variable to guide the process. This section 
+    explores two popular clustering approaches—K-means clustering and hierarchical clustering—outlining their strengths, limitations, and the different ways they partition data.
+    
+    \subsubsection*{Clustering and Dimensionality Reduction}
+    
+    Both clustering and dimensionality reduction techniques like PCA aim to simplify data. However, their objectives differ:
+    \[
+    \text{PCA} \quad \text{seeks a low-dimensional representation that explains variance,}
+    \]
+    \[
+    \text{Clustering} \quad \text{aims to find homogeneous subgroups among the observations.}
+    \]
+    For example, in marketing, clustering can be used to group individuals based on features like income and purchasing behavior, enabling targeted advertising.
+    
+    \begin{highlight}[Clustering vs. PCA]
+        \begin{itemize}
+            \item \textbf{PCA}: Focuses on finding a low-dimensional space that captures most of the data’s variance.
+            \item \textbf{Clustering}: Aims to group observations into subgroups based on similarity.
+            \item \textbf{Applications}: Clustering is widely used in fields like marketing for tasks like market segmentation.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{K-Means Clustering}
+    
+    K-means clustering is a simple and elegant method for partitioning data into \( K \) distinct, non-overlapping clusters. The algorithm requires that the number of clusters \( K \) be specified in advance, 
+    and it assigns each observation to exactly one of these clusters. The goal is to minimize the within-cluster variation, which measures how much the observations within each cluster differ from each other. 
+    The optimization problem is defined as follows:
+    \[
+    \minimize_{C_1, \dots, C_K} \left\{ \sum_{k=1}^{K} W(C_k) \right\},
+    \]
+    where \( W(C_k) \) represents the within-cluster variation for the \( k \)-th cluster.
+    
+    \begin{highlight}[K-Means Clustering]
+        \begin{itemize}
+            \item \textbf{Number of Clusters}: The number of clusters \( K \) must be pre-specified.
+            \item \textbf{Within-Cluster Variation}: The objective is to minimize the sum of squared Euclidean distances between observations within each cluster.
+            \item \textbf{Non-Overlapping Clusters}: Each observation belongs to only one cluster, with no overlaps between clusters.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{K-Means Algorithm}
+    
+    The K-means algorithm iterates through two main steps until the clusters no longer change:
+    \begin{enumerate}
+        \item **Step 1**: Randomly assign each observation to one of the \( K \) clusters.
+        \item **Step 2a**: Compute the centroid of each cluster.
+        \item **Step 2b**: Reassign each observation to the nearest centroid.
+    \end{enumerate}
+    This algorithm is guaranteed to reduce the objective function at each step. However, it can converge to a local rather than a global optimum, meaning that the final solution may depend on the initial random assignment.
+    
+    \begin{highlight}[K-Means Algorithm]
+        \begin{itemize}
+            \item \textbf{Centroids}: The centroid is the mean of the observations within a cluster.
+            \item \textbf{Iteration}: The algorithm iterates between updating centroids and reassigning observations until convergence.
+            \item \textbf{Local Optimum}: The solution depends on the initial random assignment, so multiple runs may be necessary.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Hierarchical Clustering}
+    
+    Unlike K-means clustering, hierarchical clustering does not require the number of clusters to be pre-specified. Instead, it produces a dendrogram, a tree-like structure that allows us to visualize 
+    clusterings for any number of clusters, from 1 to \( n \). In this section, we focus on agglomerative (bottom-up) clustering, which begins with each observation as its own cluster and successively 
+    merges the closest clusters until all observations belong to one cluster.
+    
+    \begin{highlight}[Hierarchical Clustering]
+        \begin{itemize}
+            \item \textbf{Dendrogram}: A tree-like diagram that shows clusters at different levels of granularity.
+            \item \textbf{Agglomerative Approach}: Clusters are merged starting from individual observations until all are combined into a single cluster.
+            \item \textbf{No Pre-Specified \( K \)}: The number of clusters can be chosen after the clustering process by cutting the dendrogram at a chosen height.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Linkage and Dissimilarity Measures}
+    
+    A critical decision in hierarchical clustering is how to measure the dissimilarity between clusters. Common linkage methods include:
+    \begin{itemize}
+        \item \textbf{Complete Linkage}: Measures the maximum pairwise dissimilarity between points in two clusters.
+        \item \textbf{Single Linkage}: Measures the minimum pairwise dissimilarity.
+        \item \textbf{Average Linkage}: Takes the mean of the pairwise dissimilarities.
+    \end{itemize}
+    The choice of dissimilarity measure affects the shape of the dendrogram and the resulting clusters.
+    
+    \begin{highlight}[Linkage Methods]
+        \begin{itemize}
+            \item \textbf{Complete Linkage}: Uses the maximum distance between points in two clusters.
+            \item \textbf{Single Linkage}: Uses the minimum distance between points in two clusters.
+            \item \textbf{Average Linkage}: Computes the mean distance between points in two clusters.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    Both K-means and hierarchical clustering offer valuable methods for grouping similar observations in a dataset. K-means requires the number of clusters to be pre-specified and is computationally efficient, 
+    but it may converge to local optima. Hierarchical clustering provides a flexible tree-based representation of clusters, allowing the user to select the number of clusters after the analysis is complete. 
+    The choice between these methods depends on the structure of the data and the goals of the analysis.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item K-means clustering is simple and efficient but requires the number of clusters \( K \) to be specified in advance.
+            \item Hierarchical clustering provides a dendrogram that allows for flexibility in choosing the number of clusters.
+            \item The choice of dissimilarity measure and linkage method in hierarchical clustering strongly influences the clustering results.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

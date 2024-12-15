@@ -1,0 +1,222 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Matrix Factorization}
+\renewcommand{\SectionTitle}{Matrix Factorization}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Recommendation Systems.pdf}{Recommendation Systems}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=vlqSOo7zG-w}{Matrix Factorization Introduction}{11}
+    \item \lecture{https://www.youtube.com/watch?v=joMrZNA-GXg}{Eigen Decomposition}{11}
+    \item \lecture{https://www.youtube.com/watch?v=Y7e2idbqjUQ}{Singular Value Decomposition}{11}
+    \item \lecture{https://www.youtube.com/watch?v=ZP6mlhgYbSA}{Non-Negative Matrix Factorization}{16}
+    \item \lecture{https://www.youtube.com/watch?v=j1di5QVkjVI}{NMF Optimization}{8}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir IEEE Matrix Factorization Techniques For Recommender Systems Lecture Notes.pdf}{IEEE Matrix Factorization Techniques For Recommender Systems Lecture Notes}
+    \item \pdflink{\LecNoteDir Matrix Factorization Lecture Notes.pdf}{Matrix Factorization Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \textbf{Assignment 7 - Matrix Factorization}
+    \item \href{https://github.com/cu-cspb-4622-fall-2024/P2-QuantumCompiler}{Mini Project 2 - Unsupervised Learning}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 9 - Matrix Factorization.pdf}{Quiz 9 - Matrix Factorization}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The content that is being covered this week is from \textbf{Recommendation Systems}. The first section that is being covered from this chapter this week is \textbf{Section 9.4: Dimensionality Reduction}.
+
+\begin{notes}{Section 9.4: Dimensionality Reduction}
+    \subsection*{Overview}
+
+    Dimensionality reduction techniques help in estimating missing entries in the utility matrix by approximating it with the product of two low-dimensional matrices. This approach works well if there exists 
+    a relatively small number of features influencing user preferences, allowing the utility matrix to be represented in a lower-dimensional space. In this section, we explore a technique called 
+    “UV-decomposition,” which is a form of Singular Value Decomposition (SVD) that effectively reduces dimensionality in recommendation systems.
+    
+    \subsubsection*{UV-Decomposition}
+    
+    UV-decomposition seeks to decompose the utility matrix $M$ into the product of two lower-dimensional matrices, $U$ and $V$. This is useful when the utility matrix $M$, which contains ratings 
+    for $n$ users and $m$ items, is large and sparse. Through UV-decomposition, we find a matrix $U$ with $n$ rows and $d$ columns, and a matrix $V$ with $d$ rows and $m$ columns, 
+    where $d$ represents the reduced dimensionality capturing the main features that define user-item interactions.
+    
+    \begin{highlight}[UV-Decomposition Basics]
+        \begin{itemize}
+            \item \textbf{Utility Matrix $M$}: Original matrix with users as rows, items as columns, and entries representing user ratings.
+            \item \textbf{Decomposition Matrices $U$ and $V$}: Matrix $U$ represents users in a lower-dimensional feature space, while $V$ represents items.
+            \item \textbf{Dimensionality $d$}: The parameter $d$ controls the level of compression; fewer dimensions reduce noise and help generalize user-item patterns.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Root-Mean-Square Error (RMSE) as an Objective}
+    
+    The UV-decomposition minimizes the root-mean-square error (RMSE) between the known entries in $M$ and the product $UV$. RMSE is calculated by taking the square root of the average squared 
+    differences between the non-blank entries of $M$ and the corresponding values in $UV$.
+    
+    \begin{highlight}[RMSE in UV-Decomposition]
+        \begin{itemize}
+            \item \textbf{Objective}: Minimize the discrepancy between the known entries of $M$ and $UV$ by reducing RMSE.
+            \item \textbf{Formula}: RMSE is computed by averaging squared differences over the non-blank entries, followed by taking the square root.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Optimization Process for UV-Decomposition}
+    
+    To find the optimal values for $U$ and $V$, we iteratively adjust elements to minimize RMSE. Starting with an initial guess for $U$ and $V$, the algorithm updates each element to reduce the error. 
+    This process continues until further adjustments yield negligible improvement, indicating convergence to a local minimum.
+    
+    \begin{highlight}[Optimization in UV-Decomposition]
+        \begin{itemize}
+            \item \textbf{Initial Guess}: Begin with initial values for $U$ and $V$, often set to the average of the non-blank entries of $M$.
+            \item \textbf{Iterative Adjustment}: Elements in $U$ and $V$ are adjusted to minimize RMSE.
+            \item \textbf{Convergence Criterion}: The process stops when updates no longer significantly reduce RMSE.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Gradient Descent and Stochastic Gradient Descent}
+    
+    UV-decomposition can be optimized using gradient descent, where each update follows the gradient direction that most decreases RMSE. Stochastic gradient descent (SGD), an alternative approach, 
+    computes updates based on a randomly selected subset of entries in $M$, reducing computation time on large matrices.
+    
+    \begin{highlight}[Gradient Descent Techniques]
+        \begin{itemize}
+            \item \textbf{Gradient Descent}: Each update adjusts elements in $U$ and $V$ to minimize RMSE based on the gradient.
+            \item \textbf{Stochastic Gradient Descent (SGD)}: Instead of all entries, SGD updates based on a sample, making it faster for large matrices.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Avoiding Overfitting}
+    
+    Overfitting occurs when the model conforms too closely to the given data, capturing noise rather than general patterns. To prevent this, several techniques are used:
+    \begin{itemize}
+        \item Limiting the number of updates to avoid excessive refinement.
+        \item Averaging across multiple decompositions to smooth out idiosyncrasies in individual runs.
+        \item Stopping the optimization process early, based on diminishing improvements in RMSE.
+    \end{itemize}
+    
+    \begin{highlight}[Overfitting Prevention Techniques]
+        \begin{itemize}
+            \item \textbf{Limit Updates}: Avoid over-refining by restricting the number of updates.
+            \item \textbf{Averaging Results}: Average predictions from several UV-decompositions to reduce noise.
+            \item \textbf{Early Stopping}: Halt optimization when further improvements in RMSE are minimal.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Initialization and Preprocessing}
+    
+    Initialization involves setting the elements of $U$ and $V$ with small random values or values based on the mean of $M$. Preprocessing by normalizing $M$ to account for variations in user preferences 
+    or item quality can also enhance the decomposition's effectiveness
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 9.5: The Netflix Challenge}.
+
+\begin{notes}{Section 9.5: The Netflix Challenge}
+    \subsection*{Overview}
+
+    The Netflix Challenge was a landmark event in the field of recommendation systems, spurring significant advances in collaborative filtering and machine learning algorithms. Netflix launched the challenge 
+    in 2006, offering a prize of \$1,000,000 to the first team to improve their existing recommendation algorithm, CineMatch, by 10\%. The competition culminated in September 2009 with a winning solution that 
+    combined multiple advanced algorithms. This section details the structure of the Netflix Challenge, key techniques used by competitors, and insights gained from the competition.
+    
+    \subsubsection*{The Challenge Structure}
+    
+    The Netflix dataset used for the challenge contained ratings from approximately half a million users on around 17,000 movies. Each (user, movie) pair in the dataset included a rating from 1 to 5 stars, along 
+    with the date on which the rating was given. Competitors were tasked with predicting missing ratings in a separate “secret” dataset and were evaluated based on the root-mean-square error (RMSE) between 
+    predicted and actual ratings. The winning entry had to reduce the RMSE by at least 10\% relative to the baseline CineMatch RMSE, which was around 0.95.
+    
+    \begin{highlight}[Challenge Structure]
+        \begin{itemize}
+            \item \textbf{Dataset}: Ratings from half a million users on 17,000 movies, with each rating accompanied by a timestamp.
+            \item \textbf{Evaluation Metric}: RMSE between predicted and actual ratings, requiring at least a 10\% improvement over CineMatch's RMSE.
+            \item \textbf{Baseline Performance}: CineMatch's RMSE was approximately 0.95, so the target RMSE for winning the prize was about 0.855.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Findings and Techniques}
+    
+    During the competition, it was discovered that simple prediction algorithms could perform comparably to CineMatch. For instance, an approach that averaged a user's overall ratings and the average ratings 
+    for each movie was within 3\% of CineMatch's RMSE. More advanced techniques, including matrix factorization (similar to UV-decomposition discussed in Section 9.4), combined with data normalization 
+    and other enhancements, achieved a 7\% improvement. The winning solution, however, employed a hybrid of independently developed algorithms, demonstrating that blending diverse methods was crucial 
+    for reaching the 10\% improvement threshold.
+    
+    \begin{highlight}[Key Techniques and Insights]
+        \begin{itemize}
+            \item \textbf{Baseline Approach}: Averages of user and movie ratings yielded results close to CineMatch's RMSE.
+            \item \textbf{Matrix Factorization}: Decomposing the utility matrix into lower-dimensional representations helped achieve substantial improvements.
+            \item \textbf{Algorithm Blending}: The winning entry used a combination of different algorithms, a strategy that proved critical for overcoming the final performance threshold.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{External Data and Domain Knowledge}
+    
+    Some teams attempted to enhance their algorithms by incorporating data from external sources, such as IMDb, which contains information on movie genres, actors, and directors. However, these attempts 
+    did not yield significant improvements. This may have been due to two primary factors: first, that the machine learning algorithms used in the competition could infer genre and related information directly 
+    from user ratings, and second, the difficulties in resolving discrepancies between Netflix and IMDb movie titles.
+    
+    \begin{highlight}[External Data Challenges]
+        \begin{itemize}
+            \item \textbf{IMDb Data}: External information on genres, actors, and directors provided little benefit in improving RMSE.
+            \item \textbf{Entity Resolution Issues}: Matching Netflix's movie data with IMDb entries was challenging and could lead to data inconsistencies.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Temporal Effects in User Ratings}
+    
+    One unexpected finding was the significance of temporal patterns in user ratings. Certain movies tended to receive higher ratings from users who rated them soon after watching, while others received better 
+    ratings with a delay. For instance, “Patch Adams” was rated highly by immediate reviewers, while “Memento” was better appreciated after some time had passed. Incorporating time-based effects allowed 
+    models to capture subtle shifts in rating behavior over time.
+    
+    \begin{highlight}[Temporal Effects in Ratings]
+        \begin{itemize}
+            \item \textbf{Immediate vs. Delayed Ratings}: Movies like “Patch Adams” were rated highly by immediate reviewers, while others like “Memento” were appreciated after a delay.
+            \item \textbf{Time-Based Modeling}: Models that accounted for temporal patterns in user ratings achieved improved accuracy.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    The Netflix Challenge drove advances in recommendation system algorithms, particularly highlighting the value of hybrid models and the potential for time-sensitive data to improve recommendations. The competition 
+    demonstrated that collaborative filtering could benefit from a combination of simple techniques, matrix factorization, and specialized features like temporal effects. Although external data offered limited help, 
+    the use of diverse models and the collaborative nature of the challenge led to significant progress in the field of recommendation systems.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item The winning solution combined several algorithms, emphasizing the strength of ensemble methods.
+            \item Matrix factorization and time-based features were crucial in achieving the performance gains needed to win the prize.
+            \item The Netflix Challenge set a precedent for using large-scale competitions to drive innovation in recommendation systems.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

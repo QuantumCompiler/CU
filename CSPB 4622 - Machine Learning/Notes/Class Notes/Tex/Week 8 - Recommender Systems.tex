@@ -1,0 +1,328 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Recommender Systems}
+\renewcommand{\SectionTitle}{Recommender Systems}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Recommendation Systems.pdf}{Recommendation Systems}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=XiEizOUEU1A}{Recommender System Introduction}{12}
+    \item \lecture{https://www.youtube.com/watch?v=HeO_MTjird4}{Similarity Measure}{7}
+    \item \lecture{https://www.youtube.com/watch?v=CBrd_OaUAEw}{Calculating Similarity Examples}{14}
+    \item \lecture{https://www.youtube.com/watch?v=tSRkOgNImR8}{Recommender Systems In Large Scale}{5}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Recommender Systems Lecture Notes.pdf}{Recommender Systems Lecture Notes}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 8 - Recommender Systems.pdf}{Quiz 8 - Recommender Systems}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The chapter that is being covered this week is \textbf{Recommendation Systems}. The first section that is covered from this chapter this week is \textbf{A Model For Recommendation Systems}. 
+
+\begin{notes}{A Model For Recommendation Systems}
+    \subsection*{Overview}
+
+    Recommendation systems are essential tools in modern web applications, designed to predict user preferences and suggest relevant items. These systems can provide recommendations for various domains, 
+    such as news articles, movies, or products in online stores. In this section, we introduce the core concepts of recommendation systems, with a focus on utility matrices and the “long-tail” phenomenon, 
+    which explains the advantage of online vendors over traditional physical retailers.
+    
+    \subsubsection*{The Utility Matrix}
+    
+    In recommendation systems, preferences are often represented as a utility matrix. This matrix consists of rows representing users and columns representing items, with entries capturing the user's rating or 
+    preference for a particular item. However, the utility matrix is typically sparse, as most users only provide feedback on a small subset of available items. The challenge for recommendation systems is to predict 
+    missing values in the matrix—i.e., what would a user think of an item they have not yet rated?
+    
+    \[
+    \text{Utility Matrix Example:}
+    \]
+    \[
+    \begin{array}{c|ccccccc}
+        \text{User} & \text{HP1} & \text{HP2} & \text{HP3} & \text{TW} & \text{SW1} & \text{SW2} & \text{SW3} \\
+        \hline
+        A & 4 & 5 & & 1 & & & \\
+        B & 5 & 5 & 4 & & & & \\
+        C & & 2 & 4 & & & 5 & \\
+        D & & & 3 & 3 & & & \\
+    \end{array}
+    \]
+    This matrix shows users' ratings for several movies (e.g., HP1 for Harry Potter I, SW1 for Star Wars I, etc.). The blanks represent movies that users haven't rated. For example, the system might predict whether 
+    user A would like SW2 based on the available data.
+    
+    \begin{highlight}[Utility Matrix in Recommendation Systems]
+        \begin{itemize}
+            \item \textbf{Sparse Matrix}: Most users rate only a small fraction of items, leaving many entries in the utility matrix blank.
+            \item \textbf{Prediction Goal}: The system's goal is to predict these missing values—i.e., whether a user would like an unrated item.
+            \item \textbf{Recommendations}: Instead of filling the entire matrix, it's often sufficient to identify a few items that the user would rate highly.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{The Long-Tail Phenomenon}
+    
+    Traditional brick-and-mortar stores are limited by physical space, so they can only offer a limited number of popular items. In contrast, online stores can provide access to a much larger range of items, including 
+    niche products. This is referred to as the “long-tail” phenomenon, where online retailers can cater to individual users' specific tastes rather than focusing only on best-selling items. Recommendation systems 
+    play a crucial role in helping users discover items in this long tail, which they might not have been aware of otherwise.
+    
+    \begin{highlight}[The Long-Tail Phenomenon]
+        \begin{itemize}
+            \item \textbf{Brick-and-Mortar Limitations}: Physical stores offer only popular items due to space constraints.
+            \item \textbf{Online Retailers}: Can offer a vast array of niche items that may appeal to specific user preferences.
+            \item \textbf{Role of Recommendations}: Recommendation systems guide users to these niche items by predicting their preferences.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications of Recommendation Systems}
+    
+    Recommendation systems are widely used across various industries to enhance user experiences and drive sales. Some notable applications include:
+    
+    \begin{itemize}
+        \item **Product Recommendations**: Online retailers like Amazon use recommendation systems to suggest products based on past purchases and browsing behavior.
+        \item **Movie Recommendations**: Streaming services like Netflix predict which movies or TV shows users will enjoy based on their viewing history and ratings.
+        \item **News Article Recommendations**: News websites recommend articles based on users' reading history or preferences of similar users.
+    \end{itemize}
+    
+    \begin{highlight}[Common Applications of Recommendation Systems]
+        \begin{itemize}
+            \item \textbf{Retail}: Personalized product suggestions improve user engagement and increase sales.
+            \item \textbf{Entertainment}: Movie or TV show recommendations help users discover content they're likely to enjoy.
+            \item \textbf{News}: Recommendations help readers find articles or blogs based on their past reading behavior.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Populating the Utility Matrix}
+    
+    One of the major challenges in building a recommendation system is collecting sufficient data to populate the utility matrix. There are two main approaches:
+    
+    \begin{itemize}
+        \item **Explicit Ratings**: Asking users to rate items, such as rating movies on a scale of 1 to 5. This method directly captures user preferences but often suffers from low participation.
+        \item **Implicit Feedback**: Inferring user preferences from their behavior, such as tracking what items they purchase, view, or interact with. Implicit feedback is often more abundant, but less precise than 
+        explicit ratings.
+    \end{itemize}
+    
+    \begin{highlight}[Collecting Data for the Utility Matrix]
+        \begin{itemize}
+            \item \textbf{Explicit Ratings}: Users rate items directly, but response rates may be low.
+            \item \textbf{Implicit Feedback}: Preferences are inferred from behavior like clicks, purchases, or views.
+            \item \textbf{Challenges}: Collecting enough reliable data to build an accurate utility matrix can be difficult.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Content-Based Recommendations}.
+
+\begin{notes}{Content-Based Recommendations}
+    \subsection*{Overview}
+
+    Content-based recommendation systems focus on the properties of items to generate recommendations. These systems suggest items that are similar to those a user has liked in the past, based on a comparison 
+    of item characteristics. Unlike collaborative filtering, which relies on the relationship between users and their ratings of items, content-based systems emphasize the similarities between items themselves. 
+    This section discusses how item profiles are constructed, methods for discovering features in documents, and techniques for representing item profiles and user preferences.
+    
+    \subsubsection*{Item Profiles}
+    
+    In content-based systems, each item is associated with a profile, which is a collection of features that represent key characteristics of that item. For example, in the case of movies, an item profile might include:
+    \begin{itemize}
+        \item The set of actors in the movie.
+        \item The director of the movie.
+        \item The year the movie was made.
+        \item The genre or type of movie (e.g., comedy, drama, romance).
+    \end{itemize}
+    This profile helps determine the similarity between different items. For example, a user who enjoys movies with a specific actor or from a particular genre may be recommended similar movies.
+    
+    \begin{highlight}[Item Profiles in Content-Based Systems]
+        \begin{itemize}
+            \item \textbf{Actors}: Viewers may prefer movies featuring specific actors.
+            \item \textbf{Director}: Certain directors have strong followings among viewers.
+            \item \textbf{Year of Release}: Some viewers prefer older movies, while others focus on new releases.
+            \item \textbf{Genre}: Many viewers favor particular genres like comedy, drama, or action.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Discovering Features of Documents}
+    
+    In some cases, the relevant features for an item are not immediately obvious. For instance, documents like news articles or web pages may not have explicit labels or characteristics. In such cases, a common 
+    approach is to use the words in the document to build a feature profile. By eliminating common words (stop words) and calculating a TF-IDF score for the remaining words, we can identify the most significant 
+    terms in the document. These terms form the basis of the document's profile, allowing the system to recommend similar documents based on shared keywords.
+    
+    \begin{highlight}[Feature Discovery in Documents]
+        \begin{itemize}
+            \item \textbf{TF-IDF}: Measures the importance of words in a document by considering both term frequency and inverse document frequency.
+            \item \textbf{Stop Words}: Common words (e.g., "the," "is") are removed as they contribute little to the document's topic.
+            \item \textbf{Significant Terms}: The top words based on TF-IDF scores represent the main ideas of the document.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Obtaining Features from Tags}
+    
+    Another approach to building item profiles is through user-generated tags. For instance, users might tag images with descriptive words, such as “sunset” or “landscape.” These tags can serve as features 
+    for content-based recommendations, allowing the system to recommend items that share similar tags. However, this method relies on users being willing to contribute tags and on the presence of enough tags 
+    to ensure the accuracy of the system.
+    
+    \begin{highlight}[Using Tags for Feature Discovery]
+        \begin{itemize}
+            \item \textbf{User Tags}: Users tag items with descriptive terms that can be used to recommend similar items.
+            \item \textbf{Tagging Effort}: The system depends on users contributing enough accurate tags for the method to be effective.
+            \item \textbf{Limitations}: Errors in tagging or insufficient tagging may reduce the system's effectiveness.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Representing Item Profiles}
+    
+    Item profiles are typically represented as vectors, with each component corresponding to a feature. For example, in the case of movies, there could be a component for each actor, with a 1 indicating that 
+    the actor appears in the movie and a 0 otherwise. Profiles can also contain numerical features, such as a movie's average rating. It is important to properly scale the numerical features so that they do not 
+    dominate the similarity calculations. The cosine distance is often used to measure the similarity between item profiles.
+    
+    \begin{highlight}[Item Profile Representation]
+        \begin{itemize}
+            \item \textbf{Boolean Features}: Features like actors or directors can be represented as 0/1 values, where 1 indicates the presence of the feature.
+            \item \textbf{Numerical Features}: Features like average rating can be represented with continuous values, but must be scaled appropriately.
+            \item \textbf{Cosine Distance}: A common measure for comparing item profiles, based on the angle between two vectors.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{User Profiles}
+    
+    Just as item profiles summarize the features of items, user profiles capture a user's preferences. A user's profile is typically an aggregation of the item profiles for the items they have interacted with. 
+    For instance, if a user has rated several movies highly, their profile might give higher weights to the actors or genres common to those movies. The user profile can then be compared to item profiles to 
+    recommend items that match the user's preferences.
+    
+    \begin{highlight}[User Profiles]
+        \begin{itemize}
+            \item \textbf{Aggregation}: User profiles aggregate features from items the user has interacted with.
+            \item \textbf{Weighting}: Items that a user rates more highly contribute more strongly to their profile.
+            \item \textbf{Recommendation}: Items with profiles similar to a user's profile are recommended to the user.
+        \end{itemize}
+        \end{highlight}
+    
+    \subsubsection*{Recommending Items to Users Based on Content}
+    
+    With both item and user profiles represented as vectors, the system can compute the cosine distance between the user's profile and each item's profile to determine which items are most likely to interest 
+    the user. Items with the smallest cosine distance (i.e., those whose profiles are most similar to the user's profile) are recommended.
+    
+    \begin{highlight}[Content-Based Recommendation Process]
+        \begin{itemize}
+            \item \textbf{Profile Comparison}: The system calculates the cosine distance between the user's profile and item profiles.
+            \item \textbf{Recommendation}: Items with profiles most similar to the user's profile are recommended.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is covered from this chapter this week is \textbf{Collaborative Filtering}.
+
+\begin{notes}{Collaborative Filtering}
+    \subsection*{Overview}
+
+    Collaborative filtering is a popular recommendation method that predicts a user's preferences by leveraging the preferences of similar users. The idea is based on the assumption that users who have agreed on items 
+    in the past will likely agree in the future. Collaborative filtering works by comparing users (or items) based on their ratings in a utility matrix. This section discusses several key methods for measuring similarity 
+    between users or items and explores both user-based and item-based collaborative filtering approaches.
+    
+    \subsubsection*{Measuring Similarity}
+    
+    The first challenge in collaborative filtering is determining how to measure similarity between users or items. The utility matrix, which records the ratings users give to items, is often sparse, and different measures 
+    can yield different results depending on how missing values are handled. Two common distance metrics for measuring similarity are Jaccard distance and cosine distance, each of which has strengths and limitations.
+    
+    \begin{highlight}[Similarity Measures]
+        \begin{itemize}
+            \item \textbf{Jaccard Distance}: Focuses only on the sets of items rated by two users, ignoring the ratings themselves. It measures the size of the intersection of items rated by both users relative to the union 
+            of all items rated by either user. Jaccard distance works well for binary data but loses important information when dealing with detailed ratings.
+            \item \textbf{Cosine Distance}: Treats ratings as vectors and computes the cosine of the angle between two users' rating vectors. A larger cosine indicates more similarity, with blanks in the utility matrix 
+            treated as zeros.
+            \item \textbf{Rounding Ratings}: Rounding detailed ratings to 1s and 0s can simplify similarity calculations. For example, ratings of 3 or higher can be treated as "liked," while lower ratings or blanks are 
+            treated as "disliked."
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Normalizing Ratings}
+    
+    Another approach to improve similarity calculations is to normalize ratings by subtracting each user's average rating from their individual ratings. This adjustment helps handle users who consistently give high or 
+    low ratings, allowing for a more meaningful comparison between users with differing rating scales. After normalizing, similarity measures like cosine distance become more effective in identifying users with similar 
+    preferences.
+    
+    \begin{highlight}[Normalized Ratings]
+        \begin{itemize}
+            \item \textbf{Rating Adjustment}: Each user's ratings are adjusted by subtracting their average rating, converting ratings into deviations from their personal average.
+            \item \textbf{Effectiveness}: Normalization ensures that users with different rating scales can be compared more fairly.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{User-User vs. Item-Item Collaborative Filtering}
+    
+    Collaborative filtering can operate by either focusing on users or items. In user-based collaborative filtering, the system recommends items to a user based on the preferences of similar users. In item-based 
+    collaborative filtering, the system identifies items that are similar to the ones the user has rated highly and recommends those items.
+    
+    \begin{highlight}[Collaborative Filtering Approaches]
+        \begin{itemize}
+            \item \textbf{User-User Filtering}: Identifies users similar to the target user and recommends items based on what these similar users have rated highly.
+            \item \textbf{Item-Item Filtering}: Recommends items that are similar to those the target user has already rated or interacted with, using similarity between items rather than users.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Duality of Similarity}
+    
+    There is a symmetry in the utility matrix that allows the same similarity measures to be applied to both rows (users) and columns (items). However, in practice, item-item similarity often yields more reliable results 
+    than user-user similarity, because items are easier to categorize into distinct groups (e.g., genres). Users, on the other hand, may have more varied and less predictable preferences.
+    
+    \begin{highlight}[Duality of Similarity]
+        \begin{itemize}
+            \item \textbf{Item Similarity}: Items are often easier to classify because they belong to specific, distinct genres or categories.
+            \item \textbf{User Similarity}: Users' preferences can span multiple genres, making it harder to find strong similarities between them.
+            \item \textbf{Recommendation Process}: For user-user filtering, the system finds the most similar users and recommends items they have rated highly. For item-item filtering, the system recommends items 
+            similar to those the target user has already rated highly.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Clustering Users and Items}
+    
+    When the utility matrix is sparse, it can be difficult to detect strong similarities between users or items. Clustering users or items into smaller, more homogeneous groups can help overcome this issue. By clustering, 
+    we can create smaller subgroups where users or items share more common features, leading to more reliable recommendations.
+    
+    \begin{highlight}[Clustering in Collaborative Filtering]
+        \begin{itemize}
+            \item \textbf{User Clustering}: Groups users with similar preferences together, allowing the system to make better predictions based on smaller, more focused groups.
+            \item \textbf{Item Clustering}: Groups similar items together, making it easier to find items that are related to those the user has rated highly.
+            \item \textbf{Hierarchical Clustering}: A hierarchical approach can be used to leave many small clusters unmerged, improving the granularity of recommendations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    Collaborative filtering leverages the similarities between users and/or items to make recommendations. By using distance measures like Jaccard or cosine similarity and employing techniques such as normalization 
+    and clustering, collaborative filtering systems can generate highly personalized recommendations even in the presence of sparse utility matrices.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Collaborative filtering predicts user preferences based on the preferences of similar users or items.
+            \item Similarity measures such as Jaccard distance and cosine distance are used to quantify how alike users or items are.
+            \item Clustering users or items can improve the performance of collaborative filtering in sparse datasets.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

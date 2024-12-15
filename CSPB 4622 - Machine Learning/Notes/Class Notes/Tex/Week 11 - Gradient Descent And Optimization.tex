@@ -1,0 +1,263 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Gradient Descent And Optimization}
+\renewcommand{\SectionTitle}{Gradient Descent And Optimization}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 10.7: Fitting A Neural Network}
+    \item \pdflink{\LecNoteDir Optimization For Training Deep Models.pdf}{Optimization For Training Deep Models}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=rRhaD4coxLg}{Gradient Descent}{12}
+    \item \lecture{https://www.youtube.com/watch?v=PqkLgl2gd60}{SGD Tuning}{9}
+    \item \lecture{https://www.youtube.com/watch?v=8M86zgTQu5k}{Advanced Optimization}{10}
+    \item \lecture{https://www.youtube.com/watch?v=k7OQ1GmlRMY}{Training Tips}{13}
+    \item \lecture{https://www.youtube.com/watch?v=3Z3vGIfEFDw}{GPUs In Deep Learning}{9}
+    \item \lecture{https://www.youtube.com/watch?v=PKFX9ken-GQ}{Intro To Keras}{33}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 11 - Optimization.pdf}{Quiz 11 - Optimization}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 10: Deep Learning}. The section that is being covered in from this chapter this week is \textbf{Section 10.7: Fitting A Neural Network}.
+
+\begin{notes}{Section 10.7: Fitting A Neural Network}
+    \subsection*{Overview}
+
+    Fitting a neural network involves optimizing its parameters to minimize the prediction error on a given dataset. This process is inherently complex due to the nonconvex nature of the objective function, 
+    which can lead to multiple local minima. Neural network training leverages iterative optimization techniques like gradient descent, along with regularization strategies to prevent overfitting. This section 
+    provides an overview of the mathematical formulation of the optimization problem, techniques for parameter updates, and advanced strategies such as dropout and stochastic gradient descent (SGD).
+    
+    \subsubsection*{Mathematical Formulation of Training}
+    
+    The parameters of a neural network include the weights $w$ and biases $\beta$ for each layer. Training aims to minimize the squared error between predicted and observed responses. For $n$ training 
+    observations, the objective function is given as:
+    
+    \[
+    R(\theta) = \frac{1}{2} \sum_{i=1}^{n} \left( y_i - f_\theta(x_i) \right)^2,
+    \]
+    
+    where $f_\theta(x_i)$ represents the network's prediction for input $x_i$. Gradient descent is used to iteratively adjust parameters, reducing the objective function. However, due to the nested nature of 
+    parameters in neural networks, this optimization problem is nonconvex, often leading to local minima instead of a global solution.
+    
+    \begin{highlight}[Training Objective]
+        \begin{itemize}
+            \item \textbf{Objective Function}: Minimize the prediction error using a squared-error loss.
+            \item \textbf{Nonconvexity}: Multiple local minima can complicate optimization.
+            \item \textbf{Parameter Updates}: Use iterative methods like gradient descent for training.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Gradient Descent and Backpropagation}
+    
+    Gradient descent adjusts parameters in the direction that reduces the objective function. Backpropagation is used to compute gradients efficiently by applying the chain rule to propagate errors from the 
+    output layer back to earlier layers. For a given learning rate $\rho$, the parameters are updated as:
+    
+    \[
+    \theta_{m+1} \leftarrow \theta_m - \rho \nabla R(\theta_m).
+    \]
+    
+    \begin{highlight}[Gradient Descent and Backpropagation]
+        \begin{itemize}
+            \item \textbf{Gradient Calculation}: Uses the chain rule to compute partial derivatives for each parameter.
+            \item \textbf{Update Rule}: Adjusts parameters based on the gradient and learning rate.
+            \item \textbf{Efficiency}: Backpropagation simplifies gradient calculations for complex networks.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Regularization Techniques}
+    
+    Regularization is essential for controlling overfitting, especially in networks with a large number of parameters. Common methods include:
+    
+    \begin{itemize}
+        \item **Ridge Regularization**: Adds an $\ell_2$-penalty to the loss function to shrink parameter values.
+        \item **Lasso Regularization**: Applies an $\ell_1$-penalty, encouraging sparsity in the parameters.
+        \item **Dropout**: Randomly deactivates a fraction of units during training, preventing over-specialization of nodes.
+    \end{itemize}
+    
+    The ridge-regularized objective function is:
+    
+    \[
+    R(\theta; \lambda) = \frac{1}{2} \sum_{i=1}^{n} \left( y_i - f_\theta(x_i) \right)^2 + \lambda \sum_{j} \theta_j^2,
+    \]
+    
+    where $\lambda$ controls the strength of the regularization.
+    
+    \begin{highlight}[Regularization Methods]
+        \begin{itemize}
+            \item \textbf{Ridge Regularization}: Shrinks parameter values to reduce overfitting.
+            \item \textbf{Lasso Regularization}: Encourages sparsity in the network's parameters.
+            \item \textbf{Dropout}: Prevents over-specialization by randomly deactivating units during training.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Stochastic Gradient Descent (SGD) and Early Stopping}
+    
+    SGD accelerates training by updating parameters using random subsets (minibatches) of the training data, rather than the full dataset. Early stopping is another regularization technique that halts training 
+    once validation performance stops improving, preventing overfitting.
+    
+    \begin{highlight}[SGD and Early Stopping]
+        \begin{itemize}
+            \item \textbf{Stochastic Gradient Descent}: Updates parameters using minibatches to reduce computational cost.
+            \item \textbf{Early Stopping}: Monitors validation error and stops training before overfitting occurs.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Dropout Learning}
+    
+    Dropout is an efficient regularization method inspired by ensemble techniques. During training, a fraction $\phi$ of units is randomly deactivated (dropped out) in each layer. The weights of the remaining 
+    units are scaled to maintain the expected output. This prevents units from becoming overly specialized, enhancing the network's generalization ability.
+    
+    \begin{highlight}[Dropout Regularization]
+        \begin{itemize}
+            \item \textbf{Random Deactivation}: A fraction of units are ignored during training.
+            \item \textbf{Weight Scaling}: Surviving units' weights are scaled to maintain consistent outputs.
+            \item \textbf{Regularization Effect}: Reduces overfitting by preventing node specialization.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Tuning and Model Selection}
+    
+    Effective training requires careful tuning of hyperparameters, such as the number of layers, units per layer, learning rate, and regularization parameters. Techniques like trial-and-error and validation 
+    sets are often employed to find the best configuration.
+    
+    \begin{highlight}[Model Tuning Considerations]
+        \begin{itemize}
+            \item \textbf{Number of Layers and Units}: Deeper and wider networks can capture more patterns but require regularization.
+            \item \textbf{Regularization Parameters}: Include dropout rate $\phi$ and ridge/lasso strengths $\lambda$.
+            \item \textbf{SGD Details}: Includes batch size, number of epochs, and learning rate.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Optimization For Training Deep Models}.
+
+\begin{notes}{Optimization For Training Deep Models}
+    \subsection*{Overview}
+
+    Optimization is a critical component of training deep learning models, involving the adjustment of model parameters to minimize a defined loss function. The complexity of deep neural networks, with 
+    their nonconvex objective functions and high-dimensional parameter spaces, poses unique challenges. This document explores fundamental optimization concepts, techniques for gradient-based optimization, 
+    and advanced strategies to address the difficulties of training deep models.
+    
+    \subsubsection*{Gradient-Based Optimization}
+    
+    Most optimization techniques in deep learning rely on gradient-based methods, where gradients of the loss function with respect to parameters guide updates. The most basic method, gradient descent, 
+    updates parameters in the direction that reduces the loss. Variants of gradient descent, such as stochastic gradient descent (SGD), improve computational efficiency by using subsets of data (minibatches) 
+    to approximate the full gradient.
+    
+    \begin{highlight}[Gradient-Based Optimization]
+        \begin{itemize}
+            \item \textbf{Gradient Descent}: Updates parameters using the full dataset to compute gradients.
+            \item \textbf{Stochastic Gradient Descent (SGD)}: Approximates gradients using minibatches, reducing computational cost.
+            \item \textbf{Learning Rate}: A hyperparameter controlling the step size of each update, critical for convergence.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Challenges in Optimization}
+    
+    Training deep models presents challenges, such as the nonconvexity of the loss function, vanishing or exploding gradients, and slow convergence. These issues arise due to the architecture of deep networks, 
+    including their depth and nonlinear activation functions.
+    
+    \begin{highlight}[Optimization Challenges]
+        \begin{itemize}
+            \item \textbf{Nonconvexity}: The loss surface contains many local minima, saddle points, and flat regions.
+            \item \textbf{Vanishing/Exploding Gradients}: Gradients can diminish or explode during backpropagation, hindering effective updates.
+            \item \textbf{Slow Convergence}: High-dimensional parameter spaces and complex loss surfaces lead to longer training times.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Optimization Algorithms}
+    
+    Several advanced optimization algorithms address the limitations of basic gradient descent methods:
+    
+    \begin{itemize}
+        \item **Momentum**: Accelerates convergence by adding a fraction of the previous update to the current one, smoothing updates.
+        \item **RMSProp**: Scales gradients by the square root of their recent squared values, adapting learning rates for each parameter.
+        \item **Adam (Adaptive Moment Estimation)**: Combines momentum and RMSProp to adapt learning rates while maintaining past gradient averages.
+    \end{itemize}
+    
+    \begin{highlight}[Advanced Optimization Algorithms]
+        \begin{itemize}
+            \item \textbf{Momentum}: Speeds up optimization in directions of consistent gradient descent.
+            \item \textbf{RMSProp}: Adapts learning rates based on recent gradients for improved stability.
+            \item \textbf{Adam}: Combines momentum and adaptive learning rate scaling for robust performance.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Regularization and Generalization}
+    
+    Regularization methods are essential to prevent overfitting in deep models, ensuring that they generalize well to unseen data. Techniques such as weight decay, dropout, and data augmentation impose constraints 
+    or add noise during training, encouraging models to learn more robust representations.
+    
+    \begin{highlight}[Regularization Techniques]
+        \begin{itemize}
+            \item \textbf{Weight Decay (L2 Regularization)}: Penalizes large weights to prevent overfitting.
+            \item \textbf{Dropout}: Randomly deactivates neurons during training to reduce co-adaptation.
+            \item \textbf{Data Augmentation}: Increases the diversity of training data by applying transformations to input examples.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Learning Rate Schedules and Adaptive Methods}
+    
+    The choice and scheduling of learning rates significantly impact optimization. Fixed learning rates may lead to suboptimal convergence, prompting the use of dynamic learning rate schedules or adaptive methods. 
+    Strategies like learning rate decay, cyclical learning rates, and warm restarts help models escape local minima and converge more effectively.
+    
+    \begin{highlight}[Learning Rate Strategies]
+        \begin{itemize}
+            \item \textbf{Decay Schedules}: Gradually reduce the learning rate during training to refine convergence.
+            \item \textbf{Cyclical Learning Rates}: Vary the learning rate within a predefined range, helping the model explore the loss surface.
+            \item \textbf{Warm Restarts}: Periodically reset the learning rate to avoid stagnation in flat regions.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Batch Normalization and Gradient Scaling}
+    
+    Batch normalization addresses the problem of internal covariate shift by normalizing activations within each minibatch. This technique accelerates training and enables the use of higher learning rates. Gradient 
+    scaling further stabilizes optimization by preventing vanishing or exploding gradients in deep architectures.
+    
+    \begin{highlight}[Batch Normalization and Gradient Scaling]
+        \begin{itemize}
+            \item \textbf{Batch Normalization}: Normalizes activations within minibatches to stabilize learning.
+            \item \textbf{Gradient Scaling}: Ensures gradients remain within a manageable range during backpropagation.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Conclusion}
+    
+    Optimization plays a central role in training deep learning models, with techniques evolving to address the unique challenges posed by deep architectures. Gradient-based methods, regularization strategies, 
+    learning rate schedules, and normalization techniques collectively enable efficient training and robust generalization.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Gradient-based optimization is fundamental to training deep models, with advanced methods like Adam improving stability and convergence.
+            \item Regularization techniques such as dropout and weight decay enhance generalization and prevent overfitting.
+            \item Learning rate schedules and normalization methods significantly impact the efficiency and success of optimization.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

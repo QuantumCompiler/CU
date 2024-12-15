@@ -1,0 +1,309 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Intro To Deep Learning, Multi-Layer Perceptrons}
+\renewcommand{\SectionTitle}{Intro To Deep Learning, Multi-Layer Perceptrons}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 10.1: Single Layer Neural Networks}
+    \item \textbf{ISLR Chapter 10.2: Multi-Layer Neural Networks}
+    \item \pdflink{\LecNoteDir Deep Feedforward Networks.pdf}{Deep Feedforward Networks}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=UtwEv7I_KmY}{Introduction To Machine Learning}{8}
+    \item \lecture{https://www.youtube.com/watch?v=f6HXxnX4Kew}{Multi-Layer Perception}{10}
+    \item \lecture{https://www.youtube.com/watch?v=WTfBMJSq2-8}{MLP Weight Update}{10}
+    \item \lecture{https://www.youtube.com/watch?v=waOhyadw1I0}{MLP Continued}{11}
+    \item \lecture{https://www.youtube.com/watch?v=t7ma93NsyqU}{Chain Rule}{15}
+    \item \lecture{https://www.youtube.com/watch?v=WI54_AjMA44}{Back Propagation And Computation Graph}{14}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Introduction To Neural Networks Lecture Notes.pdf}{Introduction To Neural Networks Lecture Notes}
+    \item \pdflink{\LecNoteDir Neural Networks Training Lecture Notes.pdf}{Neural Networks Training Lecture Notes}
+    \item \pdflink{\LecNoteDir Neural Networks Training Optimization Tips Lecture Notes.pdf}{Neural Networks Training Optimization Tips Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \textbf{Assignment 8 - Neural Networks}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 10.1 - MLP.pdf}{Quiz 10.1 - MLP}
+    \item \pdflink{\QuizDir Quiz 10.2 - Back Propagation.pdf}{Quiz 10.2 - Back Propagation}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The first section that is being covered from this chapter this week is \textbf{Section 10.1: Single Layer Neural Networks}.
+
+\begin{notes}{Section 10.1: Single Layer Neural Networks}
+    \subsection*{Overview}
+
+    A single-layer neural network is a foundational model in deep learning that transforms input features into a response variable by learning a set of weights and nonlinear functions. This section introduces 
+    the architecture of a single-layer neural network, explains its computation steps, and discusses the choice of activation functions. Single-layer networks, also known as perceptrons, form the basis of 
+    more complex deep learning architectures.
+    
+    \subsubsection*{Network Structure}
+    
+    In a single-layer neural network, the input vector $X = (X_1, X_2, \ldots, X_p)$ is passed through a hidden layer with $K$ units, each computing a nonlinear activation based on a weighted 
+    sum of the inputs. Each hidden unit $A_k$ produces a transformation $h_k(X)$ of the inputs, much like a basis function. The final model, a linear combination of these transformations, takes 
+    the form:
+    
+    \[
+    f(X) = \beta_0 + \sum_{k=1}^K \beta_k A_k
+    \]
+    
+    where $\beta_k$ are coefficients learned from the data.
+    
+    \begin{highlight}[Neural Network Components]
+        \begin{itemize}
+            \item \textbf{Input Layer}: Consists of $p$ features, representing the initial data.
+            \item \textbf{Hidden Units $A_k$}: Apply nonlinear transformations of input features, creating an intermediate representation.
+            \item \textbf{Output Layer}: Combines activations $A_k$ into the final prediction, using weights $\beta_k$.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Activation Functions}
+    
+    An essential component of a neural network is the activation function $g(z)$, which introduces nonlinearity into the model. Popular activation functions include the sigmoid function, commonly used 
+    in earlier networks, and the ReLU (Rectified Linear Unit) function, favored in modern networks for its efficiency:
+    
+    \[
+    \text{Sigmoid:} \quad g(z) = \frac{1}{1 + e^{-z}}
+    \]
+    \[
+    \text{ReLU:} \quad g(z) = \max(0, z)
+    \]
+    
+    The choice of activation affects the network's ability to learn complex relationships in the data.
+    
+    \begin{highlight}[Common Activation Functions]
+        \begin{itemize}
+            \item \textbf{Sigmoid Function}: Used to squash values between 0 and 1, often for binary classification.
+            \item \textbf{ReLU Function}: Introduces sparsity by setting negative values to zero, improving computational efficiency.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Fitting the Model}
+    
+    Fitting a neural network involves finding the best values for the parameters $\beta$ and $w$ that minimize the prediction error. For quantitative outcomes, squared-error loss is commonly used:
+    
+    \[
+    \text{Loss} = \sum_{i=1}^n (y_i - f(x_i))^2
+    \]
+    
+    Gradient-based optimization algorithms, such as gradient descent, are used to iteratively adjust the parameters to reduce the loss.
+    
+    \begin{highlight}[Training with Gradient Descent]
+        \begin{itemize}
+            \item \textbf{Loss Function}: Measures the discrepancy between predictions and actual values, often squared error for regression tasks.
+            \item \textbf{Gradient Descent}: Adjusts parameters in the direction that reduces the loss, iterating until convergence.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Importance of Nonlinearity}
+    
+    The nonlinear activation function $g(z)$ enables the network to capture complex relationships in the data. Without nonlinearity, the model would collapse into a linear model in $X$, limiting its 
+    expressive power. By introducing transformations through nonlinear activation, single-layer networks can approximate more complex interactions between features.
+    
+    \begin{highlight}[Role of Nonlinearity]
+        \begin{itemize}
+            \item \textbf{Enhanced Expressiveness}: Nonlinear activations allow the network to capture complex, nonlinear relationships in data.
+            \item \textbf{Preventing Linear Collapse}: Without activation, the network reduces to a simple linear model.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 10.2: Multi-Layer Neural Networks}.
+
+\begin{notes}{Section 10.2: Multi-Layer Neural Networks}
+    \subsection*{Overview}
+
+    Multi-layer neural networks, also known as deep neural networks, build on the architecture of single-layer networks by adding multiple hidden layers. Each layer captures increasingly abstract patterns 
+    in the input data, enabling the network to learn complex relationships. This section introduces the structure of multi-layer networks, explains how the hidden layers transform data, and discusses the 
+    advantages of deeper networks in pattern recognition tasks.
+    
+    \subsubsection*{Network Structure}
+    
+    In a multi-layer network, the input vector $X = (X_1, X_2, \ldots, X_p)$ is processed through a series of hidden layers, each composed of activation units. The network transforms the input sequentially 
+    across layers until reaching the output layer, where the final prediction $f(X)$ is made. For instance, in a network with two hidden layers, the activations $A^{(1)}$ from the first layer feed into the 
+    second hidden layer, resulting in further transformations:
+    
+    \[
+    A^{(1)}_k = h^{(1)}_k(X) = g\left(w^{(1)}_{k0} + \sum_{j=1}^{p} w^{(1)}_{kj} X_j \right)
+    \]
+    \[
+    A^{(2)}_\ell = h^{(2)}_\ell(A^{(1)}) = g\left(w^{(2)}_{\ell 0} + \sum_{k=1}^{K_1} w^{(2)}_{\ell k} A^{(1)}_k \right)
+    \]
+    
+    The output layer combines these transformed representations to produce the final result.
+    
+    \begin{highlight}[Multi-Layer Neural Network Components]
+        \begin{itemize}
+            \item \textbf{Hidden Layers}: Composed of activation units, each layer transforms the data into increasingly abstract representations.
+            \item \textbf{Output Layer}: Combines the transformed features from the final hidden layer to generate the network's prediction.
+            \item \textbf{Weight Matrices $W^{(1)}, W^{(2)}, \dots$}: Each layer has a unique weight matrix, governing the transformations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Activation Functions and Nonlinearity}
+    
+    Activation functions $g(z)$, such as ReLU or sigmoid, introduce nonlinearity into the network, allowing it to capture complex patterns that a purely linear model could not. With multiple layers, 
+    these nonlinear activations enable the network to approximate intricate functions.
+    
+    \begin{highlight}[Role of Activation Functions]
+        \begin{itemize}
+            \item \textbf{ReLU Function}: Efficiently computes activations, commonly used for hidden layers in deep networks.
+            \item \textbf{Sigmoid Function}: Squeezes values between 0 and 1, often used for output layers in binary classification tasks.
+            \item \textbf{Nonlinearity}: Essential for enabling the network to learn complex, hierarchical representations of the data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Training with Backpropagation}
+    
+    Multi-layer networks are trained using the backpropagation algorithm, which minimizes the prediction error by adjusting weights through gradient descent. Each layer's weights are updated based on the 
+    gradient of the error with respect to those weights. This process allows each layer to learn representations that contribute to minimizing the overall error.
+    
+    \begin{highlight}[Backpropagation Process]
+        \begin{itemize}
+            \item \textbf{Error Propagation}: The error from the output layer is propagated backward to update weights at each layer.
+            \item \textbf{Gradient Descent}: Weights are adjusted in the direction that minimizes error, iterating until convergence.
+            \item \textbf{Layer-Wise Training}: Each layer learns transformations that progressively improve the network's performance.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Deep Networks}
+    
+    Deeper networks can capture more complex patterns and interactions in data, especially in tasks like image and speech recognition. By adding layers, the network learns hierarchical features: lower layers 
+    capture simple patterns (e.g., edges), while higher layers capture complex structures (e.g., shapes). This hierarchy of features enables deep networks to achieve state-of-the-art performance in many applications.
+    
+    \begin{highlight}[Benefits of Deep Networks]
+        \begin{itemize}
+            \item \textbf{Hierarchical Feature Learning}: Captures progressively complex patterns across layers.
+            \item \textbf{Improved Performance}: Deep networks outperform shallow models on tasks requiring high-level feature extraction.
+            \item \textbf{Flexibility}: Applicable to a wide range of data types, including images, text, and sequential data.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last piece of material that is being covered this week is \textbf{Deep Feedforward Networks}.
+
+\begin{notes}{Deep Feedforward Networks}
+    \subsection*{Overview}
+
+    Deep feedforward networks, also called feedforward neural networks or multilayer perceptrons (MLPs), form the basis of many modern deep learning applications. These models approximate complex functions 
+    by learning parameters that map inputs to outputs through multiple layers of transformations. Feedforward networks are considered “deep” because of their use of multiple layers between input and output, 
+    with information flowing in one direction—from input to output. This section introduces the structure of feedforward networks, the training process, and key design considerations in constructing deep networks.
+    
+    \subsubsection*{Network Architecture and Layers}
+    
+    A feedforward network is organized in layers, each consisting of multiple units (neurons). The input vector $X = (X_1, X_2, \ldots, X_p)$ passes through each layer in sequence, where each layer's output 
+    serves as input to the next. The network's depth is defined by the number of layers, and the final layer is the output layer. Each layer represents a transformation of the input data, with hidden layers 
+    providing intermediate representations that capture various patterns in the data.
+    
+    \[
+    f(X) = f^{(L)}(f^{(L-1)}(\dots f^{(1)}(X; \theta_1); \theta_{L-1}); \theta_L)
+    \]
+    
+    \begin{highlight}[Components of a Feedforward Network]
+        \begin{itemize}
+            \item \textbf{Input Layer}: Receives the initial data input $X$.
+            \item \textbf{Hidden Layers}: Transform the data through learned weights, capturing increasingly complex patterns.
+            \item \textbf{Output Layer}: Produces the final prediction $y$.
+            \item \textbf{Depth and Width}: Depth refers to the number of layers, while width is determined by the number of units in each layer.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Activation Functions and Nonlinearity}
+    
+    To enable the network to learn complex relationships, each unit in a hidden layer applies a nonlinear activation function to its inputs. Common activation functions include the sigmoid, ReLU, and tanh, each 
+    introducing different forms of nonlinearity that allow the network to approximate complex functions rather than being limited to linear mappings.
+    
+    \begin{highlight}[Activation Functions]
+        \begin{itemize}
+            \item \textbf{Sigmoid}: Squeezes values between 0 and 1, used for binary classification tasks.
+            \item \textbf{ReLU (Rectified Linear Unit)}: Sets negative values to zero, leading to sparse activations that improve computational efficiency.
+            \item \textbf{Tanh}: Squeezes values between -1 and 1, used when a symmetric output range is preferred.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Training and Backpropagation}
+    
+    Training a feedforward network involves optimizing weights and biases to minimize a cost function, often using stochastic gradient descent. The backpropagation algorithm is essential for efficient training, 
+    as it computes gradients layer by layer from the output back to the input, updating weights to reduce the error between predicted and actual outputs.
+    
+    \begin{highlight}[Training Process]
+        \begin{itemize}
+            \item \textbf{Cost Function}: Measures the discrepancy between predictions and actual values; common choices include mean squared error and cross-entropy.
+            \item \textbf{Gradient Descent}: Iteratively updates parameters to minimize the cost function.
+            \item \textbf{Backpropagation}: Calculates gradients from the output layer back to the input layer, adjusting weights to reduce error.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Universal Approximation and Model Capacity}
+    
+    The universal approximation theorem states that a feedforward network with at least one hidden layer can approximate any continuous function, given enough units. However, shallow networks may require 
+    an infeasibly large number of units to represent complex functions, whereas deeper networks can achieve similar representation power with fewer units, leading to more efficient learning and generalization.
+    
+    \begin{highlight}[Universal Approximation and Depth]
+        \begin{itemize}
+            \item \textbf{Function Approximation}: Feedforward networks can approximate any continuous function, given sufficient complexity.
+            \item \textbf{Depth Advantage}: Deeper networks can represent functions more efficiently than shallow networks, requiring fewer units.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Key Architectural Considerations}
+    
+    Designing an effective feedforward network requires deciding the depth, width, and type of connections between layers. Additional architectural elements, such as skip connections, can improve gradient 
+    flow and performance. Each choice reflects a balance between expressiveness and computational efficiency, tailored to the specific task.
+    
+    \begin{highlight}[Architectural Design Choices]
+        \begin{itemize}
+            \item \textbf{Layer Depth}: Deeper architectures capture more complex patterns but can be harder to optimize.
+            \item \textbf{Width of Layers}: Wider layers capture more patterns but increase computational cost.
+            \item \textbf{Skip Connections}: Allow gradients to flow more directly, improving training stability in deep networks.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Deep Feedforward Networks}
+    
+    Feedforward networks are powerful models capable of learning complex functions. By adjusting depth, width, and activations, these networks have become foundational to applications across machine 
+    learning. Training through backpropagation enables efficient learning of parameters, and careful architectural design can optimize performance for diverse tasks.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Feedforward networks approximate functions by learning a series of transformations from inputs to outputs.
+            \item Nonlinear activation functions allow networks to capture complex relationships beyond linear models.
+            \item Deep architectures efficiently represent complex functions, and training stability is improved through careful architectural choices.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

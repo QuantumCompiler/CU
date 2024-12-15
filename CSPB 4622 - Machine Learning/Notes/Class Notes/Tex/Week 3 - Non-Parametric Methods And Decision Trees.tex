@@ -1,0 +1,169 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Non-Parametric Methods And Decision Trees}
+\renewcommand{\SectionTitle}{Non-Parametric Methods And Decision Trees}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 8.1: The Basics Of Decision Trees}
+    \item \href{https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html}{sklearn.tree Documentation}
+    \item \href{https://scikit-learn.org/stable/modules/tree.html#minimal-cost-complexity-pruning}{sklearn Decision Trees User Guide}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=PB2KIRLzcZo}{Intro To Non-Parametric Modles, KNN}{16}
+    \item \lecture{https://www.youtube.com/watch?v=bkRbakfDtqA}{Decision Tree Intro, Decision Tree Regressor}{12}
+    \item \lecture{https://www.youtube.com/watch?v=fJhHfW-AVYA}{Decision Tree Classifier, Gini And Entropy}{20}
+    \item \lecture{https://www.youtube.com/watch?v=p3Wv_Md8U5o}{sklearn Usage, DT Hyperparameters}{9}
+    \item \lecture{https://www.youtube.com/watch?v=VhheDun0_G4}{Minimal Cost-Complexity Pruning}{9}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Decision Tree Classifier, Gini And Entropy Lecture Notes.pdf}{Decision Tree Classifier, Gini And Entropy Lecture Notes}
+    \item \pdflink{\LecNoteDir Decision Tree Intro, Decision Tree Regressor Lecture Notes.pdf}{Decision Tree Intro, Decision Tree Regressor Lecture Notes}
+    \item \pdflink{\LecNoteDir Intro To Non-Parametric Modles, KNN Lecture Notes.pdf}{Intro To Non-Parametric Modles, KNN Lecture Notes}
+    \item \pdflink{\LecNoteDir Pruning Trees Lecture Notes.pdf}{Pruning Trees Lecture Notes}
+    \item \pdflink{\LecNoteDir sklearn Usage, DT Hyperparameters.pdf}{sklearn Usage, DT Hyperparameters}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \textbf{Assignment 3 - Non-Parametric Methods And Decision Trees}
+\end{itemize}
+
+\subsection{Quiz}
+
+The quiz for this week is:
+
+\begin{itemize}
+    \item \pdflink{\QuizDir Quiz 3 - Non-Parametric Methods And Decision Trees.pdf}{Quiz 3 - Non-Parametric Methods And Decision Trees}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The section that is being covered this week is \textbf{Section 8.1: The Basics Of Decision Trees}.
+
+\begin{notes}{Section 8.1: The Basics Of Decision Trees}
+    \subsection*{Overview}
+
+    This section introduces tree-based methods for both regression and classification. These methods segment the predictor space into a number of simple regions and make predictions based on the mean 
+    (for regression) or the mode (for classification) response values in those regions. While decision trees are intuitive and easy to interpret, they often fall short in prediction accuracy compared 
+    to more sophisticated supervised learning techniques. This chapter also covers advanced tree-based methods like bagging, random forests, and boosting, which improve accuracy by combining multiple trees.
+    
+    \subsubsection*{The Basics of Decision Trees}
+    
+    Decision trees are applied to both regression and classification problems. A regression tree predicts a continuous response by splitting the predictor space and assigning observations within each 
+    region to the mean of the response. For classification, the mode of the response is used instead.
+    
+    \begin{highlight}[Key Concepts in Decision Trees]
+        \begin{itemize}
+            \item \textbf{Splitting Rules}: The predictor space is divided by applying rules based on the values of predictor variables.
+            \item \textbf{Internal Nodes and Leaves}: Splits define internal nodes, while terminal nodes (or leaves) correspond to regions of the predictor space.
+            \item \textbf{Recursive Binary Splitting}: A greedy, top-down approach used to partition the space into regions that minimize the residual sum of squares (RSS) for regression or classification error for classification.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Example: Predicting Salaries Using Regression Trees}
+    
+    The Hitters data set is used to illustrate a regression tree model predicting a baseball player's salary based on the number of years played and hits made. The regression tree divides the players 
+    into three groups based on these predictors, and the predicted salaries are calculated as the mean log-salary for each group.
+    
+    \begin{highlight}[Key Steps in Building a Regression Tree]
+        \begin{itemize}
+            \item \textbf{Splitting on Predictors}: The predictor space is segmented based on the values of the predictor variables.
+            \item \textbf{Predictions}: The response for each region is predicted as the mean of the training observations in that region.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Tree Pruning}
+    
+    Trees can easily overfit the training data, leading to poor performance on test data. To counter this, pruning is used to reduce tree size by removing splits that provide little predictive power. 
+    Cost complexity pruning is a common method, where a penalty is applied based on tree complexity.
+    
+    \begin{highlight}[Tree Pruning]
+        \begin{itemize}
+            \item \textbf{Cost Complexity Pruning}: A sequence of trees is considered, each with a penalty for complexity (number of terminal nodes). Cross-validation is used to select the optimal tree.
+            \item \textbf{Trade-off}: Pruning balances tree complexity and prediction accuracy, reducing variance at the cost of some bias.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Classification Trees}
+    
+    Classification trees are similar to regression trees but are used to predict a qualitative response. The class prediction for each observation is based on the most frequent class of the training 
+    observations in a region. The quality of a split is measured using criteria like classification error, Gini index, or entropy.
+    
+    \begin{highlight}[Measures for Classification Trees]
+        \begin{itemize}
+            \item \textbf{Gini Index}: A measure of node purity, where smaller values indicate nodes dominated by a single class.
+            \item \textbf{Entropy}: Another measure of node purity, similar to the Gini index, used to evaluate splits.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Advantages and Disadvantages of Trees}
+    
+    Trees are simple to interpret and can handle qualitative predictors without needing dummy variables. However, they generally lack the predictive accuracy of more advanced models and can be sensitive 
+    to changes in the data. Aggregating multiple trees using methods like bagging, random forests, and boosting can improve their performance.
+    
+    \begin{highlight}[Pros and Cons of Decision Trees]
+        \begin{itemize}
+            \item \textbf{Advantages}: Easy to interpret, can handle qualitative variables, mirror human decision-making processes.
+            \item \textbf{Disadvantages}: Low predictive accuracy compared to other models, sensitivity to data changes.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The other topic that is being covered this week is \textbf{sklearn}.
+
+\begin{notes}{sklearn}
+    \subsection*{Overview}
+
+    Scikit-learn (sklearn) is a widely used machine learning library in Python that provides simple and efficient tools for data mining and data analysis. It is built on top of NumPy, SciPy, and 
+    Matplotlib and is designed to interoperate with other Python libraries. Scikit-learn supports various machine learning tasks, including classification, regression, clustering, and dimensionality reduction.
+    
+    \subsubsection*{Core Features of Scikit-learn}
+    
+    Scikit-learn provides a broad range of algorithms for supervised and unsupervised learning, as well as tools for model evaluation and selection.
+    
+    \begin{highlight}[Core Features of Scikit-learn]
+        \begin{itemize}
+            \item \textbf{Supervised Learning}: Algorithms for classification (e.g., logistic regression, support vector machines) and regression (e.g., linear regression, decision trees).
+            \item \textbf{Unsupervised Learning}: Methods for clustering (e.g., k-means, hierarchical clustering) and dimensionality reduction (e.g., PCA, LDA).
+            \item \textbf{Model Selection}: Tools for cross-validation, grid search, and metrics to evaluate model performance.
+            \item \textbf{Preprocessing}: Functions for feature scaling, data normalization, and encoding categorical variables.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Ease of Use and Integration}
+    
+    Scikit-learn is known for its user-friendly interface and consistent API, making it accessible for both beginners and experienced users. It integrates well with other Python libraries, allowing 
+    seamless workflows for machine learning tasks.
+    
+    \begin{highlight}[Ease of Use and Integration]
+        \begin{itemize}
+            \item \textbf{Simple and Consistent API}: Most models share a common interface, making it easy to switch between algorithms.
+            \item \textbf{Interoperability}: Works well with libraries like Pandas, NumPy, and Matplotlib for data manipulation, analysis, and visualization.
+        \end{itemize}
+    \end{highlight}
+\end{notes}

@@ -1,0 +1,1023 @@
+\clearpage
+
+\renewcommand{\ChapTitle}{Recurrent Neural Networks And Unsupervised Models}
+\renewcommand{\SectionTitle}{Recurrent Neural Networks And Unsupervised Models}
+
+\chapter{\ChapTitle}
+\section{\SectionTitle}
+\horizontalline{0}{0}
+
+\subsection{Assigned Reading}
+
+The reading for this week comes from \ISLRPython, \ISLRR, and \ESLII \hspace*{1pt} and is:
+
+\begin{itemize}
+    \item \textbf{ISLR Chapter 10.5: Recurrent Neural Networks}
+    \item \textbf{Deep Learning Chapter 10.1: Unfolding Computational Graphs}
+    \item \textbf{Deep Learning Chapter 10.2: Recurrent Neural Networks}
+    \item \textbf{Deep Learning Chapter 10.7: The Challenge Of Long-Term Dependencies}
+    \item \textbf{Deep Learning Chapter 10.10: The Long Short-Term Memory And Other Gated RNNs}
+    \item \textbf{Deep Learning Chapter 14.1: Undercomplete Autoencoders}
+    \item \textbf{Deep Learning Chapter 14.2: Regularized Autoencoders}
+    \item \textbf{Deep Learning Chapter 14.3: Representation Power, Layer Size And Depth}
+    \item \textbf{Deep Learning Chapter 14.4: Stochastic Encoders And Decoders}
+    \item \textbf{Deep Learning Chapter 14.5: Denoising Autoencoders}
+    \item \textbf{Deep Learning Chapter 20.3: Deep Belief Networks}
+    \item \textbf{Deep Learning Chapter 20.4: Deep Boltzmann Machines}
+    \item \textbf{Deep Learning Chapter 20.6: Convolutional Boltzmann Machines}
+\end{itemize}
+
+\subsection{Piazza}
+
+Must post \textbf{one} dataset that aligns with weekly material.
+
+\subsection{Lectures}
+
+The lectures for this week are:
+
+\begin{itemize}
+    \item \lecture{https://www.youtube.com/watch?v=uYasHS7-MBM}{Introduction To RNN}{10}
+    \item \lecture{https://www.youtube.com/watch?v=I8Xnkbeeplc}{Traning RNNs}{8}
+    \item \lecture{https://www.youtube.com/watch?v=HWAgTYfjoPs}{Limitations Of Vanilla RNN}{10}
+    \item \lecture{https://www.youtube.com/watch?v=WsEcWodd96o}{LSTM And GRU}{16}
+    \item \lecture{https://www.youtube.com/watch?v=ptwGz0AnZ2A}{Overview Of Unsupervised Approaches In Deep Learning}{11}
+    \item \lecture{https://www.youtube.com/watch?v=GI9lpH-k0T0}{Autoencoders}{8}
+    \item \lecture{https://www.youtube.com/watch?v=EVT0vZ1dzaE}{Variational Autoencoders}{15}
+    \item \lecture{https://www.youtube.com/watch?v=rQ9L0UlANIw}{Generative Adversial Networks}{15}
+\end{itemize}
+
+\noindent The lecture notes for this week are:
+
+\begin{itemize}
+    \item \pdflink{\LecNoteDir Gated RNNs Lecture Notes.pdf}{Gated RNNs Lecture Notes}
+    \item \pdflink{\LecNoteDir Recurrent Neural Networks Lecture Notes.pdf}{Recurrent Neural Networks Lecture Notes}
+    \item \pdflink{\LecNoteDir Unsupervised Approach Lecture Notes.pdf}{Unsupervised Approach Lecture Notes}
+\end{itemize}
+
+\subsection{Assignments}
+
+The assignment(s) for the week is:
+
+\begin{itemize}
+    \item \href{https://github.com/cu-cspb-4622-fall-2024/P3-QuantumCompiler}{Mini Project 3 - Deep Learning}
+\end{itemize}
+
+\newpage
+
+\subsection{Chapter Summary}
+
+The first chapter that is being covered this week is \textbf{Chapter 10: Deep Learning}. The section that is being covered from this chapter this week is \textbf{Section 10.5: Recurrent Neural Networks}.
+
+\begin{notes}{Section 10.5: Recurrent Neural Networks}
+    \subsection*{Overview}
+
+    Recurrent Neural Networks (RNNs) are designed to process sequential data by incorporating the order and context of inputs into their predictions. Unlike traditional neural networks, RNNs feature recurrent 
+    connections that allow hidden states to propagate information from previous steps. This section outlines the structure and mechanics of RNNs, their applications in sequential data, and key extensions 
+    such as Long Short-Term Memory (LSTM) units.
+    
+    \subsubsection*{RNN Architecture}
+    
+    The input to an RNN is a sequence $X = \{X_1, X_2, \ldots, X_L\}$, where each $X_t$ represents the $t$-th element of the sequence. The network processes this sequence step-by-step, maintaining 
+    a hidden state $A_t$ that summarizes information from both the current input $X_t$ and the previous state $A_{t-1}$. The output layer produces predictions $O_t$ based on the current hidden state.
+    
+    \[
+    A_t = g\left(w_{k0} + \sum_{j=1}^p w_{kj} X_{tj} + \sum_{s=1}^K u_{ks} A_{t-1,s}\right),
+    \]
+    \[
+    O_t = \beta_0 + \sum_{k=1}^K \beta_k A_{tk}.
+    \]
+    
+    Here, $W$, $U$, and $B$ represent shared weights across all time steps, enabling parameter efficiency and translation invariance.
+    
+    \begin{highlight}[Key Features of RNNs]
+        \begin{itemize}
+            \item \textbf{Hidden States}: Propagate information over time, summarizing past inputs.
+            \item \textbf{Shared Weights}: Reduce the number of parameters, promoting generalization.
+            \item \textbf{Sequential Processing}: Accommodate varying sequence lengths and sequential dependencies.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications of RNNs}
+    
+    RNNs excel in tasks involving sequential data, such as:
+    \begin{itemize}
+        \item \textbf{Document Classification}: Use word sequences for sentiment analysis or topic classification.
+        \item \textbf{Time Series Forecasting}: Predict future values based on historical data (e.g., stock prices, weather).
+        \item \textbf{Speech and Language Processing}: Perform transcription, translation, and sentiment analysis.
+        \item \textbf{Handwriting Recognition}: Convert handwritten text into digital formats.
+    \end{itemize}
+    
+    \begin{highlight}[Sequential Applications]
+        \begin{itemize}
+            \item \textbf{Text Analysis}: Leverage word embeddings for document classification tasks.
+            \item \textbf{Time-Series Prediction}: Handle autocorrelated sequences for tasks like stock volume prediction.
+            \item \textbf{Speech and Audio}: Model time-dependent relationships in audio data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Challenges and Extensions}
+    
+    RNNs face difficulties such as vanishing gradients, which impede learning long-term dependencies. LSTM networks address this by introducing memory cells and gates that selectively retain or forget 
+    information. Bidirectional RNNs and sequence-to-sequence (Seq2Seq) models further enhance performance in applications like language translation.
+    
+    \begin{highlight}[RNN Challenges and Enhancements]
+        \begin{itemize}
+            \item \textbf{Vanishing Gradients}: Affects learning over long sequences, mitigated by LSTM/GRU units.
+            \item \textbf{Bidirectional RNNs}: Process sequences in both forward and backward directions.
+            \item \textbf{Seq2Seq Models}: Enable sequence-to-sequence learning for tasks like translation and summarization.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Embedding Layers}
+    
+    RNNs often use embedding layers to represent words or other categorical inputs in a lower-dimensional continuous space. Pretrained embeddings like Word2Vec or GloVe capture semantic relationships 
+    between words, significantly improving performance on tasks like sentiment analysis.
+    
+    \begin{highlight}[Embedding Layers]
+        \begin{itemize}
+            \item \textbf{Learned Embeddings}: Optimized during training for task-specific representations.
+            \item \textbf{Pretrained Embeddings}: Use embeddings trained on large corpora to leverage general semantic relationships.
+            \item \textbf{Dimensionality Reduction}: Compress high-dimensional one-hot encodings into compact, meaningful representations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary and Outlook}
+    
+    RNNs provide a robust framework for handling sequential data, enabling predictive models that account for temporal dependencies. While simple RNNs excel in many tasks, extensions like LSTMs and Seq2Seq 
+    models offer advanced capabilities for long-term memory and complex sequence tasks.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item RNNs enable sequence modeling through hidden state propagation and weight sharing.
+            \item Challenges like vanishing gradients are addressed with advanced architectures like LSTMs.
+            \item Applications span diverse fields, from language processing to time-series forecasting.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 10: Sequence Modeling: Recurrent And Recursive Nets}. The first section that is being covered from this chapter this week is \textbf{Section 10.1: Unfolding Computational Graphs}.
+
+\begin{notes}{Section 10.1: Unfolding Computational Graphs}
+    \subsection*{Overview}
+
+    Unfolding a computational graph is a key concept in recurrent neural networks (RNNs) that transforms recursive or recurrent computations into an acyclic graph. This process represents a sequence of 
+    operations explicitly, enabling the application of deep learning techniques such as backpropagation through time (BPTT). Unfolding provides a clearer understanding of parameter sharing and temporal 
+    dependencies in RNNs.
+    
+    \subsubsection*{Unfolding Recurrent Computations}
+    
+    Recurrent computations are described by equations that recursively define states at different time steps. For example, a classical dynamical system can be expressed as:
+    
+    \[
+    s_t = f(s_{t-1}; \theta),
+    \]
+    
+    where $s_t$ represents the system's state at time $t$, and $\theta$ represents parameters of the function $f$. Such equations can be unfolded over a fixed number of time steps $\tau$, 
+    resulting in a directed acyclic graph (DAG) that explicitly shows all computations:
+    
+    \[
+    s_3 = f(f(f(s_1; \theta); \theta); \theta).
+    \]
+    
+    This transformation eliminates recursion, allowing RNNs to be trained using standard methods for acyclic graphs.
+    
+    \begin{highlight}[Benefits of Unfolding]
+        \begin{itemize}
+            \item \textbf{Explicit Representation}: Makes dependencies clear for gradient computation and optimization.
+            \item \textbf{Parameter Sharing}: Repeated application of the same parameters reduces the number of model parameters.
+            \item \textbf{Compatibility with BPTT}: Enables efficient gradient-based learning techniques like backpropagation through time.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Structure of Unfolded Graphs}
+    
+    Unfolding maps a recursive computation into a repeated sequence of operations. Each node in the resulting graph corresponds to a computation at a specific time step. For example:
+    
+    \[
+    h_t = f(h_{t-1}, x_t; \theta),
+    \]
+    
+    can be unfolded to represent states $h_1, h_2, \ldots, h_\tau$, where each state depends on the prior state and input at each time step $t$.
+    
+    \begin{highlight}[Advantages of Unfolded Graphs]
+        \begin{itemize}
+            \item \textbf{Uniform Input Size}: Reduces the complexity of learning by parameterizing a single transition function $f$ across all time steps.
+            \item \textbf{Scalability}: Supports sequences of arbitrary lengths during both training and inference.
+            \item \textbf{Generalization}: Allows the model to learn a single shared function applicable to unseen sequence lengths.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications in RNNs}
+    
+    Unfolded computational graphs are integral to RNNs, enabling them to model sequences in diverse domains, including language, speech, and time-series data. The explicit graph structure facilitates 
+    gradient computation and optimization, allowing RNNs to capture temporal dependencies effectively.
+    
+    \begin{highlight}[Applications in Recurrent Neural Networks]
+        \begin{itemize}
+            \item \textbf{Temporal Modeling}: Used to represent sequential data like text or speech.
+            \item \textbf{Backpropagation Through Time}: Computes gradients for parameters across all time steps in the sequence.
+            \item \textbf{Parameter Efficiency}: Reduces the parameter count through sharing across time steps.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Key Concepts}
+    
+    Unfolding computational graphs transforms recursive operations into explicit acyclic structures, enabling efficient training and optimization of RNNs. By reducing the problem to a sequence of simpler 
+    operations, unfolding provides a robust framework for handling sequential data.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item \textbf{Unfolding}: Converts recursive functions into acyclic computational graphs for easier optimization.
+            \item \textbf{Parameter Sharing}: Promotes efficiency and generalization by reusing the same parameters across time.
+            \item \textbf{Training Mechanisms}: Supports techniques like BPTT, critical for RNN learning.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 10.2: Recurrent Neural Networks}.
+
+\begin{notes}{Section 10.2: Recurrent Neural Networks}
+    \subsection*{Overview}
+
+    Recurrent Neural Networks (RNNs) are a family of neural networks designed to process sequential data by incorporating temporal dependencies into their computations. They achieve this by employing cycles 
+    in their computational graph, enabling the flow of information across time steps. This section outlines the structure, working principles, and key applications of RNNs, along with their mathematical 
+    underpinnings.
+    
+    \subsubsection*{Structure and Functionality}
+    
+    RNNs operate on sequences $\{x_1, x_2, \dots, x_T\}$ by maintaining a hidden state $h_t$ that captures relevant information from both the current input $x_t$ and the past states $h_{t-1}$. 
+    The hidden state is computed recursively using a transition function:
+    
+    \[
+    h_t = f(h_{t-1}, x_t; \theta),
+    \]
+    
+    where $\theta$ represents the shared parameters across all time steps. The transition function $f$ typically involves an affine transformation followed by a nonlinearity, allowing RNNs to model 
+    complex dependencies within sequential data.
+    
+    \begin{highlight}[Key Features of RNNs]
+        \begin{itemize}
+            \item \textbf{State Propagation}: Captures sequential dependencies by passing hidden states through time.
+            \item \textbf{Parameter Sharing}: Reduces the number of parameters, enabling generalization across sequences of varying lengths.
+            \item \textbf{Compatibility with Variable-Length Inputs}: Adapts naturally to sequences of different lengths without reconfiguration.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Recurrent Architectures}
+    
+    RNNs can be designed in various ways to suit specific tasks:
+    \begin{itemize}
+        \item \textbf{Fully Connected RNNs}: Maintain recurrent connections among hidden units and produce outputs at each time step.
+        \item \textbf{Output-Connected RNNs}: Include connections from the output of one time step to the hidden state of the next.
+        \item \textbf{Sequence-to-Single Models}: Process an entire sequence before producing a single output, useful for summarization tasks.
+    \end{itemize}
+    
+    \begin{highlight}[Recurrent Network Variants]
+        \begin{itemize}
+            \item \textbf{Fully Connected RNNs}: Useful for continuous predictions and time-series analysis.
+            \item \textbf{Output-Connected RNNs}: Enhance predictive capabilities by incorporating past outputs.
+            \item \textbf{Sequence-to-Single Models}: Effective for classification tasks on sequential data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications of RNNs}
+    
+    RNNs are highly effective in tasks requiring sequential understanding and predictions, including:
+    \begin{itemize}
+        \item \textbf{Language Modeling}: Predicting the next word in a sequence or generating text.
+        \item \textbf{Speech Recognition}: Converting audio signals into transcribed text.
+        \item \textbf{Time-Series Forecasting}: Modeling trends and making predictions in temporal data like stock prices.
+        \item \textbf{Handwriting Recognition}: Decoding handwritten text from sequential pen movements.
+    \end{itemize}
+    
+    \begin{highlight}[Sequential Data Applications]
+        \begin{itemize}
+            \item \textbf{Text Analysis}: Leverage word embeddings for document classification tasks.
+            \item \textbf{Time-Series Prediction}: Handle autocorrelated sequences for tasks like stock volume prediction.
+            \item \textbf{Speech and Audio}: Model time-dependent relationships in audio data.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Challenges in Training RNNs}
+    
+    Training RNNs presents unique challenges, including:
+    \begin{itemize}
+        \item \textbf{Vanishing Gradients}: Gradients diminish over time, impeding the learning of long-term dependencies.
+        \item \textbf{Exploding Gradients}: Gradients grow uncontrollably, leading to numerical instability.
+        \item \textbf{Lossy Representations}: Hidden states compress sequential information, potentially discarding valuable context.
+    \end{itemize}
+    
+    \begin{highlight}[Key Challenges in Training]
+        \begin{itemize}
+            \item \textbf{Gradient Issues}: Vanishing and exploding gradients hinder optimization.
+            \item \textbf{Memory Bottlenecks}: Fixed-length hidden states struggle to capture extensive context.
+            \item \textbf{Overfitting Risks}: Sequential data may introduce redundant patterns, leading to overfitting.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of RNN Utility}
+    
+    Recurrent Neural Networks extend deep learning to sequential data, leveraging their structure and parameter-sharing capabilities to model temporal dependencies effectively. Despite their challenges, RNNs 
+    have proven invaluable for a wide range of applications, especially in natural language processing and time-series analysis.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item RNNs enable sequential modeling by maintaining and propagating hidden states.
+            \item Parameter sharing facilitates generalization across sequences of varying lengths.
+            \item Advanced architectures like LSTMs and GRUs mitigate gradient challenges for long-term dependencies.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 10.7: The Challenge Of Long-Term Dependencies}.
+
+\begin{notes}{Section 10.7: The Challenge Of Long-Term Dependencies}
+    \subsection*{Overview}
+
+    Learning long-term dependencies in recurrent neural networks (RNNs) is a well-known challenge due to the inherent difficulty of propagating information across many time steps. This section explores 
+    the mathematical foundations of this problem, focusing on the vanishing and exploding gradient phenomena and their impact on optimization. These issues are central to understanding the limitations of 
+    RNNs and inspire the development of advanced architectures.
+    
+    \subsubsection*{The Problem of Vanishing and Exploding Gradients}
+    
+    RNNs repeatedly apply the same function at each time step, resulting in compositions that amplify nonlinear effects. This process leads to gradients that either vanish (most commonly) or explode (rarely), 
+    depending on the dynamics of the recurrent function. The fundamental problem arises from the repeated multiplication of Jacobians, which scales gradients exponentially based on the time step.
+    
+    \[
+    h_t = f(h_{t-1}; \theta), \quad \frac{\partial h_t}{\partial h_0} = \prod_{i=1}^t \frac{\partial h_i}{\partial h_{i-1}}.
+    \]
+    
+    For large $t$, eigenvalues of the Jacobian dictate the behavior:
+    \begin{itemize}
+        \item Eigenvalues $< 1$: Gradients vanish, making learning long-term dependencies infeasible.
+        \item Eigenvalues $> 1$: Gradients explode, destabilizing optimization.
+    \end{itemize}
+    
+    \begin{highlight}[Key Gradient Challenges]
+        \begin{itemize}
+            \item \textbf{Vanishing Gradients}: Gradients diminish exponentially, hiding signals for long-term dependencies.
+            \item \textbf{Exploding Gradients}: Gradients grow uncontrollably, disrupting optimization and numerical stability.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Insights into Long-Term Dependency Learning}
+    
+    The difficulty of learning long-term dependencies is tied to the relative weighting of short-term versus long-term interactions. Short-term dependencies dominate gradient signals, while long-term 
+    dependencies receive exponentially smaller weight. This discrepancy significantly slows convergence when learning extended temporal patterns.
+    
+    \begin{highlight}[Understanding Long-Term Challenges]
+        \begin{itemize}
+            \item \textbf{Short-Term Dominance}: Gradients prioritize immediate dependencies, overshadowing distant interactions.
+            \item \textbf{Optimization Difficulty}: Traditional RNNs fail to train effectively on sequences requiring memory over many time steps.
+            \item \textbf{Exponential Decay}: Long-term signals diminish in magnitude relative to short-term signals.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Implications for Training RNNs}
+    
+    The challenges of vanishing and exploding gradients were identified in early research and remain one of the major obstacles in training RNNs. Empirical studies reveal that as the length of dependencies 
+    increases, the probability of successful training approaches zero when using standard optimization techniques like stochastic gradient descent (SGD). Solutions often involve architectural innovations 
+    rather than purely optimization-focused methods.
+    
+    \begin{highlight}[Practical Implications]
+        \begin{itemize}
+            \item \textbf{Length Constraints}: Traditional RNNs struggle to model dependencies beyond 10-20 steps.
+            \item \textbf{Architecture Matters}: Modern architectures like LSTMs and GRUs explicitly address gradient-related issues.
+            \item \textbf{Slow Learning}: Signals for long-term dependencies are overwhelmed by short-term fluctuations, requiring significant training time.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Key Concepts}
+    
+    The vanishing and exploding gradient problems in RNNs highlight the difficulty of learning long-term dependencies in sequential data. While theoretical and empirical insights have illuminated these 
+    challenges, overcoming them requires advanced architectures that modify gradient flow or incorporate mechanisms to retain long-term information.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Gradients in RNNs scale exponentially, making long-term dependency learning slow or infeasible.
+            \item Solutions often involve architectural changes, as optimization strategies alone cannot fully mitigate these issues.
+            \item Understanding and addressing these challenges is central to advancing sequence modeling in deep learning.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 10.10: The Long Short-Term Memory And Other Gated RNNs}.
+
+\begin{notes}{Section 10.10: The Long Short-Term Memory And Other Gated RNNs}
+    \subsection*{Overview}
+
+    Long Short-Term Memory (LSTM) networks and other gated recurrent neural networks (RNNs) have become some of the most effective architectures for sequence modeling. Unlike traditional RNNs, they address 
+    the vanishing and exploding gradient problems by incorporating gating mechanisms that regulate the flow of information across time steps. This section explores the structure and functionality of LSTMs 
+    and introduces alternative gated architectures, such as Gated Recurrent Units (GRUs).
+    
+    \subsubsection*{Long Short-Term Memory Networks}
+    
+    LSTMs were designed to overcome the limitations of standard RNNs in learning long-term dependencies. They achieve this by using a memory cell and three gates (input, forget, and output gates) that 
+    dynamically control the information flow. The memory cell allows the network to retain information across long sequences, while the gates regulate when to read, write, or erase information.
+    
+    \begin{highlight}[Key Features of LSTMs]
+        \begin{itemize}
+            \item \textbf{Memory Cell}: Stores information over long time intervals with a linear self-loop.
+            \item \textbf{Forget Gate}: Decides which information to discard from the memory cell.
+            \item \textbf{Input Gate}: Controls which new information to add to the memory cell.
+            \item \textbf{Output Gate}: Determines which information to output based on the memory cell.
+        \end{itemize}
+    \end{highlight}
+    
+    The LST's architecture supports dynamically adjusting the time scale of integration, making it adaptable to input sequences of varying complexity. This flexibility has enabled LSTMs to excel in 
+    applications such as handwriting recognition, speech processing, machine translation, and image captioning.
+    
+    \subsubsection*{Gated Recurrent Units}
+    
+    GRUs are a simpler alternative to LSTMs, designed to reduce computational complexity while retaining effectiveness. Unlike LSTMs, GRUs combine the forget and input gates into a single update gate and 
+    lack a separate memory cell. This streamlined design has been shown to perform comparably to LSTMs on many tasks.
+    
+    \begin{highlight}[Key Features of GRUs]
+        \begin{itemize}
+            \item \textbf{Update Gate}: Combines the forget and input functions into a single gate.
+            \item \textbf{Reset Gate}: Controls how much of the past information to ignore when computing the new state.
+            \item \textbf{Simpler Architecture}: Reduces the number of parameters compared to LSTMs.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications of Gated RNNs}
+    
+    Gated RNNs, including both LSTMs and GRUs, are widely used across various domains requiring sequence modeling:
+    \begin{itemize}
+        \item \textbf{Natural Language Processing}: Tasks such as machine translation, text generation, and sentiment analysis.
+        \item \textbf{Time-Series Analysis}: Forecasting and modeling trends in sequential data.
+        \item \textbf{Speech Recognition}: Converting audio into text by capturing temporal dependencies.
+        \item \textbf{Image Captioning}: Generating descriptive text for visual inputs by integrating spatial and temporal information.
+    \end{itemize}
+    
+    \subsubsection*{Architectural Insights}
+    
+    Research on gated RNN variants highlights the importance of the forget gate and suggests that architectural tweaks, such as adding biases to gates, can significantly improve performance. While LSTMs and 
+    GRUs remain dominant, no single variant has consistently outperformed these architectures across all tasks, underscoring the importance of task-specific customization.
+    
+    \begin{highlight}[Architectural Advances]
+        \begin{itemize}
+            \item \textbf{Forget Gate Significance}: Key to controlling information flow and preventing gradient issues.
+            \item \textbf{Bias Initialization}: Improves stability and learning efficiency.
+            \item \textbf{Task-Specific Variants}: Explore trade-offs between complexity and performance for specific applications.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Key Concepts}
+    
+    Gated RNNs, such as LSTMs and GRUs, represent a major advance in sequence modeling, addressing the challenges of learning long-term dependencies. By dynamically managing the flow of information, these 
+    architectures enable the effective modeling of complex temporal relationships in data.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item LSTMs use memory cells and gating mechanisms to capture long-term dependencies effectively.
+            \item GRUs provide a simpler alternative to LSTMs, reducing computational complexity without sacrificing performance.
+            \item Gated RNNs are foundational to many applications, including language processing, time-series forecasting, and speech recognition.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next chapter that is being covered this week is \textbf{Chapter 14: Autoencoders}. The first section that is being covered from this chapter this week is \textbf{Section 14.1: Undercomplete Autoencoders}.
+
+\begin{notes}{Section 14.1: Undercomplete Autoencoders}
+    \subsection*{Overview}
+
+    An undercomplete autoencoder is a type of neural network designed to perform dimensionality reduction and feature extraction by forcing the model to represent the input data using a compact latent 
+    space. Unlike general autoencoders that may simply copy inputs to outputs, undercomplete autoencoders constrain the latent representation, $h$, to have fewer dimensions than the input $x$. 
+    This encourages the model to learn the most salient features of the data.
+    
+    \subsubsection*{Structure and Objective}
+    
+    The undercomplete autoencoder consists of two main components:
+    \begin{itemize}
+        \item \textbf{Encoder}: A function $f(x)$ that maps the input $x$ to the latent code $h$.
+        \item \textbf{Decoder}: A function $g(h)$ that maps the latent code $h$ back to a reconstruction $r$, approximating the original input.
+    \end{itemize}
+    
+    The training objective is to minimize the reconstruction loss:
+    
+    \[
+    L(x, g(f(x))),
+    \]
+    
+    where $L$ is typically the mean squared error between the input $x$ and its reconstruction $r = g(f(x))$.
+    
+    \begin{highlight}[Key Characteristics]
+        \begin{itemize}
+            \item \textbf{Dimensionality Constraint}: The latent representation $h$ has fewer dimensions than $x$, ensuring the model prioritizes the most relevant features.
+            \item \textbf{Reconstruction Loss}: Penalizes differences between the input and its reconstruction, driving the autoencoder to preserve critical information.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Relationship to PCA}
+    
+    When the encoder and decoder are linear, and the reconstruction loss is mean squared error, the undercomplete autoencoder is equivalent to principal component analysis (PCA). It learns a linear 
+    subspace that captures the variance of the data. However, nonlinear encoder and decoder functions allow undercomplete autoencoders to generalize PCA, capturing more complex structures in the data.
+    
+    \begin{highlight}[Comparison to PCA]
+        \begin{itemize}
+            \item \textbf{Linear Autoencoders}: Learn the same subspace as PCA.
+            \item \textbf{Nonlinear Autoencoders}: Capture nonlinear relationships and provide a more expressive representation.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Capacity and Overfitting}
+    
+    While undercomplete autoencoders excel at extracting meaningful features, excessive capacity in the encoder or decoder can lead to overfitting. For example, a powerful encoder may memorize individual 
+    training examples rather than generalizing useful features. This can render the autoencoder ineffective for downstream tasks.
+    
+    \begin{highlight}[Overfitting Risks]
+        \begin{itemize}
+            \item \textbf{High-Capacity Models}: May learn to perfectly reconstruct the input without capturing meaningful patterns.
+            \item \textbf{Regularization Needs}: Model capacity should be limited to ensure generalization.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Key Concepts}
+    
+    Undercomplete autoencoders provide a framework for dimensionality reduction and feature learning by constraining the dimensionality of the latent representation. They can generalize PCA and are 
+    effective for extracting compact, meaningful representations of the input data.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Undercomplete autoencoders reduce dimensionality by forcing the latent code $h$ to have fewer dimensions than the input $x$.
+            \item Linear autoencoders approximate PCA, while nonlinear versions capture more complex relationships.
+            \item Proper capacity control is essential to prevent overfitting and ensure the autoencoder extracts useful features.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.2: Regularized Autoencoders}.
+
+\begin{notes}{Section 14.2: Regularized Autoencoders}
+    \subsection*{Overview}
+
+    Regularized autoencoders extend the basic autoencoder framework by introducing constraints or penalties in the training objective. These modifications aim to encourage the model to learn meaningful 
+    features about the data distribution, even in cases where the encoder or decoder has high capacity or the latent space is overcomplete. Regularization methods enable autoencoders to go beyond simple 
+    reconstruction and capture useful properties of the data.
+    
+    \subsubsection*{Purpose of Regularization}
+    
+    In an undercomplete autoencoder, reducing the dimensionality of the latent representation forces the model to learn salient features of the input. However, if the latent space is overcomplete, or the 
+    encoder and decoder have excessive capacity, the model can trivially copy the input without extracting meaningful features. Regularization addresses this problem by imposing additional constraints 
+    through the loss function.
+    
+    \begin{highlight}[Benefits of Regularization]
+        \begin{itemize}
+            \item \textbf{Enhanced Generalization}: Regularized autoencoders learn features that generalize beyond the training data.
+            \item \textbf{Nonlinear Capabilities}: Allows autoencoders with nonlinear encoders and decoders to learn more expressive representations.
+            \item \textbf{Applicability to Overcomplete Codes}: Regularization enables learning even when the code dimension exceeds the input dimension.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Types of Regularized Autoencoders}
+    
+    Several forms of regularization can be applied to autoencoders, each with specific properties and advantages:
+    
+    \paragraph{Sparse Autoencoders}  
+    Sparse autoencoders impose a sparsity penalty $\Omega(h)$ on the activations of the latent representation $h$. This encourages the model to use only a subset of the available neurons, leading 
+    to more interpretable features. The loss function includes both the reconstruction error and the sparsity penalty:
+    
+    \[
+    L(x, g(f(x))) + \Omega(h),
+    \]
+    
+    where $\Omega(h)$ typically penalizes the magnitude of the activations.
+    
+    \paragraph{Denoising Autoencoders (DAEs)}  
+    DAEs are trained to reconstruct the original input from a corrupted version. By forcing the model to undo the corruption, the DAE learns robust features that capture the structure of the data 
+    distribution rather than noise.
+    
+    \paragraph{Contractive Autoencoders (CAEs)}  
+    CAEs penalize the Frobenius norm of the Jacobian of the encoder function, encouraging the model to learn features that are invariant to small perturbations in the input. The regularization term is:
+    
+    \[
+    \Omega(h) = \lambda \sum_{i} \| \nabla_x h_i \|^2.
+    \]
+    
+    This ensures that the encoder maps nearby inputs to similar latent representations.
+    
+    \begin{highlight}[Types of Regularization]
+        \begin{itemize}
+            \item \textbf{Sparsity}: Encourages selective activation of latent features.
+            \item \textbf{Noise Robustness}: DAEs focus on reconstructing clean data from noisy inputs.
+            \item \textbf{Invariance}: CAEs enforce stability to perturbations in the input space.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications and Extensions}
+    
+    Regularized autoencoders are widely used for feature extraction, dimensionality reduction, and as building blocks for more complex models such as variational autoencoders (VAEs). They provide a 
+    foundation for learning meaningful latent representations in unsupervised and semi-supervised learning tasks.
+    
+    \begin{highlight}[Applications of Regularized Autoencoders]
+        \begin{itemize}
+            \item \textbf{Feature Learning}: Extract informative features for downstream tasks.
+            \item \textbf{Dimensionality Reduction}: Learn compact representations of high-dimensional data.
+            \item \textbf{Generative Modeling}: Serve as precursors to advanced generative models like VAEs.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Key Concepts}
+    
+    Regularized autoencoders enhance the standard autoencoder framework by preventing trivial solutions and encouraging meaningful learning. Through various regularization techniques, they provide 
+    flexibility to handle diverse data distributions and representation requirements.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Regularization enables autoencoders to learn robust and interpretable features.
+            \item Techniques like sparsity, denoising, and contractive penalties address different aspects of representation learning.
+            \item Regularized autoencoders are versatile tools for unsupervised learning and feature extraction.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.3: Representation Power, Layer Size And Depth}.
+
+\begin{notes}{Section 14.3: Representation Power, Layer Size And Depth}
+    \subsection*{Overview}
+
+    The representational power of an autoencoder is influenced by its architecture, particularly the size and depth of its layers. While autoencoders are often implemented with a single-layer encoder and 
+    decoder, utilizing deeper architectures provides several advantages. This section explores how layer size and depth affect an autoencoder's ability to model complex mappings, offering insights into the 
+    trade-offs between simplicity and representational capacity.
+    
+    \subsubsection*{Representation with Shallow Architectures}
+    
+    A shallow autoencoder, with a single hidden layer, is guaranteed by the universal approximator theorem to approximate any continuous function given sufficient hidden units. However, such models are 
+    limited in their ability to enforce structural constraints, like sparsity, in the latent representation. Moreover, the mapping between input and code is inherently shallow, which can limit the model's 
+    expressiveness.
+    
+    \begin{highlight}[Limitations of Shallow Architectures]
+        \begin{itemize}
+            \item \textbf{Shallow Representations}: The encoder-decoder relationship lacks the ability to model hierarchical or compositional patterns.
+            \item \textbf{Constraint Enforcement}: Structural constraints, such as sparsity, are harder to enforce without additional hidden layers.
+            \item \textbf{Identity Function Approximation}: Shallow autoencoders can approximate the identity function well but struggle with more complex mappings.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Advantages of Deep Architectures}
+    
+    Deep autoencoders, consisting of multiple hidden layers in the encoder and decoder, offer significantly improved representational power. They can model hierarchical patterns in data and enforce complex 
+    constraints on the latent code. Depth also allows exponential reductions in computational cost and training data requirements for certain functions, as discussed in feedforward network theory.
+    
+    \begin{highlight}[Advantages of Deep Autoencoders]
+        \begin{itemize}
+            \item \textbf{Hierarchical Representation}: Captures multiple levels of abstraction in the data.
+            \item \textbf{Efficient Function Approximation}: Reduces computational and data requirements for learning complex mappings.
+            \item \textbf{Enhanced Flexibility}: Provides the capacity to encode non-trivial constraints on the latent space.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Experimental Insights}
+    
+    Empirical evidence shows that deep autoencoders outperform their shallow counterparts in tasks such as dimensionality reduction and data compression. For instance, deep architectures have been found to 
+    achieve superior compression ratios and reconstruction quality compared to linear or single-layer models.
+    
+    \begin{highlight}[Empirical Results]
+        \begin{itemize}
+            \item \textbf{Compression Performance}: Deep autoencoders yield significantly better compression ratios.
+            \item \textbf{Reconstruction Quality}: Improved ability to reconstruct complex inputs accurately.
+            \item \textbf{Practical Approaches}: Training often involves pretraining stacks of shallow autoencoders for better initialization of deep networks.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Summary of Key Concepts}
+    
+    The size and depth of autoencoder layers directly influence their capacity to model complex relationships in data. While shallow models are sufficient for simpler tasks, deep architectures provide the 
+    flexibility and power needed for hierarchical representation learning and advanced compression tasks.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item \textbf{Layer Depth Matters}: Deep architectures enable hierarchical and compositional representations.
+            \item \textbf{Shallow vs. Deep Trade-Off}: Shallow models suffice for simple mappings but lack flexibility for complex tasks.
+            \item \textbf{Practical Strategies}: Pretraining and careful design of deep autoencoders improve their effectiveness.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 14.4: Stochastic Encoders And Decoders}.
+
+\begin{notes}{Section 14.4: Stochastic Encoders And Decoders}
+    \subsection*{Overview}
+
+    Stochastic encoders and decoders generalize the traditional autoencoder framework by introducing probabilistic mappings rather than deterministic functions. These models extend the encoder $f(x)$ 
+    and decoder $g(h)$ functions to distributions $p_{\text{encoder}}(h|x)$ and $p_{\text{decoder}}(x|h)$, respectively. This allows the incorporation of randomness, enabling more flexible 
+    modeling of data distributions and latent variables.
+    
+    \subsubsection*{Probabilistic Framework}
+    
+    In the stochastic framework, the encoder is treated as a conditional distribution $p_{\text{encoder}}(h|x)$, and the decoder as $p_{\text{decoder}}(x|h)$. Training involves minimizing the 
+    negative log-likelihood of the data under the decoder's distribution:
+    
+    \[
+    -\log p_{\text{decoder}}(x|h),
+    \]
+    
+    where the exact form of this loss depends on the choice of output distribution:
+    \begin{itemize}
+        \item Gaussian outputs for real-valued $x$, yielding a mean squared error loss.
+        \item Bernoulli outputs for binary $x$, corresponding to a sigmoid activation.
+        \item Softmax outputs for categorical $x$.
+    \end{itemize}
+    
+    The output variables are usually modeled as conditionally independent given $h$, simplifying the evaluation of the probability distribution.
+    
+    \begin{highlight}[Key Features of Stochastic Autoencoders]
+        \begin{itemize}
+            \item \textbf{Conditional Distributions}: Encoder and decoder define probabilistic mappings $p_{\text{encoder}}(h|x)$ and $p_{\text{decoder}}(x|h)$.
+            \item \textbf{Output Flexibility}: Supports various output distributions (e.g., Gaussian, Bernoulli, or softmax).
+            \item \textbf{Noise Injection}: Introduces randomness to enhance the flexibility and robustness of representations.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Modeling with Stochastic Encoders and Decoders}
+    
+    Stochastic encoders and decoders enable the modeling of latent variable distributions $p_{\text{model}}(x, h)$, where:
+    
+    \[
+    p_{\text{encoder}}(h|x) = p_{\text{model}}(h|x),
+    \]
+    \[
+    p_{\text{decoder}}(x|h) = p_{\text{model}}(x|h).
+    \]
+    
+    These models are not guaranteed to yield a unique joint distribution $p_{\text{model}}(x, h)$. However, training as a denoising autoencoder often aligns the encoder and decoder distributions, 
+    ensuring compatibility asymptotically given sufficient model capacity and data.
+    
+    \begin{highlight}[Modeling Insights]
+        \begin{itemize}
+            \item \textbf{Latent Variable Models}: Define joint distributions $p_{\text{model}}(x, h)$ for input and latent variables.
+            \item \textbf{Asymptotic Compatibility}: Encoder and decoder become consistent with training on sufficient data.
+            \item \textbf{Noise Injection Benefits}: Enhances generalization and prevents overfitting by forcing the model to learn robust features.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Advantages and Applications}
+    
+    Stochastic encoders and decoders provide a powerful framework for generative modeling and representation learning. By generalizing deterministic mappings, they enable better handling of uncertainty 
+    and more expressive latent spaces. Applications include:
+    \begin{itemize}
+        \item \textbf{Denoising Autoencoders}: Utilize stochastic corruption to improve the robustness of learned representations.
+        \item \textbf{Generative Modeling}: Model complex distributions by sampling from latent variable distributions.
+        \item \textbf{Bayesian Networks}: Integrate with probabilistic graphical models to enhance inference capabilities.
+    \end{itemize}
+    
+    \subsubsection*{Summary of Key Concepts}
+    
+    Stochastic encoders and decoders extend autoencoders to probabilistic mappings, enabling them to model distributions and incorporate uncertainty. They provide a robust foundation for advanced 
+    autoencoder architectures, including variational autoencoders and generative stochastic networks.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Stochastic encoders and decoders replace deterministic mappings with conditional distributions.
+            \item Training typically minimizes the negative log-likelihood of the decoder output given the latent representation.
+            \item This framework enhances flexibility and supports a wide range of generative and unsupervised learning applications.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 14.5: Denoising Autoencoders}.
+
+\begin{notes}{Section 14.5: Denoising Autoencoders}
+    \subsection*{Overview}
+
+    Denoising autoencoders (DAEs) reconstruct clean data from corrupted inputs, learning robust representations that capture the underlying structure of the data distribution. This section introduces their 
+    training process and significance in feature learning.
+    
+    \subsubsection*{Training Procedure}
+    
+    DAEs introduce a corruption process $C(x|\tilde{x})$, which applies noise to the input $x$. The network is trained to minimize reconstruction error:
+    \[
+    L(x, g(f(\tilde{x}))), \quad \text{where } \tilde{x} \sim C(x|\tilde{x}).
+    \]
+    
+    \subsubsection*{Key Characteristics}
+    
+    \begin{itemize}
+        \item \textbf{Implicit Regularization}: Forces the network to learn robust features by reconstructing the clean input from corrupted data.
+        \item \textbf{Score Estimation}: Learns a vector field approximating the gradient of the log data density $\nabla_x \log p(x)$, enabling unsupervised feature learning.
+        \item \textbf{Generative Potential}: Provides a basis for probabilistic generative modeling.
+    \end{itemize}
+    
+    \begin{highlight}[Key Features of DAEs]
+        \begin{itemize}
+            \item Improves robustness to noise and missing inputs.
+            \item Encourages learning meaningful latent representations.
+            \item Serves as a foundation for deeper unsupervised and semi-supervised learning.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last chapter that is being covered this week is \textbf{Chapter 20: Deep Generative Models}. The first section that is being covered from this chapter this week is \textbf{Section 20.3: Deep Belief Networks}.
+
+\begin{notes}{Section 20.3: Deep Belief Networks}
+    \subsection*{Overview}
+
+    Deep Belief Networks (DBNs) are generative models composed of multiple layers of latent variables. These latent variables are typically binary, while the visible units can be binary or real-valued. DBNs were among the first deep architectures to demonstrate the feasibility of training deep models, marking the resurgence of deep learning. Originally introduced in 2006, DBNs were pivotal in showing that deep architectures can outperform kernel-based models like support vector machines on tasks such as digit recognition with MNIST.
+    
+    \subsubsection*{Model Structure}
+    
+    DBNs consist of:
+    \begin{itemize}
+        \item \textbf{Hybrid Connections}: The top two layers have undirected connections, while all other layers have directed connections pointing downward.
+        \item \textbf{Fully Connected Layers}: Every unit in one layer is connected to every unit in the adjacent layer, but no intralayer connections exist.
+        \item \textbf{Weight Matrices and Biases}: An $l$-layer DBN uses $l$ weight matrices $\{W^{(1)}, \dots, W^{(l)}\}$ and $l+1$ bias vectors $\{b^{(0)}, \dots, b^{(l)}\}$, where $b^{(0)}$ represents the biases of the visible layer.
+    \end{itemize}
+    
+    The probability distribution represented by a DBN is a combination of its undirected top layers and the directed connections in the lower layers. For real-valued visible units, the distribution can be extended using a Gaussian model.
+    
+    \subsubsection*{Training Procedure}
+    
+    Training a DBN typically involves:
+    \begin{enumerate}
+        \item \textbf{Layer-Wise Training with Restricted Boltzmann Machines (RBMs)}:
+            \begin{itemize}
+                \item The first RBM is trained to maximize the likelihood of the visible layer.
+                \item Subsequent RBMs are trained to model the latent distributions of the previous RBM's hidden units.
+            \end{itemize}
+        \item \textbf{Greedy Layer-Wise Pretraining}: The layer-wise procedure maximizes a variational lower bound on the log-likelihood.
+        \item \textbf{Fine-Tuning (Optional)}: Generative fine-tuning can be performed using the wake-sleep algorithm, though this step is often skipped in practice.
+    \end{enumerate}
+    
+    \subsubsection*{Applications and Classification}
+    
+    While DBNs are generative models, their primary historical significance lies in initializing weights for supervised models:
+    \begin{itemize}
+        \item \textbf{Pretraining for Classification}: DBN weights are transferred to a multilayer perceptron (MLP), which is then fine-tuned for supervised tasks.
+        \item \textbf{Feature Extraction}: DBNs serve as feature extractors, where the output of a trained DBN is used to initialize downstream discriminative tasks.
+    \end{itemize}
+    
+    \subsubsection*{Advantages and Limitations}
+    
+    \begin{highlight}[Key Features and Challenges]
+        \begin{itemize}
+            \item \textbf{Deep Generative Modeling}: DBNs introduced a practical approach to training deep generative architectures.
+            \item \textbf{Historical Impact}: DBNs helped revive interest in deep learning by demonstrating state-of-the-art results on tasks like MNIST classification.
+            \item \textbf{Intractability Issues}: Evaluating or maximizing the evidence lower bound and log-likelihood remains computationally challenging due to:
+                \begin{itemize}
+                    \item Explaining-away effects in directed layers.
+                    \item Intractable partition function in undirected layers.
+                \end{itemize}
+            \item \textbf{Heuristic Approximations}: Approximate inference using MLPs is not guaranteed to produce tight variational bounds on the log-likelihood.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Historical and Current Relevance}
+    
+    Although DBNs are rarely used today compared to more advanced architectures, their introduction in 2006 was a pivotal moment in deep learning history. They demonstrated that deep architectures could be optimized effectively and laid the foundation for modern deep generative and discriminative models.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Deep belief networks are hybrid models with undirected and directed layers.
+            \item Training involves a layer-wise RBM-based approach, often followed by fine-tuning.
+            \item DBNs have largely been replaced by newer techniques but remain historically significant.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The next section that is being covered from this chapter this week is \textbf{Section 20.4: Deep Boltzmann Machines}.
+
+\begin{notes}{Section 20.4: Deep Boltzmann Machines}
+    \subsection*{Overview}
+
+    Deep Boltzmann Machines (DBMs) are fully undirected deep generative models composed of multiple layers of latent variables. Unlike Restricted Boltzmann Machines (RBMs), which contain a single hidden layer, and Deep Belief Networks (DBNs), which mix undirected and directed connections, DBMs are entirely undirected. DBMs allow rich bidirectional interactions between layers, making them suitable for tasks involving deep structured representations and inference.
+    
+    \subsubsection*{Model Structure}
+    
+    A DBM with one visible layer $v$ and three hidden layers $\{h^{(1)}, h^{(2)}, h^{(3)}\}$ is represented by an energy function that governs the joint probability distribution:
+    
+    \[
+    P(v, h^{(1)}, h^{(2)}, h^{(3)}) = \frac{1}{Z(\theta)} \exp\left(-E(v, h^{(1)}, h^{(2)}, h^{(3)}; \theta)\right),
+    \]
+    
+    where the energy function is defined as:
+    \[
+    E(v, h^{(1)}, h^{(2)}, h^{(3)}; \theta) = -v^\top W^{(1)} h^{(1)} - h^{(1)\top} W^{(2)} h^{(2)} - h^{(2)\top} W^{(3)} h^{(3)}.
+    \]
+    
+    The model structure is characterized by:
+    \begin{itemize}
+        \item \textbf{Undirected Layers}: Each pair of adjacent layers is fully connected, with no intralayer connections.
+        \item \textbf{Bipartite Graphical Organization}: Layers can be grouped into odd and even layers, enabling efficient Gibbs sampling.
+        \item \textbf{Binary Hidden Units}: Although real-valued visible units are supported, hidden units are typically binary.
+    \end{itemize}
+    
+    \subsubsection*{Inference in DBMs}
+    
+    Inference in DBMs involves estimating the posterior $P(h | v)$, which is intractable due to interactions between layers. However, the bipartite structure simplifies the conditional distributions:
+    \begin{itemize}
+        \item \textbf{Conditional Independence}: Given values of the neighboring layers, units within a layer are conditionally independent.
+        \item \textbf{Mean Field Approximation}: Variational inference approximates the posterior by a fully factorial distribution $Q(h)$:
+        \[
+        Q(h^{(1)}, h^{(2)} | v) = \prod_j Q(h_j^{(1)} | v) \prod_k Q(h_k^{(2)} | v).
+        \]
+        Iterative updates are derived for the variational parameters using fixed-point equations.
+    \end{itemize}
+    
+    \subsubsection*{Training Deep Boltzmann Machines}
+    
+    Training DBMs is challenging due to:
+    \begin{itemize}
+        \item \textbf{Intractable Partition Function}: Techniques like stochastic maximum likelihood (SML) or annealed importance sampling (AIS) are required.
+        \item \textbf{Variational Lower Bound Optimization}: Training maximizes a variational bound $L(v; \theta, Q)$:
+        \[
+        L(v; \theta, Q) = \sum_i \sum_j v_i W_{ij}^{(1)} h_j^{(1)} + \sum_j \sum_k h_j^{(1)} W_{jk}^{(2)} h_k^{(2)} - \log Z(\theta).
+        \]
+        \item \textbf{Approximate Gradients}: Gradients must be approximated using variational inference.
+    \end{itemize}
+    
+    Layer-wise pretraining using RBMs is typically employed to initialize weights, followed by joint training with SML or a related algorithm.
+    
+    \subsubsection*{Advantages and Challenges}
+    
+    \begin{highlight}[Key Features and Limitations]
+        \begin{itemize}
+            \item \textbf{Bidirectional Feedback}: DBMs allow top-down interactions, making them relevant to neuroscience and hierarchical reasoning tasks.
+            \item \textbf{Efficient Sampling}: The bipartite structure enables efficient Gibbs sampling in two phases (odd layers, even layers).
+            \item \textbf{Complex Training}: Requires sophisticated pretraining and optimization methods to avoid poor initialization and convergence issues.
+            \item \textbf{High Computational Cost}: Generative sampling involves MCMC across all layers, which can be computationally intensive.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Applications and Historical Context}
+    
+    DBMs have been applied to tasks such as document modeling and hierarchical representation learning. While they have influenced modern deep generative models, their computational demands have limited their widespread adoption in favor of more scalable methods.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item Deep Boltzmann Machines are fully undirected models with rich hierarchical representations.
+            \item Training combines layer-wise pretraining with approximate joint optimization.
+            \item DBMs remain a valuable theoretical framework, despite their computational challenges.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
+
+The last section that is being covered from this chapter this week is \textbf{Section 20.6: Convolutional Boltzmann Machines}.
+
+\begin{notes}{Section 20.6: Convolutional Boltzmann Machines}
+    \subsection*{Overview}
+
+    Convolutional Boltzmann Machines (CBMs) are a variant of Boltzmann machines designed to model spatially structured data, such as images. They extend the Restricted Boltzmann Machine (RBM) framework 
+    by introducing convolutional weight-sharing mechanisms, enabling them to capture local patterns and exploit translational invariance in data. 
+    
+    \subsubsection*{Model Structure}
+    
+    CBMs are characterized by the following:
+    \begin{itemize}
+        \item \textbf{Convolutional Weight Sharing}: Weight matrices are shared across spatially arranged units, reducing the number of parameters and allowing the model to generalize features across locations.
+        \item \textbf{Hidden Feature Maps}: Hidden units are organized into feature maps, where each unit corresponds to a spatial location in the input.
+        \item \textbf{Energy Function}: The CBM energy function incorporates convolutional operations:
+        \[
+        E(v, h) = - \sum_{c,h} \sum_{i,j} v_{ij} * W_{ij}^{ch} h_{ij}^c + \text{bias terms},
+        \]
+        where $v_{ij}$ represents the visible units (input), $W_{ij}^{ch}$ are the convolutional filters, and $h_{ij}^c$ are the hidden feature maps.
+        \item \textbf{Pooling Mechanisms (Optional)}: CBMs may integrate pooling layers to aggregate spatial information, enabling hierarchical feature extraction.
+    \end{itemize}
+    
+    \subsubsection*{Inference in CBMs}
+    
+    Inference in CBMs involves computing the posterior distribution of hidden units given visible units. Due to the convolutional structure:
+    \begin{itemize}
+        \item The hidden units in a feature map share parameters, simplifying computation.
+        \item Sampling can be performed efficiently using Gibbs sampling or mean field updates, as conditional independence is preserved across spatial locations and feature maps.
+    \end{itemize}
+    
+    \subsubsection*{Training Convolutional Boltzmann Machines}
+    
+    Training CBMs is similar to training RBMs but requires accounting for the convolutional structure:
+    \begin{itemize}
+        \item \textbf{Contrastive Divergence (CD)}: Used to approximate the gradient of the log-likelihood, iteratively updating weights based on Gibbs sampling.
+        \item \textbf{Weight Updates}: Gradients are computed by convolving the visible units with the feature maps to adjust the shared weights.
+        \item \textbf{Regularization}: Weight sharing and pooling reduce overfitting and improve generalization.
+    \end{itemize}
+    
+    \subsubsection*{Applications and Benefits}
+    
+    CBMs are well-suited for spatially structured data and have been applied to tasks such as:
+    \begin{itemize}
+        \item \textbf{Image Modeling}: Capture local textures and patterns in images.
+        \item \textbf{Feature Extraction}: Learn hierarchical, location-independent features for tasks like object recognition.
+        \item \textbf{Generative Modeling}: Generate spatially coherent samples by reconstructing input data from hidden representations.
+    \end{itemize}
+    
+    \begin{highlight}[Key Features and Limitations]
+        \begin{itemize}
+            \item \textbf{Spatial Invariance}: Weight sharing enables the model to generalize features across spatial locations.
+            \item \textbf{Efficient Representation}: Hierarchical feature maps reduce the number of parameters compared to fully connected Boltzmann machines.
+            \item \textbf{Computational Complexity}: Convolutional operations and Gibbs sampling can be computationally expensive for large inputs.
+            \item \textbf{Limited Scalability}: Training on high-dimensional data (e.g., large images) requires careful optimization and resource management.
+        \end{itemize}
+    \end{highlight}
+    
+    \subsubsection*{Historical and Practical Relevance}
+    
+    Convolutional Boltzmann Machines represent an important step in combining generative models with convolutional architectures. They have influenced the development of modern generative models, such as convolutional VAEs and GANs, by demonstrating the power of convolutional structures for modeling spatially dependent data.
+    
+    \begin{highlight}[Key Takeaways]
+        \begin{itemize}
+            \item CBMs extend RBMs to spatially structured data using convolutional weight sharing.
+            \item The architecture supports hierarchical feature learning through feature maps and pooling mechanisms.
+            \item While powerful for modeling spatial data, CBMs face computational challenges that limit their scalability.
+        \end{itemize}
+    \end{highlight}
+\end{notes}
