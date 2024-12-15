@@ -11,7 +11,3 @@
 *.ptc
 *.run.xml
 *.toc
-
-# ML Stuff
-*.pkl
-*.csv
