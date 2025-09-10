@@ -10,33 +10,38 @@ using namespace std;
 // Edit this to flesh out the pq structure as appropriate. You may
 // also add the function prototypes for anything else, and implement
 // them in pq.cpp.
-struct pq {
+struct pq
+{
     // Vector to store strings and priority value
     vector<string> heapString;
     vector<float> heapPriority;
 
-    /*  percolateUp - Pushes elements up in a vector based off of specific condtions
-    *   Input:
-    *       index - Integer value that represents the index of a where an element is supposed to start percolating
-    *   Algorithm:
-    *       * Begin iterating through the vector if the index is greater than zero
-    *       * Calculate the parent index
-    *       * Terminate the loop if the current elements priority is less than or equal to that of its parent
-    *       * Otherwise, swap the elements at the current index with the parents index
-    *   Output:
-    *       This function does not return a value
-    */
-    void percolateUp(int index) {
+    /*  percolateUp - Pushes elements up in a vector based off of specific conditions
+     *   Input:
+     *       index - Integer value that represents the index of a where an element is supposed to start percolating
+     *   Algorithm:
+     *       * Begin iterating through the vector if the index is greater than zero
+     *       * Calculate the parent index
+     *       * Terminate the loop if the current elements priority is less than or equal to that of its parent
+     *       * Otherwise, swap the elements at the current index with the parents index
+     *   Output:
+     *       This function does not return a value
+     */
+    void percolateUp(int index)
+    {
         // Begin iterating through the vector
-        while (index > 0) {
+        while (index > 0)
+        {
             // Calculate the parent index
             int parentIndex = (index - 1) / 2;
             // Terminate the loop if the current elements priority is less than or equal to the its parents priority
-            if (this->heapPriority.at(index) <= this->heapPriority.at(parentIndex)) {
+            if (this->heapPriority.at(index) <= this->heapPriority.at(parentIndex))
+            {
                 return;
             }
             // Proceed to swap elements at current index and parent index, update index to parent index
-            else {
+            else
+            {
                 swap(this->heapString.at(index), this->heapString.at(parentIndex));
                 swap(this->heapPriority.at(index), this->heapPriority.at(parentIndex));
                 index = parentIndex;
@@ -45,13 +50,13 @@ struct pq {
     }
 };
 
-
-class PriorityQueue {
+class PriorityQueue
+{
 public:
     // constructor, you should set all values in array to zero
     PriorityQueue();
 
-    //deconstructor, you don't need to add anything here since you are gonna use smart pointers
+    // deconstructor, you don't need to add anything here since you are gonna use smart pointers
     ~PriorityQueue();
 
     // init_priority_queue allocates memory for a pq structure (which you
@@ -73,10 +78,10 @@ public:
     // ppek will access the highest priority element in the queue and
     // return it without modifying the queue. if the queue is empty it
     // should return the empty string.
-    string Peek(shared_ptr<pq> queue);    
+    string Peek(shared_ptr<pq> queue);
 
 private:
     // you can add add more private member variables and member functions here if you need
 };
 
-#endif  // PRIORITYQUEUE_H__
+#endif // PRIORITYQUEUE_H__
